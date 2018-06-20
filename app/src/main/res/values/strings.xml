@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">VonVimeo</string>
+
+    <string name="nav_home_menu">首页</string>
+    <string name="nav_explore_menu">发现</string>
+    <string name="toolbar_my_likes_menu">我喜欢的视频</string>
+    <string name="nav_my_likes_menu">喜欢</string>
+    <string name="nav_album_menu">收藏视频集</string>
+    <string name="nav_all_video_menu">所有视频</string>
+    <string name="nav_settings_menu">设置</string>
+    <string name="nav_drawer_open">open drawer</string>
+    <string name="nav_drawer_close">close drawer</string>
 </resources>

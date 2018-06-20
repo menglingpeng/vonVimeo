@@ -3,4 +3,8 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="tablayout_text_color">#BDBDBD</color>
+
+    <color name="nav_header_desc_tv">#757575</color>
 </resources>

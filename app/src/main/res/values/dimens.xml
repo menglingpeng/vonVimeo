@@ -8,4 +8,14 @@
     <dimen name="nav_view_header_login_avatar_iv_layout_marginTop">30dp</dimen>
     <dimen name="nav_view_header_nav_view_name_tv_layout_marginTop">20dp</dimen>
     <dimen name="nav_view_header_nav_view_desc_tv_layout_marginTop">3dp</dimen>
+
+    <dimen name="recycler_item_footer_loading_load_layout">50dp</dimen>
+    <dimen name="recycler_item_footer_loading_load_layout_padding">15dp</dimen>
+    <dimen name="recycler_item_footer_loading_more_loading_layout_margin_left">15dp</dimen>
+    <dimen name="recycler_item_footer_loading_more_loading_text_size">15dp</dimen>
+
+    <dimen name="recycler_item_empty_iv_layout_width">160dp</dimen>
+    <dimen name="recycler_item_empty_iv_layout_height">160dp</dimen>
+    <dimen name="recycler_item_empty_iv_layout_marginTop">100dp</dimen>
+    <dimen name="recycler_item_empty_tv_layout_marginTop">20dp</dimen>
 </resources>

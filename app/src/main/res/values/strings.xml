@@ -11,4 +11,6 @@
     <string name="nav_settings_menu">设置</string>
     <string name="nav_drawer_open">open drawer</string>
     <string name="nav_drawer_close">close drawer</string>
+    <string name="recycler_item_footer_more_loading_text">正在加载更多。。。</string>
+    <string name="recycler_item_footer_load_nomore_text">没有更多</string>
 </resources>

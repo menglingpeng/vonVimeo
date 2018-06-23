@@ -10,4 +10,9 @@ public class Constants {
     public static final String MENU_SETTING = "setting";
 
     public static final String LIST_USER_FEED_VIDEOS = "list_user_feed_videos";
+
+    //默认值1
+    public static final int PAGE_VALUE = 1;
+    //默认值10，最高到100
+    public static final int PER_PAGE_VALUE = 10;
 }

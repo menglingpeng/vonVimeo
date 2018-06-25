@@ -10,11 +10,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.R;
 import com.menglingpeng.vonvimeo.mvp.interf.OnRecyclerListItemListener;
+import com.menglingpeng.vonvimeo.mvp.model.Album;
 import com.menglingpeng.vonvimeo.utils.Constants;
+import com.menglingpeng.vonvimeo.utils.TextUtil;
 
 import java.util.ArrayList;
 
@@ -78,6 +81,23 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         return position;
     }
 
+    @Override
+    public int getItemCount() {
+        int cout = 0;
+        if (list.isEmpty()) {
+            Log.i("empty", "true");
+            cout = 1;
+            return cout;
+        } else {
+            if (list.size() < 12) {
+                cout = list.size();
+            } else {
+                cout = list.size() + 1;
+            }
+        }
+        return cout;
+    }
+
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -100,6 +120,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         view = inflater.inflate(R.layout.recycler_item, parent, false);
                         viewHolder = new FeedVideoViewHolder(view);
                         break;
+                    case Constants.LIST_USER_ALBUMS:
+                        view = inflater.inflate(R.layout.user_albums_recycler_item, parent, false);
+                        viewHolder = new AlbumViewHolder(view);
+                        break;
                         default:
                             break;
                 }
@@ -111,28 +135,26 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         if(holder instanceof FeedVideoViewHolder){
-
+            final FeedVideoViewHolder videoViewHolder = (FeedVideoViewHolder)holder;
         }else if (holder instanceof EmptyViewHolder){
-
+            final EmptyViewHolder viewHolder = (EmptyViewHolder)holder;
+        }else if ((holder instanceof AlbumViewHolder)){
+            final AlbumViewHolder viewHolder = (AlbumViewHolder)holder;
+            final Album album = (Album) list.get(position);
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mListener != null) {
+                        mListener.onRecyclerFragmentListListener(viewHolder, album);
+                    }
+                }
+            });
+            viewHolder.albumNameTv.setText(album.getName());
+            viewHolder.albumVideosCountTv.setText(TextUtil.setBeforeBold(String.valueOf(album.getShots_count()),
+                    context.getString(R.string.videos)));
         }
     }
 
-    @Override
-    public int getItemCount() {
-        int cout = 0;
-        if (list.isEmpty()) {
-            Log.i("empty", "true");
-            cout = 1;
-            return cout;
-        } else {
-            if (list.size() < 12) {
-                cout = list.size();
-            } else {
-                cout = list.size() + 1;
-            }
-        }
-        return cout;
-    }
 
     public class FeedVideoViewHolder extends RecyclerView.ViewHolder{
 
@@ -149,6 +171,19 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             super(view);
             emptyIv = (ImageView) view.findViewById(R.id.recycler_item_empty_iv);
             emptyTv = (TextView) view.findViewById(R.id.recycler_item_empty_tv);
+        }
+    }
+
+    public class AlbumViewHolder extends RecyclerView.ViewHolder {
+        public final RelativeLayout albumRl;
+        public final TextView albumNameTv;
+        public final TextView albumVideosCountTv;
+
+        public AlbumViewHolder(View view) {
+            super(view);
+            albumRl = (RelativeLayout) view.findViewById(R.id.album_rl);
+            albumNameTv = (TextView) view.findViewById(R.id.album_name_tv);
+            albumVideosCountTv = (TextView) view.findViewById(R.id.album_videos_count_tv);
         }
     }
 

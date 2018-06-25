@@ -10,6 +10,7 @@ public class Constants {
     public static final String MENU_SETTING = "setting";
 
     public static final String LIST_USER_FEED_VIDEOS = "list_user_feed_videos";
+    public static final String LIST_USER_ALBUMS = "list_user_albums";
 
     //默认值1
     public static final int PAGE_VALUE = 1;

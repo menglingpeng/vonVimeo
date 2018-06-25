@@ -7,4 +7,7 @@
     <color name="tablayout_text_color">#BDBDBD</color>
 
     <color name="nav_header_desc_tv">#757575</color>
+
+    <color name="bucket_recycler_item_background">#EEEEEE</color>
+    <color name="bucket_recycler_item_view_background">#BDBDBD</color>
 </resources>

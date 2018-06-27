@@ -23,7 +23,8 @@
         </activity>
         <activity android:name=".mvp.view.UserAlbumActivity" />
         <activity android:name=".mvp.view.UserAlbumDetailActivity" />
-        <activity android:name=".mvp.view.VideoDetailActivity"></activity>
+        <activity android:name=".mvp.view.VideoDetailActivity" />
+        <activity android:name=".mvp.view.UserProjectActivity"></activity>
     </application>
 
 </manifest>

@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
+import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
 import com.menglingpeng.vonvimeo.mvp.presenter.RecyclerPresenter;
 import com.menglingpeng.vonvimeo.utils.Constants;
 import com.menglingpeng.vonvimeo.utils.SharedPrefUtils;
@@ -18,7 +19,7 @@ import com.menglingpeng.vonvimeo.utils.SnackUtils;
 
 import java.util.HashMap;
 
-public class UserAlbumActivity extends BaseActivity {
+public class UserAlbumActivity extends BaseActivity implements RecyclerView{
 
     private Toolbar toolbar;
     private FloatingActionButton floatingActionButton;
@@ -89,5 +90,20 @@ public class UserAlbumActivity extends BaseActivity {
         bucketNameEt.setFocusable(true);
         dialog = builder.create();
         dialog.show();
+    }
+
+    @Override
+    public void hideProgress() {
+
+    }
+
+    @Override
+    public void loadFailed(String msg) {
+
+    }
+
+    @Override
+    public void loadSuccess(String json, String requestType) {
+
     }
 }

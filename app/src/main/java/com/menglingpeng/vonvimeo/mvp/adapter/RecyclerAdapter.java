@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.menglingpeng.vonvimeo.R;
 import com.menglingpeng.vonvimeo.mvp.interf.OnRecyclerListItemListener;
 import com.menglingpeng.vonvimeo.mvp.model.Album;
+import com.menglingpeng.vonvimeo.mvp.model.Project;
 import com.menglingpeng.vonvimeo.utils.Constants;
 import com.menglingpeng.vonvimeo.utils.TextUtil;
 
@@ -124,6 +125,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         view = inflater.inflate(R.layout.user_albums_recycler_item, parent, false);
                         viewHolder = new AlbumViewHolder(view);
                         break;
+                    case Constants.LIST_USER_PROJECTS:
+                        view = inflater.inflate(R.layout.user_projects_recycler_item, parent, false);
+                        viewHolder = new ProjectViewHolder(view);
+                        break;
                         default:
                             break;
                 }
@@ -151,6 +156,20 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             });
             viewHolder.albumNameTv.setText(album.getName());
             viewHolder.albumVideosCountTv.setText(TextUtil.setBeforeBold(String.valueOf(album.getShots_count()),
+                    context.getString(R.string.videos)));
+        }else if (holder instanceof ProjectViewHolder){
+            final ProjectViewHolder viewHolder = (ProjectViewHolder)holder;
+            final Project project = (Project)list.get(position);
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mListener != null) {
+                        mListener.onRecyclerFragmentListListener(viewHolder, project);
+                    }
+                }
+            });
+            viewHolder.projectNameTv.setText(project.getName());
+            viewHolder.projectVideosCountTv.setText(TextUtil.setBeforeBold(String.valueOf(project.getShots_count()),
                     context.getString(R.string.videos)));
         }
     }
@@ -184,6 +203,19 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             albumRl = (RelativeLayout) view.findViewById(R.id.album_rl);
             albumNameTv = (TextView) view.findViewById(R.id.album_name_tv);
             albumVideosCountTv = (TextView) view.findViewById(R.id.album_videos_count_tv);
+        }
+    }
+
+    public class ProjectViewHolder extends RecyclerView.ViewHolder {
+        public final RelativeLayout projectRl;
+        public final TextView projectNameTv;
+        public final TextView projectVideosCountTv;
+
+        public ProjectViewHolder(View view) {
+            super(view);
+            projectRl = (RelativeLayout) view.findViewById(R.id.project_rl);
+            projectNameTv = (TextView) view.findViewById(R.id.project_name_tv);
+            projectVideosCountTv = (TextView) view.findViewById(R.id.project_videos_count_tv);
         }
     }
 

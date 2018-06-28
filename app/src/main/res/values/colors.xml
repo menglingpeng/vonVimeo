@@ -8,6 +8,6 @@
 
     <color name="nav_header_desc_tv">#757575</color>
 
-    <color name="bucket_recycler_item_background">#EEEEEE</color>
-    <color name="bucket_recycler_item_view_background">#BDBDBD</color>
+    <color name="recycler_item_background">#EEEEEE</color>
+    <color name="recycler_item_view_background">#BDBDBD</color>
 </resources>

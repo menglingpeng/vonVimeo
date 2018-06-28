@@ -26,7 +26,7 @@ public class Constants {
     public static final String LIST_USER_ALBUMS = "list_user_albums";
     public static final String REQUEST_CREATE_A_ALBUM = "crate_a_album";
     public static final String LIST_USER_PROJECTS = "list_user_projects";
-    public static final String LIST_USER_CATEGORITES = "list_categoties";
+    public static final String LIST_CATEGORITES = "list_categoties";
 
 
     //默认值1

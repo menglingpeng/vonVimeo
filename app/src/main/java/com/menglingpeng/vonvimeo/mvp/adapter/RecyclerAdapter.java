@@ -17,8 +17,10 @@ import com.menglingpeng.vonvimeo.R;
 import com.menglingpeng.vonvimeo.mvp.interf.OnRecyclerListItemListener;
 import com.menglingpeng.vonvimeo.mvp.model.Album;
 import com.menglingpeng.vonvimeo.mvp.model.Categorite;
+import com.menglingpeng.vonvimeo.mvp.model.Channel;
 import com.menglingpeng.vonvimeo.mvp.model.Project;
 import com.menglingpeng.vonvimeo.utils.Constants;
+import com.menglingpeng.vonvimeo.utils.ImageLoader;
 import com.menglingpeng.vonvimeo.utils.TextUtil;
 
 import java.util.ArrayList;
@@ -134,6 +136,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         view = inflater.inflate(R.layout.categorites_recycler_item, parent, false);
                         viewHolder = new CateGoritesViewHolder(view);
                         break;
+                    case Constants.LIST_ALL_CHANNELS:
+                        view = inflater.inflate(R.layout.recycler_item_channels, parent, false);
+                        viewHolder = new ChannelsViewHolder(view);
+                        break;
                      break;
                         default:
                             break;
@@ -191,6 +197,26 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             viewHolder.categoriteNameTv.setText(categorite.getName());
             viewHolder.categoriteVideosCountTv.setText(TextUtil.setBeforeBold(String.valueOf(categorite.getShots_count()),
                     context.getString(R.string.videos)));
+        }else if (holder instanceof ChannelsViewHolder){
+            final ChannelsViewHolder viewHolder = (ChannelsViewHolder)holder;
+            final Channel channel = (Channel)list.get(position);
+            String url;
+            url = channel.getData().get(position).getLink();
+            ImageLoader.load(fragment, url, viewHolder.channelsIconIv, false);
+            viewHolder.channelsNameTv.setText(channel.getData().get(position).getName());
+            viewHolder.channelsDescTv.setText(channel.getData().get(position).getDescription());
+            viewHolder.channelsFollowersCountTv.setText(channel.getData().get(position).
+                    getMetadata().getConnections().getUsers().getTotal());
+            viewHolder.channelsVideosCountTv.setText(channel.getData().get(position).getMetadata()
+                    .getConnections().getVideos().getTotal());
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mListener != null) {
+                        mListener.onRecyclerFragmentListListener(viewHolder, channel);
+                    }
+                }
+            });
         }
     }
 
@@ -249,6 +275,27 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             categoriteRl = (RelativeLayout) view.findViewById(R.id.categorite_rl);
             categoriteNameTv = (TextView) view.findViewById(R.id.categorite_name_tv);
             categoriteVideosCountTv = (TextView) view.findViewById(R.id.categorite_videos_count_tv);
+        }
+    }
+
+    public class ChannelsViewHolder extends RecyclerView.ViewHolder {
+
+        public final RelativeLayout channelsRl;
+        public final ImageView channelsIconIv;
+        public final TextView channelsNameTv;
+        public final TextView channelsDescTv;
+        public final TextView channelsVideosCountTv;
+        public final TextView channelsFollowersCountTv;
+
+        public ChannelsViewHolder(View view) {
+            super(view);
+            channelsRl = (RelativeLayout)view.findViewById(R.id.channels_rl);
+            channelsIconIv = (ImageView)view.findViewById(R.id.channels_icon_iv);
+            channelsNameTv = (TextView)view.findViewById(R.id.channels_name_tv);
+            channelsDescTv = (TextView)view.findViewById(R.id.channels_desc_tv);
+            channelsVideosCountTv = (TextView)view.findViewById(R.id.channels_videos_count_tv);
+            channelsFollowersCountTv = (TextView)view.findViewById(R.id.
+                    channels_followers_count_tv);
         }
     }
 

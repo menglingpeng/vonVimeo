@@ -27,6 +27,7 @@ public class Constants {
     public static final String REQUEST_CREATE_A_ALBUM = "crate_a_album";
     public static final String LIST_USER_PROJECTS = "list_user_projects";
     public static final String LIST_CATEGORITES = "list_categoties";
+    public static final String LIST_ALL_CHANNELS = "list_all_channels";
 
 
     //默认值1

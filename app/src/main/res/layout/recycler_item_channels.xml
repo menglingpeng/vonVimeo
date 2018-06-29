@@ -13,6 +13,7 @@
     card_view:cardCornerRadius="@dimen/recycler_view_item_card_view_card_corner_radius">
 
     <RelativeLayout
+        android:id="@+id/channels_rl"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

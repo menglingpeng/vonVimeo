@@ -14,6 +14,7 @@
     <string name="recycler_item_footer_more_loading_text">正在加载更多。。。</string>
     <string name="recycler_item_footer_load_nomore_text">没有更多</string>
     <string name="videos">视频</string>
+    <string name="channels">频道</string>
 
     <string name="name">名称</string>
     <string name="description">说明</string>

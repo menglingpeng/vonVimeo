@@ -1,9 +1,8 @@
 package com.menglingpeng.vonvimeo.mvp.view;
 
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,7 +11,8 @@ import android.view.View;
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
 
-public class CategoritesActivity extends BaseActivity implements RecyclerView{
+public class ChannelDetailActivity extends BaseActivity implements RecyclerView{
+
 
     private Toolbar toolbar;
     private CoordinatorLayout coordinatorLayout;
@@ -21,14 +21,14 @@ public class CategoritesActivity extends BaseActivity implements RecyclerView{
 
     @Override
     protected void initLayoutId() {
-        layoutId = R.layout.activity_categorites;
+        layoutId = R.layout.activity_channel_detail;
     }
 
     @Override
     protected void initViews() {
         super.initViews();
-        coordinatorLayout = (CoordinatorLayout) findViewById(R.id.categorites_cdl);
-        toolbar = (Toolbar) findViewById(R.id.categorites_tb);
+        coordinatorLayout = (CoordinatorLayout) findViewById(R.id.channel_detail_cdl);
+        toolbar = (Toolbar) findViewById(R.id.channel_detail_tb);
         toolbar.setTitle(title);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_back);

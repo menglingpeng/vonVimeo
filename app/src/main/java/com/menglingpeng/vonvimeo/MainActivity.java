@@ -16,10 +16,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
@@ -38,6 +42,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private RelativeLayout navHeaderRl;
+    private LinearLayout exploreLl;
     private ImageView navAvatarIv;
     private TextView navNameTv;
     private TextView navDescTv;
@@ -47,6 +52,9 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     private ViewPager viewPager;
     private List<RecyclerFragment> fragments;
     private TabPagerFragmentAdapter adapter;
+    private Spinner manageSpinner;
+    private Spinner watchSpinner;
+    private static RecyclerFragment currentFragment = null;
 
     private static final int SMOOTHSCROLL_TOP_POSITION = 50;
 
@@ -64,6 +72,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         viewPager = (ViewPager) findViewById(R.id.view_pager);
+        exploreLl = (LinearLayout)findViewById(R.id.explore_ll) ;
         initToolbar();
         initNavigationView();
     }
@@ -187,5 +196,75 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                 list.scrollToPosition(0);
             }
         }
+    }
+
+    private void initSpinner() {
+        exploreLl.setVisibility(LinearLayout.VISIBLE);
+        manageSpinner = (Spinner) findViewById(R.id.manage_spinner);
+        watchSpinner = (Spinner) findViewById(R.id.watch_spinner);
+        ArrayAdapter<String> sortAdapter, listAdapter;
+        String[] sortArray = getResources().getStringArray(R.array.sort);
+        String[] listArray = getResources().getStringArray(R.array.list);
+        sortAdapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.custom_spinner_text, sortArray);
+        listAdapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.custom_spinner_text, listArray);
+        listAdapter.setDropDownViewResource(R.layout.custom_spinner_dropdown_item);
+        sortAdapter.setDropDownViewResource(R.layout.custom_spinner_dropdown_item);
+        manageSpinner.setAdapter(sortAdapter);
+        watchSpinner.setAdapter(listAdapter);
+        manageSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                switch (position) {
+                    case 0:
+                        replaceFragment(newFragment(Constants.REQUEST_LIST_MY_VIDEOS));
+                        break;
+                    case 1:
+                        replaceFragment(newFragment(Constants.REQUEST_LIST_VIEW_STATS));
+                        break;
+                    case 2:
+                        replaceFragment(newFragment(Constants.REQUEST_LIST_SELL_VIDEOS));
+                        break;
+                    case 3:
+                        replaceFragment(newFragment(Constants.REQUEST_LIST_VIDEO_SCHOOL));
+                        break;
+                    case 4:
+                        replaceFragment(newFragment(Constants.REQUEST_LIST_UPGRADE));
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+        watchSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                switch (position) {
+                    case 0:
+                        replaceFragment(newFragment(Constants.REQUEST_LIST_STAFF_PICKS));
+                        break;
+                    case 1:
+                        replaceFragment(newFragment(Constants.REQUEST_LIST_CATEGORITES));
+                        break;
+                    case 2:
+                        replaceFragment(newFragment(Constants.REQUEST_LIST_CHANNELS));
+                        break;
+                    case 3:
+                        replaceFragment(newFragment(Constants.REQUEST_LIST_GROUPS));
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
+    }
+
+    private RecyclerFragment newFragment(String type) {
+        currentFragment = RecyclerFragment.newInstance(type);
+        return currentFragment;
     }
 }

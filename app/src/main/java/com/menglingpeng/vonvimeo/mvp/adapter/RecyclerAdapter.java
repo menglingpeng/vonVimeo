@@ -1,6 +1,7 @@
 package com.menglingpeng.vonvimeo.mvp.adapter;
 
 import android.content.Context;
+import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -122,29 +123,33 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 break;
             default:
                 switch (type){
-                    case Constants.LIST_USER_FEED_VIDEOS:
+                    case Constants.REQUEST_LIST_USER_FEED_VIDEOS:
                         view = inflater.inflate(R.layout.recycler_item, parent, false);
                         viewHolder = new FeedVideoViewHolder(view);
                         break;
-                    case Constants.LIST_USER_ALBUMS:
+                    case Constants.REQUEST_LIST_USER_ALBUMS:
                         view = inflater.inflate(R.layout.user_albums_recycler_item, parent, false);
                         viewHolder = new AlbumViewHolder(view);
                         break;
-                    case Constants.LIST_USER_PROJECTS:
+                    case Constants.REQUEST_LIST_USER_PROJECTS:
                         view = inflater.inflate(R.layout.user_projects_recycler_item, parent, false);
                         viewHolder = new ProjectViewHolder(view);
                         break;
-                    case Constants.LIST_CATEGORITES:
+                    case Constants.REQUEST_LIST_CATEGORITES:
                         view = inflater.inflate(R.layout.categorites_recycler_item, parent, false);
                         viewHolder = new CateGoritesViewHolder(view);
                         break;
-                    case Constants.LIST_ALL_CHANNELS:
+                    case Constants.REQUEST_LIST_CHANNELS:
                         view = inflater.inflate(R.layout.recycler_item_channels, parent, false);
                         viewHolder = new ChannelsViewHolder(view);
                         break;
-                    case Constants.LIST_ALL_VIDEO_FOR_A_CHANNEL:
+                    case Constants.REQUEST_LIST_ALL_VIDEO_FOR_A_CHANNEL:
                         view = inflater.inflate(R.layout.recycler_item_channel_detail, parent, false);
                         viewHolder = new ChannelViewHolder(view);
+                        break;
+                    case Constants.REQUEST_LIST_GROUPS:
+                        view = inflater.inflate(R.layout.layout.recycler_item_groups, parent, false);
+                        viewHolder = new GroupViewHolder(view);
                         break;
                      break;
                         default:
@@ -338,8 +343,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     public class GroupViewHolder extends RecyclerView.ViewHolder {
-        public GroupViewHolder(View itemView) {
-            super(itemView);
+
+        public final ImageView groupIv;
+
+        public GroupViewHolder(View view) {
+            super(view);
+            groupIv = (ImageView)view.findViewById(R.id.group_iv);
         }
     }
 

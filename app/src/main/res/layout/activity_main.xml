@@ -34,6 +34,34 @@
                 app:tabTextAppearance="@style/TabLayoutTheme"
                 app:tabTextColor="@color/tablayout_text_color" />
 
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/explore_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <Spinner
+                    android:id="@+id/mangae_spinner"
+                    android:layout_width="@dimen/spinner_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="@dimen/spinner_List_layout_weight"
+                    android:backgroundTint="@android:color/white"
+                    android:backgroundTintMode="src_atop"
+                    android:dropDownWidth="@dimen/spinner_drop_down_width"
+                    android:popupBackground="@color/colorPrimary"></Spinner>
+
+                <Spinner
+                    android:id="@+id/watch_spinner"
+                    android:layout_width="@dimen/spinner_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="@dimen/spinner_sort_layout_weight"
+                    android:backgroundTint="@android:color/white"
+                    android:dropDownWidth="@dimen/spinner_drop_down_width"
+                    android:popupBackground="@color/colorPrimary"></Spinner>
+
+            </LinearLayout>
+
         </android.support.design.widget.AppBarLayout>
 
         <android.support.v4.view.ViewPager

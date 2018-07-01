@@ -18,8 +18,10 @@ import com.menglingpeng.vonvimeo.mvp.interf.OnRecyclerListItemListener;
 import com.menglingpeng.vonvimeo.mvp.model.Album;
 import com.menglingpeng.vonvimeo.mvp.model.Categorite;
 import com.menglingpeng.vonvimeo.mvp.model.Channel;
+import com.menglingpeng.vonvimeo.mvp.model.ChannelVideo;
 import com.menglingpeng.vonvimeo.mvp.model.Project;
 import com.menglingpeng.vonvimeo.utils.Constants;
+import com.menglingpeng.vonvimeo.utils.HttpUtils;
 import com.menglingpeng.vonvimeo.utils.ImageLoader;
 import com.menglingpeng.vonvimeo.utils.TextUtil;
 
@@ -140,6 +142,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         view = inflater.inflate(R.layout.recycler_item_channels, parent, false);
                         viewHolder = new ChannelsViewHolder(view);
                         break;
+                    case Constants.LIST_ALL_VIDEO_FOR_A_CHANNEL:
+                        view = inflater.inflate(R.layout.recycler_item_channel_detail, parent, false);
+                        viewHolder = new ChannelViewHolder(view);
+                        break;
                      break;
                         default:
                             break;
@@ -214,6 +220,17 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 public void onClick(View v) {
                     if (mListener != null) {
                         mListener.onRecyclerFragmentListListener(viewHolder, channel);
+                    }
+                }
+            });
+        }else if(holder instanceof ChannelViewHolder){
+            final ChannelViewHolder viewHolder = (ChannelViewHolder)holder;
+            final ChannelVideo channelVideo = (ChannelVideo)list.get(position);
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (mListener != null) {
+                        mListener.onRecyclerFragmentListListener(viewHolder, channelVideo);
                     }
                 }
             });
@@ -296,6 +313,33 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             channelsVideosCountTv = (TextView)view.findViewById(R.id.channels_videos_count_tv);
             channelsFollowersCountTv = (TextView)view.findViewById(R.id.
                     channels_followers_count_tv);
+        }
+    }
+
+    public class ChannelViewHolder extends RecyclerView.ViewHolder {
+
+        public final ImageView videoThumbIv;
+        public final TextView videoNameTv;
+        public final ImageView avatarIv;
+        public final TextView userNameTv;
+        public final TextView videoPlayCountsTv;
+
+
+        public ChannelViewHolder(View view) {
+            super(view);
+
+            videoThumbIv = (ImageView)view.findViewById(R.id.channel_detail_video_thumb_iv);
+            videoNameTv = (TextView)view.findViewById(R.id.channel_detail_video_name_tv);
+            avatarIv = (ImageView)view.findViewById(R.id.channel_detail_video_avatar_iv);
+            userNameTv = (TextView)view.findViewById(R.id.channel_detail_video_user_tv);
+            videoPlayCountsTv = (TextView)view.findViewById(R.id.channel_detail_video_play_count_tv);
+
+        }
+    }
+
+    public class GroupViewHolder extends RecyclerView.ViewHolder {
+        public GroupViewHolder(View itemView) {
+            super(itemView);
         }
     }
 

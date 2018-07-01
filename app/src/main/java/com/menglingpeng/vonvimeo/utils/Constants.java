@@ -28,6 +28,7 @@ public class Constants {
     public static final String LIST_USER_PROJECTS = "list_user_projects";
     public static final String LIST_CATEGORITES = "list_categoties";
     public static final String LIST_ALL_CHANNELS = "list_all_channels";
+    public static final String LIST_ALL_VIDEO_FOR_A_CHANNEL = "list_all_video_for_a_channel";
 
 
     //默认值1

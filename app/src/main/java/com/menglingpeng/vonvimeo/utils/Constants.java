@@ -3,6 +3,8 @@ package com.menglingpeng.vonvimeo.utils;
 public class Constants {
 
     public static final String TYPE = "type";
+    public static final String IS_FIRST_START = "is_first_start";
+    public static final String IS_LOGIN = "is_login";
 
     public static final String REQUEST_GET_MEIHOD = "get";
     public static final String REQUEST_POST_MEIHOD = "post";

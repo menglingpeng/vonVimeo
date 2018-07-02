@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/channel_detail_more"
+        android:icon="@drawable/ic_more"
+        android:title=""
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/channel_detail_share"
+                android:icon="@drawable/ic_share_white_24dp"
+                android:title="@string/channel_detail_share"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/channel_detail_follow"
+                android:icon="@drawable/ic_add_white_24dp"
+                android:title="@string/channel_detail_follow"
+                app:showAsAction="never"></item>
+        </menu>
+    </item>
+
+</menu>

@@ -1,6 +1,7 @@
 package com.menglingpeng.vonvimeo.mvp.view;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
+import com.menglingpeng.vonvimeo.utils.ShareAndOpenInBrowserUtil;
 
 import org.w3c.dom.Text;
 
@@ -30,6 +32,7 @@ public class ChannelDetailActivity extends BaseActivity implements RecyclerView{
     private Toolbar toolbar;
     private String title;
     private String type;
+    private Context context;
 
     @Override
     protected void initLayoutId() {
@@ -39,6 +42,7 @@ public class ChannelDetailActivity extends BaseActivity implements RecyclerView{
     @Override
     protected void initViews() {
         super.initViews();
+        context = getApplicationContext();
         coordinatorLayout = (CoordinatorLayout) findViewById(R.id.channel_detail_cdl);
         channelDetailCtbl = (CollapsingToolbarLayout)findViewById(R.id.channel_detail_ctbl);
         backgroundIv = (ImageView)findViewById(R.id.channel_detail_backgroud_iv);
@@ -60,12 +64,26 @@ public class ChannelDetailActivity extends BaseActivity implements RecyclerView{
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.channel_detail_toolbar_overflow_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.channel_detail_share:
+                break;
+            case R.id.channel_detail_follow:
+                break;
+            default:
+                break;
+        }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void shareChannel(){
+        String shareText = null;
+        ShareAndOpenInBrowserUtil.share(context, shareText);
     }
 
     @Override

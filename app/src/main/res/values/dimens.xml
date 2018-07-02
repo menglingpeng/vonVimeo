@@ -51,4 +51,26 @@
     <dimen name="spinner_layout_width">0dp</dimen>
     <item name="spinner_List_layout_weight" format="integer" type="dimen">1</item>
     <item name="spinner_sort_layout_weight" format="integer" type="dimen">1</item>
+
+    <dimen name="channel_detail_ctb_layout_height">350dp</dimen>
+    <dimen name="channel_detail_avatar_iv_layout_width">100dp</dimen>
+    <dimen name="channel_detail_avatar_iv_layout_height">100dp</dimen>
+    <dimen name="channel_detail_avatar_iv_layout_marginTop">50dp</dimen>
+    <item name="channel_detail_ctbl_scrimAnimationDuration" format="integer" type="dimen">300</item>
+    <dimen name="channel_detail_desc_tv_layout_marginTop">20dp</dimen>
+    <dimen name="channel_detail_desc_tv_layout_marginLeft">15dp</dimen>
+    <dimen name="channel_detail_desc_tv_layout_marginRight">15dp</dimen>
+    <dimen name="channel_detail_tablayout_detail_rl_layout_height">150dp</dimen>
+    <dimen name="channel_detail_tablayout_detail_ll_layout_marginTop">20dp</dimen>
+    <dimen name="channel_detail_tablayout_detail_shots_rl_layout_width">0dp</dimen>
+    <item name="channel_detail_tablayout_detail_shots_rl_layout_weight" format="integer" type="dimen">1</item>
+    <dimen name="channel_detail_tablayout_detail_shots_rl_layout_marginLeft">10dp</dimen>
+    <dimen name="channel_detail_tablayout_detail_shots_rl_layout_marginRight">10dp</dimen>
+    <dimen name="channel_detail_tablayout_detail_shots_im_layout_marginLeft">15dp</dimen>
+    <dimen name="channel_detail_tablayout_detail_shots_count_tx_layout_marginLeft">15dp</dimen>
+    <dimen name="channel_detail_tablayout_item_view_layout_width">1dp</dimen>
+    <dimen name="channel_detail_tablayout_item_view_layout_marginTop">10dp</dimen>
+    <dimen name="channel_detail_tablayout_item_view_layout_marginBottom">10dp</dimen>
+    <dimen name="channel_detail_start_bt_layout_marginTop">15dp</dimen>
+
 </resources>

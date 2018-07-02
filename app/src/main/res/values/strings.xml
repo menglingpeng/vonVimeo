@@ -18,4 +18,5 @@
 
     <string name="name">名称</string>
     <string name="description">说明</string>
+    <string name="channel_detail_start_bt_text">开始观看</string>
 </resources>

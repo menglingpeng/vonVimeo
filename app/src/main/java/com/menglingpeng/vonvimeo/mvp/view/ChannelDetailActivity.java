@@ -1,10 +1,9 @@
 package com.menglingpeng.vonvimeo.mvp.view;
 
-import android.app.Activity;
 import android.content.Context;
-import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,7 +16,6 @@ import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
 import com.menglingpeng.vonvimeo.utils.ShareAndOpenInBrowserUtil;
 
-import org.w3c.dom.Text;
 
 public class ChannelDetailActivity extends BaseActivity implements RecyclerView{
 
@@ -58,6 +56,14 @@ public class ChannelDetailActivity extends BaseActivity implements RecyclerView{
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+        floatingActionButton.setVisibility(FloatingActionButton.VISIBLE);
+        replaceFragment(RecyclerFragment.newInstance(type));
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showCreateBucketDialog();
             }
         });
     }

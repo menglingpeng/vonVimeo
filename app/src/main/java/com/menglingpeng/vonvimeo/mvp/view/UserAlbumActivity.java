@@ -50,6 +50,14 @@ public class UserAlbumActivity extends BaseActivity implements RecyclerView{
                 finish();
             }
         });
+        floatingActionButton.setVisibility(FloatingActionButton.VISIBLE);
+        replaceFragment(RecyclerFragment.newInstance(type));
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showCreateAlbumDialog();
+            }
+        });
     }
 
     private void showCreateAlbumDialog() {

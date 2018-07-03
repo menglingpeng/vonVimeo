@@ -34,12 +34,14 @@ public class Constants {
     public static final String REQUEST_LIST_STAFF_PICKS = "request_list_staff_picks";
     public static final String REQUEST_LIST_CATEGORITES = "request_list_categoties";
     public static final String REQUEST_LIST_CHANNELS = "request_list_channels";
+
     public static final String REQUEST_LIST_GROUPS = "request_list_groups";
 
     public static final String REQUEST_LIST_USER_FEED_VIDEOS = "request_list_user_feed_videos";
     public static final String REQUEST_LIST_USER_ALBUMS = "request_list_user_albums";
-    public static final String REQUEST_REQUEST_CREATE_A_ALBUM = "request_crate_a_album";
+    public static final String REQUEST_REQUEST_CREATE_A_ALBUM = "request_create_a_album";
     public static final String REQUEST_LIST_USER_PROJECTS = "request_list_user_projects";
+    public static final String REQUEST_REQUEST_CREATE_A_PROJECT = "request_create_a_project";
 
     public static final String REQUEST_LIST_ALL_VIDEO_FOR_A_CHANNEL = "request_list_all_video_for_a_channel";
 

@@ -34,6 +34,10 @@ public class Constants {
     public static final String REQUEST_LIST_STAFF_PICKS = "request_list_staff_picks";
     public static final String REQUEST_LIST_CATEGORITES = "request_list_categoties";
     public static final String REQUEST_LIST_CHANNELS = "request_list_channels";
+    public static final String REQUEST_LIST_TITLE= "request_list_title";
+    public static final String REQUEST_LIST_DATE_MODIFIED = "request_list_date_modified";
+    public static final String REQUEST_LIST_DATE_ADDED = "request_list_date_added";
+    public static final String REQUEST_LIST_DURATION = "request_list_duration";
 
     public static final String REQUEST_LIST_GROUPS = "request_list_groups";
 

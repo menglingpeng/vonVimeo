@@ -62,6 +62,32 @@
 
             </LinearLayout>
 
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/my_video_spinner_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <Spinner
+                    android:id="@+id/my_video_spinner"
+                    android:layout_width="@dimen/spinner_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="@dimen/spinner_List_layout_weight"
+                    android:backgroundTint="@android:color/white"
+                    android:backgroundTintMode="src_atop"
+                    android:dropDownWidth="@dimen/spinner_drop_down_width"
+                    android:popupBackground="@color/colorPrimary"></Spinner>
+
+                <TextView
+                    android:layout_width="@dimen/spinner_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="@dimen/spinner_sort_layout_weight"
+                    android:visibility="gone"
+                    android:backgroundTint="@android:color/white"></TextView>
+
+            </LinearLayout>
+
         </android.support.design.widget.AppBarLayout>
 
         <android.support.v4.view.ViewPager

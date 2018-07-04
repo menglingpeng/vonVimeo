@@ -16,6 +16,22 @@
     <string name="videos">视频</string>
     <string name="channels">频道</string>
 
+    <string name="expore_spinner_manage_myvideos">My videos</string>
+    <string name="expore_spinner_manage_viewstats">View stats</string>
+    <string name="expore_spinner_manage_sellvideos">Sell videos</string>
+    <string name="expore_spinner_manage_videoschool">Video School</string>
+    <string name="explore_spinner_manage_upgrade">Upgrade</string>
+    <string name="explore_spinner_watch_staffpicks">Staff Picks</string>
+    <string name="explore_spinner_watch_categaroties">Categaroties</string>
+    <string name="explore_spinner_watch_channels">Channels</string>
+    <string name="explore_spinner_watch_groups">Groups</string>
+
+    <string name="my_video_spinner_title">Title</string>
+    <string name="my_video_spinner_date_modified">Date modified</string>
+    <string name="my_video_spinner__date_added">Date added</string>
+    <string name="my_video_spinner__duration">Duration</string>
+
+
     <string name="name">名称</string>
     <string name="description">说明</string>
     <string name="channel_detail_start_bt_text">开始观看</string>

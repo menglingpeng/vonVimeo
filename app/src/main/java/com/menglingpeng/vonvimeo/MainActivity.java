@@ -43,6 +43,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     private NavigationView navigationView;
     private RelativeLayout navHeaderRl;
     private LinearLayout exploreLl;
+    private LinearLayout projectSpinnerLl;
     private ImageView navAvatarIv;
     private TextView navNameTv;
     private TextView navDescTv;
@@ -54,6 +55,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     private TabPagerFragmentAdapter adapter;
     private Spinner manageSpinner;
     private Spinner watchSpinner;
+    private Spinner myVideoSpinner;
     private static RecyclerFragment currentFragment = null;
 
     private static final int SMOOTHSCROLL_TOP_POSITION = 50;
@@ -198,7 +200,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         }
     }
 
-    private void initSpinner() {
+    private void initExplorSpinner() {
         exploreLl.setVisibility(LinearLayout.VISIBLE);
         manageSpinner = (Spinner) findViewById(R.id.manage_spinner);
         watchSpinner = (Spinner) findViewById(R.id.watch_spinner);
@@ -255,6 +257,39 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                         break;
                     case 3:
                         replaceFragment(newFragment(Constants.REQUEST_LIST_GROUPS));
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
+    }
+
+    private void initMyVideoSpinner(){
+
+        myVideoSpinner.setVisibility(LinearLayout.VISIBLE);
+        myVideoSpinner = (Spinner) findViewById(R.id.my_video_spinner);
+        ArrayAdapter<String> myVideoSpinnerAdatper;
+        String[] myVideoSpinnerArray = getResources().getStringArray(R.array.my_video);
+        myVideoSpinnerAdatper = new ArrayAdapter<String>(getApplicationContext(), R.layout.custom_spinner_text,
+                myVideoSpinnerArray);
+        myVideoSpinnerAdatper.setDropDownViewResource(R.layout.custom_spinner_dropdown_item);
+        myVideoSpinner.setAdapter(myVideoSpinnerAdatper);
+        myVideoSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                switch (position) {
+                    case 0:
+                        replaceFragment(newFragment(Constants.REQUEST_LIST_TITLE));
+                        break;
+                    case 1:
+                        replaceFragment(newFragment(Constants.REQUEST_LIST_DATE_MODIFIED));
+                        break;
+                    case 2:
+                        replaceFragment(newFragment(Constants.REQUEST_LIST_DATE_ADDED));
+                        break;
+                    case 3:
+                        replaceFragment(newFragment(Constants.REQUEST_LIST_DURATION));
                         break;
                     default:
                         break;

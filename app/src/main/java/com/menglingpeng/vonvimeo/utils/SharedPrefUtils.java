@@ -5,6 +5,8 @@ import android.content.SharedPreferences;
 
 import com.menglingpeng.vonvimeo.base.BaseApplication;
 
+import java.util.HashMap;
+
 public class SharedPrefUtils {
 
     private static Context context = BaseApplication.getContext();
@@ -36,4 +38,40 @@ public class SharedPrefUtils {
         }
         return is;
     }
+
+    /**
+     * 保存网络请求的各种参数。
+     *
+     * @param map 网络请求的各种参数。
+     * @return
+     */
+    public static boolean saveParameters(HashMap<String, String> map) {
+        for (String key : map.keySet()) {
+            editor.putString(key, map.get(key));
+        }
+        return editor.commit();
+    }
+
+    /**
+     *
+     * 获取保存的授权token。
+     *
+     * @return
+     */
+    public static String getAuthToken() {
+        String accessToken = sp.getString(Constants.ACCESS_TOKEN, null);
+        return accessToken;
+    }
+
+    /**
+     *
+     * 退出登录时，删除保存到本地的授权token。
+     *
+     * @return
+     */
+    public static void deleteAuthToken() {
+        editor.putString(Constants.ACCESS_TOKEN, Constants.APP_ACCESS_TOKEN);
+        editor.commit();
+    }
+
 }

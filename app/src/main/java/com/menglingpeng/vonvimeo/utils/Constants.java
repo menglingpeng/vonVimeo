@@ -6,6 +6,8 @@ public class Constants {
     public static final String IS_FIRST_START = "is_first_start";
     public static final String IS_LOGIN = "is_login";
 
+    public static final String APP_ACCESS_TOKEN = "08f5cf2575c9b1149320aaa1340102eb";
+
     public static final String REQUEST_GET_MEIHOD = "get";
     public static final String REQUEST_POST_MEIHOD = "post";
     public static final String REQUEST_PUT_MEIHOD = "put";

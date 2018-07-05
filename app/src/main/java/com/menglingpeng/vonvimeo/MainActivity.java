@@ -29,6 +29,7 @@ import android.widget.TextView;
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.adapter.TabPagerFragmentAdapter;
 import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
+import com.menglingpeng.vonvimeo.mvp.view.SearchActivity;
 import com.menglingpeng.vonvimeo.utils.Constants;
 
 import java.util.ArrayList;
@@ -89,6 +90,8 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.main_search:
+                Intent intent = new Intent(this, SearchActivity.class);
+                startActivity(intent);
                 break;
             case R.id.main_more:
                 break;

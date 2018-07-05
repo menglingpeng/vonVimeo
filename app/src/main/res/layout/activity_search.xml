@@ -6,10 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".mvp.view.SearchActivity">
 
-    <android.support.design.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -24,8 +20,11 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <TextView
+    <ListView
+        android:id="@+id/search_lv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:divider="@android:color/black"
+        android:dividerHeight="1dp"></ListView>
 
 </android.support.constraint.ConstraintLayout>

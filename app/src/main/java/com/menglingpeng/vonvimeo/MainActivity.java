@@ -81,11 +81,20 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_toolbar_overflow_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.main_search:
+                break;
+            case R.id.main_more:
+                break;
+            default:
+                break;
+        }
         return super.onOptionsItemSelected(item);
     }
 

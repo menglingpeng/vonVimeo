@@ -26,7 +26,8 @@
         <activity android:name=".mvp.view.VideoDetailActivity" />
         <activity android:name=".mvp.view.UserProjectActivity" />
         <activity android:name=".mvp.view.CategoritesActivity" />
-        <activity android:name=".mvp.view.ChannelDetailActivity"></activity>
+        <activity android:name=".mvp.view.ChannelDetailActivity" />
+        <activity android:name=".mvp.view.SearchActivity"></activity>
     </application>
 
 </manifest>

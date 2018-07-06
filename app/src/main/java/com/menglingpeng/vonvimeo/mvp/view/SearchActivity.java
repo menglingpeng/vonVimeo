@@ -1,6 +1,7 @@
 package com.menglingpeng.vonvimeo.mvp.view;
 
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.support.v7.view.menu.MenuItemImpl;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,6 +17,8 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+
+import com.menglingpeng.vonvimeo.utils.Cheeses;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -110,6 +114,32 @@ public class SearchActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         return super.onOptionsItemSelected(item);
+    }
+
+    private Cursor queryData(String key) {
+        SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(getFilesDir() + "video.db", null);
+        Cursor cursor = null;
+        try {
+            String querySql = "select * from tb_video where name like '%" + key + "%'";
+            cursor = db.rawQuery(querySql, null);
+            Log.e("CSDN_LQR", "querySql = " + querySql);
+        } catch (Exception e) {
+            e.printStackTrace();
+            String createSql = "create table tb_video (_id integer primary key autoincrement,name varchar(100))";
+            db.execSQL(createSql);
+
+            String insertSql = "insert into tb_video values (null,?)";
+            for (int i = 0; i < Cheeses.sCheeseStrings.length; i++) {
+                db.execSQL(insertSql, new String[]{Cheeses.sCheeseStrings[i]});
+            }
+
+            String querySql = "select * from tb_video where name like '%" + key + "%'";
+            cursor = db.rawQuery(querySql, null);
+
+            Log.e("CSDN_LQR", "createSql = " + createSql);
+            Log.e("CSDN_LQR", "querySql = " + querySql);
+        }
+        return cursor;
     }
 
     private void setAdapter(Cursor cursor) {

@@ -7,6 +7,9 @@ public class Constants {
     public static final String IS_LOGIN = "is_login";
 
     public static final String APP_ACCESS_TOKEN = "08f5cf2575c9b1149320aaa1340102eb";
+    public static final String REDIRECT_USERS_TO_REQUEST_DRIBBBLE_ACCESS_URL = "https://dribbble" +
+            ".com/oauth/authorize?client_id=2824a0365fffaa9fe9b74dce83921d185e5a45ad6c879a06f83399a25ce128a0" +
+            "&redirect_uri=shots://dribbble-login-callback/shotDetail&scope=public+write+comment+upload";
 
     public static final String REQUEST_GET_MEIHOD = "get";
     public static final String REQUEST_POST_MEIHOD = "post";

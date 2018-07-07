@@ -3,6 +3,7 @@ package com.menglingpeng.vonvimeo.utils;
 public class Constants {
 
     public static final String TYPE = "type";
+    public static final String ID = "id";
     public static final String IS_FIRST_START = "is_first_start";
     public static final String IS_LOGIN = "is_login";
 
@@ -53,6 +54,9 @@ public class Constants {
     public static final String REQUEST_REQUEST_CREATE_A_PROJECT = "request_create_a_project";
 
     public static final String REQUEST_LIST_ALL_VIDEO_FOR_A_CHANNEL = "request_list_all_video_for_a_channel";
+
+    public static final String REQUEST_SINGLE_USER = "single_user";
+    public static final String REQUEST_AUTH_USER = "auth_user";
 
 
     //默认值1

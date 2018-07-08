@@ -11,6 +11,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -18,15 +19,19 @@ import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.adapter.TabPagerFragmentAdapter;
+import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
 import com.menglingpeng.vonvimeo.mvp.model.User;
 import com.menglingpeng.vonvimeo.mvp.presenter.RecyclerPresenter;
 import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
 import com.menglingpeng.vonvimeo.utils.Constants;
+import com.menglingpeng.vonvimeo.utils.ImageLoader;
+import com.menglingpeng.vonvimeo.utils.JsonUtils;
+import com.menglingpeng.vonvimeo.utils.TextUtil;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class UserProfileActivity extends BaseActivity {
+public class UserProfileActivity extends BaseActivity implements RecyclerView {
 
     private String type;
     private User user = null;
@@ -66,6 +71,13 @@ public class UserProfileActivity extends BaseActivity {
     protected void initViews() {
         super.initViews();
         progressBar = (ProgressBar) findViewById(R.id.profile_pb);
+    }
+
+
+    private void initData(String requestMethod){
+        presenter = new RecyclerPresenter(UserProfileActivity.this, type, Constants.REQUEST_NORMAL,
+                requestMethod, map, context);
+        presenter.loadJson();
     }
 
     @Override
@@ -155,5 +167,75 @@ public class UserProfileActivity extends BaseActivity {
             fragmentsList.add(RecyclerFragment.newInstance(userId, Constants.REQUEST_LIST_FOLLOWERS_FOR_A_USER));
         }
         adapter.setFragments(fragmentsList, titlesList);
+    }
+
+    @Override
+    public void hideProgress() {
+
+    }
+
+    @Override
+    public void loadFailed(String msg) {
+
+    }
+
+    @Override
+    public void loadSuccess(String json, String requestType) {
+        progressBar.setVisibility(ProgressBar.GONE);
+        user = JsonUtils.parseJson(json, User.class);
+        profileCdl = (CoordinatorLayout)findViewById(R.id.profile_cdl);
+        collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.profile_ctbl);
+        collapsingToolbarLayout.setVisibility(CollapsingToolbarLayout.VISIBLE);
+                /*collapsingToolbarLayout.setCollapsedTitleTextColor(Color.WHITE);
+                collapsingToolbarLayout.setExpandedTitleColor(Color.WHITE);*/
+        toolbar = (Toolbar) findViewById(R.id.profile_tb);
+        profileNameTv = (TextView) findViewById(R.id.profile_name_tv);
+        profileDescTv = (TextView) findViewById(R.id.profile_desc_tv);
+        profileBackgroundIv = (ImageView) findViewById(R.id.profile_backgroud_iv);
+        profileAvatarIv = (ImageView) findViewById(R.id.profile_avatar_iv);
+        followBt = (Button) findViewById(R.id.profile_follow_bt);
+        unfollowBt = (Button) findViewById(R.id.profile_unfollow_bt);
+        if (type.equals(Constants.REQUEST_SINGLE_USER)) {
+            if (isFollowing) {
+                unfollowBt.setVisibility(Button.VISIBLE);
+                unfollowBt.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        type = Constants.REQUEST_UNFOLLOW_A_USER;
+                        initData(Constants.REQUEST_DELETE_MEIHOD);
+                    }
+                });
+            } else {
+                followBt.setVisibility(Button.VISIBLE);
+                followBt.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        type = Constants.REQUEST_FOLLOW_A_USER;
+                        initData(Constants.REQUEST_PUT_MEIHOD);
+                    }
+                });
+            }
+        }
+        profileTl = (TabLayout) findViewById(R.id.profile_tl);
+        profileTl.setVisibility(TabLayout.VISIBLE);
+        profileVp = (ViewPager) findViewById(R.id.profile_vp);
+        fragmentsList = new ArrayList<>();
+        setSupportActionBar(toolbar);
+        //隐藏Toolbar的标题
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        toolbar.setNavigationIcon(R.drawable.ic_back);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        profileNameTv.setText(user.getName());
+        TextUtil.setHtmlText(profileDescTv, user.getBio());
+        ImageLoader.loadBlurImage(getApplicationContext(), user.getAvatar_url(), profileBackgroundIv);
+        ImageLoader.loadCricleImage(getApplicationContext(), user.getAvatar_url(), profileAvatarIv);
+        profileBackgroundIv.setAlpha(100);
+        initTabPager();
+
     }
 }

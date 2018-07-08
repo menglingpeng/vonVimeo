@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 
 import com.menglingpeng.vonvimeo.base.BaseFragment;
 import com.menglingpeng.vonvimeo.mvp.adapter.RecyclerAdapter;
+import com.menglingpeng.vonvimeo.mvp.model.User;
 import com.menglingpeng.vonvimeo.mvp.presenter.RecyclerPresenter;
 import com.menglingpeng.vonvimeo.utils.Constants;
 
@@ -22,6 +23,24 @@ public class RecyclerFragment extends BaseFragment {
     public static RecyclerFragment newInstance(String type) {
         Bundle bundle = new Bundle();
         bundle.putString(Constants.TYPE, type);
+        RecyclerFragment fragment = new RecyclerFragment();
+        fragment.setArguments(bundle);
+        return fragment;
+    }
+
+    public static RecyclerFragment newInstance(String id, String type) {
+        Bundle bundle = new Bundle();
+        bundle.putString(Constants.TYPE, type);
+        bundle.putString(Constants.ID, id);
+        RecyclerFragment fragment = new RecyclerFragment();
+        fragment.setArguments(bundle);
+        return fragment;
+    }
+
+    public static RecyclerFragment newInstance(User user, String type) {
+        Bundle bundle = new Bundle();
+        bundle.putString(Constants.TYPE, type);
+        bundle.putSerializable(Constants.USER, user);
         RecyclerFragment fragment = new RecyclerFragment();
         fragment.setArguments(bundle);
         return fragment;

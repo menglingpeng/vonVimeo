@@ -7,6 +7,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -97,5 +98,62 @@ public class UserProfileActivity extends BaseActivity {
             }
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void initTabPager() {
+        adapter = new TabPagerFragmentAdapter(getSupportFragmentManager());
+        initTabFragments();
+        profileVp.setAdapter(adapter);
+        profileTl.setupWithViewPager(profileVp);
+        if(user.getShots_count() != 0){
+            profileVp.setCurrentItem(1);
+        }
+        profileTl.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                profileVp.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+                scrollToTop(fragmentsList.get(tab.getPosition()).getRecyclerView());
+            }
+        });
+
+    }
+
+    private void scrollToTop(android.support.v7.widget.RecyclerView list) {
+        int lastPosition;
+        if (null != list) {
+            LinearLayoutManager manager = (LinearLayoutManager) list.getLayoutManager();
+            lastPosition = manager.findLastVisibleItemPosition();
+            if (lastPosition < SMOOTHSCROLL_TOP_POSITION) {
+                list.smoothScrollToPosition(0);
+            } else {
+                list.scrollToPosition(0);
+            }
+        }
+    }
+
+    private void initTabFragments() {
+        ArrayList<String> titlesList = new ArrayList<>();
+        titlesList.add(getText(R.string.detail).toString());
+        titlesList.add(getText(R.string.explore_spinner_list_shots).toString());
+        titlesList.add(getText(R.string.followers).toString());
+        if (type.equals(Constants.REQUEST_AUTH_USER)) {
+            fragmentsList.add(RecyclerFragment.newInstance(user, Constants.REQUEST_LIST_DETAIL_FOR_AUTH_USER));
+            fragmentsList.add(RecyclerFragment.newInstance(user, Constants.REQUEST_LIST_VIDEOS_FOR_AUTH_USER));
+            fragmentsList.add(RecyclerFragment.newInstance(Constants.REQUEST_LIST_FOLLOWERS_FOR_AUTH_USER));
+        } else {
+            fragmentsList.add(RecyclerFragment.newInstance(user, Constants.REQUEST_LIST_DETAIL_FOR_A_USER));
+            fragmentsList.add(RecyclerFragment.newInstance(user, Constants.REQUEST_LIST_VIDEOS_FOR_A_USER));
+            fragmentsList.add(RecyclerFragment.newInstance(userId, Constants.REQUEST_LIST_FOLLOWERS_FOR_A_USER));
+        }
+        adapter.setFragments(fragmentsList, titlesList);
     }
 }

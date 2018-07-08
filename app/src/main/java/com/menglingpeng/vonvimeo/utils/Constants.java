@@ -31,6 +31,7 @@ public class Constants {
 
     public static final String NAME = "name";
     public static final String DESCRIPTION = "description";
+    public static final String USER = "user";
 
     public static final String REQUEST_LIST_MY_VIDEOS = "request_list_my_videos";
     public static final String REQUEST_LIST_VIEW_STATS = "request_list_view_stats";
@@ -57,6 +58,16 @@ public class Constants {
 
     public static final String REQUEST_SINGLE_USER = "single_user";
     public static final String REQUEST_AUTH_USER = "auth_user";
+    public static final String REQUEST_LIST_DETAIL_FOR_AUTH_USER = "list_detail_for_auth_user";
+    public static final String REQUEST_LIST_VIDEOS_FOR_AUTH_USER = "list_videos_for_auth_user";
+    public static final String REQUEST_LIST_PROJECTS_FOR_AUTH_USER = "list_projects_for_auth_user";
+    public static final String REQUEST_LIST_FOLLOWERS_FOR_AUTH_USER = "list_followers_for_auth_user";
+    public static final String REQUEST_LIST_FOLLOWING_FOR_AUTH_USER = "list_following_for_auth_user";
+    public static final String REQUEST_LIST_DETAIL_FOR_A_USER = "list_detail_for_a_user";
+    public static final String REQUEST_LIST_VIDEOS_FOR_A_USER = "list_videos_for_a_user";
+    public static final String REQUEST_LIST_PROJECTS_FOR_A_USER = "list_projects_for_a_user";
+    public static final String REQUEST_LIST_FOLLOWERS_FOR_A_USER = "list_followers_for_a_user";
+    public static final String REQUEST_LIST_FOLLOWING_FOR_A_USER = "list_following_for_a_user";
 
 
     //默认值1

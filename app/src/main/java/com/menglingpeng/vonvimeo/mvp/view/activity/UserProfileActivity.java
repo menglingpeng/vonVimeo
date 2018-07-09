@@ -1,10 +1,13 @@
 package com.menglingpeng.vonvimeo.mvp.view.activity;
 
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -26,6 +29,8 @@ import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
 import com.menglingpeng.vonvimeo.utils.Constants;
 import com.menglingpeng.vonvimeo.utils.ImageLoader;
 import com.menglingpeng.vonvimeo.utils.JsonUtils;
+import com.menglingpeng.vonvimeo.utils.ShareAndOpenInBrowserUtil;
+import com.menglingpeng.vonvimeo.utils.SharedPrefUtils;
 import com.menglingpeng.vonvimeo.utils.TextUtil;
 
 import java.util.ArrayList;
@@ -63,6 +68,12 @@ public class UserProfileActivity extends BaseActivity implements RecyclerView {
         type = getIntent().getStringExtra(Constants.TYPE);
         userId = getIntent().getStringExtra(Constants.ID);
         map = new HashMap<>();
+        map.put(Constants.ACCESS_TOKEN, SharedPrefUtils.getAuthToken());
+        if (type.equals(Constants.REQUEST_SINGLE_USER)) {
+            map.put(Constants.ID, userId);
+            type = Constants.CHECK_IF_YOU_ARE_FOLLOWING_A_USER;
+        }
+        initData(Constants.REQUEST_GET_MEIHOD);
         layoutId = R.layout.activity_user_profile;
 
     }
@@ -99,8 +110,10 @@ public class UserProfileActivity extends BaseActivity implements RecyclerView {
         if (type.equals(Constants.REQUEST_AUTH_USER)) {
             switch (item.getItemId()){
                 case R.id.profile_share:
+                    shareUserProfile();
                     break;
                 case R.id.profile_logout:
+                    showLogoutDialog();
                     break;
                 default:
                     break;
@@ -110,6 +123,46 @@ public class UserProfileActivity extends BaseActivity implements RecyclerView {
             }
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void showLogoutDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        AlertDialog dialog;
+        builder.setTitle(getText(R.string.profile_logout));
+        builder.setMessage(getText(R.string.are_you_sure_want_to_logout));
+        builder.setNegativeButton(getText(R.string.cancel), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.setPositiveButton(getText(R.string.profile_logout), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                logout();
+            }
+        });
+        dialog = builder.create();
+        dialog.show();
+    }
+
+    private void logout() {
+        SharedPrefUtils.saveState(Constants.IS_LOGIN, false);
+        SharedPrefUtils.deleteAuthToken();
+        restartApplication();
+    }
+
+    private void restartApplication() {
+        Intent intent = getPackageManager().getLaunchIntentForPackage(getPackageName());
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+    }
+
+    private void shareUserProfile(){
+        String text = new StringBuilder().append(getString(R.string.check_out)).append(user.getName()).append(
+                getString(R.string.s)).append(getString(R.string.user_profile)).append(user.getHtml_url()).append("\n").
+                append(getString(R.string.detail_toolbar_overflow_menu_share_footer_text)).toString();
+        ShareAndOpenInBrowserUtil.share(context, text);
     }
 
     private void initTabPager() {

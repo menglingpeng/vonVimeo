@@ -4,6 +4,11 @@ public class Constants {
 
     public static final String TYPE = "type";
     public static final String ID = "id";
+    public static final String REQUEST_GET_MEIHOD = "get";
+    public static final String REQUEST_POST_MEIHOD = "post";
+    public static final String REQUEST_PUT_MEIHOD = "put";
+    public static final String REQUEST_DELETE_MEIHOD = "delete";
+    public static final String CODE_404_NOT_FOUND = "404";
     public static final String IS_FIRST_START = "is_first_start";
     public static final String IS_LOGIN = "is_login";
 

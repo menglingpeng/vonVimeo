@@ -5,8 +5,6 @@ import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,7 +15,7 @@ import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
 import com.menglingpeng.vonvimeo.mvp.presenter.RecyclerPresenter;
 import com.menglingpeng.vonvimeo.utils.Constants;
 import com.menglingpeng.vonvimeo.utils.SharedPrefUtils;
-import com.menglingpeng.vonvimeo.utils.SnackUtils;
+import com.menglingpeng.vonvimeo.utils.SnackbarUtils;
 
 import java.util.HashMap;
 
@@ -80,7 +78,7 @@ public class UserAlbumActivity extends BaseActivity implements RecyclerView{
             public void onClick(DialogInterface dialog, int which) {
                 String name = bucketNameEt.getText().toString();
                 if (name.equals("")) {
-                    SnackUI.showSnackShort(getApplicationContext(), coordinatorLayout, getString(R.string
+                    SnackbarUtils.showSnackShort(getApplicationContext(), coordinatorLayout, getString(R.string
                             .the_name_of_bucket_is_not_null));
                 } else {
                     HashMap<String, String> map = new HashMap<>();
@@ -91,7 +89,7 @@ public class UserAlbumActivity extends BaseActivity implements RecyclerView{
                     RecyclerPresenter presenter = new RecyclerPresenter(UserAlbumActivity.this, type, Constants
                             .REQUEST_NORMAL, Constants.REQUEST_POST_MEIHOD, map, getApplicationContext());
                     presenter.loadJson();
-                    SnackUtils.showSnackShort(getApplicationContext(), coordinatorLayout, getString(R.string
+                    SnackbarUtils.showSnackShort(getApplicationContext(), coordinatorLayout, getString(R.string
                             .snack_create_a_bucket_text));
                 }
 

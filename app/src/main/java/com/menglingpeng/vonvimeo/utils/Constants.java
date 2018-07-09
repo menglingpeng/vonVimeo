@@ -9,6 +9,8 @@ public class Constants {
     public static final String REQUEST_PUT_MEIHOD = "put";
     public static final String REQUEST_DELETE_MEIHOD = "delete";
     public static final String CODE_404_NOT_FOUND = "404";
+    public static final String CODE_204_NO_CONTENT = "204";
+    public static final String CODE_403_FORBIDDEN = "403";
     public static final String IS_FIRST_START = "is_first_start";
     public static final String IS_LOGIN = "is_login";
 
@@ -17,10 +19,6 @@ public class Constants {
             ".com/oauth/authorize?client_id=2824a0365fffaa9fe9b74dce83921d185e5a45ad6c879a06f83399a25ce128a0" +
             "&redirect_uri=shots://dribbble-login-callback/shotDetail&scope=public+write+comment+upload";
 
-    public static final String REQUEST_GET_MEIHOD = "get";
-    public static final String REQUEST_POST_MEIHOD = "post";
-    public static final String REQUEST_PUT_MEIHOD = "put";
-    public static final String REQUEST_DELETE_MEIHOD = "delete";
 
     public static final String ACCESS_TOKEN = "access_token";
     public static final String REQUEST_NORMAL = "normal";
@@ -55,7 +53,7 @@ public class Constants {
 
     public static final String REQUEST_LIST_USER_FEED_VIDEOS = "request_list_user_feed_videos";
     public static final String REQUEST_LIST_USER_ALBUMS = "request_list_user_albums";
-    public static final String REQUEST_REQUEST_CREATE_A_ALBUM = "request_create_a_album";
+    public static final String REQUEST_CREATE_A_ALBUM = "request_create_a_album";
     public static final String REQUEST_LIST_USER_PROJECTS = "request_list_user_projects";
     public static final String REQUEST_REQUEST_CREATE_A_PROJECT = "request_create_a_project";
 

@@ -265,6 +265,23 @@ public class UserProfileActivity extends BaseActivity implements RecyclerView {
                     SnackbarUtils.showErrorSnackShort(context, profileCdl, getString(R.string.followed_error));
                 }
                 break;
+            case Constants.REQUEST_UNFOLLOW_A_USER:
+                if(json.equals(Constants.CODE_204_NO_CONTENT)){
+                    unfollowBt.setVisibility(Button.GONE);
+                    followBt.setVisibility(Button.VISIBLE);
+                    SnackbarUtils.showSnackShort(context, profileCdl, TextUtil.setAfterBold(context, getString(
+                            R.string.unfollowed_successful), user.getName()));
+                    followBt.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            type = Constants.REQUEST_FOLLOW_A_USER;
+                            initData(Constants.REQUEST_PUT_MEIHOD);
+                        }
+                    });
+                }else {
+                    SnackbarUtils.showErrorSnackShort(context, profileCdl, getString(R.string.unfollowed_error));
+                }
+                break;
             default:
                 progressBar.setVisibility(ProgressBar.GONE);
                 user = JsonUtils.parseJson(json, User.class);

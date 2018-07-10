@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/profile_tablayout_detail_rl"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/profile_tablayout_detail_rl_layout_height"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:id="@+id/profile_tablayout_detail_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/profile_tablayout_detail_ll_layout_marginTop"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/profile_tablayout_detail_shots_rl"
+            android:layout_width="@dimen/profile_tablayout_detail_shots_rl_layout_width"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/profile_tablayout_detail_shots_rl_layout_marginLeft"
+            android:layout_marginRight="@dimen/profile_tablayout_detail_shots_rl_layout_marginRight"
+            android:layout_weight="@dimen/profile_tablayout_detail_shots_rl_layout_weight">
+
+            <ImageView
+                android:id="@+id/profile_tablayout_detail_shots_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/profile_tablayout_detail_shots_im_layout_marginLeft"
+                android:src="@drawable/ic_all_video_grey_600_24dp" />
+
+            <TextView
+                android:id="@+id/profile_tablayout_detail_shots_count_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/profile_tablayout_detail_shots_count_tx_layout_marginLeft"
+                android:layout_toRightOf="@+id/profile_tablayout_detail_shots_iv" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/profile_tablayout_detail_likes_rl"
+            android:layout_width="@dimen/profile_tablayout_detail_shots_rl_layout_width"
+            android:layout_height="wrap_content"
+            android:layout_weight="@dimen/profile_tablayout_detail_shots_rl_layout_weight">
+
+            <ImageView
+                android:id="@+id/profile_tablayout_detail_likes_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/profile_tablayout_detail_shots_im_layout_marginLeft"
+                android:src="@drawable/ic_favorite_grey_600_24dp" />
+
+            <TextView
+                android:id="@+id/profile_tablayout_detail_likes_count_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/profile_tablayout_detail_shots_count_tx_layout_marginLeft"
+                android:layout_toRightOf="@+id/profile_tablayout_detail_likes_iv" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/profile_tablayout_detail_2_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_tablayout_detail_ll"
+        android:layout_marginTop="@dimen/profile_tablayout_detail_ll_layout_marginTop"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/profile_tablayout_detail_buckets_rl"
+            android:layout_width="@dimen/profile_tablayout_detail_shots_rl_layout_width"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/profile_tablayout_detail_shots_rl_layout_marginLeft"
+            android:layout_marginRight="@dimen/profile_tablayout_detail_shots_rl_layout_marginRight"
+            android:layout_weight="@dimen/profile_tablayout_detail_shots_rl_layout_weight">
+
+            <ImageView
+                android:id="@+id/profile_tablayout_detail_buckets_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/profile_tablayout_detail_shots_im_layout_marginLeft"
+                android:src="@drawable/ic_buckets_grey_600_24dp" />
+
+            <TextView
+                android:id="@+id/profile_tablayout_detail_buckets_count_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/profile_tablayout_detail_shots_count_tx_layout_marginLeft"
+                android:layout_toRightOf="@+id/profile_tablayout_detail_buckets_iv" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/profile_tablayout_detail_projects_rl"
+            android:layout_width="@dimen/profile_tablayout_detail_shots_rl_layout_width"
+            android:layout_height="wrap_content"
+            android:layout_weight="@dimen/profile_tablayout_detail_shots_rl_layout_weight">
+
+            <ImageView
+                android:id="@+id/profile_tablayout_detail_projects_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/profile_tablayout_detail_shots_im_layout_marginLeft"
+                android:src="@drawable/ic_folder_grey_600_24dp" />
+
+            <TextView
+                android:id="@+id/profile_tablayout_detail_projects_count_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/profile_tablayout_detail_shots_count_tx_layout_marginLeft"
+                android:layout_toRightOf="@+id/profile_tablayout_detail_projects_iv" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+    <View
+        android:id="@+id/profile_tablayout_item_view"
+        android:layout_width="@dimen/profile_tablayout_item_view_layout_width"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="@dimen/profile_tablayout_item_view_layout_marginBottom"
+        android:layout_marginTop="@dimen/profile_tablayout_item_view_layout_marginTop"
+        android:background="@color/bucket_recycler_item_view_background"></View>
+
+</RelativeLayout>

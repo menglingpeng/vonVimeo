@@ -155,6 +155,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         view = inflater.inflate(R.layout.user_detail_recycler_item, parent, false);
                         viewHolder = new DetailOfUserViewHolder(view);
                         break;
+                    case Constants.REQUEST_LIST_FOLLOWERS_FOR_AUTH_USER:
+                        view = inflater.inflate(R.layout.user_follow_recycler_item, parent, false);
+                        viewHolder = new FollowOfUserViewHolder(view);
+                        break;
                      break;
                         default:
                             break;
@@ -395,6 +399,26 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             profileTablayoutDetailFollowingsCountTv = (TextView) view.findViewById(R.id
                     .profile_tablayout_detail_followings_count_tv);
 
+        }
+    }
+
+    public class FollowOfUserViewHolder extends RecyclerView.ViewHolder {
+        public final RelativeLayout followerRl;
+        public final ImageView followerAvatarIv;
+        public final TextView followerNameTv;
+        public final TextView followerLocationTv;
+        public final TextView followerShotsCountTv;
+        public final TextView followersOfFollowerCountTv;
+
+        public FollowOfUserViewHolder(View view) {
+            super(view);
+            followerRl = (RelativeLayout) view.findViewById(R.id.profile_tablayout_follow_rl);
+            followerAvatarIv = (ImageView) view.findViewById(R.id.profile_tablayout_follow_avatar_iv);
+            followerLocationTv = (TextView) view.findViewById(R.id.profile_tablayout_follow_location_tv);
+            followerNameTv = (TextView) view.findViewById(R.id.profile_tablayout_follow_name_tv);
+            followerShotsCountTv = (TextView) view.findViewById(R.id.profile_tablayout_follow_shots_count_tv);
+            followersOfFollowerCountTv = (TextView) view.findViewById(R.id
+                    .profile_tablayout_followers_of_follow_count_tv);
         }
     }
 

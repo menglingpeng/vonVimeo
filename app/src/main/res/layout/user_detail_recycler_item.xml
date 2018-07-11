@@ -113,7 +113,59 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/profile_tablayout_detail_3_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_tablayout_detail_2_ll"
+        android:layout_marginTop="@dimen/profile_tablayout_detail_ll_layout_marginTop"
+        android:orientation="horizontal">
 
+        <RelativeLayout
+            android:id="@+id/profile_tablayout_detail_followers_rl"
+            android:layout_width="@dimen/profile_tablayout_detail_shots_rl_layout_width"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/profile_tablayout_detail_shots_rl_layout_marginLeft"
+            android:layout_marginRight="@dimen/profile_tablayout_detail_shots_rl_layout_marginRight"
+            android:layout_weight="@dimen/profile_tablayout_detail_shots_rl_layout_weight">
+
+            <ImageView
+                android:id="@+id/profile_tablayout_detail_followers_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/profile_tablayout_detail_shots_im_layout_marginLeft"
+                android:src="@drawable/ic_person_grey_600_24dp" />
+
+            <TextView
+                android:id="@+id/profile_tablayout_detail_followers_count_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/profile_tablayout_detail_shots_count_tx_layout_marginLeft"
+                android:layout_toRightOf="@+id/profile_tablayout_detail_followers_iv" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/profile_tablayout_detail_followings_rl"
+            android:layout_width="@dimen/profile_tablayout_detail_shots_rl_layout_width"
+            android:layout_height="wrap_content"
+            android:layout_weight="@dimen/profile_tablayout_detail_shots_rl_layout_weight">
+
+            <ImageView
+                android:id="@+id/profile_tablayout_detail_followings_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/profile_tablayout_detail_shots_im_layout_marginLeft"
+                android:src="@drawable/ic_person_outline_grey_600_24dp" />
+
+            <TextView
+                android:id="@+id/profile_tablayout_detail_followings_count_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/profile_tablayout_detail_shots_count_tx_layout_marginLeft"
+                android:layout_toRightOf="@+id/profile_tablayout_detail_followings_iv" />
+        </RelativeLayout>
+
+    </LinearLayout>
 
     <View
         android:id="@+id/profile_tablayout_item_view"
@@ -122,6 +174,6 @@
         android:layout_centerInParent="true"
         android:layout_marginBottom="@dimen/profile_tablayout_item_view_layout_marginBottom"
         android:layout_marginTop="@dimen/profile_tablayout_item_view_layout_marginTop"
-        android:background="@color/bucket_recycler_item_view_background"></View>
+        android:background="@color/recycler_item_view_background"></View>
 
 </RelativeLayout>

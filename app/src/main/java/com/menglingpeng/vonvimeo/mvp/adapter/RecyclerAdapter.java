@@ -151,6 +151,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         view = inflater.inflate(R.layout.layout.recycler_item_groups, parent, false);
                         viewHolder = new GroupViewHolder(view);
                         break;
+                    case Constants.REQUEST_LIST_DETAIL_FOR_AUTH_USER:
+                        view = inflater.inflate(R.layout.user_detail_recycler_item, parent, false);
+                        viewHolder = new DetailOfUserViewHolder(view);
+                        break;
                      break;
                         default:
                             break;
@@ -349,6 +353,48 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         public GroupViewHolder(View view) {
             super(view);
             groupIv = (ImageView)view.findViewById(R.id.group_iv);
+        }
+    }
+
+    public class DetailOfUserViewHolder extends RecyclerView.ViewHolder {
+        public final RelativeLayout profileTablayoutDetailShotsRl;
+        public final RelativeLayout profileTablayoutDetailLikesRl;
+        public final RelativeLayout profileTablayoutDetailBucketsRl;
+        public final RelativeLayout profileTablayoutDetailProjectsRl;
+        public final RelativeLayout profileTablayoutDetailFollowersRl;
+        public final RelativeLayout profileTablayoutDetailFollowingsRl;
+        public final TextView profileTablayoutDetailShotsCountTv;
+        public final TextView profileTablayoutDetailLikesCountTv;
+        public final TextView profileTablayoutDetailBucketsCountTv;
+        public final TextView profileTablayoutDetailProjectsCountTv;
+        public final TextView profileTablayoutDetailFollowersCountTv;
+        public final TextView  profileTablayoutDetailFollowingsCountTv;
+
+        public DetailOfUserViewHolder(View view) {
+            super(view);
+            profileTablayoutDetailShotsRl = (RelativeLayout) view.findViewById(R.id.profile_tablayout_detail_shots_rl);
+            profileTablayoutDetailLikesRl = (RelativeLayout) view.findViewById(R.id.profile_tablayout_detail_likes_rl);
+            profileTablayoutDetailBucketsRl = (RelativeLayout) view.findViewById(R.id
+                    .profile_tablayout_detail_buckets_rl);
+            profileTablayoutDetailProjectsRl = (RelativeLayout) view.findViewById(R.id
+                    .profile_tablayout_detail_projects_rl);
+            profileTablayoutDetailFollowersRl = (RelativeLayout) view.findViewById(R.id
+                    .profile_tablayout_detail_followers_rl);
+            profileTablayoutDetailFollowingsRl = (RelativeLayout) view.findViewById(R.id
+                    .profile_tablayout_detail_followings_rl);
+            profileTablayoutDetailShotsCountTv = (TextView) view.findViewById(R.id
+                    .profile_tablayout_detail_shots_count_tv);
+            profileTablayoutDetailLikesCountTv = (TextView) view.findViewById(R.id
+                    .profile_tablayout_detail_likes_count_tv);
+            profileTablayoutDetailBucketsCountTv = (TextView) view.findViewById(R.id
+                    .profile_tablayout_detail_buckets_count_tv);
+            profileTablayoutDetailProjectsCountTv = (TextView) view.findViewById(R.id
+                    .profile_tablayout_detail_projects_count_tv);
+            profileTablayoutDetailFollowersCountTv = (TextView) view.findViewById(R.id
+                    .profile_tablayout_detail_followers_count_tv);
+            profileTablayoutDetailFollowingsCountTv = (TextView) view.findViewById(R.id
+                    .profile_tablayout_detail_followings_count_tv);
+
         }
     }
 

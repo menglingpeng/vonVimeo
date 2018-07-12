@@ -51,4 +51,10 @@
     <string name="followed_successful">已经成功关注</string>
     <string name="unfollowed_error">取消关注出错，请重试！</string>
     <string name="followed_error">关注用户出错，可能被用户拉黑或者超出关注上限！</string>
+
+    <string name="no_video_here">没 有 视频</string>
+    <string name="no_project_here">没 有 项 目</string>
+    <string name="no_follower_here">没 有 粉 丝</string>
+    <string name="no_following_here">没 有 关 注</string>
+    <string name="no_comment_here">没有评论</string>
 </resources>

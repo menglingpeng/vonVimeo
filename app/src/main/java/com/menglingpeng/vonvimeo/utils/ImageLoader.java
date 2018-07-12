@@ -27,4 +27,22 @@ public class ImageLoader {
         requestBuilder.load(url).apply(requestOptions).into(imageView);
     }
 
+    public static void loadCricleImage(Fragment fragment, String url, ImageView imageView) {
+        RequestOptions requestOptions = new RequestOptions().circleCrop().diskCacheStrategy(DiskCacheStrategy
+                .AUTOMATIC);
+        Glide.with(fragment)
+                .load(url)
+                .apply(requestOptions)
+                .into(imageView);
+    }
+
+    public static void loadCricleImage(Context context, String url, ImageView imageView) {
+        RequestOptions requestOptions = new RequestOptions().circleCrop().diskCacheStrategy(DiskCacheStrategy
+                .AUTOMATIC);
+        Glide.with(context)
+                .load(url)
+                .apply(requestOptions)
+                .into(imageView);
+    }
+
 }

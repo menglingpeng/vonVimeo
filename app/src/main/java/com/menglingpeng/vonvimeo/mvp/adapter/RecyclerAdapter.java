@@ -172,9 +172,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         if(holder instanceof FeedVideoViewHolder){
             final FeedVideoViewHolder videoViewHolder = (FeedVideoViewHolder)holder;
-        }else if (holder instanceof EmptyViewHolder){
-            final EmptyViewHolder viewHolder = (EmptyViewHolder)holder;
-        }else if ((holder instanceof AlbumViewHolder)){
+        } else if ((holder instanceof AlbumViewHolder)){
             final AlbumViewHolder viewHolder = (AlbumViewHolder)holder;
             final Album album = (Album) list.get(position);
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -247,7 +245,37 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     }
                 }
             });
-        }
+        }else if (holder instanceof EmptyViewHolder) {
+            int ivId = 0;
+            int tvId = 0;
+            EmptyViewHolder viewHolder = (EmptyViewHolder) holder;
+            switch (type) {
+                case Constants.REQUEST_LIST_VIDEOS_FOR_AUTH_USER:
+                    ivId = R.drawable.ic_image_grey_400_48dp;
+                    tvId = R.string.no_video_here;
+                    break;
+                case Constants.REQUEST_LIST_VIDEOS_FOR_A_USER:
+                    ivId = R.drawable.ic_image_grey_400_48dp;
+                    tvId = R.string.no_video_here;
+                    break;
+                case Constants.REQUEST_LIST_FOLLOWERS_FOR_AUTH_USER:
+                    ivId = R.drawable.ic_image_grey_400_48dp;
+                    tvId = R.string.no_follower_here;
+                    break;
+                case Constants.REQUEST_LIST_FOLLOWING_FOR_AUTH_USER:
+                    ivId = R.drawable.ic_image_grey_400_48dp;
+                    tvId = R.string.no_following_here;
+                    break;
+                case Constants.REQUEST_LIST_PROJECTS_FOR_A_USER:
+                    ivId = R.drawable.ic_image_grey_400_48dp;
+                    tvId = R.string.no_project_here;
+                    break;
+                 default:
+                     break;
+            }
+            viewHolder.emptyIv.setImageResource(ivId);
+            viewHolder.emptyTv.setText(context.getString(tvId));
+            }
     }
 
 

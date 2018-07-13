@@ -20,7 +20,10 @@ import com.menglingpeng.vonvimeo.mvp.model.Album;
 import com.menglingpeng.vonvimeo.mvp.model.Categorite;
 import com.menglingpeng.vonvimeo.mvp.model.Channel;
 import com.menglingpeng.vonvimeo.mvp.model.ChannelVideo;
+import com.menglingpeng.vonvimeo.mvp.model.Follower;
+import com.menglingpeng.vonvimeo.mvp.model.Following;
 import com.menglingpeng.vonvimeo.mvp.model.Project;
+import com.menglingpeng.vonvimeo.mvp.model.User;
 import com.menglingpeng.vonvimeo.utils.Constants;
 import com.menglingpeng.vonvimeo.utils.HttpUtils;
 import com.menglingpeng.vonvimeo.utils.ImageLoader;
@@ -159,9 +162,32 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         view = inflater.inflate(R.layout.user_follow_recycler_item, parent, false);
                         viewHolder = new FollowOfUserViewHolder(view);
                         break;
-                     break;
-                        default:
-                            break;
+                    case Constants.REQUEST_LIST_FOLLOWING_FOR_AUTH_USER:
+                        view = inflater.inflate(R.layout.user_follow_recycler_item, parent, false);
+                        viewHolder = new FollowOfUserViewHolder(view);
+                        break;
+                    case Constants.REQUEST_LIST_PROJECTS_FOR_AUTH_USER:
+                        view = inflater.inflate(R.layout.user_projects_recycler_item, parent, false);
+                        viewHolder = new ProjectViewHolder(view);
+                        break;
+                    case Constants.REQUEST_LIST_DETAIL_FOR_A_USER:
+                        view = inflater.inflate(R.layout.user_detail_recycler_item, parent, false);
+                        viewHolder = new DetailOfUserViewHolder(view);
+                        break;
+                    case Constants.REQUEST_LIST_FOLLOWERS_FOR_A_USER:
+                        view = inflater.inflate(R.layout.user_follow_recycler_item, parent, false);
+                        viewHolder = new FollowOfUserViewHolder(view);
+                        break;
+                    case Constants.REQUEST_LIST_FOLLOWING_FOR_A_USER:
+                        view = inflater.inflate(R.layout.user_follow_recycler_item, parent, false);
+                        viewHolder = new FollowOfUserViewHolder(view);
+                        break;
+                    case Constants.REQUEST_LIST_PROJECTS_FOR_A_USER:
+                        view = inflater.inflate(R.layout.user_projects_recycler_item, parent, false);
+                        viewHolder = new ProjectViewHolder(view);
+                        break;
+                    default:
+                        break;
                 }
                 break;
         }
@@ -245,7 +271,33 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     }
                 }
             });
-        }else if (holder instanceof EmptyViewHolder) {
+        }else if(holder instanceof FollowOfUserViewHolder){
+            final FollowOfUserViewHolder viewHolder = (FollowOfUserViewHolder) holder;
+            User user;
+            if (type.indexOf(Constants.FOLLOWING) != -1) {
+                final Following following = (Following) list.get(position);
+                user = following.getFollowee();
+            } else {
+                final Follower follower = (Follower) list.get(position);
+                user = follower.getFollower();
+            }
+            final User userFollow = user;
+            ImageLoader.loadCricleImage(context, userFollow.getAvatar_url(), viewHolder.followerAvatarIv);
+            viewHolder.followerNameTv.setText(userFollow.getName());
+            viewHolder.followerLocationTv.setText(userFollow.getLocation());
+            viewHolder.followerShotsCountTv.setText(TextUtil.setBeforeBold(String.valueOf(userFollow.getShots_count()
+            ), context.getString(R.string.explore_spinner_list_shots)));
+            viewHolder.followersOfFollowerCountTv.setText(TextUtil.setBeforeBold(String.valueOf(userFollow
+                    .getFollowers_count()), context.getText(R.string.followers).toString()));
+            viewHolder.followerRl.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mListener != null) {
+                        mListener.onRecyclerFragmentListListener(viewHolder, String.valueOf(userFollow.getId()));
+                    }
+                }
+            });
+        } else if (holder instanceof EmptyViewHolder) {
             int ivId = 0;
             int tvId = 0;
             EmptyViewHolder viewHolder = (EmptyViewHolder) holder;
@@ -263,6 +315,14 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     tvId = R.string.no_follower_here;
                     break;
                 case Constants.REQUEST_LIST_FOLLOWING_FOR_AUTH_USER:
+                    ivId = R.drawable.ic_image_grey_400_48dp;
+                    tvId = R.string.no_following_here;
+                    break;
+                case Constants.REQUEST_LIST_FOLLOWERS_FOR_A_USER:
+                    ivId = R.drawable.ic_image_grey_400_48dp;
+                    tvId = R.string.no_follower_here;
+                    break;
+                case Constants.REQUEST_LIST_FOLLOWING_FOR_A_USER:
                     ivId = R.drawable.ic_image_grey_400_48dp;
                     tvId = R.string.no_following_here;
                     break;

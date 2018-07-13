@@ -7,7 +7,9 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestBuilder;
+import com.bumptech.glide.load.MultiTransformation;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.request.RequestOptions;
 
 public class ImageLoader {
@@ -45,4 +47,12 @@ public class ImageLoader {
                 .into(imageView);
     }
 
+
+    public static void loadBlurImage(Context context, String url, ImageView imageView){
+        Glide.with(context)
+                .load(url)
+                .apply(RequestOptions.bitmapTransform(new MultiTransformation<Bitmap>(new BlurTransformation(2,
+                        5), new CenterCrop())))
+                .into(imageView);
+    }
 }

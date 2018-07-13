@@ -74,6 +74,9 @@ public class Constants {
     public static final String CHECK_IF_YOU_ARE_FOLLOWING_A_USER = "check_if_you_are_following_a_user";
     public static final String REQUEST_UNFOLLOW_A_USER = "unfollow_a_user";
     public static final String REQUEST_FOLLOW_A_USER = "follow_a_user";
+    public static final String FOLLOWERS = "followers";
+    public static final String FOLLOWING = "following";
+    public static final String FOLLOW = "follow";
 
 
     //默认值1

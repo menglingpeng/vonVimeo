@@ -77,6 +77,7 @@ public class Constants {
     public static final String FOLLOWERS = "followers";
     public static final String FOLLOWING = "following";
     public static final String FOLLOW = "follow";
+    public static final String DETAIL = "detail";
 
 
     //默认值1

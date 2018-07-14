@@ -20,6 +20,8 @@ import com.menglingpeng.vonvimeo.utils.Constants;
 
 import java.util.HashMap;
 
+import jp.wasabeef.recyclerview.adapters.AlphaInAnimationAdapter;
+
 public class RecyclerFragment extends BaseFragment implements com.menglingpeng.vonvimeo.mvp.interf.RecyclerView<Video>,
         OnRecyclerListItemListener, SwipeRefreshLayout.OnRefreshListener{
 
@@ -129,6 +131,12 @@ public class RecyclerFragment extends BaseFragment implements com.menglingpeng.v
         }
     }
 
+    private AlphaInAnimationAdapter setItemAnimation(RecyclerAdapter adapter){
+        AlphaInAnimationAdapter alphaInAnimationAdapter = new AlphaInAnimationAdapter(adapter);
+        alphaInAnimationAdapter.setDuration(1000);
+        return alphaInAnimationAdapter;
+    }
+
     @Override
     public void hideProgress() {
 
@@ -141,6 +149,38 @@ public class RecyclerFragment extends BaseFragment implements com.menglingpeng.v
 
     @Override
     public void loadSuccess(String json, String requestType) {
+
+
+        switch (requestType) {
+            case Constants.REQUEST_REFRESH:
+                showRefreshProgress(false);
+                adapter = new RecyclerAdapter(recyclerView, context, fragment, type, this);
+                recyclerView.setAdapter(setItemAnimation(adapter));
+                break;
+            case Constants.REQUEST_LOAD_MORE:
+                adapter.setLoading(false);
+                break;
+            case Constants.REQUEST_NORMAL:
+                if (type.equals(Constants.REQUEST_ADD_A_V)) {
+                    adapter = null;
+                } else {
+                    adapter = new RecyclerAdapter(recyclerView, context, fragment, type, this);
+                }
+                recyclerView.setAdapter(setItemAnimation(adapter));
+                break;
+            default:
+                break;
+        }
+        adapter.setLoadingMore(new RecyclerAdapter.onLoadingMore() {
+            @Override
+            public void onLoadMore() {
+                adapter.setLoading(true);
+                page += 1;
+                map.put("page", String.valueOf(page));
+                mRequestType = Constants.REQUEST_LOAD_MORE;
+                initData();
+            }
+        });
 
     }
 }

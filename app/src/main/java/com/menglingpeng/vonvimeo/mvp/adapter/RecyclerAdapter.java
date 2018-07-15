@@ -186,6 +186,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         view = inflater.inflate(R.layout.user_projects_recycler_item, parent, false);
                         viewHolder = new ProjectViewHolder(view);
                         break;
+                    case Constants.REQUEST_LIST_ALL_VIDOES_THAT_A_USER_HAS_WATCHED:
+                        break;
                     default:
                         break;
                 }
@@ -507,6 +509,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             followerShotsCountTv = (TextView) view.findViewById(R.id.profile_tablayout_follow_shots_count_tv);
             followersOfFollowerCountTv = (TextView) view.findViewById(R.id
                     .profile_tablayout_followers_of_follow_count_tv);
+        }
+    }
+
+    private class WatchedVideoViewHolder extends RecyclerView.ViewHolder {
+        public WatchedVideoViewHolder(View view) {
+            super(view);
         }
     }
 

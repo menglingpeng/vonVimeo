@@ -187,6 +187,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         viewHolder = new ProjectViewHolder(view);
                         break;
                     case Constants.REQUEST_LIST_ALL_VIDOES_THAT_A_USER_HAS_WATCHED:
+                        view = inflater.inflate(R.layout.recycler_user_watched_video, parent, false);
+                        viewHolder = new WatchedVideoViewHolder(view);
+                        break;
+                    case Constants.REQUEST_LIST_ALL_VIDOES_THAT_A_USER_HAS_LIKED:
+                        view = inflater.inflate(R.layout.recycler_user_liked_video, parent, false);
+                        viewHolder = new LikedVideoViewHolder(view);
                         break;
                     default:
                         break;
@@ -514,6 +520,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     private class WatchedVideoViewHolder extends RecyclerView.ViewHolder {
         public WatchedVideoViewHolder(View view) {
+            super(view);
+        }
+    }
+
+    private class LikedVideoViewHolder extends RecyclerView.ViewHolder {
+        public LikedVideoViewHolder(View view) {
             super(view);
         }
     }

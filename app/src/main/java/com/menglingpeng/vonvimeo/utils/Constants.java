@@ -76,6 +76,8 @@ public class Constants {
     public static final String REQUEST_FOLLOW_A_USER = "follow_a_user";
     public static final String REQUEST_LIST_ALL_VIDOES_THAT_A_USER_HAS_WATCHED =
             "list_all_videos_that_a_user_has_watched";
+    public static final String REQUEST_LIST_ALL_VIDOES_THAT_A_USER_HAS_LIKED =
+            "list_all_videos_that_a_user_has_liked";
 
 
     public static final String FOLLOWERS = "followers";

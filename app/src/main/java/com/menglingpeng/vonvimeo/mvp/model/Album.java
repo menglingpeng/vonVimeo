@@ -1,66 +1,140 @@
 package com.menglingpeng.vonvimeo.mvp.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Album implements Serializable{
 
-    private int id;
+    private int total;
+    private int page;
+    private int per_page;
+    private PagingBean paging;
+    private List<DataBean> data;
 
-    private String name;
+    private Object uri;
+    private boolean active;
+    private String type;
+    private String resource_key;
+    private List<SizesBean> sizes;
 
-    private String description;
-
-    private int shots_count;
-
-    private String created_at;
-
-    private String updated_at;
-
-    public int getId() {
-        return id;
+    public void setUri(Object uri) {
+        this.uri = uri;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
-    public String getName() {
-        return name;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setResource_key(String resource_key) {
+        this.resource_key = resource_key;
     }
 
-    public String getDescription() {
-        return description;
+    public void setSizes(List<SizesBean> sizes) {
+        this.sizes = sizes;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public Object getUri() {
+        return uri;
     }
 
-    public int getShots_count() {
-        return shots_count;
+    public boolean getActive() {
+        return active;
     }
 
-    public void setShots_count(int shots_count) {
-        this.shots_count = shots_count;
+    public String getType() {
+        return type;
     }
 
-    public String getCreated_at() {
-        return created_at;
+    public String getResource_key() {
+        return resource_key;
     }
 
-    public void setCreated_at(String created_at) {
-        this.created_at = created_at;
+    public List<SizesBean> getSizes() {
+        return sizes;
     }
 
-    public String getUpdated_at() {
-        return updated_at;
+    public static class PagingBean {
+
+        private Object next;
+        private Object previous;
+        private String first;
+        private String last;
+
+        public Object getNext() {
+            return next;
+        }
+
+        public void setNext(Object next) {
+            this.next = next;
+        }
+
+        public Object getPrevious() {
+            return previous;
+        }
+
+        public void setPrevious(Object previous) {
+            this.previous = previous;
+        }
+
+        public String getFirst() {
+            return first;
+        }
+
+        public void setFirst(String first) {
+            this.first = first;
+        }
+
+        public String getLast() {
+            return last;
+        }
+
+        public void setLast(String last) {
+            this.last = last;
+        }
     }
 
-    public void setUpdated_at(String updated_at) {
-        this.updated_at = updated_at;
+
+    public static class SizesBean {
+
+        private int width;
+        private int height;
+        private String link;
+        private String link_with_play_button;
+
+        public void setWidth(int width) {
+            this.width = width;
+        }
+
+        public void setHeight(int height) {
+            this.height = height;
+        }
+
+        public void setLink(String link) {
+            this.link = link;
+        }
+
+        public void setLink_with_play_button(String link_with_play_button) {
+            this.link_with_play_button = link_with_play_button;
+        }
+
+        public int getWidth() {
+            return width;
+        }
+
+        public int getHeight() {
+            return height;
+        }
+
+        public String getLink() {
+            return link;
+        }
+
+        public String getLink_with_play_button() {
+            return link_with_play_button;
+        }
     }
 }

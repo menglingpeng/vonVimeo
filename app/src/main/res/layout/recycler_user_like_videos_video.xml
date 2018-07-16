@@ -13,12 +13,12 @@
     card_view:cardCornerRadius="@dimen/recycler_view_item_card_view_card_corner_radius">
 
     <RelativeLayout
-        android:id="@+id/watched_video_rl"
+        android:id="@+id/like_video_rl"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <CheckBox
-            android:id="@+id/watched_video_cb"
+            android:id="@+id/like_video_cb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -26,7 +26,7 @@
             android:visibility="gone"/>
 
         <ImageView
-            android:id="@+id/watched_video_thumb_iv"
+            android:id="@+id/like_video_thumb_iv"
             android:layout_width="match_parent"
             android:layout_height="400dp"
             android:layout_marginBottom="10dp"/>
@@ -34,10 +34,10 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/watched_video_thumb_iv">
+            android:layout_below="@+id/like_video_thumb_iv">
 
             <TextView
-                android:id="@+id/watched_video_name_tv"
+                android:id="@+id/like_video_name_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
@@ -47,29 +47,29 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/watched_video_name_tv"
-                android:layout_alignLeft="@+id/watched_video_name_tv"
+                android:layout_below="@+id/like_video_name_tv"
+                android:layout_alignLeft="@+id/like_video_name_tv"
                 android:layout_marginBottom="20dp">
 
                 <ImageView
-                    android:id="@+id/watched_video_avatar_iv"
+                    android:id="@+id/like_video_avatar_iv"
                     android:layout_width="15dp"
                     android:layout_height="15dp"
                     android:src="@drawable/ic_featured_video_grey_600_18dp"/>
 
                 <TextView
-                    android:id="@+id/watched_video_user_tv"
+                    android:id="@+id/like_video_user_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignTop="@+id/watched_video_avatar_iv"
-                    android:layout_toRightOf="@+id/watched_video_avatar_iv"/>
+                    android:layout_alignTop="@+id/like_video_avatar_iv"
+                    android:layout_toRightOf="@+id/like_video_avatar_iv"/>
 
                 <TextView
-                    android:id="@+id/watched_video_delimiter_tv"
+                    android:id="@+id/like_video_delimiter_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/watched_video_user_tv"
-                    android:layout_alignTop="@+id/watched_video_user_tv"
+                    android:layout_toRightOf="@+id/like_video_user_tv"
+                    android:layout_alignTop="@+id/like_video_user_tv"
                     android:layout_marginLeft="10dp"
                     android:text="|"/>
 
@@ -78,8 +78,8 @@
                     android:id="@+id/watched_video_play_count_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignTop="@+id/watched_video_user_tv"
-                    android:layout_toRightOf="@+id/watched_video_delimiter_tv"/>
+                    android:layout_alignTop="@+id/like_video_user_tv"
+                    android:layout_toRightOf="@+id/like_video_delimiter_tv"/>
 
             </RelativeLayout>
 

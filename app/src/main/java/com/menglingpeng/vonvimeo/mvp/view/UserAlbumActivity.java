@@ -59,14 +59,14 @@ public class UserAlbumActivity extends BaseActivity implements RecyclerView{
     }
 
     private void showCreateAlbumDialog() {
-        final TextInputEditText bucketNameEt, bucketDescEt;
+        final TextInputEditText albumNameEt, albumDescEt;
         AlertDialog dialog;
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         View dialogView = getLayoutInflater().inflate(R.layout.create_a_bucket_dialog_message, null);
         builder.setTitle(R.string.create_a_bucket);
         builder.setView(dialogView);
-        bucketNameEt = (TextInputEditText) dialogView.findViewById(R.id.bucket_name_tiet);
-        bucketDescEt = (TextInputEditText) dialogView.findViewById(R.id.bucket_desc_tiet);
+        albumNameEt = (TextInputEditText) dialogView.findViewById(R.id.bucket_name_tiet);
+        albumDescEt = (TextInputEditText) dialogView.findViewById(R.id.bucket_desc_tiet);
         builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -76,15 +76,15 @@ public class UserAlbumActivity extends BaseActivity implements RecyclerView{
         builder.setPositiveButton(R.string.create, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                String name = bucketNameEt.getText().toString();
+                String name = albumNameEt.getText().toString();
                 if (name.equals("")) {
                     SnackbarUtils.showSnackShort(getApplicationContext(), coordinatorLayout, getString(R.string
                             .the_name_of_bucket_is_not_null));
                 } else {
                     HashMap<String, String> map = new HashMap<>();
                     map.put(Constants.ACCESS_TOKEN, SharedPrefUtils.getAuthToken());
-                    map.put(Constants.NAME, bucketNameEt.getText().toString());
-                    map.put(Constants.DESCRIPTION, bucketDescEt.getText().toString());
+                    map.put(Constants.NAME, albumNameEt.getText().toString());
+                    map.put(Constants.DESCRIPTION, albumDescEt.getText().toString());
                     type = Constants.REQUEST_CREATE_A_ALBUM;
                     RecyclerPresenter presenter = new RecyclerPresenter(UserAlbumActivity.this, type, Constants
                             .REQUEST_NORMAL, Constants.REQUEST_POST_MEIHOD, map, getApplicationContext());
@@ -95,7 +95,49 @@ public class UserAlbumActivity extends BaseActivity implements RecyclerView{
 
             }
         });
-        bucketNameEt.setFocusable(true);
+        albumNameEt.setFocusable(true);
+        dialog = builder.create();
+        dialog.show();
+    }
+
+    private void showEditAlbumDialog() {
+        final TextInputEditText albumNameEt, albumDescEt;
+        AlertDialog dialog;
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        View dialogView = getLayoutInflater().inflate(R.layout.create_a_bucket_dialog_message, null);
+        builder.setTitle(R.string.create_a_bucket);
+        builder.setView(dialogView);
+        albumNameEt = (TextInputEditText) dialogView.findViewById(R.id.bucket_name_tiet);
+        albumDescEt = (TextInputEditText) dialogView.findViewById(R.id.bucket_desc_tiet);
+        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.setPositiveButton(R.string.create, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String name = albumNameEt.getText().toString();
+                if (name.equals("")) {
+                    SnackbarUtils.showSnackShort(getApplicationContext(), coordinatorLayout, getString(R.string
+                            .the_name_of_bucket_is_not_null));
+                } else {
+                    HashMap<String, String> map = new HashMap<>();
+                    map.put(Constants.ACCESS_TOKEN, SharedPrefUtils.getAuthToken());
+                    map.put(Constants.NAME, albumNameEt.getText().toString());
+                    map.put(Constants.DESCRIPTION, albumDescEt.getText().toString());
+                    type = Constants.REQUEST_CREATE_A_ALBUM;
+                    RecyclerPresenter presenter = new RecyclerPresenter(UserAlbumActivity.this, type, Constants
+                            .REQUEST_NORMAL, Constants.REQUEST_POST_MEIHOD, map, getApplicationContext());
+                    presenter.loadJson();
+                    SnackbarUtils.showSnackShort(getApplicationContext(), coordinatorLayout, getString(R.string
+                            .snack_create_a_bucket_text));
+                }
+
+            }
+        });
+        albumNameEt.setFocusable(true);
         dialog = builder.create();
         dialog.show();
     }

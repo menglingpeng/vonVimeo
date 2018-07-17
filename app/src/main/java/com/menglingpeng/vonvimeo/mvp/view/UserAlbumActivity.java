@@ -58,6 +58,25 @@ public class UserAlbumActivity extends BaseActivity implements RecyclerView{
         });
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.user_album_toolbar_overflow_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.album_edit:
+                showEditAlbumDialog();
+                break;
+            case R.id.album_delete:
+                show
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     private void showCreateAlbumDialog() {
         final TextInputEditText albumNameEt, albumDescEt;
         AlertDialog dialog;
@@ -137,20 +156,31 @@ public class UserAlbumActivity extends BaseActivity implements RecyclerView{
 
             }
         });
+        builder.setPositiveButton(R.string.create, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
         albumNameEt.setFocusable(true);
         dialog = builder.create();
         dialog.show();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        return super.onCreateOptionsMenu(menu);
+    private void showDeleteAlbumDialog(){
+        AlertDialog dialog;
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.create_a_bucket);
+        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog = builder.create();
+        dialog.show();
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        return super.onOptionsItemSelected(item);
-    }
 
     @Override
     public void hideProgress() {

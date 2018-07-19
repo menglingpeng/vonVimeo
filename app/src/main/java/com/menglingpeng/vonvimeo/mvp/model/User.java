@@ -1,49 +1,9 @@
 package com.menglingpeng.vonvimeo.mvp.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class User implements Serializable {
-
-
-    /**
-     * uri : /users/86476471
-     * name : fish meng
-     * link : https://vimeo.com/user86476471
-     * location : null
-     * bio : null
-     * created_time : 2018-06-21T14:25:17+00:00
-     * pictures : {"uri":"/users/86476471/pictures/26035821","active":true,"type":"custom","sizes":[{"width":30,
-     * "height":30,"link":"https://i.vimeocdn.com/portrait/26035821_30x30"},{"width":75,"height":75,"link":"https://i
-     * .vimeocdn.com/portrait/26035821_75x75"},{"width":100,"height":100,"link":"https://i.vimeocdn
-     * .com/portrait/26035821_100x100"},{"width":300,"height":300,"link":"https://i.vimeocdn
-     * .com/portrait/26035821_300x300"},{"width":72,"height":72,"link":"https://i.vimeocdn
-     * .com/portrait/26035821_72x72"},{"width":144,"height":144,"link":"https://i.vimeocdn
-     * .com/portrait/26035821_144x144"},{"width":216,"height":216,"link":"https://i.vimeocdn
-     * .com/portrait/26035821_216x216"},{"width":288,"height":288,"link":"https://i.vimeocdn
-     * .com/portrait/26035821_288x288"},{"width":360,"height":360,"link":"https://i.vimeocdn
-     * .com/portrait/26035821_360x360"}],"resource_key":"9e260756960d5a117f9b2aa4fd155c5e584f7dc7"}
-     * websites : []
-     * metadata : {"connections":{"albums":{"uri":"/users/86476471/albums","options":["GET"],"total":1},
-     * "appearances":{"uri":"/users/86476471/appearances","options":["GET"],"total":0},
-     * "categories":{"uri":"/users/86476471/categories","options":["GET"],"total":0},
-     * "channels":{"uri":"/users/86476471/channels","options":["GET"],"total":0},
-     * "feed":{"uri":"/users/86476471/feed","options":["GET"]},"followers":{"uri":"/users/86476471/followers",
-     * "options":["GET"],"total":0},"following":{"uri":"/users/86476471/following","options":["GET"],"total":0},
-     * "groups":{"uri":"/users/86476471/groups","options":["GET"],"total":0},"likes":{"uri":"/users/86476471/likes",
-     * "options":["GET"],"total":1},"moderated_channels":{"uri":"/users/86476471/channels?filter=moderated",
-     * "options":["GET"],"total":0},"portfolios":{"uri":"/users/86476471/portfolios","options":["GET"],"total":0},
-     * "videos":{"uri":"/users/86476471/videos","options":["GET"],"total":0},
-     * "watchlater":{"uri":"/users/86476471/watchlater","options":["GET"],"total":0},
-     * "shared":{"uri":"/users/86476471/shared/videos","options":["GET"],"total":0},
-     * "pictures":{"uri":"/users/86476471/pictures","options":["GET","POST"],"total":1},
-     * "watched_videos":{"uri":"/me/watched/videos","options":["GET"],"total":0},"block":{"uri":"/me/block",
-     * "options":["GET"],"total":0}}}
-     * preferences : {"videos":{"privacy":{"view":"anybody","comments":"anybody","embed":"public","download":true,
-     * "add":true}}}
-     * content_filter : ["language","drugs","violence","nudity","safe","unrated"]
-     * resource_key : cfcecff7d315744ab7be7f502cd5c03db15e27bb
-     * account : basic
-     */
 
     private String uri;
     private String name;
@@ -56,8 +16,21 @@ public class User implements Serializable {
     private PreferencesBean preferences;
     private String resource_key;
     private String account;
-    private java.util.List<?> websites;
-    private java.util.List<String> content_filter;
+    private List<?> websites;
+    private List<String> content_filter;
+    /**
+     * videos : {"privacy":{"view":"anybody","comments":"anybody","embed":"public","download":true,"add":true}}
+     */
+
+    private VideosBean videos;
+
+    public void setVideos(VideosBean videos) {
+        this.videos = videos;
+    }
+
+    public VideosBean getVideos() {
+        return videos;
+    }
 
     public static class PicturesBean {
 
@@ -65,7 +38,7 @@ public class User implements Serializable {
         private boolean active;
         private String type;
         private String resource_key;
-        private java.util.List<SizesBean> sizes;
+        private List<SizesBean> sizes;
 
         public String getUri() {
             return uri;
@@ -136,6 +109,69 @@ public class User implements Serializable {
 
             public void setLink(String link) {
                 this.link = link;
+            }
+        }
+    }
+
+
+    public static class VideosBean {
+
+        private PrivacyBean privacy;
+
+        public void setPrivacy(PrivacyBean privacy) {
+            this.privacy = privacy;
+        }
+
+        public PrivacyBean getPrivacy() {
+            return privacy;
+        }
+
+        public static class PrivacyBean {
+
+            private String view;
+            private String comments;
+            private String embed;
+            private boolean download;
+            private boolean add;
+
+            public void setView(String view) {
+                this.view = view;
+            }
+
+            public void setComments(String comments) {
+                this.comments = comments;
+            }
+
+            public void setEmbed(String embed) {
+                this.embed = embed;
+            }
+
+            public void setDownload(boolean download) {
+                this.download = download;
+            }
+
+            public void setAdd(boolean add) {
+                this.add = add;
+            }
+
+            public String getView() {
+                return view;
+            }
+
+            public String getComments() {
+                return comments;
+            }
+
+            public String getEmbed() {
+                return embed;
+            }
+
+            public boolean getDownload() {
+                return download;
+            }
+
+            public boolean getAdd() {
+                return add;
             }
         }
     }

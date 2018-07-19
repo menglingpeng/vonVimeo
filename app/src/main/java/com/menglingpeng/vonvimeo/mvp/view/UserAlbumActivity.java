@@ -71,7 +71,7 @@ public class UserAlbumActivity extends BaseActivity implements RecyclerView{
                 showEditAlbumDialog();
                 break;
             case R.id.album_delete:
-                show
+                showDeleteAlbumDialog();
                 break;
         }
         return super.onOptionsItemSelected(item);

@@ -15,6 +15,15 @@ public class Categorite implements Serializable {
     private String created_at;
 
     private String updated_at;
+    /**
+     * uri : /categories/animation
+     * link : https://vimeo.com/categories/animation
+     * top_level : true
+     */
+
+    private String uri;
+    private String link;
+    private boolean top_level;
 
     public int getId() {
         return id;
@@ -62,5 +71,30 @@ public class Categorite implements Serializable {
 
     public void setUpdated_at(String updated_at) {
         this.updated_at = updated_at;
+    }
+
+
+    public void setUri(String uri) {
+        this.uri = uri;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
+    public void setTop_level(boolean top_level) {
+        this.top_level = top_level;
+    }
+
+    public String getUri() {
+        return uri;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public boolean getTop_level() {
+        return top_level;
     }
 }

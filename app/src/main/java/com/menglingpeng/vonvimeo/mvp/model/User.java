@@ -18,19 +18,6 @@ public class User implements Serializable {
     private String account;
     private List<?> websites;
     private List<String> content_filter;
-    /**
-     * videos : {"privacy":{"view":"anybody","comments":"anybody","embed":"public","download":true,"add":true}}
-     */
-
-    private VideosBean videos;
-
-    public void setVideos(VideosBean videos) {
-        this.videos = videos;
-    }
-
-    public VideosBean getVideos() {
-        return videos;
-    }
 
     public static class PicturesBean {
 
@@ -114,65 +101,4 @@ public class User implements Serializable {
     }
 
 
-    public static class VideosBean {
-
-        private PrivacyBean privacy;
-
-        public void setPrivacy(PrivacyBean privacy) {
-            this.privacy = privacy;
-        }
-
-        public PrivacyBean getPrivacy() {
-            return privacy;
-        }
-
-        public static class PrivacyBean {
-
-            private String view;
-            private String comments;
-            private String embed;
-            private boolean download;
-            private boolean add;
-
-            public void setView(String view) {
-                this.view = view;
-            }
-
-            public void setComments(String comments) {
-                this.comments = comments;
-            }
-
-            public void setEmbed(String embed) {
-                this.embed = embed;
-            }
-
-            public void setDownload(boolean download) {
-                this.download = download;
-            }
-
-            public void setAdd(boolean add) {
-                this.add = add;
-            }
-
-            public String getView() {
-                return view;
-            }
-
-            public String getComments() {
-                return comments;
-            }
-
-            public String getEmbed() {
-                return embed;
-            }
-
-            public boolean getDownload() {
-                return download;
-            }
-
-            public boolean getAdd() {
-                return add;
-            }
-        }
-    }
 }

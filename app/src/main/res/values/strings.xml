@@ -63,4 +63,7 @@
     <string name="album_edit">编辑</string>
     <string name="album_delete">删除</string>
     <string name="deleta_an_album">确定要删除</string>
+
+    <string name="choose_a_project">选择项目</string>
+    <string name="choose_a_album">选择视频集</string>
 </resources>

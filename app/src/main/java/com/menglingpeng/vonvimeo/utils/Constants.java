@@ -84,6 +84,11 @@ public class Constants {
     public static final String FOLLOWING = "following";
     public static final String FOLLOW = "follow";
     public static final String DETAIL = "detail";
+    public static final String VIDEO_ID = "video_id";
+    public static final String ALBUM_ID = "album_id";
+    public static final String PROJECT_ID = "project_id";
+    public static final String REQUEST_CHOOSE_ALBUM = "choose_album";
+    public static final String REQUEST_CHOOSE_PROJECT = "choose_project";
 
 
     //默认值1

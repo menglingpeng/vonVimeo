@@ -10,13 +10,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import com.menglingpeng.designersshow.BaseActivity;
 import com.menglingpeng.designersshow.R;
-import com.menglingpeng.designersshow.mvp.interf.RecyclerView;
-import com.menglingpeng.designersshow.mvp.presenter.RecyclerPresenter;
-import com.menglingpeng.designersshow.utils.Constants;
-import com.menglingpeng.designersshow.utils.SharedPrefUtil;
-import com.menglingpeng.designersshow.utils.SnackUI;
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
 import com.menglingpeng.vonvimeo.mvp.presenter.RecyclerPresenter;
@@ -27,7 +21,7 @@ import com.menglingpeng.vonvimeo.utils.SnackbarUtils;
 
 import java.util.HashMap;
 
-public class ChooseAlbumActivity extends BaseActivity implements RecyclerView {
+public class ChooseGroupActivity extends BaseActivity implements RecyclerView {
 
     private Toolbar toolbar;
     private FloatingActionButton floatingActionButton;
@@ -36,7 +30,7 @@ public class ChooseAlbumActivity extends BaseActivity implements RecyclerView {
 
     @Override
     protected void initLayoutId() {
-        layoutId = R.layout.activity_choose_album;
+        layoutId = R.layout.activity_choose_group;
     }
 
     @Override
@@ -45,7 +39,7 @@ public class ChooseAlbumActivity extends BaseActivity implements RecyclerView {
         toolbar = (Toolbar) findViewById(R.id.choose_bucket_tb);
         coordinatorLayout = (CoordinatorLayout) findViewById(R.id.choose_album_cdl);
         floatingActionButton = (FloatingActionButton) findViewById(R.id.choose_album_fab);
-        toolbar.setTitle(R.string.choose_a_album);
+        toolbar.setTitle(R.string.choose_a_group);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -61,7 +55,7 @@ public class ChooseAlbumActivity extends BaseActivity implements RecyclerView {
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showCreateAlbumDialog();
+                showCreateGroupDialog();
             }
         });
         Intent intent = getIntent();
@@ -69,7 +63,7 @@ public class ChooseAlbumActivity extends BaseActivity implements RecyclerView {
         replaceFragment(RecyclerFragment.newInstance(shotId, Constants.REQUEST_CHOOSE_ALBUM));
     }
 
-    private void showCreateAlbumDialog() {
+    private void showCreateGroupDialog() {
         final TextInputEditText bucketNameEt, bucketDescEt;
         AlertDialog dialog;
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -97,7 +91,7 @@ public class ChooseAlbumActivity extends BaseActivity implements RecyclerView {
                     map.put(Constants.NAME, bucketNameEt.getText().toString());
                     map.put(Constants.DESCRIPTION, bucketDescEt.getText().toString());
                     type = Constants.REQUEST_CREATE_A_ALBUM;
-                    RecyclerPresenter presenter = new RecyclerPresenter(ChooseAlbumActivity.this, type, Constants
+                    RecyclerPresenter presenter = new RecyclerPresenter(ChooseGroupActivity.this, type, Constants
                             .REQUEST_NORMAL, Constants.REQUEST_POST_MEIHOD, map, getApplicationContext());
                     presenter.loadJson();
                     SnackbarUtils.showSnackShort(getApplicationContext(), coordinatorLayout, getString(R.string
@@ -124,7 +118,7 @@ public class ChooseAlbumActivity extends BaseActivity implements RecyclerView {
     @Override
     public void loadSuccess(String json, String requestType) {
         switch (type) {
-            case Constants.REQUEST_CREATE_A_ALBUM:
+            case Constants.REQUEST_CREATE_A_GROUP:
                 replaceFragment(RecyclerFragment.newInstance(Constants.REQUEST_CHOOSE_ALBUM));
                 break;
         }

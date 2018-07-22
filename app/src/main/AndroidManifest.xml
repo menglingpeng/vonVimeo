@@ -30,7 +30,8 @@
         <activity android:name=".mvp.view.SearchActivity" />
         <activity android:name=".mvp.view.activity.UserProfileActivity" />
         <activity android:name=".mvp.view.activity.UserFollowingActivity" />
-        <activity android:name=".mvp.view.activity.UserWathcedActivity"></activity>
+        <activity android:name=".mvp.view.activity.UserWathcedActivity" />
+        <activity android:name=".mvp.view.activity.UserGroupActivity"></activity>
     </application>
 
 </manifest>

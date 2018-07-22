@@ -89,6 +89,7 @@ public class Constants {
     public static final String PROJECT_ID = "project_id";
     public static final String REQUEST_CHOOSE_ALBUM = "choose_album";
     public static final String REQUEST_CHOOSE_PROJECT = "choose_project";
+    public static final String REQUEST_CHOOSE_GROUP = "choose_group";
     public static final String REQUEST_CREATE_A_GROUP = "request_create_a_group";
 
 

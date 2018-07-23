@@ -13,8 +13,10 @@ import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.adapter.TabPagerFragmentAdapter;
 import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
 import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
+import com.menglingpeng.vonvimeo.utils.Constants;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class GroupDetailActivity extends BaseActivity implements RecyclerView{
 
@@ -50,6 +52,7 @@ public class GroupDetailActivity extends BaseActivity implements RecyclerView{
                 finish();
             }
         });
+        initTabPager();
     }
 
     private void initTabPager() {
@@ -76,6 +79,17 @@ public class GroupDetailActivity extends BaseActivity implements RecyclerView{
                 scrollToTop(fragments.get(tab.getPosition()).getRecyclerView());
             }
         });
+    }
+
+    private void initFragments() {
+        List<String> titles = new ArrayList<>();
+
+            titles.add(getString(R.string.home_popular));
+            titles.add(getString(R.string.home_recent));
+            fragments.add(new RecyclerFragment().newInstance(Constants.TAB_GROUP_DETAIL_VIDEOS));
+            fragments.add(new RecyclerFragment().newInstance(Constants.TAB_GROUP_DETAIL_MEMBERS));
+
+        adapter.setFragments(fragments, titles);
     }
 
     private void scrollToTop(android.support.v7.widget.RecyclerView list) {

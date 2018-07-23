@@ -92,6 +92,9 @@ public class Constants {
     public static final String REQUEST_CHOOSE_GROUP = "choose_group";
     public static final String REQUEST_CREATE_A_GROUP = "request_create_a_group";
 
+    public static final String TAB_GROUP_DETAIL_VIDEOS = "tab_group_detail_videos";
+    public static final String TAB_GROUP_DETAIL_MEMBERS = "tab_group_detail_members";
+
 
     //默认值1
     public static final int PAGE_VALUE = 1;

@@ -31,7 +31,8 @@
         <activity android:name=".mvp.view.activity.UserProfileActivity" />
         <activity android:name=".mvp.view.activity.UserFollowingActivity" />
         <activity android:name=".mvp.view.activity.UserWathcedActivity" />
-        <activity android:name=".mvp.view.activity.UserGroupActivity"></activity>
+        <activity android:name=".mvp.view.activity.UserGroupActivity" />
+        <activity android:name=".mvp.view.activity.GroupDetailActivity"></activity>
     </application>
 
 </manifest>

@@ -89,11 +89,13 @@ public class Constants {
     public static final String PROJECT_ID = "project_id";
     public static final String REQUEST_CHOOSE_ALBUM = "choose_album";
     public static final String REQUEST_CHOOSE_PROJECT = "choose_project";
-    public static final String REQUEST_CHOOSE_GROUP = "choose_group";
-    public static final String REQUEST_CREATE_A_GROUP = "request_create_a_group";
+
 
     public static final String TAB_GROUP_DETAIL_VIDEOS = "tab_group_detail_videos";
     public static final String TAB_GROUP_DETAIL_MEMBERS = "tab_group_detail_members";
+    public static final String REQUEST_CHOOSE_GROUP = "choose_group";
+    public static final String REQUEST_CREATE_A_GROUP = "request_create_a_group";
+    public static final String REQUEST_CHECK_IF_USER_HAS_JOINED_A_GROUP = "request_check_if_user_has_joined_a_group";
 
 
     //默认值1

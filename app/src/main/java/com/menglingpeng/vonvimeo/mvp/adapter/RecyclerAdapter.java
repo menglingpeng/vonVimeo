@@ -194,6 +194,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         view = inflater.inflate(R.layout.recycler_user_liked_video, parent, false);
                         viewHolder = new LikedVideoViewHolder(view);
                         break;
+                    case Constants.TAB_GROUP_DETAIL_MEMBERS:
+                        view = inflater.inflate(R.layout.group_members_recycler_item, parent, false);
+                        viewHolder = new GroupMemberViewHolder(view);
+                        break;
+                    case Constants.TAB_GROUP_DETAIL_VIDEOS:
+                        break;
                     default:
                         break;
                 }
@@ -527,6 +533,26 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     private class LikedVideoViewHolder extends RecyclerView.ViewHolder {
         public LikedVideoViewHolder(View view) {
             super(view);
+        }
+    }
+
+    public class GroupMemberViewHolder extends RecyclerView.ViewHolder {
+        public final RelativeLayout groupMemberRl;
+        public final ImageView groupMemberAvatarIv;
+        public final TextView groupMemberNameTv;
+        public final TextView groupMemberLocationTv;
+        public final TextView groupMemberVideosCountTv;
+        public final TextView followersOfMemberCountTv;
+
+        public GroupMemberViewHolder(View view) {
+            super(view);
+            groupMemberRl = (RelativeLayout) view.findViewById(R.id.group_member_rl);
+            groupMemberAvatarIv = (ImageView) view.findViewById(R.id.group_member_avatar_iv);
+            groupMemberLocationTv = (TextView) view.findViewById(R.id.group_member_location_tv);
+            groupMemberNameTv = (TextView) view.findViewById(R.id.group_member_name_tv);
+            groupMemberVideosCountTv = (TextView) view.findViewById(R.id.group_member_videos_count_tv);
+            followersOfMemberCountTv = (TextView) view.findViewById(R.id
+                    .group_member_follow_count_tv);
         }
     }
 

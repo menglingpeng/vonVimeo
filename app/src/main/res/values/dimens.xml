@@ -86,6 +86,13 @@
     <dimen name="user_profile_ctb_layout_height">350dp</dimen>
     <dimen name="user_profile_avatar_iv_layout_width">100dp</dimen>
     <dimen name="user_profile_avatar_iv_layout_height">100dp</dimen>
+    <dimen name="profile_follow_bt_layout_margin">20dp</dimen>
+    <dimen name="profile_follow_bt_drawable_padding">10dp</dimen>
+    <dimen name="profile_desc_tv_layout_marginTop">20dp</dimen>
+    <dimen name="profile_desc_tv_layout_marginLeft">15dp</dimen>
+    <dimen name="profile_desc_tv_layout_marginRight">15dp</dimen>
+    <dimen name="profile_avatar_iv_layout_marginTop">50dp</dimen>
+    <item name="profile_ctbl_scrimAnimationDuration" format="integer" type="dimen">300</item>
 
     <dimen name="profile_tablayout_detail_rl_layout_height">150dp</dimen>
     <dimen name="profile_tablayout_detail_ll_layout_marginTop">20dp</dimen>

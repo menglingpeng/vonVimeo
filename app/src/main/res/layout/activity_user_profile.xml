@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.menglingpeng.designersshow.mvp.view.UserProfileActivity">
+    tools:context="com.menglingpeng.vonvimeo.mvp.view.activity.UserProfileActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -61,8 +61,8 @@
                     android:layout_marginLeft="@dimen/profile_desc_tv_layout_marginLeft"
                     android:layout_marginRight="@dimen/profile_desc_tv_layout_marginRight"
                     android:gravity="center"
-                    android:textColor="@color/profile_desc_tv"
-                    android:textColorLink="@color/shots_username"/>
+                    android:textColor="@color/user_profile_desc_tv"
+                    android:textColorLink="@color/video_username"/>
 
                 <Button
                     android:id="@+id/profile_follow_bt"
@@ -76,7 +76,7 @@
                     android:background="@drawable/dialog_login_shape_radius"
                     android:paddingLeft="@dimen/dialog_login_bt_padding"
                     android:paddingRight="@dimen/dialog_login_bt_padding"
-                    android:drawableLeft="@drawable/ic_person_add_white_24dp"
+                    android:drawableLeft="@drawable/ic_add_white_24dp"
                     android:text="@string/follow"
                     android:drawablePadding="@dimen/profile_follow_bt_drawable_padding"
                     android:textColor="@android:color/white"

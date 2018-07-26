@@ -24,6 +24,7 @@ import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
 import com.menglingpeng.vonvimeo.utils.Constants;
 import com.menglingpeng.vonvimeo.utils.ImageLoader;
 import com.menglingpeng.vonvimeo.utils.JsonUtils;
+import com.menglingpeng.vonvimeo.utils.SnackbarUtils;
 import com.menglingpeng.vonvimeo.utils.TextUtil;
 
 import java.util.ArrayList;
@@ -156,24 +157,56 @@ public class GroupDetailActivity extends BaseActivity implements RecyclerView{
                 }
                 break;
             case Constants.REQUEST_JOIN_A_GROUP:
+                if(json.equals(Constants.CODE_204_NO_CONTENT)){
+                    leaveGroupBt.setVisibility(Button.VISIBLE);
+                    joinGroupBt.setVisibility(Button.GONE);
+                    SnackbarUtils.showSnackShort(context, coordinatorLayout, TextUtil.setAfterBold(context, getString(
+                            R.string.joined_group_successful), user.getName()));
+                    leaveGroupBt.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            type = Constants.REQUEST_LEAVE_A_GROUP;
+                            initData(Constants.REQUEST_DELETE_MEIHOD);
+                        }
+                    });
+                }else {
+                    SnackbarUtils.showErrorSnackShort(context, coordinatorLayout, getString(
+                            R.string.joined_group_error));
+                }
                 break;
             case Constants.REQUEST_LEAVE_A_GROUP:
+                if(json.equals(Constants.CODE_204_NO_CONTENT)){
+                    leaveGroupBt.setVisibility(Button.GONE);
+                    joinGroupBt.setVisibility(Button.VISIBLE);
+                    SnackbarUtils.showSnackShort(context, coordinatorLayout, TextUtil.setAfterBold(context, getString(
+                            R.string.leaved_group_successful), user.getName()));
+                    joinGroupBt.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            type = Constants.REQUEST_JOIN_A_GROUP;
+                            initData(Constants.REQUEST_PUT_MEIHOD);
+                        }
+                    });
+                }else {
+                    SnackbarUtils.showErrorSnackShort(context, coordinatorLayout, getString(
+                            R.string.leaved_group_error));
+                }
                 break;
             default:
                 progressBar.setVisibility(ProgressBar.GONE);
                 user = JsonUtils.parseJson(json, User.class);
-                coordinatorLayout = (CoordinatorLayout)findViewById(R.id.profile_cdl);
-                collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.profile_ctbl);
+                coordinatorLayout = (CoordinatorLayout)findViewById(R.id.group_detail_cdl);
+                collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.group_detail_ctbl);
                 collapsingToolbarLayout.setVisibility(CollapsingToolbarLayout.VISIBLE);
                 /*collapsingToolbarLayout.setCollapsedTitleTextColor(Color.WHITE);
                 collapsingToolbarLayout.setExpandedTitleColor(Color.WHITE);*/
                 toolbar = (Toolbar) findViewById(R.id.profile_tb);
-                groupDetailNameTv = (TextView) findViewById(R.id.profile_name_tv);
-                groupDetailDescTv = (TextView) findViewById(R.id.profile_desc_tv);
-                groupDetailBackgroundIv = (ImageView) findViewById(R.id.profile_backgroud_iv);
-                groupDetailAvatarIv = (ImageView) findViewById(R.id.profile_avatar_iv);
-                joinGroupBt = (Button) findViewById(R.id.profile_follow_bt);
-                leaveGroupBt = (Button) findViewById(R.id.profile_unfollow_bt);
+                groupDetailNameTv = (TextView) findViewById(R.id.group_detail_name_tv);
+                groupDetailDescTv = (TextView) findViewById(R.id.group_detail_desc_tv);
+                groupDetailBackgroundIv = (ImageView) findViewById(R.id.group_detail_backgroud_iv);
+                groupDetailAvatarIv = (ImageView) findViewById(R.id.group_detail_avatar_iv);
+                joinGroupBt = (Button) findViewById(R.id.join_group_bt);
+                leaveGroupBt = (Button) findViewById(R.id.leave_group_bt);
                 if (type.equals(Constants.REQUEST_SINGLE_USER)) {
                     if (isJoined) {
                         joinGroupBt.setVisibility(Button.VISIBLE);

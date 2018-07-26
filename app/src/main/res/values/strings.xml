@@ -70,6 +70,10 @@
     <string name="choose_a_album">选择视频集</string>
     <string name="choose_a_group">选择群组</string>
 
-    <string name="join">加入</string>
-    <string name="leave">离开</string>
+    <string name="join_group">加入</string>
+    <string name="leave_group">离开</string>
+    <string name="leaved_group_successful">已经离开群组</string>
+    <string name="joined_group_successful">已经加入群组</string>
+    <string name="leaved_group_error">离开群组出错，请重试！</string>
+    <string name="joined_group_error">加入群组出错，请重试！</string>
 </resources>

@@ -200,6 +200,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         break;
                     case Constants.TAB_GROUP_DETAIL_VIDEOS:
                         break;
+                    case Constants.REQUEST_LIST_ALL_PICTURES_OF_USER:
+                        view = inflater.inflate(R.layout.recycler_user_picture, parent, false);
+                        viewHolder = new UserPictureViewHolder(view);
+                        break;
                     default:
                         break;
                 }
@@ -553,6 +557,17 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             groupMemberVideosCountTv = (TextView) view.findViewById(R.id.group_member_videos_count_tv);
             followersOfMemberCountTv = (TextView) view.findViewById(R.id
                     .group_member_follow_count_tv);
+        }
+    }
+
+    public class UserPictureViewHolder extends RecyclerView.ViewHolder {
+        public final ImageView userPictureIv;
+        public final TextView userPictureNameTv;
+
+        public UserPictureViewHolder(View view) {
+            super(view);
+            userPictureIv = (ImageView)view.findViewById(R.id.user_picture_iv);
+            userPictureNameTv = (TextView)view.findViewById(R.id.user_picture_name_tv);
         }
     }
 

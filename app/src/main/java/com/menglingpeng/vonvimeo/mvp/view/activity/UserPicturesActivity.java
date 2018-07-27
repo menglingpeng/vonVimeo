@@ -1,5 +1,6 @@
 package com.menglingpeng.vonvimeo.mvp.view.activity;
 
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -12,6 +13,7 @@ import com.menglingpeng.vonvimeo.utils.Constants;
 public class UserPicturesActivity extends BaseActivity {
 
     private Toolbar toolbar;
+    private FloatingActionButton floatingActionButton;
     private String type;
     private String title;
     private static RecyclerFragment fragment;
@@ -27,7 +29,8 @@ public class UserPicturesActivity extends BaseActivity {
         type = getIntent().getStringExtra(Constants.TYPE);
         title = new StringBuilder().append(getIntent().getStringExtra(Constants.NAME)).append(getString(R.string.s))
                 .append(getString(R.string.likes)).toString();
-        toolbar = (Toolbar) findViewById(R.id.user_likes_tb);
+        toolbar = (Toolbar) findViewById(R.id.user_pictures_tb);
+        floatingActionButton = (FloatingActionButton)findViewById(R.id.user_pictures_fab);
         toolbar.setTitle(title);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_back);
@@ -35,6 +38,12 @@ public class UserPicturesActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                
             }
         });
     }

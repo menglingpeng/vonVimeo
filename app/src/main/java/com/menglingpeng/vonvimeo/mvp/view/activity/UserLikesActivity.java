@@ -42,7 +42,7 @@ public class UserLikesActivity extends BaseActivity {
     }
 
     private RecyclerFragment newFragment(String type) {
-        if (type.equals(Constants.REQUEST_LIST_LIKES_FOR_AUTH_USER)) {
+        if (type.equals(Constants.REQUEST_LIST_LIKES_FOR_A_USER)) {
             fragment = RecyclerFragment.newInstance(type);
         } else {
             fragment = RecyclerFragment.newInstance(getIntent().getStringExtra(Constants.ID), type);

@@ -99,6 +99,8 @@ public class Constants {
     public static final String REQUEST_CHECK_IF_USER_HAS_JOINED_A_GROUP = "request_check_if_user_has_joined_a_group";
     public static final String REQUEST_JOIN_A_GROUP = "reuqest_join_a_group";
     public static final String REQUEST_LEAVE_A_GROUP = "reuqest_leave_a_group";
+    public static final String REQUEST_LIST_ALL_PICTURES_OF_USER = "reuqest_list_all_picitures_of_user";
+    public static final String REQUEST_DETELE_A_USER_PICTURE = "reuqest_delete_a_user_picture";
 
 
     //默认值1

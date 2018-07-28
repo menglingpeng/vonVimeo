@@ -9,6 +9,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
@@ -19,6 +22,12 @@ public class EditUserProfileActivity extends BaseActivity implements RecyclerVie
    private CoordinatorLayout coordinatorLayout;
    private FloatingActionButton uploadFab;
    private Context context;
+   private TextView avatarTv;
+   private ImageView avatarIv;
+   private TextView bioDescTv;
+   private EditText bioEt;
+   private TextView locationTv;
+   private EditText locationEt;
 
     @Override
     protected void initLayoutId() {

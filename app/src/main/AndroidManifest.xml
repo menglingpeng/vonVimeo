@@ -33,7 +33,8 @@
         <activity android:name=".mvp.view.activity.UserWathcedActivity" />
         <activity android:name=".mvp.view.activity.UserGroupActivity" />
         <activity android:name=".mvp.view.activity.GroupDetailActivity" />
-        <activity android:name=".mvp.view.activity.UserPicturesActivity"></activity>
+        <activity android:name=".mvp.view.activity.UserPicturesActivity" />
+        <activity android:name=".mvp.view.activity.EditUserProfileActivity"></activity>
     </application>
 
 </manifest>

@@ -113,4 +113,7 @@
     <dimen name="profile_tablayout_followers_shots_count_tv_layout_marginBottom">15dp</dimen>
     <dimen name="profile_tablayout_followers_followers_count_tv_layout_marginLeft">15dp</dimen>
 
+    <dimen name="edit_user_avatar_title_layout_marginTop">20dp</dimen>
+    <dimen name="edit_user_avatar_title_layout_marginLeft">15dp</dimen>
+
 </resources>

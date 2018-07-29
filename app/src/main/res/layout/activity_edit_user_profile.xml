@@ -26,41 +26,99 @@
         android:layout_height="match_parent">
 
         <TextView
+            android:id="@+id/user_avatar_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/edit_user_avatar_title_layout_marginTop"
+            android:layout_marginLeft="@dimen/edit_user_avatar_title_layout_marginLeft"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:text="@string/edit_user_avatar_title"/>
+
+        <TextView
             android:id="@+id/user_avatar_desc_tv"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/profile_avatar_iv_layout_marginTop"
+            android:layout_alignLeft="@+id/user_avatar_title_tv"/>
 
         <ImageView
             android:id="@+id/user_avatar_iv"
             android:layout_width="@dimen/user_profile_avatar_iv_layout_width"
             android:layout_height="@dimen/user_profile_avatar_iv_layout_height"
             android:layout_marginTop="@dimen/profile_avatar_iv_layout_marginTop"
+            android:layout_alignLeft="@+id/user_avatar_title_tv"
             android:layout_centerHorizontal="true"
-            android:layout_marginLeft="15dp" />
+             />
 
         <TextView
-            android:id="@+id/edit_user_desc_tv"
+            android:id="@+id/user_bio_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/edit_user_avatar_title_layout_marginTop"
+            android:layout_marginLeft="@dimen/edit_user_avatar_title_layout_marginLeft"
+            android:layout_below="@+id/user_avatar_iv"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:text="@string/edit_user_bio_title"/>
+
+        <TextView
+            android:id="@+id/edit_user_bio_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/user_avatar_iv"
-            android:layout_alignLeft="@+id/user_avatar_iv"
+            android:layout_below="@+id/user_bio_title_tv"
+            android:layout_alignLeft="@+id/user_avatar_title_tv"
             android:layout_marginTop="@dimen/profile_avatar_iv_layout_marginTop"/>
 
         <EditText
             android:id="@+id/edit_user_bio_et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/edit_user_desc_tv"
-            android:layout_alignLeft="@+id/user_avatar_iv"
+            android:layout_below="@+id/edit_user_bio_tv"
+            android:layout_alignLeft="@+id/user_avatar_title_tv"
             android:layout_marginTop="@dimen/profile_avatar_iv_layout_marginTop"/>
+
+        <TextView
+            android:id="@+id/user_about_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/edit_user_avatar_title_layout_marginTop"
+            android:layout_marginLeft="@dimen/edit_user_avatar_title_layout_marginLeft"
+            android:layout_below="@+id/edit_user_bio_et"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:text="@string/edit_user_about_title"/>
+
+        <TextView
+            android:id="@+id/edit_user_about_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/user_about_title_tv"
+            android:layout_alignLeft="@+id/user_avatar_title_tv"
+            android:layout_marginTop="@dimen/profile_avatar_iv_layout_marginTop"/>
+
+        <EditText
+            android:id="@+id/edit_user_about_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_user_about_tv"
+            android:layout_alignLeft="@+id/user_avatar_title_tv"
+            android:layout_marginTop="@dimen/profile_avatar_iv_layout_marginTop"/>
+
+        <TextView
+            android:id="@+id/user_location_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/edit_user_avatar_title_layout_marginTop"
+            android:layout_marginLeft="@dimen/edit_user_avatar_title_layout_marginLeft"
+            android:layout_below="@+id/edit_user_about_et"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:text="@string/edit_user_location_title"/>
 
 
         <TextView
             android:id="@+id/edit_user_location_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/edit_user_bio_et"
-            android:layout_alignLeft="@+id/user_avatar_iv"
+            android:layout_below="@+id/user_location_title_tv"
+            android:layout_alignLeft="@+id/user_avatar_title_tv"
             android:layout_marginTop="@dimen/profile_avatar_iv_layout_marginTop"/>
 
         <EditText
@@ -68,7 +126,71 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/edit_user_location_tv"
-            android:layout_alignLeft="@+id/user_avatar_iv"
+            android:layout_alignLeft="@+id/user_avatar_title_tv"
+            android:layout_marginTop="@dimen/profile_avatar_iv_layout_marginTop"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/user_vimeo_url_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/edit_user_avatar_title_layout_marginTop"
+            android:layout_marginLeft="@dimen/edit_user_avatar_title_layout_marginLeft"
+            android:layout_below="@+id/edit_user_location_et"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:text="@string/edit_user_website_title"/>
+
+
+        <TextView
+            android:id="@+id/edit_user_vimeo_url_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/user_vimeo_url_title_tv"
+            android:layout_alignLeft="@+id/user_avatar_title_tv"
+            android:layout_marginTop="@dimen/profile_avatar_iv_layout_marginTop"/>
+
+        <EditText
+            android:id="@+id/edit_user_vimeo_url_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_user_vimeo_url_tv"
+            android:layout_alignLeft="@+id/user_avatar_title_tv"
+            android:layout_marginTop="@dimen/profile_avatar_iv_layout_marginTop"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/user_website_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/edit_user_avatar_title_layout_marginTop"
+            android:layout_marginLeft="@dimen/edit_user_avatar_title_layout_marginLeft"
+            android:layout_below="@+id/edit_user_vimeo_url_et"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:text="@string/edit_user_website_title"/>
+
+
+        <TextView
+            android:id="@+id/edit_user_website_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/user_website_title_tv"
+            android:layout_alignLeft="@+id/user_avatar_title_tv"
+            android:layout_marginTop="@dimen/profile_avatar_iv_layout_marginTop"/>
+
+        <Button
+            android:id="@+id/edit_user_website_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_user_website_tv"
+            android:layout_alignLeft="@+id/user_avatar_title_tv"
+            android:layout_marginTop="@dimen/profile_avatar_iv_layout_marginTop"/>
+
+        <Button
+            android:id="@+id/edit_user_save_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_user_website_bt"
+            android:layout_alignLeft="@+id/user_avatar_title_tv"
             android:layout_marginTop="@dimen/profile_avatar_iv_layout_marginTop"
             android:layout_marginBottom="20dp"/>
 

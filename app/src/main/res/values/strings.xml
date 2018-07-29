@@ -78,4 +78,11 @@
     <string name="joined_group_successful">已经加入群组</string>
     <string name="leaved_group_error">离开群组出错，请重试！</string>
     <string name="joined_group_error">加入群组出错，请重试！</string>
+
+    <string name="edit_user_avatar_title">Profile picture</string>
+    <string name="edit_user_bio_title">Bio</string>
+    <string name="edit_user_about_title">About</string>
+    <string name="edit_user_vimeo_url_title">Vimeo URL</string>
+    <string name="edit_user_location_title">Location</string>
+    <string name="edit_user_website_title">Your Website</string>
 </resources>

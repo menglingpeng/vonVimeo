@@ -29,7 +29,7 @@ public class UserProjectActivity extends BaseActivity implements RecyclerView{
 
     @Override
     protected void initLayoutId() {
-        layoutId = android.R.layout.activity_user_project;
+        layoutId = R.layout.activity_user_project;
     }
 
     @Override

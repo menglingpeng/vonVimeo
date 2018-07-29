@@ -74,7 +74,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/edit_user_bio_tv"
             android:layout_alignLeft="@+id/user_avatar_title_tv"
-            android:layout_marginTop="@dimen/profile_avatar_iv_layout_marginTop"/>
+            android:layout_marginTop="@dimen/profile_avatar_iv_layout_marginTop"
+            android:maxLength="160"/>
 
         <TextView
             android:id="@+id/user_about_title_tv"

@@ -1,8 +1,11 @@
 package com.menglingpeng.vonvimeo.mvp.view.activity;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.TextInputEditText;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -16,6 +19,13 @@ import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
+import com.menglingpeng.vonvimeo.mvp.presenter.RecyclerPresenter;
+import com.menglingpeng.vonvimeo.mvp.view.UserProjectActivity;
+import com.menglingpeng.vonvimeo.utils.Constants;
+import com.menglingpeng.vonvimeo.utils.SharedPrefUtils;
+import com.menglingpeng.vonvimeo.utils.SnackbarUtils;
+
+import java.util.HashMap;
 
 public class EditUserProfileActivity extends BaseActivity implements RecyclerView , View.OnClickListener{
 
@@ -40,6 +50,7 @@ public class EditUserProfileActivity extends BaseActivity implements RecyclerVie
    private TextView websiteTv;
    private Button websiteBt;
    private Button saveBt;
+   private String type;
 
     @Override
     protected void initLayoutId() {
@@ -117,7 +128,49 @@ public class EditUserProfileActivity extends BaseActivity implements RecyclerVie
     }
 
     private void showAddWebsiteDialog(){
+        final TextInputEditText websiteNameEt;
+        final TextInputEditText websiteURLEt;
+        final TextInputEditText websiteDescEt;
+        AlertDialog dialog;
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_add_a_new_link, null);
+        builder.setTitle(R.string.create_a_bucket);
+        builder.setView(dialogView);
+        websiteNameEt = (TextInputEditText) dialogView.findViewById(R.id.website_name_tiet);
+        websiteDescEt = (TextInputEditText) dialogView.findViewById(R.id.website_desc_tiet);
+        websiteURLEt = (TextInputEditText)dialogView.findViewById(R.id.website_url_tiet);
+        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.setPositiveButton(R.string.create, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String name = websiteNameEt.getText().toString();
+                if (name.equals("")) {
+                    SnackbarUtils.showSnackShort(getApplicationContext(), coordinatorLayout, getString(R.string
+                            .the_name_of_bucket_is_not_null));
+                } else {
+                    HashMap<String, String> map = new HashMap<>();
+                    map.put(Constants.ACCESS_TOKEN, SharedPrefUtils.getAuthToken());
+                    map.put(Constants.NAME, websiteNameEt.getText().toString());
+                    map.put(Constants.URL, websiteURLEt.getText().toString());
+                    map.put(Constants.DESCRIPTION, websiteDescEt.getText().toString());
+                    type = Constants.REQUEST_REQUEST_CREATE_A_PROJECT;
+                    RecyclerPresenter presenter = new RecyclerPresenter(EditUserProfileActivity.this, type, Constants
+                            .REQUEST_NORMAL, Constants.REQUEST_POST_MEIHOD, map, getApplicationContext());
+                    presenter.loadJson();
+                    SnackbarUtils.showSnackShort(getApplicationContext(), coordinatorLayout, getString(R.string
+                            .snack_create_a_bucket_text));
+                }
 
+            }
+        });
+        websiteNameEt.setFocusable(true);
+        dialog = builder.create();
+        dialog.show();
     }
 
     @Override

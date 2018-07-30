@@ -35,6 +35,8 @@ public class Constants {
     public static final String NAME = "name";
     public static final String DESCRIPTION = "description";
     public static final String USER = "user";
+    public static final String URL = "url";
+
 
     public static final String REQUEST_LIST_MY_VIDEOS = "request_list_my_videos";
     public static final String REQUEST_LIST_VIEW_STATS = "request_list_view_stats";

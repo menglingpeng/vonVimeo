@@ -99,6 +99,166 @@ public class User implements Serializable {
             }
         }
     }
+    
+    public static class MetadataBean {
+
+        private ConnectionsBean connections;
+        private InteractionsBean interactions;
+
+        public ConnectionsBean getConnections() {
+            return connections;
+        }
+
+        public void setConnections(ConnectionsBean connections) {
+            this.connections = connections;
+        }
+
+        public InteractionsBean getInteractions() {
+            return interactions;
+        }
+
+        public void setInteractions(InteractionsBean interactions) {
+            this.interactions = interactions;
+        }
+
+        public static class ConnectionsBean {
+
+            private UsersBean users;
+            private VideosBean videos;
+
+            public UsersBean getUsers() {
+                return users;
+            }
+
+            public void setUsers(UsersBean users) {
+                this.users = users;
+            }
+
+            public VideosBean getVideos() {
+                return videos;
+            }
+
+            public void setVideos(VideosBean videos) {
+                this.videos = videos;
+            }
+
+            public static class UsersBean {
+
+                private String uri;
+                private int total;
+                private List<String> options;
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public int getTotal() {
+                    return total;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+            }
+
+            public static class VideosBean {
+
+                private String uri;
+                private int total;
+                private List<String> options;
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public int getTotal() {
+                    return total;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+            }
+        }
+
+        public static class InteractionsBean {
+
+            private FollowBean follow;
+
+            public FollowBean getFollow() {
+                return follow;
+            }
+
+            public void setFollow(FollowBean follow) {
+                this.follow = follow;
+            }
+
+            public static class FollowBean {
+
+                private boolean added;
+                private Object added_time;
+                private Object type;
+                private String uri;
+
+                public boolean isAdded() {
+                    return added;
+                }
+
+                public void setAdded(boolean added) {
+                    this.added = added;
+                }
+
+                public Object getAdded_time() {
+                    return added_time;
+                }
+
+                public void setAdded_time(Object added_time) {
+                    this.added_time = added_time;
+                }
+
+                public Object getType() {
+                    return type;
+                }
+
+                public void setType(Object type) {
+                    this.type = type;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+            }
+        }
+    }
+}
 
 
 }

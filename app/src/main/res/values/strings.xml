@@ -86,4 +86,8 @@
     <string name="edit_user_vimeo_url_title">Vimeo URL</string>
     <string name="edit_user_location_title">Location</string>
     <string name="edit_user_website_title">Your Website</string>
+
+    <string name="dialog_upload_choose_title">添加到我的相册</string>
+    <string name="dialog_upload_choose_gallery">图库</string>
+    <string name="dialog_upload_choose_camera">拍照</string>
 </resources>

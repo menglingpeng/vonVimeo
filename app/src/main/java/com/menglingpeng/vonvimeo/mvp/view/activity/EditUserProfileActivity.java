@@ -1,17 +1,31 @@
 package com.menglingpeng.vonvimeo.mvp.view.activity;
 
+import android.Manifest;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.Build;
+import android.provider.MediaStore;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TextInputEditText;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -25,6 +39,7 @@ import com.menglingpeng.vonvimeo.utils.Constants;
 import com.menglingpeng.vonvimeo.utils.SharedPrefUtils;
 import com.menglingpeng.vonvimeo.utils.SnackbarUtils;
 
+import java.io.File;
 import java.util.HashMap;
 
 public class EditUserProfileActivity extends BaseActivity implements RecyclerView , View.OnClickListener{
@@ -51,6 +66,12 @@ public class EditUserProfileActivity extends BaseActivity implements RecyclerVie
    private Button websiteBt;
    private Button saveBt;
    private String type;
+
+    private Dialog uploadChooseDialog;
+    private static final int REQUEST_TAKE_PHOTO_PERMISSION = 111;
+    private static final int REQUEST_PICK_IMAGE_PERMISSION = 333;
+    private static final int REQ_TAKE_PHOTO = 222;
+    private static final int REQ_PICK_IMAGE = 444;
 
     @Override
     protected void initLayoutId() {
@@ -124,6 +145,75 @@ public class EditUserProfileActivity extends BaseActivity implements RecyclerVie
             default:
                 break;
 
+        }
+    }
+
+    private void showUploadChooseDialog(){
+        uploadChooseDialog = new Dialog(this, R.style.Theme_Light_Dialog);
+        View dialogView = LayoutInflater.from(context).inflate(R.layout.dialog_upload_choose, null);
+        Window window = uploadChooseDialog.getWindow();
+        window.setGravity(Gravity.BOTTOM);
+        window.setWindowAnimations(R.style.UploadChoosedialogStyle);
+        window.getDecorView().setPadding(0, 0 , 0, 0);
+        WindowManager.LayoutParams lp = window.getAttributes();
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        window.setAttributes(lp);
+        uploadChooseDialog.setContentView(dialogView);
+        Button bt_gallery = (Button)dialogView.findViewById(R.id.button_gallery) ;
+        Button bt_camera = (Button)dialogView.findViewById(R.id.button_camera) ;
+        uploadChooseDialog.show();
+        bt_camera.setOnClickListener(new UploadChooseListener());
+        bt_gallery.setOnClickListener(new UploadChooseListener());
+    }
+
+    class UploadChooseListener implements View.OnClickListener {
+
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()){
+
+                case R.id.button_gallery :
+                    //申请图库权限
+                    if(ContextCompat.checkSelfPermission(context, Manifest.permission.READ_EXTERNAL_STORAGE) !=
+                            PackageManager.PERMISSION_GRANTED){
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                            requestPermissions(new String[] {Manifest.permission.READ_EXTERNAL_STORAGE},
+                                    REQUEST_PICK_IMAGE_PERMISSION);
+                        }
+                    }
+                    //调用图库
+                    Intent pickImage = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                    startActivityForResult(pickImage, REQUEST_PICK_IMAGE_PERMISSION);
+                    uploadChooseDialog.dismiss();
+                    break;
+
+                case R.id.button_camera :
+                    //申请相机权限
+                    if(ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA) != PackageManager.
+                            PERMISSION_GRANTED){
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                            requestPermissions(new String[]{Manifest.permission.CAMERA, Manifest
+                                    .permission.WRITE_EXTERNAL_STORAGE}, REQUEST_TAKE_PHOTO_PERMISSION);
+                        }
+                    }
+                    //调用相机
+                    Intent takePhoto = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                    //确保设备有相机应用接收Intent
+                    if(takePhoto.resolveActivity(getPackageManager()) != null){
+                        File photoFile = createPhotoFile();
+                        if(photoFile != null){
+                            //FileProvider 是一个特殊的 ContentProvider 的子类，
+                            //它使用 content:// Uri 代替了 file:/// Uri. ，更便利而且安全的为另一个app分享文件
+                            Uri photoUri = FileProvider.getUriForFile(context,
+                                    "com.menglingpeng.vonvimeo.fileprovider", photoFile);
+                            takePhoto.putExtra(MediaStore.EXTRA_OUTPUT, photoUri);
+                            startActivityForResult(takePhoto, REQ_TAKE_PHOTO);
+                        }
+                    }
+                    uploadChooseDialog.dismiss();
+                    break;
+            }
         }
     }
 

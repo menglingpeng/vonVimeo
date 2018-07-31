@@ -99,7 +99,7 @@ public class User implements Serializable {
             }
         }
     }
-    
+
     public static class MetadataBean {
 
         private ConnectionsBean connections;

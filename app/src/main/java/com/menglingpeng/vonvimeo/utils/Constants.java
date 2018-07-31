@@ -37,6 +37,18 @@ public class Constants {
     public static final String USER = "user";
     public static final String URL = "url";
 
+    public static final String AUTH_USER_URL = "https://api.vimeo.com/me";
+    public static final String SIGNLE_USER_URL = "https://api.vimeo.com/users";
+    public static final String USER_ID = "user_id";
+    public static final String FOLLOW_USER_ID = "follow_user_id";
+    public static final String FOLLOWERS = "followers";
+    public static final String FOLLOWING = "following";
+    public static final String VIDEOS = "videos";
+    public static final String VIDEOS_ID= "videos_id";
+    public static final String PORTRAITSET_ID = "portraitset_id";
+    public static final String PICTURES = "pictures";
+    public static final String WATCHED = "watched";
+    public static final String FEED = "feed";
 
     public static final String REQUEST_LIST_MY_VIDEOS = "request_list_my_videos";
     public static final String REQUEST_LIST_VIEW_STATS = "request_list_view_stats";
@@ -103,6 +115,7 @@ public class Constants {
     public static final String REQUEST_LEAVE_A_GROUP = "reuqest_leave_a_group";
     public static final String REQUEST_LIST_ALL_PICTURES_OF_USER = "reuqest_list_all_picitures_of_user";
     public static final String REQUEST_DETELE_A_USER_PICTURE = "reuqest_delete_a_user_picture";
+    public static final String REQUEST_CREATE_A_USER_PICTURE = "reuqest_create_a_user_picture";
 
 
     //默认值1

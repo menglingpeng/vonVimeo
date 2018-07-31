@@ -18,4 +18,12 @@
         <item name="android:textSize">16dp</item>
     </style>
 
+    <!-- 弹出框动画 由下至上 -->
+    <style name="UploadChoosedialogStyle" parent="@android:style/Animation.Dialog">
+        <item name="@android:windowEnterAnimation">@anim/dialog_upload_choose_enter</item>
+        <!-- 进入时的动画 -->
+        <item name="@android:windowExitAnimation">@anim/dialog_upload_choose_exit</item>
+        <!-- 退出时的动画 -->
+    </style>
+
 </resources>

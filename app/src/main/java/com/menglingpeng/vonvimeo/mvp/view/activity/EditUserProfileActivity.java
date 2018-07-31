@@ -6,8 +6,10 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -40,7 +42,10 @@ import com.menglingpeng.vonvimeo.utils.SharedPrefUtils;
 import com.menglingpeng.vonvimeo.utils.SnackbarUtils;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 
 public class EditUserProfileActivity extends BaseActivity implements RecyclerView , View.OnClickListener{
 
@@ -51,6 +56,7 @@ public class EditUserProfileActivity extends BaseActivity implements RecyclerVie
    private TextView avatarTv;
    private ImageView avatarIv;
    private TextView bioDescTv;
+   private Button uploadAvatarbt;
    private EditText bioEt;
    private String bio;
    private TextView aboutTv;
@@ -68,6 +74,8 @@ public class EditUserProfileActivity extends BaseActivity implements RecyclerVie
    private String type;
 
     private Dialog uploadChooseDialog;
+    private String currentPhotoPath;
+    private String uploadFilePath;
     private static final int REQUEST_TAKE_PHOTO_PERMISSION = 111;
     private static final int REQUEST_PICK_IMAGE_PERMISSION = 333;
     private static final int REQ_TAKE_PHOTO = 222;
@@ -86,6 +94,7 @@ public class EditUserProfileActivity extends BaseActivity implements RecyclerVie
         toolbar = (Toolbar)findViewById(R.id.edit_user_tb);
         avatarTv = (TextView)findViewById(R.id.user_avatar_desc_tv);
         avatarIv = (ImageView)findViewById(R.id.user_avatar_iv);
+        uploadAvatarbt = (Button)findViewById(R.id.user_avatar_upload_bt);
         bioDescTv = (TextView)findViewById(R.id.edit_user_bio_tv);
         bioEt = (EditText)findViewById(R.id.edit_user_bio_et);
         aboutTv = (TextView)findViewById(R.id.edit_user_about_tv);
@@ -136,6 +145,9 @@ public class EditUserProfileActivity extends BaseActivity implements RecyclerVie
     @Override
     public void onClick(View view) {
         switch (view.getId()){
+            case R.id.user_avatar_upload_bt:
+                showUploadChooseDialog();
+                break;
             case R.id.edit_user_save_bt:
                 editUser();
                 break;
@@ -150,7 +162,7 @@ public class EditUserProfileActivity extends BaseActivity implements RecyclerVie
 
     private void showUploadChooseDialog(){
         uploadChooseDialog = new Dialog(this, R.style.Theme_Light_Dialog);
-        View dialogView = LayoutInflater.from(context).inflate(R.layout.dialog_upload_choose, null);
+        View dialogView = LayoutInflater.from(context).inflate(R.layout.dialog_upload_user_picture_choose, null);
         Window window = uploadChooseDialog.getWindow();
         window.setGravity(Gravity.BOTTOM);
         window.setWindowAnimations(R.style.UploadChoosedialogStyle);
@@ -215,6 +227,45 @@ public class EditUserProfileActivity extends BaseActivity implements RecyclerVie
                     break;
             }
         }
+    }
+
+    private File createPhotoFile(){
+        //使用拍照时间命名
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.CHINA).format(new Date());
+        String photoFileName = "IMG" + "_" +timeStamp ;
+        //getExternalFilesDir()方法可以获取到 SDCard/Android/data/你的应用的包名/files/ 目录，一般放一些长时间保存的数据
+        String storagePath = getExternalFilesDir(Environment.DIRECTORY_PICTURES).getPath();
+        //创建临时照片文件
+        File photoFile = new File(storagePath + File.separator + photoFileName + ".JPG");
+        currentPhotoPath = photoFile.getAbsolutePath();
+        return  photoFile;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        String uploadFileNmae = null;
+        switch (requestCode){
+            //获取照片的路径
+            case REQ_TAKE_PHOTO :
+                if(resultCode == RESULT_OK){
+                    uploadFilePath = currentPhotoPath;
+                }
+                break;
+            //获取选择图片路径
+            case REQ_PICK_IMAGE :
+                if(resultCode == RESULT_OK && data != null){
+                    Uri selectedImage = data.getData();
+                    String[] imagePathColumns ={MediaStore.Images.Media.DATA};
+                    Cursor cursor = getContentResolver().query(selectedImage, imagePathColumns, null,
+                            null, null);
+                    cursor.moveToFirst();
+                    uploadFilePath = getString(cursor.getColumnIndex(imagePathColumns[0]));
+                }
+                break;
+        }
+        File file = new File(uploadFilePath);
+        uploadFileNmae = file.getName();
     }
 
     private void showAddWebsiteDialog(){

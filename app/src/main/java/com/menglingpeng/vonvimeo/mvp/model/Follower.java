@@ -1,36 +1,93 @@
 package com.menglingpeng.vonvimeo.mvp.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Follower implements Serializable {
 
-    private int id;
+    private int total;
+    private int page;
+    private int per_page;
+    private Following.PagingBean paging;
+    private List<Following.DataBean> data;
 
-    private String created_at;
-
-    private User follower;
-
-    public void setId(int id) {
-        this.id = id;
+    public void setTotal(int total) {
+        this.total = total;
     }
 
-    public void setCreated_at(String created_at) {
-        this.created_at = created_at;
+    public void setPage(int page) {
+        this.page = page;
     }
 
-    public int getId() {
-        return id;
+    public void setPer_page(int per_page) {
+        this.per_page = per_page;
     }
 
-    public String getCreated_at() {
-        return created_at;
+    public void setPaging(Following.PagingBean paging) {
+        this.paging = paging;
     }
 
-    public User getFollower() {
-        return follower;
+    public void setData(List<Following.DataBean> data) {
+        this.data = data;
     }
 
-    public void setFollower(User follower) {
-        this.follower = follower;
+    public int getTotal() {
+        return total;
+    }
+
+    public int getPage() {
+        return page;
+    }
+
+    public int getPer_page() {
+        return per_page;
+    }
+
+    public Following.PagingBean getPaging() {
+        return paging;
+    }
+
+    public List<Following.DataBean> getData() {
+        return data;
+    }
+
+    public static class PagingBean {
+
+        private Object next;
+        private Object previous;
+        private String first;
+        private String last;
+
+        public void setNext(Object next) {
+            this.next = next;
+        }
+
+        public void setPrevious(Object previous) {
+            this.previous = previous;
+        }
+
+        public void setFirst(String first) {
+            this.first = first;
+        }
+
+        public void setLast(String last) {
+            this.last = last;
+        }
+
+        public Object getNext() {
+            return next;
+        }
+
+        public Object getPrevious() {
+            return previous;
+        }
+
+        public String getFirst() {
+            return first;
+        }
+
+        public String getLast() {
+            return last;
+        }
     }
 }

@@ -314,6 +314,32 @@ public class EditUserProfileActivity extends BaseActivity implements RecyclerVie
         dialog.show();
     }
 
+    private File getCaremaPicture(){
+        //申请相机权限
+        if(ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA) != PackageManager.
+                PERMISSION_GRANTED){
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                requestPermissions(new String[]{Manifest.permission.CAMERA, Manifest
+                        .permission.WRITE_EXTERNAL_STORAGE}, REQUEST_TAKE_PHOTO_PERMISSION);
+            }
+        }
+        //调用相机
+        Intent takePhoto = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        //确保设备有相机应用接收Intent
+        if(takePhoto.resolveActivity(getPackageManager()) != null){
+            File photoFile = createPhotoFile();
+            if(photoFile != null){
+                //FileProvider 是一个特殊的 ContentProvider 的子类，
+                //它使用 content:// Uri 代替了 file:/// Uri. ，更便利而且安全的为另一个app分享文件
+                Uri photoUri = FileProvider.getUriForFile(context,
+                        "com.menglingpeng.vonvimeo.fileprovider", photoFile);
+                takePhoto.putExtra(MediaStore.EXTRA_OUTPUT, photoUri);
+                startActivityForResult(takePhoto, REQ_TAKE_PHOTO);
+            }
+        }
+        uploadChooseDialog.dismiss();
+    }
+
     @Override
     public void hideProgress() {
 

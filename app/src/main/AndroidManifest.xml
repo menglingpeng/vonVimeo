@@ -34,7 +34,8 @@
         <activity android:name=".mvp.view.activity.UserGroupActivity" />
         <activity android:name=".mvp.view.activity.GroupDetailActivity" />
         <activity android:name=".mvp.view.activity.UserPicturesActivity" />
-        <activity android:name=".mvp.view.activity.EditUserProfileActivity"></activity>
+        <activity android:name=".mvp.view.activity.EditUserProfileActivity" />
+        <activity android:name=".mvp.view.activity.UserUploadedVideosActivity"></activity>
     </application>
 
 </manifest>

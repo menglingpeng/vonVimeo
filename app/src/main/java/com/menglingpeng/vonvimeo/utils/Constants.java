@@ -95,8 +95,6 @@ public class Constants {
             "list_all_videos_that_a_user_has_liked";
 
 
-    public static final String FOLLOWERS = "followers";
-    public static final String FOLLOWING = "following";
     public static final String FOLLOW = "follow";
     public static final String DETAIL = "detail";
     public static final String VIDEO_ID = "video_id";
@@ -116,6 +114,11 @@ public class Constants {
     public static final String REQUEST_LIST_ALL_PICTURES_OF_USER = "reuqest_list_all_picitures_of_user";
     public static final String REQUEST_DETELE_A_USER_PICTURE = "reuqest_delete_a_user_picture";
     public static final String REQUEST_CREATE_A_USER_PICTURE = "reuqest_create_a_user_picture";
+
+    public static final String REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_AUTH_USER =
+            "reuqest_get_all_videos_uploaded_by_auth_user";
+    public static final String REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_SINGLE_USER =
+            "reuqest_get_all_videos_uploaded_by_single_user";
 
 
     //默认值1

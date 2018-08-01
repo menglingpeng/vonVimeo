@@ -29,7 +29,7 @@ public class UserAlbumActivity extends BaseActivity implements RecyclerView{
 
     @Override
     protected void initLayoutId() {
-        layoutId = android.R.layout.activity_user_album;
+        layoutId = R.layout.activity_user_album;
     }
 
     @Override

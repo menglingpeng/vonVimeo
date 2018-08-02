@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -204,6 +205,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         view = inflater.inflate(R.layout.recycler_user_picture, parent, false);
                         viewHolder = new UserPictureViewHolder(view);
                         break;
+                    case Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_AUTH_USER:
+                        view = inflater.inflate(R.layout.recycler_user_uploaded_video, parent, false);
+                        viewHolder = new UserPictureViewHolder(view);
+                        break;
                     default:
                         break;
                 }
@@ -347,6 +352,14 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 case Constants.REQUEST_LIST_PROJECTS_FOR_A_USER:
                     ivId = R.drawable.ic_image_grey_400_48dp;
                     tvId = R.string.no_project_here;
+                    break;
+                case Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_AUTH_USER:
+                    ivId = R.drawable.ic_image_grey_400_48dp;
+                    tvId = R.string.no_uploaded_vidoes_here;
+                    break;
+                case Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_SINGLE_USER:
+                    ivId = R.drawable.ic_image_grey_400_48dp;
+                    tvId = R.string.no_uploaded_vidoes_here;
                     break;
                  default:
                      break;
@@ -537,6 +550,27 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     private class LikedVideoViewHolder extends RecyclerView.ViewHolder {
         public LikedVideoViewHolder(View view) {
             super(view);
+        }
+    }
+
+    public class UploadedVideoViewHolder extends RecyclerView.ViewHolder {
+
+        public final CheckBox checkBox;
+        public final ImageView videoThumbIv;
+        public final TextView videoNameTv;
+        public final ImageView avatarIv;
+        public final TextView userNameTv;
+        public final TextView playCountTv;
+
+        public UploadedVideoViewHolder(View view) {
+            super(view);
+
+            checkBox = (CheckBox)view.findViewById(R.id.uploaded_video_cb);
+            videoThumbIv = (ImageView)view.findViewById(R.id.uploaded_video_thumb_iv);
+            videoNameTv = (TextView)view.findViewById(R.id.uploaded_video_name_tv)
+            avatarIv = (ImageView)view.findViewById(R.id.uploaded_video_avatar_iv);
+            userNameTv = (TextView)view.findViewById(R.id.uploaded_video_user_name_tv);
+            playCountTv = (TextView)view.findViewById(R.id.uploaded_video_play_count_tv);
         }
     }
 

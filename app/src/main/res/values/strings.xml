@@ -64,6 +64,7 @@
     <string name="no_follower_here">没 有 粉 丝</string>
     <string name="no_following_here">没 有 关 注</string>
     <string name="no_comment_here">没有评论</string>
+    <string name="no_uploaded_vidoes_here">没有上传视频</string>
 
     <string name="album_edit">编辑</string>
     <string name="album_delete">删除</string>

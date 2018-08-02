@@ -542,22 +542,52 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     private class WatchedVideoViewHolder extends RecyclerView.ViewHolder {
+
+        public final CheckBox watchedCb;
+        public final ImageView watchedVideoThumbIv;
+        public final TextView watchedVideoNameTv;
+        public final ImageView avatarIv;
+        public final TextView userNameTv;
+        public final TextView playCountTv;
+
         public WatchedVideoViewHolder(View view) {
             super(view);
+
+            watchedCb = (CheckBox)view.findViewById(R.id.watched_video_cb);
+            watchedVideoThumbIv = (ImageView)view.findViewById(R.id.watched_video_thumb_iv);
+            watchedVideoNameTv = (TextView)view.findViewById(R.id.watched_video_name_tv)
+            avatarIv = (ImageView)view.findViewById(R.id.watched_video_avatar_iv);
+            userNameTv = (TextView)view.findViewById(R.id.watched_video_user_name_tv);
+            playCountTv = (TextView)view.findViewById(R.id.watched_video_play_count_tv);
         }
     }
 
     private class LikedVideoViewHolder extends RecyclerView.ViewHolder {
+
+        public final CheckBox likedCb;
+        public final ImageView likedVideoThumbIv;
+        public final TextView likedVideoNameTv;
+        public final ImageView avatarIv;
+        public final TextView userNameTv;
+        public final TextView playCountTv;
+
         public LikedVideoViewHolder(View view) {
             super(view);
+
+            likedCb = (CheckBox)view.findViewById(R.id.like_video_cb);
+            likedVideoThumbIv = (ImageView)view.findViewById(R.id.like_video_thumb_iv);
+            likedVideoNameTv = (TextView)view.findViewById(R.id.like_video_name_tv)
+            avatarIv = (ImageView)view.findViewById(R.id.like_video_avatar_iv);
+            userNameTv = (TextView)view.findViewById(R.id.like_video_user_name_tv);
+            playCountTv = (TextView)view.findViewById(R.id.like_video_play_count_tv);
         }
     }
 
     public class UploadedVideoViewHolder extends RecyclerView.ViewHolder {
 
-        public final CheckBox checkBox;
-        public final ImageView videoThumbIv;
-        public final TextView videoNameTv;
+        public final CheckBox uploadedCb;
+        public final ImageView uploadedVideoThumbIv;
+        public final TextView uploadedVideoNameTv;
         public final ImageView avatarIv;
         public final TextView userNameTv;
         public final TextView playCountTv;
@@ -565,9 +595,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         public UploadedVideoViewHolder(View view) {
             super(view);
 
-            checkBox = (CheckBox)view.findViewById(R.id.uploaded_video_cb);
-            videoThumbIv = (ImageView)view.findViewById(R.id.uploaded_video_thumb_iv);
-            videoNameTv = (TextView)view.findViewById(R.id.uploaded_video_name_tv)
+            uploadedCb = (CheckBox)view.findViewById(R.id.uploaded_video_cb);
+            uploadedVideoThumbIv = (ImageView)view.findViewById(R.id.uploaded_video_thumb_iv);
+            uploadedVideoNameTv = (TextView)view.findViewById(R.id.uploaded_video_name_tv)
             avatarIv = (ImageView)view.findViewById(R.id.uploaded_video_avatar_iv);
             userNameTv = (TextView)view.findViewById(R.id.uploaded_video_user_name_tv);
             playCountTv = (TextView)view.findViewById(R.id.uploaded_video_play_count_tv);

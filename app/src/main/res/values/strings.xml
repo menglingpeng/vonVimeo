@@ -31,6 +31,9 @@
     <string name="my_video_spinner__date_added">Date added</string>
     <string name="my_video_spinner__duration">Duration</string>
 
+    <string name="cancle">关闭</string>
+    <string name="ok">确定</string>
+
 
     <string name="name">名称</string>
     <string name="description">说明</string>
@@ -94,4 +97,41 @@
 
     <string name="uploaded_videos_share">分享</string>
     <string name="uploaded_videos_delete">删除</string>
+    <string name="dialog_delete_a_video_title">确定要删除</string>
+
+    <string name="delete_a_video_http_status_code_204">视频已经成功删除</string>
+    <string name="delete_a_video_http_status_code_403">此视频不属于授权用户，不能删除</string>
+
+    <string name="create_an_album_http_status_code_403">用户没有权限创建Album</string>
+    <string name="create_an_album_http_status_code_200">成功创建Album</string>
+    <string name="delete_an_album_http_status_code_204">成功删除Album</string>
+    <string name="delete_an_album_http_status_code_403">用户没有权限删除Album</string>
+    <string name="delete_an_album_http_status_code_404">Album不存在</string>
+    <string name="add_a_video_to_an_album_http_status_code_204">视频已经成功添加到Album</string>
+    <string name="add_a_video_to_an_album_http_status_code_403">用户没有权限执行此操作</string>
+    <string name="add_a_video_to_an_album_http_status_code_404">Album不存在</string>
+    <string name="remove_a_video_from_an_album_http_status_code_204">视频已经成功移除Album</string>
+    <string name="remove_a_video_from_an_album_http_status_code_403">用户没有权限执行此操作</string>
+    <string name="remove_a_video_from_an_album_http_status_code_404">Album不存在</string>
+
+    <string name="create_a_channle_http_status_code_403">用户没有权限创建Channle</string>
+    <string name="create_a_channle_http_status_code_4200">成功创建Channle</string>
+    <string name="delete_a_channle_http_status_code_204">成功删除Channle</string>
+    <string name="delete_a_channle_http_status_code_403">用户没有权限删除Channle</string>
+    <string name="add_a_video_to_a_channle_http_status_code_204">视频已经成功添加到Channle</string>
+    <string name="delete_a_video_from_a_channle_http_status_code_204">视频已经成功移出Channle</string>
+    <string name="delete_a_video_from_a_channle_http_status_code_403">用户没有权限执行此操作</string>
+    <string name="delete_a_video_from_a_channle_http_status_code_404">此视频不存在</string>
+
+    <string name="check_if_user_has_joined_a_group_http_status_code_204"></string>
+    <string name="create_a_group_http_status_code_403">用户没有权限创建Group</string>
+    <string name="create_a_group_http_status_code_200">成功创建Group</string>
+    <string name="delete_a_group_http_status_code_204">成功删除Group</string>
+    <string name="delete_a_group_http_status_code_403">用户没有权限删除Group</string>
+    <string name="add_video_to_a_group_http_status_code_200">视频成功添加到Group</string>
+    <string name="add_video_to_a_group_http_status_code_403">Group已经存在此视频或者此视频不能添加到Group</string>
+
+
+
+
 </resources>

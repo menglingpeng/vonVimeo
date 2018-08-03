@@ -119,6 +119,7 @@ public class Constants {
             "reuqest_get_all_videos_uploaded_by_auth_user";
     public static final String REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_SINGLE_USER =
             "reuqest_get_all_videos_uploaded_by_single_user";
+    public static final String REQUEST_DELETE_A_VIDEO = "requesr_delete_a_video";
 
 
     //默认值1

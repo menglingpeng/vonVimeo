@@ -176,6 +176,12 @@ public class UserAlbumActivity extends BaseActivity implements RecyclerView{
                 dialog.dismiss();
             }
         });
+        builder.setPositiveButton(R.sting.ok, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
 
         dialog = builder.create();
         dialog.show();

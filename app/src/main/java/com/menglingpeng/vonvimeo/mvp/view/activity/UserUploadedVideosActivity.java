@@ -1,6 +1,7 @@
 package com.menglingpeng.vonvimeo.mvp.view.activity;
 
 import android.content.ContentResolver;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -9,6 +10,7 @@ import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -17,11 +19,12 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
+import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
 import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
 
 import java.io.File;
 
-public class UserUploadedVideosActivity extends BaseActivity {
+public class UserUploadedVideosActivity extends BaseActivity implements RecyclerView{
 
     private Toolbar toolbar;
     private FloatingActionButton floatingActionButton;
@@ -71,14 +74,40 @@ public class UserUploadedVideosActivity extends BaseActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
-            case R.id.uploaded_videos_shar:
+            case R.id.uploaded_videos_share:
+                shareToWeichat();
                 break;
             case R.id.uploaded_videos_delete:
-                break;
+                showDeleteUploadedVideoDialog();
             default:
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void shareToWeichat(){
+
+    }
+
+    private void showDeleteUploadedVideoDialog(){
+        AlertDialog dialog;
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.create_a_bucket);
+        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.setPositiveButton(R.sting.ok, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+
+        dialog = builder.create();
+        dialog.show();
     }
 
     @Override
@@ -142,5 +171,20 @@ public class UserUploadedVideosActivity extends BaseActivity {
 
             super.onActivityResult(requestCode, resultCode, data);
         }
+    }
+
+    @Override
+    public void hideProgress() {
+
+    }
+
+    @Override
+    public void loadFailed(String msg) {
+
+    }
+
+    @Override
+    public void loadSuccess(String json, String requestType) {
+
     }
 }

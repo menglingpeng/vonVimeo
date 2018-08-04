@@ -8,6 +8,7 @@ public class Constants {
     public static final String REQUEST_POST_MEIHOD = "post";
     public static final String REQUEST_PUT_MEIHOD = "put";
     public static final String REQUEST_DELETE_MEIHOD = "delete";
+    public static final String CODE_200_OK = "200";
     public static final String CODE_404_NOT_FOUND = "404";
     public static final String CODE_204_NO_CONTENT = "204";
     public static final String CODE_403_FORBIDDEN = "403";
@@ -58,6 +59,10 @@ public class Constants {
     public static final String REQUEST_LIST_STAFF_PICKS = "request_list_staff_picks";
     public static final String REQUEST_LIST_CATEGORITES = "request_list_categoties";
     public static final String REQUEST_LIST_CHANNELS = "request_list_channels";
+    public static final String REQUEST_CREATE_A_CHANNLE = "request_create_a_channle";
+    public static final String REQUEST_DELETE_A_CHANNLE = "request_delete_a_channle";
+    public static final String REQUEST_ADD_A_VIDEO_TO_A_CHANNLE = "request_add_a_video_to_a_channle";
+    public static final String REQUEST_REMOVE_A_VIDEO_FROM_A_CHANNLE = "request_remove_a_video_from_a_channle";
     public static final String REQUEST_LIST_TITLE= "request_list_title";
     public static final String REQUEST_LIST_DATE_MODIFIED = "request_list_date_modified";
     public static final String REQUEST_LIST_DATE_ADDED = "request_list_date_added";
@@ -68,8 +73,12 @@ public class Constants {
     public static final String REQUEST_LIST_USER_FEED_VIDEOS = "request_list_user_feed_videos";
     public static final String REQUEST_LIST_USER_ALBUMS = "request_list_user_albums";
     public static final String REQUEST_CREATE_A_ALBUM = "request_create_a_album";
+    public static final String REQUEST_DELETE_A_ALBUM = "request_delete_a_album";
+    public static final String REQUEST_ADD_A_VIDEO_TO_AN_ALBUM = "request_add_a_video_to_an_album";
+    public static final String REQUEST_REMOVE_A_VIDEO_FROM_AN_ALBUM = "request_remove_a_video_from_an_album";
     public static final String REQUEST_LIST_USER_PROJECTS = "request_list_user_projects";
     public static final String REQUEST_REQUEST_CREATE_A_PROJECT = "request_create_a_project";
+    public static final String REQUEST_REQUEST_DELETE_A_PROJECT = "request_delete_a_project";
 
     public static final String REQUEST_LIST_ALL_VIDEO_FOR_A_CHANNEL = "request_list_all_video_for_a_channel";
 
@@ -109,6 +118,9 @@ public class Constants {
     public static final String REQUEST_CHOOSE_GROUP = "choose_group";
     public static final String REQUEST_CREATE_A_GROUP = "request_create_a_group";
     public static final String REQUEST_CHECK_IF_USER_HAS_JOINED_A_GROUP = "request_check_if_user_has_joined_a_group";
+    public static final String REQUEST_DELETE_A_GROUP = "request_delete_a_group";
+    public static final String REQUEST_ADD_A_VIDEO_TO_A_GROUP = "request_add_a_video_to_a_group";
+    public static final String REQUEST_REMOVE_A_VIDEO_FROM_A_GROUP = "request_remove_a_video_from_a_group";
     public static final String REQUEST_JOIN_A_GROUP = "reuqest_join_a_group";
     public static final String REQUEST_LEAVE_A_GROUP = "reuqest_leave_a_group";
     public static final String REQUEST_LIST_ALL_PICTURES_OF_USER = "reuqest_list_all_picitures_of_user";

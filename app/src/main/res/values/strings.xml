@@ -115,7 +115,7 @@
     <string name="remove_a_video_from_an_album_http_status_code_404">Album不存在</string>
 
     <string name="create_a_channle_http_status_code_403">用户没有权限创建Channle</string>
-    <string name="create_a_channle_http_status_code_4200">成功创建Channle</string>
+    <string name="create_a_channle_http_status_code_420">成功创建Channle</string>
     <string name="delete_a_channle_http_status_code_204">成功删除Channle</string>
     <string name="delete_a_channle_http_status_code_403">用户没有权限删除Channle</string>
     <string name="add_a_video_to_a_channle_http_status_code_204">视频已经成功添加到Channle</string>
@@ -130,8 +130,6 @@
     <string name="delete_a_group_http_status_code_403">用户没有权限删除Group</string>
     <string name="add_video_to_a_group_http_status_code_200">视频成功添加到Group</string>
     <string name="add_video_to_a_group_http_status_code_403">Group已经存在此视频或者此视频不能添加到Group</string>
-
-
 
 
 </resources>

@@ -1,5 +1,6 @@
 package com.menglingpeng.vonvimeo.mvp.view;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -26,6 +27,7 @@ public class UserAlbumActivity extends BaseActivity implements RecyclerView{
     private CoordinatorLayout coordinatorLayout;
     private String title;
     private String type;
+    private Context context;
 
     @Override
     protected void initLayoutId() {
@@ -35,7 +37,7 @@ public class UserAlbumActivity extends BaseActivity implements RecyclerView{
     @Override
     protected void initViews() {
         super.initViews();
-
+        context = getApplicationContext();
         floatingActionButton = (FloatingActionButton) findViewById(R.id.auth_user_album_fab);
         coordinatorLayout = (CoordinatorLayout) findViewById(R.id.user_albums_cdl);
         toolbar = (Toolbar) findViewById(R.id.user_albums_tb);
@@ -200,6 +202,55 @@ public class UserAlbumActivity extends BaseActivity implements RecyclerView{
 
     @Override
     public void loadSuccess(String json, String requestType) {
+        switch (requestType){
+            case Constants.REQUEST_CREATE_A_ALBUM:
+                if(json.indexOf(Constants.CODE_200_OK) != -1) {
+                    SnackbarUtils.showSnackShort(context, coordinatorLayout, getString(
+                            R.string.create_an_album_http_status_code_200));
+                }else if (json.indexOf(Constants.CODE_403_FORBIDDEN) != -1){
+                    SnackbarUtils.showSnackShort(context, coordinatorLayout, getString(
+                            R.string.create_an_album_http_status_code_403));
+                }
+                break;
+            case Constants.REQUEST_DELETE_A_ALBUM:
+                if(json.indexOf(Constants.CODE_204_NO_CONTENT) != -1) {
+                    SnackbarUtils.showSnackShort(context, coordinatorLayout, getString(
+                            R.string.delete_an_album_http_status_code_204));
+                }else if (json.indexOf(Constants.CODE_403_FORBIDDEN) != -1){
+                    SnackbarUtils.showSnackShort(context, coordinatorLayout, getString(
+                            R.string.delete_an_album_http_status_code_403));
+                }else if (json.indexOf(Constants.CODE_404_NOT_FOUND) != -1){
+                    SnackbarUtils.showSnackShort(context, coordinatorLayout, getString(
+                            R.string.delete_an_album_http_status_code_404));
+                }
+                break;
+            case Constants.REQUEST_ADD_A_VIDEO_TO_AN_ALBUM:
+                if(json.indexOf(Constants.CODE_204_NO_CONTENT) != -1) {
+                    SnackbarUtils.showSnackShort(context, coordinatorLayout, getString(
+                            R.string.add_a_video_to_an_album_http_status_code_204));
+                }else if (json.indexOf(Constants.CODE_403_FORBIDDEN) != -1){
+                    SnackbarUtils.showSnackShort(context, coordinatorLayout, getString(
+                            R.string.add_a_video_to_an_album_http_status_code_403));
+                }else if (json.indexOf(Constants.CODE_404_NOT_FOUND) != -1){
+                    SnackbarUtils.showSnackShort(context, coordinatorLayout, getString(
+                            R.string.add_a_video_to_an_album_http_status_code_404));
+                }
+                break;
+            case Constants.REQUEST_REMOVE_A_VIDEO_FROM_AN_ALBUM:
+                if(json.indexOf(Constants.CODE_204_NO_CONTENT) != -1) {
+                    SnackbarUtils.showSnackShort(context, coordinatorLayout, getString(
+                            R.string.remove_a_video_from_an_album_http_status_code_204));
+                }else if (json.indexOf(Constants.CODE_403_FORBIDDEN) != -1){
+                    SnackbarUtils.showSnackShort(context, coordinatorLayout, getString(
+                            R.string.remove_a_video_from_an_album_http_status_code_4104));
+                }else if (json.indexOf(Constants.CODE_404_NOT_FOUND) != -1){
+                    SnackbarUtils.showSnackShort(context, coordinatorLayout, getString(
+                            R.string.remove_a_video_from_an_album_http_status_code_404));
+                }
+                break;
 
+            default:
+                break;
+        }
     }
 }

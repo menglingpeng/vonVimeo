@@ -1,6 +1,7 @@
 package com.menglingpeng.vonvimeo.mvp.view.activity;
 
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -21,6 +22,8 @@ import android.view.View;
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
 import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
+import com.menglingpeng.vonvimeo.utils.Constants;
+import com.menglingpeng.vonvimeo.utils.SnackbarUtils;
 
 import java.io.File;
 
@@ -31,6 +34,7 @@ public class UserUploadedVideosActivity extends BaseActivity implements Recycler
     private CoordinatorLayout coordinatorLayout;
     private String title;
     private String type;
+    private Context context;
     public static final int REQUEST_VIDEO_CODE = 1;
 
     @Override
@@ -41,7 +45,7 @@ public class UserUploadedVideosActivity extends BaseActivity implements Recycler
     @Override
     protected void initViews() {
         super.initViews();
-
+        context = getApplicationContext();
         floatingActionButton = (FloatingActionButton) findViewById(R.id.upload_video_fab);
         coordinatorLayout = (CoordinatorLayout) findViewById(R.id.upload_videos_cdl);
         toolbar = (Toolbar) findViewById(R.id.upload_videos_tb);
@@ -185,6 +189,21 @@ public class UserUploadedVideosActivity extends BaseActivity implements Recycler
 
     @Override
     public void loadSuccess(String json, String requestType) {
+        switch (requestType){
+            case Constants.REQUEST_DELETE_A_VIDEO_UPLOADED_BY_USER:
+                if(json.indexOf(Constants.CODE_204_NO_CONTENT) != -1){
+                    SnackbarUtils.showSnackShort(context ,coordinatorLayout, getString(
+                            R.string.delete_a_video_http_status_code_204));
+                }else if(json.indexOf(Constants.CODE_403_FORBIDDEN) != -1){
+                    SnackbarUtils.showSnackShort(context ,coordinatorLayout, getString(
+                            R.string.delete_a_video_http_status_code_403));
+                }
+                break;
+            case Constants.REQUEST_UPLOADED_A_VIDEO:
 
+                break;
+            default:
+                break;
+        }
     }
 }

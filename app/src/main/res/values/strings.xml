@@ -77,6 +77,8 @@
     <string name="choose_a_album">选择视频集</string>
     <string name="choose_a_group">选择群组</string>
 
+    <string name="the_name_of_group_is_not_null">名称不能为空</string>
+
     <string name="join_group">加入</string>
     <string name="leave_group">离开</string>
     <string name="leaved_group_successful">已经离开群组</string>
@@ -115,7 +117,7 @@
     <string name="remove_a_video_from_an_album_http_status_code_404">Album不存在</string>
 
     <string name="create_a_channle_http_status_code_403">用户没有权限创建Channle</string>
-    <string name="create_a_channle_http_status_code_420">成功创建Channle</string>
+    <string name="create_a_channle_http_status_code_204">成功创建Channle</string>
     <string name="delete_a_channle_http_status_code_204">成功删除Channle</string>
     <string name="delete_a_channle_http_status_code_403">用户没有权限删除Channle</string>
     <string name="add_a_video_to_a_channle_http_status_code_204">视频已经成功添加到Channle</string>

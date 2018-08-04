@@ -1,5 +1,6 @@
 package com.menglingpeng.vonvimeo.mvp.view.activity;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
@@ -28,6 +29,7 @@ public class UserGroupActivity extends BaseActivity implements RecyclerView{
     private FloatingActionButton floatingActionButton;
     private CoordinatorLayout coordinatorLayout;
     private String type;
+    private Context context;
 
     @Override
     protected void initLayoutId() {
@@ -37,6 +39,7 @@ public class UserGroupActivity extends BaseActivity implements RecyclerView{
     @Override
     protected void initViews() {
         super.initViews();
+        context = getApplicationContext();
         toolbar = (Toolbar) findViewById(R.id.choose_bucket_tb);
         coordinatorLayout = (CoordinatorLayout) findViewById(R.id.choose_album_cdl);
         floatingActionButton = (FloatingActionButton) findViewById(R.id.choose_album_fab);
@@ -65,14 +68,14 @@ public class UserGroupActivity extends BaseActivity implements RecyclerView{
     }
 
     private void showCreateGroupDialog() {
-        final TextInputEditText bucketNameEt, bucketDescEt;
+        final TextInputEditText groupNameEt, groupDescEt;
         AlertDialog dialog;
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        View dialogView = getLayoutInflater().inflate(R.layout.create_a_bucket_dialog_message, null);
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_create_a_group, null);
         builder.setTitle(R.string.create_a_bucket);
         builder.setView(dialogView);
-        bucketNameEt = (TextInputEditText) dialogView.findViewById(R.id.bucket_name_tiet);
-        bucketDescEt = (TextInputEditText) dialogView.findViewById(R.id.bucket_desc_tiet);
+        groupNameEt = (TextInputEditText) dialogView.findViewById(R.id.group_name_tiet);
+        groupDescEt = (TextInputEditText) dialogView.findViewById(R.id.group_desc_tiet);
         builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -82,17 +85,17 @@ public class UserGroupActivity extends BaseActivity implements RecyclerView{
         builder.setPositiveButton(R.string.create, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                String name = bucketNameEt.getText().toString();
+                String name = groupNameEt.getText().toString();
                 if (name.equals("")) {
                     SnackbarUtils.showSnackShort(getApplicationContext(), coordinatorLayout, getString(R.string
-                            .the_name_of_bucket_is_not_null));
+                            .the_name_of_group_is_not_null));
                 } else {
                     HashMap<String, String> map = new HashMap<>();
                     map.put(Constants.ACCESS_TOKEN, SharedPrefUtils.getAuthToken());
-                    map.put(Constants.NAME, bucketNameEt.getText().toString());
-                    map.put(Constants.DESCRIPTION, bucketDescEt.getText().toString());
+                    map.put(Constants.NAME, groupNameEt.getText().toString());
+                    map.put(Constants.DESCRIPTION, groupDescEt.getText().toString());
                     type = Constants.REQUEST_CREATE_A_ALBUM;
-                    RecyclerPresenter presenter = new RecyclerPresenter(ChooseGroupActivity.this, type, Constants
+                    RecyclerPresenter presenter = new RecyclerPresenter(UserGroupActivity.this, type, Constants
                             .REQUEST_NORMAL, Constants.REQUEST_POST_MEIHOD, map, getApplicationContext());
                     presenter.loadJson();
                     SnackbarUtils.showSnackShort(getApplicationContext(), coordinatorLayout, getString(R.string
@@ -101,7 +104,7 @@ public class UserGroupActivity extends BaseActivity implements RecyclerView{
 
             }
         });
-        bucketNameEt.setFocusable(true);
+        groupNameEt.setFocusable(true);
         dialog = builder.create();
         dialog.show();
     }
@@ -120,7 +123,35 @@ public class UserGroupActivity extends BaseActivity implements RecyclerView{
     public void loadSuccess(String json, String requestType) {
         switch (type) {
             case Constants.REQUEST_CREATE_A_GROUP:
-                replaceFragment(RecyclerFragment.newInstance(Constants.REQUEST_CHOOSE_GROUP));
+                if(json.indexOf(Constants.CODE_204_NO_CONTENT) != -1){
+                    SnackbarUtils.showSnackShort(context ,coordinatorLayout, getString(
+                            R.create_a_group_http_status_code_204));
+                }else if(json.indexOf(Constants.CODE_403_FORBIDDEN) != -1){
+                    SnackbarUtils.showSnackShort(context ,coordinatorLayout, getString(
+                            R.create_a_group_http_status_code_403));
+                }
+                break;
+            case Constants.REQUEST_DELETE_A_GROUP:
+                if(json.indexOf(Constants.CODE_204_NO_CONTENT) != -1){
+                SnackbarUtils.showSnackShort(context ,coordinatorLayout, getString(
+                        R.delete_a_group_http_status_code_204));
+            }else if(json.indexOf(Constants.CODE_403_FORBIDDEN) != -1){
+                SnackbarUtils.showSnackShort(context ,coordinatorLayout, getString(
+                        R.delete_a_group_http_status_code_403));
+            }
+                break;
+            case Constants.REQUEST_ADD_A_VIDEO_TO_A_GROUP:
+                if(json.indexOf(Constants.CODE_200_OK) != -1){
+                    SnackbarUtils.showSnackShort(context ,coordinatorLayout, getString(
+                            R.add_video_to_a_group_http_status_code_200));
+                }else if(json.indexOf(Constants.CODE_403_FORBIDDEN) != -1){
+                    SnackbarUtils.showSnackShort(context ,coordinatorLayout, getString(
+                            R.add_video_to_a_group_http_status_code_403));
+                }
+                break;
+            case Constants.REQUEST_DELETE_A_VIDEO_FROM_A_GROUP:
+                break;
+            default:
                 break;
         }
     }

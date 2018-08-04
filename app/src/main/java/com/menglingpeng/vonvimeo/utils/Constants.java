@@ -62,7 +62,7 @@ public class Constants {
     public static final String REQUEST_CREATE_A_CHANNLE = "request_create_a_channle";
     public static final String REQUEST_DELETE_A_CHANNLE = "request_delete_a_channle";
     public static final String REQUEST_ADD_A_VIDEO_TO_A_CHANNLE = "request_add_a_video_to_a_channle";
-    public static final String REQUEST_REMOVE_A_VIDEO_FROM_A_CHANNLE = "request_remove_a_video_from_a_channle";
+    public static final String REQUEST_DELETE_A_VIDEO_FROM_A_CHANNLE = "request_delete_a_video_from_a_channle";
     public static final String REQUEST_LIST_TITLE= "request_list_title";
     public static final String REQUEST_LIST_DATE_MODIFIED = "request_list_date_modified";
     public static final String REQUEST_LIST_DATE_ADDED = "request_list_date_added";
@@ -120,7 +120,7 @@ public class Constants {
     public static final String REQUEST_CHECK_IF_USER_HAS_JOINED_A_GROUP = "request_check_if_user_has_joined_a_group";
     public static final String REQUEST_DELETE_A_GROUP = "request_delete_a_group";
     public static final String REQUEST_ADD_A_VIDEO_TO_A_GROUP = "request_add_a_video_to_a_group";
-    public static final String REQUEST_REMOVE_A_VIDEO_FROM_A_GROUP = "request_remove_a_video_from_a_group";
+    public static final String REQUEST_DELETE_A_VIDEO_FROM_A_GROUP = "request_delete_a_video_from_a_group";
     public static final String REQUEST_JOIN_A_GROUP = "reuqest_join_a_group";
     public static final String REQUEST_LEAVE_A_GROUP = "reuqest_leave_a_group";
     public static final String REQUEST_LIST_ALL_PICTURES_OF_USER = "reuqest_list_all_picitures_of_user";
@@ -131,7 +131,8 @@ public class Constants {
             "reuqest_get_all_videos_uploaded_by_auth_user";
     public static final String REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_SINGLE_USER =
             "reuqest_get_all_videos_uploaded_by_single_user";
-    public static final String REQUEST_DELETE_A_VIDEO = "requesr_delete_a_video";
+    public static final String REQUEST_DELETE_A_VIDEO_UPLOADED_BY_USER = "requesr_delete_a_video_uploaded_by_user";
+    public static final String REQUEST_UPLOADED_A_VIDEO = "requesr_uploaded_a_video";
 
 
     //默认值1

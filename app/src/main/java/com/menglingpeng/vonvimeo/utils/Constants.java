@@ -98,11 +98,15 @@ public class Constants {
     public static final String REQUEST_UNFOLLOW_A_USER = "unfollow_a_user";
     public static final String REQUEST_FOLLOW_A_USER = "follow_a_user";
     public static final String REQUEST_FOLLOW_A_LIST_OF_USERS = "follow_a_list_of_users";
-    public static final String REQUEST_LIST_ALL_VIDOES_THAT_A_USER_HAS_WATCHED =
-            "list_all_videos_that_a_user_has_watched";
+
     public static final String REQUEST_LIST_ALL_VIDOES_THAT_A_USER_HAS_LIKED =
             "list_all_videos_that_a_user_has_liked";
 
+    public static final String REQUEST_LIST_ALL_VIDOES_THAT_A_USER_HAS_WATCHED =
+            "list_all_videos_that_a_user_has_watched";
+    public static final String REQUEST_DELETE_A_USER_WATCH_HISTORY = "request_delete_a_user's_watch_history";
+    public static final String REQUEST_DELETE_A_VIDEO_FROM_YOUR_WATCH_HISTORY =
+            "request_delete_a_video_from_your_watch_history";
 
     public static final String FOLLOW = "follow";
     public static final String DETAIL = "detail";
@@ -133,6 +137,10 @@ public class Constants {
             "reuqest_get_all_videos_uploaded_by_single_user";
     public static final String REQUEST_DELETE_A_VIDEO_UPLOADED_BY_USER = "requesr_delete_a_video_uploaded_by_user";
     public static final String REQUEST_UPLOADED_A_VIDEO = "requesr_uploaded_a_video";
+
+    public static final String REQUEST_GET_ALL_VIDEOS_IN_A_CATEGORY_= "requesr_get_all_videos_in_a_category";
+    public static final String REQUEST_GET_ALL_GROUPS_FOR_A_CATEGORY_= "requesr_get_all_groups_for_a_category";
+    public static final String REQUEST_GET_ALL_CHANNLES_FOR_A_CATEGORY_= "requesr_get_all_channles_for_a_category";
 
 
     //默认值1

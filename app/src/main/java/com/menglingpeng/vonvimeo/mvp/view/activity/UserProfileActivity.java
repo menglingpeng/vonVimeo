@@ -249,7 +249,7 @@ public class UserProfileActivity extends BaseActivity implements RecyclerView {
                 }
                 break;
             case Constants.REQUEST_FOLLOW_A_USER:
-                if (json.equals(Constants.CODE_204_NO_CONTENT)) {
+                if (json.indexOf(Constants.CODE_204_NO_CONTENT) != -1) {
                     unfollowBt.setVisibility(Button.VISIBLE);
                     followBt.setVisibility(Button.GONE);
                     SnackbarUtils.showSnackShort(context, profileCdl, TextUtil.setAfterBold(context, getString(
@@ -261,8 +261,9 @@ public class UserProfileActivity extends BaseActivity implements RecyclerView {
                             initData(Constants.REQUEST_DELETE_MEIHOD);
                         }
                     });
-                } else {
-                    SnackbarUtils.showErrorSnackShort(context, profileCdl, getString(R.string.followed_error));
+                } else if(json.indexOf(Constants.CODE_403_FORBIDDEN) != -1){
+                    SnackbarUtils.showErrorSnackShort(context, profileCdl, getString(R.string.
+                            follow_a_user_http_status_code_403));
                 }
                 break;
             case Constants.REQUEST_UNFOLLOW_A_USER:
@@ -278,8 +279,6 @@ public class UserProfileActivity extends BaseActivity implements RecyclerView {
                             initData(Constants.REQUEST_PUT_MEIHOD);
                         }
                     });
-                }else {
-                    SnackbarUtils.showErrorSnackShort(context, profileCdl, getString(R.string.unfollowed_error));
                 }
                 break;
             default:

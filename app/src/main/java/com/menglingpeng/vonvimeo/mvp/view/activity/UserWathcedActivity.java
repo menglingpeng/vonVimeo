@@ -1,5 +1,7 @@
 package com.menglingpeng.vonvimeo.mvp.view.activity;
 
+import android.content.Context;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -9,11 +11,14 @@ import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
 import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
 import com.menglingpeng.vonvimeo.utils.Constants;
+import com.menglingpeng.vonvimeo.utils.SnackbarUtils;
 
 public class UserWathcedActivity extends BaseActivity implements RecyclerView{
 
+    private CoordinatorLayout coordinatorLayout;
     private Toolbar toolbar;
     private String userName;
+    private Context context;
 
     @Override
     protected void initLayoutId() {
@@ -23,10 +28,12 @@ public class UserWathcedActivity extends BaseActivity implements RecyclerView{
     @Override
     protected void initViews() {
         super.initViews();
+        context = getApplicationContext();
         userName = getIntent().getStringExtra(Constants.NAME);
         String title = new StringBuilder().append(userName).append(getString(R.string.s)).append(getString(R.string
                 .watched_history)).toString();
-        toolbar = (Toolbar) findViewById(R.id.user_following_tb);
+        coordinatorLayout = (CoordinatorLayout)findViewById(R.id.user_watched_cdl);
+        toolbar = (Toolbar) findViewById(R.id.user_watched_tb);
         toolbar.setTitle(title);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_back);
@@ -71,6 +78,21 @@ public class UserWathcedActivity extends BaseActivity implements RecyclerView{
 
     @Override
     public void loadSuccess(String json, String requestType) {
-
+        switch (requestType){
+            case Constants.REQUEST_DELETE_A_USER_WATCH_HISTORY:
+                if (json.indexOf(Constants.CODE_204_NO_CONTENT) != -1){
+                    SnackbarUtils.showSnackShort(context, coordinatorLayout,
+                            getString(R.sting.delete_a_user_watch_history_http_status_code_204));
+                }
+                break;
+            case Constants.REQUEST_DELETE_A_VIDEO_FROM_YOUR_WATCH_HISTORY:
+                if (json.indexOf(Constants.CODE_204_NO_CONTENT) != -1){
+                    SnackbarUtils.showSnackShort(context, coordinatorLayout,
+                            getString(R.sting.delete_a_video_from_your_watch_history_http_status_code_204));
+                }
+                break;
+            default:
+                break;
+        }
     }
 }

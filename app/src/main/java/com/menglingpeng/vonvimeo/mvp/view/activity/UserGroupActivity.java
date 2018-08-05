@@ -131,15 +131,6 @@ public class UserGroupActivity extends BaseActivity implements RecyclerView{
                             R.create_a_group_http_status_code_403));
                 }
                 break;
-            case Constants.REQUEST_DELETE_A_GROUP:
-                if(json.indexOf(Constants.CODE_204_NO_CONTENT) != -1){
-                SnackbarUtils.showSnackShort(context ,coordinatorLayout, getString(
-                        R.delete_a_group_http_status_code_204));
-            }else if(json.indexOf(Constants.CODE_403_FORBIDDEN) != -1){
-                SnackbarUtils.showSnackShort(context ,coordinatorLayout, getString(
-                        R.delete_a_group_http_status_code_403));
-            }
-                break;
             case Constants.REQUEST_ADD_A_VIDEO_TO_A_GROUP:
                 if(json.indexOf(Constants.CODE_200_OK) != -1){
                     SnackbarUtils.showSnackShort(context ,coordinatorLayout, getString(

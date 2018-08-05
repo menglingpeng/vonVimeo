@@ -133,6 +133,17 @@
     <string name="delete_a_group_http_status_code_403">用户没有权限删除Group</string>
     <string name="add_video_to_a_group_http_status_code_200">视频成功添加到Group</string>
     <string name="add_video_to_a_group_http_status_code_403">Group已经存在此视频或者此视频不能添加到Group</string>
+    <string name="join_a_group_http_status_code_204">成功加入Group</string>
+    <string name="join_a_group_http_status_code_403">没有权限加入Group</string>
+    <string name="leave_a_group_http_status_code_204">成功退出Group</string>
+    <string name="leave_a_group_http_status_code_403">你拥有此Group，要想退出，请先把权限给其他用户</string>
+
+    <string name="delete_a_user_watch_history_http_status_code_204">已经成功删除浏览记录</string>
+    <string name="delete_a_video_from_your_watch_history_http_status_code_204">已经从浏览记录成功删除选中视频</string>
+
+    <string name="follow_a_user_http_status_code_204">已经成功关注此ci用户</string>
+    <string name="follow_a_user_http_status_code_403">有权限添加用户</string>
+    <string name="unfollow_a_user_http_status_code_204">已经成功取消关注此用户</string>
 
 
 </resources>

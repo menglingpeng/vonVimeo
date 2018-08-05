@@ -156,6 +156,15 @@ public class GroupDetailActivity extends BaseActivity implements RecyclerView{
                     isJoined = true;
                 }
                 break;
+            case Constants.REQUEST_DELETE_A_GROUP:
+                if(json.indexOf(Constants.CODE_204_NO_CONTENT) != -1){
+                    SnackbarUtils.showSnackShort(context ,coordinatorLayout, getString(
+                            R.delete_a_group_http_status_code_204));
+                }else if(json.indexOf(Constants.CODE_403_FORBIDDEN) != -1){
+                    SnackbarUtils.showSnackShort(context ,coordinatorLayout, getString(
+                            R.delete_a_group_http_status_code_403));
+                }
+                break;
             case Constants.REQUEST_JOIN_A_GROUP:
                 if(json.equals(Constants.CODE_204_NO_CONTENT)){
                     leaveGroupBt.setVisibility(Button.VISIBLE);
@@ -169,9 +178,9 @@ public class GroupDetailActivity extends BaseActivity implements RecyclerView{
                             initData(Constants.REQUEST_DELETE_MEIHOD);
                         }
                     });
-                }else {
+                }else if(json.indexOf(Constants.CODE_403_FORBIDDEN) != -1){
                     SnackbarUtils.showErrorSnackShort(context, coordinatorLayout, getString(
-                            R.string.joined_group_error));
+                            R.string.join_a_group_http_status_code_403));
                 }
                 break;
             case Constants.REQUEST_LEAVE_A_GROUP:
@@ -187,9 +196,9 @@ public class GroupDetailActivity extends BaseActivity implements RecyclerView{
                             initData(Constants.REQUEST_PUT_MEIHOD);
                         }
                     });
-                }else {
+                }else if(json.indexOf(Constants.CODE_403_FORBIDDEN) != -1){
                     SnackbarUtils.showErrorSnackShort(context, coordinatorLayout, getString(
-                            R.string.leaved_group_error));
+                            R.string.leave_a_group_http_status_code_403));
                 }
                 break;
             default:

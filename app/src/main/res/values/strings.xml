@@ -97,6 +97,7 @@
     <string name="dialog_upload_choose_gallery">图库</string>
     <string name="dialog_upload_choose_camera">拍照</string>
 
+    <string name="share">分享</string>
     <string name="uploaded_videos_share">分享</string>
     <string name="uploaded_videos_delete">删除</string>
     <string name="dialog_delete_a_video_title">确定要删除</string>

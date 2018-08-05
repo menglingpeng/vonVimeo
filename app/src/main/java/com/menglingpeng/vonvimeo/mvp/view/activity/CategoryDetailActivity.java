@@ -1,8 +1,8 @@
 package com.menglingpeng.vonvimeo.mvp.view.activity;
 
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
@@ -10,14 +10,14 @@ import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
 import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
 import com.menglingpeng.vonvimeo.utils.Constants;
 
-public class UserWathcedActivity extends BaseActivity implements RecyclerView{
+public class CategoryDetailActivity extends BaseActivity implements RecyclerView{
 
     private Toolbar toolbar;
     private String userName;
 
     @Override
     protected void initLayoutId() {
-        layoutId = R.layout.activity_user_watched;
+        layoutId = R.layout.activity_category_detail;
     }
 
     @Override
@@ -37,26 +37,7 @@ public class UserWathcedActivity extends BaseActivity implements RecyclerView{
             }
         });
         replaceFragment(RecyclerFragment.newInstance(getIntent().getStringExtra(Constants.ID), Constants
-                    .REQUEST_LIST_ALL_VIDOES_THAT_A_USER_HAS_WATCHED));
-        }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.user_watched_toolbar_overflow_menu, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.watched_share:
-                break;
-            case R.id.watched_delete:
-                break;
-            default:
-                break;
-        }
-        return super.onOptionsItemSelected(item);
+                .REQUEST_LIST_ALL_VIDOES_THAT_A_USER_HAS_WATCHED));
     }
 
     @Override

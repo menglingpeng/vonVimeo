@@ -1,6 +1,7 @@
 package com.menglingpeng.vonvimeo.mvp.view.activity;
 
 import android.content.Context;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -8,10 +9,15 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.adapter.TabPagerFragmentAdapter;
 import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
+import com.menglingpeng.vonvimeo.mvp.model.Categorite;
+import com.menglingpeng.vonvimeo.mvp.presenter.RecyclerPresenter;
 import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
 import com.menglingpeng.vonvimeo.utils.Constants;
 
@@ -21,6 +27,13 @@ import java.util.HashMap;
 public class CategoryDetailActivity extends BaseActivity implements RecyclerView{
 
     private Toolbar toolbar;
+    private CollapsingToolbarLayout collapsingToolbarLayout;
+    private ImageView categoryDetailBackgroundIv;
+    private ImageView categoryDetailAvatarIv;
+    private TextView categoryDetailNameTv;
+    private TextView categoryDetailDescTv;
+    private RecyclerPresenter presenter;
+    private ProgressBar progressBar;
     private TabLayout profileTl;
     private ViewPager profileVp;
     private String type;
@@ -28,6 +41,8 @@ public class CategoryDetailActivity extends BaseActivity implements RecyclerView
     private HashMap<String, String> map;
     private ArrayList<RecyclerFragment> fragmentsList;
     private Context context;
+    private boolean isFollowing;
+    private Categorite categorite;
 
     private static final int SMOOTHSCROLL_TOP_POSITION = 50;
 

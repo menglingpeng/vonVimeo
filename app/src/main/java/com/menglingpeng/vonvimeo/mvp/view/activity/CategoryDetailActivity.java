@@ -62,9 +62,6 @@ public class CategoryDetailActivity extends BaseActivity implements RecyclerView
         initTabFragments();
         profileVp.setAdapter(adapter);
         profileTl.setupWithViewPager(profileVp);
-        if(user.getShots_count() != 0){
-            profileVp.setCurrentItem(1);
-        }
         profileTl.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
@@ -97,6 +94,20 @@ public class CategoryDetailActivity extends BaseActivity implements RecyclerView
         }
     }
 
+    private void initTabFragments() {
+
+        ArrayList<String> titlesList = new ArrayList<>();
+        titlesList.add(getText(R.string.videos).toString());
+        titlesList.add(getText(R.string.channles).toString());
+        titlesList.add(getText(R.string.groups).toString());
+
+        fragmentsList.add(RecyclerFragment.newInstance(Constants.REQUEST_GET_ALL_VIDEOS_IN_A_CATEGORY));
+        fragmentsList.add(RecyclerFragment.newInstance(Constants.REQUEST_GET_ALL_CHANNLES_FOR_A_CATEGORY));
+        fragmentsList.add(RecyclerFragment.newInstance(Constants.REQUEST_GET_ALL_GROUPS_FOR_A_CATEGORY));
+
+        adapter.setFragments(fragmentsList, titlesList);
+    }
+
     @Override
     public void hideProgress() {
 
@@ -109,6 +120,7 @@ public class CategoryDetailActivity extends BaseActivity implements RecyclerView
 
     @Override
     public void loadSuccess(String json, String requestType) {
+
 
     }
 }

@@ -2,13 +2,17 @@ package com.menglingpeng.vonvimeo.mvp.view.activity;
 
 import android.content.Context;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -20,6 +24,8 @@ import com.menglingpeng.vonvimeo.mvp.model.Categorite;
 import com.menglingpeng.vonvimeo.mvp.presenter.RecyclerPresenter;
 import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
 import com.menglingpeng.vonvimeo.utils.Constants;
+import com.menglingpeng.vonvimeo.utils.SnackbarUtils;
+import com.menglingpeng.vonvimeo.utils.TextUtil;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,7 +33,8 @@ import java.util.HashMap;
 public class CategoryDetailActivity extends BaseActivity implements RecyclerView{
 
     private Toolbar toolbar;
-    private CollapsingToolbarLayout collapsingToolbarLayout;
+    private CollapsingToolbarLayout categoryCtl;
+    private CoordinatorLayout categoryCdl;
     private ImageView categoryDetailBackgroundIv;
     private ImageView categoryDetailAvatarIv;
     private TextView categoryDetailNameTv;
@@ -37,9 +44,12 @@ public class CategoryDetailActivity extends BaseActivity implements RecyclerView
     private TabLayout profileTl;
     private ViewPager profileVp;
     private String type;
+    private String categoryName;
     private TabPagerFragmentAdapter adapter;
     private HashMap<String, String> map;
     private ArrayList<RecyclerFragment> fragmentsList;
+    private Button followBt;
+    private Button unfollowBt;
     private Context context;
     private boolean isFollowing;
     private Categorite categorite;
@@ -55,6 +65,7 @@ public class CategoryDetailActivity extends BaseActivity implements RecyclerView
     protected void initViews() {
         super.initViews();
         context = getApplicationContext();
+
         String title = new StringBuilder().append(userName).append(getString(R.string.s)).append(getString(R.string
                 .watched_history)).toString();
         toolbar = (Toolbar) findViewById(R.id.category_detail__tb);
@@ -69,7 +80,22 @@ public class CategoryDetailActivity extends BaseActivity implements RecyclerView
             }
         });
         replaceFragment(RecyclerFragment.newInstance(getIntent().getStringExtra(Constants.ID), Constants
-                .REQUEST_LIST_ALL_VIDOES_THAT_A_USER_HAS_WATCHED));
+                .REQUEST_GET_A_CATEGORY));
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.category_detail_toolbar_overflow_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return super.onOptionsItemSelected(item);
+        if(item.getItemId() == R.id.category_detail_share){
+
+        }
     }
 
     private void initTabPager() {
@@ -135,7 +161,40 @@ public class CategoryDetailActivity extends BaseActivity implements RecyclerView
 
     @Override
     public void loadSuccess(String json, String requestType) {
+        switch (requestType){
+            case Constants.REQUEST_CHECK_IF_A_USER_FOLLOWS_A_CATEGORY:
+                if (json.equals(Constants.CODE_204_NO_CONTENT)) {
+                    isFollowing = true;
+                } else {
+                    isFollowing = false;
+                }
+                break;
+            case Constants.REQUEST_SUBSCRIBE_A_USER_TO_A_CATEGORY:
+                if (json.indexOf(Constants.CODE_204_NO_CONTENT) != -1) {
+                    unfollowBt.setVisibility(Button.VISIBLE);
+                    followBt.setVisibility(Button.GONE);
+                    SnackbarUtils.showSnackShort(context,categoryCdl, TextUtil.setAfterBold(context, getString(
+                            R.string.followed_successful), user.getName()));
+                    unfollowBt.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            type = Constants.REQUEST_UNFOLLOW_A_USER;
+                        }
+                    });
+                } else {
+                    SnackbarUtils.showErrorSnackShort(context, categoryCdl, getString(R.string.
+                            follow_a_user_http_status_code_403));
+                }
+                break;
+            case Constants.REQUEST_UNSUBSCRIBE_A_USER_FROM_A_CATEGORY:
+                break;
+             default:
 
+                 followBt = (Button) findViewById(R.id.category_detail_follow_bt);
+                 unfollowBt = (Button) findViewById(R.id.category_detail_unfollow_bt);
+                 break;
+
+        }
 
     }
 }

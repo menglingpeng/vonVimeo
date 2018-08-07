@@ -138,13 +138,14 @@ public class Constants {
     public static final String REQUEST_DELETE_A_VIDEO_UPLOADED_BY_USER = "request_delete_a_video_uploaded_by_user";
     public static final String REQUEST_UPLOADED_A_VIDEO = "request_uploaded_a_video";
 
+    public static final String REQUEST_GET_A_CATEGORY = "request_get_a_category";
     public static final String REQUEST_GET_ALL_VIDEOS_IN_A_CATEGORY = "request_get_all_videos_in_a_category";
     public static final String REQUEST_GET_ALL_GROUPS_FOR_A_CATEGORY = "request_get_all_groups_for_a_category";
     public static final String REQUEST_GET_ALL_CHANNLES_FOR_A_CATEGORY = "request_get_all_channles_for_a_category";
     public static final String REQUEST_CHECK_IF_A_USER_FOLLOWS_A_CATEGORY =
             "request_check_if_a_user_follows_a_category";
     public static final String REQUEST_SUBSCRIBE_A_USER_TO_A_CATEGORY = "request_subscribe_user_to_a_category";
-    public static final String REQUEST_UNSUBSCRIBE_A_USER_FROM_A_CATEGORY = "request_subscribe_user_to_a_category";
+    public static final String REQUEST_UNSUBSCRIBE_A_USER_FROM_A_CATEGORY = "request_unsubscribe_user_to_a_category";
 
 
 

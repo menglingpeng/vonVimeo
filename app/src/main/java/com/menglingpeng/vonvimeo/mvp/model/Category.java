@@ -3,7 +3,7 @@ package com.menglingpeng.vonvimeo.mvp.model;
 import java.io.Serializable;
 import java.util.List;
 
-public class Categorite implements Serializable {
+public class Category implements Serializable {
 
     private String uri;
     private String name;

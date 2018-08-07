@@ -1,7 +1,6 @@
 package com.menglingpeng.vonvimeo.mvp.adapter;
 
 import android.content.Context;
-import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -18,7 +17,7 @@ import android.widget.TextView;
 import com.menglingpeng.vonvimeo.R;
 import com.menglingpeng.vonvimeo.mvp.interf.OnRecyclerListItemListener;
 import com.menglingpeng.vonvimeo.mvp.model.Album;
-import com.menglingpeng.vonvimeo.mvp.model.Categorite;
+import com.menglingpeng.vonvimeo.mvp.model.Category;
 import com.menglingpeng.vonvimeo.mvp.model.Channel;
 import com.menglingpeng.vonvimeo.mvp.model.ChannelVideo;
 import com.menglingpeng.vonvimeo.mvp.model.Follower;
@@ -26,7 +25,6 @@ import com.menglingpeng.vonvimeo.mvp.model.Following;
 import com.menglingpeng.vonvimeo.mvp.model.Project;
 import com.menglingpeng.vonvimeo.mvp.model.User;
 import com.menglingpeng.vonvimeo.utils.Constants;
-import com.menglingpeng.vonvimeo.utils.HttpUtils;
 import com.menglingpeng.vonvimeo.utils.ImageLoader;
 import com.menglingpeng.vonvimeo.utils.TextUtil;
 
@@ -251,17 +249,17 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     context.getString(R.string.videos)));
         }else if (holder instanceof CateGoritesViewHolder){
             final CateGoritesViewHolder viewHolder = (CateGoritesViewHolder) holder;
-            final Categorite categorite = (Categorite) list.get(position);
+            final Category category = (Category) list.get(position);
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     if (mListener != null) {
-                        mListener.onRecyclerFragmentListListener(viewHolder, categorite);
+                        mListener.onRecyclerFragmentListListener(viewHolder, category);
                     }
                 }
             });
-            viewHolder.categoriteNameTv.setText(categorite.getName());
-            viewHolder.categoriteVideosCountTv.setText(TextUtil.setBeforeBold(String.valueOf(categorite.getShots_count()),
+            viewHolder.categoriteNameTv.setText(category.getName());
+            viewHolder.categoriteVideosCountTv.setText(TextUtil.setBeforeBold(String.valueOf(category.getShots_count()),
                     context.getString(R.string.videos)));
         }else if (holder instanceof ChannelsViewHolder){
             final ChannelsViewHolder viewHolder = (ChannelsViewHolder)holder;

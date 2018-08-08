@@ -146,5 +146,7 @@
     <string name="follow_a_user_http_status_code_403">有权限添加用户</string>
     <string name="unfollow_a_user_http_status_code_204">已经成功取消关注此用户</string>
 
+    <string name="remove_from_project">移出Project</string>
+
 
 </resources>

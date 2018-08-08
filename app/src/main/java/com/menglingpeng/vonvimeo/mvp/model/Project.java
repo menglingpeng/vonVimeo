@@ -1,66 +1,119 @@
 package com.menglingpeng.vonvimeo.mvp.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Project implements Serializable {
 
-    private int id;
-
+    private String created_time;
+    private String modified_time;
     private String name;
+    private String resource_key;
+    private String uri;
+    private MetadataBean metadata;
 
-    private String description;
-
-    private int shots_count;
-
-    private String created_at;
-
-    private String updated_at;
-
-    public int getId() {
-        return id;
+    public void setCreated_time(String created_time) {
+        this.created_time = created_time;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
+    public void setModified_time(String modified_time) {
+        this.modified_time = modified_time;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
+    public void setResource_key(String resource_key) {
+        this.resource_key = resource_key;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setUri(String uri) {
+        this.uri = uri;
     }
 
-    public int getShots_count() {
-        return shots_count;
+    public void setMetadata(MetadataBean metadata) {
+        this.metadata = metadata;
     }
 
-    public void setShots_count(int shots_count) {
-        this.shots_count = shots_count;
+    public String getCreated_time() {
+        return created_time;
     }
 
-    public String getCreated_at() {
-        return created_at;
+    public String getModified_time() {
+        return modified_time;
     }
 
-    public void setCreated_at(String created_at) {
-        this.created_at = created_at;
+    public String getName() {
+        return name;
     }
 
-    public String getUpdated_at() {
-        return updated_at;
+    public String getResource_key() {
+        return resource_key;
     }
 
-    public void setUpdated_at(String updated_at) {
-        this.updated_at = updated_at;
+    public String getUri() {
+        return uri;
+    }
+
+    public MetadataBean getMetadata() {
+        return metadata;
+    }
+
+    public static class MetadataBean {
+
+        private ConnectionsBean connections;
+
+        public void setConnections(ConnectionsBean connections) {
+            this.connections = connections;
+        }
+
+        public ConnectionsBean getConnections() {
+            return connections;
+        }
+
+        public static class ConnectionsBean {
+
+            private VideosBean videos;
+
+            public void setVideos(VideosBean videos) {
+                this.videos = videos;
+            }
+
+            public VideosBean getVideos() {
+                return videos;
+            }
+
+            public static class VideosBean {
+
+                private String uri;
+                private int total;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public int getTotal() {
+                    return total;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+        }
     }
 }

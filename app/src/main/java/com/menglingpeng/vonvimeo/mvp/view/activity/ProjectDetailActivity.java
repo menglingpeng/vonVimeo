@@ -47,7 +47,7 @@ public class ProjectDetailActivity extends BaseActivity implements RecyclerView{
     public boolean onOptionsItemSelected(MenuItem item) {
         return super.onOptionsItemSelected(item);
     }
-    
+
 
     @Override
     public void hideProgress() {

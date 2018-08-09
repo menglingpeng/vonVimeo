@@ -101,7 +101,8 @@
     <string name="share">分享</string>
     <string name="uploaded_videos_share">分享</string>
     <string name="uploaded_videos_delete">删除</string>
-    <string name="dialog_delete_a_video_title">确定要删除</string>
+    <string name="dialog_delete_a_video_title">确定要删除</string>'
+    <string name="share_footer_text">来自VonVimeo（Android APP for Vimeo）的分享</string>
 
     <string name="delete_a_video_http_status_code_204">视频已经成功删除</string>
     <string name="delete_a_video_http_status_code_403">此视频不属于授权用户，不能删除</string>
@@ -149,6 +150,7 @@
     <string name="remove_from_project">移出Project</string>
     <string name="remove_a_video_from_a_project_http_status_code_204">视频已经成功移出Project</string>
     <string name="remove_a_video_from_a_project_http_status_code_404">此视频已经不在Project内</string>
+    <string name="dialog_remove_video_from_project_title">确定要把视频移出此Project吗？</string>
 
 
 </resources>

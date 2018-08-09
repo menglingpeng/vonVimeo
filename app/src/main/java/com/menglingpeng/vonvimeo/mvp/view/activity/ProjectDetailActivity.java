@@ -1,5 +1,9 @@
 package com.menglingpeng.vonvimeo.mvp.view.activity;
 
+import android.content.Context;
+import android.content.DialogInterface;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -9,15 +13,21 @@ import android.view.View;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
+import com.menglingpeng.vonvimeo.mvp.model.Project;
 import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
 import com.menglingpeng.vonvimeo.utils.Constants;
+import com.menglingpeng.vonvimeo.utils.ShareAndOpenInBrowserUtil;
+import com.menglingpeng.vonvimeo.utils.SnackbarUtils;
 
 public class ProjectDetailActivity extends BaseActivity implements RecyclerView{
 
     private Toolbar toolbar;
+    private CoordinatorLayout projectDetailCdl;
     private String type;
     private String title;
     private static RecyclerFragment fragment;
+    private Context context;
+    private Project project;
 
     @Override
     protected void initLayoutId() {
@@ -27,6 +37,9 @@ public class ProjectDetailActivity extends BaseActivity implements RecyclerView{
     @Override
     protected void initViews() {
         super.initViews();
+        context = getApplicationContext();
+        title = project.getName();
+        projectDetailCdl = (CoordinatorLayout)findViewById(R.id.project_detail_cdl);
         toolbar = (Toolbar) findViewById(R.id.project_detail_tb);
         toolbar.setTitle(title);
         setSupportActionBar(toolbar);
@@ -52,6 +65,8 @@ public class ProjectDetailActivity extends BaseActivity implements RecyclerView{
                 shareProject();
                 break;
             case R.id.project_detail_remove:
+                type = Constants.REQUEST_REMOVE_A_VIDEO_FROM_A_PROJECT;
+                showRemoveVideoFromProject();
                 break;
             default:
                 break;
@@ -60,7 +75,31 @@ public class ProjectDetailActivity extends BaseActivity implements RecyclerView{
     }
 
     private void shareProject(){
+        String shareText;
+        shareText = new StringBuffer().append(project.getName()).append("/n").append(project.getUri()).append("/n").
+                append(getString(R.string.share_footer_text));
+        ShareAndOpenInBrowserUtil.share(context , shareText);
+    }
 
+    private void showRemoveVideoFromProject(){
+        AlertDialog dialog;
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.dialog_remove_video_from_project_title);
+        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.setPositiveButton(R.sting.ok, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+
+        dialog = builder.create();
+        dialog.show();
     }
 
 
@@ -81,8 +120,22 @@ public class ProjectDetailActivity extends BaseActivity implements RecyclerView{
             case Constants.REQUEST_GET_ALL_VIDEOS_IN_A_PROJECT:
                 break;
             case Constants.REQUEST_REMOVE_A_VIDEO_FROM_A_PROJECT:
+                if(json.indexOf(Constants.CODE_204_NO_CONTENT) != -1){
+                    SnackbarUtils.showSnackShort(context, getString(
+                            R.string.remove_a_video_from_a_project_http_status_code_204));
+                }else if (json.indexOf(Constants.CODE_404_NOT_FOUND) != -1){
+                    SnackbarUtils.showSnackShort(context, getString(
+                            R.string.remove_a_video_from_a_project_http_status_code_404));
+                }
                 break;
             case Constants.REQUEST_REMOVE_VIDEOS_FROM_A_PROJECT:
+                if(json.indexOf(Constants.CODE_204_NO_CONTENT) != -1){
+                    SnackbarUtils.showSnackShort(context, getString(
+                            R.string.remove_a_video_from_a_project_http_status_code_204));
+                }else if (json.indexOf(Constants.CODE_404_NOT_FOUND) != -1){
+                    SnackbarUtils.showSnackShort(context, getString(
+                            R.string.remove_a_video_from_a_project_http_status_code_404));
+                }
                 break;
             default:
                 break;

@@ -10,6 +10,7 @@ import android.view.View;
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
 import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
+import com.menglingpeng.vonvimeo.utils.Constants;
 
 public class ProjectDetailActivity extends BaseActivity implements RecyclerView{
 
@@ -40,12 +41,26 @@ public class ProjectDetailActivity extends BaseActivity implements RecyclerView{
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.project_detail_toolbar_overflow_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.project_detail_share:
+                shareProject();
+                break;
+            case R.id.project_detail_remove:
+                break;
+            default:
+                break;
+        }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void shareProject(){
+
     }
 
 
@@ -62,5 +77,15 @@ public class ProjectDetailActivity extends BaseActivity implements RecyclerView{
     @Override
     public void loadSuccess(String json, String requestType) {
 
+        switch (requestType){
+            case Constants.REQUEST_GET_ALL_VIDEOS_IN_A_PROJECT:
+                break;
+            case Constants.REQUEST_REMOVE_A_VIDEO_FROM_A_PROJECT:
+                break;
+            case Constants.REQUEST_REMOVE_VIDEOS_FROM_A_PROJECT:
+                break;
+            default:
+                break;
+        }
     }
 }

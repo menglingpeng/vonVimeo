@@ -147,6 +147,8 @@
     <string name="unfollow_a_user_http_status_code_204">已经成功取消关注此用户</string>
 
     <string name="remove_from_project">移出Project</string>
+    <string name="remove_a_video_from_a_project_http_status_code_204">视频已经成功移出Project</string>
+    <string name="remove_a_video_from_a_project_http_status_code_404">此视频已经不在Project内</string>
 
 
 </resources>

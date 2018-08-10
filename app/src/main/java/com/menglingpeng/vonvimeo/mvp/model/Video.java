@@ -97,6 +97,7 @@ public class Video implements Serializable{
         private String name;
         private String description;
         private String link;
+        private User user
         private int duration;
         private int width;
         private Object language;
@@ -263,6 +264,14 @@ public class Video implements Serializable{
 
         public List<TagsBean> getTags() {
             return tags;
+        }
+
+        public User getUser() {
+            return user;
+        }
+
+        public void setUser(User user) {
+            this.user = user;
         }
 
         public static class PicturesBean {

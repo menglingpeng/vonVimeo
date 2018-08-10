@@ -19,6 +19,46 @@ public class User implements Serializable {
     private List<?> websites;
     private List<String> content_filter;
 
+    public PicturesBean getPictures() {
+        return pictures;
+    }
+
+    public void setPictures(PicturesBean pictures) {
+        this.pictures = pictures;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
+    public String getUri() {
+        return uri;
+    }
+
+    public void setUri(String uri) {
+        this.uri = uri;
+    }
+
+    public String getAccount() {
+        return account;
+    }
+
+    public void setAccount(String account) {
+        this.account = account;
+    }
+
     public static class PicturesBean {
 
         private String uri;

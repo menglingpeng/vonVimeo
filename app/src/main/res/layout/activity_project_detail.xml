@@ -19,6 +19,11 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"></android.support.v7.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/project_detail_desc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </android.support.design.widget.AppBarLayout>
 
     <include layout="@layout/container"></include>

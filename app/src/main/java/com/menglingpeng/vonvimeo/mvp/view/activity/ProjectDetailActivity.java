@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
@@ -23,6 +24,7 @@ public class ProjectDetailActivity extends BaseActivity implements RecyclerView{
 
     private Toolbar toolbar;
     private CoordinatorLayout projectDetailCdl;
+    private TextView descTv;
     private String type;
     private String title;
     private static RecyclerFragment fragment;
@@ -40,6 +42,7 @@ public class ProjectDetailActivity extends BaseActivity implements RecyclerView{
         context = getApplicationContext();
         title = project.getName();
         projectDetailCdl = (CoordinatorLayout)findViewById(R.id.project_detail_cdl);
+        descTv = (TextView)findViewById(R.id.project_detail_desc_tv);
         toolbar = (Toolbar) findViewById(R.id.project_detail_tb);
         toolbar.setTitle(title);
         setSupportActionBar(toolbar);
@@ -50,6 +53,7 @@ public class ProjectDetailActivity extends BaseActivity implements RecyclerView{
                 finish();
             }
         });
+
     }
 
     @Override

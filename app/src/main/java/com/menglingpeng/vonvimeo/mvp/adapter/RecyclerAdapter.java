@@ -22,8 +22,10 @@ import com.menglingpeng.vonvimeo.mvp.model.Channel;
 import com.menglingpeng.vonvimeo.mvp.model.ChannelVideo;
 import com.menglingpeng.vonvimeo.mvp.model.Follower;
 import com.menglingpeng.vonvimeo.mvp.model.Following;
+import com.menglingpeng.vonvimeo.mvp.model.Group;
 import com.menglingpeng.vonvimeo.mvp.model.Project;
 import com.menglingpeng.vonvimeo.mvp.model.User;
+import com.menglingpeng.vonvimeo.mvp.model.Video;
 import com.menglingpeng.vonvimeo.utils.Constants;
 import com.menglingpeng.vonvimeo.utils.ImageLoader;
 import com.menglingpeng.vonvimeo.utils.TextUtil;
@@ -207,6 +209,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         view = inflater.inflate(R.layout.recycler_user_uploaded_video, parent, false);
                         viewHolder = new UserPictureViewHolder(view);
                         break;
+                    case Constants.REQUEST_GET_ALL_VIDEOS_IN_A_PROJECT:
+                        view = inflater.inflate(R.layout.recycler_item_video_in_a_project, parent, false);
+                        viewHolder = new ProjectDetailViewHolder(view);
+                        break;
                     default:
                         break;
                 }
@@ -318,7 +324,24 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     }
                 }
             });
-        } else if (holder instanceof EmptyViewHolder) {
+        }else if(holder instanceof ProjectDetailViewHolder){
+            final ProjectDetailViewHolder viewHolder = (ProjectDetailViewHolder)holder;
+            final Video video = (Video)list.get(position);
+            String thumbUrl = video.getData().get(position).getPictures().getUri();
+            String avatarUrl = video.getData().get(position).getUser().getPictures().getUri();
+            ImageLoader.load(context,thumbUrl ,viewHolder.groupDetailVideoThumbIv, true );
+            viewHolder.groupDetailVideoNameTv.setText(video.getData().get(position).getName());
+            viewHolder.userNameTv.setText(video.getData().get(position).getUser().getName());
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mListener != null) {
+                        mListener.onRecyclerFragmentListListener(viewHolder, video);
+                    }
+                }
+            });
+        }
+        else if (holder instanceof EmptyViewHolder) {
             int ivId = 0;
             int tvId = 0;
             EmptyViewHolder viewHolder = (EmptyViewHolder) holder;
@@ -412,6 +435,26 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
+    public static class ProjectDetailViewHolder extends RecyclerView.ViewHolder {
+
+        public final CheckBox groupDetailCb;
+        public final ImageView groupDetailVideoThumbIv;
+        public final TextView groupDetailVideoNameTv;
+        public final ImageView avatarIv;
+        public final TextView userNameTv;
+        public final TextView playCountTv;
+
+        public ProjectDetailViewHolder(View view) {
+            super(view);
+            groupDetailCb = (CheckBox)view.findViewById(R.id.group_detail_video_cb);
+            groupDetailVideoThumbIv = (ImageView)view.findViewById(R.id.group_detail_video_thumb_iv);
+            groupDetailVideoNameTv = (TextView)view.findViewById(R.id.group_detail_video_name_tv)
+            avatarIv = (ImageView)view.findViewById(R.id.group_detail_video_avatar_iv);
+            userNameTv = (TextView)view.findViewById(R.id.group_detail_video_user_name_tv);
+            playCountTv = (TextView)view.findViewById(R.id.group_detail_video_play_count_tv);
+        }
+    }
+
     public class CateGoritesViewHolder extends RecyclerView.ViewHolder {
         public final RelativeLayout categoriteRl;
         public final TextView categoriteNameTv;
@@ -476,6 +519,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             groupIv = (ImageView)view.findViewById(R.id.group_iv);
         }
     }
+
+
 
     public class DetailOfUserViewHolder extends RecyclerView.ViewHolder {
         public final RelativeLayout profileTablayoutDetailShotsRl;

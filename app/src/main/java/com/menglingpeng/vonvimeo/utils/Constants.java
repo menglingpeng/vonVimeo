@@ -148,6 +148,15 @@ public class Constants {
     public static final String REQUEST_UNSUBSCRIBE_A_USER_FROM_A_CATEGORY = "request_unsubscribe_user_to_a_category";
 
     public static final String REQUEST_GET_ALL_VIDEOS_IN_A_PROJECT = "request_get_all_videos_in_a_project";
+    public static final String REQUEST_GET_ALL_VIDEOS_IN_A_PROJECT_SORY_BY_TITLE =
+            "request_get_all_videos_in_a_project_sort_by_title";
+    public static final String REQUEST_GET_ALL_VIDEOS_IN_A_PROJECT_SORY_BY_DATE_MODIFIED =
+            "request_get_all_videos_in_a_project_sort_by_date_modified";
+    public static final String REQUEST_GET_ALL_VIDEOS_IN_A_PROJECT_SORY_BY_DATE_ADDED =
+            "request_get_all_videos_in_a_project_sort_by_date_added";
+    public static final String REQUEST_GET_ALL_VIDEOS_IN_A_PROJECT_SORY_BY_DURATION =
+            "request_get_all_videos_in_a_project_sort_by_duration";
+
     public static final String REQUEST_REMOVE_A_VIDEO_FROM_A_PROJECT = "request_remove_a_video_from_a_project";
     public static final String REQUEST_REMOVE_VIDEOS_FROM_A_PROJECT = "request_remove_videos_from_a_project";
 

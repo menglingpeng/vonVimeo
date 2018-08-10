@@ -324,7 +324,22 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     }
                 }
             });
-        }else if(holder instanceof ProjectDetailViewHolder){
+        }else if (holder instanceof ProjectViewHolder){
+            final ProjectViewHolder viewHolder = (ProjectViewHolder)holder;
+            final Project project = (Project)list.get(position);
+            viewHolder.projectNameTv.setText(project.getName());
+            viewHolder.projectVideosCountTv.setText(project.getMetadata().getConnections().getVideos().getTotal());
+
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mListener != null) {
+                        mListener.onRecyclerFragmentListListener(viewHolder, project.getName());
+                    }
+                }
+            });
+
+        } else if(holder instanceof ProjectDetailViewHolder){
             final ProjectDetailViewHolder viewHolder = (ProjectDetailViewHolder)holder;
             final Video video = (Video)list.get(position);
             String thumbUrl = video.getData().get(position).getPictures().getUri();

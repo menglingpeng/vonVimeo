@@ -72,6 +72,14 @@ public class ProjectDetailActivity extends BaseActivity implements RecyclerView{
                 type = Constants.REQUEST_REMOVE_A_VIDEO_FROM_A_PROJECT;
                 showRemoveVideoFromProject();
                 break;
+            case R.id.project_detail_sort_title:
+                break;
+            case R.id.project_detail_sort_date_modified:
+                break;
+            case R.id.project_detail_sort_date_added:
+                break;
+            case R.id.project_detail_sort_duration:
+                break;
             default:
                 break;
         }

@@ -3,6 +3,37 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/project_detail_sort"
+        android:title="Date modiffied"
+        app:showAsAction="always">
+
+        <menu>
+
+            <item
+                android:id="@+id/project_detail_sort_title"
+                android:title="@string/share"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/project_detail_sort_date_modified"
+                android:title="@string/share"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/project_detail_sort_dete_added"
+                android:title="@string/share"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/project_detail_sort_duration"
+                android:title="@string/share"
+                app:showAsAction="never"></item>
+
+        </menu>
+
+    </item>
+
+    <item
         android:id="@+id/project_detail_more"
         android:icon="@drawable/ic_more"
         android:title=""

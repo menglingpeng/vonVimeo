@@ -18,6 +18,7 @@ public class User implements Serializable {
     private String account;
     private List<?> websites;
     private List<String> content_filter;
+    private MetadataBean.ConnectionsBean.VideosBean videos;
 
     public PicturesBean getPictures() {
         return pictures;
@@ -57,6 +58,79 @@ public class User implements Serializable {
 
     public void setAccount(String account) {
         this.account = account;
+    }
+
+    public Object getBio() {
+        return bio;
+    }
+
+    public void setBio(Object bio) {
+        this.bio = bio;
+    }
+
+    public Object getLocation() {
+        return location;
+    }
+
+    public void setLocation(Object location) {
+        this.location = location;
+    }
+
+    public String getCreated_time() {
+        return created_time;
+    }
+
+    public void setCreated_time(String created_time) {
+        this.created_time = created_time;
+    }
+
+    public MetadataBean getMetadata() {
+        return metadata;
+    }
+
+    public void setMetadata(MetadataBean metadata) {
+        this.metadata = metadata;
+    }
+
+    public PreferencesBean getPreferences() {
+        return preferences;
+    }
+
+    public void setPreferences(PreferencesBean preferences) {
+        this.preferences = preferences;
+    }
+
+
+    public List<String> getContent_filter() {
+        return content_filter;
+    }
+
+    public void setContent_filter(List<String> content_filter) {
+        this.content_filter = content_filter;
+    }
+
+    public String getResource_key() {
+        return resource_key;
+    }
+
+    public void setResource_key(String resource_key) {
+        this.resource_key = resource_key;
+    }
+
+    public List<?> getWebsites() {
+        return websites;
+    }
+
+    public void setWebsites(List<?> websites) {
+        this.websites = websites;
+    }
+
+    public void setVideos(MetadataBean.ConnectionsBean.VideosBean videos) {
+        this.videos = videos;
+    }
+
+    public MetadataBean.ConnectionsBean.VideosBean getVideos() {
+        return videos;
     }
 
     public static class PicturesBean {
@@ -299,6 +373,79 @@ public class User implements Serializable {
         }
     }
 
+    public static class PreferencesBean{
 
+        private VideosXBean videosxBean;
+
+        public VideosXBean getVideosxBean() {
+            return videosxBean;
+        }
+
+        public void setVideosxBean(VideosXBean videosxBean) {
+            this.videosxBean = videosxBean;
+        }
+
+        public static class VideosXBean {
+
+            private PrivacyBean privacy;
+
+            public void setPrivacy(PrivacyBean privacy) {
+                this.privacy = privacy;
+            }
+
+            public PrivacyBean getPrivacy() {
+                return privacy;
+            }
+
+            public static class PrivacyBean {
+
+                private String view;
+                private String comments;
+                private String embed;
+                private boolean download;
+                private boolean add;
+
+                public void setView(String view) {
+                    this.view = view;
+                }
+
+                public void setComments(String comments) {
+                    this.comments = comments;
+                }
+
+                public void setEmbed(String embed) {
+                    this.embed = embed;
+                }
+
+                public void setDownload(boolean download) {
+                    this.download = download;
+                }
+
+                public void setAdd(boolean add) {
+                    this.add = add;
+                }
+
+                public String getView() {
+                    return view;
+                }
+
+                public String getComments() {
+                    return comments;
+                }
+
+                public String getEmbed() {
+                    return embed;
+                }
+
+                public boolean getDownload() {
+                    return download;
+                }
+
+                public boolean getAdd() {
+                    return add;
+                }
+            }
+        }
+    }
 
 }

@@ -56,6 +56,7 @@ public class ProjectDetailActivity extends BaseActivity implements RecyclerView{
 
     }
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.project_detail_toolbar_overflow_menu, menu);
@@ -73,12 +74,21 @@ public class ProjectDetailActivity extends BaseActivity implements RecyclerView{
                 showRemoveVideoFromProject();
                 break;
             case R.id.project_detail_sort_title:
+                type = Constants.REQUEST_GET_ALL_VIDEOS_IN_A_PROJECT_SORY_BY_TITLE;
+                replaceFragment(RecyclerFragment.newInstance(type));
+
                 break;
             case R.id.project_detail_sort_date_modified:
+                type = Constants.REQUEST_GET_ALL_VIDEOS_IN_A_PROJECT_SORY_BY_DATE_MODIFIED;
+                replaceFragment(RecyclerFragment.newInstance(type));
                 break;
             case R.id.project_detail_sort_date_added:
+                type = Constants.REQUEST_GET_ALL_VIDEOS_IN_A_PROJECT_SORY_BY_DATE_ADDED;
+                replaceFragment(RecyclerFragment.newInstance(type));
                 break;
             case R.id.project_detail_sort_duration:
+                type = Constants.REQUEST_GET_ALL_VIDEOS_IN_A_PROJECT_SORY_BY_DURATION;
+                replaceFragment(RecyclerFragment.newInstance(type));
                 break;
             default:
                 break;

@@ -33,6 +33,7 @@ public class UserUploadedVideosActivity extends BaseActivity implements Recycler
     private FloatingActionButton floatingActionButton;
     private CoordinatorLayout coordinatorLayout;
     private String title;
+    private String soryType;
     private String type;
     private Context context;
     public static final int REQUEST_VIDEO_CODE = 1;
@@ -83,6 +84,40 @@ public class UserUploadedVideosActivity extends BaseActivity implements Recycler
                 break;
             case R.id.uploaded_videos_delete:
                 showDeleteUploadedVideoDialog();
+            case R.id.project_detail_sort_title:
+                if(type.equals(Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_AUTH_USER)) {
+                    type = Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_AUTH_USER_SORY_BY_TITLE;
+                }else {
+                    type = Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_SINGLE_USER_SORY_BY_TITLE;
+                }
+                replaceFragment(RecyclerFragment.newInstance(type));
+
+                break;
+            case R.id.uploaded_videos_sort_date_modified:
+                if(type.equals(Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_AUTH_USER)) {
+                    type = Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_AUTH_USER_SORY_BY_DATE_MODIFIED;
+                }else {
+                    type = Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_SINGLE_USER_SORY_BY_DATE_MODIFIED;
+
+                }
+                replaceFragment(RecyclerFragment.newInstance(type));
+                break;
+            case R.id.uploaded_videos_sort_date_added:
+                if(type.equals(Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_AUTH_USER)) {
+                    type = Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_AUTH_USER_SORY_BY_DATE_ADDED;
+                }else {
+                    type = Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_SINGLE_USER_SORY_BY_DATE_ADDED;
+                }
+                replaceFragment(RecyclerFragment.newInstance(type));
+                break;
+            case R.id.uploaded_videos_sort_duration:
+                if(type.equals(Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_AUTH_USER)) {
+                    type = Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_AUTH_USER_SORY_BY_DURATION;
+                }else {
+                    type = Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_SINGLE_USER_SORY_BY_DURATION;
+                }
+                replaceFragment(RecyclerFragment.newInstance(type));
+                break;
             default:
                 break;
         }
@@ -202,6 +237,11 @@ public class UserUploadedVideosActivity extends BaseActivity implements Recycler
             case Constants.REQUEST_UPLOADED_A_VIDEO:
 
                 break;
+            case R.id.project_detail_sort_title:
+                break;
+            case R.id.uploaded_videos_sort_duration:
+                break;
+
             default:
                 break;
         }

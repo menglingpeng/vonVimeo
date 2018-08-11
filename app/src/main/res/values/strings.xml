@@ -29,8 +29,13 @@
 
     <string name="my_video_spinner_title">Title</string>
     <string name="my_video_spinner_date_modified">Date modified</string>
-    <string name="my_video_spinner__date_added">Date added</string>
-    <string name="my_video_spinner__duration">Duration</string>
+    <string name="my_video_spinner_date_added">Date added</string>
+    <string name="my_video_spinner_duration">Duration</string>
+
+    <string name="sort_title">Title</string>
+    <string name="sort_date_modified">Date modified</string>
+    <string name="sort_date_added">Date added</string>
+    <string name="sort_duration">Duration</string>
 
     <string name="cancle">关闭</string>
     <string name="ok">确定</string>

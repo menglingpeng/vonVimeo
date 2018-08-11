@@ -11,22 +11,22 @@
 
             <item
                 android:id="@+id/project_detail_sort_title"
-                android:title="@string/share"
+                android:title="@string/sort_title"
                 app:showAsAction="never"></item>
 
             <item
                 android:id="@+id/project_detail_sort_date_modified"
-                android:title="@string/share"
+                android:title="@string/sort_date_modified"
                 app:showAsAction="never"></item>
 
             <item
                 android:id="@+id/project_detail_sort_dete_added"
-                android:title="@string/share"
+                android:title="@string/sort_date_added"
                 app:showAsAction="never"></item>
 
             <item
                 android:id="@+id/project_detail_sort_duration"
-                android:title="@string/share"
+                android:title="@string/sort_duration"
                 app:showAsAction="never"></item>
 
         </menu>

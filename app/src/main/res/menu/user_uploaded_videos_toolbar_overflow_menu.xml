@@ -3,6 +3,37 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/uploaded_videos__sort"
+        android:title="Date modiffied"
+        app:showAsAction="always">
+
+        <menu>
+
+            <item
+                android:id="@+id/uploaded_videos__sort_title"
+                android:title="@string/sort_title"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/uploaded_videos__sort_date_modified"
+                android:title="@string/sort_date_modified"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/uploaded_videos__sort_dete_added"
+                android:title="@string/sort_date_added"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/uploaded_videos__sort_duration"
+                android:title="@string/sort_duration"
+                app:showAsAction="never"></item>
+
+        </menu>
+
+    </item>
+
+    <item
         android:id="@+id/uploaded_videos_more"
         android:icon="@drawable/ic_more"
         android:title=""

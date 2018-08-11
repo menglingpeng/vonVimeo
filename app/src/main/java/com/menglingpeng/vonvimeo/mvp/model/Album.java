@@ -17,6 +17,8 @@ public class Album implements Serializable{
     private String resource_key;
     private List<SizesBean> sizes;
 
+    private String view;
+
     public void setUri(Object uri) {
         this.uri = uri;
     }
@@ -55,6 +57,14 @@ public class Album implements Serializable{
 
     public List<SizesBean> getSizes() {
         return sizes;
+    }
+
+    public void setView(String view) {
+        this.view = view;
+    }
+
+    public String getView() {
+        return view;
     }
 
     public static class PagingBean {
@@ -97,7 +107,6 @@ public class Album implements Serializable{
         }
     }
 
-
     public static class SizesBean {
 
         private int width;
@@ -138,78 +147,5 @@ public class Album implements Serializable{
         }
     }
 
-    public static class Preferences{
 
-        private VideosBean videos;
-
-        public void setVideos(VideosBean videos) {
-            this.videos = videos;
-        }
-
-        public VideosBean getVideos() {
-            return videos;
-        }
-
-        public static class VideosBean {
-
-            private PrivacyBean privacy;
-
-            public void setPrivacy(PrivacyBean privacy) {
-                this.privacy = privacy;
-            }
-
-            public PrivacyBean getPrivacy() {
-                return privacy;
-            }
-
-            public static class PrivacyBean {
-
-                private String view;
-                private String comments;
-                private String embed;
-                private boolean download;
-                private boolean add;
-
-                public void setView(String view) {
-                    this.view = view;
-                }
-
-                public void setComments(String comments) {
-                    this.comments = comments;
-                }
-
-                public void setEmbed(String embed) {
-                    this.embed = embed;
-                }
-
-                public void setDownload(boolean download) {
-                    this.download = download;
-                }
-
-                public void setAdd(boolean add) {
-                    this.add = add;
-                }
-
-                public String getView() {
-                    return view;
-                }
-
-                public String getComments() {
-                    return comments;
-                }
-
-                public String getEmbed() {
-                    return embed;
-                }
-
-                public boolean getDownload() {
-                    return download;
-                }
-
-                public boolean getAdd() {
-                    return add;
-                }
-            }
-        }
-    }
 }

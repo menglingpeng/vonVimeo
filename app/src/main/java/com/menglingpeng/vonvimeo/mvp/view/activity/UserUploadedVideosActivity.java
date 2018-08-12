@@ -245,7 +245,7 @@ public class UserUploadedVideosActivity extends BaseActivity implements Recycler
 
                 break;
             case R.id.uploaded_videos_sort_duration:
-               
+
                 break;
             default:
                 break;

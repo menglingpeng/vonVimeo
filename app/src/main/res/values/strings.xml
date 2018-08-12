@@ -32,10 +32,19 @@
     <string name="my_video_spinner_date_added">Date added</string>
     <string name="my_video_spinner_duration">Duration</string>
 
+
+
     <string name="sort_title">Title</string>
     <string name="sort_date_modified">Date modified</string>
     <string name="sort_date_added">Date added</string>
     <string name="sort_duration">Duration</string>
+    <string name="sort_date">Date</string>
+    <string name="sort_alphabetical">ALphabetical</string>
+    <string name="sort_plays">Plays</string>
+    <string name="sort_likes">Likes</string>
+    <string name="sort_comments">Comments</string>
+
+    <string name="your_stuff">YOUR STUFF</string>
 
     <string name="cancle">关闭</string>
     <string name="ok">确定</string>

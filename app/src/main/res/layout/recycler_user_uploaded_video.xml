@@ -78,7 +78,7 @@
                     android:id="@+id/uploaded_video_play_count_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignTop="@+id/uploaded_video_user_tv"
+                    android:layout_alignTop="@+id/uploaded_video_user_name_tv"
                     android:layout_toRightOf="@+id/uploaded_video_delimiter_tv"/>
 
             </RelativeLayout>

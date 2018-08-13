@@ -9,7 +9,7 @@
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context="com.menglingpeng.designersshow.mvp.view.BucketDetailActivity">
+        tools:context="com.menglingpeng.vonvimeo.mvp.view.activity.UserFollowingActivity">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/user_following_tb"
@@ -34,7 +34,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/stuff_title_tv"
-                android:layout_below="@+id/stuff_title_tv"/>
+                android:layout_below="@+id/stuff_title_tv"
+                android:layout_marginTop="15dp"/>
 
             <TextView
                 android:id="@+id/like_video_delimiter_tv"

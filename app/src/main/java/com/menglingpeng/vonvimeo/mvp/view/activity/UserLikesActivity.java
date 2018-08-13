@@ -45,7 +45,7 @@ public class UserLikesActivity extends BaseActivity implements RecyclerView, Vie
         toolbar = (Toolbar) findViewById(R.id.user_likes_tb);
         likesCountTv = (TextView)findViewById(R.id.likes_count_tv);
         collectionCountTv = (TextView)findViewById(R.id.collection_count_tv);
-        collectionCountTv = (TextView)findViewById(R.id.following_count_tv);
+        followingCountTv = (TextView)findViewById(R.id.following_count_tv);
         toolbar.setTitle(title);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_back);

@@ -35,16 +35,15 @@
                 android:id="@+id/likes_count_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/like_video_avatar_iv"
-                android:layout_toRightOf="@+id/like_video_avatar_iv"
+                android:layout_alignLeft="@+id/stuff_title_tv"
                 android:layout_below="@+id/stuff_title_tv"/>
 
             <TextView
                 android:id="@+id/like_video_delimiter_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/like_video_user_tv"
-                android:layout_alignTop="@+id/like_video_user_tv"
+                android:layout_toRightOf="@+id/likes_count_tv"
+                android:layout_alignTop="@+id/likes_count_tv"
                 android:layout_marginLeft="10dp"
                 android:text="|"/>
 
@@ -53,15 +52,15 @@
                 android:id="@+id/collection_count_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/like_video_user_tv"
+                android:layout_alignTop="@+id/likes_count_tv"
                 android:layout_toRightOf="@+id/like_video_delimiter_tv"/>
 
             <TextView
                 android:id="@+id/like_video_delimiter_2_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/like_video_user_tv"
-                android:layout_alignTop="@+id/like_video_user_tv"
+                android:layout_toRightOf="@+id/collection_count_tv"
+                android:layout_alignTop="@+id/likes_count_tv"
                 android:layout_marginLeft="10dp"
                 android:text="|"/>
 
@@ -70,7 +69,7 @@
                 android:id="@+id/following_count_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/like_video_user_tv"
+                android:layout_alignTop="@+id/likes_count_tv"
                 android:layout_toRightOf="@+id/like_video_delimiter_2_tv"/>
 
         </RelativeLayout>

@@ -8,7 +8,7 @@ public class Databean {
     private String name;
     private String description;
     private String link;
-    private User user
+    private User user;
     private int duration;
     private int width;
     private Object language;
@@ -179,4 +179,5 @@ public class Databean {
 
     public User getUser() {
         return user;
+    }
 }

@@ -1,5 +1,6 @@
 package com.menglingpeng.vonvimeo.mvp.view.activity;
 
+import android.content.Intent;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,11 +13,12 @@ import com.menglingpeng.designersshow.utils.Constants;
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
 import com.menglingpeng.vonvimeo.mvp.model.User;
+import com.menglingpeng.vonvimeo.mvp.model.Video;
 import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
 import com.menglingpeng.vonvimeo.utils.Constants;
 import com.menglingpeng.vonvimeo.utils.ShareAndOpenInBrowserUtil;
 
-public class UserLikesActivity extends BaseActivity implements RecyclerView{
+public class UserLikesActivity extends BaseActivity implements RecyclerView, View.OnClickListener{
 
     private Toolbar toolbar;
     private String type;
@@ -25,7 +27,7 @@ public class UserLikesActivity extends BaseActivity implements RecyclerView{
     private TextView collectionCountTv;
     private TextView followingCountTv;
     private User user;
-    private Like like;
+    private Video video;
 
     private static RecyclerFragment fragment;
 
@@ -127,6 +129,27 @@ public class UserLikesActivity extends BaseActivity implements RecyclerView{
     }
 
     @Override
+    public void onClick(View view) {
+        Intent intent;
+        switch (view.getId()){
+            case R.id.likes_count_tv:
+                intent = new Intent(this, UserLikesActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.collection_count_tv:
+                intent = new Intent(this, UserCollectionsActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.following_count_tv:
+                intent = new Intent(this, UserFollowingActivity.class);
+                startActivity(intent);
+                break;
+            default:
+                break;
+        }
+    }
+
+    @Override
     public void hideProgress() {
 
     }
@@ -140,4 +163,5 @@ public class UserLikesActivity extends BaseActivity implements RecyclerView{
     public void loadSuccess(String json, String requestType) {
 
     }
+
 }

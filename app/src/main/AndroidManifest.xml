@@ -40,7 +40,8 @@
         <activity android:name=".mvp.view.activity.UserUploadedVideosActivity" />
         <activity android:name=".mvp.view.activity.UserChannleActivity" />
         <activity android:name=".mvp.view.activity.CategoryDetailActivity" />
-        <activity android:name=".mvp.view.activity.ProjectDetailActivity"></activity>
+        <activity android:name=".mvp.view.activity.ProjectDetailActivity" />
+        <activity android:name=".mvp.view.activity.UserCollectionsActivity"></activity>
     </application>
 
 </manifest>

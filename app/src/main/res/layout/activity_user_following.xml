@@ -2,6 +2,7 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/user_following_cdl"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.menglingpeng.vonvimeo.mvp.view.activity.UserFollowingActivity">
@@ -73,7 +74,23 @@
 
         </RelativeLayout>
 
+        <android.support.design.widget.TabLayout
+            android:id="@+id/following_tl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:tabSelectedTextColor="@android:color/white"
+            app:tabTextAppearance="@style/TabLayoutTheme"
+            app:tabTextColor="@color/tablayout_text_color" />
+
     </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/following_vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"></android.support.v4.view.ViewPager>
 
     <include layout="@layout/container"></include>
 

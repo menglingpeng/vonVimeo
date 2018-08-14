@@ -157,7 +157,7 @@
     <string name="delete_a_user_watch_history_http_status_code_204">已经成功删除浏览记录</string>
     <string name="delete_a_video_from_your_watch_history_http_status_code_204">已经从浏览记录成功删除选中视频</string>
 
-    <string name="follow_a_user_http_status_code_204">已经成功关注此ci用户</string>
+    <string name="follow_a_user_http_status_code_204">已经成功关注此用户</string>
     <string name="follow_a_user_http_status_code_403">有权限添加用户</string>
     <string name="unfollow_a_user_http_status_code_204">已经成功取消关注此用户</string>
 

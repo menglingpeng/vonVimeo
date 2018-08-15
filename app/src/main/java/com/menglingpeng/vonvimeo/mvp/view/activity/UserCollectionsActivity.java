@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
@@ -160,6 +162,68 @@ public class UserCollectionsActivity extends BaseActivity implements View.OnClic
             }
         });
         channleNameEt.setFocusable(true);
+        dialog = builder.create();
+        dialog.show();
+    }
+
+    private void showCreateGroupDialog() {
+        final TextInputEditText groupNameEt;
+        final TextInputEditText groupDescEt;
+        final RadioGroup radioGroup;
+        final RadioButton anyoneRb;
+        final RadioButton membersRb;
+        AlertDialog dialog;
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_create_a_group, null);
+        builder.setTitle(R.string.create_a_group);
+        builder.setView(dialogView);
+        groupNameEt = (TextInputEditText) dialogView.findViewById(R.id.group_name_tiet);
+        groupDescEt = (TextInputEditText) dialogView.findViewById(R.id.group_desc_tiet);
+        radioGroup = (RadioGroup)dialogView.findViewById(R.id.group_privacy_settings_rg);
+        anyoneRb = (RadioButton)dialogView.findViewById(R.id.group_privacy_settings_anyone_rb);
+        membersRb = (RadioButton)dialogView.findViewById(R.id.group_privacy_settings_member_rb);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch (radioGroup.getCheckedRadioButtonId()){
+                    case R.id.group_privacy_settings_anyone_rb:
+                        break;
+                    case R.id.group_privacy_settings_members_rb:
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
+        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.setPositiveButton(R.string.create, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String name = groupNameEt.getText().toString();
+                if (name.equals("")) {
+                    SnackbarUtils.showSnackShort(getApplicationContext(), coordinatorLayout, getString(R.string
+                            .the_name_of_group_is_not_null));
+                } else {
+                    HashMap<String, String> map = new HashMap<>();
+                    map.put(Constants.ACCESS_TOKEN, SharedPrefUtils.getAuthToken());
+                    map.put(Constants.NAME, groupNameEt.getText().toString());
+                    map.put(Constants.DESCRIPTION, groupDescEt.getText().toString());
+                    type = Constants.REQUEST_CREATE_A_ALBUM;
+                    RecyclerPresenter presenter = new RecyclerPresenter(UserGroupActivity.this, type, Constants
+                            .REQUEST_NORMAL, Constants.REQUEST_POST_MEIHOD, map, getApplicationContext());
+                    presenter.loadJson();
+                    SnackbarUtils.showSnackShort(getApplicationContext(), coordinatorLayout, getString(R.string
+                            .snack_create_a_album_text));
+                }
+
+            }
+        });
+        groupNameEt.setFocusable(true);
         dialog = builder.create();
         dialog.show();
     }

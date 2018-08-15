@@ -49,9 +49,35 @@
     <string name="cancle">关闭</string>
     <string name="ok">确定</string>
 
+    <string name="creat_a_album">Create a Album</string>
+    <string name="album_name">A Name</string>
+    <string name="album_desc">A Description</string>
+    <string name="album_privacy_settings_anyone_rb_text">Anyone </string>
+    <string name="album_privacy_settings_people_with_password_rb_text">Only people with a password</string>
+
+    <string name="creat_a_channle">Create a Channle</string>
+    <string name="channle_name">A Name</string>
+    <string name="channle_desc">A Description</string>
+    <string name="channle_privacy_settings_anyone_rb_text">Anyone can see this channle</string>
+    <string name="channle_privacy_settings_moderators_rb_text">Only moderators can see this channle</string>
+    <string name="channle_privacy_settings_moderators_and_choose_rb_text">Only moderators and people I choose can see
+        this channle</string>
+
+    <string name="creat_a_group">Create a Group</string>
+    <string name="group_name">A Name</string>
+    <string name="group_desc">A Description</string>
+    <string name="group_privacy_settings_anyone_rb_text">Anyone can see this group</string>
+    <string name="group_privacy_settings_members_rb_text">Only members can see this group</string>
+
+    <string name="creat_a_project">Create a Project</string>
+    <string name="project_name">Project Name</string>
+    <string name="project_desc">Project Description</string>
+
+
 
     <string name="name">名称</string>
     <string name="description">说明</string>
+    <string name="privacy_settings">Privacy Settings</string>
     <string name="url">网址</string>
     <string name="channel_detail_start_bt_text">开始观看</string>
     <string name="channel_detail_share">分享</string>

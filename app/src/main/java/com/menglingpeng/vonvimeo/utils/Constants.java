@@ -207,7 +207,11 @@ public class Constants {
     public static final String REQUEST_GET_ALL_VIDEOS_LIKED_BY_SINGLE_USER_SORY_BY_COMMENTS =
             "request_get_all_videos_liked_by_singleuser_sort_by_comments";
 
+    public static final String REQUEST_GET_FOLLOWINGS_OF_AUTH_USER_SORY_BY_ALPHABETICAL =
+            "request_get_followingsof_auth_user_sort_by_alphabetical";
 
+    public static final String REQUEST_GET_FOLLOWINGS_OF_AUTH_USER_SORY_BY_DATE =
+            "request_get_followingsof_auth_user_sort_by_date";
 
     //默认值1
     public static final int PAGE_VALUE = 1;

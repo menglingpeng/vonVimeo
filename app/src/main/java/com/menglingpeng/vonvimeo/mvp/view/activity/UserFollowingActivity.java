@@ -31,6 +31,7 @@ public class UserFollowingActivity extends BaseActivity implements RecyclerView,
     private Toolbar toolbar;
     private String type;
     private String userName;
+    private String sortType;
     private TextView likesCountTv;
     private TextView collectionCountTv;
     private TextView followingCountTv;
@@ -80,8 +81,10 @@ public class UserFollowingActivity extends BaseActivity implements RecyclerView,
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.user_following_sort_date:
+                sortType = Constants.REQUEST_GET_FOLLOWINGS_OF_AUTH_USER_SORY_BY_ALPHABETICAL;
                 break;
             case R.id.user_following_sort_alphabetical:
+                sortType = Constants.REQUEST_GET_FOLLOWINGS_OF_AUTH_USER_SORY_BY_DATE;
                 break;
             default:
                 break;

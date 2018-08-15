@@ -29,4 +29,44 @@
             android:hint="@string/description" />
     </android.support.design.widget.TextInputLayout>
 
+    <RelativeLayout
+        android:id="@+id/privacy_settings_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/group_desc_til">
+
+        <TextView
+            android:id="@+id/privacy_settings_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/privacy_settings"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+
+        <RadioGroup
+            android:id="@+id/channel_privacy_settings_rg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RadioButton
+                android:id="@+id/channel_privacy_settings_anyone_rb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/group_privacy_settings_anyone_rb_text"/>
+
+            <RadioButton
+                android:id="@+id/channel_privacy_settings_moderators_rb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/channle_privacy_settings_moderators_rb_text"/>
+
+            <RadioButton
+                android:id="@+id/channel_privacy_settings_moderators_and_choose_rb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/channle_privacy_settings_moderators_and_choose_rb_text"/>
+
+        </RadioGroup>
+
+    </RelativeLayout>
+
 </RelativeLayout>

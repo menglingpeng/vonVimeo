@@ -125,7 +125,12 @@ public class UserCollectionsActivity extends BaseActivity implements View.OnClic
     }
 
     private void showCreateNewChannleDialog() {
-        final TextInputEditText channleNameEt, channleDescEt;
+        final TextInputEditText channleNameEt;
+        final TextInputEditText channleDescEt;
+        final RadioGroup radioGroup;
+        final RadioButton anyoneRb;
+        final RadioButton moderatorsRb;
+        final RadioButton moderatorsAndChooseRb;
         AlertDialog dialog;
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         View dialogView = getLayoutInflater().inflate(R.layout.dialog_create_a_channle, null);
@@ -133,6 +138,26 @@ public class UserCollectionsActivity extends BaseActivity implements View.OnClic
         builder.setView(dialogView);
         channleNameEt = (TextInputEditText) dialogView.findViewById(R.id.channle_name_tiet);
         channleDescEt = (TextInputEditText) dialogView.findViewById(R.id.channle_desc_tiet);
+        radioGroup = (RadioGroup)dialogView.findViewById(R.id.group_privacy_settings_rg);
+        anyoneRb = (RadioButton)dialogView.findViewById(R.id.channle_privacy_settings_anyone_rb);
+        moderatorsRb = (RadioButton)dialogView.findViewById(R.id.channle_privacy_settings_moderators_rb);
+        moderatorsAndChooseRb = (RadioButton)dialogView.findViewById(R.id.
+                channle_privacy_settings_moderators_and_choose_rb);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch (radioGroup.getCheckedRadioButtonId()){
+                    case R.id.group_privacy_settings_anyone_rb:
+                        break;
+                    case R.id.channle_privacy_settings_moderators_rb:
+                        break;
+                    case R.id.channle_privacy_settings_moderators_and_choose_rb:
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
         builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

@@ -213,6 +213,14 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         view = inflater.inflate(R.layout.recycler_item_video_in_a_project, parent, false);
                         viewHolder = new ProjectDetailViewHolder(view);
                         break;
+                    case Constants.REQUEST_LIST_SUGGESTED_FOR_AUTH_USER:
+                        view = inflater.inflate(R.layout.user_following_suggested_recycler_item, parent, false);
+                        viewHolder = new SuggestedOfUserViewHolder(view);
+                        break;
+                    case Constants.REQUEST_LIST_SUGGESTED_FOR_A_USER:
+                        view = inflater.inflate(R.layout.user_following_suggested_recycler_item, parent, false);
+                        viewHolder = new SuggestedOfUserViewHolder(view);
+                        break;
                     default:
                         break;
                 }
@@ -681,6 +689,37 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     .group_member_follow_count_tv);
         }
     }
+
+    public class FollowingOfUserViewHolder extends RecyclerView.ViewHolder {
+
+        public final ImageView avatarIv;
+        public final TextView userNameTv;
+        public final TextView onlineTimeTv;
+
+        public FollowingOfUserViewHolder(View view) {
+            super(view);
+
+            avatarIv = (ImageView)view.findViewById(R.id.following_avatar_iv);
+            userNameTv = (TextView)view.findViewById(R.id.following_name_tv);
+            onlineTimeTv = (TextView)view.findViewById(R.id.following_time_tv);
+        }
+    }
+
+    public class SuggestedOfUserViewHolder extends RecyclerView.ViewHolder {
+
+        public final ImageView avatarIv;
+        public final TextView userNameTv;
+        public final TextView onlineTimeTv;
+
+        public SuggestedOfUserViewHolder(View view) {
+            super(view);
+
+            avatarIv = (ImageView)view.findViewById(R.id.suggested_avatar_iv);
+            userNameTv = (TextView)view.findViewById(R.id.suggested_name_tv);
+            onlineTimeTv = (TextView)view.findViewById(R.id.suggested_common_cout_tv);
+        }
+    }
+
 
     public class UserPictureViewHolder extends RecyclerView.ViewHolder {
         public final ImageView userPictureIv;

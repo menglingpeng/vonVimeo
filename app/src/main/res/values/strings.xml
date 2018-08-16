@@ -193,4 +193,9 @@
     <string name="dialog_remove_video_from_project_title">确定要把视频移出此Project吗？</string>
 
 
+    <string name="following">Following</string>
+    <string name="online">Online</string>
+    <string name="followers">followers</string>
+    <string name="suggested">Suggested</string>
+
 </resources>

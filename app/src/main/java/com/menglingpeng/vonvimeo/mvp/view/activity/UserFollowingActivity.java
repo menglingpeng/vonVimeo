@@ -9,6 +9,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,7 +17,9 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
+import com.menglingpeng.vonvimeo.mvp.adapter.TabPagerFragmentAdapter;
 import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
+import com.menglingpeng.vonvimeo.mvp.model.User;
 import com.menglingpeng.vonvimeo.mvp.presenter.RecyclerPresenter;
 import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
 import com.menglingpeng.vonvimeo.mvp.view.UserAlbumActivity;
@@ -24,7 +27,9 @@ import com.menglingpeng.vonvimeo.utils.Constants;
 import com.menglingpeng.vonvimeo.utils.SharedPrefUtils;
 import com.menglingpeng.vonvimeo.utils.SnackbarUtils;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class UserFollowingActivity extends BaseActivity implements RecyclerView, View.OnClickListener{
 
@@ -37,6 +42,13 @@ public class UserFollowingActivity extends BaseActivity implements RecyclerView,
     private TextView followingCountTv;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    private List<RecyclerFragment> fragments;
+    private TabPagerFragmentAdapter adapter;
+    private static RecyclerFragment currentFragment = null;
+    private User user;
+    private String userId;
+
+    private static final int SMOOTHSCROLL_TOP_POSITION = 50;
 
     @Override
     protected void initLayoutId() {
@@ -69,6 +81,8 @@ public class UserFollowingActivity extends BaseActivity implements RecyclerView,
             replaceFragment(RecyclerFragment.newInstance(getIntent().getStringExtra(Constants.ID), Constants
                     .REQUEST_LIST_FOLLOWING_FOR_A_USER));
         }
+
+        initTabPager();
     }
 
     @Override
@@ -111,6 +125,65 @@ public class UserFollowingActivity extends BaseActivity implements RecyclerView,
             default:
                 break;
         }
+    }
+
+    private void initTabPager() {
+        adapter = new TabPagerFragmentAdapter(getSupportFragmentManager());
+        initTabFragments();
+        viewPager.setAdapter(adapter);
+        tabLayout.setupWithViewPager(viewPager);
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+                scrollToTop(fragments.get(tab.getPosition()).getRecyclerView());
+            }
+        });
+
+    }
+
+    private void scrollToTop(android.support.v7.widget.RecyclerView list) {
+        int lastPosition;
+        if (null != list) {
+            LinearLayoutManager manager = (LinearLayoutManager) list.getLayoutManager();
+            lastPosition = manager.findLastVisibleItemPosition();
+            if (lastPosition < SMOOTHSCROLL_TOP_POSITION) {
+                list.smoothScrollToPosition(0);
+            } else {
+                list.scrollToPosition(0);
+            }
+        }
+    }
+
+    private void initTabFragments() {
+
+        ArrayList<String> titlesList = new ArrayList<>();
+        titlesList.add(getText(R.string.following).toString());
+        titlesList.add(getText(R.string.online).toString());
+        titlesList.add(getText(R.string.followers).toString());
+        titlesList.add(getText(R.string.suggested).toString());
+        if (type.equals(Constants.REQUEST_AUTH_USER)) {
+            fragments.add(RecyclerFragment.newInstance(user, Constants.REQUEST_LIST_FOLLOWING_FOR_AUTH_USER));
+            fragments.add(RecyclerFragment.newInstance(user, Constants.REQUEST_LIST_ONLINE_FOLLOWING_FOR_AUTH_USER));
+            fragments.add(RecyclerFragment.newInstance(Constants.REQUEST_LIST_FOLLOWERS_FOR_AUTH_USER));
+            fragments.add(RecyclerFragment.newInstance(Constants.REQUEST_LIST_SUGGESTED_FOR_AUTH_USER));
+        } else {
+            fragments.add(RecyclerFragment.newInstance(user, Constants.REQUEST_LIST_FOLLOWING_FOR_A_USER));
+            fragments.add(RecyclerFragment.newInstance(user, Constants.REQUEST_LIST_ONLINE_FOLLOWING_FOR_A_USER));
+            fragments.add(RecyclerFragment.newInstance(Constants.REQUEST_LIST_FOLLOWERS_FOR_A_USER));
+            fragments.add(RecyclerFragment.newInstance(Constants.REQUEST_LIST_SUGGESTED_FOR_A_USER));
+        }
+        adapter.setFragments(fragments, titlesList);
     }
 
     @Override

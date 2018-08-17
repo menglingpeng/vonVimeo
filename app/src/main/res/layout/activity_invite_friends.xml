@@ -24,41 +24,161 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/invite_desc_tv"
+        <RelativeLayout
+            android:id="@+id/invite_header_rl"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="15dp"
-            android:text=""/>
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/invite_friend_email_title_tv"
+            <TextView
+                android:id="@+id/invite_desc_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:text=""/>
+
+            <TextView
+                android:id="@+id/invite_friend_email_title_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/invite_desc_tv"
+                android:layout_alignLeft="@+id/invite_desc_tv"
+                android:layout_marginBottom="10dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:text=""/>
+
+            <TextView
+                android:id="@+id/invite_email_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/invite_friend_email_title_tv"
+                android:layout_alignLeft="@+id/invite_desc_tv"
+                android:layout_marginBottom="30dp"
+                android:text="Email:"/>
+
+            <EditText
+                android:id="@+id/invite_email_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/invite_email_tv"
+                android:layout_alignTop="@+id/invite_email_tv"
+                android:hint="@string/invite_email_et_hint_text"/>
+
+            <Button
+                android:id="@+id/invite_more_people_bt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:layout_below="@+id/invite_email_et"
+                android:drawableLeft="@drawable/ic_add_white_24dp"
+                android:text="@string/invite_more_people"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/invite_desc_tv"
-            android:layout_alignLeft="@+id/invite_desc_tv"
-            android:layout_marginBottom="10dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Title"
-            android:text=""/>
+            android:layout_height="match_parent"
+            android:layout_below="@+id/invite_header_rl">
 
-        <TextView
-            android:id="@+id/invite_email_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/invite_friend_email_title_tv"
-            android:layout_alignLeft="@+id/invite_desc_tv"
-            android:layout_marginBottom="30dp"
-            android:text="Email:"/>
+            <TextView
+                android:id="@+id/invitation_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="@string/invitation_title_tv_text"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
 
-        <EditText
-            android:id="@+id/invite_email_et"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/invite_email_tv"
-            android:layout_alignTop="@+id/invite_email_tv"
-            android:hint=""/>
+            <RelativeLayout
+                android:id="@+id/invitation_content_tv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/recycler_item_background">
+
+                <TextView
+                    android:id="@+id/invitation_from_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:text=""/>
+
+                <TextView
+                    android:id="@+id/invitation_from_content_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""/>
+
+                <TextView
+                    android:id="@+id/invitation_to_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+
+                <TextView
+                    android:id="@+id/invitation_to_content_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""/>
+
+                <TextView
+                    android:id="@+id/invitation_subject_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+
+                <TextView
+                    android:id="@+id/invitation_subject_content_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""/>
+
+                <TextView
+                    android:id="@+id/invitation_content_header_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""/>
+
+                <EditText
+                    android:id="@+id/invitation_content_et"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""/>
+
+                <TextView
+                    android:id="@+id/invitation_content_et_desc_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""/>
+
+                <TextView
+                    android:id="@+id/invitation_content_join_adress_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""/>
+
+                <TextView
+                    android:id="@+id/inviter_name_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/inviter_vimeo_adress_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+                <Button
+                    android:id="@+id/send_invite_bt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
 
     </RelativeLayout>
 

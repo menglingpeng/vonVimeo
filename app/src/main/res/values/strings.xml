@@ -197,4 +197,8 @@
     <string name="followers">followers</string>
     <string name="suggested">Suggested</string>
 
+    <string name="invite_email_et_hint_text">Enter e-email address</string>
+    <string name="invite_more_people">Invite more people</string>
+    <string name="invitation_title_tv_text">Your invitation</string>
+
 </resources>

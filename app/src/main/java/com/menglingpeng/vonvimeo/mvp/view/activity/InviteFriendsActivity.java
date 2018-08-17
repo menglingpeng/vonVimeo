@@ -49,7 +49,7 @@ public class InviteFriendsActivity extends BaseActivity {
             public void onClick(View view) {
 
             }
-            
+
         });
 
     }

@@ -42,7 +42,8 @@
         <activity android:name=".mvp.view.activity.CategoryDetailActivity" />
         <activity android:name=".mvp.view.activity.ProjectDetailActivity" />
         <activity android:name=".mvp.view.activity.UserCollectionsActivity" />
-        <activity android:name=".mvp.view.activity.InviteFriendsActivity"></activity>
+        <activity android:name=".mvp.view.activity.InviteFriendsActivity" />
+        <activity android:name=".mvp.view.activity.FeedManagerActivity"></activity>
     </application>
 
 </manifest>

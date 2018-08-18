@@ -116,4 +116,7 @@
     <dimen name="edit_user_avatar_title_layout_marginTop">20dp</dimen>
     <dimen name="edit_user_avatar_title_layout_marginLeft">15dp</dimen>
 
+    <dimen name="feed_following_avatar_iv_layout_width_height">20dp</dimen>
+    <dimen name="feed_following_avatar_iv_layout_margin_top_left">5dp</dimen>
+
 </resources>

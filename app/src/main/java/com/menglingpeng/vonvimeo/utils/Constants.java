@@ -217,6 +217,12 @@ public class Constants {
     public static final String REQUEST_GET_FOLLOWINGS_OF_AUTH_USER_SORY_BY_DATE =
             "request_get_followingsof_auth_user_sort_by_date";
 
+    public static final String REQUEST_LIST_FEED_PEOPLE_OF_AUHT_USER = "request_list_feed_people_of_auth_user";
+    public static final String REQUEST_LIST_FEED_CHANNEL_OF_AUHT_USER = "request_list_feed_channel_of_auth_user";
+    public static final String REQUEST_LIST_FEED_GROUP_OF_AUHT_USER = "request_list_feed_group_of_auth_user";
+    public static final String REQUEST_LIST_FEED_CATEGORY_OF_AUHT_USER = "request_list_category_people_of_auth_user";
+    public static final String REQUEST_LIST_FEED_TAGS_OF_AUHT_USER = "request_list_feed_tags_of_auth_user";
+
     //默认值1
     public static final int PAGE_VALUE = 1;
     //默认值10，最高到100

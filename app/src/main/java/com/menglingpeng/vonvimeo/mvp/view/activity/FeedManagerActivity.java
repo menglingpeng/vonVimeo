@@ -123,20 +123,18 @@ public class FeedManagerActivity extends BaseActivity implements RecyclerView {
     private void initTabFragments() {
 
         ArrayList<String> titlesList = new ArrayList<>();
-        titlesList.add(getText(R.string.following).toString());
-        titlesList.add(getText(R.string.online).toString());
-        titlesList.add(getText(R.string.followers).toString());
-        titlesList.add(getText(R.string.suggested).toString());
+        titlesList.add(getText(R.string.people).toString());
+        titlesList.add(getText(R.string.channel).toString());
+        titlesList.add(getText(R.string.group).toString());
+        titlesList.add(getText(R.string.category).toString());
+        titlesList.add(getText(R.string.tags).toString());
         if (type.equals(Constants.REQUEST_AUTH_USER)) {
-            fragments.add(RecyclerFragment.newInstance(user, Constants.REQUEST_LIST_FOLLOWING_FOR_AUTH_USER));
-            fragments.add(RecyclerFragment.newInstance(user, Constants.REQUEST_LIST_USER_ALBUMS));
-            fragments.add(RecyclerFragment.newInstance(Constants.REQUEST_LIST_CHANNELS));
-            fragments.add(RecyclerFragment.newInstance(Constants.REQUEST_LIST_GROUPS));
-        } else {
-            fragments.add(RecyclerFragment.newInstance(user, Constants.REQUEST_LIST_FOLLOWING_FOR_A_USER));
-            fragments.add(RecyclerFragment.newInstance(user, Constants.REQUEST_LIST_ONLINE_FOLLOWING_FOR_A_USER));
-            fragments.add(RecyclerFragment.newInstance(Constants.REQUEST_LIST_FOLLOWERS_FOR_A_USER));
-            fragments.add(RecyclerFragment.newInstance(Constants.REQUEST_LIST_SUGGESTED_FOR_A_USER));
+            fragments.add(RecyclerFragment.newInstance(user, Constants.REQUEST_LIST_FEED_PEOPLE_OF_AUHT_USER));
+            fragments.add(RecyclerFragment.newInstance(user, Constants.REQUEST_LIST_FEED_CHANNEL_OF_AUHT_USER));
+            fragments.add(RecyclerFragment.newInstance(user, Constants.REQUEST_LIST_FEED_GROUP_OF_AUHT_USER));
+            fragments.add(RecyclerFragment.newInstance(user, Constants.REQUEST_LIST_FEED_CATEGORY_OF_AUHT_USER));
+            fragments.add(RecyclerFragment.newInstance(user, Constants.REQUEST_LIST_FEED_TAGS_OF_AUHT_USER));
+
         }
         adapter.setFragments(fragments, titlesList);
     }

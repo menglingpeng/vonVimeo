@@ -201,4 +201,6 @@
     <string name="invite_more_people">Invite more people</string>
     <string name="invitation_title_tv_text">Your invitation</string>
 
+    <string name="tags">Tags</string>
+
 </resources>

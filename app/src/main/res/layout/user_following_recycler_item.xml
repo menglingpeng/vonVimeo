@@ -6,10 +6,10 @@
 
     <ImageView
         android:id="@+id/following_avatar_iv"
-        android:layout_width="@dimen/profile_tablayout_followers_avatar_iv_layout_width_height"
-        android:layout_height="@dimen/profile_tablayout_followers_avatar_iv_layout_width_height"
-        android:layout_marginLeft="@dimen/profile_tablayout_followers_avatar_iv_layout_margin_top_left"
-        android:layout_marginTop="@dimen/profile_tablayout_followers_avatar_iv_layout_margin_top_left" />
+        android:layout_width="@dimen/feed_following_avatar_iv_layout_width_height"
+        android:layout_height="@dimen/feed_following_avatar_iv_layout_width_height"
+        android:layout_marginLeft="@dimen/feed_following_avatar_iv_layout_margin_top_left"
+        android:layout_marginTop="@dimen/feed_following_avatar_iv_layout_margin_top_left" />
 
     <TextView
         android:id="@+id/following_name_tv"

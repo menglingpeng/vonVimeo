@@ -732,6 +732,21 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
+    public class UserPersonViewHolder extends RecyclerView.ViewHolder {
+
+        public final ImageView avatarIv;
+        public final TextView userNameTv;
+        public final TextView onlineTimeTv;
+
+        public UserPersonViewHolder(View view) {
+            super(view);
+
+            avatarIv = (ImageView)view.findViewById(R.id.person_avatar_iv);
+            userNameTv = (TextView)view.findViewById(R.id.person_name_tv);
+            onlineTimeTv = (TextView)view.findViewById(R.id.person_time_tv);
+        }
+    }
+
     public class FooterViewHolder extends RecyclerView.ViewHolder {
 
         public FooterViewHolder(View view) {

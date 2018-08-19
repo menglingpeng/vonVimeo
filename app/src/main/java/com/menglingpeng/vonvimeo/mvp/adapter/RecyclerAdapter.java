@@ -441,7 +441,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 }
             });
         }else if(holder instanceof FeedGroupViewHolder){
-
+            final FeedGroupViewHolder viewHolder = (FeedGroupViewHolder)holder;
+            final Group group = (Group)list.get(position);
+            viewHolder.groupNameTv.setText(group.getName());
+            viewHolder.groupFollowingTimeTv.setText(group.getModified_time());
+            viewHolder.groupVideosCountTv.setText(group.);
         }else if(holder instanceof FeedCategoryViewHolder){
 
         }else if (holder instanceof FeedTagsViewHolder){

@@ -852,8 +852,7 @@ public class Following implements Serializable {
                         return uri;
                     }
                 }
-
-
+                
             }
         }
 
@@ -887,5 +886,5 @@ public class Following implements Serializable {
                 return description;
             }
         }
-    }
+
 }

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <CheckBox
+        android:id="@+id/feed_group_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:id="@+id/feed_group_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/feed_group_cb"
+        android:layout_alignTop="@+id/feed_group_cb"
+        android:layout_marginLeft="10dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+
+    <TextView
+        android:id="@+id/feed_group_following_time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/feed_group_name_tv"
+        android:layout_alignLeft="@+id/feed_group_name_tv"/>
+
+    <TextView
+        android:id="@+id/feed_group_videos_count_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_toLeftOf="@+id/feed_group_followers_count_tv"
+        android:layout_marginRight="30dp"/>
+
+    <TextView
+        android:id="@+id/feed_group_followers_count_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp"/>
+
+</RelativeLayout>

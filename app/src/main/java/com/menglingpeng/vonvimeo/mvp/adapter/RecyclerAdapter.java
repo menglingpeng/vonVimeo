@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -227,11 +228,19 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         break;
                     case Constants.REQUEST_LIST_FEED_CHANNEL_OF_AUHT_USER:
                         view = inflater.inflate(R.layout.feed_channle_recycler_item, parent, false);
-                        viewHolder = new FeedPeopleViewHolder(view);
+                        viewHolder = new FeedChannleViewHolder(view);
                         break;
                     case Constants.REQUEST_LIST_FEED_TAGS_OF_AUHT_USER:
                         view = inflater.inflate(R.layout.feed_tags_recycler_item, parent, false);
-                        viewHolder = new FeedPeopleViewHolder(view);
+                        viewHolder = new FeedTagsViewHolder(view);
+
+                    case Constants.REQUEST_LIST_FEED_GROUP_OF_AUHT_USER:
+                        view = inflater.inflate(R.layout.feed_group_recycler_item, parent, false);
+                        viewHolder = new FeedGroupViewHolder(view);
+                        break;
+                    case Constants.REQUEST_LIST_FEED_CATEGORY_OF_AUHT_USER:
+                        view = inflater.inflate(R.layout.feed_category_recycler_item, parent, false);
+                        viewHolder = new FeedCategoryViewHolder(view);
                         break;
                     default:
                         break;
@@ -375,6 +384,68 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     }
                 }
             });
+        }else if(holder instanceof FeedPeopleViewHolder){
+            final FeedPeopleViewHolder viewHolder = (FeedPeopleViewHolder)holder;
+            final Following following = (Following) list.get(position);
+            String avatarUrl = following.getData().get(position).getPictures().getUri();
+            ImageLoader.loadCricleImage(fragment, avatarUrl, viewHolder.avatarIv);
+            viewHolder.userNameTv.setText(following.getData().get(position).getName());
+            viewHolder.followingTimeTv.setText(following.getData().get(position).getCreated_time());
+            viewHolder.videosCb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+                }
+            });
+            viewHolder.appearancesCb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+                }
+            });
+            viewHolder.likesCb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+                }
+            });
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (mListener != null) {
+                        mListener.onRecyclerFragmentListListener(viewHolder, following);
+                    }
+                }
+            });
+        }else if (holder instanceof FeedChannleViewHolder){
+            final FeedChannleViewHolder viewHolder = (FeedChannleViewHolder)holder;
+            final Channel channel = (Channel)list.get(position);
+            viewHolder.channleNameTv.setText(channel.getData().get(position).getName());
+            viewHolder.channleFollowingTimeTv.setText(channel.getData().get(position).getModified_time());
+            viewHolder.channleVideosCountTv.setText(channel.getData().get(position).getMetadata().getConnections().
+                    getVideos().getTotal());
+            viewHolder.channleFollowersCountTv.setText(channel.getData().get(position).getMetadata().getConnections().
+                    getUsers().getTotal());
+            viewHolder.channleCb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+                }
+            });
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (mListener != null) {
+                        mListener.onRecyclerFragmentListListener(viewHolder, channel);
+                    }
+                }
+            });
+        }else if(holder instanceof FeedGroupViewHolder){
+
+        }else if(holder instanceof FeedCategoryViewHolder){
+
+        }else if (holder instanceof FeedTagsViewHolder){
+
         }
         else if (holder instanceof EmptyViewHolder) {
             int ivId = 0;
@@ -749,7 +820,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
         public final ImageView avatarIv;
         public final TextView userNameTv;
-        public final TextView onlineTimeTv;
+        public final TextView followingTimeTv;
         public final CheckBox videosCb;
         public final CheckBox appearancesCb;
         public final CheckBox likesCb;
@@ -759,7 +830,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
             avatarIv = (ImageView)view.findViewById(R.id.following_avatar_iv);
             userNameTv = (TextView)view.findViewById(R.id.following_name_tv);
-            onlineTimeTv = (TextView)view.findViewById(R.id.following_time_tv);
+            followingTimeTv = (TextView)view.findViewById(R.id.following_time_tv);
             videosCb = (CheckBox)view.findViewById(R.id.feed_videos_cb);
             appearancesCb = (CheckBox)view.findViewById(R.id.feed_appearances_cb);
             likesCb = (CheckBox)view.findViewById(R.id.feed_likes_cb);
@@ -801,6 +872,43 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             tagsFollowingTimeTv = (TextView)view.findViewById(R.id.feed_tags_following_time_tv);
             tagsVideosCountTv = (TextView)view.findViewById(R.id.feed_tags_videos_count_tv);
             tagsFollowersCountTv  = (TextView)view.findViewById(R.id.feed_tags_followers_count_tv);
+        }
+    }
+
+    public class FeedGroupViewHolder extends RecyclerView.ViewHolder {
+
+        public final CheckBox groupCb;
+        public final TextView groupNameTv;
+        public final TextView groupFollowingTimeTv;
+        public final TextView groupVideosCountTv;
+        public final TextView groupFollowersCountTv;
+
+        public FeedGroupViewHolder(View view) {
+            super(view);
+
+            groupCb = (CheckBox)view.findViewById(R.id.feed_group_cb);
+            groupNameTv = (TextView)view.findViewById(R.id.feed_group_name_tv);
+            groupFollowingTimeTv = (TextView)view.findViewById(R.id.feed_group_following_time_tv);
+            groupVideosCountTv = (TextView)view.findViewById(R.id.feed_group_videos_count_tv);
+            groupFollowersCountTv  = (TextView)view.findViewById(R.id.feed_group_followers_count_tv);
+        }
+    }
+
+    public class FeedCategoryViewHolder extends RecyclerView.ViewHolder {
+
+        public final CheckBox categoryCb;
+        public final TextView categoryNameTv;
+        public final TextView categoryFollowingTimeTv;
+        public final TextView categoryVideosCountTv;
+
+
+        public FeedCategoryViewHolder(View view) {
+            super(view);
+
+            categoryCb = (CheckBox)view.findViewById(R.id.feed_category_cb);
+            categoryNameTv = (TextView)view.findViewById(R.id.feed_category_name_tv);
+            categoryFollowingTimeTv = (TextView)view.findViewById(R.id.feed_category_following_time_tv);
+            categoryVideosCountTv = (TextView)view.findViewById(R.id.feed_category_videos_count_tv);
         }
     }
 

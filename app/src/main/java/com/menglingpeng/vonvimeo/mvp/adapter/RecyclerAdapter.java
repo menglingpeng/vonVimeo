@@ -2,6 +2,7 @@ package com.menglingpeng.vonvimeo.mvp.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -25,6 +26,7 @@ import com.menglingpeng.vonvimeo.mvp.model.Follower;
 import com.menglingpeng.vonvimeo.mvp.model.Following;
 import com.menglingpeng.vonvimeo.mvp.model.Group;
 import com.menglingpeng.vonvimeo.mvp.model.Project;
+import com.menglingpeng.vonvimeo.mvp.model.Tag;
 import com.menglingpeng.vonvimeo.mvp.model.User;
 import com.menglingpeng.vonvimeo.mvp.model.Video;
 import com.menglingpeng.vonvimeo.utils.Constants;
@@ -445,11 +447,63 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             final Group group = (Group)list.get(position);
             viewHolder.groupNameTv.setText(group.getName());
             viewHolder.groupFollowingTimeTv.setText(group.getModified_time());
-            viewHolder.groupVideosCountTv.setText(group.);
+            viewHolder.groupVideosCountTv.setText(group.getMetadata().getConnections().getVideos().getTotal());
+            viewHolder.groupFollowersCountTv.setText(group.getMetadata().getConnections().getUsers().getTotal());
+            viewHolder.groupCb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+                }
+            });
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (mListener != null) {
+                        mListener.onRecyclerFragmentListListener(viewHolder, group);
+                    }
+                }
+            });
         }else if(holder instanceof FeedCategoryViewHolder){
+            final FeedCategoryViewHolder viewHolder = (FeedCategoryViewHolder)holder;
+            final Category category = (Category)list.get(position);
+            viewHolder.categoryNameTv.setText(category.getName());
+            viewHolder.categoryFollowingTimeTv.setText(category.getMetadata().getInteractions().getFollow().
+                    getAdded_time().toString());
+            viewHolder.categoryVideosCountTv.setText(category.getMetadata().getConnections().getVideos().getTotal());
+            viewHolder.categoryCb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
 
+                }
+            });
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (mListener != null) {
+                        mListener.onRecyclerFragmentListListener(viewHolder, category);
+                    }
+                }
+            });
         }else if (holder instanceof FeedTagsViewHolder){
+            final FeedTagsViewHolder viewHolder = (FeedTagsViewHolder)holder;
+            final Tag tag = (Tag)list.get(position);
+            viewHolder.tagsNameTv.setText(tag.getName());
+            viewHolder.tagsFollowingTimeTv.setText(tag.getMetadata().getConnections().getVideos().);
+            viewHolder.tagsVideosCountTv.setText(tag.getMetadata().getConnections().getVideos().getTotal());
+            viewHolder.tagsCb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
 
+                }
+            });
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (mListener != null) {
+                        mListener.onRecyclerFragmentListListener(viewHolder, tag);
+                    }
+                }
+            });
         }
         else if (holder instanceof EmptyViewHolder) {
             int ivId = 0;

@@ -44,7 +44,8 @@
         <activity android:name=".mvp.view.activity.UserCollectionsActivity" />
         <activity android:name=".mvp.view.activity.InviteFriendsActivity" />
         <activity android:name=".mvp.view.activity.FeedManagerActivity" />
-        <activity android:name=".mvp.view.activity.TagActivity"></activity>
+        <activity android:name=".mvp.view.activity.TagActivity" />
+        <activity android:name=".mvp.view.activity.ExploreStuffActivity"></activity>
     </application>
 
 </manifest>

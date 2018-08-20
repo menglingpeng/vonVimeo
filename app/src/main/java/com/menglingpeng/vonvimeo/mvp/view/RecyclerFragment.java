@@ -1,6 +1,7 @@
 package com.menglingpeng.vonvimeo.mvp.view;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -13,9 +14,18 @@ import com.menglingpeng.vonvimeo.base.BaseFragment;
 import com.menglingpeng.vonvimeo.mvp.adapter.RecyclerAdapter;
 import com.menglingpeng.vonvimeo.mvp.adapter.TabPagerFragmentAdapter;
 import com.menglingpeng.vonvimeo.mvp.interf.OnRecyclerListItemListener;
+import com.menglingpeng.vonvimeo.mvp.model.Category;
+import com.menglingpeng.vonvimeo.mvp.model.Channel;
+import com.menglingpeng.vonvimeo.mvp.model.Following;
+import com.menglingpeng.vonvimeo.mvp.model.Group;
+import com.menglingpeng.vonvimeo.mvp.model.Tag;
 import com.menglingpeng.vonvimeo.mvp.model.User;
 import com.menglingpeng.vonvimeo.mvp.model.Video;
 import com.menglingpeng.vonvimeo.mvp.presenter.RecyclerPresenter;
+import com.menglingpeng.vonvimeo.mvp.view.activity.TagActivity;
+import com.menglingpeng.vonvimeo.mvp.view.activity.UserChannleActivity;
+import com.menglingpeng.vonvimeo.mvp.view.activity.UserFollowingActivity;
+import com.menglingpeng.vonvimeo.mvp.view.activity.UserGroupActivity;
 import com.menglingpeng.vonvimeo.utils.Constants;
 
 import java.util.HashMap;
@@ -116,7 +126,33 @@ public class RecyclerFragment extends BaseFragment implements com.menglingpeng.v
 
     @Override
     public <T> void onRecyclerFragmentListListener(RecyclerView.ViewHolder viewHolder, T t) {
-
+        Intent intent;
+        if(viewHolder instanceof RecyclerAdapter.FeedPeopleViewHolder){
+            intent = new Intent(getActivity(), UserFollowingActivity.class);
+            intent.putExtra(Constants.FOLLOWING, (Following)t);
+            intent.putExtra(Constants.TYPE, Constants.REQUEST_LIST_FEED_PEOPLE_OF_AUHT_USER);
+            startActivity(intent);
+        }else if (viewHolder instanceof RecyclerAdapter.FeedChannleViewHolder){
+            intent = new Intent(getActivity(), UserChannleActivity.class);
+            intent.putExtra(Constants.CHANNLE, (Channel)t);
+            intent.putExtra(Constants.TYPE, Constants.REQUEST_LIST_FEED_CHANNEL_OF_AUHT_USER);
+            startActivity(intent);
+        }else if(viewHolder instanceof RecyclerAdapter.FeedChannleViewHolder){
+            intent = new Intent(getActivity(), UserGroupActivity.class);
+            intent.putExtra(Constants.GROUP, (Group)t);
+            intent.putExtra(Constants.TYPE, Constants.REQUEST_LIST_FEED_GROUP_OF_AUHT_USER);
+            startActivity(intent);
+        }else if(viewHolder instanceof RecyclerAdapter.FeedCategoryViewHolder){
+            intent = new Intent(getActivity(), UserFollowingActivity.class);
+            intent.putExtra(Constants.CATEGORY, (Category)t);
+            intent.putExtra(Constants.TYPE, Constants.REQUEST_LIST_FEED_CATEGORY_OF_AUHT_USER);
+            startActivity(intent);
+        }else if (viewHolder instanceof RecyclerAdapter.FeedTagsViewHolder){
+            intent = new Intent(getActivity(), TagActivity.class);
+            intent.putExtra(Constants.TAG, (Tag)t);
+            intent.putExtra(Constants.TYPE, Constants.REQUEST_LIST_FEED_TAGS_OF_AUHT_USER);
+            startActivity(intent);
+        }
     }
 
     @Override
@@ -183,4 +219,6 @@ public class RecyclerFragment extends BaseFragment implements com.menglingpeng.v
         });
 
     }
+
+
 }

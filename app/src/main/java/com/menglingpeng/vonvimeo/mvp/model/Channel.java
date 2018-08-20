@@ -5,333 +5,244 @@ import java.util.List;
 
 public class Channel implements Serializable {
 
-    private int total;
-    private int page;
-    private int per_page;
-    private PagingBean paging;
-    private List<DataBean> data;
+    private String uri;
+    private String name;
+    private String description;
+    private String link;
+    private String created_time;
+    private String modified_time;
+    private MetadataBean metadata;
+    private String resource_key;
+    private List<?> categories;
 
-    public int getTotal() {
-        return total;
+    public String getUri() {
+        return uri;
     }
 
-    public void setTotal(int total) {
-        this.total = total;
+    public void setUri(String uri) {
+        this.uri = uri;
     }
 
-    public int getPage() {
-        return page;
+    public String getName() {
+        return name;
     }
 
-    public void setPage(int page) {
-        this.page = page;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public int getPer_page() {
-        return per_page;
+    public String getDescription() {
+        return description;
     }
 
-    public void setPer_page(int per_page) {
-        this.per_page = per_page;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public PagingBean getPaging() {
-        return paging;
+    public String getLink() {
+        return link;
     }
 
-    public void setPaging(PagingBean paging) {
-        this.paging = paging;
+    public void setLink(String link) {
+        this.link = link;
     }
 
-    public List<DataBean> getData() {
-        return data;
+    public String getCreated_time() {
+        return created_time;
     }
 
-    public void setData(List<DataBean> data) {
-        this.data = data;
+    public void setCreated_time(String created_time) {
+        this.created_time = created_time;
     }
 
-    public static class PagingBean {
-
-        private String next;
-        private Object previous;
-        private String first;
-        private String last;
-
-        public String getNext() {
-            return next;
-        }
-
-        public void setNext(String next) {
-            this.next = next;
-        }
-
-        public Object getPrevious() {
-            return previous;
-        }
-
-        public void setPrevious(Object previous) {
-            this.previous = previous;
-        }
-
-        public String getFirst() {
-            return first;
-        }
-
-        public void setFirst(String first) {
-            this.first = first;
-        }
-
-        public String getLast() {
-            return last;
-        }
-
-        public void setLast(String last) {
-            this.last = last;
-        }
+    public String getModified_time() {
+        return modified_time;
     }
 
-    public static class DataBean {
+    public void setModified_time(String modified_time) {
+        this.modified_time = modified_time;
+    }
 
-        private String uri;
-        private String name;
-        private String description;
-        private String link;
-        private String created_time;
-        private String modified_time;
-        private MetadataBean metadata;
-        private String resource_key;
-        private List<?> categories;
+    public MetadataBean getMetadata() {
+        return metadata;
+    }
 
-        public String getUri() {
-            return uri;
+    public void setMetadata(MetadataBean metadata) {
+        this.metadata = metadata;
+    }
+
+    public String getResource_key() {
+        return resource_key;
+    }
+
+    public void setResource_key(String resource_key) {
+        this.resource_key = resource_key;
+    }
+
+    public List<?> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(List<?> categories) {
+        this.categories = categories;
+    }
+
+
+
+    public static class MetadataBean {
+
+        private ConnectionsBean connections;
+        private InteractionsBean interactions;
+
+        public ConnectionsBean getConnections() {
+            return connections;
         }
 
-        public void setUri(String uri) {
-            this.uri = uri;
+        public void setConnections(ConnectionsBean connections) {
+            this.connections = connections;
         }
 
-        public String getName() {
-            return name;
+        public InteractionsBean getInteractions() {
+            return interactions;
         }
 
-        public void setName(String name) {
-            this.name = name;
+        public void setInteractions(InteractionsBean interactions) {
+            this.interactions = interactions;
         }
 
-        public String getDescription() {
-            return description;
-        }
+        public static class ConnectionsBean {
 
-        public void setDescription(String description) {
-            this.description = description;
-        }
+            private UsersBean users;
+            private VideosBean videos;
 
-        public String getLink() {
-            return link;
-        }
-
-        public void setLink(String link) {
-            this.link = link;
-        }
-
-        public String getCreated_time() {
-            return created_time;
-        }
-
-        public void setCreated_time(String created_time) {
-            this.created_time = created_time;
-        }
-
-        public String getModified_time() {
-            return modified_time;
-        }
-
-        public void setModified_time(String modified_time) {
-            this.modified_time = modified_time;
-        }
-
-        public MetadataBean getMetadata() {
-            return metadata;
-        }
-
-        public void setMetadata(MetadataBean metadata) {
-            this.metadata = metadata;
-        }
-
-        public String getResource_key() {
-            return resource_key;
-        }
-
-        public void setResource_key(String resource_key) {
-            this.resource_key = resource_key;
-        }
-
-        public List<?> getCategories() {
-            return categories;
-        }
-
-        public void setCategories(List<?> categories) {
-            this.categories = categories;
-        }
-
-
-
-        public static class MetadataBean {
-
-            private ConnectionsBean connections;
-            private InteractionsBean interactions;
-
-            public ConnectionsBean getConnections() {
-                return connections;
+            public UsersBean getUsers() {
+                return users;
             }
 
-            public void setConnections(ConnectionsBean connections) {
-                this.connections = connections;
+            public void setUsers(UsersBean users) {
+                this.users = users;
             }
 
-            public InteractionsBean getInteractions() {
-                return interactions;
+            public VideosBean getVideos() {
+                return videos;
             }
 
-            public void setInteractions(InteractionsBean interactions) {
-                this.interactions = interactions;
+            public void setVideos(VideosBean videos) {
+                this.videos = videos;
             }
 
-            public static class ConnectionsBean {
+            public static class UsersBean {
 
-                private UsersBean users;
-                private VideosBean videos;
+                private String uri;
+                private int total;
+                private List<String> options;
 
-                public UsersBean getUsers() {
-                    return users;
+                public String getUri() {
+                    return uri;
                 }
 
-                public void setUsers(UsersBean users) {
-                    this.users = users;
+                public void setUri(String uri) {
+                    this.uri = uri;
                 }
 
-                public VideosBean getVideos() {
-                    return videos;
+                public int getTotal() {
+                    return total;
                 }
 
-                public void setVideos(VideosBean videos) {
-                    this.videos = videos;
+                public void setTotal(int total) {
+                    this.total = total;
                 }
 
-                public static class UsersBean {
-
-                    private String uri;
-                    private int total;
-                    private List<String> options;
-
-                    public String getUri() {
-                        return uri;
-                    }
-
-                    public void setUri(String uri) {
-                        this.uri = uri;
-                    }
-
-                    public int getTotal() {
-                        return total;
-                    }
-
-                    public void setTotal(int total) {
-                        this.total = total;
-                    }
-
-                    public List<String> getOptions() {
-                        return options;
-                    }
-
-                    public void setOptions(List<String> options) {
-                        this.options = options;
-                    }
+                public List<String> getOptions() {
+                    return options;
                 }
 
-                public static class VideosBean {
-
-                    private String uri;
-                    private int total;
-                    private List<String> options;
-
-                    public String getUri() {
-                        return uri;
-                    }
-
-                    public void setUri(String uri) {
-                        this.uri = uri;
-                    }
-
-                    public int getTotal() {
-                        return total;
-                    }
-
-                    public void setTotal(int total) {
-                        this.total = total;
-                    }
-
-                    public List<String> getOptions() {
-                        return options;
-                    }
-
-                    public void setOptions(List<String> options) {
-                        this.options = options;
-                    }
+                public void setOptions(List<String> options) {
+                    this.options = options;
                 }
             }
 
-            public static class InteractionsBean {
+            public static class VideosBean {
 
-                private FollowBean follow;
+                private String uri;
+                private int total;
+                private List<String> options;
 
-                public FollowBean getFollow() {
-                    return follow;
+                public String getUri() {
+                    return uri;
                 }
 
-                public void setFollow(FollowBean follow) {
-                    this.follow = follow;
+                public void setUri(String uri) {
+                    this.uri = uri;
                 }
 
-                public static class FollowBean {
+                public int getTotal() {
+                    return total;
+                }
 
-                    private boolean added;
-                    private Object added_time;
-                    private Object type;
-                    private String uri;
+                public void setTotal(int total) {
+                    this.total = total;
+                }
 
-                    public boolean isAdded() {
-                        return added;
-                    }
+                public List<String> getOptions() {
+                    return options;
+                }
 
-                    public void setAdded(boolean added) {
-                        this.added = added;
-                    }
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+            }
+        }
 
-                    public Object getAdded_time() {
-                        return added_time;
-                    }
+        public static class InteractionsBean {
 
-                    public void setAdded_time(Object added_time) {
-                        this.added_time = added_time;
-                    }
+            private FollowBean follow;
 
-                    public Object getType() {
-                        return type;
-                    }
+            public FollowBean getFollow() {
+                return follow;
+            }
 
-                    public void setType(Object type) {
-                        this.type = type;
-                    }
+            public void setFollow(FollowBean follow) {
+                this.follow = follow;
+            }
 
-                    public String getUri() {
-                        return uri;
-                    }
+            public static class FollowBean {
 
-                    public void setUri(String uri) {
-                        this.uri = uri;
-                    }
+                private boolean added;
+                private Object added_time;
+                private Object type;
+                private String uri;
+
+                public boolean isAdded() {
+                    return added;
+                }
+
+                public void setAdded(boolean added) {
+                    this.added = added;
+                }
+
+                public Object getAdded_time() {
+                    return added_time;
+                }
+
+                public void setAdded_time(Object added_time) {
+                    this.added_time = added_time;
+                }
+
+                public Object getType() {
+                    return type;
+                }
+
+                public void setType(Object type) {
+                    this.type = type;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public void setUri(String uri) {
+                    this.uri = uri;
                 }
             }
         }

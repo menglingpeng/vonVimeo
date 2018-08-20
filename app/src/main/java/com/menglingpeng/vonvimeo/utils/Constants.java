@@ -37,6 +37,14 @@ public class Constants {
     public static final String DESCRIPTION = "description";
     public static final String USER = "user";
     public static final String URL = "url";
+    public static final String CHANNLE = "channle";
+    public static final String GROUP = "group";
+    public static final String CATEGORY = "category";
+    public static final String TAG = "tag";
+    public static final String PROJECT = "project";
+    public static final String ALBUM = "album";
+    public static final String VIDEO = "video";
+    public static final String VIDEO_THUMB = "video_thumb";
 
     public static final String AUTH_USER_URL = "https://api.vimeo.com/me";
     public static final String SIGNLE_USER_URL = "https://api.vimeo.com/users";

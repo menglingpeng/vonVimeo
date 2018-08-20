@@ -43,7 +43,8 @@
         <activity android:name=".mvp.view.activity.ProjectDetailActivity" />
         <activity android:name=".mvp.view.activity.UserCollectionsActivity" />
         <activity android:name=".mvp.view.activity.InviteFriendsActivity" />
-        <activity android:name=".mvp.view.activity.FeedManagerActivity"></activity>
+        <activity android:name=".mvp.view.activity.FeedManagerActivity" />
+        <activity android:name=".mvp.view.activity.TagActivity"></activity>
     </application>
 
 </manifest>

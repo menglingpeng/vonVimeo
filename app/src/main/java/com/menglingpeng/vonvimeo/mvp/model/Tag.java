@@ -1,8 +1,9 @@
 package com.menglingpeng.vonvimeo.mvp.model;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Tag {
+public class Tag implements Serializable{
 
     private String uri;
     private String name;

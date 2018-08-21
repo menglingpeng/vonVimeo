@@ -25,8 +25,45 @@ public class Albums {
     }
 
 
+
     public void setUri(Object uri) {
         this.uri = uri;
+    }
+
+    public int getPage() {
+        return page;
+    }
+
+    public PagingBean getPaging() {
+        return paging;
+    }
+
+    public void setPaging(PagingBean paging) {
+        this.paging = paging;
+    }
+
+    public int getPer_page() {
+        return per_page;
+    }
+
+    public void setPer_page(int per_page) {
+        this.per_page = per_page;
+    }
+
+    public List<Album> getAlbums() {
+        return albums;
+    }
+
+    public void setAlbums(List<Album> albums) {
+        this.albums = albums;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setPage(int page) {
+        this.page = page;
     }
 
     public void setActive(boolean active) {

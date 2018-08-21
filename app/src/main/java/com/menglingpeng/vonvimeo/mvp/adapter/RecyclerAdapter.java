@@ -244,6 +244,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         view = inflater.inflate(R.layout.feed_category_recycler_item, parent, false);
                         viewHolder = new FeedCategoryViewHolder(view);
                         break;
+                    case Constants.REQUEST_LIST_EXPLORE_STUFF:
+                        view = inflater.inflate(R.layout.explore_stuff_recycler_item, parent, false);
+                        viewHolder = new ExploreStuffViewHolder(view);
+                        break;
                     default:
                         break;
                 }
@@ -967,6 +971,20 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             categoryNameTv = (TextView)view.findViewById(R.id.feed_category_name_tv);
             categoryFollowingTimeTv = (TextView)view.findViewById(R.id.feed_category_following_time_tv);
             categoryVideosCountTv = (TextView)view.findViewById(R.id.feed_category_videos_count_tv);
+        }
+    }
+
+    public class ExploreStuffViewHolder extends RecyclerView.ViewHolder {
+
+        public final ImageView stuffIconIv;
+        public final TextView stuffNameTv;
+        public final TextView stuffDescTv;
+        public ExploreStuffViewHolder(View view) {
+            super(view);
+
+            stuffIconIv = (ImageView)view.findViewById(R.id.explore_stuff_icon_iv);
+            stuffNameTv = (ImageView)view.findViewById(R.id.explore_stuff_name_tv);
+            stuffDescTv = (ImageView)view.findViewById(R.id.explore_stuff_desc_tv);
         }
     }
 

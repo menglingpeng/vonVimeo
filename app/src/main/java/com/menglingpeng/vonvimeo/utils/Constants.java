@@ -231,6 +231,8 @@ public class Constants {
     public static final String REQUEST_LIST_FEED_CATEGORY_OF_AUHT_USER = "request_list_category_people_of_auth_user";
     public static final String REQUEST_LIST_FEED_TAGS_OF_AUHT_USER = "request_list_feed_tags_of_auth_user";
 
+    public static final String REQUEST_LIST_EXPLORE_STUFF = "request_list_explore_stuff";
+
     //默认值1
     public static final int PAGE_VALUE = 1;
     //默认值10，最高到100

@@ -26,6 +26,7 @@ import com.menglingpeng.vonvimeo.mvp.model.Follower;
 import com.menglingpeng.vonvimeo.mvp.model.Following;
 import com.menglingpeng.vonvimeo.mvp.model.Group;
 import com.menglingpeng.vonvimeo.mvp.model.Project;
+import com.menglingpeng.vonvimeo.mvp.model.Stuff;
 import com.menglingpeng.vonvimeo.mvp.model.Tag;
 import com.menglingpeng.vonvimeo.mvp.model.User;
 import com.menglingpeng.vonvimeo.mvp.model.Video;
@@ -257,7 +258,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
         if(holder instanceof FeedVideoViewHolder){
             final FeedVideoViewHolder videoViewHolder = (FeedVideoViewHolder)holder;
         } else if ((holder instanceof AlbumViewHolder)){
@@ -505,6 +506,19 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 public void onClick(View view) {
                     if (mListener != null) {
                         mListener.onRecyclerFragmentListListener(viewHolder, tag);
+                    }
+                }
+            });
+        }else if(holder instanceof ExploreStuffViewHolder){
+            final ExploreStuffViewHolder viewHolder = (ExploreStuffViewHolder)holder;
+            final Stuff stuff = (Stuff)list.get(position);
+            viewHolder.stuffNameTv.setText(stuff.getName());
+            viewHolder.stuffDescTv.setText(stuff.getDesc());
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (mListener != null) {
+                        mListener.onRecyclerFragmentListListener(viewHolder, position);
                     }
                 }
             });

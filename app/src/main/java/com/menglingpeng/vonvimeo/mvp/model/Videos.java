@@ -2,13 +2,13 @@ package com.menglingpeng.vonvimeo.mvp.model;
 
 import java.util.List;
 
-public class Users {
+public class Videos {
 
     private int total;
     private int page;
     private int per_page;
     private PagingBean paging;
-    private List<User> users;
+    private List<Video> videos;
 
     public void setTotal(int total) {
         this.total = total;
@@ -42,12 +42,12 @@ public class Users {
         return paging;
     }
 
-    public List<User> getUsers() {
-        return users;
+    public List<Video> getVideos() {
+        return videos;
     }
 
-    public void setUsers(List<User> users) {
-        this.users = users;
+    public void setVideos(List<Video> videos) {
+        this.videos = videos;
     }
 
     public static class PagingBean {

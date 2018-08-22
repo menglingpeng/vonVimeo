@@ -152,6 +152,30 @@ public class RecyclerFragment extends BaseFragment implements com.menglingpeng.v
             intent.putExtra(Constants.TAG, (Tag)t);
             intent.putExtra(Constants.TYPE, Constants.REQUEST_LIST_FEED_TAGS_OF_AUHT_USER);
             startActivity(intent);
+        }else if(viewHolder instanceof RecyclerAdapter.ExploreStuffViewHolder){
+            int position = (int)t;
+            switch (position){
+                case 0:
+                    intent = new Intent(getActivity(), UserChannleActivity.class);
+                    startActivity(intent);
+                    break;
+                case 1:
+                    intent = new Intent(getActivity(), UserGroupActivity.class);
+                    startActivity(intent);
+                    break;
+                case 2:
+                    intent = new Intent(getActivity(), CategoritesActivity.class);
+                    startActivity(intent);
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                default:
+                    break;
+            }
         }
     }
 

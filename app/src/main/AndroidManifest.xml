@@ -45,7 +45,8 @@
         <activity android:name=".mvp.view.activity.InviteFriendsActivity" />
         <activity android:name=".mvp.view.activity.FeedManagerActivity" />
         <activity android:name=".mvp.view.activity.TagActivity" />
-        <activity android:name=".mvp.view.activity.ExploreStuffActivity"></activity>
+        <activity android:name=".mvp.view.activity.ExploreStuffActivity" />
+        <activity android:name=".mvp.view.activity.VimeoIntroduceActivity"></activity>
     </application>
 
 </manifest>

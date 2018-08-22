@@ -203,4 +203,7 @@
 
     <string name="tags">Tags</string>
 
+    <string name="supported_devices"></string>
+    <string name="vimeo_mobile_site"></string>
+
 </resources>

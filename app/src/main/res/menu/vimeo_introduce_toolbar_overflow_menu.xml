@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/introduce_section"
+        android:icon="@drawable/ic_more"
+        android:title=""
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/introduce_supported_devices"
+                android:icon="@drawable/ic_share_white_24dp"
+                android:title="@string/album_edit"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/introduce_vimeo_site"
+                android:icon="@drawable/ic_delete_grey_600_24dp"
+                android:title="@string/album_delete"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/introduce_android_app"
+                android:icon="@drawable/ic_share_white_24dp"
+                android:title="@string/album_edit"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/introduce_ios_app"
+                android:icon="@drawable/ic_delete_grey_600_24dp"
+                android:title="@string/album_delete"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/introduce_tv_apps"
+                android:icon="@drawable/ic_share_white_24dp"
+                android:title="@string/album_edit"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/introduce_cameo"
+                android:icon="@drawable/ic_delete_grey_600_24dp"
+                android:title="@string/album_delete"
+                app:showAsAction="never"></item>
+        </menu>
+
+    </item>
+
+    <item
+        android:id="@+id/album_more"
+        android:icon="@drawable/ic_more"
+        android:title=""
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/introduce_hc"
+                android:icon="@drawable/ic_share_white_24dp"
+                android:title="@string/album_edit"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/introduce_watching_videos"
+                android:icon="@drawable/ic_delete_grey_600_24dp"
+                android:title="@string/album_delete"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/introduce_apps"
+                android:icon="@drawable/ic_delete_grey_600_24dp"
+                android:title="@string/album_delete"
+                app:showAsAction="never"></item>
+        </menu>
+    </item>
+
+</menu>

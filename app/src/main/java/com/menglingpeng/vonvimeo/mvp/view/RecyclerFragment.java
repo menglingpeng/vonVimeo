@@ -16,7 +16,6 @@ import com.menglingpeng.vonvimeo.mvp.adapter.TabPagerFragmentAdapter;
 import com.menglingpeng.vonvimeo.mvp.interf.OnRecyclerListItemListener;
 import com.menglingpeng.vonvimeo.mvp.model.Category;
 import com.menglingpeng.vonvimeo.mvp.model.Channel;
-import com.menglingpeng.vonvimeo.mvp.model.Following;
 import com.menglingpeng.vonvimeo.mvp.model.Group;
 import com.menglingpeng.vonvimeo.mvp.model.Tag;
 import com.menglingpeng.vonvimeo.mvp.model.User;

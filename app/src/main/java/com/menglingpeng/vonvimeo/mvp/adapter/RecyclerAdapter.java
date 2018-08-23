@@ -2,7 +2,6 @@ package com.menglingpeng.vonvimeo.mvp.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -22,8 +21,6 @@ import com.menglingpeng.vonvimeo.mvp.model.Album;
 import com.menglingpeng.vonvimeo.mvp.model.Category;
 import com.menglingpeng.vonvimeo.mvp.model.Channel;
 import com.menglingpeng.vonvimeo.mvp.model.ChannelVideo;
-import com.menglingpeng.vonvimeo.mvp.model.Follower;
-import com.menglingpeng.vonvimeo.mvp.model.Following;
 import com.menglingpeng.vonvimeo.mvp.model.Group;
 import com.menglingpeng.vonvimeo.mvp.model.Project;
 import com.menglingpeng.vonvimeo.mvp.model.Stuff;

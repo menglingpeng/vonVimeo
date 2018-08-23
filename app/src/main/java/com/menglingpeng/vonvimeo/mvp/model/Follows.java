@@ -1,15 +1,14 @@
 package com.menglingpeng.vonvimeo.mvp.model;
 
-import java.io.Serializable;
 import java.util.List;
 
-public class Follower implements Serializable {
+public class Follows {
 
     private int total;
     private int page;
     private int per_page;
-    private Following.PagingBean paging;
-    private List<Following.DataBean> data;
+    private PagingBean paging;
+    private List<Follow> follows;
 
     public void setTotal(int total) {
         this.total = total;
@@ -21,14 +20,6 @@ public class Follower implements Serializable {
 
     public void setPer_page(int per_page) {
         this.per_page = per_page;
-    }
-
-    public void setPaging(Following.PagingBean paging) {
-        this.paging = paging;
-    }
-
-    public void setData(List<Following.DataBean> data) {
-        this.data = data;
     }
 
     public int getTotal() {
@@ -43,12 +34,20 @@ public class Follower implements Serializable {
         return per_page;
     }
 
-    public Following.PagingBean getPaging() {
+    public List<Follow> getFollows() {
+        return follows;
+    }
+
+    public void setFollows(List<Follow> follows) {
+        this.follows = follows;
+    }
+
+    public PagingBean getPaging() {
         return paging;
     }
 
-    public List<Following.DataBean> getData() {
-        return data;
+    public void setPaging(PagingBean paging) {
+        this.paging = paging;
     }
 
     public static class PagingBean {

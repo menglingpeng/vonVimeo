@@ -41,8 +41,8 @@ public class CategoryDetailActivity extends BaseActivity implements RecyclerView
     private TextView categoryDetailDescTv;
     private RecyclerPresenter presenter;
     private ProgressBar progressBar;
-    private TabLayout profileTl;
-    private ViewPager profileVp;
+    private TabLayout categoryDetaiTl;
+    private ViewPager categoryDetaiVp;
     private String type;
     private String categoryName;
     private TabPagerFragmentAdapter adapter;
@@ -138,7 +138,7 @@ public class CategoryDetailActivity extends BaseActivity implements RecyclerView
     private void initTabFragments() {
 
         ArrayList<String> titlesList = new ArrayList<>();
-        titlesList.add(getText(R.string.videos).toString());
+        titlesList.add(getText(R.string.secondary_categories).toString());
         titlesList.add(getText(R.string.channles).toString());
         titlesList.add(getText(R.string.groups).toString());
 
@@ -237,9 +237,9 @@ public class CategoryDetailActivity extends BaseActivity implements RecyclerView
                          });
                      }
                  }
-                 profileTl = (TabLayout) findViewById(R.id.profile_tl);
-                 profileTl.setVisibility(TabLayout.VISIBLE);
-                 profileVp = (ViewPager) findViewById(R.id.profile_vp);
+                 categoryDetaiTl = (TabLayout) findViewById(R.id.category_detail_tl);
+                 categoryDetaiTl.setVisibility(TabLayout.VISIBLE);
+                 categoryDetaiVp = (ViewPager) findViewById(R.id.category_detail_vp);
                  fragmentsList = new ArrayList<>();
                  setSupportActionBar(toolbar);
                  //隐藏Toolbar的标题

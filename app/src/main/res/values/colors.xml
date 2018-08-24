@@ -23,4 +23,6 @@
     <color name="group_backgroud">#B39DDB</color>
     <color name="group_desc_tv">#F5F5F5</color>
 
+    <color name="user_level_backgroud">#00FFFF</color>
+
 </resources>

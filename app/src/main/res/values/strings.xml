@@ -208,4 +208,19 @@
 
     <string name="secondary_categories">Secondary Categories</string>
 
+    <string name="plus_user_level_bt_text">PLUS</string>
+    <string name="pro_user_level_bt_text">PRO</string>
+    <string name="business_user_level_bt_text">Business</string>
+    <string name="premium_user_level_bt_text">Premium</string>
+
+    <string name="time_now">刚刚</string>
+    <string name="time_minutes_ago">分钟前</string>
+    <string name="time_hours_ago">小时前</string>
+    <string name="time_one_day_ago">昨天</string>
+    <string name="time_two_days_ago">前天</string>
+    <string name="time_days_ago">天前</string>
+    <string name="time_months_ago">月前</string>
+    <string name="time_years_ago">年前</string>
+    <string name="date_format">yyyy年MM月dd日</string>
+
 </resources>

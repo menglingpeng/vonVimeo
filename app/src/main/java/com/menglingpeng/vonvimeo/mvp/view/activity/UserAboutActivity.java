@@ -14,6 +14,8 @@ import android.widget.TextView;
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.model.User;
 import com.menglingpeng.vonvimeo.utils.Constants;
+import com.menglingpeng.vonvimeo.utils.ImageLoader;
+import com.menglingpeng.vonvimeo.utils.TimeUtils;
 
 import org.w3c.dom.Text;
 
@@ -61,7 +63,32 @@ public class UserAboutActivity extends BaseActivity implements View.OnClickListe
     }
 
     private void initData(){
-
+        ImageLoader.loadCricleImage(context, user.getPictures().getUri(), avatarIv);
+        userNameTv.setText(user.getName());
+        if(!user.getAccount().equals(Constants.ACCOUNT_BASIC)){
+            userLevelBt.setVisibility(Button.VISIBLE);
+            String buttonText = null;
+            switch (user.getAccount()){
+                case Constants.ACCOUNT_PLUS:
+                    buttonText = getString(R.string.plus_user_level_bt_text);
+                    break;
+                case Constants.ACCOUNT_PRO:
+                    buttonText = getString(R.string.pro_user_level_bt_text);
+                    break;
+                case Constants.ACCOUNT_BUSINESS:
+                    buttonText = getString(R.string.business_user_level_bt_text);
+                    break;
+                case Constants.ACCOUNT_PREMIUM:
+                    buttonText = getString(R.string.premium_user_level_bt_text);
+                    break;    
+                 default:
+                     break;
+            }
+            userLevelBt.setText(buttonText);
+        }
+        joinedTimeTv.setText(TimeUtils.getTimeDifference(user.getCreated_time()));
+        locationTv.setText(user.getLocation().toString());
+        bioTv.setText(user.getBio().toString());
     }
 
     @Override

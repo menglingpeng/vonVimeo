@@ -50,7 +50,13 @@ public class TimeUtils {
 
     public static String diffToString(Date cretateDate, Date currentDate, long diff) {
         String differ;
-        int day, hours, minutes, seconds;
+        int years;
+        int months;
+        int weeks;
+        int day;
+        int hours;
+        int minutes;
+        int seconds;
         StringBuilder builder = new StringBuilder();
         SimpleDateFormat yesterdayFormat = new SimpleDateFormat(" HH:mm");
         SimpleDateFormat format = new SimpleDateFormat(BaseApplication.getContext().getResources().getString(R.string

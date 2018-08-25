@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/send_a_message_user_picture_iv"
+        android:layout_width="@dimen/dialog_send_a_message_user_picture_iv_layout_width_height"
+        android:layout_height="@dimen/dialog_send_a_message_user_picture_iv_layout_width_height"
+        android:layout_marginTop="@dimen/dialog_send_a_message_user_picture_iv_layout_marginTop"
+        android:layout_marginLeft="@dimen/dialog_send_a_message_user_picture_iv_layout_marginLeft"/>
+
+    <TextView
+        android:id="@+id/send_a_message_user_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/send_a_message_user_picture_iv"
+        android:layout_alignBaseline="@+id/send_a_message_user_picture_iv"
+        android:textColor="@color/video_username"/>
+
+    <EditText
+        android:id="@+id/send_a_message_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/send_a_message_user_picture_iv"
+        android:layout_alignLeft="@+id/send_a_message_user_picture_iv"
+        android:layout_marginTop="@dimen/dialog_send_a_message_et_layout_marginTop"
+        android:layout_marginBottom="@dimen/dialog_send_a_message_et_layout_marginBottom"/>
+
+</RelativeLayout>

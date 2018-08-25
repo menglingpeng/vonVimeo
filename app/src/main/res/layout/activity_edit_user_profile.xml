@@ -204,6 +204,8 @@
             android:layout_marginTop="@dimen/profile_avatar_iv_layout_marginTop"
             android:layout_marginBottom="20dp"/>
 
+
+
     </RelativeLayout>
 
     <android.support.design.widget.FloatingActionButton

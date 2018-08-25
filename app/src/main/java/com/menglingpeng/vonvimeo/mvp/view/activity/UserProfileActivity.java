@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.TabLayout;
+import android.support.design.widget.TextInputEditText;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -16,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -55,6 +57,7 @@ public class UserProfileActivity extends BaseActivity implements RecyclerView {
     private ViewPager profileVp;
     private Button followBt;
     private Button unfollowBt;
+    private Button sendMessageBt;
     private TabPagerFragmentAdapter adapter;
     private HashMap<String, String> map;
     private ArrayList<RecyclerFragment> fragmentsList;
@@ -124,6 +127,41 @@ public class UserProfileActivity extends BaseActivity implements RecyclerView {
             }
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void showSendAMessageDialog() {
+        final ImageView userPictureIv;
+        final TextView userNameTv
+        final EditText messageEt;
+        AlertDialog dialog;
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_send_a_message, null);
+        builder.setTitle(R.string.send_a_message);
+        builder.setView(dialogView);
+        messageEt = (EditText) dialogView.findViewById(R.id.send_a_message_et);
+        userPictureIv = (ImageView)dialogView.findViewById(R.id.send_a_message_user_picture_iv) ;
+        userNameTv = (TextView)dialogView.findViewById(R.id.send_a_message_user_name_tv) ;
+        ImageLoader.loadCricleImage(context, user.getPictures().getUri(), userPictureIv);
+        userNameTv.setText(user.getName());
+        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.setPositiveButton(R.string.send, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String message;
+                message = messageEt.getText().toString();
+                SnackbarUtils.showSnackShort(getApplicationContext(), profileCdl, getString(R.string
+                        .snackbar_send_a_message_success_text));
+
+            }
+        });
+        messageEt.setFocusable(true);
+        dialog = builder.create();
+        dialog.show();
     }
 
     private void showLogoutDialog() {
@@ -296,6 +334,13 @@ public class UserProfileActivity extends BaseActivity implements RecyclerView {
                 profileAvatarIv = (ImageView) findViewById(R.id.profile_avatar_iv);
                 followBt = (Button) findViewById(R.id.profile_follow_bt);
                 unfollowBt = (Button) findViewById(R.id.profile_unfollow_bt);
+                sendMessageBt = (Button) findViewById(R.id.profile_send_a_message_bt);
+                sendMessageBt.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        showSendAMessageDialog();
+                    }
+                });
                 if (type.equals(Constants.REQUEST_SINGLE_USER)) {
                     if (isFollowing) {
                         unfollowBt.setVisibility(Button.VISIBLE);

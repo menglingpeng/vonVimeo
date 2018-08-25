@@ -223,4 +223,11 @@
     <string name="time_years_ago">年前</string>
     <string name="date_format">yyyy年MM月dd日</string>
 
+    <string name="dialog_send_a_message_title">Send a Message</string>
+    <string name="send">Send</string>
+    <string name="message">Message</string>
+
+    <string name="snackbar_send_a_message_success_text"></string>
+    <string name="snackbar_send_a_message_failed_text"></string>
+
 </resources>

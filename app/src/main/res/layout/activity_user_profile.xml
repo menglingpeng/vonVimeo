@@ -98,6 +98,24 @@
                     android:drawablePadding="@dimen/profile_follow_bt_drawable_padding"
                     android:textColor="@android:color/white"
                     android:textSize="18dp"/>
+
+                <Button
+                    android:id="@+id/profile_send_a_message_bt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/profile_follow_bt"
+                    android:layout_marginTop="@dimen/profile_follow_bt_layout_margin"
+                    android:layout_marginBottom="@dimen/profile_follow_bt_layout_margin"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+                    android:background="@drawable/dialog_login_shape_radius"
+                    android:paddingLeft="@dimen/dialog_login_bt_padding"
+                    android:paddingRight="@dimen/dialog_login_bt_padding"
+                    android:drawableLeft="@drawable/ic_add_white_24dp"
+                    android:text="@string/message"
+                    android:drawablePadding="@dimen/profile_follow_bt_drawable_padding"
+                    android:textColor="@android:color/white"
+                    android:textSize="18dp"/>
             </RelativeLayout>
 
             <android.support.v7.widget.Toolbar

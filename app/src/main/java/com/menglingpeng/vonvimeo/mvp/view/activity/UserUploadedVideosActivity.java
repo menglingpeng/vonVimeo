@@ -11,21 +11,27 @@ import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
+import com.menglingpeng.vonvimeo.mvp.adapter.TabPagerFragmentAdapter;
 import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
 import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
 import com.menglingpeng.vonvimeo.utils.Constants;
 import com.menglingpeng.vonvimeo.utils.SnackbarUtils;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserUploadedVideosActivity extends BaseActivity implements RecyclerView{
 
@@ -34,9 +40,14 @@ public class UserUploadedVideosActivity extends BaseActivity implements Recycler
     private CoordinatorLayout coordinatorLayout;
     private String title;
     private String soryType;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+    private List<RecyclerFragment> fragments;
+    private TabPagerFragmentAdapter adapter;
     private String type;
     private Context context;
     public static final int REQUEST_VIDEO_CODE = 1;
+    private static final int SMOOTHSCROLL_TOP_POSITION = 50;
 
     @Override
     protected void initLayoutId() {
@@ -64,15 +75,21 @@ public class UserUploadedVideosActivity extends BaseActivity implements Recycler
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Video.Media.EXTERNAL_CONTENT_URI);
+                Intent intent = new Intent(Intent.ACTION_PICK,
+                        android.provider.MediaStore.Video.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(intent, REQUEST_VIDEO_CODE);
             }
         });
+        initTabPager();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.user_uploaded_videos_toolbar_overflow_menu, menu);
+        if (type.indexOf(Constants.REQUEST_AUTH_USER) != -1) {
+            getMenuInflater().inflate(R.menu.user_uploaded_videos_toolbar_overflow_menu, menu);
+        }else {
+            getMenuInflater().inflate(R.menu.single_user_uploaded_videos_toolbar_overflow_menu, menu);
+        }
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -118,10 +135,80 @@ public class UserUploadedVideosActivity extends BaseActivity implements Recycler
                 }
                 replaceFragment(RecyclerFragment.newInstance(type));
                 break;
+            case R.id.uploaded_videos_sort_date:
+                type = Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_SINGLE_USER_SORY_BY_DATE:
+                replaceFragment(RecyclerFragment.newInstance(type));
+                break;
+            case R.id.uploaded_videos_sort_alphabetical:
+                type = Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_SINGLE_USER_SORY_BY_ALPHABETICAL;
+                replaceFragment(RecyclerFragment.newInstance(type));
+                break;
+            case R.id.uploaded_videos_sort_plays:
+                type = Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_SINGLE_USER_SORY_BY_PLAYS;
+                replaceFragment(RecyclerFragment.newInstance(type));
+                break;
+            case R.id.uploaded_videos_sort_likes:
+                type = Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_SINGLE_USER_SORY_BY_LIKES;
+                replaceFragment(RecyclerFragment.newInstance(type));
+                break;
+            case R.id.uploaded_videos_sort_comments:
+                type = Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_SINGLE_USER_SORY_BY_COMMENTS;
+                replaceFragment(RecyclerFragment.newInstance(type));
+                break;
             default:
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void initTabPager() {
+        tabLayout = (TabLayout)findViewById(R.id.upload_video_tl);
+        viewPager = (ViewPager)findViewById(R.id.upload_video_vp);
+        adapter = new TabPagerFragmentAdapter(getSupportFragmentManager());
+        initTabFragments();
+        viewPager.setAdapter(adapter);
+        tabLayout.setupWithViewPager(viewPager);
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+                scrollToTop(fragments.get(tab.getPosition()).getRecyclerView());
+            }
+        });
+
+    }
+
+    private void scrollToTop(android.support.v7.widget.RecyclerView list) {
+        int lastPosition;
+        if (null != list) {
+            LinearLayoutManager manager = (LinearLayoutManager) list.getLayoutManager();
+            lastPosition = manager.findLastVisibleItemPosition();
+            if (lastPosition < SMOOTHSCROLL_TOP_POSITION) {
+                list.smoothScrollToPosition(0);
+            } else {
+                list.scrollToPosition(0);
+            }
+        }
+    }
+
+    private void initTabFragments() {
+
+        ArrayList<String> titlesList = new ArrayList<>();
+        titlesList.add(getText(R.string.videos).toString());
+        titlesList.add(getText(R.string.appearances).toString());
+        titlesList.add(getText(R.string.total).toString());
+
+        adapter.setFragments(fragments, titlesList);
     }
 
     private void shareToWeichat(){

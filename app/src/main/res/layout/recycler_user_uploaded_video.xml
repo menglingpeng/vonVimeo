@@ -34,7 +34,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/like_video_thumb_iv">
+            android:layout_below="@+id/uploaded_video_thumb_iv">
 
             <TextView
                 android:id="@+id/uploaded_video_name_tv"
@@ -44,44 +44,10 @@
                 android:textSize="20dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/uploaded_video_name_tv"
-                android:layout_alignLeft="@+id/uploaded_video_name_tv"
-                android:layout_marginBottom="20dp">
-
-                <ImageView
-                    android:id="@+id/uploaded_video_avatar_iv"
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:src="@drawable/ic_featured_video_grey_600_18dp"/>
-
-                <TextView
-                    android:id="@+id/uploaded_video_user_name_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignTop="@+id/uploaded_video_avatar_iv"
-                    android:layout_toRightOf="@+id/uploaded_video_avatar_iv"/>
-
-                <TextView
-                    android:id="@+id/uploaded_video_delimiter_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/uploaded_video_user_name_tv"
-                    android:layout_alignTop="@+id/uploaded_video_user_name_tv"
-                    android:layout_marginLeft="10dp"
-                    android:text="|"/>
-
-
-                <TextView
-                    android:id="@+id/uploaded_video_play_count_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignTop="@+id/uploaded_video_user_name_tv"
-                    android:layout_toRightOf="@+id/uploaded_video_delimiter_tv"/>
-
-            </RelativeLayout>
+            <TextView
+                android:id="@+id/uploaded_video_sort_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
         </RelativeLayout>
 

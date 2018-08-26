@@ -258,7 +258,29 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
         if(holder instanceof FeedVideoViewHolder){
             final FeedVideoViewHolder videoViewHolder = (FeedVideoViewHolder)holder;
-        } else if ((holder instanceof AlbumViewHolder)){
+        } else if(holder instanceof UploadedVideoViewHolder){
+            final UploadedVideoViewHolder viewHolder = (UploadedVideoViewHolder)holder;
+            final Video video = (Video)list.get(position);
+            String url = video.getPictures().getUri();
+            ImageLoader.load(fragment, url, viewHolder.videoThumbIv, false);
+            viewHolder.videoNameTv.setText(video.getName());
+            String sortText;
+            if(type.equals(Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_SINGLE_USER_SORY_BY_DATE)){
+                sortText = video.getCreated_time();
+            }else if(type.equals(Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_SINGLE_USER_SORY_BY_ALPHABETICAL)){
+                sortText = video.getCreated_time();
+            }else if(type.equals(Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_SINGLE_USER_SORY_BY_PLAYS)){
+                sortText = video.getStatus();
+            }else if(type.equals(Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_SINGLE_USER_SORY_BY_LIKES)){
+
+            }else if(type.equals(Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_SINGLE_USER_SORY_BY_COMMENTS)){
+
+            }else if(type.equals(Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_SINGLE_USER_SORY_BY_DURATION){
+                sortText = String.valueOf(video.getDuration());
+            }
+            viewHolder.videoSortTv.setText(sortText);
+        }
+        else if ((holder instanceof AlbumViewHolder)){
             final AlbumViewHolder viewHolder = (AlbumViewHolder)holder;
             final Album album = (Album) list.get(position);
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -570,6 +592,20 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             }
     }
 
+    public class UploadedVideoViewHolder extends RecyclerView.ViewHolder {
+        public final ImageView videoThumbIv;
+        public final TextView videoNameTv;
+        public final TextView videoSortTv;
+
+        public UploadedVideoViewHolder(View view) {
+            super(view);
+
+            videoThumbIv = (ImageView)view.findViewById(R.id.uploaded_video_thumb_iv);
+            videoNameTv = (TextView)view.findViewById(R.id.uploaded_video_name_tv);
+            videoSortTv = (TextView)view.findViewById(R.id.uploaded_video_sort_tv);
+        }
+    }
+
 
     public class FeedVideoViewHolder extends RecyclerView.ViewHolder{
 
@@ -806,7 +842,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
-    public class UploadedVideoViewHolder extends RecyclerView.ViewHolder {
+    public class UploadedVideosViewHolder extends RecyclerView.ViewHolder {
 
         public final CheckBox uploadedCb;
         public final ImageView uploadedVideoThumbIv;

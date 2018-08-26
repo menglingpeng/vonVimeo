@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.adapter.TabPagerFragmentAdapter;
@@ -83,6 +84,8 @@ public class FeedManagerActivity extends BaseActivity implements RecyclerView {
     }
 
     private void initTabPager() {
+        tabLayout = (TabLayout)findViewById(R.id.feed_mamager_tl);
+        viewPager = (ViewPager)findViewById(R.id.feed_mamager_vp);
         adapter = new TabPagerFragmentAdapter(getSupportFragmentManager());
         initTabFragments();
         viewPager.setAdapter(adapter);

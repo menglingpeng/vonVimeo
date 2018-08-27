@@ -230,4 +230,6 @@
     <string name="snackbar_send_a_message_success_text"></string>
     <string name="snackbar_send_a_message_failed_text"></string>
 
+    <string name="from">from</string>
+
 </resources>

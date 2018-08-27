@@ -246,6 +246,54 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         view = inflater.inflate(R.layout.explore_stuff_recycler_item, parent, false);
                         viewHolder = new ExploreStuffViewHolder(view);
                         break;
+                    case Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_SINGLE_USER_SORY_BY_DATE:
+                        view = inflater.inflate(R.layout.recycler_user_uploaded_video, parent, false);
+                        viewHolder = new UploadedVideoThumbViewHolder(view);
+                        break;
+                    case Constants.REQUEST_GET_TOTAL_VIDEOS_UPLOADED_BY_SINGLE_USER_SORY_BY_DATE:
+                        view = inflater.inflate(R.layout.recycler_user_uploaded_video, parent, false);
+                        viewHolder = new UploadedVideoThumbViewHolder(view);
+                        break;
+                    case Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_SINGLE_USER_SORY_BY_ALPHABETICAL:
+                        view = inflater.inflate(R.layout.recycler_user_uploaded_video, parent, false);
+                        viewHolder = new UploadedVideoThumbViewHolder(view);
+                        break;
+                    case Constants.REQUEST_GET_TOTAL_VIDEOS_UPLOADED_BY_SINGLE_USER_SORY_BY_ALPHABETICAL:
+                        view = inflater.inflate(R.layout.recycler_user_uploaded_video, parent, false);
+                        viewHolder = new UploadedVideoThumbViewHolder(view);
+                        break;
+                    case Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_SINGLE_USER_SORY_BY_PLAYS:
+                        view = inflater.inflate(R.layout.recycler_user_uploaded_video, parent, false);
+                        viewHolder = new UploadedVideoThumbViewHolder(view);
+                        break;
+                    case Constants.REQUEST_GET_TOTAL_VIDEOS_UPLOADED_BY_SINGLE_USER_SORY_BY_PLAYS:
+                        view = inflater.inflate(R.layout.recycler_user_uploaded_video, parent, false);
+                        viewHolder = new UploadedVideoThumbViewHolder(view);
+                        break;
+                    case Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_SINGLE_USER_SORY_BY_LIKES:
+                        view = inflater.inflate(R.layout.recycler_user_uploaded_video, parent, false);
+                        viewHolder = new UploadedVideoThumbViewHolder(view);
+                        break;
+                    case Constants.REQUEST_GET_TOTAL_VIDEOS_UPLOADED_BY_SINGLE_USER_SORY_BY_LIKES:
+                        view = inflater.inflate(R.layout.recycler_user_uploaded_video, parent, false);
+                        viewHolder = new UploadedVideoThumbViewHolder(view);
+                        break;
+                    case Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_SINGLE_USER_SORY_BY_COMMENTS:
+                        view = inflater.inflate(R.layout.recycler_user_uploaded_video, parent, false);
+                        viewHolder = new UploadedVideoThumbViewHolder(view);
+                        break;
+                    case Constants.REQUEST_GET_TOTAL_VIDEOS_UPLOADED_BY_SINGLE_USER_SORY_BY_COMMENTS:
+                        view = inflater.inflate(R.layout.recycler_user_uploaded_video, parent, false);
+                        viewHolder = new UploadedVideoThumbViewHolder(view);
+                        break;
+                    case Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_SINGLE_USER_SORY_BY_DURATION:
+                        view = inflater.inflate(R.layout.recycler_user_uploaded_video, parent, false);
+                        viewHolder = new UploadedVideoThumbViewHolder(view);
+                        break;
+                    case Constants.REQUEST_GET_TOTAL_VIDEOS_UPLOADED_BY_SINGLE_USER_SORY_BY_DURATION:
+                        view = inflater.inflate(R.layout.recycler_user_uploaded_video, parent, false);
+                        viewHolder = new UploadedVideoThumbViewHolder(view);
+                        break;
                     default:
                         break;
                 }
@@ -592,12 +640,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             }
     }
 
-    public class UploadedVideoViewHolder extends RecyclerView.ViewHolder {
+    public class UploadedVideoThumbViewHolder extends RecyclerView.ViewHolder {
         public final ImageView videoThumbIv;
         public final TextView videoNameTv;
         public final TextView videoSortTv;
 
-        public UploadedVideoViewHolder(View view) {
+        public UploadedVideoThumbViewHolder(View view) {
             super(view);
 
             videoThumbIv = (ImageView)view.findViewById(R.id.uploaded_video_thumb_iv);
@@ -851,7 +899,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         public final TextView userNameTv;
         public final TextView playCountTv;
 
-        public UploadedVideoViewHolder(View view) {
+        public UploadedVideosViewHolder(View view) {
             super(view);
 
             uploadedCb = (CheckBox)view.findViewById(R.id.uploaded_video_cb);

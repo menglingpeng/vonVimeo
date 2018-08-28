@@ -654,6 +654,21 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
+    public class UploadedVideoDetailViewHolder extends RecyclerView.ViewHolder {
+        public final ImageView videoThumbIv;
+        public final TextView videoNameTv;
+        public final TextView videoSortTv;
+
+        public UploadedVideoDetailViewHolder(View view) {
+            super(view);
+
+            videoThumbIv = (ImageView)view.findViewById(R.id.detail_view_uploaded_video_thumb_iv);
+            videoNameTv = (TextView)view.findViewById(R.id.detail_view_uploaded_video_name_tv);
+            videoSortTv = (TextView)view.findViewById(R.id.detail_view_uploaded_video_sort_tv);
+        }
+    }
+
+
 
     public class FeedVideoViewHolder extends RecyclerView.ViewHolder{
 

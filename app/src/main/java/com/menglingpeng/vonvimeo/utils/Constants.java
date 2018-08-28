@@ -258,6 +258,10 @@ public class Constants {
     public static final String REQUEST_LIST_SECONDARY_CATEGORIES_IN_A_CATEGROY =
             "request_list_secondary_categories_in_a_category";
 
+    public static final String VIEW_TYPE = "view_type";
+    public static final String VIEW_TYPE_THUMBNAILS = "view_type_thumbnails";
+    public static final String VIEW_TYPE_DETAIL = "view_type_detail";
+
     //默认值1
     public static final int PAGE_VALUE = 1;
     //默认值10，最高到100

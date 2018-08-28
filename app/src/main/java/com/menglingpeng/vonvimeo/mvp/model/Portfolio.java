@@ -78,5 +78,60 @@ public class Portfolio implements Serializable {
         return metadata;
     }
 
+    public static class MetadataBean {
 
+        private ConnectionsBean connections;
+
+        public void setConnections(ConnectionsBean connections) {
+            this.connections = connections;
+        }
+
+        public ConnectionsBean getConnections() {
+            return connections;
+        }
+
+        public static class ConnectionsBean {
+
+            private VideosBean videos;
+
+            public void setVideos(VideosBean videos) {
+                this.videos = videos;
+            }
+
+            public VideosBean getVideos() {
+                return videos;
+            }
+
+            public static class VideosBean {
+
+                private String uri;
+                private int total;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public int getTotal() {
+                    return total;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+        }
+    }
 }

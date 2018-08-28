@@ -231,5 +231,6 @@
     <string name="snackbar_send_a_message_failed_text"></string>
 
     <string name="from">from</string>
+    <string name="by">by</string>
 
 </resources>

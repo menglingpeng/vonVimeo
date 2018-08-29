@@ -1,6 +1,7 @@
 package com.menglingpeng.vonvimeo.mvp.adapter;
 
 import android.content.Context;
+import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -672,8 +673,14 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     public class GroupDetaiTypeViewHolder extends RecyclerView.ViewHolder {
 
+        public final ImageView groupThumbIv;
+        public final TextView groupNameTv;
+
         public GroupDetaiTypeViewHolder(View view) {
             super(view);
+
+            groupThumbIv = (ImageView)view.findViewById(R.id.detail_view_group_thumb_iv);
+            groupNameTv = (TextView)view.findViewById(R.id.detail_view_group_name_tv);
         }
     }
 

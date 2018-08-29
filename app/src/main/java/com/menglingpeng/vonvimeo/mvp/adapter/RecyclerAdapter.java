@@ -306,8 +306,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
         if(holder instanceof FeedVideoViewHolder){
             final FeedVideoViewHolder videoViewHolder = (FeedVideoViewHolder)holder;
-        } else if(holder instanceof UploadedVideoViewHolder){
-            final UploadedVideoViewHolder viewHolder = (UploadedVideoViewHolder)holder;
+        } else if(holder instanceof UploadedVideoThumbViewHolder){
+            final UploadedVideoThumbViewHolder viewHolder = (UploadedVideoThumbViewHolder)holder;
             final Video video = (Video)list.get(position);
             String url = video.getPictures().getUri();
             ImageLoader.load(fragment, url, viewHolder.videoThumbIv, false);
@@ -327,6 +327,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 sortText = String.valueOf(video.getDuration());
             }
             viewHolder.videoSortTv.setText(sortText);
+        }else if(holder instanceof ){
+
         }
         else if ((holder instanceof AlbumViewHolder)){
             final AlbumViewHolder viewHolder = (AlbumViewHolder)holder;
@@ -668,6 +670,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
+    public class GroupDetaiTypeViewHolder extends RecyclerView.ViewHolder {
+
+        public GroupDetaiTypeViewHolder(View view) {
+            super(view);
+        }
+    }
 
 
     public class FeedVideoViewHolder extends RecyclerView.ViewHolder{

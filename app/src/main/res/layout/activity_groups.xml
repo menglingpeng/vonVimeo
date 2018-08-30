@@ -12,14 +12,14 @@
         tools:context="com.menglingpeng.designersshow.mvp.view.BucketDetailActivity">
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/user_group_tb"
+            android:id="@+id/groups_tb"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"></android.support.v7.widget.Toolbar>
 
         <android.support.design.widget.TabLayout
-            android:id="@+id/user_group_tl"
+            android:id="@+id/groups_tl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:visibility="gone"
@@ -32,7 +32,7 @@
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.view.ViewPager
-        android:id="@+id/user_group_vp"
+        android:id="@+id/groups_vp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
@@ -40,19 +40,5 @@
     </android.support.v4.view.ViewPager>
 
     <include layout="@layout/container"></include>
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/user_group_fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/floating_action_button_layout_margin"
-        android:src="@drawable/ic_add_white_24dp"
-        app:backgroundTint="@color/colorPrimary"
-        app:borderWidth="@dimen/floating_action_button_borderWidth"
-        app:elevation="@dimen/floating_action_button_elevation"
-        app:fabSize="normal"
-        app:pressedTranslationZ="@dimen/floating_action_button_pressedTranslationZ"
-        app:rippleColor="@color/colorPrimaryDark" />
 
 </android.support.design.widget.CoordinatorLayout>

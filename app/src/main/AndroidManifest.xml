@@ -47,7 +47,8 @@
         <activity android:name=".mvp.view.activity.TagActivity" />
         <activity android:name=".mvp.view.activity.ExploreStuffActivity" />
         <activity android:name=".mvp.view.activity.VimeoIntroduceActivity" />
-        <activity android:name=".mvp.view.activity.UserAboutActivity"></activity>
+        <activity android:name=".mvp.view.activity.UserAboutActivity" />
+        <activity android:name=".mvp.view.activity.GroupsActivity"></activity>
     </application>
 
 </manifest>

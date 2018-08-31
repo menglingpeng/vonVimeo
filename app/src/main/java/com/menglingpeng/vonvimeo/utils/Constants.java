@@ -134,6 +134,10 @@ public class Constants {
     public static final String REQUEST_CHOOSE_PROJECT = "choose_project";
 
 
+    public static final String REQUEST_LIST_ALL_FEATURED_GROUPS_BY_THUMB_VIEW = "request_list_all_featured_groups_by_thumb_view";
+    public static final String REQUEST_LIST_ALL_DIRECTORY_GROUPS_BY_BY_THUMB_VIEW = "request_list_all_directory_groups_by_thumb_view";
+    public static final String REQUEST_LIST_ALL_FEATURED_GROUPS_BY_DETAIL_VIEW = "request_list_all_featured_groups_by_detail_view";
+    public static final String REQUEST_LIST_ALL_DIRECTORY_GROUPS_BY_DETAIL_VIEW = "request_list_all_directory_groups_by_detail_view";
     public static final String TAB_GROUP_DETAIL_VIDEOS = "tab_group_detail_videos";
     public static final String TAB_GROUP_DETAIL_MEMBERS = "tab_group_detail_members";
     public static final String REQUEST_CHOOSE_GROUP = "choose_group";

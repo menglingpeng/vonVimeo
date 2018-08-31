@@ -295,6 +295,22 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         view = inflater.inflate(R.layout.recycler_user_uploaded_video, parent, false);
                         viewHolder = new UploadedVideoThumbViewHolder(view);
                         break;
+                    case Constants.REQUEST_LIST_ALL_FEATURED_GROUPS_BY_THUMB_VIEW:
+                        view = inflater.inflate(R.layout.recycler_item_group, parent, false);
+                        viewHolder = new GroupViewHolder(view);
+                        break;
+                    case Constants.REQUEST_LIST_ALL_DIRECTORY_GROUPSBY_BY_THUMB_VIEW:
+                        view = inflater.inflate(R.layout.recycler_item_group, parent, false);
+                        viewHolder = new GroupViewHolder(view);
+                        break;
+                    case Constants.REQUEST_LIST_ALL_FEATURED_GROUPS_BY_DETAIL_VIEW:
+                        view = inflater.inflate(R.layout.detail_view_recycler_item_group, parent, false);
+                        viewHolder = new GroupDetaiTypeViewHolder(view);
+                        break;
+                    case Constants.REQUEST_LIST_ALL_DIRECTORY_GROUPSBY_DETAIL_VIEW:
+                        view = inflater.inflate(R.layout.detail_view_recycler_item_group, parent, false);
+                        viewHolder = new GroupDetaiTypeViewHolder(view);
+                        break;
                     default:
                         break;
                 }
@@ -328,8 +344,26 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 sortText = String.valueOf(video.getDuration());
             }
             viewHolder.videoSortTv.setText(sortText);
-        }else if(holder instanceof ){
+        }else if(holder instanceof UploadedVideoDetailViewHolder){
 
+        }else if(holder instanceof GroupDetaiTypeViewHolder){
+            final GroupDetaiTypeViewHolder viewHolder = (GroupDetaiTypeViewHolder)holder;
+            final Group group = (Group)list.get(position);
+            String thumbUrl = group.getPictures().getUri();
+            ImageLoader.load(fragment, thumbUrl, viewHolder.groupThumbIv, false);
+            viewHolder.groupNameTv.setText(group.getName());
+            viewHolder.groupCreatedTimeTv.setText(group.getCreated_time());
+            viewHolder.groupVideosCountTv.setText(group.getMetadata().getConnections().getVideos().getTotal());
+            viewHolder.groupMembersCountTv.setText(group.getMetadata().getConnections().getUsers().getTotal());
+            viewHolder.groupDescTv.setText(group.getDescription());
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (mListener != null) {
+                        mListener.onRecyclerFragmentListListener(viewHolder, group);
+                    }
+                }
+            });
         }
         else if ((holder instanceof AlbumViewHolder)){
             final AlbumViewHolder viewHolder = (AlbumViewHolder)holder;
@@ -675,12 +709,22 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
         public final ImageView groupThumbIv;
         public final TextView groupNameTv;
+        public final TextView groupCreatedTimeTv;
+        public final TextView groupVideosCountTv;
+        public final TextView groupMembersCountTv;
+        public final TextView groupDescTv;
+
 
         public GroupDetaiTypeViewHolder(View view) {
             super(view);
 
             groupThumbIv = (ImageView)view.findViewById(R.id.detail_view_group_thumb_iv);
             groupNameTv = (TextView)view.findViewById(R.id.detail_view_group_name_tv);
+            groupCreatedTimeTv = (TextView)view.findViewById(R.id.detail_view_group_added_time_tv);
+            groupVideosCountTv = (TextView)view.findViewById(R.id.detail_view_group_videos_count_tv);
+            groupMembersCountTv = (TextView)view.findViewById(R.id.detail_view_group_members_count_tv);
+            groupDescTv = (TextView)view.findViewById(R.id.detail_view_group_desc_tv);
+
         }
     }
 

@@ -232,5 +232,7 @@
 
     <string name="from">from</string>
     <string name="by">by</string>
+    <string name="featured">Featured</string>
+    <string name="directory">Directory</string>
 
 </resources>

@@ -42,6 +42,8 @@
     <string name="sort_plays">Plays</string>
     <string name="sort_likes">Likes</string>
     <string name="sort_comments">Comments</string>
+    <string name="sort_videos">Videos</string>
+    <string name="sort_members">Members</string>
 
     <string name="your_stuff">YOUR STUFF</string>
     <string name="portfolios">Portfolios</string>

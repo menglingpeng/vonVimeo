@@ -11,6 +11,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 
@@ -33,7 +35,8 @@ public class GroupsActivity extends BaseActivity {
     private HashMap<String, String> map;
     private ArrayList<RecyclerFragment> fragmentsList;
     private static final int SMOOTHSCROLL_TOP_POSITION = 50;
-    private String type;
+    private String viewType;
+    private String groupType;
     private Context context;
 
     @Override
@@ -61,8 +64,8 @@ public class GroupsActivity extends BaseActivity {
             }
         });
         Intent intent = getIntent();
-        String shotId = intent.getStringExtra(Constants.ALBUM_ID);
-        replaceFragment(RecyclerFragment.newInstance(shotId, Constants.REQUEST_CHOOSE_ALBUM));
+        viewType = Constants.VIEW_TYPE_THUMBNAILS;
+        groupType = Constants.GROUP_TYPE_FEATURED;
         initTabPager();
     }
 
@@ -109,8 +112,47 @@ public class GroupsActivity extends BaseActivity {
         ArrayList<String> titlesList = new ArrayList<>();
         titlesList.add(getText(R.string.featured).toString());
         titlesList.add(getText(R.string.directory).toString());
-        fragmentsList.add(RecyclerFragment.newInstance(Constants.REQUEST_LIST_ALL_FEATURED_GROUPS_BY_THUMB_VIEW));
-        fragmentsList.add(RecyclerFragment.newInstance(Constants.REQUEST_LIST_ALL_DIRECTORY_GROUPS_BY_BY_THUMB_VIEW));
+        fragmentsList.add(RecyclerFragment.newInstance(
+                Constants.REQUEST_LIST_ALL_FEATURED_GROUPS_SORT_BY_DATE_IN_THUMB_VIEW));
+        fragmentsList.add(RecyclerFragment.newInstance(
+                Constants.REQUEST_LIST_ALL_DIRECTORY_GROUPS_SORT_BY_DATE_IN_THUMB_VIEW));
         adapter.setFragments(fragmentsList, titlesList);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.grops_toolbar_overflow_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.groups_sort_date:
+                if(groupType.equals(Constants.GROUP_TYPE_FEATURED)){
+                    if(viewType.equals(Constants.VIEW_TYPE_THUMBNAILS)){
+
+                    }else {
+
+                    }
+                }else {
+
+                }
+                break;
+            case R.id.groups_sort_alphabetical:
+                break;
+            case R.id.groups_sort_videos:
+                break;
+            case R.id.groups_sort_members:
+                break;
+            case R.id.groups_sort_groups_thumbnails_view:
+                break;
+            case R.id.groups_sort_groups_detail_view:
+                break;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

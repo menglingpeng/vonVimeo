@@ -132,12 +132,46 @@ public class Constants {
     public static final String PROJECT_ID = "project_id";
     public static final String REQUEST_CHOOSE_ALBUM = "choose_album";
     public static final String REQUEST_CHOOSE_PROJECT = "choose_project";
+    public static final String VIEW_TYPE_THUMBNAILS = "view_type_thumbnails";
+    public static final String VIEW_TYPE_DETAIL = "view_type_detail";
 
 
-    public static final String REQUEST_LIST_ALL_FEATURED_GROUPS_BY_THUMB_VIEW = "request_list_all_featured_groups_by_thumb_view";
-    public static final String REQUEST_LIST_ALL_DIRECTORY_GROUPS_BY_BY_THUMB_VIEW = "request_list_all_directory_groups_by_thumb_view";
-    public static final String REQUEST_LIST_ALL_FEATURED_GROUPS_BY_DETAIL_VIEW = "request_list_all_featured_groups_by_detail_view";
-    public static final String REQUEST_LIST_ALL_DIRECTORY_GROUPS_BY_DETAIL_VIEW = "request_list_all_directory_groups_by_detail_view";
+    public static final String GROUP_TYPE_FEATURED = "group_type_featured";
+    public static final String GROUP_TYPE_DIRECTORY = "group_type_directory";
+    public static final String GROUP_TYPE_JOINED = "group_type_joined";
+    public static final String GROUP_TYPE_MODERATED = "group_type_moderated";
+    public static final String REQUEST_LIST_ALL_FEATURED_GROUPS_SORT_BY_DATE_IN_THUMB_VIEW =
+            "request_list_all_featured_groups_sort_by_date_in_thumb_view";
+    public static final String REQUEST_LIST_ALL_FEATURED_GROUPS_SORT_BY_ALPHABETICAL_IN_THUMB_VIEW =
+            "request_list_all_featured_groups_sort_by_alphabetical_in_thumb_view";
+    public static final String REQUEST_LIST_ALL_FEATURED_GROUPS_SORT_BY_VIDEOS_IN_THUMB_VIEW =
+            "request_list_all_featured_groups_sort_by_videos_in_thumb_view";
+    public static final String REQUEST_LIST_ALL_FEATURED_GROUPS_SORT_BY_MEMBBERS_IN_THUMB_VIEW =
+            "request_list_all_featured_groups_sort_by_members_in_thumb_view";
+    public static final String REQUEST_LIST_ALL_DIRECTORY_GROUPS_SORT_BY_DATE_IN_THUMB_VIEW =
+            "request_list_all_directory_groups_sort_by_date_in_thumb_view";
+    public static final String REQUEST_LIST_ALL_DIRECTORY_GROUPS_SORT_BY_ALPHABETICAL_IN_THUMB_VIEW =
+            "request_list_all_directory_groups_sort_by_alphabetical_in_thumb_view";
+    public static final String REQUEST_LIST_ALL_DIRECTORY_GROUPS_SORT_BY_VIDEOS_IN_THUMB_VIEW =
+            "request_list_all_directory_groups_sort_by_videos_in_thumb_view";
+    public static final String REQUEST_LIST_ALL_DIRECTORY_GROUPS_SORT_BY_MEMBBERS_IN_THUMB_VIEW =
+            "request_list_all_directory_groups_sort_by_members_in_thumb_view";
+    public static final String REQUEST_LIST_ALL_FEATURED_GROUPS_SORT_BY_DATE_IN_DETAIL_VIEW =
+            "request_list_all_featured_groups_sort_by_date_in_detail_view";
+    public static final String REQUEST_LIST_ALL_FEATURED_GROUPS_SORT_BY_ALPHABETICAL_IN_DETAIL_VIEW =
+            "request_list_all_featured_groups_sort_by_alphabetical_in_detail_view";
+    public static final String REQUEST_LIST_ALL_FEATURED_GROUPS_SORT_BY_VIDEOS_IN_DETAIL_VIEW =
+            "request_list_all_featured_groups_sort_by_videos_in_detail_view";
+    public static final String REQUEST_LIST_ALL_FEATURED_GROUPS_SORT_BY_MEMBBERS_IN_DETAIL_VIEW =
+            "request_list_all_featured_groups_sort_by_members_in_detail_view";
+    public static final String REQUEST_LIST_ALL_DIRECTORY_GROUPS_SORT_BY_DATE_IN_DETAIL_VIEW =
+            "request_list_all_directory_groups_sort_by_date_in_detail_view";
+    public static final String REQUEST_LIST_ALL_DIRECTORY_GROUPS_SORT_BY_ALPHABETICAL_IN_DETAIL_VIEW =
+            "request_list_all_directory_groups_sort_by_alphabetical_in_detail_view";
+    public static final String REQUEST_LIST_ALL_DIRECTORY_GROUPS_SORT_BY_VIDEOS_IN_DETAIL_VIEW =
+            "request_list_all_directory_groups_sort_by_videos_in_detail_view";
+    public static final String REQUEST_LIST_ALL_DIRECTORY_GROUPS_SORT_BY_MEMBBERS_IN_DETAIL_VIEW =
+            "request_list_all_directory_groups_sort_by_members_in_detail_view";
     public static final String TAB_GROUP_DETAIL_VIDEOS = "tab_group_detail_videos";
     public static final String TAB_GROUP_DETAIL_MEMBERS = "tab_group_detail_members";
     public static final String REQUEST_CHOOSE_GROUP = "choose_group";

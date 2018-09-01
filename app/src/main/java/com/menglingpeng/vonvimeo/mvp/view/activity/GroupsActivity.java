@@ -8,11 +8,11 @@ import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.TextInputEditText;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,6 +20,7 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.adapter.TabPagerFragmentAdapter;
@@ -41,6 +42,8 @@ public class GroupsActivity extends BaseActivity implements RecyclerView{
     private ViewPager viewPager;
     private ProgressBar progressBar;
     private FloatingActionButton floatingActionButton;
+    private SearchView searchView;
+    private SearchView.SearchAutoComplete searchAutoComplete;
     private TabPagerFragmentAdapter adapter;
     private HashMap<String, String> map;
     private ArrayList<RecyclerFragment> fragmentsList;
@@ -139,6 +142,36 @@ public class GroupsActivity extends BaseActivity implements RecyclerView{
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.grops_toolbar_overflow_menu, menu);
+        MenuItem searchItem = menu.findItem(R.id.groups_search);
+        searchView= (SearchView) MenuItemCompat.getActionView(searchItem);
+        searchAutoComplete = (SearchView.SearchAutoComplete)searchView.findViewById(R.id.search_src_text);
+        searchView.setQueryHint(getString(R.string.groups_search_view_hint_text));
+        //设置搜索框无输入时，隐藏关闭按钮，有输入显示关闭按钮
+        searchView.onActionViewExpanded();
+        searchView.setIconified(false);
+        searchView.setOnSearchClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
+        searchView.setOnCloseListener(new SearchView.OnCloseListener() {
+            @Override
+            public boolean onClose() {
+                return false;
+            }
+        });
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -172,6 +205,7 @@ public class GroupsActivity extends BaseActivity implements RecyclerView{
         }
         return super.onOptionsItemSelected(item);
     }
+
 
     private void showCreateGroupDialog() {
         final TextInputEditText groupNameEt;

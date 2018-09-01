@@ -237,4 +237,6 @@
     <string name="featured">Featured</string>
     <string name="directory">Directory</string>
 
+    <string name="groups_search_view_hint_text">Start typing here</string>
+
 </resources>

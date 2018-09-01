@@ -529,6 +529,82 @@ public class OnDemand {
                     return CHF;
                 }
             }
+
+        }
+
+        public static class Episodes{
+
+            private RentBean rent;
+            private BuyBean buy;
+
+            public void setRent(RentBean rent) {
+                this.rent = rent;
+            }
+
+            public void setBuy(BuyBean buy) {
+                this.buy = buy;
+            }
+
+            public RentBean getRent() {
+                return rent;
+            }
+
+            public BuyBean getBuy() {
+                return buy;
+            }
+
+            public static class RentBean {
+
+                private boolean active;
+                private Object price;
+                private Object period;
+
+                public void setActive(boolean active) {
+                    this.active = active;
+                }
+
+                public void setPrice(Object price) {
+                    this.price = price;
+                }
+
+                public void setPeriod(Object period) {
+                    this.period = period;
+                }
+
+                public boolean getActive() {
+                    return active;
+                }
+
+                public Object getPrice() {
+                    return price;
+                }
+
+                public Object getPeriod() {
+                    return period;
+                }
+            }
+
+            public static class BuyBean {
+
+                private boolean active;
+                private Object price;
+
+                public void setActive(boolean active) {
+                    this.active = active;
+                }
+
+                public void setPrice(Object price) {
+                    this.price = price;
+                }
+
+                public boolean getActive() {
+                    return active;
+                }
+
+                public Object getPrice() {
+                    return price;
+                }
+            }
         }
     }
 

@@ -43,8 +43,8 @@ public class UserGroupActivity extends BaseActivity implements RecyclerView{
         super.initViews();
         context = getApplicationContext();
         toolbar = (Toolbar) findViewById(R.id.choose_bucket_tb);
-        coordinatorLayout = (CoordinatorLayout) findViewById(R.id.choose_album_cdl);
-        floatingActionButton = (FloatingActionButton) findViewById(R.id.choose_album_fab);
+        coordinatorLayout = (CoordinatorLayout) findViewById(R.id.user_group_cdl);
+        floatingActionButton = (FloatingActionButton) findViewById(R.id.user_group_fab);
         toolbar.setTitle(R.string.choose_a_group);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {

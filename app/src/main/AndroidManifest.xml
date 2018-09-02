@@ -38,7 +38,7 @@
         <activity android:name=".mvp.view.activity.UserPicturesActivity" />
         <activity android:name=".mvp.view.activity.EditUserProfileActivity" />
         <activity android:name=".mvp.view.activity.UserUploadedVideosActivity" />
-        <activity android:name=".mvp.view.activity.UserChannleActivity" />
+        <activity android:name=".mvp.view.activity.UserChannelsActivity" />
         <activity android:name=".mvp.view.activity.CategoryDetailActivity" />
         <activity android:name=".mvp.view.activity.ProjectDetailActivity" />
         <activity android:name=".mvp.view.activity.UserCollectionsActivity" />
@@ -49,7 +49,7 @@
         <activity android:name=".mvp.view.activity.VimeoIntroduceActivity" />
         <activity android:name=".mvp.view.activity.UserAboutActivity" />
         <activity android:name=".mvp.view.activity.GroupsActivity" />
-        <activity android:name=".mvp.view.activity.ChannlesActivity"></activity>
+        <activity android:name=".mvp.view.activity.ChannelsActivity"></activity>
     </application>
 
 </manifest>

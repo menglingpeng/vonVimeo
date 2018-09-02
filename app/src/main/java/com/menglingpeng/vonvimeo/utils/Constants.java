@@ -71,6 +71,24 @@ public class Constants {
     public static final String REQUEST_LIST_UPGRADE = "request_list_upgrade";
     public static final String REQUEST_LIST_STAFF_PICKS = "request_list_staff_picks";
     public static final String REQUEST_LIST_CATEGORITES = "request_list_categoties";
+
+    public static final String REQUEST_LIST_ALL_FEATURED_CHANNLES_SORT_BY_DATE =
+            "request_list_all_featured_channles_sort_by_date";
+    public static final String REQUEST_LIST_ALL_FEATURED_CHANNLES_SORT_BY_ALPHABETICAL =
+            "request_list_all_featured_channles_sort_by_alphabetical";
+    public static final String REQUEST_LIST_ALL_FEATURED_CHANNLES_SORT_BY_VIDEOS =
+            "request_list_all_featured_channles_sort_by_videos";
+    public static final String REQUEST_LIST_ALL_FEATURED_CHANNLES_SORT_BY_MEMBBERS =
+            "request_list_all_featured_channles_sort_by_members";
+    public static final String REQUEST_LIST_ALL_DIRECTORY_CHANNLES_SORT_BY_DATE =
+            "request_list_all_directory_channles_sort_by_date";
+    public static final String REQUEST_LIST_ALL_DIRECTORY_CHANNLES_SORT_BY_ALPHABETICAL =
+            "request_list_all_directory_groups_sort_by_alphabetical";
+    public static final String REQUEST_LIST_ALL_DIRECTORY_CHANNLES_SORT_BY_VIDEOS =
+            "request_list_all_directory_groups_sort_by_videos";
+    public static final String REQUEST_LIST_ALL_DIRECTORY_CHANNLES_SORT_BY_MEMBBERS =
+            "request_list_all_directory_groups_sort_by_members";
+
     public static final String REQUEST_LIST_CHANNELS = "request_list_channels";
     public static final String REQUEST_CREATE_A_CHANNLE = "request_create_a_channle";
     public static final String REQUEST_DELETE_A_CHANNLE = "request_delete_a_channle";

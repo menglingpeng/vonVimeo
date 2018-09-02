@@ -147,11 +147,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         break;
                     case Constants.REQUEST_LIST_CHANNELS:
                         view = inflater.inflate(R.layout.recycler_item_channels, parent, false);
-                        viewHolder = new ChannelsViewHolder(view);
+                        viewHolder = new UserChannelViewHolder(view);
                         break;
                     case Constants.REQUEST_LIST_ALL_VIDEO_FOR_A_CHANNEL:
                         view = inflater.inflate(R.layout.recycler_item_channel_detail, parent, false);
-                        viewHolder = new ChannelViewHolder(view);
+                        viewHolder = new ChannelDetailViewHolder(view);
                         break;
                     case Constants.REQUEST_LIST_GROUPS:
                         view = inflater.inflate(R.layout.layout.recycler_item_groups, parent, false);
@@ -295,22 +295,31 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         view = inflater.inflate(R.layout.recycler_user_uploaded_video, parent, false);
                         viewHolder = new UploadedVideoThumbViewHolder(view);
                         break;
-                    case Constants.REQUEST_LIST_ALL_FEATURED_GROUPS_BY_THUMB_VIEW:
+                    case Constants.REQUEST_LIST_ALL_FEATURED_GROUPS_SORT_BY_DATE_IN_THUMB_VIEW:
                         view = inflater.inflate(R.layout.recycler_item_group, parent, false);
                         viewHolder = new GroupViewHolder(view);
                         break;
-                    case Constants.REQUEST_LIST_ALL_DIRECTORY_GROUPSBY_BY_THUMB_VIEW:
+                    case Constants.REQUEST_LIST_ALL_DIRECTORY_GROUPS_SORT_BY_DATE_IN_THUMB_VIEW:
                         view = inflater.inflate(R.layout.recycler_item_group, parent, false);
                         viewHolder = new GroupViewHolder(view);
                         break;
-                    case Constants.REQUEST_LIST_ALL_FEATURED_GROUPS_BY_DETAIL_VIEW:
+                    case Constants.REQUEST_LIST_ALL_FEATURED_GROUPS_SORT_BY_DATE_IN_DETAIL_VIEW:
                         view = inflater.inflate(R.layout.detail_view_recycler_item_group, parent, false);
                         viewHolder = new GroupDetaiTypeViewHolder(view);
                         break;
-                    case Constants.REQUEST_LIST_ALL_DIRECTORY_GROUPSBY_DETAIL_VIEW:
+                    case Constants.REQUEST_LIST_ALL_DIRECTORY_GROUPS_SORT_BY_DATE_IN_DETAIL_VIEW:
                         view = inflater.inflate(R.layout.detail_view_recycler_item_group, parent, false);
                         viewHolder = new GroupDetaiTypeViewHolder(view);
                         break;
+                    case Constants.REQUEST_LIST_ALL_FEATURED_CHANNLES_SORT_BY_DATE:
+                        view = inflater.inflate(R.layout.recycler_item_user_channel, parent, false);
+                        viewHolder = new ChannelViewHolder(view);
+                        break;
+                    case Constants.REQUEST_LIST_ALL_DIRECTORY_CHANNLES_SORT_BY_DATE:
+                        view = inflater.inflate(R.layout.recycler_item_user_channel, parent, false);
+                        viewHolder = new ChannelViewHolder(view);
+                        break;
+
                     default:
                         break;
                 }
@@ -407,17 +416,17 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             viewHolder.categoriteNameTv.setText(category.getName());
             viewHolder.categoriteVideosCountTv.setText(TextUtil.setBeforeBold(String.valueOf(category.getShots_count()),
                     context.getString(R.string.videos)));
-        }else if (holder instanceof ChannelsViewHolder){
-            final ChannelsViewHolder viewHolder = (ChannelsViewHolder)holder;
+        }else if (holder instanceof UserChannelViewHolder){
+            final UserChannelViewHolder viewHolder = (UserChannelViewHolder)holder;
             final Channel channel = (Channel)list.get(position);
             String url;
             url = channel.getData().get(position).getLink();
-            ImageLoader.load(fragment, url, viewHolder.channelsIconIv, false);
-            viewHolder.channelsNameTv.setText(channel.getData().get(position).getName());
-            viewHolder.channelsDescTv.setText(channel.getData().get(position).getDescription());
-            viewHolder.channelsFollowersCountTv.setText(channel.getData().get(position).
+            ImageLoader.load(fragment, url, viewHolder.channelThumbIv, false);
+            viewHolder.channelNameTv.setText(channel.getData().get(position).getName());
+            viewHolder.channelDescTv.setText(channel.getData().get(position).getDescription());
+            viewHolder.channelFollowersCountTv.setText(channel.getData().get(position).
                     getMetadata().getConnections().getUsers().getTotal());
-            viewHolder.channelsVideosCountTv.setText(channel.getData().get(position).getMetadata()
+            viewHolder.channelVideosCountTv.setText(channel.getData().get(position).getMetadata()
                     .getConnections().getVideos().getTotal());
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -427,8 +436,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     }
                 }
             });
-        }else if(holder instanceof ChannelViewHolder){
-            final ChannelViewHolder viewHolder = (ChannelViewHolder)holder;
+        }else if(holder instanceof ChannelDetailViewHolder){
+            final ChannelDetailViewHolder viewHolder = (ChannelDetailViewHolder)holder;
             final ChannelVideo channelVideo = (ChannelVideo)list.get(position);
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -806,28 +815,51 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
-    public class ChannelsViewHolder extends RecyclerView.ViewHolder {
+    public class UserChannelViewHolder extends RecyclerView.ViewHolder {
 
-        public final RelativeLayout channelsRl;
-        public final ImageView channelsIconIv;
-        public final TextView channelsNameTv;
-        public final TextView channelsDescTv;
-        public final TextView channelsVideosCountTv;
-        public final TextView channelsFollowersCountTv;
+        public final RelativeLayout channelRl;
+        public final ImageView channelThumbIv;
+        public final TextView channelNameTv;
+        public final TextView channleAddedTimeTv;
+        public final TextView channelDescTv;
+        public final TextView channelVideosCountTv;
+        public final TextView channelFollowersCountTv;
 
-        public ChannelsViewHolder(View view) {
+        public UserChannelViewHolder(View view) {
             super(view);
-            channelsRl = (RelativeLayout)view.findViewById(R.id.channels_rl);
-            channelsIconIv = (ImageView)view.findViewById(R.id.channels_icon_iv);
-            channelsNameTv = (TextView)view.findViewById(R.id.channels_name_tv);
-            channelsDescTv = (TextView)view.findViewById(R.id.channels_desc_tv);
-            channelsVideosCountTv = (TextView)view.findViewById(R.id.channels_videos_count_tv);
-            channelsFollowersCountTv = (TextView)view.findViewById(R.id.
+            channelRl = (RelativeLayout)view.findViewById(R.id.channel_rl);
+            channelThumbIv = (ImageView)view.findViewById(R.id.user_channle_thumb_iv_iv);
+            channelNameTv = (TextView)view.findViewById(R.id.user_channle_name_tv);
+            channleAddedTimeTv = (TextView)view.findViewById(R.id.user_channle_added_time_tv);
+            channelDescTv = (TextView)view.findViewById(R.id.user_channel_desc_tv);
+            channelVideosCountTv = (TextView)view.findViewById(R.id.user_channel_videos_count_tv);
+            channelFollowersCountTv = (TextView)view.findViewById(R.id.
                     channels_followers_count_tv);
         }
     }
 
     public class ChannelViewHolder extends RecyclerView.ViewHolder {
+
+        public final RelativeLayout channelRl;
+        public final ImageView channelThumbIv;
+        public final TextView channelNameTv;
+        public final TextView channelDescTv;
+        public final TextView channelVideosCountTv;
+        public final TextView channelFollowersCountTv;
+
+        public ChannelViewHolder(View view) {
+            super(view);
+            channelRl = (RelativeLayout)view.findViewById(R.id.channel_rl);
+            channelThumbIv = (ImageView)view.findViewById(R.id.channel_thumb_iv_iv);
+            channelNameTv = (TextView)view.findViewById(R.id.channel_name_tv);
+            channelDescTv = (TextView)view.findViewById(R.id.channel_desc_tv);
+            channelVideosCountTv = (TextView)view.findViewById(R.id.channel_videos_count_tv);
+            channelFollowersCountTv = (TextView)view.findViewById(R.id.
+                    channel_followers_count_tv);
+        }
+    }
+
+    public class ChannelDetailViewHolder extends RecyclerView.ViewHolder {
 
         public final ImageView videoThumbIv;
         public final TextView videoNameTv;
@@ -836,7 +868,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         public final TextView videoPlayCountsTv;
 
 
-        public ChannelViewHolder(View view) {
+        public ChannelDetailViewHolder(View view) {
             super(view);
 
             videoThumbIv = (ImageView)view.findViewById(R.id.channel_detail_video_thumb_iv);

@@ -5,8 +5,6 @@ import android.content.Intent;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.RadioButton;
@@ -177,7 +175,7 @@ public class UserCollectionsActivity extends BaseActivity implements View.OnClic
                     map.put(Constants.NAME, channleNameEt.getText().toString());
                     map.put(Constants.DESCRIPTION, channleDescEt.getText().toString());
                     type = Constants.REQUEST_CREATE_A_ALBUM;
-                    RecyclerPresenter presenter = new RecyclerPresenter(UserChannleActivity.this, type,
+                    RecyclerPresenter presenter = new RecyclerPresenter(UserChannelsActivity.this, type,
                             Constants.REQUEST_NORMAL, Constants.REQUEST_POST_MEIHOD, map, getApplicationContext());
                     presenter.loadJson();
                     SnackbarUtils.showSnackShort(getApplicationContext(), coordinatorLayout, getString(R.string

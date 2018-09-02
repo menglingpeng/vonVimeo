@@ -48,7 +48,8 @@
         <activity android:name=".mvp.view.activity.ExploreStuffActivity" />
         <activity android:name=".mvp.view.activity.VimeoIntroduceActivity" />
         <activity android:name=".mvp.view.activity.UserAboutActivity" />
-        <activity android:name=".mvp.view.activity.GroupsActivity"></activity>
+        <activity android:name=".mvp.view.activity.GroupsActivity" />
+        <activity android:name=".mvp.view.activity.ChannlesActivity"></activity>
     </application>
 
 </manifest>

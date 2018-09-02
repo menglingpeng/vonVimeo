@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
@@ -30,6 +31,7 @@ public class UserGroupActivity extends BaseActivity implements RecyclerView{
     private Toolbar toolbar;
     private FloatingActionButton floatingActionButton;
     private CoordinatorLayout coordinatorLayout;
+    private ProgressBar progressBar;
     private String type;
     private Context context;
 

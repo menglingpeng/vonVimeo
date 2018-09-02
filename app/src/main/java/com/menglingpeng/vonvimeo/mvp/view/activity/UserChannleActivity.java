@@ -4,14 +4,18 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.TabLayout;
 import android.support.design.widget.TextInputEditText;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ProgressBar;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
+import com.menglingpeng.vonvimeo.mvp.adapter.TabPagerFragmentAdapter;
 import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
 import com.menglingpeng.vonvimeo.mvp.presenter.RecyclerPresenter;
 import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
@@ -20,6 +24,7 @@ import com.menglingpeng.vonvimeo.utils.Constants;
 import com.menglingpeng.vonvimeo.utils.SharedPrefUtils;
 import com.menglingpeng.vonvimeo.utils.SnackbarUtils;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class UserChannleActivity extends BaseActivity implements RecyclerView{
@@ -27,9 +32,16 @@ public class UserChannleActivity extends BaseActivity implements RecyclerView{
     private Toolbar toolbar;
     private FloatingActionButton floatingActionButton;
     private CoordinatorLayout coordinatorLayout;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+    private ProgressBar progressBar;
     private String title;
     private String type;
     private Context context;
+    private TabPagerFragmentAdapter adapter;
+    private HashMap<String, String> map;
+    private ArrayList<RecyclerFragment> fragmentsList;
+    private static final int SMOOTHSCROLL_TOP_POSITION = 50;
 
     @Override
     protected void initLayoutId() {
@@ -40,8 +52,9 @@ public class UserChannleActivity extends BaseActivity implements RecyclerView{
     protected void initViews() {
         super.initViews();
         context = getApplicationContext();
-        floatingActionButton = (FloatingActionButton) findViewById(R.id.auth_user_channle_fab);
+        floatingActionButton = (FloatingActionButton) findViewById(R.id.user_channles_fab);
         coordinatorLayout = (CoordinatorLayout) findViewById(R.id.user_channles_cdl);
+        progressBar = (ProgressBar)findViewById(R.id.user_channles_pb);
         toolbar = (Toolbar) findViewById(R.id.user_channles_tb);
         toolbar.setTitle(title);
         setSupportActionBar(toolbar);
@@ -57,6 +70,7 @@ public class UserChannleActivity extends BaseActivity implements RecyclerView{
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                showCreateChannleDialog();
             }
         });
     }
@@ -105,7 +119,7 @@ public class UserChannleActivity extends BaseActivity implements RecyclerView{
 
     @Override
     public void hideProgress() {
-
+        progressBar.setVisibility(ProgressBar.GONE);
     }
 
     @Override

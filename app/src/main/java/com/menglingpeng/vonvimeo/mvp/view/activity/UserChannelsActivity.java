@@ -8,6 +8,7 @@ import android.support.design.widget.TabLayout;
 import android.support.design.widget.TextInputEditText;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -70,6 +71,56 @@ public class UserChannelsActivity extends BaseActivity implements RecyclerView{
                 showCreateChannleDialog();
             }
         });
+    }
+
+    private void initTabPager() {
+        adapter = new TabPagerFragmentAdapter(getSupportFragmentManager());
+        initTabFragments();
+        viewPager.setAdapter(adapter);
+        tabLayout.setupWithViewPager(viewPager);
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+                scrollToTop(fragmentsList.get(tab.getPosition()).getRecyclerView());
+            }
+        });
+
+    }
+
+    private void scrollToTop(android.support.v7.widget.RecyclerView list) {
+        int lastPosition;
+        if (null != list) {
+            LinearLayoutManager manager = (LinearLayoutManager) list.getLayoutManager();
+            lastPosition = manager.findLastVisibleItemPosition();
+            if (lastPosition < SMOOTHSCROLL_TOP_POSITION) {
+                list.smoothScrollToPosition(0);
+            } else {
+                list.scrollToPosition(0);
+            }
+        }
+    }
+
+    private void initTabFragments() {
+
+        ArrayList<String> titlesList = new ArrayList<>();
+        titlesList.add(getText(R.string.following).toString());
+        titlesList.add(getText(R.string.moderated).toString());
+        fragmentsList.add(RecyclerFragment.newInstance(
+                Constants.REQUEST_LIST_ALL_FEATURED_CHANNLES_SORT_BY_DATE));
+        fragmentsList.add(RecyclerFragment.newInstance(
+                Constants.REQUEST_LIST_ALL_DIRECTORY_CHANNLES_SORT_BY_DATE));
+        adapter.setFragments(fragmentsList, titlesList);
     }
 
     private void showCreateChannleDialog() {

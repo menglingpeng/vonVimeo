@@ -72,22 +72,40 @@ public class Constants {
     public static final String REQUEST_LIST_STAFF_PICKS = "request_list_staff_picks";
     public static final String REQUEST_LIST_CATEGORITES = "request_list_categoties";
 
-    public static final String REQUEST_LIST_ALL_FEATURED_CHANNLES_SORT_BY_DATE =
-            "request_list_all_featured_channles_sort_by_date";
-    public static final String REQUEST_LIST_ALL_FEATURED_CHANNLES_SORT_BY_ALPHABETICAL =
-            "request_list_all_featured_channles_sort_by_alphabetical";
-    public static final String REQUEST_LIST_ALL_FEATURED_CHANNLES_SORT_BY_VIDEOS =
-            "request_list_all_featured_channles_sort_by_videos";
-    public static final String REQUEST_LIST_ALL_FEATURED_CHANNLES_SORT_BY_MEMBBERS =
-            "request_list_all_featured_channles_sort_by_members";
-    public static final String REQUEST_LIST_ALL_DIRECTORY_CHANNLES_SORT_BY_DATE =
-            "request_list_all_directory_channles_sort_by_date";
-    public static final String REQUEST_LIST_ALL_DIRECTORY_CHANNLES_SORT_BY_ALPHABETICAL =
-            "request_list_all_directory_groups_sort_by_alphabetical";
-    public static final String REQUEST_LIST_ALL_DIRECTORY_CHANNLES_SORT_BY_VIDEOS =
-            "request_list_all_directory_groups_sort_by_videos";
-    public static final String REQUEST_LIST_ALL_DIRECTORY_CHANNLES_SORT_BY_MEMBBERS =
-            "request_list_all_directory_groups_sort_by_members";
+    public static final String REQUEST_LIST_ALL_FEATURED_CHANNElS_SORT_BY_DATE =
+            "request_list_all_featured_channels_sort_by_date";
+    public static final String REQUEST_LIST_ALL_FEATURED_CHANNElS_SORT_BY_ALPHABETICAL =
+            "request_list_all_featured_channels_sort_by_alphabetical";
+    public static final String REQUEST_LIST_ALL_FEATURED_CHANNElS_SORT_BY_VIDEOS =
+            "request_list_all_featured_channels_sort_by_videos";
+    public static final String REQUEST_LIST_ALL_FEATURED_CHANNElS_SORT_BY_FOLLOWERS =
+            "request_list_all_featured_channels_sort_by_followers";
+    public static final String REQUEST_LIST_ALL_DIRECTORY_CHANNElS_SORT_BY_DATE =
+            "request_list_all_directory_channels_sort_by_date";
+    public static final String REQUEST_LIST_ALL_DIRECTORY_CHANNElS_SORT_BY_ALPHABETICAL =
+            "request_list_all_directory_channels_sort_by_alphabetical";
+    public static final String REQUEST_LIST_ALL_DIRECTORY_CHANNElS_SORT_BY_VIDEOS =
+            "request_list_all_directory_channels_sort_by_videos";
+    public static final String REQUEST_LIST_ALL_DIRECTORY_CHANNElS_SORT_BY_FOLLOWERS =
+            "request_list_all_directory_channels_sort_by_followers";
+
+    public static final String REQUEST_LIST_ALL_FOLLOWING_CHANNElS_FOR_A_USER_SORT_BY_DATE =
+            "request_list_all_following_channles_for_a_user_sort_by_date";
+    public static final String REQUEST_LIST_ALL_FOLLOWING_CHANNElS_FOR_A_USER_SORT_BY_ALPHABETICAL =
+            "request_list_all_following_channles_for_a_user_sort_by_alphabetical";
+    public static final String REQUEST_LIST_ALL_FOLLOWING_CHANNElS_FOR_A_USER_SORT_BY_VIDEOS =
+            "request_list_all_following_channles_for_a_user_sort_by_videos";
+    public static final String REQUEST_LIST_ALL_FOLLOWING_CHANNElS_FOR_A_USER_SORT_BY_FOLLOWERS =
+            "request_list_all_following_channles_for_a_user_sort_by_followers";
+    public static final String REQUEST_LIST_ALL_MODERATED_CHANNElS_FOR_A_USER_SORT_BY_DATE =
+            "request_list_all_moderated_channles_for_a_user_sort_by_date";
+    public static final String REQUEST_LIST_ALL_MODERATED_CHANNElS_FOR_A_USER_SORT_BY_ALPHABETICAL =
+            "request_list_all_moderated_channles_for_a_user_sort_by_alphabetical";
+    public static final String REQUEST_LIST_ALL_MODERATED_CHANNElS_FOR_A_USER_SORT_BY_VIDEOS =
+            "request_list_all_moderated_channles_for_a_user_sort_by_videos";
+    public static final String REQUEST_LIST_ALL_MODERATED_CHANNElS_FOR_A_USER_SORT_BY_FOLLOWERS =
+            "request_list_all_moderated_channles_for_a_user_sort_by_followers";
+
 
     public static final String REQUEST_LIST_CHANNELS = "request_list_channels";
     public static final String REQUEST_CREATE_A_CHANNLE = "request_create_a_channle";

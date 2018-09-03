@@ -4,11 +4,15 @@ import android.content.Context;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 
@@ -68,6 +72,30 @@ public class ChannelsActivity extends BaseActivity implements RecyclerView{
         initTabPager();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.channles_toolbar_overflow_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.groups_sort_date:
+                break;
+            case R.id.groups_sort_alphabetical:
+                break;
+            case R.id.groups_sort_videos:
+                break;
+            case R.id.groups_sort_followers:
+                break;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     private void initTabPager() {
         adapter = new TabPagerFragmentAdapter(getSupportFragmentManager());
         initTabFragments();
@@ -112,9 +140,9 @@ public class ChannelsActivity extends BaseActivity implements RecyclerView{
         titlesList.add(getText(R.string.featured).toString());
         titlesList.add(getText(R.string.directory).toString());
         fragmentsList.add(RecyclerFragment.newInstance(
-                Constants.REQUEST_LIST_ALL_FEATURED_CHANNLES_SORT_BY_DATE));
+                Constants.REQUEST_LIST_ALL_FEATURED_CHANNElS_SORT_BY_DATE));
         fragmentsList.add(RecyclerFragment.newInstance(
-                Constants.REQUEST_LIST_ALL_DIRECTORY_CHANNLES_SORT_BY_DATE));
+                Constants.REQUEST_LIST_ALL_DIRECTORY_CHANNElS_SORT_BY_DATE));
         adapter.setFragments(fragmentsList, titlesList);
     }
 

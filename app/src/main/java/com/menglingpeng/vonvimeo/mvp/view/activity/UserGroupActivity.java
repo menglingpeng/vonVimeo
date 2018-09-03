@@ -7,10 +7,14 @@ import android.graphics.Color;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TextInputEditText;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
@@ -32,6 +36,10 @@ public class UserGroupActivity extends BaseActivity implements RecyclerView{
     private FloatingActionButton floatingActionButton;
     private CoordinatorLayout coordinatorLayout;
     private ProgressBar progressBar;
+    private SearchView searchView;
+    private SearchView.SearchAutoComplete searchAutoComplete;
+    private String viewType;
+    private String groupType;
     private String type;
     private Context context;
 
@@ -69,6 +77,73 @@ public class UserGroupActivity extends BaseActivity implements RecyclerView{
         Intent intent = getIntent();
         String shotId = intent.getStringExtra(Constants.ALBUM_ID);
         replaceFragment(RecyclerFragment.newInstance(shotId, Constants.REQUEST_CHOOSE_ALBUM));
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.grops_toolbar_overflow_menu, menu);
+        MenuItem searchItem = menu.findItem(R.id.groups_search);
+        searchView= (SearchView) MenuItemCompat.getActionView(searchItem);
+        searchAutoComplete = (SearchView.SearchAutoComplete)searchView.findViewById(R.id.search_src_text);
+        searchView.setQueryHint(getString(R.string.groups_search_view_hint_text));
+        //设置搜索框无输入时，隐藏关闭按钮，有输入显示关闭按钮
+        searchView.onActionViewExpanded();
+        searchView.setIconified(false);
+        searchView.setOnSearchClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
+        searchView.setOnCloseListener(new SearchView.OnCloseListener() {
+            @Override
+            public boolean onClose() {
+                return false;
+            }
+        });
+        return super.onCreateOptionsMenu(menu);
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.groups_sort_date:
+                if(groupType.equals(Constants.GROUP_TYPE_FEATURED)){
+                    if(viewType.equals(Constants.VIEW_TYPE_THUMBNAILS)){
+
+                    }else {
+
+                    }
+                }else {
+
+                }
+                break;
+            case R.id.groups_sort_alphabetical:
+                break;
+            case R.id.groups_sort_videos:
+                break;
+            case R.id.groups_sort_members:
+                break;
+            case R.id.groups_sort_groups_thumbnails_view:
+                break;
+            case R.id.groups_sort_groups_detail_view:
+                break;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void showCreateGroupDialog() {
@@ -135,7 +210,7 @@ public class UserGroupActivity extends BaseActivity implements RecyclerView{
 
     @Override
     public void hideProgress() {
-
+        progressBar.setVisibility(ProgressBar.GONE);
     }
 
     @Override

@@ -331,7 +331,18 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         view = inflater.inflate(R.layout.recycler_item_user_channel, parent, false);
                         viewHolder = new ChannelViewHolder(view);
                         break;
-
+                    case Constants.REQUEST_LIST_ALL_DIRECTORY_CHANNElS_SORT_BY_ALPHABETICAL:
+                        view = inflater.inflate(R.layout.recycler_item_user_channel, parent, false);
+                        viewHolder = new ChannelViewHolder(view);
+                        break;
+                    case Constants.REQUEST_LIST_ALL_DIRECTORY_CHANNElS_SORT_BY_VIDEOS:
+                        view = inflater.inflate(R.layout.recycler_item_user_channel, parent, false);
+                        viewHolder = new ChannelViewHolder(view);
+                        break;
+                    case Constants.REQUEST_LIST_ALL_DIRECTORY_CHANNElS_SORT_BY_FOLLOWERS:
+                        view = inflater.inflate(R.layout.recycler_item_user_channel, parent, false);
+                        viewHolder = new ChannelViewHolder(view);
+                        break;
                     default:
                         break;
                 }

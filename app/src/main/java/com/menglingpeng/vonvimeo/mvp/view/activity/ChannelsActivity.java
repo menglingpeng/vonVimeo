@@ -1,11 +1,14 @@
 package com.menglingpeng.vonvimeo.mvp.view.activity;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
+import android.support.design.widget.TextInputEditText;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -19,8 +22,11 @@ import android.widget.ProgressBar;
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.adapter.TabPagerFragmentAdapter;
 import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
+import com.menglingpeng.vonvimeo.mvp.presenter.RecyclerPresenter;
 import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
 import com.menglingpeng.vonvimeo.utils.Constants;
+import com.menglingpeng.vonvimeo.utils.SharedPrefUtils;
+import com.menglingpeng.vonvimeo.utils.SnackbarUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -67,6 +73,7 @@ public class ChannelsActivity extends BaseActivity implements RecyclerView{
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                showCreateChannelDialog();
             }
         });
         initTabPager();
@@ -94,6 +101,48 @@ public class ChannelsActivity extends BaseActivity implements RecyclerView{
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void showCreateChannelDialog() {
+        final TextInputEditText channleNameEt, channleDescEt;
+        AlertDialog dialog;
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_create_a_channle, null);
+        builder.setTitle(R.string.create_a_bucket);
+        builder.setView(dialogView);
+        channleNameEt = (TextInputEditText) dialogView.findViewById(R.id.channle_name_tiet);
+        channleDescEt = (TextInputEditText) dialogView.findViewById(R.id.channle_desc_tiet);
+        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.setPositiveButton(R.string.create, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String name = channleNameEt.getText().toString();
+                if (name.equals("")) {
+                    SnackbarUtils.showSnackShort(getApplicationContext(), coordinatorLayout, getString(R.string
+                            .the_name_of_bucket_is_not_null));
+                } else {
+                    HashMap<String, String> map = new HashMap<>();
+                    map.put(Constants.ACCESS_TOKEN, SharedPrefUtils.getAuthToken());
+                    map.put(Constants.NAME, channleNameEt.getText().toString());
+                    map.put(Constants.DESCRIPTION, channleDescEt.getText().toString());
+                    type = Constants.REQUEST_CREATE_A_ALBUM;
+                    RecyclerPresenter presenter = new RecyclerPresenter(ChannelsActivity.this, type,
+                            Constants.REQUEST_NORMAL, Constants.REQUEST_POST_MEIHOD, map, getApplicationContext());
+                    presenter.loadJson();
+                    SnackbarUtils.showSnackShort(getApplicationContext(), coordinatorLayout, getString(R.string
+                            .snack_create_a_bucket_text));
+                }
+
+            }
+        });
+        channleNameEt.setFocusable(true);
+        dialog = builder.create();
+        dialog.show();
     }
 
     private void initTabPager() {
@@ -158,6 +207,14 @@ public class ChannelsActivity extends BaseActivity implements RecyclerView{
 
     @Override
     public void loadSuccess(String json, String requestType) {
-
+        if(type.equals(Constants.REQUEST_CREATE_A_CHANNLE)) {
+            if (json.indexOf(Constants.CODE_204_NO_CONTENT) != -1) {
+                SnackbarUtils.showSnackShort(context, coordinatorLayout, getString(
+                        R.create_a_channle_http_status_code_204));
+            } else if (json.indexOf(Constants.CODE_403_FORBIDDEN) != -1) {
+                SnackbarUtils.showSnackShort(context, coordinatorLayout, getString(
+                        R.create_a_channle_http_status_code_403));
+            }
+        }
     }
 }

@@ -18,6 +18,7 @@ public class OnDemand {
     private PicturesBean pictures;
     private List<String> content_rating;
     private List<GenresBean> genres;
+    private List<MetadataBean> metadatas;
 
     private Object rent;
 
@@ -71,6 +72,14 @@ public class OnDemand {
 
     public void setContent_rating(List<String> content_rating) {
         this.content_rating = content_rating;
+    }
+
+    public List<MetadataBean> getMetadatas() {
+        return metadatas;
+    }
+
+    public void setMetadatas(List<MetadataBean> metadatas) {
+        this.metadatas = metadatas;
     }
 
     public void setGenres(List<GenresBean> genres) {
@@ -711,6 +720,130 @@ public class OnDemand {
 
             public List<String> getOptions() {
                 return options;
+            }
+        }
+    }
+
+    public static class MetadataBean{
+
+        private ConnectionsBean connections;
+
+        public void setConnections(ConnectionsBean connections) {
+            this.connections = connections;
+        }
+
+        public ConnectionsBean getConnections() {
+            return connections;
+        }
+
+        public static class ConnectionsBean {
+
+            private VideosBean videos;
+            private GenresBean genres;
+
+            public void setVideos(VideosBean videos) {
+                this.videos = videos;
+            }
+
+            public void setGenres(GenresBean genres) {
+                this.genres = genres;
+            }
+
+            public VideosBean getVideos() {
+                return videos;
+            }
+
+            public GenresBean getGenres() {
+                return genres;
+            }
+
+            public static class VideosBean {
+
+                private String uri;
+                private int total;
+                private int main_total;
+                private int extra_total;
+                private int viewable_total;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public void setMain_total(int main_total) {
+                    this.main_total = main_total;
+                }
+
+                public void setExtra_total(int extra_total) {
+                    this.extra_total = extra_total;
+                }
+
+                public void setViewable_total(int viewable_total) {
+                    this.viewable_total = viewable_total;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public int getTotal() {
+                    return total;
+                }
+
+                public int getMain_total() {
+                    return main_total;
+                }
+
+                public int getExtra_total() {
+                    return extra_total;
+                }
+
+                public int getViewable_total() {
+                    return viewable_total;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class GenresBean {
+
+                private String uri;
+                private int total;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public int getTotal() {
+                    return total;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
             }
         }
     }

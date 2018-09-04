@@ -86,13 +86,17 @@ public class UserChannelsActivity extends BaseActivity implements RecyclerView{
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
-            case R.id.groups_sort_date:
+            case R.id.user_groups_sort_date:
                 break;
-            case R.id.groups_sort_alphabetical:
+            case R.id.usergroups_sort_alphabetical:
                 break;
-            case R.id.groups_sort_videos:
+            case R.id.usergroups_sort_videos:
                 break;
-            case R.id.groups_sort_followers:
+            case R.id.usergroups_sort_followers:
+                break;
+            case R.id.user_channels_thumb:
+                break;
+            case R.id.user_channels_detail:
                 break;
             default:
                 break;
@@ -144,9 +148,9 @@ public class UserChannelsActivity extends BaseActivity implements RecyclerView{
         titlesList.add(getText(R.string.following).toString());
         titlesList.add(getText(R.string.moderated).toString());
         fragmentsList.add(RecyclerFragment.newInstance(
-                Constants.REQUEST_LIST_ALL_FOLLOWING_CHANNElS_FOR_A_USER_SORT_BY_DATE));
+                Constants.REQUEST_LIST_ALL_FOLLOWING_CHANNElS_FOR_A_USER_SORT_BY_DATE_IN_VIEW_THUMB));
         fragmentsList.add(RecyclerFragment.newInstance(
-                Constants.REQUEST_LIST_ALL_MODERATED_CHANNElS_FOR_A_USER_SORT_BY_DATE));
+                Constants.REQUEST_LIST_ALL_MODERATED_CHANNElS_FOR_A_USER_SORT_BY_DATE_IN_VIEW_THUMB));
         adapter.setFragments(fragmentsList, titlesList);
     }
 

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/user_channels_thumb"
+        android:title=""
+        android:icon=""
+        app:showAsAction="always">
+
+        <menu>
+
+            <item
+                android:id="@+id/user_channels_detail"
+                android:title=""
+                android:icon=""
+                app:showAsAction="never"></item>
+        </menu>
+
+    </item>
+
+    <item
+        android:id="@+id/user_channels_sort"
+        android:icon="@drawable/ic_more"
+        android:title=""
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/user_channels_sort_date"
+                android:title="@string/sort_date"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/user_channels_sort_alphabetical"
+                android:title="@string/sort_alphabetical"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/user_channels_sort_videos"
+                android:title="@string/sort_videos"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/user_channels_sort_followers"
+                android:title="@string/sort_followers"
+                app:showAsAction="never"></item>
+        </menu>
+
+
+    </item>
+
+</menu>

@@ -89,22 +89,39 @@ public class Constants {
     public static final String REQUEST_LIST_ALL_DIRECTORY_CHANNElS_SORT_BY_FOLLOWERS =
             "request_list_all_directory_channels_sort_by_followers";
 
-    public static final String REQUEST_LIST_ALL_FOLLOWING_CHANNElS_FOR_A_USER_SORT_BY_DATE =
-            "request_list_all_following_channles_for_a_user_sort_by_date";
-    public static final String REQUEST_LIST_ALL_FOLLOWING_CHANNElS_FOR_A_USER_SORT_BY_ALPHABETICAL =
-            "request_list_all_following_channles_for_a_user_sort_by_alphabetical";
-    public static final String REQUEST_LIST_ALL_FOLLOWING_CHANNElS_FOR_A_USER_SORT_BY_VIDEOS =
-            "request_list_all_following_channles_for_a_user_sort_by_videos";
-    public static final String REQUEST_LIST_ALL_FOLLOWING_CHANNElS_FOR_A_USER_SORT_BY_FOLLOWERS =
-            "request_list_all_following_channles_for_a_user_sort_by_followers";
-    public static final String REQUEST_LIST_ALL_MODERATED_CHANNElS_FOR_A_USER_SORT_BY_DATE =
-            "request_list_all_moderated_channles_for_a_user_sort_by_date";
-    public static final String REQUEST_LIST_ALL_MODERATED_CHANNElS_FOR_A_USER_SORT_BY_ALPHABETICAL =
-            "request_list_all_moderated_channles_for_a_user_sort_by_alphabetical";
-    public static final String REQUEST_LIST_ALL_MODERATED_CHANNElS_FOR_A_USER_SORT_BY_VIDEOS =
-            "request_list_all_moderated_channles_for_a_user_sort_by_videos";
-    public static final String REQUEST_LIST_ALL_MODERATED_CHANNElS_FOR_A_USER_SORT_BY_FOLLOWERS =
-            "request_list_all_moderated_channles_for_a_user_sort_by_followers";
+    public static final String REQUEST_LIST_ALL_FOLLOWING_CHANNElS_FOR_A_USER_SORT_BY_DATE_IN_VIEW_THUMB =
+            "request_list_all_following_channles_for_a_user_sort_by_date_in_view_thumb";
+    public static final String REQUEST_LIST_ALL_FOLLOWING_CHANNElS_FOR_A_USER_SORT_BY_ALPHABETICAL_IN_VIEW_THUMB =
+            "request_list_all_following_channles_for_a_user_sort_by_alphabetical_in_view_thumb";
+    public static final String REQUEST_LIST_ALL_FOLLOWING_CHANNElS_FOR_A_USER_SORT_BY_VIDEOS_IN_VIEW_THUMB =
+            "request_list_all_following_channles_for_a_user_sort_by_videos_in_view_thumb";
+    public static final String REQUEST_LIST_ALL_FOLLOWING_CHANNElS_FOR_A_USER_SORT_BY_FOLLOWERS_IN_VIEW_THUMB =
+            "request_list_all_following_channles_for_a_user_sort_by_followers_in_view_thumb";
+    public static final String REQUEST_LIST_ALL_MODERATED_CHANNElS_FOR_A_USER_SORT_BY_DATE_IN_VIEW_THUMB =
+            "request_list_all_moderated_channles_for_a_user_sort_by_date_in_view_thumb";
+    public static final String REQUEST_LIST_ALL_MODERATED_CHANNElS_FOR_A_USER_SORT_BY_ALPHABETICAL_IN_VIEW_THUMB =
+            "request_list_all_moderated_channles_for_a_user_sort_by_alphabetical_in_view_thumb";
+    public static final String REQUEST_LIST_ALL_MODERATED_CHANNElS_FOR_A_USER_SORT_BY_VIDEOS_IN_VIEW_THUMB =
+            "request_list_all_moderated_channles_for_a_user_sort_by_videos_in_view_thumb";
+    public static final String REQUEST_LIST_ALL_MODERATED_CHANNElS_FOR_A_USER_SORT_BY_FOLLOWERS_IN_VIEW_THUMB =
+            "request_list_all_moderated_channles_for_a_user_sort_by_followers_in_view_thumb";
+
+    public static final String REQUEST_LIST_ALL_FOLLOWING_CHANNElS_FOR_A_USER_SORT_BY_DATE_IN_VIEW_DETAIL =
+            "request_list_all_following_channles_for_a_user_sort_by_date_in_view_detail";
+    public static final String REQUEST_LIST_ALL_FOLLOWING_CHANNElS_FOR_A_USER_SORT_BY_ALPHABETICAL_IN_VIEW_DETAIL =
+            "request_list_all_following_channles_for_a_user_sort_by_alphabetical_in_view_detail";
+    public static final String REQUEST_LIST_ALL_FOLLOWING_CHANNElS_FOR_A_USER_SORT_BY_VIDEOS_IN_VIEW_DETAIL =
+            "request_list_all_following_channles_for_a_user_sort_by_videos_in_view_detail";
+    public static final String REQUEST_LIST_ALL_FOLLOWING_CHANNElS_FOR_A_USER_SORT_BY_FOLLOWERS_IN_VIEW_DETAIL =
+            "request_list_all_following_channles_for_a_user_sort_by_followers_in_view_detail";
+    public static final String REQUEST_LIST_ALL_MODERATED_CHANNElS_FOR_A_USER_SORT_BY_DATE_IN_VIEW_DETAIL =
+            "request_list_all_moderated_channles_for_a_user_sort_by_date_in_view_detail";
+    public static final String REQUEST_LIST_ALL_MODERATED_CHANNElS_FOR_A_USER_SORT_BY_ALPHABETICAL_IN_VIEW_DETAIL =
+            "request_list_all_moderated_channles_for_a_user_sort_by_alphabetical_in_view_detail";
+    public static final String REQUEST_LIST_ALL_MODERATED_CHANNElS_FOR_A_USER_SORT_BY_VIDEOS_IN_VIEW_DETAIL =
+            "request_list_all_moderated_channles_for_a_user_sort_by_videos_in_view_detail";
+    public static final String REQUEST_LIST_ALL_MODERATED_CHANNElS_FOR_A_USER_SORT_BY_FOLLOWERS_IN_VIEW_DETAIL =
+            "request_list_all_moderated_channles_for_a_user_sort_by_followers_in_view_detail";
 
 
     public static final String REQUEST_LIST_CHANNELS = "request_list_channels";
@@ -333,8 +350,6 @@ public class Constants {
             "request_list_secondary_categories_in_a_category";
 
     public static final String VIEW_TYPE = "view_type";
-    public static final String VIEW_TYPE_THUMBNAILS = "view_type_thumbnails";
-    public static final String VIEW_TYPE_DETAIL = "view_type_detail";
 
     //默认值1
     public static final int PAGE_VALUE = 1;

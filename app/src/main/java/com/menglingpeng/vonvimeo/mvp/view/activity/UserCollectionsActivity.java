@@ -3,35 +3,49 @@ package com.menglingpeng.vonvimeo.mvp.view.activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.TabLayout;
 import android.support.design.widget.TextInputEditText;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
+import com.menglingpeng.vonvimeo.mvp.adapter.TabPagerFragmentAdapter;
 import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
 import com.menglingpeng.vonvimeo.mvp.model.User;
 import com.menglingpeng.vonvimeo.mvp.presenter.RecyclerPresenter;
+import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
 import com.menglingpeng.vonvimeo.mvp.view.UserAlbumActivity;
 import com.menglingpeng.vonvimeo.utils.Constants;
 import com.menglingpeng.vonvimeo.utils.SharedPrefUtils;
 import com.menglingpeng.vonvimeo.utils.SnackbarUtils;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class UserCollectionsActivity extends BaseActivity implements View.OnClickListener, RecyclerView {
 
     private CoordinatorLayout coordinatorLayout;
     private Toolbar toolbar;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+    private ProgressBar progressBar;
     private String type;
     private String title;
     private TextView portfoliosDescTv;
     private TextView likesCountTv;
     private TextView collectionCountTv;
     private TextView followingCountTv;
+    private TabPagerFragmentAdapter adapter;
+    private HashMap<String, String> map;
+    private ArrayList<RecyclerFragment> fragmentsList;
+    private static final int SMOOTHSCROLL_TOP_POSITION = 50;
     private User user;
 
     @Override
@@ -80,6 +94,67 @@ public class UserCollectionsActivity extends BaseActivity implements View.OnClic
         }
     }
 
+    private void initTabPager() {
+        adapter = new TabPagerFragmentAdapter(getSupportFragmentManager());
+        initTabFragments();
+        viewPager.setAdapter(adapter);
+        tabLayout.setupWithViewPager(viewPager);
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+                scrollToTop(fragmentsList.get(tab.getPosition()).getRecyclerView());
+            }
+        });
+
+    }
+
+    private void scrollToTop(android.support.v7.widget.RecyclerView list) {
+        int lastPosition;
+        if (null != list) {
+            LinearLayoutManager manager = (LinearLayoutManager) list.getLayoutManager();
+            lastPosition = manager.findLastVisibleItemPosition();
+            if (lastPosition < SMOOTHSCROLL_TOP_POSITION) {
+                list.smoothScrollToPosition(0);
+            } else {
+                list.scrollToPosition(0);
+            }
+        }
+    }
+
+    private void initTabFragments() {
+
+        ArrayList<String> titlesList = new ArrayList<>();
+        if(type.equals(Constants.AUTH_USER)) {
+            titlesList.add(getText(R.string.album));
+            titlesList.add(getText(R.string.channle).toString());
+            titlesList.add(getText(R.string.Group).toString());
+            fragmentsList.add(RecyclerFragment.newInstance(Constants.REQUEST_LIST_USER_ALBUMS));
+            fragmentsList.add(RecyclerFragment.newInstance(
+                    Constants.REQUEST_LIST_ALL_FOLLOWING_CHANNElS_FOR_A_USER_SORT_BY_DATE_IN_VIEW_THUMB));
+            fragmentsList.add(RecyclerFragment.newInstance(
+                    Constants.REQUEST_LIST_ALL_MODERATED_CHANNElS_FOR_A_USER_SORT_BY_DATE_IN_VIEW_THUMB));
+        }else {
+            titlesList.add(getText(R.string.channle).toString());
+            titlesList.add(getText(R.string.Group).toString());
+            fragmentsList.add(RecyclerFragment.newInstance(
+                    Constants.REQUEST_LIST_ALL_FOLLOWING_CHANNElS_FOR_A_USER_SORT_BY_DATE_IN_VIEW_THUMB));
+            fragmentsList.add(RecyclerFragment.newInstance(
+                    Constants.REQUEST_LIST_ALL_MODERATED_CHANNElS_FOR_A_USER_SORT_BY_DATE_IN_VIEW_THUMB));
+        }
+        adapter.setFragments(fragmentsList, titlesList);
+    }
+
     private void showCreateNewAlbumDialog() {
         final TextInputEditText albumNameEt, albumDescEt;
         AlertDialog dialog;
@@ -108,7 +183,7 @@ public class UserCollectionsActivity extends BaseActivity implements View.OnClic
                     map.put(Constants.NAME, albumNameEt.getText().toString());
                     map.put(Constants.DESCRIPTION, albumDescEt.getText().toString());
                     type = Constants.REQUEST_CREATE_A_ALBUM;
-                    RecyclerPresenter presenter = new RecyclerPresenter(UserAlbumActivity.this, type, Constants
+                    RecyclerPresenter presenter = new RecyclerPresenter(UserCollectionsActivity.this, type, Constants
                             .REQUEST_NORMAL, Constants.REQUEST_POST_MEIHOD, map, getApplicationContext());
                     presenter.loadJson();
                     SnackbarUtils.showSnackShort(getApplicationContext(), coordinatorLayout, getString(R.string

@@ -38,6 +38,9 @@ public class Constants {
     public static final String MENU_MY_PROJECTS = "my_projects";
     public static final String MENU_SETTING = "setting";
 
+    public static final String AUTH_USER = "auth_user";
+    public static final String SINGLE_USER = "single_user";
+
     public static final String NAME = "name";
     public static final String DESCRIPTION = "description";
     public static final String USER = "user";

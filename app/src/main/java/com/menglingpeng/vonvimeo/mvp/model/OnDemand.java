@@ -738,32 +738,29 @@ public class OnDemand {
 
         public static class ConnectionsBean {
 
-            private VideosBean videos;
-            private GenresBean genres;
+            private CommentsBean comments;
+            private CreditsBean credits;
 
-            public void setVideos(VideosBean videos) {
-                this.videos = videos;
+            public void setComments(CommentsBean comments) {
+                this.comments = comments;
             }
 
-            public void setGenres(GenresBean genres) {
-                this.genres = genres;
+            public void setCredits(CreditsBean credits) {
+                this.credits = credits;
             }
 
-            public VideosBean getVideos() {
-                return videos;
+            public CommentsBean getComments() {
+                return comments;
             }
 
-            public GenresBean getGenres() {
-                return genres;
+            public CreditsBean getCredits() {
+                return credits;
             }
 
-            public static class VideosBean {
+            public static class CommentsBean {
 
                 private String uri;
                 private int total;
-                private int main_total;
-                private int extra_total;
-                private int viewable_total;
                 private List<String> options;
 
                 public void setUri(String uri) {
@@ -772,18 +769,6 @@ public class OnDemand {
 
                 public void setTotal(int total) {
                     this.total = total;
-                }
-
-                public void setMain_total(int main_total) {
-                    this.main_total = main_total;
-                }
-
-                public void setExtra_total(int extra_total) {
-                    this.extra_total = extra_total;
-                }
-
-                public void setViewable_total(int viewable_total) {
-                    this.viewable_total = viewable_total;
                 }
 
                 public void setOptions(List<String> options) {
@@ -798,24 +783,12 @@ public class OnDemand {
                     return total;
                 }
 
-                public int getMain_total() {
-                    return main_total;
-                }
-
-                public int getExtra_total() {
-                    return extra_total;
-                }
-
-                public int getViewable_total() {
-                    return viewable_total;
-                }
-
                 public List<String> getOptions() {
                     return options;
                 }
             }
 
-            public static class GenresBean {
+            public static class CreditsBean {
 
                 private String uri;
                 private int total;
@@ -846,6 +819,7 @@ public class OnDemand {
                 }
             }
         }
-    }
+        }
+
 
 }

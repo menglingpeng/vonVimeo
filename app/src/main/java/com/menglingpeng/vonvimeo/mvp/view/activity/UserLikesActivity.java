@@ -59,7 +59,7 @@ public class UserLikesActivity extends BaseActivity implements RecyclerView, Vie
     }
 
     private RecyclerFragment newFragment(String type) {
-        if (type.equals(Constants.REQUEST_LIST_LIKES_FOR_A_USER)) {
+        if (type.equals(Constants.AUTH_USER)) {
             fragment = RecyclerFragment.newInstance(type);
         } else {
             fragment = RecyclerFragment.newInstance(getIntent().getStringExtra(Constants.ID), type);

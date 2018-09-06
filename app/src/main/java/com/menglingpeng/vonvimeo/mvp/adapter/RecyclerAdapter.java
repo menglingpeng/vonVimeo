@@ -147,7 +147,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         break;
                     case Constants.REQUEST_LIST_CHANNELS:
                         view = inflater.inflate(R.layout.recycler_item_channels, parent, false);
-                        viewHolder = new UserChannelViewHolder(view);
+                        viewHolder = new UserChannelViewThumbViewHolder(view);
                         break;
                     case Constants.REQUEST_LIST_ALL_VIDEO_FOR_A_CHANNEL:
                         view = inflater.inflate(R.layout.recycler_item_channel_detail, parent, false);

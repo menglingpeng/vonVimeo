@@ -101,7 +101,7 @@ public class UserUploadedVideosActivity extends BaseActivity implements Recycler
                 break;
             case R.id.uploaded_videos_delete:
                 showDeleteUploadedVideoDialog();
-            case R.id.project_detail_sort_title:
+            case R.id.uploaded_videos_sort_date:
                 if(type.equals(Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_AUTH_USER)) {
                     type = Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_AUTH_USER_SORY_BY_TITLE;
                 }else {
@@ -110,20 +110,12 @@ public class UserUploadedVideosActivity extends BaseActivity implements Recycler
                 replaceFragment(RecyclerFragment.newInstance(type));
 
                 break;
-            case R.id.uploaded_videos_sort_date_modified:
+            case R.id.uploaded_videos_sort_alphabetical:
                 if(type.equals(Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_AUTH_USER)) {
                     type = Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_AUTH_USER_SORY_BY_DATE_MODIFIED;
                 }else {
                     type = Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_SINGLE_USER_SORY_BY_DATE_MODIFIED;
 
-                }
-                replaceFragment(RecyclerFragment.newInstance(type));
-                break;
-            case R.id.uploaded_videos_sort_date_added:
-                if(type.equals(Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_AUTH_USER)) {
-                    type = Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_AUTH_USER_SORY_BY_DATE_ADDED;
-                }else {
-                    type = Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_SINGLE_USER_SORY_BY_DATE_ADDED;
                 }
                 replaceFragment(RecyclerFragment.newInstance(type));
                 break;

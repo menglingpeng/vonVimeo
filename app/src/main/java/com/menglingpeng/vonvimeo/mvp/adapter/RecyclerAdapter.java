@@ -351,6 +351,14 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         view = inflater.inflate(R.layout.recycler_item_user_channel_view_type_thumb, parent, false);
                         viewHolder = new UserChannelViewThumbViewHolder(view);
                         break;
+                    case Constants.REQUEST_GET_ALL_VIDEOS_LIKED_BY_AUTH_USER_SORY_BY_DATE:
+                        view = inflater.inflate(R.layout.recycler_user_liked_videos_thumb_view_item, parent, false);
+                        viewHolder = new LikedVideoTypeThumbViewHolder(view);
+                        break;
+                    case Constants.REQUEST_GET_ALL_VIDEOS_LIKED_BY_SINGLE_USER_SORY_BY_DATE:
+                        view = inflater.inflate(R.layout.recycler_user_liked_videos_thumb_view_item, parent, false);
+                        viewHolder = new LikedVideoTypeThumbViewHolder(view);
+                        break;
                     default:
                         break;
                 }
@@ -386,7 +394,24 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             viewHolder.videoSortTv.setText(sortText);
         }else if(holder instanceof UploadedVideoDetailViewHolder){
 
-        }else if(holder instanceof GroupDetaiTypeViewHolder){
+        }else if (holder instanceof LikedVideoTypeThumbViewHolder){
+            final LikedVideoTypeThumbViewHolder viewHolder = (LikedVideoTypeThumbViewHolder)holder;
+            final Video video = (Video)list.get(position);
+            String pictureUrl = video.getPictures().getUri();
+            ImageLoader.load(fragment, pictureUrl, viewHolder.likedVideoThumbIv, false);
+            viewHolder.likedVideoNameTv.setText(video.getName());
+            viewHolder.userNameTv.setText(video.getUser().getName());
+            viewHolder.likedTimeTv.setText(video.getModified_time());
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (mListener != null) {
+                        mListener.onRecyclerFragmentListListener(viewHolder, video);
+                    }
+                }
+            });
+        }
+        else if(holder instanceof GroupDetaiTypeViewHolder){
             final GroupDetaiTypeViewHolder viewHolder = (GroupDetaiTypeViewHolder)holder;
             final Group group = (Group)list.get(position);
             String thumbUrl = group.getPictures().getUri();
@@ -1060,24 +1085,47 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
-    private class LikedVideoViewHolder extends RecyclerView.ViewHolder {
+    private class LikedVideoTypeThumbViewHolder extends RecyclerView.ViewHolder {
 
-        public final CheckBox likedCb;
         public final ImageView likedVideoThumbIv;
         public final TextView likedVideoNameTv;
-        public final ImageView avatarIv;
         public final TextView userNameTv;
-        public final TextView playCountTv;
+        public final TextView likedTimeTv;
 
-        public LikedVideoViewHolder(View view) {
+
+        public LikedVideoTypeThumbViewHolder(View view) {
             super(view);
 
-            likedCb = (CheckBox)view.findViewById(R.id.like_video_cb);
             likedVideoThumbIv = (ImageView)view.findViewById(R.id.like_video_thumb_iv);
             likedVideoNameTv = (TextView)view.findViewById(R.id.like_video_name_tv)
-            avatarIv = (ImageView)view.findViewById(R.id.like_video_avatar_iv);
             userNameTv = (TextView)view.findViewById(R.id.like_video_user_name_tv);
-            playCountTv = (TextView)view.findViewById(R.id.like_video_play_count_tv);
+            likedTimeTv = (TextView)view.findViewById(R.id.like_video_time_tv);
+        }
+    }
+
+    private class LikedVideoTypeDetailViewHolder extends RecyclerView.ViewHolder {
+
+        public final ImageView likedVideoThumbIv;
+        public final TextView likedVideoNameTv;
+        public final TextView userNameTv;
+        public final TextView likedTimeTv;
+        public final TextView likedVideoDescTv;
+        public final TextView playsCountTv;
+        public final TextView likesCountTv;
+        public final TextView commentsCountTv;
+
+
+        public LikedVideoTypeDetailViewHolder(View view) {
+            super(view);
+
+            likedVideoThumbIv = (ImageView)view.findViewById(R.id.detail_view_liked_video_thumb_iv);
+            likedVideoNameTv = (TextView)view.findViewById(R.id.detail_view_liked_video_name_tv);
+            userNameTv = (TextView)view.findViewById(R.id.detail_view_liked_video_user_name_tv);
+            likedTimeTv = (TextView)view.findViewById(R.detail_view_liked_video_added_time_tv);
+            likedVideoDescTv = (TextView)view.findViewById(R.id.detail_view_liked_video_desc_tv);
+            playsCountTv = (TextView)view.findViewById(R.id.detail_view_liked_video_plays_count_i);
+            likesCountTv = (TextView)view.findViewById(R.id.detail_view_liked_video_likes_count_i);
+            commentsCountTv = (TextView)view.findViewById(R.id.detail_view_liked_video_comments_count_i);
         }
     }
 

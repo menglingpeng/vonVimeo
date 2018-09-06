@@ -305,12 +305,11 @@ public class Constants {
     public static final String REQUEST_REMOVE_A_VIDEO_FROM_A_PROJECT = "request_remove_a_video_from_a_project";
     public static final String REQUEST_REMOVE_VIDEOS_FROM_A_PROJECT = "request_remove_videos_from_a_project";
 
-    public static final String REQUEST_GET_ALL_VIDEOS_LIKED_BY_AUTH_USER_SORY_BY_TITLE =
-            "request_get_all_videos_liked_by_auth_user_sort_by_title";
-    public static final String REQUEST_GET_ALL_VIDEOS_LIKED_BY_AUTH_USER_SORY_BY_DATE_MODIFIED =
-            "request_get_all_videos_liked_by_auth_user_sort_by_date_modified";
-    public static final String REQUEST_GET_ALL_VIDEOS_LIKED_BY_AUTH_USER_SORY_BY_DATE_ADDED =
-            "request_get_all_videos_liked_by_auth_user_sort_by_date_added";
+
+    public static final String REQUEST_GET_ALL_VIDEOS_LIKED_BY_AUTH_USER_SORY_BY_DATE =
+            "request_get_all_videos_liked_by_auth_user_sort_by_date";
+    public static final String REQUEST_GET_ALL_VIDEOS_LIKED_BY_AUTH_USER_SORY_BY_ALPHABETICAL =
+            "request_get_all_videos_liked_by_auth_user_sort_by_alphabetical";
     public static final String REQUEST_GET_ALL_VIDEOS_LIKED_BY_AUTH_USER_SORY_BY_DURATION =
             "request_get_all_videos_liked_by_auth_user_sort_by_duration";
     public static final String REQUEST_GET_ALL_VIDEOS_LIKED_BY_AUTH_USER_SORY_BY_PLAYS =
@@ -320,12 +319,10 @@ public class Constants {
     public static final String REQUEST_GET_ALL_VIDEOS_LIKED_BY_AUTH_USER_SORY_BY_COMMENTS =
             "request_get_all_videos_liked_by_auth_user_sort_by_comments";
 
-    public static final String REQUEST_GET_ALL_VIDEOS_LIKED_BY_SINGLE_USER_SORY_BY_TITLE =
-            "request_get_all_videos_liked_by_single_user_sort_by_title";
-    public static final String REQUEST_GET_ALL_VIDEOS_LIKED_BY_SINGLE_USER_SORY_BY_DATE_MODIFIED =
-            "request_get_all_videos_liked_by_single_user_sort_by_date_modified";
-    public static final String REQUEST_GET_ALL_VIDEOS_LIKED_BY_SINGLE_USER_SORY_BY_DATE_ADDED =
-            "request_get_all_videos_liked_by_single_user_sort_by_date_added";
+    public static final String REQUEST_GET_ALL_VIDEOS_LIKED_BY_SINGLE_USER_SORY_BY_DATE =
+            "request_get_all_videos_liked_by_single_user_sort_by_date";
+    public static final String REQUEST_GET_ALL_VIDEOS_LIKED_BY_SINGLE_USER_SORY_BY_ALPHABETICAL =
+            "request_get_all_videos_liked_by_single_user_sort_by_alphabetical";
     public static final String REQUEST_GET_ALL_VIDEOS_LIKED_BY_SINGLE_USER_SORY_BY_DURATION =
             "request_get_all_videos_liked_by_single_user_sort_by_duration";
     public static final String REQUEST_GET_ALL_VIDEOS_LIKED_BY_SINGLE_USER_SORY_BY_PLAYS =

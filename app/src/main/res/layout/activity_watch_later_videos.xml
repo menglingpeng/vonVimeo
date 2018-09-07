@@ -2,7 +2,7 @@
 <android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/user_likes_cdl"
+    android:id="@+id/user_watch_later_cdl"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.menglingpeng.vonvimeo.mvp.view.activity.UserLikesActivity">
@@ -10,10 +10,10 @@
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context="com.menglingpeng.vonvimeo.mvp.view.activity.UserLikesActivity">
+        tools:context="com.menglingpeng.vonvimeo.mvp.view.activity.WatchLaterVideosActivity">
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/user_likes_tb"
+            android:id="@+id/user_watch_later_tb"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary"
@@ -49,7 +49,7 @@
 
 
             <TextView
-                android:id="@+id/collection_count_tv"
+                android:id="@+id/collections_count_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@+id/likes_count_tv"

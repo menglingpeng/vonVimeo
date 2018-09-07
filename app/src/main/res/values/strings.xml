@@ -52,6 +52,8 @@
     <string name="cancle">关闭</string>
     <string name="ok">确定</string>
 
+    <string name="clear_all">Clear all</string>
+
     <string name="creat_a_album">Create a Album</string>
     <string name="album_name">A Name</string>
     <string name="album_desc">A Description</string>

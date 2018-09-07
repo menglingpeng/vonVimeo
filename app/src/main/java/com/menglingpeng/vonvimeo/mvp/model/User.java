@@ -237,84 +237,124 @@ public class User implements Serializable {
 
         public static class ConnectionsBean {
 
-            private UsersBean users;
-            private VideosBean videos;
+            private AlbumsBean albums;
+            private LikesBean likes;
+            private WatchlaterBean watchlater;
 
-            public UsersBean getUsers() {
-                return users;
+            public void setAlbums(AlbumsBean albums) {
+                this.albums = albums;
             }
 
-            public void setUsers(UsersBean users) {
-                this.users = users;
+            public void setLikes(LikesBean likes) {
+                this.likes = likes;
             }
 
-            public VideosBean getVideos() {
-                return videos;
+            public void setWatchlater(WatchlaterBean watchlater) {
+                this.watchlater = watchlater;
             }
 
-            public void setVideos(VideosBean videos) {
-                this.videos = videos;
+            public AlbumsBean getAlbums() {
+                return albums;
             }
 
-            public static class UsersBean {
+            public LikesBean getLikes() {
+                return likes;
+            }
+
+            public WatchlaterBean getWatchlater() {
+                return watchlater;
+            }
+
+            public static class AlbumsBean {
 
                 private String uri;
                 private int total;
                 private List<String> options;
 
-                public String getUri() {
-                    return uri;
-                }
-
                 public void setUri(String uri) {
                     this.uri = uri;
-                }
-
-                public int getTotal() {
-                    return total;
                 }
 
                 public void setTotal(int total) {
                     this.total = total;
                 }
 
-                public List<String> getOptions() {
-                    return options;
-                }
-
                 public void setOptions(List<String> options) {
                     this.options = options;
                 }
-            }
-
-            public static class VideosBean {
-
-                private String uri;
-                private int total;
-                private List<String> options;
 
                 public String getUri() {
                     return uri;
-                }
-
-                public void setUri(String uri) {
-                    this.uri = uri;
                 }
 
                 public int getTotal() {
                     return total;
                 }
 
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class LikesBean {
+
+                private String uri;
+                private int total;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
                 public void setTotal(int total) {
                     this.total = total;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public int getTotal() {
+                    return total;
                 }
 
                 public List<String> getOptions() {
                     return options;
                 }
+            }
+
+            public static class WatchlaterBean {
+
+                private String uri;
+                private int total;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
 
                 public void setOptions(List<String> options) {
                     this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public int getTotal() {
+                    return total;
+                }
+
+                public List<String> getOptions() {
+                    return options;
                 }
             }
         }

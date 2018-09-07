@@ -3,12 +3,15 @@ package com.menglingpeng.vonvimeo.mvp.view.activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.model.User;
 import com.menglingpeng.vonvimeo.mvp.model.Video;
+import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
 import com.menglingpeng.vonvimeo.utils.Constants;
 
 public class WatchLaterVideosActivity extends BaseActivity {
@@ -19,6 +22,7 @@ public class WatchLaterVideosActivity extends BaseActivity {
     private TextView collectionCountTv;
     private TextView followingCountTv;
     private User user;
+    private String type;
 
     @Override
     protected void initLayoutId() {
@@ -44,5 +48,44 @@ public class WatchLaterVideosActivity extends BaseActivity {
             }
         });
         likesCountTv.setText(user.getMetadata().getInteractions().);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.user_watch_later_toolbar_overflow_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.watch_later_videos_sort_date:
+                type = Constants.REQUEST_GET_ALL_VIDEOS_OF_AUTH_USER_WATCH_LATER_SORY_BY_DATE;
+                replaceFragment(RecyclerFragment.newInstance(type));
+                break;
+            case R.id.watch_later_videos_sort_alphabetical:
+                type = Constants.REQUEST_GET_ALL_VIDEOS_OF_AUTH_USER_WATCH_LATER_SORY_BY_ALPHABETICAL;
+                replaceFragment(RecyclerFragment.newInstance(type));
+                break;
+            case R.id.watch_later_videos_sort_plays:
+                type = Constants.REQUEST_GET_ALL_VIDEOS_OF_AUTH_USER_WATCH_LATER_SORY_BY_PLAYS;
+                replaceFragment(RecyclerFragment.newInstance(type));
+                break;
+            case R.id.watch_later_videos_sort_likes:
+                type = Constants.REQUEST_GET_ALL_VIDEOS_OF_AUTH_USER_WATCH_LATER_SORY_BY_LIKES;
+                replaceFragment(RecyclerFragment.newInstance(type));
+                break;
+            case R.id.watch_later_videos_sort_comments:
+                type = Constants.REQUEST_GET_ALL_VIDEOS_OF_AUTH_USER_WATCH_LATER_SORY_BY_COMMENTS;
+                replaceFragment(RecyclerFragment.newInstance(type));
+                break;
+            case R.id.watch_later_videos_sort_duration:
+                type = Constants.REQUEST_GET_ALL_VIDEOS_OF_AUTH_USER_WATCH_LATER_SORY_BY_DURATION;
+                replaceFragment(RecyclerFragment.newInstance(type));
+                break;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

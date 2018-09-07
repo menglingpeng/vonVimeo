@@ -351,6 +351,19 @@ public class Constants {
 
     public static final String VIEW_TYPE = "view_type";
 
+    public static final String REQUEST_GET_ALL_VIDEOS_OF_AUTH_USER_WATCH_LATER_SORY_BY_DATE =
+            "request_get_all_videos_of_auth_user_watch_later_sort_by_date";
+    public static final String REQUEST_GET_ALL_VIDEOS_OF_AUTH_USER_WATCH_LATER_SORY_BY_ALPHABETICAL =
+            "request_get_all_videos_of_auth_user_watch_later_sort_by_alphabetical";
+    public static final String REQUEST_GET_ALL_VIDEOS_OF_AUTH_USER_WATCH_LATER_SORY_BY_DURATION =
+            "request_get_all_videos_of_auth_user_watch_later_sort_by_duration";
+    public static final String REQUEST_GET_ALL_VIDEOS_OF_AUTH_USER_WATCH_LATER_SORY_BY_PLAYS =
+            "request_get_all_videos_of_auth_user_watch_later_sort_by_plays";
+    public static final String REQUEST_GET_ALL_VIDEOS_OF_AUTH_USER_WATCH_LATER_SORY_BY_LIKES =
+            "request_get_all_videos_of_auth_user_watch_later_sort_by_likes";
+    public static final String REQUEST_GET_ALL_VIDEOS_OF_AUTH_USER_WATCH_LATER_SORY_BY_COMMENTS =
+            "request_get_all_videos_of_auth_user_watch_later_sort_by_comments";
+
     //默认值1
     public static final int PAGE_VALUE = 1;
     //默认值10，最高到100

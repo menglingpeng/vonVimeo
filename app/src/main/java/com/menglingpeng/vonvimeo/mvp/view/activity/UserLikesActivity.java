@@ -82,32 +82,52 @@ public class UserLikesActivity extends BaseActivity implements RecyclerView, Vie
             case R.id.user_likes_remove:
 
                 break;
-            case R.id.uploaded_videos_sort_duration:
-                if(type.equals(Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_AUTH_USER)) {
-                    type = Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_AUTH_USER_SORY_BY_DURATION;
+            case R.id.liked_videos_sort_duration:
+                if(type.indexOf(Constants.REQUEST_AUTH_USER) != -1) {
+                    type = Constants.REQUEST_GET_ALL_VIDEOS_LIKED_BY_AUTH_USER_SORY_BY_DURATION;
                 }else {
-                    type = Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_SINGLE_USER_SORY_BY_DURATION;
+                    type = Constants.REQUEST_GET_ALL_VIDEOS_LIKED_BY_SINGLE_USER_SORY_BY_DURATION;
                 }
                 replaceFragment(RecyclerFragment.newInstance(type));
                 break;
             case R.id.liked_videos_sort_date:
-                type = Constants.REQUEST_GET_ALL_VIDEOS_LIKED_BY_SINGLE_USER_SORY_BY_DATE;
+                if(type.indexOf(Constants.REQUEST_AUTH_USER) != -1) {
+                    type = Constants.REQUEST_GET_ALL_VIDEOS_LIKED_BY_AUTH_USER_SORY_BY_DURATION;
+                }else {
+                    type = Constants.REQUEST_GET_ALL_VIDEOS_LIKED_BY_SINGLE_USER_SORY_BY_DURATION;
+                }
                 replaceFragment(RecyclerFragment.newInstance(type));
                 break;
             case R.id.liked_videos_sort_alphabetical:
-                type = Constants.REQUEST_GET_ALL_VIDEOS_LIKED_BY_SINGLE_USER_SORY_BY_ALPHABETICAL;
+                if(type.indexOf(Constants.REQUEST_AUTH_USER) != -1) {
+                    type = Constants.REQUEST_GET_ALL_VIDEOS_LIKED_BY_AUTH_USER_SORY_BY_ALPHABETICAL;
+                }else {
+                    type = Constants.REQUEST_GET_ALL_VIDEOS_LIKED_BY_SINGLE_USER_SORY_BY_ALPHABETICAL;
+                }
                 replaceFragment(RecyclerFragment.newInstance(type));
                 break;
             case R.id.liked_videos_sort_plays:
-                type = Constants.REQUEST_GET_ALL_VIDEOS_LIKED_BY_SINGLE_USER_SORY_BY_PLAYS;
+                if(type.indexOf(Constants.REQUEST_AUTH_USER) != -1) {
+                    type = Constants.REQUEST_GET_ALL_VIDEOS_LIKED_BY_AUTH_USER_SORY_BY_PLAYS;
+                }else {
+                    type = Constants.REQUEST_GET_ALL_VIDEOS_LIKED_BY_SINGLE_USER_SORY_BY_PLAYS;
+                }
                 replaceFragment(RecyclerFragment.newInstance(type));
                 break;
             case R.id.liked_videos_sort_likes:
-                type = Constants.REQUEST_GET_ALL_VIDEOS_LIKED_BY_SINGLE_USER_SORY_BY_LIKES;
+                if(type.indexOf(Constants.REQUEST_AUTH_USER) != -1) {
+                    type = Constants.REQUEST_GET_ALL_VIDEOS_LIKED_BY_AUTH_USER_SORY_BY_LIKES;
+                }else {
+                    type = Constants.REQUEST_GET_ALL_VIDEOS_LIKED_BY_SINGLE_USER_SORY_BY_LIKES;
+                }
                 replaceFragment(RecyclerFragment.newInstance(type));
                 break;
             case R.id.liked_videos_sort_comments:
-                type = Constants.REQUEST_GET_ALL_VIDEOS_LIKED_BY_SINGLE_USER_SORY_BY_COMMENTS;
+                if(type.indexOf(Constants.REQUEST_AUTH_USER) != -1) {
+                    type = Constants.REQUEST_GET_ALL_VIDEOS_LIKED_BY_AUTH_USER_SORY_BY_COMMENTS;
+                }else {
+                    type = Constants.REQUEST_GET_ALL_VIDEOS_LIKED_BY_SINGLE_USER_SORY_BY_COMMENTS;
+                }
                 replaceFragment(RecyclerFragment.newInstance(type));
                 break;
             default:

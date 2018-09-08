@@ -394,6 +394,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             viewHolder.videoSortTv.setText(sortText);
         }else if(holder instanceof UploadedVideoDetailViewHolder){
 
+
         }else if (holder instanceof LikedVideoTypeThumbViewHolder){
             final LikedVideoTypeThumbViewHolder viewHolder = (LikedVideoTypeThumbViewHolder)holder;
             final Video video = (Video)list.get(position);
@@ -402,6 +403,27 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             viewHolder.likedVideoNameTv.setText(video.getName());
             viewHolder.userNameTv.setText(video.getUser().getName());
             viewHolder.likedTimeTv.setText(video.getModified_time());
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (mListener != null) {
+                        mListener.onRecyclerFragmentListListener(viewHolder, video);
+                    }
+                }
+            });
+        }else if (holder instanceof LikedVideoTypeDetailViewHolder){
+            final LikedVideoTypeDetailViewHolder viewHolder = (LikedVideoTypeDetailViewHolder)holder;
+            final Video video = (Video)list.get(position);
+            String pictureUrl = video.getPictures().getUri();
+            ImageLoader.load(fragment, pictureUrl, viewHolder.likedVideoThumbIv, false);
+            viewHolder.likedVideoNameTv.setText(video.getName());
+            viewHolder.userNameTv.setText(video.getUser().getName());
+            viewHolder.likedTimeTv.setText(video.getModified_time());
+            viewHolder.likedVideoDescTv.setText(video.getDescription());
+            viewHolder.videoDurationTv.setText(video.getDuration());
+            viewHolder.likesCountTv.setText(video.getMetadataBean().getConnections().getLikes().getTotal());
+            viewHolder.commentsCountTv.setText(video.getMetadataBean().getConnections().getComments().getTotal());
+            viewHolder.playsCountTv.setText(video.getStats().getPlays());
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -1113,6 +1135,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         public final TextView playsCountTv;
         public final TextView likesCountTv;
         public final TextView commentsCountTv;
+        public final TextView videoDurationTv;
 
 
         public LikedVideoTypeDetailViewHolder(View view) {
@@ -1126,6 +1149,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             playsCountTv = (TextView)view.findViewById(R.id.detail_view_liked_video_plays_count_i);
             likesCountTv = (TextView)view.findViewById(R.id.detail_view_liked_video_likes_count_i);
             commentsCountTv = (TextView)view.findViewById(R.id.detail_view_liked_video_comments_count_i);
+            videoDurationTv = (TextView)view.findViewById(R.id.detail_view_video_duration_tv);
         }
     }
 

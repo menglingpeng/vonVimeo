@@ -18,7 +18,6 @@ public class User implements Serializable {
     private String account;
     private List<?> websites;
     private List<String> content_filter;
-    private MetadataBean.ConnectionsBean.VideosBean videos;
 
     public PicturesBean getPictures() {
         return pictures;
@@ -123,14 +122,6 @@ public class User implements Serializable {
 
     public void setWebsites(List<?> websites) {
         this.websites = websites;
-    }
-
-    public void setVideos(MetadataBean.ConnectionsBean.VideosBean videos) {
-        this.videos = videos;
-    }
-
-    public MetadataBean.ConnectionsBean.VideosBean getVideos() {
-        return videos;
     }
 
     public static class PicturesBean {

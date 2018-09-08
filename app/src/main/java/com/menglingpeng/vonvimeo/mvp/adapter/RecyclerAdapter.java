@@ -195,7 +195,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         break;
                     case Constants.REQUEST_LIST_ALL_VIDOES_THAT_A_USER_HAS_LIKED:
                         view = inflater.inflate(R.layout.recycler_user_liked_video, parent, false);
-                        viewHolder = new LikedVideoViewHolder(view);
+                        viewHolder = new LikedVideoTypeThumbViewHolder(view);
                         break;
                     case Constants.TAB_GROUP_DETAIL_MEMBERS:
                         view = inflater.inflate(R.layout.group_members_recycler_item, parent, false);
@@ -359,6 +359,30 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         view = inflater.inflate(R.layout.recycler_user_liked_videos_thumb_view_item, parent, false);
                         viewHolder = new LikedVideoTypeThumbViewHolder(view);
                         break;
+                    case Constants.REQUEST_GET_ALL_VIDEOS_OF_AUTH_USER_WATCH_LATER_SORY_BY_DATE:
+                        view = inflater.inflate(R.layout.recycler_user_liked_videos_thumb_view_item, parent, false);
+                        viewHolder = new WatchLaterVideoTypeThumbViewHolder(view);
+                        break;
+                    case Constants.REQUEST_GET_ALL_VIDEOS_OF_AUTH_USER_WATCH_LATER_SORY_BY_ALPHABETICAL:
+                        view = inflater.inflate(R.layout.recycler_user_liked_videos_thumb_view_item, parent, false);
+                        viewHolder = new WatchLaterVideoTypeThumbViewHolder(view);
+                        break;
+                    case Constants.REQUEST_GET_ALL_VIDEOS_OF_AUTH_USER_WATCH_LATER_SORY_BY_PLAYS:
+                        view = inflater.inflate(R.layout.recycler_user_liked_videos_thumb_view_item, parent, false);
+                        viewHolder = new WatchLaterVideoTypeThumbViewHolder(view);
+                        break;
+                    case Constants.REQUEST_GET_ALL_VIDEOS_OF_AUTH_USER_WATCH_LATER_SORY_BY_LIKES:
+                        view = inflater.inflate(R.layout.recycler_user_liked_videos_thumb_view_item, parent, false);
+                        viewHolder = new WatchLaterVideoTypeThumbViewHolder(view);
+                        break;
+                    case Constants.REQUEST_GET_ALL_VIDEOS_OF_AUTH_USER_WATCH_LATER_SORY_BY_COMMENTS:
+                        view = inflater.inflate(R.layout.recycler_user_liked_videos_thumb_view_item, parent, false);
+                        viewHolder = new WatchLaterVideoTypeThumbViewHolder(view);
+                        break;
+                    case Constants.REQUEST_GET_ALL_VIDEOS_OF_AUTH_USER_WATCH_LATER_SORY_BY_DURATION:
+                        view = inflater.inflate(R.layout.recycler_user_liked_videos_thumb_view_item, parent, false);
+                        viewHolder = new WatchLaterVideoTypeThumbViewHolder(view);
+                        break;
                     default:
                         break;
                 }
@@ -392,15 +416,39 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 sortText = String.valueOf(video.getDuration());
             }
             viewHolder.videoSortTv.setText(sortText);
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (mListener != null) {
+                        mListener.onRecyclerFragmentListListener(viewHolder, video);
+                    }
+                }
+            });
         }else if(holder instanceof UploadedVideoDetailViewHolder){
-
+            final UploadedVideoDetailViewHolder viewHolder = (UploadedVideoDetailViewHolder)holder;
+            final Video video = (Video)list.get(position);
+            String url = video.getPictures().getUri();
+            ImageLoader.load(fragment, url, viewHolder.videoThumbIv, false);
+            viewHolder.videoNameTv.setText(video.getName());
+            viewHolder.userNameTv.setText(video.getUser().getName());
+            viewHolder.addedTimeTv.setText(video.getModified_time());
+            viewHolder.videoDescTv.setText(video.getDescription());
+            viewHolder.videoDurationTv.setText(video.getDuration());
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (mListener != null) {
+                        mListener.onRecyclerFragmentListListener(viewHolder, video);
+                    }
+                }
+            });
 
         }else if (holder instanceof LikedVideoTypeThumbViewHolder){
             final LikedVideoTypeThumbViewHolder viewHolder = (LikedVideoTypeThumbViewHolder)holder;
             final Video video = (Video)list.get(position);
             String pictureUrl = video.getPictures().getUri();
-            ImageLoader.load(fragment, pictureUrl, viewHolder.likedVideoThumbIv, false);
-            viewHolder.likedVideoNameTv.setText(video.getName());
+            ImageLoader.load(fragment, pictureUrl, viewHolder.VideoThumbIv, false);
+            viewHolder.VideoNameTv.setText(video.getName());
             viewHolder.userNameTv.setText(video.getUser().getName());
             viewHolder.likedTimeTv.setText(video.getModified_time());
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -414,12 +462,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }else if (holder instanceof LikedVideoTypeDetailViewHolder){
             final LikedVideoTypeDetailViewHolder viewHolder = (LikedVideoTypeDetailViewHolder)holder;
             final Video video = (Video)list.get(position);
-            String pictureUrl = video.getPictures().getUri();
-            ImageLoader.load(fragment, pictureUrl, viewHolder.likedVideoThumbIv, false);
-            viewHolder.likedVideoNameTv.setText(video.getName());
+            String pictureUrl = video.getPictures().getUri();v
+            ImageLoader.load(fragment, pictureUrl, viewHolder.VideoThumbIv, false);
+            viewHolder.VideoNameTv.setText(video.getName());
             viewHolder.userNameTv.setText(video.getUser().getName());
             viewHolder.likedTimeTv.setText(video.getModified_time());
-            viewHolder.likedVideoDescTv.setText(video.getDescription());
+            viewHolder.videoDescTv.setText(video.getDescription());
             viewHolder.videoDurationTv.setText(video.getDuration());
             viewHolder.likesCountTv.setText(video.getMetadataBean().getConnections().getLikes().getTotal());
             viewHolder.commentsCountTv.setText(video.getMetadataBean().getConnections().getComments().getTotal());
@@ -816,14 +864,23 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public class UploadedVideoDetailViewHolder extends RecyclerView.ViewHolder {
         public final ImageView videoThumbIv;
         public final TextView videoNameTv;
-        public final TextView videoSortTv;
+        public final TextView userNameTv;
+        public final TextView addedTimeTv;
+        public final TextView videoDescTv;
+        public final TextView videoDurationTv;
+
+
 
         public UploadedVideoDetailViewHolder(View view) {
             super(view);
 
             videoThumbIv = (ImageView)view.findViewById(R.id.detail_view_uploaded_video_thumb_iv);
-            videoNameTv = (TextView)view.findViewById(R.id.detail_view_uploaded_video_name_tv);
-            videoSortTv = (TextView)view.findViewById(R.id.detail_view_uploaded_video_sort_tv);
+            videoNameTv = (TextView)view.findViewById(R.detail_view_uploaded_view_name_tv);
+            userNameTv = (TextView)view.findViewById(R.id.detail_view_uploaded_video_user_name_tv);
+            addedTimeTv = (TextView)view.findViewById(R.id.detail_view_uploaded_video_added_time_tv);
+            videoDescTv = (TextView)view.findViewById(R.id.detail_view_uploaded_video_desc_tv);
+            videoDurationTv = (TextView)view.findViewById(R.id.detail_view_uploaded_video_duration);
+
         }
     }
 
@@ -1109,8 +1166,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     private class LikedVideoTypeThumbViewHolder extends RecyclerView.ViewHolder {
 
-        public final ImageView likedVideoThumbIv;
-        public final TextView likedVideoNameTv;
+        public final ImageView VideoThumbIv;
+        public final TextView VideoNameTv;
         public final TextView userNameTv;
         public final TextView likedTimeTv;
 
@@ -1118,20 +1175,66 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         public LikedVideoTypeThumbViewHolder(View view) {
             super(view);
 
-            likedVideoThumbIv = (ImageView)view.findViewById(R.id.like_video_thumb_iv);
-            likedVideoNameTv = (TextView)view.findViewById(R.id.like_video_name_tv)
+            VideoThumbIv = (ImageView)view.findViewById(R.id.like_video_thumb_iv);
+            VideoNameTv = (TextView)view.findViewById(R.id.like_video_name_tv)
             userNameTv = (TextView)view.findViewById(R.id.like_video_user_name_tv);
             likedTimeTv = (TextView)view.findViewById(R.id.like_video_time_tv);
         }
     }
 
+    private class WatchLaterVideoTypeDetailViewHolder extends RecyclerView.ViewHolder {
+
+        public final ImageView VideoThumbIv;
+        public final TextView VideoNameTv;
+        public final TextView userNameTv;
+        public final TextView addedTimeTv;
+        public final TextView videoDescTv;
+        public final TextView playsCountTv;
+        public final TextView likesCountTv;
+        public final TextView commentsCountTv;
+        public final TextView videoDurationTv;
+
+
+        public WatchLaterVideoTypeDetailViewHolder(View view) {
+            super(view);
+
+            VideoThumbIv = (ImageView)view.findViewById(R.id.detail_view_liked_video_thumb_iv);
+            VideoNameTv = (TextView)view.findViewById(R.id.detail_view_liked_video_name_tv);
+            userNameTv = (TextView)view.findViewById(R.id.detail_view_liked_video_user_name_tv);
+            addedTimeTv = (TextView)view.findViewById(R.detail_view_liked_video_added_time_tv);
+            videoDescTv = (TextView)view.findViewById(R.id.detail_view_liked_video_desc_tv);
+            playsCountTv = (TextView)view.findViewById(R.id.detail_view_liked_video_plays_count_i);
+            likesCountTv = (TextView)view.findViewById(R.id.detail_view_liked_video_likes_count_i);
+            commentsCountTv = (TextView)view.findViewById(R.id.detail_view_liked_video_comments_count_i);
+            videoDurationTv = (TextView)view.findViewById(R.id.detail_view_video_duration_tv);
+        }
+    }
+
+    private class WatchLaterVideoTypeThumbViewHolder extends RecyclerView.ViewHolder {
+
+        public final ImageView VideoThumbIv;
+        public final TextView VideoNameTv;
+        public final TextView userNameTv;
+        public final TextView addedTimeTv;
+
+
+        public WatchLaterVideoTypeThumbViewHolder(View view) {
+            super(view);
+
+            VideoThumbIv = (ImageView)view.findViewById(R.id.like_video_thumb_iv);
+            VideoNameTv = (TextView)view.findViewById(R.id.like_video_name_tv)
+            userNameTv = (TextView)view.findViewById(R.id.like_video_user_name_tv);
+            addedTimeTv = (TextView)view.findViewById(R.id.like_video_time_tv);
+        }
+    }
+
     private class LikedVideoTypeDetailViewHolder extends RecyclerView.ViewHolder {
 
-        public final ImageView likedVideoThumbIv;
-        public final TextView likedVideoNameTv;
+        public final ImageView VideoThumbIv;
+        public final TextView VideoNameTv;
         public final TextView userNameTv;
         public final TextView likedTimeTv;
-        public final TextView likedVideoDescTv;
+        public final TextView videoDescTv;
         public final TextView playsCountTv;
         public final TextView likesCountTv;
         public final TextView commentsCountTv;
@@ -1141,11 +1244,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         public LikedVideoTypeDetailViewHolder(View view) {
             super(view);
 
-            likedVideoThumbIv = (ImageView)view.findViewById(R.id.detail_view_liked_video_thumb_iv);
-            likedVideoNameTv = (TextView)view.findViewById(R.id.detail_view_liked_video_name_tv);
+            VideoThumbIv = (ImageView)view.findViewById(R.id.detail_view_liked_video_thumb_iv);
+            VideoNameTv = (TextView)view.findViewById(R.id.detail_view_liked_video_name_tv);
             userNameTv = (TextView)view.findViewById(R.id.detail_view_liked_video_user_name_tv);
             likedTimeTv = (TextView)view.findViewById(R.detail_view_liked_video_added_time_tv);
-            likedVideoDescTv = (TextView)view.findViewById(R.id.detail_view_liked_video_desc_tv);
+            videoDescTv = (TextView)view.findViewById(R.id.detail_view_liked_video_desc_tv);
             playsCountTv = (TextView)view.findViewById(R.id.detail_view_liked_video_plays_count_i);
             likesCountTv = (TextView)view.findViewById(R.id.detail_view_liked_video_likes_count_i);
             commentsCountTv = (TextView)view.findViewById(R.id.detail_view_liked_video_comments_count_i);

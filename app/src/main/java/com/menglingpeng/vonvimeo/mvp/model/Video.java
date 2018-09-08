@@ -376,6 +376,10 @@ public class Video implements Serializable{
 
             private CommentsBean comments;
             private LikesBean likes;
+            private PicturesBean pictures;
+            private TexttracksBean texttracks;
+            private Object related;
+            private RecommendationsBean recommendations;
 
             public void setComments(CommentsBean comments) {
                 this.comments = comments;
@@ -391,6 +395,38 @@ public class Video implements Serializable{
 
             public LikesBean getLikes() {
                 return likes;
+            }
+
+            public void setPictures(PicturesBean pictures) {
+                this.pictures = pictures;
+            }
+
+            public void setTexttracks(TexttracksBean texttracks) {
+                this.texttracks = texttracks;
+            }
+
+            public void setRelated(Object related) {
+                this.related = related;
+            }
+
+            public void setRecommendations(RecommendationsBean recommendations) {
+                this.recommendations = recommendations;
+            }
+
+            public PicturesBean getPictures() {
+                return pictures;
+            }
+
+            public TexttracksBean getTexttracks() {
+                return texttracks;
+            }
+
+            public Object getRelated() {
+                return related;
+            }
+
+            public RecommendationsBean getRecommendations() {
+                return recommendations;
             }
 
             public static class CommentsBean {
@@ -448,6 +484,90 @@ public class Video implements Serializable{
 
                 public int getTotal() {
                     return total;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class PicturesBean {
+
+                private String uri;
+                private int total;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public int getTotal() {
+                    return total;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class TexttracksBean {
+
+                private String uri;
+                private int total;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public int getTotal() {
+                    return total;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class RecommendationsBean {
+
+                private String uri;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
                 }
 
                 public List<String> getOptions() {

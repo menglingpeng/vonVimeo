@@ -231,6 +231,9 @@ public class User implements Serializable {
             private AlbumsBean albums;
             private LikesBean likes;
             private WatchlaterBean watchlater;
+            private ChannelsBean channels;
+            private GroupsBean groups;
+            private FollowingBean following;
 
             public void setAlbums(AlbumsBean albums) {
                 this.albums = albums;
@@ -254,6 +257,30 @@ public class User implements Serializable {
 
             public WatchlaterBean getWatchlater() {
                 return watchlater;
+            }
+
+            public void setChannels(ChannelsBean channels) {
+                this.channels = channels;
+            }
+
+            public ChannelsBean getChannels() {
+                return channels;
+            }
+
+            public GroupsBean getGroups() {
+                return groups;
+            }
+
+            public void setGroups(GroupsBean groups) {
+                this.groups = groups;
+            }
+
+            public void setFollowing(FollowingBean following) {
+                this.following = following;
+            }
+
+            public FollowingBean getFollowing() {
+                return following;
             }
 
             public static class AlbumsBean {
@@ -348,6 +375,99 @@ public class User implements Serializable {
                     return options;
                 }
             }
+
+            public static class ChannelsBean {
+
+                private String uri;
+                private int total;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public int getTotal() {
+                    return total;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+        }
+
+        public static class GroupsBean {
+
+            private String uri;
+            private int total;
+            private List<String> options;
+
+            public void setUri(String uri) {
+                this.uri = uri;
+            }
+
+            public void setTotal(int total) {
+                this.total = total;
+            }
+
+            public void setOptions(List<String> options) {
+                this.options = options;
+            }
+
+            public String getUri() {
+                return uri;
+            }
+
+            public int getTotal() {
+                return total;
+            }
+
+            public List<String> getOptions() {
+                return options;
+            }
+        }
+
+        public static class FollowingBean {
+
+            private String uri;
+            private int total;
+            private List<String> options;
+
+            public void setUri(String uri) {
+                this.uri = uri;
+            }
+
+            public void setTotal(int total) {
+                this.total = total;
+            }
+
+            public void setOptions(List<String> options) {
+                this.options = options;
+            }
+
+            public String getUri() {
+                return uri;
+            }
+
+            public int getTotal() {
+                return total;
+            }
+
+            public List<String> getOptions() {
+                return options;
+            }
         }
 
         public static class InteractionsBean {
@@ -402,6 +522,8 @@ public class User implements Serializable {
                 }
             }
         }
+
+
     }
 
     public static class PreferencesBean{

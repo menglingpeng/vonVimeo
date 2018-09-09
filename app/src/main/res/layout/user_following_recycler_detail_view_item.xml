@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/detail_view_following_rl"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/detail_view_following_avatar_iv"
+        android:layout_width="@dimen/feed_following_avatar_iv_layout_width_height"
+        android:layout_height="@dimen/feed_following_avatar_iv_layout_width_height"
+        android:layout_marginLeft="@dimen/feed_following_avatar_iv_layout_margin_top_left"
+        android:layout_marginTop="@dimen/feed_following_avatar_iv_layout_margin_top_left" />
+
+    <TextView
+        android:id="@+id/detail_view_following_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/detail_view_following_avatar_iv"
+        android:layout_marginLeft="@dimen/profile_tablayout_followers_name_tv_layout_marginLeft"
+        android:layout_toRightOf="@+id/detail_view_following_avatar_iv"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+    <TextView
+        android:id="@+id/detail_view_following_time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/detail_view_following_name_tv"
+        android:layout_below="@+id/detail_view_following_name_tv"
+        android:layout_marginTop="@dimen/profile_tablayout_followers_location_tv_layout_marginTop" />
+
+    <TextView
+        android:id="@+id/detail_view_following_user_status_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/detail_view_following_time_tv"
+        android:layout_alignTop="@+id/detail_view_following_time_tv"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:id="@+id/detail_view_following_user_bio_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/detail_view_following_user_status_tv"
+        android:layout_alignLeft="@+id/detail_view_following_user_status_tv"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="15dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/user_albums_recycler_item_view_layout_height"
+        android:layout_below="@+id/detail_view_following_time_tv"
+        android:background="@color/recycler_item_view_background"></View>
+
+</RelativeLayout>

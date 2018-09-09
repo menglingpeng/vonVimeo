@@ -158,6 +158,10 @@ public class Constants {
     public static final String REQUEST_LIST_PROJECTS_FOR_AUTH_USER = "list_projects_for_auth_user";
     public static final String REQUEST_LIST_FOLLOWERS_FOR_AUTH_USER = "list_followers_for_auth_user";
     public static final String REQUEST_LIST_FOLLOWING_FOR_AUTH_USER = "list_following_for_auth_user";
+    public static final String REQUEST_LIST_FOLLOWERS_FOR_AUTH_USER_IN_THUMB_VIEW =
+            "list_followers_for_auth_user_in_thumb_view";
+    public static final String REQUEST_LIST_FOLLOWING_FOR_AUTH_USER_IN_DETAIL_VIEW =
+            "list_following_for_auth_user_in_detail_view";
     public static final String REQUEST_LIST_ONLINE_FOLLOWING_FOR_AUTH_USER = "list_online_following_for_auth_user";
     public static final String REQUEST_LIST_SUGGESTED_FOR_AUTH_USER = "list_suggested_for_auth_user";
     public static final String REQUEST_LIST_DETAIL_FOR_A_USER = "list_detail_for_a_user";
@@ -165,6 +169,10 @@ public class Constants {
     public static final String REQUEST_LIST_PROJECTS_FOR_A_USER = "list_projects_for_a_user";
     public static final String REQUEST_LIST_FOLLOWERS_FOR_A_USER = "list_followers_for_a_user";
     public static final String REQUEST_LIST_FOLLOWING_FOR_A_USER = "list_following_for_a_user";
+    public static final String REQUEST_LIST_FOLLOWERS_FOR_A_USER_IN_THUMB_VIEW =
+            "list_followers_for_a_user_in_thumb_view";
+    public static final String REQUEST_LIST_FOLLOWING_FOR_A_USER_IN_DETAIL_VIEW =
+            "list_following_for_a_user_in_detail_view";
     public static final String REQUEST_LIST_ONLINE_FOLLOWING_FOR_A_USER = "list_online_following_for_a_user";
     public static final String REQUEST_LIST_SUGGESTED_FOR_A_USER = "list_suggested_for_a_user";
     public static final String CHECK_IF_YOU_ARE_FOLLOWING_A_USER = "check_if_you_are_following_a_user";

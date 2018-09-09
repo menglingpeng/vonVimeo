@@ -608,33 +608,38 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     }
                 }
             });
-        }else if(holder instanceof FollowOfUserViewHolder){
-            final FollowOfUserViewHolder viewHolder = (FollowOfUserViewHolder) holder;
-            User user;
-            if (type.indexOf(Constants.FOLLOWING) != -1) {
-                final Following following = (Following) list.get(position);
-                user = following.getFollowee();
-            } else {
-                final Follower follower = (Follower) list.get(position);
-                user = follower.getFollower();
-            }
-            final User userFollow = user;
-            ImageLoader.loadCricleImage(context, userFollow.getAvatar_url(), viewHolder.followerAvatarIv);
-            viewHolder.followerNameTv.setText(userFollow.getName());
-            viewHolder.followerLocationTv.setText(userFollow.getLocation());
-            viewHolder.followerShotsCountTv.setText(TextUtil.setBeforeBold(String.valueOf(userFollow.getShots_count()
-            ), context.getString(R.string.explore_spinner_list_shots)));
-            viewHolder.followersOfFollowerCountTv.setText(TextUtil.setBeforeBold(String.valueOf(userFollow
-                    .getFollowers_count()), context.getText(R.string.followers).toString()));
-            viewHolder.followerRl.setOnClickListener(new View.OnClickListener() {
+        }else if(holder instanceof FollowOfUserThumbTypeViewHolder){
+            final FollowOfUserThumbTypeViewHolder viewHolder = (FollowOfUserThumbTypeViewHolder) holder;
+            final User user = (User)list.get(position);
+            ImageLoader.loadCricleImage(context, user.getPictures().getUri(), viewHolder.userAvatarIv);
+            viewHolder.userNameTv.setText(user.getName());
+            viewHolder.addedTimeTv.setText(user.getMetadata().getInteractions().getFollow().getAdded_time().toString());
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     if (mListener != null) {
-                        mListener.onRecyclerFragmentListListener(viewHolder, String.valueOf(userFollow.getId()));
+                        mListener.onRecyclerFragmentListListener(viewHolder, user);
                     }
                 }
             });
-        }else if (holder instanceof ProjectViewHolder){
+        }else if(holder instanceof FollowOfUserDetailTypeViewHolder) {
+            final FollowOfUserDetailTypeViewHolder viewHolder = (FollowOfUserDetailTypeViewHolder) holder;
+            final User user = (User) list.get(position);
+            ImageLoader.loadCricleImage(context, user.getPictures().getUri(), viewHolder.userAvatarIv);
+            viewHolder.userNameTv.setText(user.getName());
+            viewHolder.addedTimeTv.setText(user.getMetadata().getInteractions().getFollow().getAdded_time().toString());
+            viewHolder.userBioTv.setText(user.getBio().toString());
+            viewHolder.userStatusTv.setText();
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mListener != null) {
+                        mListener.onRecyclerFragmentListListener(viewHolder, user);
+                    }
+                }
+            });
+        }
+        else if (holder instanceof ProjectViewHolder){
             final ProjectViewHolder viewHolder = (ProjectViewHolder)holder;
             final Project project = (Project)list.get(position);
             viewHolder.projectNameTv.setText(project.getName());
@@ -1123,23 +1128,39 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
-    public class FollowOfUserViewHolder extends RecyclerView.ViewHolder {
+    public class FollowOfUserThumbTypeViewHolder extends RecyclerView.ViewHolder {
         public final RelativeLayout followerRl;
-        public final ImageView followerAvatarIv;
-        public final TextView followerNameTv;
-        public final TextView followerLocationTv;
-        public final TextView followerShotsCountTv;
-        public final TextView followersOfFollowerCountTv;
+        public final ImageView userAvatarIv;
+        public final TextView userNameTv;
+        public final TextView addedTimeTv;
 
-        public FollowOfUserViewHolder(View view) {
+        public FollowOfUserThumbTypeViewHolder(View view) {
             super(view);
-            followerRl = (RelativeLayout) view.findViewById(R.id.profile_tablayout_follow_rl);
-            followerAvatarIv = (ImageView) view.findViewById(R.id.profile_tablayout_follow_avatar_iv);
-            followerLocationTv = (TextView) view.findViewById(R.id.profile_tablayout_follow_location_tv);
-            followerNameTv = (TextView) view.findViewById(R.id.profile_tablayout_follow_name_tv);
-            followerShotsCountTv = (TextView) view.findViewById(R.id.profile_tablayout_follow_shots_count_tv);
-            followersOfFollowerCountTv = (TextView) view.findViewById(R.id
-                    .profile_tablayout_followers_of_follow_count_tv);
+            followerRl = (RelativeLayout) view.findViewById(R.id.thumb_view__following_rl);
+            userAvatarIv = (ImageView) view.findViewById(R.id.thumb_view_following_avatar_iv);
+            addedTimeTv = (TextView) view.findViewById(R.id.thumb_view_following_time_tv);
+            userNameTv = (TextView) view.findViewById(R.id.thumb_view_following_name_tv);
+
+        }
+    }
+
+    public class FollowOfUserDetailTypeViewHolder extends RecyclerView.ViewHolder {
+        public final RelativeLayout followerRl;
+        public final ImageView userAvatarIv;
+        public final TextView userNameTv;
+        public final TextView addedTimeTv;
+        public final TextView userStatusTv;
+        public final TextView userBioTv;
+
+        public FollowOfUserDetailTypeViewHolder(View view) {
+            super(view);
+            followerRl = (RelativeLayout) view.findViewById(R.id.detail_view__following_rl);
+            userAvatarIv = (ImageView) view.findViewById(R.id.detail_view_following_avatar_iv);
+            addedTimeTv = (TextView) view.findViewById(R.id.detail_view_following_time_tv);
+            userNameTv = (TextView) view.findViewById(R.id.detail_view_following_name_tv);
+            userStatusTv = (TextView)view.findViewById(R.id.detail_view_following_user_status_tv);
+            userBioTv = (TextView)view.findViewById(R.id.detail_view_following_user_bio_tv);
+
         }
     }
 

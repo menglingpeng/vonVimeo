@@ -168,10 +168,16 @@ public class UserFollowingActivity extends BaseActivity implements RecyclerView,
     private void initTabFragments() {
 
         ArrayList<String> titlesList = new ArrayList<>();
-        titlesList.add(getText(R.string.following).toString());
-        titlesList.add(getText(R.string.online).toString());
-        titlesList.add(getText(R.string.followers).toString());
-        titlesList.add(getText(R.string.suggested).toString());
+        if (type.equals(Constants.REQUEST_AUTH_USER)) {
+            titlesList.add(getText(R.string.following).toString());
+            titlesList.add(getText(R.string.online).toString());
+            titlesList.add(getText(R.string.followers).toString());
+            titlesList.add(getText(R.string.suggested).toString());
+        }else {
+            titlesList.add(getText(R.string.following).toString());
+            titlesList.add(getText(R.string.online).toString());
+            titlesList.add(getText(R.string.followers).toString());
+        }
         if (type.equals(Constants.REQUEST_AUTH_USER)) {
             fragments.add(RecyclerFragment.newInstance(user, Constants.REQUEST_LIST_FOLLOWING_FOR_AUTH_USER));
             fragments.add(RecyclerFragment.newInstance(user, Constants.REQUEST_LIST_ONLINE_FOLLOWING_FOR_AUTH_USER));

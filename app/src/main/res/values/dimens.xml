@@ -124,4 +124,9 @@
     <dimen name="dialog_send_a_message_user_picture_iv_layout_marginLeft">20dp</dimen>
     <dimen name="dialog_send_a_message_et_layout_marginTop">10dp</dimen>
     <dimen name="dialog_send_a_message_et_layout_marginBottom">15dp</dimen>
+
+    <dimen name="detail_view_following_user_status_tv_layout_marginLeft">10dp</dimen>
+    <dimen name="detail_view_following_user_bio_tv_layout_marginTop">10dp</dimen>
+    <dimen name="detail_view_following_user_bio_tv_layout_marginBottom">15dp</dimen>
+    <dimen name="detail_view_following_spacer_tv_layout_marginLeft">5dp</dimen>
 </resources>

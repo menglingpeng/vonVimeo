@@ -19,6 +19,23 @@
         android:layout_marginLeft="@dimen/profile_tablayout_followers_name_tv_layout_marginLeft"
         android:layout_toRightOf="@+id/detail_view_following_avatar_iv"
         android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+    
+    <Button
+        android:id="@+id/detail_view_following_user_privilege_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/detail_view_following_name_tv"
+        android:layout_alignTop="@+id/detail_view_following_name_tv"
+        android:layout_marginLeft="5dp"
+        android:textColor="@color/colorAccent"/>
+
+    <TextView
+        android:id="@+id/detail_view_following_location_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/detail_view_following_user_privilege_bt"
+        android:layout_alignTop="@+id/detail_view_following_user_privilege_bt"
+        android:layout_marginLeft="15dp"/>
 
     <TextView
         android:id="@+id/detail_view_following_time_tv"
@@ -34,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/detail_view_following_time_tv"
         android:layout_alignTop="@+id/detail_view_following_time_tv"
-        android:layout_marginLeft="10dp"/>
+        android:layout_marginLeft="@dimen/detail_view_following_user_status_tv_layout_marginLeft"/>
 
     <TextView
         android:id="@+id/detail_view_following_user_bio_tv"
@@ -42,8 +59,98 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/detail_view_following_user_status_tv"
         android:layout_alignLeft="@+id/detail_view_following_user_status_tv"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="15dp"/>
+        android:layout_marginTop="@dimen/detail_view_following_user_bio_tv_layout_marginTop"
+        android:layout_marginBottom="@dimen/detail_view_following_user_bio_tv_layout_marginBottom"/>
+
+    <TextView
+        android:id="@+id/detail_view_following_videos_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/detail_view_following_user_bio_tv"
+        android:layout_alignLeft="@+id/detail_view_following_user_bio_tv"
+        android:text="@string/videos"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:clickable="true"/>
+
+    <TextView
+        android:id="@+id/detail_view_following_spacer_1_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/detail_view_following_videos_tv"
+        android:layout_alignTop="@+id/detail_view_following_videos_tv"
+        android:layout_marginLeft="@dimen/detail_view_following_spacer_tv_layout_marginLeft"
+        android:text="/"/>
+
+    <TextView
+        android:id="@+id/detail_view_following_albums_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/detail_view_following_spacer_1_tv"
+        android:layout_alignTop="@+id/detail_view_following_videos_tv"
+        android:layout_marginLeft="@dimen/detail_view_following_spacer_tv_layout_marginLeft"
+        android:text="@string/albums"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:clickable="true"/>
+
+    <TextView
+        android:id="@+id/detail_view_following_spacer_2_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/detail_view_following_albums_tv"
+        android:layout_alignTop="@+id/detail_view_following_videos_tv"
+        android:layout_marginLeft="@dimen/detail_view_following_spacer_tv_layout_marginLeft"
+        android:text="/"/>
+
+    <TextView
+        android:id="@+id/detail_view_following_channels_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/detail_view_following_spacer_2_tv"
+        android:layout_alignTop="@+id/detail_view_following_videos_tv"
+        android:layout_marginLeft="@dimen/detail_view_following_spacer_tv_layout_marginLeft"
+        android:text="@string/channels"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:clickable="true"/>
+
+    <TextView
+        android:id="@+id/detail_view_following_spacer_3_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/detail_view_following_channels_tv"
+        android:layout_alignTop="@+id/detail_view_following_videos_tv"
+        android:layout_marginLeft="@dimen/detail_view_following_spacer_tv_layout_marginLeft"
+        android:text="/"/>
+
+    <TextView
+        android:id="@+id/detail_view_following_groups_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/detail_view_following_spacer_3_tv"
+        android:layout_alignTop="@+id/detail_view_following_videos_tv"
+        android:layout_marginLeft="@dimen/detail_view_following_spacer_tv_layout_marginLeft"
+        android:text="@string/groups"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:clickable="true"/>
+
+    <TextView
+        android:id="@+id/detail_view_following_spacer_4_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/detail_view_following_groups_tv"
+        android:layout_alignTop="@+id/detail_view_following_videos_tv"
+        android:layout_marginLeft="@dimen/detail_view_following_spacer_tv_layout_marginLeft"
+        android:text="/"/>
+
+    <TextView
+        android:id="@+id/detail_view_following_following_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/detail_view_following_spacer_4_tv"
+        android:layout_alignTop="@+id/detail_view_following_videos_tv"
+        android:layout_marginLeft="@dimen/detail_view_following_spacer_tv_layout_marginLeft"
+        android:text="@string/groups"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:clickable="true"/>
 
     <View
         android:layout_width="match_parent"

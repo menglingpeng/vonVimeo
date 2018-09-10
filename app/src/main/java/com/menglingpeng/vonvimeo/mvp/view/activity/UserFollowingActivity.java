@@ -128,6 +128,8 @@ public class UserFollowingActivity extends BaseActivity implements RecyclerView,
     }
 
     private void initTabPager() {
+        tabLayout = (TabLayout)findViewById(R.id.following_tl);
+        viewPager = (ViewPager)findViewById(R.id.following_vp);
         adapter = new TabPagerFragmentAdapter(getSupportFragmentManager());
         initTabFragments();
         viewPager.setAdapter(adapter);
@@ -187,7 +189,6 @@ public class UserFollowingActivity extends BaseActivity implements RecyclerView,
             fragments.add(RecyclerFragment.newInstance(user, Constants.REQUEST_LIST_FOLLOWING_FOR_A_USER));
             fragments.add(RecyclerFragment.newInstance(user, Constants.REQUEST_LIST_ONLINE_FOLLOWING_FOR_A_USER));
             fragments.add(RecyclerFragment.newInstance(Constants.REQUEST_LIST_FOLLOWERS_FOR_A_USER));
-            fragments.add(RecyclerFragment.newInstance(Constants.REQUEST_LIST_SUGGESTED_FOR_A_USER));
         }
         adapter.setFragments(fragments, titlesList);
     }

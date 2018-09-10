@@ -16,6 +16,8 @@
     <string name="videos">视频</string>
     <string name="channels">频道</string>
     <string name="groups">群组</string>
+    <string name="albums">Albums</string>
+
 
     <string name="expore_spinner_manage_myvideos">My videos</string>
     <string name="expore_spinner_manage_viewstats">View stats</string>

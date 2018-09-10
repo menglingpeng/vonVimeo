@@ -238,6 +238,13 @@ public class User implements Serializable {
             private WatchedVideosBean watched_videos;
             private AppearancesBean appearances;
             private FeedBean feed;
+            /**
+             * moderated_channels : {"uri":"/users/86476471/channels?filter=moderated","options":["GET"],"total":0}
+             * portfolios : {"uri":"/users/86476471/portfolios","options":["GET"],"total":0}
+             */
+
+            private ModeratedChannelsBean moderated_channels;
+            private PortfoliosBean portfolios;
 
             public void setAlbums(AlbumsBean albums) {
                 this.albums = albums;
@@ -317,6 +324,22 @@ public class User implements Serializable {
 
             public FeedBean getFeed() {
                 return feed;
+            }
+
+            public void setModerated_channels(ModeratedChannelsBean moderated_channels) {
+                this.moderated_channels = moderated_channels;
+            }
+
+            public void setPortfolios(PortfoliosBean portfolios) {
+                this.portfolios = portfolios;
+            }
+
+            public ModeratedChannelsBean getModerated_channels() {
+                return moderated_channels;
+            }
+
+            public PortfoliosBean getPortfolios() {
+                return portfolios;
             }
 
 
@@ -552,6 +575,68 @@ public class User implements Serializable {
 
                 public String getUri() {
                     return uri;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class ModeratedChannelsBean {
+
+                private String uri;
+                private int total;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public int getTotal() {
+                    return total;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class PortfoliosBean {
+
+                private String uri;
+                private int total;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public int getTotal() {
+                    return total;
                 }
 
                 public List<String> getOptions() {

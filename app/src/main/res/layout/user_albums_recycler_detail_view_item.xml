@@ -62,27 +62,26 @@
                 android:layout_alignTop="@+id/detail_view_album_by_user_name_tv"/>
 
             <TextView
+                android:id="@+id/album_created_time_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/detail_view_album_user_name_tv"
+                android:layout_alignTop="@+id/detail_view_album_user_name_tv"
+                android:layout_marginLeft="5dp"/>
+
+            <TextView
                 android:id="@+id/album_videos_count_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"/>
 
             <TextView
-                android:id="@+id/album_spacer_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/album_videos_count_tv"
-                android:layout_alignTop="@+id/album_videos_count_tv"
-                android:layout_marginLeft="@dimen/detail_view_following_spacer_tv_layout_marginLeft"
-                android:layout_marginRight="@dimen/detail_view_following_spacer_tv_layout_marginLeft"
-                android:text="/"/>
-
-            <TextView
                 android:id="@+id/album_vodeo_duration_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/album_spacer_tv"
+                android:layout_toRightOf="@+id/album_videos_count_tv"
                 android:layout_alignTop="@+id/album_videos_count_tv"/>
+
 
         </RelativeLayout>
 

@@ -980,16 +980,35 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
-    public class AlbumViewHolder extends RecyclerView.ViewHolder {
+    public class AlbumViewThumbViewHolder extends RecyclerView.ViewHolder {
         public final RelativeLayout albumRl;
         public final TextView albumNameTv;
         public final TextView albumVideosCountTv;
 
-        public AlbumViewHolder(View view) {
+        public AlbumViewThumbViewHolder(View view) {
             super(view);
             albumRl = (RelativeLayout) view.findViewById(R.id.album_rl);
             albumNameTv = (TextView) view.findViewById(R.id.album_name_tv);
             albumVideosCountTv = (TextView) view.findViewById(R.id.album_videos_count_tv);
+        }
+    }
+
+    public class AlbumViewDetailViewHolder extends RecyclerView.ViewHolder {
+        public final RelativeLayout albumRl;
+        public final TextView albumNameTv;
+        public final TextView albumVideosCountTv;
+        public final TextView albumUserNameTv;
+        public final TextView albumCreatedTimeTv;
+        public final TextView albumDurationTv;
+
+        public AlbumViewDetailViewHolder(View view) {
+            super(view);
+            albumRl = (RelativeLayout) view.findViewById(R.id.detai_view_album_rl);
+            albumNameTv = (TextView) view.findViewById(R.id.detai_view_album_name_tv);
+            albumVideosCountTv = (TextView) view.findViewById(R.id.detai_view_album_videos_count_tv);
+            albumUserNameTv = (TextView)view.findViewById(R.id.detail_view_album_user_name_tv);
+            albumCreatedTimeTv = (TextView)view.findViewById(R.id.);
+            albumDurationTv = (TextView)view.findViewById(R.id.album_vodeo_duration_tv)
         }
     }
 

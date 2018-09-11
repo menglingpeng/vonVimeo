@@ -238,13 +238,10 @@ public class User implements Serializable {
             private WatchedVideosBean watched_videos;
             private AppearancesBean appearances;
             private FeedBean feed;
-            /**
-             * moderated_channels : {"uri":"/users/86476471/channels?filter=moderated","options":["GET"],"total":0}
-             * portfolios : {"uri":"/users/86476471/portfolios","options":["GET"],"total":0}
-             */
-
             private ModeratedChannelsBean moderated_channels;
             private PortfoliosBean portfolios;
+            private SharedBean shared;
+            private PicturesBean pictures;
 
             public void setAlbums(AlbumsBean albums) {
                 this.albums = albums;
@@ -340,6 +337,22 @@ public class User implements Serializable {
 
             public PortfoliosBean getPortfolios() {
                 return portfolios;
+            }
+
+            public void setShared(SharedBean shared) {
+                this.shared = shared;
+            }
+
+            public void setPictures(PicturesBean pictures) {
+                this.pictures = pictures;
+            }
+
+            public SharedBean getShared() {
+                return shared;
+            }
+
+            public PicturesBean getPictures() {
+                return pictures;
             }
 
 
@@ -614,6 +627,68 @@ public class User implements Serializable {
             }
 
             public static class PortfoliosBean {
+
+                private String uri;
+                private int total;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public int getTotal() {
+                    return total;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class SharedBean {
+
+                private String uri;
+                private int total;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public int getTotal() {
+                    return total;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class PicturesBean {
 
                 private String uri;
                 private int total;

@@ -5,12 +5,12 @@
     android:id="@+id/user_about_cdl"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.menglingpeng.vonvimeo.mvp.view.UserAlbumActivity">
+    tools:context="com.menglingpeng.vonvimeo.mvp.view.UserAlbumsActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context="com.menglingpeng.vonvimeo.mvp.view.UserAlbumActivity">
+        tools:context="com.menglingpeng.vonvimeo.mvp.view.UserAlbumsActivity">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/user_about_tb"

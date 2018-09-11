@@ -1,14 +1,8 @@
 package com.menglingpeng.vonvimeo.mvp.view.activity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.TabLayout;
-import android.support.design.widget.TextInputEditText;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -20,15 +14,10 @@ import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.adapter.TabPagerFragmentAdapter;
 import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
 import com.menglingpeng.vonvimeo.mvp.model.User;
-import com.menglingpeng.vonvimeo.mvp.presenter.RecyclerPresenter;
 import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
-import com.menglingpeng.vonvimeo.mvp.view.UserAlbumActivity;
 import com.menglingpeng.vonvimeo.utils.Constants;
-import com.menglingpeng.vonvimeo.utils.SharedPrefUtils;
-import com.menglingpeng.vonvimeo.utils.SnackbarUtils;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class UserFollowingActivity extends BaseActivity implements RecyclerView, View.OnClickListener{

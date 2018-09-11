@@ -140,6 +140,14 @@ public class Constants {
     public static final String REQUEST_LIST_GROUPS = "request_list_groups";
 
     public static final String REQUEST_LIST_USER_FEED_VIDEOS = "request_list_user_feed_videos";
+    public static final String REQUEST_LIST_ALL_ALBUMS_OF_A_USER_SORT_BY_DATE =
+            "request_list_all_albums_of_a_user_sort_by_date";
+    public static final String REQUEST_LIST_ALL_ALBUMS_OF_A_USER_SORT_BY_ALPHABETICAL =
+            "request_list_all_albums_of_a_user_sort_by_alphabetical";
+    public static final String REQUEST_LIST_ALL_ALBUMS_OF_A_USER_SORT_BY_VIDEOS =
+            "request_list_all_albums_of_a_user_sort_by_videos";
+    public static final String REQUEST_LIST_ALL_ALBUMS_OF_A_USER_SORT_BY_DURATION =
+            "request_list_all_albums_of_a_user_sort_by_duration";
     public static final String REQUEST_LIST_USER_ALBUMS = "request_list_user_albums";
     public static final String REQUEST_CREATE_A_ALBUM = "request_create_a_album";
     public static final String REQUEST_DELETE_A_ALBUM = "request_delete_a_album";

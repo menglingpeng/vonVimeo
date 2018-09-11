@@ -23,7 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".mvp.view.UserAlbumActivity" />
+        <activity android:name=".mvp.view.UserAlbumsActivity" />
         <activity android:name=".mvp.view.UserAlbumDetailActivity" />
         <activity android:name=".mvp.view.VideoDetailActivity" />
         <activity android:name=".mvp.view.UserProjectActivity" />

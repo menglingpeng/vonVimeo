@@ -2,6 +2,7 @@ package com.menglingpeng.vonvimeo.mvp.view;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.hardware.usb.UsbRequest;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TextInputEditText;
@@ -10,17 +11,20 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.FrameLayout;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
+import com.menglingpeng.vonvimeo.mvp.model.User;
 import com.menglingpeng.vonvimeo.mvp.presenter.RecyclerPresenter;
 import com.menglingpeng.vonvimeo.utils.Constants;
+import com.menglingpeng.vonvimeo.utils.IdStringUtil;
 import com.menglingpeng.vonvimeo.utils.SharedPrefUtils;
 import com.menglingpeng.vonvimeo.utils.SnackbarUtils;
 
 import java.util.HashMap;
 
-public class UserAlbumActivity extends BaseActivity implements RecyclerView{
+public class UserAlbumsActivity extends BaseActivity implements RecyclerView{
 
     private Toolbar toolbar;
     private FloatingActionButton floatingActionButton;
@@ -28,6 +32,8 @@ public class UserAlbumActivity extends BaseActivity implements RecyclerView{
     private String title;
     private String type;
     private Context context;
+    private String userId;
+    private User user;
 
     @Override
     protected void initLayoutId() {
@@ -38,6 +44,8 @@ public class UserAlbumActivity extends BaseActivity implements RecyclerView{
     protected void initViews() {
         super.initViews();
         context = getApplicationContext();
+        user = (User) getIntent().getSerializableExtra(Constants.USER);
+        userId = IdStringUtil.getId(user.getUri());
         floatingActionButton = (FloatingActionButton) findViewById(R.id.auth_user_album_fab);
         coordinatorLayout = (CoordinatorLayout) findViewById(R.id.user_albums_cdl);
         toolbar = (Toolbar) findViewById(R.id.user_albums_tb);
@@ -51,7 +59,8 @@ public class UserAlbumActivity extends BaseActivity implements RecyclerView{
             }
         });
         floatingActionButton.setVisibility(FloatingActionButton.VISIBLE);
-        replaceFragment(RecyclerFragment.newInstance(type));
+        type = Constants.REQUEST_LIST_ALL_ALBUMS_OF_A_USER_SORT_BY_DATE;
+        replaceFragment(RecyclerFragment.newInstance(userId, type));
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,13 +78,22 @@ public class UserAlbumActivity extends BaseActivity implements RecyclerView{
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
-            case R.id.album_edit:
-                showEditAlbumDialog();
+            case R.id.albums_sort_date:
+                type = Constants.REQUEST_LIST_ALL_ALBUMS_OF_A_USER_SORT_BY_DATE;
                 break;
-            case R.id.album_delete:
-                showDeleteAlbumDialog();
+            case R.id.album_albums_sort_alphabetical:
+                type = Constants.REQUEST_LIST_ALL_ALBUMS_OF_A_USER_SORT_BY_DATE;
+                break;
+            case R.id.albums_sort_videos:
+                type = Constants.REQUEST_LIST_ALL_ALBUMS_OF_A_USER_SORT_BY_DATE;
+                break;
+            case R.id.albums_sort_duration:
+                type = Constants.REQUEST_LIST_ALL_ALBUMS_OF_A_USER_SORT_BY_DATE;
+                break;
+            default:
                 break;
         }
+        replaceFragment(RecyclerFragment.newInstance(userId, type));
         return super.onOptionsItemSelected(item);
     }
 
@@ -107,7 +125,7 @@ public class UserAlbumActivity extends BaseActivity implements RecyclerView{
                     map.put(Constants.NAME, albumNameEt.getText().toString());
                     map.put(Constants.DESCRIPTION, albumDescEt.getText().toString());
                     type = Constants.REQUEST_CREATE_A_ALBUM;
-                    RecyclerPresenter presenter = new RecyclerPresenter(UserAlbumActivity.this, type, Constants
+                    RecyclerPresenter presenter = new RecyclerPresenter(UserAlbumsActivity.this, type, Constants
                             .REQUEST_NORMAL, Constants.REQUEST_POST_MEIHOD, map, getApplicationContext());
                     presenter.loadJson();
                     SnackbarUtils.showSnackShort(getApplicationContext(), coordinatorLayout, getString(R.string
@@ -149,7 +167,7 @@ public class UserAlbumActivity extends BaseActivity implements RecyclerView{
                     map.put(Constants.NAME, albumNameEt.getText().toString());
                     map.put(Constants.DESCRIPTION, albumDescEt.getText().toString());
                     type = Constants.REQUEST_CREATE_A_ALBUM;
-                    RecyclerPresenter presenter = new RecyclerPresenter(UserAlbumActivity.this, type, Constants
+                    RecyclerPresenter presenter = new RecyclerPresenter(UserAlbumsActivity.this, type, Constants
                             .REQUEST_NORMAL, Constants.REQUEST_POST_MEIHOD, map, getApplicationContext());
                     presenter.loadJson();
                     SnackbarUtils.showSnackShort(getApplicationContext(), coordinatorLayout, getString(R.string

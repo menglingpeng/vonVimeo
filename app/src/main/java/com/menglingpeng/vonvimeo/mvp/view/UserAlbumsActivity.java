@@ -12,6 +12,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
@@ -98,14 +100,36 @@ public class UserAlbumsActivity extends BaseActivity implements RecyclerView{
     }
 
     private void showCreateAlbumDialog() {
-        final TextInputEditText albumNameEt, albumDescEt;
+        final TextInputEditText albumNameEt;
+        final TextInputEditText albumDescEt;
+        final RadioGroup radioGroup;
+        final RadioButton radioButton1;
+        final RadioButton radioButton2;
         AlertDialog dialog;
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        View dialogView = getLayoutInflater().inflate(R.layout.create_a_bucket_dialog_message, null);
+        View dialogView = getLayoutInflater().inflate(R.layout.create_an_album_dialog_message, null);
         builder.setTitle(R.string.create_a_bucket);
         builder.setView(dialogView);
-        albumNameEt = (TextInputEditText) dialogView.findViewById(R.id.bucket_name_tiet);
-        albumDescEt = (TextInputEditText) dialogView.findViewById(R.id.bucket_desc_tiet);
+        albumNameEt = (TextInputEditText) dialogView.findViewById(R.id.album_name_tiet);
+        albumDescEt = (TextInputEditText) dialogView.findViewById(R.id.album_desc_tiet);
+        radioGroup = (RadioGroup)dialogView.findViewById(R.id.album_privacy_settings_rg);
+        radioButton1 = (RadioButton)dialogView.findViewById(R.id.album_privacy_settings_anyone_rb);
+        radioButton2  = (RadioButton)dialogView.findViewById(R.id.album_privacy_settings_people_with_password_rb);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch (radioGroup.getCheckedRadioButtonId()){
+                    case R.id.album_privacy_settings_anyone_rb:
+                        radioButton1.setText(Constants.PRIVACY_ANYONE);
+                        break;
+                    case R.id.album_privacy_settings_people_with_password_rb:
+                        radioButton2.setText(Constants.PRIVACY_WITH_A_PASSWORD);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
         builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -118,12 +142,17 @@ public class UserAlbumsActivity extends BaseActivity implements RecyclerView{
                 String name = albumNameEt.getText().toString();
                 if (name.equals("")) {
                     SnackbarUtils.showSnackShort(getApplicationContext(), coordinatorLayout, getString(R.string
-                            .the_name_of_bucket_is_not_null));
+                            .the_name_of_album_is_not_null));
                 } else {
                     HashMap<String, String> map = new HashMap<>();
                     map.put(Constants.ACCESS_TOKEN, SharedPrefUtils.getAuthToken());
                     map.put(Constants.NAME, albumNameEt.getText().toString());
                     map.put(Constants.DESCRIPTION, albumDescEt.getText().toString());
+                    if(radioButton1.isChecked()) {
+                        map.put(Constants.PRIVACY, radioButton1.getText().toString());
+                    }else {
+                        map.put(Constants.PRIVACY, radioButton2.getText().toString());
+                    }
                     type = Constants.REQUEST_CREATE_A_ALBUM;
                     RecyclerPresenter presenter = new RecyclerPresenter(UserAlbumsActivity.this, type, Constants
                             .REQUEST_NORMAL, Constants.REQUEST_POST_MEIHOD, map, getApplicationContext());

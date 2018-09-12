@@ -138,4 +138,7 @@
     <dimen name="auth_user_album_videos_count_tv_layout_marginTop">10dp</dimen>
     <dimen name="auth_user_album_info_rl_layout_width">0dp</dimen>
     <item name="auth_user_album_info_rl_layout_weight" type="dimen" format="integer">1</item>
+
+    <dimen name="album_delete_tv_layout_marginTop">10dp</dimen>
+    <dimen name="album_delete_tv_layout_marginBottom">20dp</dimen>
 </resources>

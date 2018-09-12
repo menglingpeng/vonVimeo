@@ -1,10 +1,13 @@
 package com.menglingpeng.vonvimeo.mvp.adapter;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
+import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -15,6 +18,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -30,6 +35,7 @@ import com.menglingpeng.vonvimeo.mvp.model.Stuff;
 import com.menglingpeng.vonvimeo.mvp.model.Tag;
 import com.menglingpeng.vonvimeo.mvp.model.User;
 import com.menglingpeng.vonvimeo.mvp.model.Video;
+import com.menglingpeng.vonvimeo.mvp.presenter.RecyclerPresenter;
 import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
 import com.menglingpeng.vonvimeo.mvp.view.UserAlbumsActivity;
 import com.menglingpeng.vonvimeo.mvp.view.activity.UserChannelsActivity;
@@ -38,9 +44,12 @@ import com.menglingpeng.vonvimeo.mvp.view.activity.UserGroupActivity;
 import com.menglingpeng.vonvimeo.mvp.view.activity.UserUploadedVideosActivity;
 import com.menglingpeng.vonvimeo.utils.Constants;
 import com.menglingpeng.vonvimeo.utils.ImageLoader;
+import com.menglingpeng.vonvimeo.utils.SharedPrefUtils;
+import com.menglingpeng.vonvimeo.utils.SnackbarUtils;
 import com.menglingpeng.vonvimeo.utils.TextUtil;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
@@ -391,6 +400,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         view = inflater.inflate(R.layout.recycler_user_liked_videos_thumb_view_item, parent, false);
                         viewHolder = new WatchLaterVideoTypeThumbViewHolder(view);
                         break;
+                    case Constants.REQUEST_LIST_ALL_ALBUMS_OF_AUTH_USER:
+                        view = inflater.inflate(R.layout.auth_user_albums_recycler_item, parent, false);
+                        viewHolder = new AuthUserAlbumViewHolder(view);
+                        break;
                     default:
                         break;
                 }
@@ -515,6 +528,103 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                             getConnections().getVideos().getTotal()),
                     context.getString(R.string.videos)));
             viewHolder.albumCreatedTimeTv.setText(album.getCreated_time());
+            viewHolder.albumInfoIv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
+            viewHolder.albumShareIv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
+            viewHolder.albumViewIv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
+            viewHolder.albumSettingsIv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    final TextInputEditText albumNameEt;
+                    final TextInputEditText albumDescEt;
+                    final RadioGroup radioGroup;
+                    final RadioButton radioButton1;
+                    final RadioButton radioButton2;
+                    AlertDialog dialog;
+                    AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                    View dialogView = fragment.getActivity().getLayoutInflater().inflate(R.
+                            layout.create_an_album_dialog_message, null);
+                    builder.setTitle(R.string.create_a_bucket);
+                    builder.setView(dialogView);
+                    albumNameEt = (TextInputEditText) dialogView.findViewById(R.id.album_name_tiet);
+                    albumDescEt = (TextInputEditText) dialogView.findViewById(R.id.album_desc_tiet);
+                    radioGroup = (RadioGroup)dialogView.findViewById(R.id.album_privacy_settings_rg);
+                    radioButton1 = (RadioButton)dialogView.findViewById(R.id.album_privacy_settings_anyone_rb);
+                    radioButton2  = (RadioButton)dialogView.findViewById(R.id.album_privacy_settings_people_with_password_rb);
+                    albumNameEt.setText(album.getName());
+                    albumDescEt.setText(album.getDescription());
+                    radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                        @Override
+                        public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                            switch (radioGroup.getCheckedRadioButtonId()){
+                                case R.id.album_privacy_settings_anyone_rb:
+                                    radioButton1.setText(Constants.PRIVACY_ANYONE);
+                                    break;
+                                case R.id.album_privacy_settings_people_with_password_rb:
+                                    radioButton2.setText(Constants.PRIVACY_WITH_A_PASSWORD);
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                    });
+                    builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+                    builder.setPositiveButton(R.string.create, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            String name = albumNameEt.getText().toString();
+                            if (name.equals("")) {
+                                SnackbarUtils.showSnackShort(context, fragment.getActivity().
+                                                findViewById(R.id.user_albums_cdl),
+                                        context.getString(R.string
+                                        .the_name_of_album_is_not_null));
+                            } else {
+                                HashMap<String, String> map = new HashMap<>();
+                                map.put(Constants.ACCESS_TOKEN, SharedPrefUtils.getAuthToken());
+                                map.put(Constants.NAME, albumNameEt.getText().toString());
+                                map.put(Constants.DESCRIPTION, albumDescEt.getText().toString());
+                                if(radioButton1.isChecked()) {
+                                    map.put(Constants.PRIVACY, radioButton1.getText().toString());
+                                }else {
+                                    map.put(Constants.PRIVACY, radioButton2.getText().toString());
+                                }
+                                type = Constants.REQUEST_CREATE_A_ALBUM;
+                                RecyclerPresenter presenter = new RecyclerPresenter(fragment.
+                                        getActivity(), type, Constants
+                                        .REQUEST_NORMAL, Constants.REQUEST_POST_MEIHOD, map, context);
+                                presenter.loadJson();
+                                SnackbarUtils.showSnackShort(context, fragment.getActivity().
+                                        findViewById(R.id.user_albums_cdl), context.getString(R.string
+                                        .snack_create_a_bucket_text));
+                            }
+
+                        }
+                    });
+                    albumNameEt.setFocusable(true);
+                    dialog = builder.create();
+                    dialog.show();
+                }
+            });
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

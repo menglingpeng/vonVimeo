@@ -67,6 +67,10 @@ public class Constants {
     public static final String WATCHED = "watched";
     public static final String FEED = "feed";
 
+    public static final String PRIVACY = "privacy";
+    public static final String PRIVACY_ANYONE = "privacy_anyone";
+    public static final String PRIVACY_WITH_A_PASSWORD = "privacy_anyone";
+
     public static final String REQUEST_LIST_MY_VIDEOS = "request_list_my_videos";
     public static final String REQUEST_LIST_VIEW_STATS = "request_list_view_stats";
     public static final String REQUEST_LIST_SELL_VIDEOS = "request_list_sell_videos";
@@ -140,6 +144,7 @@ public class Constants {
     public static final String REQUEST_LIST_GROUPS = "request_list_groups";
 
     public static final String REQUEST_LIST_USER_FEED_VIDEOS = "request_list_user_feed_videos";
+    public static final String REQUEST_LIST_ALL_ALBUMS_OF_AUTH_USER = "request_list_all_albums_of_auth_user";
     public static final String REQUEST_LIST_ALL_ALBUMS_OF_A_USER_SORT_BY_DATE =
             "request_list_all_albums_of_a_user_sort_by_date";
     public static final String REQUEST_LIST_ALL_ALBUMS_OF_A_USER_SORT_BY_ALPHABETICAL =

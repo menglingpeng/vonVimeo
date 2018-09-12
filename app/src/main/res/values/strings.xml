@@ -61,6 +61,7 @@
     <string name="album_desc">A Description</string>
     <string name="album_privacy_settings_anyone_rb_text">Anyone </string>
     <string name="album_privacy_settings_people_with_password_rb_text">Only people with a password</string>
+    <string name="album_delete_tv_text">Delete this album</string>
 
     <string name="creat_a_channle">Create a Channle</string>
     <string name="channle_name">A Name</string>

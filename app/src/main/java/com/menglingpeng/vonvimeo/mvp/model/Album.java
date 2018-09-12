@@ -348,5 +348,71 @@ public class Album implements Serializable{
                 }
             }
         }
+
+        public static class InteractionsBean {
+
+            private AddLogosBean add_logos;
+            private AddVideosBean add_videos;
+
+            public void setAdd_logos(AddLogosBean add_logos) {
+                this.add_logos = add_logos;
+            }
+
+            public void setAdd_videos(AddVideosBean add_videos) {
+                this.add_videos = add_videos;
+            }
+
+            public AddLogosBean getAdd_logos() {
+                return add_logos;
+            }
+
+            public AddVideosBean getAdd_videos() {
+                return add_videos;
+            }
+
+            public static class AddLogosBean {
+
+                private String uri;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class AddVideosBean {
+
+                private String uri;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+        }
     }
 }

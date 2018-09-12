@@ -2,6 +2,7 @@ package com.menglingpeng.vonvimeo.mvp.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -29,6 +30,7 @@ import com.menglingpeng.vonvimeo.mvp.model.Stuff;
 import com.menglingpeng.vonvimeo.mvp.model.Tag;
 import com.menglingpeng.vonvimeo.mvp.model.User;
 import com.menglingpeng.vonvimeo.mvp.model.Video;
+import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
 import com.menglingpeng.vonvimeo.mvp.view.UserAlbumsActivity;
 import com.menglingpeng.vonvimeo.mvp.view.activity.UserChannelsActivity;
 import com.menglingpeng.vonvimeo.mvp.view.activity.UserFollowingActivity;
@@ -505,10 +507,14 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     }
                 }
             });
-        }
-        else if ((holder instanceof AlbumThumbTypeViewHolder)){
-            final AlbumThumbTypeViewHolder viewHolder = (AlbumThumbTypeViewHolder)holder;
+        }else if (holder instanceof AuthUserAlbumViewHolder){
+            final AuthUserAlbumViewHolder viewHolder = (AuthUserAlbumViewHolder)holder;
             final Album album = (Album) list.get(position);
+            viewHolder.albumNameTv.setText(album.getName());
+            viewHolder.albumVideosCountTv.setText(TextUtil.setBeforeBold(String.valueOf(album.getMetadata().
+                            getConnections().getVideos().getTotal()),
+                    context.getString(R.string.videos)));
+            viewHolder.albumCreatedTimeTv.setText(album.getCreated_time());
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -517,9 +523,22 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     }
                 }
             });
+        }
+        else if ((holder instanceof AlbumThumbTypeViewHolder)){
+            final AlbumThumbTypeViewHolder viewHolder = (AlbumThumbTypeViewHolder)holder;
+            final Album album = (Album) list.get(position);
             viewHolder.albumNameTv.setText(album.getName());
-            viewHolder.albumVideosCountTv.setText(TextUtil.setBeforeBold(String.valueOf(album.getMetadata()),
+            viewHolder.albumVideosCountTv.setText(TextUtil.setBeforeBold(String.valueOf(album.getMetadata().
+                            getConnections().getVideos().getTotal()),
                     context.getString(R.string.videos)));
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mListener != null) {
+                        mListener.onRecyclerFragmentListListener(viewHolder, album);
+                    }
+                }
+            });
         }else if (holder instanceof ProjectViewHolder){
             final ProjectViewHolder viewHolder = (ProjectViewHolder)holder;
             final Project project = (Project)list.get(position);
@@ -979,14 +998,41 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
+    public class AuthUserAlbumViewHolder extends RecyclerView.ViewHolder {
+
+        public final ImageView albumThumbIv;
+        public final TextView albumNameTv;
+        public final TextView albumVideosCountTv;
+        public final TextView albumCreatedTimeTv;
+        public final ImageView albumInfoIv;
+        public final ImageView albumShareIv;
+        public final ImageView albumViewIv;
+        public final ImageView albumSettingsIv;
+
+        public AuthUserAlbumViewHolder(View view) {
+            super(view);
+
+            albumThumbIv = (ImageView)view.findViewById(R.id.auth_user_album_thumb_iv);
+            albumNameTv = (TextView) view.findViewById(R.id.auth_user_album_name_tv);
+            albumVideosCountTv = (TextView) view.findViewById(R.id.auth_user_album_videos_count_tv);
+            albumCreatedTimeTv = (TextView)view.findViewById(R.id.auth_user_album_created_time_tv);
+            albumInfoIv = (ImageView)view.findViewById(R.id.auth_user_album_info_iv);
+            albumShareIv = (ImageView)view.findViewById(R.id.auth_user_album_share_iv);
+            albumViewIv = (ImageView)view.findViewById(R.id.auth_user_album_view_iv);
+            albumSettingsIv = (ImageView)view.findViewById(R.id.auth_user_album_settings_iv);
+        }
+    }
+
     public class AlbumThumbTypeViewHolder extends RecyclerView.ViewHolder {
         public final RelativeLayout albumRl;
+        public final ImageView albumThumbIv;
         public final TextView albumNameTv;
         public final TextView albumVideosCountTv;
 
         public AlbumThumbTypeViewHolder(View view) {
             super(view);
             albumRl = (RelativeLayout) view.findViewById(R.id.album_rl);
+            albumThumbIv = (ImageView)view.findViewById(R.id.album_thumb_thumb_iv);
             albumNameTv = (TextView) view.findViewById(R.id.album_name_tv);
             albumVideosCountTv = (TextView) view.findViewById(R.id.album_videos_count_tv);
         }
@@ -994,6 +1040,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     public class AlbumDetailTypeViewHolder extends RecyclerView.ViewHolder {
         public final RelativeLayout albumRl;
+        public final ImageView albumThumbIv;
         public final TextView albumNameTv;
         public final TextView albumVideosCountTv;
         public final TextView albumUserNameTv;
@@ -1003,6 +1050,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         public AlbumDetailTypeViewHolder(View view) {
             super(view);
             albumRl = (RelativeLayout) view.findViewById(R.id.detai_view_album_rl);
+            albumThumbIv = (ImageView)view.findViewById(R.id.detai_view_album_thumb_thumb_iv);
             albumNameTv = (TextView) view.findViewById(R.id.detai_view_album_name_tv);
             albumVideosCountTv = (TextView) view.findViewById(R.id.detai_view_album_videos_count_tv);
             albumUserNameTv = (TextView)view.findViewById(R.id.detail_view_album_user_name_tv);

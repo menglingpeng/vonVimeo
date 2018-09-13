@@ -141,4 +141,11 @@
 
     <dimen name="album_delete_tv_layout_marginTop">10dp</dimen>
     <dimen name="album_delete_tv_layout_marginBottom">20dp</dimen>
+
+    <dimen name="info_title_tv_layout_marginTop">20dp</dimen>
+    <dimen name="info_title_tv_layout_marginLeft">15dp</dimen>
+    <dimen name="info_title_tv_textSize">20dp</dimen>
+    <dimen name="info_close_iv_layout_marginEnd">5dp</dimen>
+    <dimen name="info_content_tv_layout_marginTop">20dp</dimen>
+    <dimen name="info_content_tv_layout_marginBottom">3dp</dimen>
 </resources>

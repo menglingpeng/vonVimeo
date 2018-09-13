@@ -37,6 +37,7 @@ import com.menglingpeng.vonvimeo.mvp.model.User;
 import com.menglingpeng.vonvimeo.mvp.model.Video;
 import com.menglingpeng.vonvimeo.mvp.presenter.RecyclerPresenter;
 import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
+import com.menglingpeng.vonvimeo.mvp.view.UserAlbumDetailActivity;
 import com.menglingpeng.vonvimeo.mvp.view.UserAlbumsActivity;
 import com.menglingpeng.vonvimeo.mvp.view.activity.UserChannelsActivity;
 import com.menglingpeng.vonvimeo.mvp.view.activity.UserFollowingActivity;
@@ -531,6 +532,27 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             viewHolder.albumInfoIv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    final TextView titleTv;
+                    final ImageView closeIv;
+                    final TextView contentTv;
+                    final AlertDialog dialog;
+                    AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                    View dialogView = fragment.getActivity().getLayoutInflater().inflate(R.
+                            layout.dialog_auth_user_album_info, null);
+                    builder.setView(dialogView);
+                    titleTv = (TextView)dialogView.findViewById(R.id.info_title_tv);
+                    closeIv = (ImageView)dialogView.findViewById(R.id.info_close_iv);
+                    contentTv = (TextView)dialogView.findViewById(R.id.info_content_tv);
+                    titleTv.setText(context.getString(R.string.description));
+                    contentTv.setText(album.getDescription());
+                    dialog = builder.create();
+                    closeIv.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            dialog.dismiss();
+                        }
+                    });
+                    dialog.show();
 
                 }
             });
@@ -543,13 +565,14 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             viewHolder.albumViewIv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    Intent intent = new Intent(fragment.getActivity(), UserAlbumDetailActivity.class);
+                    intent.putExtra(Constants.ALBUM, album);
+                    context.startActivity(intent);
                 }
             });
             viewHolder.albumSettingsIv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
                     final TextInputEditText albumNameEt;
                     final TextInputEditText albumDescEt;
                     final RadioGroup radioGroup;

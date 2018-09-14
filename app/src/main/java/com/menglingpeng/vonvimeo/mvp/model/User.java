@@ -242,6 +242,7 @@ public class User implements Serializable {
             private PortfoliosBean portfolios;
             private SharedBean shared;
             private PicturesBean pictures;
+            private CategoriesBean categories;
 
             public void setAlbums(AlbumsBean albums) {
                 this.albums = albums;
@@ -353,6 +354,14 @@ public class User implements Serializable {
 
             public PicturesBean getPictures() {
                 return pictures;
+            }
+
+            public void setCategories(CategoriesBean categories) {
+                this.categories = categories;
+            }
+
+            public CategoriesBean getCategories() {
+                return categories;
             }
 
 
@@ -689,6 +698,37 @@ public class User implements Serializable {
             }
 
             public static class PicturesBean {
+
+                private String uri;
+                private int total;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public int getTotal() {
+                    return total;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class CategoriesBean {
 
                 private String uri;
                 private int total;

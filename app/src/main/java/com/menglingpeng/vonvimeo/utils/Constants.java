@@ -158,6 +158,7 @@ public class Constants {
     public static final String REQUEST_DELETE_A_ALBUM = "request_delete_a_album";
     public static final String REQUEST_ADD_A_VIDEO_TO_AN_ALBUM = "request_add_a_video_to_an_album";
     public static final String REQUEST_REMOVE_A_VIDEO_FROM_AN_ALBUM = "request_remove_a_video_from_an_album";
+    public static final String REQUEST_LIST_ALL_VIDEOS_IN_AN_ALBUM = "request_all_videos_in_am_album";
     public static final String REQUEST_LIST_USER_PROJECTS = "request_list_user_projects";
     public static final String REQUEST_REQUEST_CREATE_A_PROJECT = "request_create_a_project";
     public static final String REQUEST_REQUEST_DELETE_A_PROJECT = "request_delete_a_project";

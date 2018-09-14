@@ -405,6 +405,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         view = inflater.inflate(R.layout.auth_user_albums_recycler_item, parent, false);
                         viewHolder = new AuthUserAlbumViewHolder(view);
                         break;
+                    case Constants.REQUEST_LIST_ALL_VIDEOS_IN_AN_ALBUM:
+                        view = inflater.inflate(R.layout.recycler_user_album_detail_item, parent, false);
+                        viewHolder = new AlbumDetailViewHolder(view);
+                        break;
                     default:
                         break;
                 }
@@ -672,7 +676,23 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     }
                 }
             });
-        }else if (holder instanceof ProjectViewHolder){
+        }else if(holder instanceof AlbumDetailViewHolder){
+            final AlbumDetailViewHolder viewHolder = (AlbumDetailViewHolder)holder;
+            final Video video = (Video)list.get(position);
+            ImageLoader.load(fragment, video.getPictures().getUri(), viewHolder.videoThumbIv, false);
+            viewHolder.videoNameTv.setText(video.getName());
+            ImageLoader.loadCricleImage(fragment, video.getUser().getPictures().getUri(), viewHolder.avatarIv);
+            viewHolder.userNameTv.setText(video.getUser().getName());
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mListener != null) {
+                        mListener.onRecyclerFragmentListListener(viewHolder, video);
+                    }
+                }
+            });
+        }
+        else if (holder instanceof ProjectViewHolder){
             final ProjectViewHolder viewHolder = (ProjectViewHolder)holder;
             final Project project = (Project)list.get(position);
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -1189,6 +1209,23 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             albumUserNameTv = (TextView)view.findViewById(R.id.detail_view_album_user_name_tv);
             albumCreatedTimeTv = (TextView)view.findViewById(R.id.detail_view_album_created_time_tv);
             albumDurationTv = (TextView)view.findViewById(R.id.detail_view_album_vodeo_duration_tv);
+        }
+    }
+
+    public static class AlbumDetailViewHolder extends RecyclerView.ViewHolder {
+
+        public final ImageView videoThumbIv;
+        public final TextView videoNameTv;
+        public final ImageView avatarIv;
+        public final TextView userNameTv;
+
+        public AlbumDetailViewHolder(View view) {
+            super(view);
+
+            videoThumbIv = (ImageView)view.findViewById(R.id.album_detail_video_thumb_iv);
+            videoNameTv = (TextView)view.findViewById(R.id.album_detail_video_name_tv);
+            avatarIv = (ImageView)view.findViewById(R.id.album_detail_video_user_avatar_iv);
+            userNameTv = (TextView)view.findViewById(R.id.album_detail_video_user_name_tv);
         }
     }
 

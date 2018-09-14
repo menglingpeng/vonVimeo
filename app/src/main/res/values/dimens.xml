@@ -148,4 +148,14 @@
     <dimen name="info_close_iv_layout_marginEnd">5dp</dimen>
     <dimen name="info_content_tv_layout_marginTop">20dp</dimen>
     <dimen name="info_content_tv_layout_marginBottom">3dp</dimen>
+
+    <dimen name="album_detail_video_thumb_iv_layout_height">300dp</dimen>
+    <dimen name="album_detail_video_thumb_iv_layout_marginBottom">15dp</dimen>
+    <dimen name="album_detail_video_name_tv_layout_marginBottom">10dp</dimen>
+    <dimen name="album_detail_video_name_tv_layout_marginLeft">15dp</dimen>
+    <dimen name="album_detail_video_name_tv_textSize">20dp</dimen>
+    <dimen name="album_detail_video_user_avatar_iv_layout_width">10dp</dimen>
+    <dimen name="album_detail_video_user_avatar_iv_layout_height">10dp</dimen>
+    <dimen name="album_detail_video_user_name_tv_layout_marginLeft">5dp</dimen>
+    <dimen name="album_detail_video_user_name_tv_layout_marginBottom">15dp</dimen>
 </resources>

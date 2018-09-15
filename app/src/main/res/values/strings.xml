@@ -92,6 +92,7 @@
     <string name="s">的</string>
     <string name="watched_history">观看历史</string>
 
+    <string name="email_share_title">-- 来自VonVimeo(Android APP for Vimeo)的分享</string>
     <string name="detail_toolbar_overflow_menu_share_create_chooser_title">分享</string>
     <string name="detail_toolbar_overflow_menu_share_footer_text">-- 来自VonVimeo(Android APP for Vimeo)的分享</string>
     <string name="detail_toolbar_overflow_menu_open_in_browser_create_chooser_title">请选择浏览器</string>
@@ -146,6 +147,7 @@
     <string name="dialog_upload_choose_camera">拍照</string>
 
     <string name="share">分享</string>
+    <string name="email">Email</string>
     <string name="uploaded_videos_share">分享</string>
     <string name="uploaded_videos_delete">删除</string>
     <string name="dialog_delete_a_video_title">确定要删除</string>'

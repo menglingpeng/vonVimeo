@@ -182,20 +182,9 @@ public class UserProjectActivity extends BaseActivity implements RecyclerView{
         
     }
     
-    private void addVodeoToProject(){
-        
-       AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(R.string.create_a_bucket);
-        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        });
-        dialog = builder.create();
-        dialog.show();
-        
-     final TextInputEditText projectNameEt, projectDescEt;
+    private void addVodeoToProject() {
+
+        final TextInputEditText projectNameEt, projectDescEt;
         AlertDialog dialog;
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         View dialogView = getLayoutInflater().inflate(R.layout.create_a_bucket_dialog_message, null);
@@ -209,7 +198,7 @@ public class UserProjectActivity extends BaseActivity implements RecyclerView{
                 dialog.dismiss();
             }
         });
-        
+
         builder.setPositiveButton(R.string.create, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -232,8 +221,8 @@ public class UserProjectActivity extends BaseActivity implements RecyclerView{
 
             }
         });
-        
-   }builder.setPositiveButton(R.string.create, new DialogInterface.OnClickListener() {
+
+        builder.setPositiveButton(R.string.create, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
             }
@@ -241,6 +230,7 @@ public class UserProjectActivity extends BaseActivity implements RecyclerView{
         projectNameEt.setFocusable(true);
         dialog = builder.create();
         dialog.show();
+    }
 
     @Override
     public void hideProgress() {

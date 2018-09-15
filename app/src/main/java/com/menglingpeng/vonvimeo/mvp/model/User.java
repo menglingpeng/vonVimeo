@@ -243,6 +243,7 @@ public class User implements Serializable {
             private SharedBean shared;
             private PicturesBean pictures;
             private CategoriesBean categories;
+            private FoldersBean folders;
 
             public void setAlbums(AlbumsBean albums) {
                 this.albums = albums;
@@ -362,6 +363,14 @@ public class User implements Serializable {
 
             public CategoriesBean getCategories() {
                 return categories;
+            }
+
+            public void setFolders(FoldersBean folders) {
+                this.folders = folders;
+            }
+
+            public FoldersBean getFolders() {
+                return folders;
             }
 
 
@@ -758,67 +767,98 @@ public class User implements Serializable {
                     return options;
                 }
             }
-        }
 
-        public static class GroupsBean {
+            public static class GroupsBean {
 
-            private String uri;
-            private int total;
-            private List<String> options;
+                private String uri;
+                private int total;
+                private List<String> options;
 
-            public void setUri(String uri) {
-                this.uri = uri;
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public int getTotal() {
+                    return total;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
             }
 
-            public void setTotal(int total) {
-                this.total = total;
+            public static class FollowingBean {
+
+                private String uri;
+                private int total;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public int getTotal() {
+                    return total;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
             }
 
-            public void setOptions(List<String> options) {
-                this.options = options;
-            }
+            public static class FoldersBean {
 
-            public String getUri() {
-                return uri;
-            }
+                private String uri;
+                private int total;
+                private List<String> options;
 
-            public int getTotal() {
-                return total;
-            }
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
 
-            public List<String> getOptions() {
-                return options;
-            }
-        }
+                public void setTotal(int total) {
+                    this.total = total;
+                }
 
-        public static class FollowingBean {
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
 
-            private String uri;
-            private int total;
-            private List<String> options;
+                public String getUri() {
+                    return uri;
+                }
 
-            public void setUri(String uri) {
-                this.uri = uri;
-            }
+                public int getTotal() {
+                    return total;
+                }
 
-            public void setTotal(int total) {
-                this.total = total;
-            }
-
-            public void setOptions(List<String> options) {
-                this.options = options;
-            }
-
-            public String getUri() {
-                return uri;
-            }
-
-            public int getTotal() {
-                return total;
-            }
-
-            public List<String> getOptions() {
-                return options;
+                public List<String> getOptions() {
+                    return options;
+                }
             }
         }
 

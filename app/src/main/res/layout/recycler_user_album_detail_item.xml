@@ -59,7 +59,8 @@
                 android:layout_toRightOf="@+id/album_detail_video_user_avatar_iv"
                 android:layout_alignTop="@+id/album_detail_video_user_avatar_iv"
                 android:layout_marginLeft="@dimen/album_detail_video_user_name_tv_layout_marginLeft"
-                android:layout_marginBottom="@dimen/album_detail_video_user_name_tv_layout_marginBottom"/>
+                android:layout_marginBottom="@dimen/album_detail_video_user_name_tv_layout_marginBottom"
+                android:clickable="true"/>
 
         </RelativeLayout>
 

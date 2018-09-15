@@ -42,6 +42,7 @@ import com.menglingpeng.vonvimeo.mvp.view.UserAlbumsActivity;
 import com.menglingpeng.vonvimeo.mvp.view.activity.UserChannelsActivity;
 import com.menglingpeng.vonvimeo.mvp.view.activity.UserFollowingActivity;
 import com.menglingpeng.vonvimeo.mvp.view.activity.UserGroupActivity;
+import com.menglingpeng.vonvimeo.mvp.view.activity.UserProfileActivity;
 import com.menglingpeng.vonvimeo.mvp.view.activity.UserUploadedVideosActivity;
 import com.menglingpeng.vonvimeo.utils.Constants;
 import com.menglingpeng.vonvimeo.utils.ImageLoader;
@@ -683,6 +684,14 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             viewHolder.videoNameTv.setText(video.getName());
             ImageLoader.loadCricleImage(fragment, video.getUser().getPictures().getUri(), viewHolder.avatarIv);
             viewHolder.userNameTv.setText(video.getUser().getName());
+            viewHolder.userNameTv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(fragment.getActivity(), UserProfileActivity.class);
+                    intent.putExtra(Constants.USER, video.getUser());
+                    context.startActivity(intent);
+                }
+            });
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

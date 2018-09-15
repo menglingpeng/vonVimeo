@@ -10,10 +10,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
+import com.menglingpeng.vonvimeo.mvp.model.Channel;
+import com.menglingpeng.vonvimeo.utils.Constants;
+import com.menglingpeng.vonvimeo.utils.ImageLoader;
 import com.menglingpeng.vonvimeo.utils.ShareAndOpenInBrowserUtil;
 
 
@@ -28,9 +32,11 @@ public class ChannelDetailActivity extends BaseActivity implements RecyclerView{
     private TextView channelDescTv;
     private Button startBt;
     private Toolbar toolbar;
+    private ProgressBar progressBar;
     private String title;
     private String type;
     private Context context;
+    private Channel channel;
 
     @Override
     protected void initLayoutId() {
@@ -41,6 +47,8 @@ public class ChannelDetailActivity extends BaseActivity implements RecyclerView{
     protected void initViews() {
         super.initViews();
         context = getApplicationContext();
+        channel = (Channel)getIntent().getSerializableExtra(Constants.CHANNLE);
+        title = channel.getName();
         coordinatorLayout = (CoordinatorLayout) findViewById(R.id.channel_detail_cdl);
         channelDetailCtbl = (CollapsingToolbarLayout)findViewById(R.id.channel_detail_ctbl);
         backgroundIv = (ImageView)findViewById(R.id.channel_detail_backgroud_iv);
@@ -49,6 +57,7 @@ public class ChannelDetailActivity extends BaseActivity implements RecyclerView{
         channelDescTv = (TextView)findViewById(R.id.channel_detail_desc_tv);
         startBt = (Button)findViewById(R.id.channel_detail_start_bt);
         toolbar = (Toolbar) findViewById(R.id.channel_detail_tb);
+        progressBar = (ProgressBar)findViewById(R.id.channel_detail_pb);
         toolbar.setTitle(title);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_back);
@@ -58,14 +67,15 @@ public class ChannelDetailActivity extends BaseActivity implements RecyclerView{
                 finish();
             }
         });
-        floatingActionButton.setVisibility(FloatingActionButton.VISIBLE);
-        replaceFragment(RecyclerFragment.newInstance(type));
-        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+        ImageLoader.load(channel, channel.getHeader().getUri(), channelIconTv, true);
+        channelDescTv.setText(channel.getDescription());
+        startBt.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                showCreateBucketDialog();
+            public void onClick(View view) {
+
             }
         });
+        replaceFragment(RecyclerFragment.newInstance(type));
     }
 
     @Override
@@ -94,7 +104,7 @@ public class ChannelDetailActivity extends BaseActivity implements RecyclerView{
 
     @Override
     public void hideProgress() {
-
+        progressBar.setVisibility(ProgressBar.GONE);
     }
 
     @Override

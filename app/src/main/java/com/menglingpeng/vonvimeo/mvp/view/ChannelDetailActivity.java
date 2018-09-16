@@ -4,6 +4,9 @@ import android.content.Context;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,11 +17,15 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
+import com.menglingpeng.vonvimeo.mvp.adapter.TabPagerFragmentAdapter;
 import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
 import com.menglingpeng.vonvimeo.mvp.model.Channel;
 import com.menglingpeng.vonvimeo.utils.Constants;
 import com.menglingpeng.vonvimeo.utils.ImageLoader;
 import com.menglingpeng.vonvimeo.utils.ShareAndOpenInBrowserUtil;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 
 public class ChannelDetailActivity extends BaseActivity implements RecyclerView{
@@ -32,11 +39,17 @@ public class ChannelDetailActivity extends BaseActivity implements RecyclerView{
     private TextView channelDescTv;
     private Button startBt;
     private Toolbar toolbar;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
     private ProgressBar progressBar;
     private String title;
     private String type;
     private Context context;
     private Channel channel;
+    private TabPagerFragmentAdapter adapter;
+    private HashMap<String, String> map;
+    private ArrayList<RecyclerFragment> fragmentsList;
+    private static final int SMOOTHSCROLL_TOP_POSITION = 50;
 
     @Override
     protected void initLayoutId() {
@@ -75,7 +88,7 @@ public class ChannelDetailActivity extends BaseActivity implements RecyclerView{
 
             }
         });
-        replaceFragment(RecyclerFragment.newInstance(type));
+        initTabPager();
     }
 
     @Override
@@ -100,6 +113,59 @@ public class ChannelDetailActivity extends BaseActivity implements RecyclerView{
     private void shareChannel(){
         String shareText = null;
         ShareAndOpenInBrowserUtil.share(context, shareText);
+    }
+
+    private void initTabPager() {
+        tabLayout = (TabLayout)findViewById(R.id.channel_detail_tl);
+        viewPager = (ViewPager)findViewById(R.id.channel_detail_vp);
+        adapter = new TabPagerFragmentAdapter(getSupportFragmentManager());
+        initTabFragments();
+        viewPager.setAdapter(adapter);
+        tabLayout.setupWithViewPager(viewPager);
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+                scrollToTop(fragmentsList.get(tab.getPosition()).getRecyclerView());
+            }
+        });
+
+    }
+
+    private void scrollToTop(android.support.v7.widget.RecyclerView list) {
+        int lastPosition;
+        if (null != list) {
+            LinearLayoutManager manager = (LinearLayoutManager) list.getLayoutManager();
+            lastPosition = manager.findLastVisibleItemPosition();
+            if (lastPosition < SMOOTHSCROLL_TOP_POSITION) {
+                list.smoothScrollToPosition(0);
+            } else {
+                list.scrollToPosition(0);
+            }
+        }
+    }
+
+    private void initTabFragments() {
+
+        ArrayList<String> titlesList = new ArrayList<>();
+        titlesList.add(getText(R.string.videos.toString());
+        titlesList.add(getText(R.string.followers).toString());
+
+        fragmentsList.add(RecyclerFragment.newInstance(
+                Constants.REQUEST_LIST_ALL_VIDEOS_IN_A_CHANNEL));
+        fragmentsList.add(RecyclerFragment.newInstance(
+                Constants.REQUEST_LIST_ALL_FOLLOWERS_OF_A_CHANNEL));
+        adapter.setFragments(fragmentsList, titlesList);
     }
 
     @Override

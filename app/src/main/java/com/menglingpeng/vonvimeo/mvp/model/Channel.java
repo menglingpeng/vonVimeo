@@ -16,6 +16,16 @@ public class Channel implements Serializable {
     private List<?> categories;
     private PicturesBean pictures;
     private HeaderBean header;
+    /**
+     * privacy : {"view":"anybody"}
+     */
+
+    private PrivacyBean privacy;
+    /**
+     * tags : [{"uri":"/tags/vimeo","name":"vimeo","tag":"vimeo","canonical":"vimeo"}]
+     */
+
+    private List<TagsBean> tags;
 
     public String getUri() {
         return uri;
@@ -103,6 +113,22 @@ public class Channel implements Serializable {
 
     public HeaderBean getHeader() {
         return header;
+    }
+
+    public void setPrivacy(PrivacyBean privacy) {
+        this.privacy = privacy;
+    }
+
+    public PrivacyBean getPrivacy() {
+        return privacy;
+    }
+
+    public void setTags(List<TagsBean> tags) {
+        this.tags = tags;
+    }
+
+    public List<TagsBean> getTags() {
+        return tags;
     }
 
     public static class PicturesBean {
@@ -265,6 +291,8 @@ public class Channel implements Serializable {
         }
     }
 
+
+
     public static class MetadataBean {
 
         private ConnectionsBean connections;
@@ -425,4 +453,56 @@ public class Channel implements Serializable {
     }
 
 
+    public static class PrivacyBean {
+
+        private String view;
+
+        public void setView(String view) {
+            this.view = view;
+        }
+
+        public String getView() {
+            return view;
+        }
+    }
+
+    public static class TagsBean {
+
+        private String uri;
+        private String name;
+        private String tag;
+        private String canonical;
+
+        public void setUri(String uri) {
+            this.uri = uri;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public void setTag(String tag) {
+            this.tag = tag;
+        }
+
+        public void setCanonical(String canonical) {
+            this.canonical = canonical;
+        }
+
+        public String getUri() {
+            return uri;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getTag() {
+            return tag;
+        }
+
+        public String getCanonical() {
+            return canonical;
+        }
+    }
 }

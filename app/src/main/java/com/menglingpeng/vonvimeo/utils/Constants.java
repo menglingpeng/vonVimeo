@@ -136,6 +136,8 @@ public class Constants {
     public static final String REQUEST_DELETE_A_CHANNLE = "request_delete_a_channle";
     public static final String REQUEST_ADD_A_VIDEO_TO_A_CHANNLE = "request_add_a_video_to_a_channle";
     public static final String REQUEST_DELETE_A_VIDEO_FROM_A_CHANNLE = "request_delete_a_video_from_a_channle";
+    public static final String REQUEST_LIST_ALL_VIDEOS_IN_A_CHANNEL = "request_list_all_videos_in_a_channel";
+    public static final String REQUEST_LIST_ALL_FOLLOWERS_OF_A_CHANNEL = "request_list_all_followers_of_a_channel";
     public static final String REQUEST_LIST_TITLE= "request_list_title";
     public static final String REQUEST_LIST_DATE_MODIFIED = "request_list_date_modified";
     public static final String REQUEST_LIST_DATE_ADDED = "request_list_date_added";

@@ -472,6 +472,13 @@ public class Channel implements Serializable {
         private String name;
         private String tag;
         private String canonical;
+        /**
+         * metadata : {"connections":{"videos":{"uri":"/tags/vimeo/videos","options":["GET"],"total":74574}}}
+         * resource_key : 25c71631f4a526eeebfe07262a5f490ee5fafabe
+         */
+
+        private MetadataBean metadata;
+        private String resource_key;
 
         public void setUri(String uri) {
             this.uri = uri;
@@ -503,6 +510,79 @@ public class Channel implements Serializable {
 
         public String getCanonical() {
             return canonical;
+        }
+
+        public void setMetadata(MetadataBean metadata) {
+            this.metadata = metadata;
+        }
+
+        public void setResource_key(String resource_key) {
+            this.resource_key = resource_key;
+        }
+
+        public MetadataBean getMetadata() {
+            return metadata;
+        }
+
+        public String getResource_key() {
+            return resource_key;
+        }
+
+        public static class MetadataBean {
+
+            private ConnectionsBean connections;
+
+            public void setConnections(ConnectionsBean connections) {
+                this.connections = connections;
+            }
+
+            public ConnectionsBean getConnections() {
+                return connections;
+            }
+
+            public static class ConnectionsBean {
+
+                private VideosBean videos;
+
+                public void setVideos(VideosBean videos) {
+                    this.videos = videos;
+                }
+
+                public VideosBean getVideos() {
+                    return videos;
+                }
+
+                public static class VideosBean {
+
+                    private String uri;
+                    private int total;
+                    private List<String> options;
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public void setTotal(int total) {
+                        this.total = total;
+                    }
+
+                    public void setOptions(List<String> options) {
+                        this.options = options;
+                    }
+
+                    public String getUri() {
+                        return uri;
+                    }
+
+                    public int getTotal() {
+                        return total;
+                    }
+
+                    public List<String> getOptions() {
+                        return options;
+                    }
+                }
+            }
         }
     }
 }

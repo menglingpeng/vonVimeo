@@ -3,7 +3,6 @@ package com.menglingpeng.vonvimeo.mvp.adapter;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.Fragment;
@@ -28,7 +27,6 @@ import com.menglingpeng.vonvimeo.mvp.interf.OnRecyclerListItemListener;
 import com.menglingpeng.vonvimeo.mvp.model.Album;
 import com.menglingpeng.vonvimeo.mvp.model.Category;
 import com.menglingpeng.vonvimeo.mvp.model.Channel;
-import com.menglingpeng.vonvimeo.mvp.model.ChannelVideo;
 import com.menglingpeng.vonvimeo.mvp.model.Group;
 import com.menglingpeng.vonvimeo.mvp.model.Project;
 import com.menglingpeng.vonvimeo.mvp.model.Stuff;
@@ -36,7 +34,6 @@ import com.menglingpeng.vonvimeo.mvp.model.Tag;
 import com.menglingpeng.vonvimeo.mvp.model.User;
 import com.menglingpeng.vonvimeo.mvp.model.Video;
 import com.menglingpeng.vonvimeo.mvp.presenter.RecyclerPresenter;
-import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
 import com.menglingpeng.vonvimeo.mvp.view.UserAlbumDetailActivity;
 import com.menglingpeng.vonvimeo.mvp.view.UserAlbumsActivity;
 import com.menglingpeng.vonvimeo.mvp.view.activity.UserChannelsActivity;
@@ -409,6 +406,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     case Constants.REQUEST_LIST_ALL_VIDEOS_IN_AN_ALBUM:
                         view = inflater.inflate(R.layout.recycler_user_album_detail_item, parent, false);
                         viewHolder = new AlbumDetailViewHolder(view);
+                        break;
+                    case Constants.REQUEST_LIST_ALL_VIDEOS_IN_A_CHANNEL:
+                        view = inflater.inflate(R.layout.recycler_videos_of_a_channel_item, parent, false);
+                        viewHolder = new ChannelDetailViewHolder(view);
                         break;
                     default:
                         break;
@@ -786,12 +787,33 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             });
         } else if(holder instanceof ChannelDetailViewHolder){
             final ChannelDetailViewHolder viewHolder = (ChannelDetailViewHolder)holder;
-            final ChannelVideo channelVideo = (ChannelVideo)list.get(position);
+            final Video video = (Video)list.get(position);
+            ImageLoader.load(fragment, video.getPictures().getUri(), viewHolder.videoThumbIv, false);
+            viewHolder.videoNameTv.setText(video.getName());
+            ImageLoader.loadCricleImage(fragment, video.getUser().getPictures().getUri(), viewHolder.avatarIv);
+            viewHolder.videoNameTv.setText(video.getUser().getName());
+            viewHolder.videoPlayCountsTv.setText(video.getStats().getPlays());
+            viewHolder.avatarIv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent= new Intent(fragment.getActivity(), UserProfileActivity.class);
+                    intent.putExtra(Constants.USER, video.getUser());
+                    context.startActivity(intent);
+                }
+            });
+            viewHolder.videoNameTv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent= new Intent(fragment.getActivity(), UserProfileActivity.class);
+                    intent.putExtra(Constants.USER, video.getUser());
+                    context.startActivity(intent);
+                }
+            });
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     if (mListener != null) {
-                        mListener.onRecyclerFragmentListListener(viewHolder, channelVideo);
+                        mListener.onRecyclerFragmentListListener(viewHolder, video);
                     }
                 }
             });

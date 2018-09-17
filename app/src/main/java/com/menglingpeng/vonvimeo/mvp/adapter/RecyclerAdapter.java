@@ -411,6 +411,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         view = inflater.inflate(R.layout.recycler_videos_of_a_channel_item, parent, false);
                         viewHolder = new ChannelDetailViewHolder(view);
                         break;
+                    case Constants.REQUEST_LIST_ALL_FOLLOWERS_OF_A_CHANNEL:
+                        view = inflater.inflate(R.layout.recycler_followers_of_a_channel_item, parent, false);
+                        viewHolder = new FollowerOfChannelViewHolder(view);
+                        break;
                     default:
                         break;
                 }
@@ -817,7 +821,66 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     }
                 }
             });
-        }else if(holder instanceof FollowOfUserThumbTypeViewHolder){
+        }else if (holder instanceof FollowerOfChannelViewHolder){
+            final FollowerOfChannelViewHolder viewHolder = (FollowerOfChannelViewHolder)holder;
+            final User user = (User) list.get(position);
+            ImageLoader.loadCricleImage(context, user.getPictures().getUri(), viewHolder.userAvatarIv);
+            viewHolder.userNameTv.setText(user.getName());
+            viewHolder.userPrivilegeBt.setText(user.getAccount().toString());
+            viewHolder.userLocationTv.setText(user.getLocation().toString());
+            viewHolder.addedTimeTv.setText(user.getMetadata().getInteractions().getFollow().getAdded_time().toString());
+            viewHolder.userBioTv.setText(user.getBio().toString());
+            viewHolder.userStatusTv.setText();
+            viewHolder.videosTv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(context, UserUploadedVideosActivity.class);
+                    intent.putExtra(Constants.USER, user);
+                    context.startActivity(intent);
+                }
+            });
+            viewHolder.albumsTv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(context, UserAlbumsActivity.class);
+                    intent.putExtra(Constants.USER, user);
+                    context.startActivity(intent);
+                }
+            });
+            viewHolder.channelsTv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(context, UserChannelsActivity.class);
+                    intent.putExtra(Constants.USER, user);
+                    context.startActivity(intent);
+                }
+            });
+            viewHolder.groupsTv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(context, UserGroupActivity.class);
+                    intent.putExtra(Constants.USER, user);
+                    context.startActivity(intent);
+                }
+            });
+            viewHolder.followingTv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(context, UserFollowingActivity.class);
+                    intent.putExtra(Constants.USER, user);
+                    context.startActivity(intent);
+                }
+            });
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mListener != null) {
+                        mListener.onRecyclerFragmentListListener(viewHolder, user);
+                    }
+                }
+            });
+        }
+        else if(holder instanceof FollowOfUserThumbTypeViewHolder){
             final FollowOfUserThumbTypeViewHolder viewHolder = (FollowOfUserThumbTypeViewHolder) holder;
             final User user = (User)list.get(position);
             ImageLoader.loadCricleImage(context, user.getPictures().getUri(), viewHolder.userAvatarIv);
@@ -1386,6 +1449,41 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             avatarIv = (ImageView)view.findViewById(R.id.channel_detail_video_avatar_iv);
             userNameTv = (TextView)view.findViewById(R.id.channel_detail_video_user_tv);
             videoPlayCountsTv = (TextView)view.findViewById(R.id.channel_detail_video_play_count_tv);
+
+        }
+    }
+
+    public class FollowerOfChannelViewHolder extends RecyclerView.ViewHolder {
+        public final RelativeLayout followerRl;
+        public final ImageView userAvatarIv;
+        public final TextView userNameTv;
+        public final TextView userPrivilegeBt;
+        public final TextView userLocationTv;
+        public final TextView addedTimeTv;
+        public final TextView userStatusTv;
+        public final TextView userBioTv;
+        public final TextView videosTv;
+        public final TextView albumsTv;
+        public final TextView channelsTv;
+        public final TextView groupsTv;
+        public final TextView followingTv;
+
+
+        public FollowerOfChannelViewHolder(View view) {
+            super(view);
+            followerRl = (RelativeLayout) view.findViewById(R.id.channel_followers_rl);
+            userAvatarIv = (ImageView) view.findViewById(R.id.channel_followers_avatar_iv);
+            userPrivilegeBt = (Button)view.findViewById(R.id.channel_followers_user_privilege_bt);
+            userLocationTv = (TextView)view.findViewById(R.id.channel_followers_location_tv);
+            addedTimeTv = (TextView) view.findViewById(R.id.channel_followers_time_tv);
+            userNameTv = (TextView) view.findViewById(R.id.channel_followers_name_tv);
+            userStatusTv = (TextView)view.findViewById(R.id.channel_followers_user_status_tv);
+            userBioTv = (TextView)view.findViewById(R.id.channel_followers_user_bio_tv);
+            videosTv = (TextView)view.findViewById(R.id.channel_followers_videos_tv);
+            albumsTv = (TextView)view.findViewById(R.id.channel_followers_albums_tv);
+            channelsTv = (TextView)view.findViewById(R.id.channel_followers_channels_tv);
+            groupsTv = (TextView)view.findViewById(R.id.channel_followers_groups_tv);
+            followingTv = (TextView)view.findViewById(R.id.channel_followers_following_tv);
 
         }
     }

@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.adapter.TabPagerFragmentAdapter;
 import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
+import com.menglingpeng.vonvimeo.mvp.model.Group;
 import com.menglingpeng.vonvimeo.mvp.model.User;
 import com.menglingpeng.vonvimeo.mvp.presenter.RecyclerPresenter;
 import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
@@ -32,7 +33,7 @@ import java.util.List;
 
 public class GroupDetailActivity extends BaseActivity implements RecyclerView{
 
-    private User user;
+    private Group group;
     private Toolbar toolbar;
     private CoordinatorLayout coordinatorLayout;
     private CollapsingToolbarLayout collapsingToolbarLayout;
@@ -55,7 +56,6 @@ public class GroupDetailActivity extends BaseActivity implements RecyclerView{
     private String type;
     private Boolean isJoined;
     private ArrayList<RecyclerFragment> fragmentsList;
-
     private static final int SMOOTHSCROLL_TOP_POSITION = 50;
 
     @Override
@@ -66,10 +66,10 @@ public class GroupDetailActivity extends BaseActivity implements RecyclerView{
     @Override
     protected void initViews() {
         super.initViews();
+        context = getApplicationContext();
+        group = (Group)getIntent().getSerializableExtra(Constants.GROUP);
         coordinatorLayout = (CoordinatorLayout) findViewById(R.id.group_detail_cdl);
         toolbar = (Toolbar) findViewById(R.id.group_detail_tb);
-        tabLayout = (TabLayout)findViewById(R.id.group_detail_tbl);
-        viewPager = (ViewPager)findViewById(R.id.group_detail_vp);
         toolbar.setTitle(title);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_back);
@@ -87,6 +87,8 @@ public class GroupDetailActivity extends BaseActivity implements RecyclerView{
     }
 
     private void initTabPager() {
+        tabLayout = (TabLayout)findViewById(R.id.group_detail_tl);
+        viewPager = (ViewPager)findViewById(R.id.group_detail_vp);
         tabLayout.setVisibility(TabLayout.VISIBLE);
         viewPager.setVisibility(ViewPager.VISIBLE);
         fragments = new ArrayList<>();
@@ -114,11 +116,12 @@ public class GroupDetailActivity extends BaseActivity implements RecyclerView{
 
     private void initFragments() {
         List<String> titles = new ArrayList<>();
-
-            titles.add(getString(R.string.home_popular));
-            titles.add(getString(R.string.home_recent));
-            fragments.add(new RecyclerFragment().newInstance(Constants.TAB_GROUP_DETAIL_VIDEOS));
-            fragments.add(new RecyclerFragment().newInstance(Constants.TAB_GROUP_DETAIL_MEMBERS));
+            titles.add(getString(R.string.videos));
+            titles.add(getString(R.string.members));
+            titles.add(getString(R.string.moderators));
+            fragments.add(new RecyclerFragment().newInstance(Constants.ID, Constants.TAB_GROUP_DETAIL_VIDEOS));
+            fragments.add(new RecyclerFragment().newInstance(Constants.ID, Constants.TAB_GROUP_DETAIL_MEMBERS));
+            fragments.add(new RecyclerFragment().newInstance(Constants.ID, Constants.TAB_GROUP_DETAIL_MODERATORS))
 
         adapter.setFragments(fragments, titles);
     }
@@ -203,7 +206,7 @@ public class GroupDetailActivity extends BaseActivity implements RecyclerView{
                 break;
             default:
                 progressBar.setVisibility(ProgressBar.GONE);
-                user = JsonUtils.parseJson(json, User.class);
+
                 coordinatorLayout = (CoordinatorLayout)findViewById(R.id.group_detail_cdl);
                 collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.group_detail_ctbl);
                 collapsingToolbarLayout.setVisibility(CollapsingToolbarLayout.VISIBLE);

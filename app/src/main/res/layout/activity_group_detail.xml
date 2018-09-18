@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.menglingpeng.vonvimeo.mvp.view.activity.UserProfileActivity">
+    tools:context="com.menglingpeng.vonvimeo.mvp.view.activity.GroupDetailActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -68,7 +68,7 @@
                     android:id="@+id/group_detail_join_bt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/group_desc_tv"
+                    android:layout_below="@+id/group_detail_desc_tv"
                     android:layout_marginTop="@dimen/profile_follow_bt_layout_margin"
                     android:layout_marginBottom="@dimen/profile_follow_bt_layout_margin"
                     android:layout_centerHorizontal="true"
@@ -85,7 +85,7 @@
                     android:id="@+id/group_detail_leave_bt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/group_desc_tv"
+                    android:layout_below="@+id/group_detail_desc_tv"
                     android:layout_marginTop="@dimen/profile_follow_bt_layout_margin"
                     android:layout_marginBottom="@dimen/profile_follow_bt_layout_margin"
                     android:layout_centerHorizontal="true"

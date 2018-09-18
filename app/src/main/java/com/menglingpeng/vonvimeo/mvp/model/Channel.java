@@ -16,15 +16,7 @@ public class Channel implements Serializable {
     private List<?> categories;
     private PicturesBean pictures;
     private HeaderBean header;
-    /**
-     * privacy : {"view":"anybody"}
-     */
-
     private PrivacyBean privacy;
-    /**
-     * tags : [{"uri":"/tags/vimeo","name":"vimeo","tag":"vimeo","canonical":"vimeo"}]
-     */
-
     private List<TagsBean> tags;
 
     public String getUri() {
@@ -472,11 +464,6 @@ public class Channel implements Serializable {
         private String name;
         private String tag;
         private String canonical;
-        /**
-         * metadata : {"connections":{"videos":{"uri":"/tags/vimeo/videos","options":["GET"],"total":74574}}}
-         * resource_key : 25c71631f4a526eeebfe07262a5f490ee5fafabe
-         */
-
         private MetadataBean metadata;
         private String resource_key;
 
@@ -531,6 +518,12 @@ public class Channel implements Serializable {
         public static class MetadataBean {
 
             private ConnectionsBean connections;
+            /**
+             * interactions : {"follow":{"added":true,"added_time":"2018-08-20T10:46:31+00:00","type":"subscriber",
+             * "uri":"/users/86476471/channels/927"}}
+             */
+
+            private InteractionsBean interactions;
 
             public void setConnections(ConnectionsBean connections) {
                 this.connections = connections;
@@ -539,6 +532,15 @@ public class Channel implements Serializable {
             public ConnectionsBean getConnections() {
                 return connections;
             }
+
+            public void setInteractions(InteractionsBean interactions) {
+                this.interactions = interactions;
+            }
+
+            public InteractionsBean getInteractions() {
+                return interactions;
+            }
+
 
             public static class ConnectionsBean {
 
@@ -580,6 +582,59 @@ public class Channel implements Serializable {
 
                     public List<String> getOptions() {
                         return options;
+                    }
+                }
+            }
+
+            public static class InteractionsBean {
+
+                private FollowBean follow;
+
+                public void setFollow(FollowBean follow) {
+                    this.follow = follow;
+                }
+
+                public FollowBean getFollow() {
+                    return follow;
+                }
+
+                public static class FollowBean {
+
+                    private boolean added;
+                    private String added_time;
+                    private String type;
+                    private String uri;
+
+                    public void setAdded(boolean added) {
+                        this.added = added;
+                    }
+
+                    public void setAdded_time(String added_time) {
+                        this.added_time = added_time;
+                    }
+
+                    public void setType(String type) {
+                        this.type = type;
+                    }
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public boolean getAdded() {
+                        return added;
+                    }
+
+                    public String getAdded_time() {
+                        return added_time;
+                    }
+
+                    public String getType() {
+                        return type;
+                    }
+
+                    public String getUri() {
+                        return uri;
                     }
                 }
             }

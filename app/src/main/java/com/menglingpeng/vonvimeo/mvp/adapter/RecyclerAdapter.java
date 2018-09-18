@@ -512,6 +512,21 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     }
                 }
             });
+        }else if (holder instanceof GroupThumbTypeViewHolder){
+            final GroupThumbTypeViewHolder viewHolder = (GroupThumbTypeViewHolder)holder;
+            final Group group = (Group)list.get(position);
+            ImageLoader.load(fragment, group.getPictures().getUri(), viewHolder.groupThumbIv, false);
+            viewHolder.groupNameTv.setText(group.getName());
+            viewHolder.groupVideosCountTv.setText(group.getMetadata().getConnections().getVideos().getTotal());
+            viewHolder.groupFollowersCountTv.setText(group.getMetadata().getConnections().getUsers().getTotal());
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (mListener != null) {
+                        mListener.onRecyclerFragmentListListener(viewHolder, group);
+                    }
+                }
+            });
         }
         else if(holder instanceof GroupDetaiTypeViewHolder){
             final GroupDetaiTypeViewHolder viewHolder = (GroupDetaiTypeViewHolder)holder;
@@ -1488,13 +1503,22 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
-    public class GroupViewHolder extends RecyclerView.ViewHolder {
+    public class GroupThumbTypeViewHolder extends RecyclerView.ViewHolder {
 
-        public final ImageView groupIv;
+        public final ImageView groupThumbIv;
+        public final TextView groupNameTv;
+        public final TextView groupDescTv;
+        public final TextView groupVideosCountTv;
+        public final TextView groupFollowersCountTv;
 
-        public GroupViewHolder(View view) {
+        public GroupThumbTypeViewHolder(View view) {
             super(view);
-            groupIv = (ImageView)view.findViewById(R.id.group_iv);
+            groupThumbIv = (ImageView)view.findViewById(R.id.group_thumb_iv_iv);
+            groupNameTv = (TextView)view.findViewById(R.id.group_name_tv);
+            groupDescTv = (TextView)view.findViewById(R.id.group_desc_tv);
+            groupVideosCountTv = (TextView)view.findViewById(R.id.group_videos_count_tv);
+            groupFollowersCountTv = (TextView)view.findViewById(R.id.
+                    group_followers_count_tv);
         }
     }
 

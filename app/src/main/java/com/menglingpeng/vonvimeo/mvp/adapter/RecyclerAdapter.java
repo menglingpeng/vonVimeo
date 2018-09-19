@@ -527,7 +527,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     }
                 }
             });
-        }
+        }else if(holder instanceof )
         else if(holder instanceof GroupDetaiTypeViewHolder){
             final GroupDetaiTypeViewHolder viewHolder = (GroupDetaiTypeViewHolder)holder;
             final Group group = (Group)list.get(position);
@@ -1519,6 +1519,27 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             groupVideosCountTv = (TextView)view.findViewById(R.id.group_videos_count_tv);
             groupFollowersCountTv = (TextView)view.findViewById(R.id.
                     group_followers_count_tv);
+        }
+    }
+
+    public class GroupDetailTypeViewHolder extends RecyclerView.ViewHolder {
+
+        public final RelativeLayout groupRl;
+        public final ImageView groupThumbIv;
+        public final TextView groupNameTv;
+        public final TextView groupDescTv;
+        public final TextView groupVideosCountTv;
+        public final TextView groupFollowersCountTv;
+
+        public GroupDetailTypeViewHolder(View view) {
+            super(view);
+            groupRl = (RelativeLayout)view.findViewById(R.id.detail_view_group_rl);
+            groupThumbIv = (ImageView)view.findViewById(R.id.detail_view_group_thumb_iv_iv);
+            groupNameTv = (TextView)view.findViewById(R.id.detail_view_group_name_tv);
+            groupDescTv = (TextView)view.findViewById(R.id.detail_view_group_desc_tv);
+            groupVideosCountTv = (TextView)view.findViewById(R.id.detail_view_group_videos_count_tv);
+            groupFollowersCountTv = (TextView)view.findViewById(R.id.
+                    detail_view_group_followers_count_tv);
         }
     }
 

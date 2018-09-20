@@ -167,6 +167,19 @@ public class Constants {
 
     public static final String REQUEST_LIST_ALL_VIDEO_FOR_A_CHANNEL = "request_list_all_video_for_a_channel";
 
+    public static final String REQUEST_GET_ALL_VIDEOS_IN_A_GROUP_SORY_BY_DATE =
+            "request_get_all_videos_in_a_group_sort_by_date";
+    public static final String REQUEST_GET_ALL_VIDEOS_IN_A_GROUP_SORY_BY_ALPHABETICAL =
+            "request_get_all_videos_in_a_group_sort_by_alphabetical";
+    public static final String REQUEST_GET_ALL_VIDEOS_IN_A_GROUP_SORY_BY_DURATION =
+            "request_get_all_videos_in_a_group_sort_by_duration";
+    public static final String REQUEST_GET_ALL_VIDEOS_IN_A_GROUP_SORY_BY_PLAYS =
+            "request_get_all_videos_in_a_group_sort_by_plays";
+    public static final String REQUEST_GET_ALL_VIDEOS_IN_A_GROUP_SORY_BY_LIKES =
+            "request_get_all_videos_in_a_group_sort_by_likes";
+    public static final String REQUEST_GET_ALL_VIDEOS_IN_A_GROUP_SORY_BY_COMMENTS =
+            "request_get_all_videos_in_a_group_sort_by_comments";
+
     public static final String REQUEST_SINGLE_USER = "single_user";
     public static final String REQUEST_AUTH_USER = "auth_user";
     public static final String REQUEST_LIST_DETAIL_FOR_AUTH_USER = "list_detail_for_auth_user";

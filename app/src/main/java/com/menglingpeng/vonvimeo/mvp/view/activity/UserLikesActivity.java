@@ -69,7 +69,7 @@ public class UserLikesActivity extends BaseActivity implements RecyclerView, Vie
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.project_detail_toolbar_overflow_menu, menu);
+        getMenuInflater().inflate(R.menu.user_likes_toolbar_overflow_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 

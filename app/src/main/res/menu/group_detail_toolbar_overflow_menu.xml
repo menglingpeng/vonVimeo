@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/group_videos_sort"
+        android:title="Date modiffied"
+        app:showAsAction="always">
+
+        <menu>
+
+            <item
+                android:id="@+id/group_videos_sort_date"
+                android:title="@string/sort_date"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/group_videos_sort_alphabetical"
+                android:title="@string/sort_alphabetical"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/group_videos_sort_plays"
+                android:title="@string/sort_plays"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/group_videos_sort_likes"
+                android:title="@string/sort_likes"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/group_videos_sort_comments"
+                android:title="@string/sort_comments"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/group_videos_sort_duration"
+                android:title="@string/sort_duration"
+                app:showAsAction="never"></item>
+
+        </menu>
+
+    </item>
+
+</menu>

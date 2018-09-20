@@ -18,6 +18,7 @@ public class Video implements Serializable{
     private String modified_time;
     private String release_time;
     private Object license;
+    private Category category;
     private PicturesBean pictures;
     private StatsBean stats;
     private String status;
@@ -26,6 +27,15 @@ public class Video implements Serializable{
     private List<String> content_rating;
     private List<TagsBean> tags;
     private MetadataBean metadataBean;
+    private List<SubcategoriesBean> subcategories;
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 
     public void setUri(String uri) {
         this.uri = uri;
@@ -193,6 +203,14 @@ public class Video implements Serializable{
 
     public void setMetadataBean(MetadataBean metadataBean) {
         this.metadataBean = metadataBean;
+    }
+
+    public void setSubcategories(List<SubcategoriesBean> subcategories) {
+        this.subcategories = subcategories;
+    }
+
+    public List<SubcategoriesBean> getSubcategories() {
+        return subcategories;
     }
 
     public static class PicturesBean {
@@ -574,6 +592,38 @@ public class Video implements Serializable{
                     return options;
                 }
             }
+        }
+    }
+
+
+    public static class SubcategoriesBean {
+
+        private String uri;
+        private String name;
+        private String link;
+
+        public void setUri(String uri) {
+            this.uri = uri;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public void setLink(String link) {
+            this.link = link;
+        }
+
+        public String getUri() {
+            return uri;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getLink() {
+            return link;
         }
     }
 }

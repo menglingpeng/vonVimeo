@@ -415,6 +415,30 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         view = inflater.inflate(R.layout.recycler_followers_of_a_channel_item, parent, false);
                         viewHolder = new FollowerOfChannelViewHolder(view);
                         break;
+                    case Constants.REQUEST_GET_ALL_VIDEOS_IN_A_GROUP_SORY_BY_DATE:
+                        view = inflater.inflate(R.layout.recycler_videos_of_a_channel_thumb_view_item, parent, false);
+                        viewHolder = new GroupVideoTypeThumbViewHolder(view);
+                        break;
+                    case Constants.REQUEST_GET_ALL_VIDEOS_IN_A_GROUP_SORY_BY_ALPHABETICAL:
+                        view = inflater.inflate(R.layout.recycler_videos_of_a_channel_thumb_view_item, parent, false);
+                        viewHolder = new GroupVideoTypeThumbViewHolder(view);
+                        break;
+                    case Constants.REQUEST_GET_ALL_VIDEOS_IN_A_GROUP_SORY_BY_PLAYS:
+                        view = inflater.inflate(R.layout.recycler_videos_of_a_channel_thumb_view_item, parent, false);
+                        viewHolder = new GroupVideoTypeThumbViewHolder(view);
+                        break;
+                    case Constants.REQUEST_GET_ALL_VIDEOS_IN_A_GROUP_SORY_BY_LIKES:
+                        view = inflater.inflate(R.layout.recycler_videos_of_a_channel_thumb_view_item, parent, false);
+                        viewHolder = new GroupVideoTypeThumbViewHolder(view);
+                        break;
+                    case Constants.REQUEST_GET_ALL_VIDEOS_IN_A_GROUP_SORY_BY_COMMENTS:
+                        view = inflater.inflate(R.layout.recycler_videos_of_a_channel_thumb_view_item, parent, false);
+                        viewHolder = new GroupVideoTypeThumbViewHolder(view);
+                        break;
+                    case Constants.REQUEST_GET_ALL_VIDEOS_IN_A_GROUP_SORY_BY_DURATION:
+                        view = inflater.inflate(R.layout.recycler_videos_of_a_channel_thumb_view_item, parent, false);
+                        viewHolder = new GroupVideoTypeThumbViewHolder(view);
+                        break;
                     default:
                         break;
                 }
@@ -1556,6 +1580,24 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             groupVideosCountTv = (TextView)view.findViewById(R.id.detail_view_group_videos_count_tv);
             groupFollowersCountTv = (TextView)view.findViewById(R.id.
                     detail_view_group_followers_count_tv);
+        }
+    }
+
+    private class GroupVideoTypeThumbViewHolder extends RecyclerView.ViewHolder {
+
+        public final ImageView VideoThumbIv;
+        public final TextView VideoNameTv;
+        public final TextView userNameTv;
+        public final TextView likedTimeTv;
+
+
+        public GroupVideoTypeThumbViewHolder(View view) {
+            super(view);
+
+            VideoThumbIv = (ImageView)view.findViewById(R.id.group_video_thumb_iv);
+            VideoNameTv = (TextView)view.findViewById(R.id.group_video_name_tv);
+            userNameTv = (TextView)view.findViewById(R.id.group_video_user_name_tv);
+            likedTimeTv = (TextView)view.findViewById(R.id.group_video_time_tv);
         }
     }
 

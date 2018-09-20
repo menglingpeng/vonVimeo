@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -23,6 +25,7 @@ import com.menglingpeng.vonvimeo.mvp.model.User;
 import com.menglingpeng.vonvimeo.mvp.presenter.RecyclerPresenter;
 import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
 import com.menglingpeng.vonvimeo.utils.Constants;
+import com.menglingpeng.vonvimeo.utils.IdStringUtil;
 import com.menglingpeng.vonvimeo.utils.ImageLoader;
 import com.menglingpeng.vonvimeo.utils.JsonUtils;
 import com.menglingpeng.vonvimeo.utils.SnackbarUtils;
@@ -54,6 +57,7 @@ public class GroupDetailActivity extends BaseActivity implements RecyclerView{
     private Context context;
     private String title;
     private String type;
+    private String groupID;
     private Boolean isJoined;
     private ArrayList<RecyclerFragment> fragmentsList;
     private static final int SMOOTHSCROLL_TOP_POSITION = 50;
@@ -68,6 +72,7 @@ public class GroupDetailActivity extends BaseActivity implements RecyclerView{
         super.initViews();
         context = getApplicationContext();
         group = (Group)getIntent().getSerializableExtra(Constants.GROUP);
+        groupID = IdStringUtil.getId(group.getUri());
         coordinatorLayout = (CoordinatorLayout) findViewById(R.id.group_detail_cdl);
         toolbar = (Toolbar) findViewById(R.id.group_detail_tb);
         toolbar.setTitle(title);
@@ -84,6 +89,41 @@ public class GroupDetailActivity extends BaseActivity implements RecyclerView{
 
     private void initData(String requestMethod){
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.group_detail_toolbar_overflow_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.liked_videos_sort_duration:
+                type = Constants.REQUEST_GET_ALL_VIDEOS_IN_A_GROUP_SORY_BY_DURATION;
+                break;
+            case R.id.liked_videos_sort_date:
+                type = Constants.REQUEST_GET_ALL_VIDEOS_IN_A_GROUP_SORY_BY_DURATION;
+                break;
+            case R.id.liked_videos_sort_alphabetical:
+                type = Constants.REQUEST_GET_ALL_VIDEOS_IN_A_GROUP_SORY_BY_DURATION;
+                break;
+            case R.id.liked_videos_sort_plays:
+                type = Constants.REQUEST_GET_ALL_VIDEOS_IN_A_GROUP_SORY_BY_DURATION;
+                break;
+            case R.id.liked_videos_sort_likes:
+                type = Constants.REQUEST_GET_ALL_VIDEOS_IN_A_GROUP_SORY_BY_DURATION;
+                break;
+            case R.id.liked_videos_sort_comments:
+                type = Constants.REQUEST_GET_ALL_VIDEOS_IN_A_GROUP_SORY_BY_DURATION;
+
+                break;
+            default:
+                break;
+        }
+        replaceFragment(RecyclerFragment.newInstance(Constants.ID, type));
+        return super.onOptionsItemSelected(item);
     }
 
     private void initTabPager() {

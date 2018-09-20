@@ -527,7 +527,22 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     }
                 }
             });
-        }else if(holder instanceof )
+        }else if(holder instanceof GroupDetailTypeViewHolder){
+            final GroupThumbTypeViewHolder viewHolder = (GroupThumbTypeViewHolder)holder;
+            final Group group = (Group)list.get(position);
+            ImageLoader.load(fragment, group.getPictures().getUri(), viewHolder.groupThumbIv, false);
+            viewHolder.groupNameTv.setText(group.getName());
+            viewHolder.groupVideosCountTv.setText(group.getMetadata().getConnections().getVideos().getTotal());
+            viewHolder.groupFollowersCountTv.setText(group.getMetadata().getConnections().getUsers().getTotal());
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (mListener != null) {
+                        mListener.onRecyclerFragmentListListener(viewHolder, group);
+                    }
+                }
+            });
+        }
         else if(holder instanceof GroupDetaiTypeViewHolder){
             final GroupDetaiTypeViewHolder viewHolder = (GroupDetaiTypeViewHolder)holder;
             final Group group = (Group)list.get(position);
@@ -1242,6 +1257,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
 
+
     public class FeedVideoViewHolder extends RecyclerView.ViewHolder{
 
         public FeedVideoViewHolder(View itemView) {
@@ -1543,7 +1559,33 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
+    private class GroupVideoTypeDetailViewHolder extends RecyclerView.ViewHolder {
 
+        public final ImageView VideoThumbIv;
+        public final TextView VideoNameTv;
+        public final TextView userNameTv;
+        public final TextView likedTimeTv;
+        public final TextView videoDescTv;
+        public final TextView playsCountTv;
+        public final TextView likesCountTv;
+        public final TextView commentsCountTv;
+        public final TextView videoDurationTv;
+
+
+        public GroupVideoTypeDetailViewHolder(View view) {
+            super(view);
+
+            VideoThumbIv = (ImageView)view.findViewById(R.id.detail_view_group_video_thumb_iv);
+            VideoNameTv = (TextView)view.findViewById(R.id.detail_view_group_video_name_tv);
+            userNameTv = (TextView)view.findViewById(R.id.detail_view_group_video_user_name_tv);
+            likedTimeTv = (TextView)view.findViewById(R.detail_view_group_video_added_time_tv);
+            videoDescTv = (TextView)view.findViewById(R.id.detail_view_group_video_desc_tv);
+            playsCountTv = (TextView)view.findViewById(R.id.detail_view_group_video_plays_count_i);
+            likesCountTv = (TextView)view.findViewById(R.id.detail_view_group_video_likes_count_i);
+            commentsCountTv = (TextView)view.findViewById(R.id.detail_view_group_video_comments_count_i);
+            videoDurationTv = (TextView)view.findViewById(R.id.detail_view_group_duration_tv);
+        }
+    }
 
     public class DetailOfUserViewHolder extends RecyclerView.ViewHolder {
         public final RelativeLayout profileTablayoutDetailShotsRl;

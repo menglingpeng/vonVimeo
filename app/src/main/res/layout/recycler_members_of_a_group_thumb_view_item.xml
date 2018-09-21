@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/thumb_view__following_rl"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/thumb_view_group_member_avatar_iv"
+        android:layout_width="@dimen/feed_following_avatar_iv_layout_width_height"
+        android:layout_height="@dimen/feed_following_avatar_iv_layout_width_height"
+        android:layout_marginLeft="@dimen/feed_following_avatar_iv_layout_margin_top_left"
+        android:layout_marginTop="@dimen/feed_following_avatar_iv_layout_margin_top_left" />
+
+    <TextView
+        android:id="@+id/thumb_view_group_member_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/thumb_view_group_member_avatar_iv"
+        android:layout_marginLeft="@dimen/profile_tablayout_followers_name_tv_layout_marginLeft"
+        android:layout_toRightOf="@+id/thumb_view_group_member_avatar_iv"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+    <TextView
+        android:id="@+id/thumb_view_group_member_time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/thumb_view_group_member_name_tv"
+        android:layout_below="@+id/thumb_view_group_member_name_tv"
+        android:layout_marginTop="@dimen/profile_tablayout_followers_location_tv_layout_marginTop" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/user_albums_recycler_item_view_layout_height"
+        android:layout_below="@+id/thumb_view_group_member_time_tv"
+        android:background="@color/recycler_item_view_background"></View>
+
+</RelativeLayout>

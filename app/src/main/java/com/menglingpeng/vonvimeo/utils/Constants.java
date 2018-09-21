@@ -180,6 +180,11 @@ public class Constants {
     public static final String REQUEST_GET_ALL_VIDEOS_IN_A_GROUP_SORY_BY_COMMENTS =
             "request_get_all_videos_in_a_group_sort_by_comments";
 
+    public static final String REQUEST_GET_ALL_MEMBERS_IN_A_GROUP_SORY_BY_DATE =
+            "request_get_all_members_in_a_group_sort_by_date";
+    public static final String REQUEST_GET_ALL_MEMBERS_IN_A_GROUP_SORY_BY_ALPHABETICAL =
+            "request_get_all_members_in_a__sort_by_alphabetical";
+
     public static final String REQUEST_SINGLE_USER = "single_user";
     public static final String REQUEST_AUTH_USER = "auth_user";
     public static final String REQUEST_LIST_DETAIL_FOR_AUTH_USER = "list_detail_for_auth_user";

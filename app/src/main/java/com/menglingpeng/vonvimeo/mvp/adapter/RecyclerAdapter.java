@@ -439,6 +439,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         view = inflater.inflate(R.layout.recycler_videos_of_a_channel_thumb_view_item, parent, false);
                         viewHolder = new GroupVideoTypeThumbViewHolder(view);
                         break;
+                    case Constants.REQUEST_GET_ALL_MEMBERS_IN_A_GROUP_SORY_BY_DATE:
+                        view = inflater.inflate(R.layout.recycler_members_of_a_channel_thumb_view_item, parent, false);
+                        viewHolder = new MemberOfGroupThumbTypeViewHolder(view);
+                        break;
                     default:
                         break;
                 }
@@ -551,21 +555,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     }
                 }
             });
-        }else if(holder instanceof GroupDetailTypeViewHolder){
-            final GroupThumbTypeViewHolder viewHolder = (GroupThumbTypeViewHolder)holder;
-            final Group group = (Group)list.get(position);
-            ImageLoader.load(fragment, group.getPictures().getUri(), viewHolder.groupThumbIv, false);
-            viewHolder.groupNameTv.setText(group.getName());
-            viewHolder.groupVideosCountTv.setText(group.getMetadata().getConnections().getVideos().getTotal());
-            viewHolder.groupFollowersCountTv.setText(group.getMetadata().getConnections().getUsers().getTotal());
-            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if (mListener != null) {
-                        mListener.onRecyclerFragmentListListener(viewHolder, group);
-                    }
-                }
-            });
         }
         else if(holder instanceof GroupDetaiTypeViewHolder){
             final GroupDetaiTypeViewHolder viewHolder = (GroupDetaiTypeViewHolder)holder;
@@ -585,7 +574,59 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     }
                 }
             });
-        }else if (holder instanceof AuthUserAlbumViewHolder){
+        }else if(holder instanceof GroupVideoTypeThumbViewHolder){
+            final GroupVideoTypeThumbViewHolder viewHolder = (GroupVideoTypeThumbViewHolder)holder;
+            final Video video = (Video)list.get(position);
+            String pictureUrl = video.getPictures().getUri();
+            ImageLoader.load(fragment, pictureUrl, viewHolder.VideoThumbIv, false);
+            viewHolder.VideoNameTv.setText(video.getName());
+            viewHolder.userNameTv.setText(video.getUser().getName());
+            viewHolder.likedTimeTv.setText(video.getModified_time());
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (mListener != null) {
+                        mListener.onRecyclerFragmentListListener(viewHolder, video);
+                    }
+                }
+            });
+        }else if(holder instanceof GroupVideoTypeDetailViewHolder){
+            final GroupVideoTypeDetailViewHolder viewHolder = (GroupVideoTypeDetailViewHolder)holder;
+            final Video video = (Video)list.get(position);
+            String pictureUrl = video.getPictures().getUri();
+            ImageLoader.load(fragment, pictureUrl, viewHolder.VideoThumbIv, false);
+            viewHolder.VideoNameTv.setText(video.getName());
+            viewHolder.userNameTv.setText(video.getUser().getName());
+            viewHolder.addedTimeTv.setText(video.getModified_time());
+            viewHolder.videoDescTv.setText(video.getDescription());
+            viewHolder.videoDurationTv.setText(video.getDuration());
+            viewHolder.likesCountTv.setText(video.getMetadataBean().getConnections().getLikes().getTotal());
+            viewHolder.commentsCountTv.setText(video.getMetadataBean().getConnections().getComments().getTotal());
+            viewHolder.playsCountTv.setText(video.getStats().getPlays());
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (mListener != null) {
+                        mListener.onRecyclerFragmentListListener(viewHolder, video);
+                    }
+                }
+            });
+        }else if(holder instanceof MemberOfGroupThumbTypeViewHolder){
+            final MemberOfGroupThumbTypeViewHolder viewHolder = (MemberOfGroupThumbTypeViewHolder)holder;
+            final User user = (User)list.get(position);
+            ImageLoader.loadCricleImage(context, user.getPictures().getUri(), viewHolder.userAvatarIv);
+            viewHolder.userNameTv.setText(user.getName());
+            viewHolder.addedTimeTv.setText(user.getMetadata().getInteractions().getFollow().getAdded_time().toString());
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mListener != null) {
+                        mListener.onRecyclerFragmentListListener(viewHolder, user);
+                    }
+                }
+            });
+        }
+        else if (holder instanceof AuthUserAlbumViewHolder){
             final AuthUserAlbumViewHolder viewHolder = (AuthUserAlbumViewHolder)holder;
             final Album album = (Album) list.get(position);
             viewHolder.albumNameTv.setText(album.getName());
@@ -1606,7 +1647,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         public final ImageView VideoThumbIv;
         public final TextView VideoNameTv;
         public final TextView userNameTv;
-        public final TextView likedTimeTv;
+        public final TextView addedTimeTv;
         public final TextView videoDescTv;
         public final TextView playsCountTv;
         public final TextView likesCountTv;
@@ -1620,12 +1661,28 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             VideoThumbIv = (ImageView)view.findViewById(R.id.detail_view_group_video_thumb_iv);
             VideoNameTv = (TextView)view.findViewById(R.id.detail_view_group_video_name_tv);
             userNameTv = (TextView)view.findViewById(R.id.detail_view_group_video_user_name_tv);
-            likedTimeTv = (TextView)view.findViewById(R.detail_view_group_video_added_time_tv);
+            addedTimeTv = (TextView)view.findViewById(R.detail_view_group_video_added_time_tv);
             videoDescTv = (TextView)view.findViewById(R.id.detail_view_group_video_desc_tv);
             playsCountTv = (TextView)view.findViewById(R.id.detail_view_group_video_plays_count_i);
             likesCountTv = (TextView)view.findViewById(R.id.detail_view_group_video_likes_count_i);
             commentsCountTv = (TextView)view.findViewById(R.id.detail_view_group_video_comments_count_i);
             videoDurationTv = (TextView)view.findViewById(R.id.detail_view_group_duration_tv);
+        }
+    }
+
+    public class MemberOfGroupThumbTypeViewHolder extends RecyclerView.ViewHolder {
+        public final RelativeLayout followerRl;
+        public final ImageView userAvatarIv;
+        public final TextView userNameTv;
+        public final TextView addedTimeTv;
+
+        public MemberOfGroupThumbTypeViewHolder(View view) {
+            super(view);
+            followerRl = (RelativeLayout) view.findViewById(R.id.thumb_view_group_member_rl);
+            userAvatarIv = (ImageView) view.findViewById(R.id.thumb_view_group_member_avatar_iv);
+            addedTimeTv = (TextView) view.findViewById(R.id.thumb_view_group_member_time_tv);
+            userNameTv = (TextView) view.findViewById(R.id.thumb_view_group_member_name_tv);
+
         }
     }
 

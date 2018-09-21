@@ -27,6 +27,7 @@ import com.menglingpeng.vonvimeo.mvp.interf.OnRecyclerListItemListener;
 import com.menglingpeng.vonvimeo.mvp.model.Album;
 import com.menglingpeng.vonvimeo.mvp.model.Category;
 import com.menglingpeng.vonvimeo.mvp.model.Channel;
+import com.menglingpeng.vonvimeo.mvp.model.Follow;
 import com.menglingpeng.vonvimeo.mvp.model.Group;
 import com.menglingpeng.vonvimeo.mvp.model.Project;
 import com.menglingpeng.vonvimeo.mvp.model.Stuff;
@@ -625,6 +626,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     }
                 }
             });
+        }else if(holder instanceof MemberOfGroupDetailTypeViewHolder){
+
         }
         else if (holder instanceof AuthUserAlbumViewHolder){
             final AuthUserAlbumViewHolder viewHolder = (AuthUserAlbumViewHolder)holder;
@@ -1066,11 +1069,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         } else if(holder instanceof ProjectDetailViewHolder){
             final ProjectDetailViewHolder viewHolder = (ProjectDetailViewHolder)holder;
             final Video video = (Video)list.get(position);
-            String thumbUrl = video.getData().get(position).getPictures().getUri();
-            String avatarUrl = video.getData().get(position).getUser().getPictures().getUri();
+            String thumbUrl = video.getPictures().getUri();
+            String avatarUrl = video.getUser().getPictures().getUri();
             ImageLoader.load(context,thumbUrl ,viewHolder.groupDetailVideoThumbIv, true );
-            viewHolder.groupDetailVideoNameTv.setText(video.getData().get(position).getName());
-            viewHolder.userNameTv.setText(video.getData().get(position).getUser().getName());
+            viewHolder.groupDetailVideoNameTv.setText(video.getName());
+            viewHolder.userNameTv.setText(video.getUser().getName());
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -1081,11 +1084,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             });
         }else if(holder instanceof FeedPeopleViewHolder){
             final FeedPeopleViewHolder viewHolder = (FeedPeopleViewHolder)holder;
-            final Following following = (Following) list.get(position);
-            String avatarUrl = following.getData().get(position).getPictures().getUri();
+            final Follow follow = (Follow) list.get(position);
+            String avatarUrl = follow.getPictures().getUri();
             ImageLoader.loadCricleImage(fragment, avatarUrl, viewHolder.avatarIv);
-            viewHolder.userNameTv.setText(following.getData().get(position).getName());
-            viewHolder.followingTimeTv.setText(following.getData().get(position).getCreated_time());
+            viewHolder.userNameTv.setText(follow.getName());
+            viewHolder.followingTimeTv.setText(follow.getCreated_time());
             viewHolder.videosCb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -1108,7 +1111,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 @Override
                 public void onClick(View view) {
                     if (mListener != null) {
-                        mListener.onRecyclerFragmentListListener(viewHolder, following);
+                        mListener.onRecyclerFragmentListListener(viewHolder, follow);
                     }
                 }
             });
@@ -1682,6 +1685,41 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             userAvatarIv = (ImageView) view.findViewById(R.id.thumb_view_group_member_avatar_iv);
             addedTimeTv = (TextView) view.findViewById(R.id.thumb_view_group_member_time_tv);
             userNameTv = (TextView) view.findViewById(R.id.thumb_view_group_member_name_tv);
+
+        }
+    }
+
+    public class MemberOfGroupDetailTypeViewHolder extends RecyclerView.ViewHolder {
+        public final RelativeLayout followerRl;
+        public final ImageView userAvatarIv;
+        public final TextView userNameTv;
+        public final TextView userPrivilegeBt;
+        public final TextView userLocationTv;
+        public final TextView addedTimeTv;
+        public final TextView userStatusTv;
+        public final TextView userBioTv;
+        public final TextView videosTv;
+        public final TextView albumsTv;
+        public final TextView channelsTv;
+        public final TextView groupsTv;
+        public final TextView followingTv;
+
+
+        public MemberOfGroupDetailTypeViewHolder(View view) {
+            super(view);
+            followerRl = (RelativeLayout) view.findViewById(R.id.detail_view_group_member_rl);
+            userAvatarIv = (ImageView) view.findViewById(R.id.detail_view_group_member_avatar_iv);
+            userPrivilegeBt = (Button)view.findViewById(R.id.detail_view_group_member_privilege_bt);
+            userLocationTv = (TextView)view.findViewById(R.id.detail_view_group_member_location_tv);
+            addedTimeTv = (TextView) view.findViewById(R.id.detail_view_group_member_added_time_tv);
+            userNameTv = (TextView) view.findViewById(R.id.detail_view_group_member_name_tv);
+            userStatusTv = (TextView)view.findViewById(R.id.detail_view_group_member_status_tv);
+            userBioTv = (TextView)view.findViewById(R.id.detail_view_group_member_bio_tv);
+            videosTv = (TextView)view.findViewById(R.id.detail_view_group_member_videos_tv);
+            albumsTv = (TextView)view.findViewById(R.id.detail_view_group_member_albums_tv);
+            channelsTv = (TextView)view.findViewById(R.id.detail_view_group_member_channels_tv);
+            groupsTv = (TextView)view.findViewById(R.id.detail_view_group_member_groups_tv);
+            followingTv = (TextView)view.findViewById(R.id.detail_view_group_member_following_tv);
 
         }
     }

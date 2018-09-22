@@ -11,6 +11,7 @@ public class Project implements Serializable {
     private String resource_key;
     private String uri;
     private MetadataBean metadata;
+    private User user;
 
     public void setCreated_time(String created_time) {
         this.created_time = created_time;
@@ -58,6 +59,14 @@ public class Project implements Serializable {
 
     public MetadataBean getMetadata() {
         return metadata;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public static class MetadataBean {

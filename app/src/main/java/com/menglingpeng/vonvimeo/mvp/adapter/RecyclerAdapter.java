@@ -635,7 +635,63 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 }
             });
         }else if(holder instanceof MemberOfGroupDetailTypeViewHolder){
-
+            final MemberOfGroupDetailTypeViewHolder viewHolder = (MemberOfGroupDetailTypeViewHolder)holder;
+            final User user = (User) list.get(position);
+            ImageLoader.loadCricleImage(context, user.getPictures().getUri(), viewHolder.userAvatarIv);
+            viewHolder.userNameTv.setText(user.getName());
+            viewHolder.userPrivilegeBt.setText(user.getAccount().toString());
+            viewHolder.userLocationTv.setText(user.getLocation().toString());
+            viewHolder.joinedTimeTv.setText(user.getMetadata().getInteractions().getFollow().getAdded_time().toString());
+            viewHolder.userBioTv.setText(user.getBio().toString());
+            viewHolder.userStatusTv.setText();
+            viewHolder.videosTv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(context, UserUploadedVideosActivity.class);
+                    intent.putExtra(Constants.USER, user);
+                    context.startActivity(intent);
+                }
+            });
+            viewHolder.albumsTv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(context, UserAlbumsActivity.class);
+                    intent.putExtra(Constants.USER, user);
+                    context.startActivity(intent);
+                }
+            });
+            viewHolder.channelsTv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(context, UserChannelsActivity.class);
+                    intent.putExtra(Constants.USER, user);
+                    context.startActivity(intent);
+                }
+            });
+            viewHolder.groupsTv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(context, UserGroupActivity.class);
+                    intent.putExtra(Constants.USER, user);
+                    context.startActivity(intent);
+                }
+            });
+            viewHolder.followingTv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(context, UserFollowingActivity.class);
+                    intent.putExtra(Constants.USER, user);
+                    context.startActivity(intent);
+                }
+            });
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mListener != null) {
+                        mListener.onRecyclerFragmentListListener(viewHolder, user);
+                    }
+                }
+            });
         }
         else if(holder instanceof ModeratorOfGroupDetailTypeViewHolder){
 
@@ -1706,7 +1762,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         public final TextView userNameTv;
         public final TextView userPrivilegeBt;
         public final TextView userLocationTv;
-        public final TextView addedTimeTv;
+        public final TextView joinedTimeTv;
         public final TextView userStatusTv;
         public final TextView userBioTv;
         public final TextView videosTv;
@@ -1722,7 +1778,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             userAvatarIv = (ImageView) view.findViewById(R.id.detail_view_group_member_avatar_iv);
             userPrivilegeBt = (Button)view.findViewById(R.id.detail_view_group_member_privilege_bt);
             userLocationTv = (TextView)view.findViewById(R.id.detail_view_group_member_location_tv);
-            addedTimeTv = (TextView) view.findViewById(R.id.detail_view_group_member_added_time_tv);
+            joinedTimeTv = (TextView) view.findViewById(R.id.detail_view_group_member_added_time_tv);
             userNameTv = (TextView) view.findViewById(R.id.detail_view_group_member_name_tv);
             userStatusTv = (TextView)view.findViewById(R.id.detail_view_group_member_status_tv);
             userBioTv = (TextView)view.findViewById(R.id.detail_view_group_member_bio_tv);

@@ -2,25 +2,25 @@
 <android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/project_detail_cdl"
+    android:id="@+id/user_project_detail_cdl"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.menglingpeng.vonvimeo.mvp.view.activity.UserLikesActivity">
+    tools:context="com.menglingpeng.vonvimeo.mvp.view.activity.UserProjectDetailActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context="com.menglingpeng.designersshow.mvp.view.BucketDetailActivity">
+        tools:context="com.menglingpeng.vonvimeo.mvp.view.activity.UserProjectDetailActivity">
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/project_detail_tb"
+            android:id="@+id/user_project_detail_tb"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"></android.support.v7.widget.Toolbar>
 
         <TextView
-            android:id="@+id/project_detail_desc_tv"
+            android:id="@+id/user_project_detail_desc_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </android.support.design.widget.AppBarLayout>

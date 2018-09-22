@@ -50,7 +50,8 @@
         <activity android:name=".mvp.view.activity.UserAboutActivity" />
         <activity android:name=".mvp.view.activity.GroupsActivity" />
         <activity android:name=".mvp.view.activity.ChannelsActivity" />
-        <activity android:name=".mvp.view.activity.WatchLaterVideosActivity"></activity>
+        <activity android:name=".mvp.view.activity.WatchLaterVideosActivity" />
+        <activity android:name=".mvp.view.activity.UserProjectDetailActivity"></activity>
     </application>
 
 </manifest>

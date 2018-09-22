@@ -444,6 +444,14 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         view = inflater.inflate(R.layout.recycler_members_of_a_channel_thumb_view_item, parent, false);
                         viewHolder = new MemberOfGroupThumbTypeViewHolder(view);
                         break;
+                    case Constants.REQUEST_GET_ALL_MODERATORS_IN_A_GROUP_SORY_BY_ALPHABETICAL:
+                        view = inflater.inflate(R.layout.recycler_moderators_of_a_channel_thumb_view_item, parent, false);
+                        viewHolder = new ModeratorOfGroupDetailTypeViewHolder(view);
+                        break;
+                    case Constants.REQUEST_GET_ALL_MODERATORS_IN_A_GROUP_SORY_BY_DATE:
+                        view = inflater.inflate(R.layout.recycler_moderators_of_a_channel_thumb_view_item, parent, false);
+                        viewHolder = new ModeratorOfGroupDetailTypeViewHolder(view);
+                        break;
                     default:
                         break;
                 }
@@ -627,6 +635,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 }
             });
         }else if(holder instanceof MemberOfGroupDetailTypeViewHolder){
+
+        }
+        else if(holder instanceof ModeratorOfGroupDetailTypeViewHolder){
 
         }
         else if (holder instanceof AuthUserAlbumViewHolder){
@@ -1712,6 +1723,41 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             userPrivilegeBt = (Button)view.findViewById(R.id.detail_view_group_member_privilege_bt);
             userLocationTv = (TextView)view.findViewById(R.id.detail_view_group_member_location_tv);
             addedTimeTv = (TextView) view.findViewById(R.id.detail_view_group_member_added_time_tv);
+            userNameTv = (TextView) view.findViewById(R.id.detail_view_group_member_name_tv);
+            userStatusTv = (TextView)view.findViewById(R.id.detail_view_group_member_status_tv);
+            userBioTv = (TextView)view.findViewById(R.id.detail_view_group_member_bio_tv);
+            videosTv = (TextView)view.findViewById(R.id.detail_view_group_member_videos_tv);
+            albumsTv = (TextView)view.findViewById(R.id.detail_view_group_member_albums_tv);
+            channelsTv = (TextView)view.findViewById(R.id.detail_view_group_member_channels_tv);
+            groupsTv = (TextView)view.findViewById(R.id.detail_view_group_member_groups_tv);
+            followingTv = (TextView)view.findViewById(R.id.detail_view_group_member_following_tv);
+
+        }
+    }
+
+    public class ModeratorOfGroupDetailTypeViewHolder extends RecyclerView.ViewHolder {
+        public final RelativeLayout followerRl;
+        public final ImageView userAvatarIv;
+        public final TextView userNameTv;
+        public final TextView userPrivilegeBt;
+        public final TextView userLocationTv;
+        public final TextView joinedTimeTv;
+        public final TextView userStatusTv;
+        public final TextView userBioTv;
+        public final TextView videosTv;
+        public final TextView albumsTv;
+        public final TextView channelsTv;
+        public final TextView groupsTv;
+        public final TextView followingTv;
+
+
+        public ModeratorOfGroupDetailTypeViewHolder(View view) {
+            super(view);
+            followerRl = (RelativeLayout) view.findViewById(R.id.detail_view_group_member_rl);
+            userAvatarIv = (ImageView) view.findViewById(R.id.detail_view_group_member_avatar_iv);
+            userPrivilegeBt = (Button)view.findViewById(R.id.detail_view_group_member_privilege_bt);
+            userLocationTv = (TextView)view.findViewById(R.id.detail_view_group_member_location_tv);
+            joinedTimeTv = (TextView) view.findViewById(R.id.detail_view_group_member_added_time_tv);
             userNameTv = (TextView) view.findViewById(R.id.detail_view_group_member_name_tv);
             userStatusTv = (TextView)view.findViewById(R.id.detail_view_group_member_status_tv);
             userBioTv = (TextView)view.findViewById(R.id.detail_view_group_member_bio_tv);

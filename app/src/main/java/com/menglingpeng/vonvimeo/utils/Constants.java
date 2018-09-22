@@ -184,6 +184,10 @@ public class Constants {
             "request_get_all_members_in_a_group_sort_by_date";
     public static final String REQUEST_GET_ALL_MEMBERS_IN_A_GROUP_SORY_BY_ALPHABETICAL =
             "request_get_all_members_in_a__sort_by_alphabetical";
+    public static final String REQUEST_GET_ALL_MODERATORS_IN_A_GROUP_SORY_BY_DATE =
+            "request_get_all_moderators_in_a_group_sort_by_date";
+    public static final String REQUEST_GET_ALL_MODERATORS_IN_A_GROUP_SORY_BY_ALPHABETICAL =
+            "request_get_all_moderators_in_a_group_sort_by_alphabetical";
 
     public static final String REQUEST_SINGLE_USER = "single_user";
     public static final String REQUEST_AUTH_USER = "auth_user";

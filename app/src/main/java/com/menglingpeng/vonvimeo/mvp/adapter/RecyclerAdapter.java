@@ -1133,14 +1133,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 }
             });
 
-        } else if(holder instanceof ProjectDetailViewHolder){
-            final ProjectDetailViewHolder viewHolder = (ProjectDetailViewHolder)holder;
+        } else if(holder instanceof UserProjectDetailThumbTypeViewHolder){
+            final UserProjectDetailThumbTypeViewHolder viewHolder = (UserProjectDetailThumbTypeViewHolder)holder;
             final Video video = (Video)list.get(position);
-            String thumbUrl = video.getPictures().getUri();
-            String avatarUrl = video.getUser().getPictures().getUri();
-            ImageLoader.load(context,thumbUrl ,viewHolder.groupDetailVideoThumbIv, true );
-            viewHolder.groupDetailVideoNameTv.setText(video.getName());
-            viewHolder.userNameTv.setText(video.getUser().getName());
+            ImageLoader.load(fragment, video.getPictures().getUri(), viewHolder.videoThumbIv, false);
+            viewHolder.videoNameTv.setText(video.getName());
+            viewHolder.addedTimeTv.setText(video.getCreated_time());
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -1502,23 +1500,17 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
-    public static class ProjectDetailViewHolder extends RecyclerView.ViewHolder {
+    public static class UserProjectDetailThumbTypeViewHolder extends RecyclerView.ViewHolder {
+        final ImageView videoThumbIv;
+        final TextView videoNameTv;
+        final TextView addedTimeTv;
 
-        public final CheckBox groupDetailCb;
-        public final ImageView groupDetailVideoThumbIv;
-        public final TextView groupDetailVideoNameTv;
-        public final ImageView avatarIv;
-        public final TextView userNameTv;
-        public final TextView playCountTv;
-
-        public ProjectDetailViewHolder(View view) {
+        public UserProjectDetailThumbTypeViewHolder(View view) {
             super(view);
-            groupDetailCb = (CheckBox)view.findViewById(R.id.group_detail_video_cb);
-            groupDetailVideoThumbIv = (ImageView)view.findViewById(R.id.group_detail_video_thumb_iv);
-            groupDetailVideoNameTv = (TextView)view.findViewById(R.id.group_detail_video_name_tv)
-            avatarIv = (ImageView)view.findViewById(R.id.group_detail_video_avatar_iv);
-            userNameTv = (TextView)view.findViewById(R.id.group_detail_video_user_name_tv);
-            playCountTv = (TextView)view.findViewById(R.id.group_detail_video_play_count_tv);
+
+            videoThumbIv = (ImageView)view.findViewById(R.id.project_detail_video_thumb_iv);
+            videoNameTv = (TextView)view.findViewById(R.id.project_detail_video_name_tv);
+            addedTimeTv = (TextView)view.findViewById(R.id.project_detail_video_added_time_tv);
         }
     }
 

@@ -2,6 +2,7 @@ package com.menglingpeng.vonvimeo.mvp.view.activity;
 
 import android.content.Context;
 import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -19,6 +20,7 @@ public class UserProjectDetailActivity extends BaseActivity {
 
     private Toolbar toolbar;
     private CoordinatorLayout projectDetailCdl;
+    private FloatingActionButton floatingActionButton;
     private String type;
     private String title;
     private static RecyclerFragment fragment;
@@ -37,6 +39,7 @@ public class UserProjectDetailActivity extends BaseActivity {
         project = (Project)getIntent().getSerializableExtra(Constants.PROJECT);
         title = project.getName();
         projectDetailCdl = (CoordinatorLayout)findViewById(R.id.user_project_detail_cdl);
+        floatingActionButton = (floatingActionButton)findViewById(R.id.user_project_detail_upload_video_fab);
         toolbar = (Toolbar) findViewById(R.id.user_project_detail_tb);
         toolbar.setTitle(title);
         setSupportActionBar(toolbar);
@@ -47,8 +50,13 @@ public class UserProjectDetailActivity extends BaseActivity {
                 finish();
             }
         });
-        descTv.setText(project.);
 
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
     }
 
 

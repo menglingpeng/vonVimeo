@@ -742,6 +742,8 @@ public class OnDemand {
             private CreditsBean credits;
             private VideosBean videos;
             private GenresBean genres;
+            private PicturesBean pictures;
+            private LikesBean likes;
 
             public void setComments(CommentsBean comments) {
                 this.comments = comments;
@@ -773,6 +775,22 @@ public class OnDemand {
 
             public GenresBean getGenres() {
                 return genres;
+            }
+
+            public void setPictures(PicturesBean pictures) {
+                this.pictures = pictures;
+            }
+
+            public void setLikes(LikesBean likes) {
+                this.likes = likes;
+            }
+
+            public PicturesBean getPictures() {
+                return pictures;
+            }
+
+            public LikesBean getLikes() {
+                return likes;
             }
 
 
@@ -897,6 +915,59 @@ public class OnDemand {
             }
 
             public static class GenresBean {
+
+                private String uri;
+                private int total;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public int getTotal() {
+                    return total;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class PicturesBean {
+
+                private String uri;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class LikesBean {
 
                 private String uri;
                 private int total;

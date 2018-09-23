@@ -452,6 +452,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         view = inflater.inflate(R.layout.recycler_moderators_of_a_channel_thumb_view_item, parent, false);
                         viewHolder = new ModeratorOfGroupDetailTypeViewHolder(view);
                         break;
+                    case Constants.REQUEST_GET_ALL_VIDEOS_IN_A_PROJECT_SORY_BY_DATE_ADDED:
+                        view = inflater.inflate(R.layout.recycler_videos_in_a_project_thumb_view_item, parent, false);
+                        viewHolder = new UserProjectVideoThumbTypeViewHolder(view);
                     default:
                         break;
                 }
@@ -885,7 +888,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             viewHolder.projectNameTv.setText(project.getName());
             viewHolder.projectVideosCountTv.setText(TextUtil.setBeforeBold(String.valueOf(project.getShots_count()),
                     context.getString(R.string.videos)));
-        }else if (holder instanceof CateGoritesViewHolder){
+        }
+        else if (holder instanceof CateGoritesViewHolder){
             final CateGoritesViewHolder viewHolder = (CateGoritesViewHolder) holder;
             final Category category = (Category) list.get(position);
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -1133,8 +1137,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 }
             });
 
-        } else if(holder instanceof UserProjectDetailThumbTypeViewHolder){
-            final UserProjectDetailThumbTypeViewHolder viewHolder = (UserProjectDetailThumbTypeViewHolder)holder;
+        } else if(holder instanceof UserProjectVideoThumbTypeViewHolder){
+            final UserProjectVideoThumbTypeViewHolder viewHolder = (UserProjectVideoThumbTypeViewHolder)holder;
             final Video video = (Video)list.get(position);
             ImageLoader.load(fragment, video.getPictures().getUri(), viewHolder.videoThumbIv, false);
             viewHolder.videoNameTv.setText(video.getName());
@@ -1500,17 +1504,45 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
-    public static class UserProjectDetailThumbTypeViewHolder extends RecyclerView.ViewHolder {
+    public static class UserProjectVideoThumbTypeViewHolder extends RecyclerView.ViewHolder {
         final ImageView videoThumbIv;
         final TextView videoNameTv;
         final TextView addedTimeTv;
 
-        public UserProjectDetailThumbTypeViewHolder(View view) {
+        public UserProjectVideoThumbTypeViewHolder(View view) {
             super(view);
 
             videoThumbIv = (ImageView)view.findViewById(R.id.project_detail_video_thumb_iv);
             videoNameTv = (TextView)view.findViewById(R.id.project_detail_video_name_tv);
             addedTimeTv = (TextView)view.findViewById(R.id.project_detail_video_added_time_tv);
+        }
+    }
+
+    private class UserProjectVideoTypeDetailViewHolder extends RecyclerView.ViewHolder {
+
+        public final ImageView VideoThumbIv;
+        public final TextView VideoNameTv;
+        public final TextView userNameTv;
+        public final TextView addedTimeTv;
+        public final TextView videoDescTv;
+        public final TextView playsCountTv;
+        public final TextView likesCountTv;
+        public final TextView commentsCountTv;
+        public final TextView videoDurationTv;
+
+
+        public UserProjectVideoTypeDetailViewHolder(View view) {
+            super(view);
+
+            VideoThumbIv = (ImageView)view.findViewById(R.id.detail_view_project_video_thumb_iv);
+            VideoNameTv = (TextView)view.findViewById(R.id.detail_view_project_video_name_tv);
+            userNameTv = (TextView)view.findViewById(R.id.detail_view_project_video_user_name_tv);
+            addedTimeTv = (TextView)view.findViewById(R.detail_view_project_video_added_time_tv);
+            videoDescTv = (TextView)view.findViewById(R.id.detail_view_project_video_desc_tv);
+            playsCountTv = (TextView)view.findViewById(R.id.detail_view_project_video_plays_count_i);
+            likesCountTv = (TextView)view.findViewById(R.id.detail_view_project_video_likes_count_i);
+            commentsCountTv = (TextView)view.findViewById(R.id.detail_view_project_video_comments_count_i);
+            videoDurationTv = (TextView)view.findViewById(R.id.detail_view_project_duration_tv);
         }
     }
 

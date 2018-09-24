@@ -727,6 +727,7 @@ public class OnDemand {
     public static class MetadataBean{
 
         private ConnectionsBean connections;
+        private InteractionsBean interactions;
 
         public void setConnections(ConnectionsBean connections) {
             this.connections = connections;
@@ -736,6 +737,15 @@ public class OnDemand {
             return connections;
         }
 
+        public void setInteractions(InteractionsBean interactions) {
+            this.interactions = interactions;
+        }
+
+        public InteractionsBean getInteractions() {
+            return interactions;
+        }
+
+
         public static class ConnectionsBean {
 
             private CommentsBean comments;
@@ -744,6 +754,7 @@ public class OnDemand {
             private GenresBean genres;
             private PicturesBean pictures;
             private LikesBean likes;
+            private SeasonsBean seasons;
 
             public void setComments(CommentsBean comments) {
                 this.comments = comments;
@@ -791,6 +802,14 @@ public class OnDemand {
 
             public LikesBean getLikes() {
                 return likes;
+            }
+
+            public void setSeasons(SeasonsBean seasons) {
+                this.seasons = seasons;
+            }
+
+            public SeasonsBean getSeasons() {
+                return seasons;
             }
 
 
@@ -997,8 +1016,146 @@ public class OnDemand {
                     return options;
                 }
             }
+
+            public static class SeasonsBean {
+
+                private String uri;
+                private int total;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public int getTotal() {
+                    return total;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
         }
+
+        public static class InteractionsBean {
+
+            private Object subscribe;
+            private BuyBean buy;
+            private Object rent;
+
+            public void setSubscribe(Object subscribe) {
+                this.subscribe = subscribe;
+            }
+
+            public void setBuy(BuyBean buy) {
+                this.buy = buy;
+            }
+
+            public void setRent(Object rent) {
+                this.rent = rent;
+            }
+
+            public Object getSubscribe() {
+                return subscribe;
+            }
+
+            public BuyBean getBuy() {
+                return buy;
+            }
+
+            public Object getRent() {
+                return rent;
+            }
+
+            public static class BuyBean {
+
+                private Object expires_time;
+                private Object purchase_time;
+                private Object uri;
+                private String download;
+                private String stream;
+                private String link;
+                private boolean drm;
+                private List<String> options;
+
+                public void setExpires_time(Object expires_time) {
+                    this.expires_time = expires_time;
+                }
+
+                public void setPurchase_time(Object purchase_time) {
+                    this.purchase_time = purchase_time;
+                }
+
+                public void setUri(Object uri) {
+                    this.uri = uri;
+                }
+
+                public void setDownload(String download) {
+                    this.download = download;
+                }
+
+                public void setStream(String stream) {
+                    this.stream = stream;
+                }
+
+                public void setLink(String link) {
+                    this.link = link;
+                }
+
+                public void setDrm(boolean drm) {
+                    this.drm = drm;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public Object getExpires_time() {
+                    return expires_time;
+                }
+
+                public Object getPurchase_time() {
+                    return purchase_time;
+                }
+
+                public Object getUri() {
+                    return uri;
+                }
+
+                public String getDownload() {
+                    return download;
+                }
+
+                public String getStream() {
+                    return stream;
+                }
+
+                public String getLink() {
+                    return link;
+                }
+
+                public boolean getDrm() {
+                    return drm;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
         }
+    }
 
 
 }

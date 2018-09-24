@@ -34,6 +34,25 @@
     </item>
 
     <item
+        android:id="@+id/project_detail_view_thumb"
+        android:title=""
+        android:icon="@drawable/ic_view_thumb_blue_600_24dp"
+        app:showAsAction="always">
+
+        <menu>
+
+            <item
+                android:title=""
+                android:id="@+id/project_detail_view_detail"
+                android:icon="@drawable/ic_view_detail_black_24dp"
+                app:showAsAction="never">
+
+            </item>
+
+        </menu>
+    </item>
+
+    <item
         android:id="@+id/project_detail_more"
         android:icon="@drawable/ic_more"
         android:title=""

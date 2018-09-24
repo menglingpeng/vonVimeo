@@ -1151,7 +1151,36 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     }
                 }
             });
-        }else if(holder instanceof FeedPeopleViewHolder){
+        }else if(holder instanceof UserProjectVideoTypeDetailViewHolder){
+            final UserProjectVideoTypeDetailViewHolder viewHolder = (UserProjectVideoTypeDetailViewHolder)holder;
+            final Video video = (Video)list.get(position);
+            ImageLoader.load(fragment, video.getPictures().getUri(), viewHolder.videoThumbIv, false);
+            viewHolder.videoNameTv.setText(video.getName());
+            viewHolder.addedTimeTv.setText(video.getCreated_time());
+            viewHolder.userNameTv.setText(video.getUser().getName());
+            viewHolder.videoDescTv.setText(video.getDescription());
+            viewHolder.videoDurationTv.setText(video.getDuration());
+            viewHolder.playsCountTv.setText(video.getStats().getPlays());
+            viewHolder.likesCountTv.setText(video.getMetadataBean().getConnections().getLikes().getTotal());
+            viewHolder.commentsCountTv.setText(video.getMetadataBean().getConnections().getComments().getTotal());
+            viewHolder.userNameTv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(fragment.getActivity(), UserProfileActivity.class);
+                    intent.putExtra(Constants.USER, video.getUser());
+                    context.startActivity(intent);
+                }
+            });
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mListener != null) {
+                        mListener.onRecyclerFragmentListListener(viewHolder, video);
+                    }
+                }
+            });
+        }
+        else if(holder instanceof FeedPeopleViewHolder){
             final FeedPeopleViewHolder viewHolder = (FeedPeopleViewHolder)holder;
             final Follow follow = (Follow) list.get(position);
             String avatarUrl = follow.getPictures().getUri();
@@ -1520,8 +1549,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     private class UserProjectVideoTypeDetailViewHolder extends RecyclerView.ViewHolder {
 
-        public final ImageView VideoThumbIv;
-        public final TextView VideoNameTv;
+        public final ImageView videoThumbIv;
+        public final TextView videoNameTv;
         public final TextView userNameTv;
         public final TextView addedTimeTv;
         public final TextView videoDescTv;
@@ -1534,8 +1563,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         public UserProjectVideoTypeDetailViewHolder(View view) {
             super(view);
 
-            VideoThumbIv = (ImageView)view.findViewById(R.id.detail_view_project_video_thumb_iv);
-            VideoNameTv = (TextView)view.findViewById(R.id.detail_view_project_video_name_tv);
+            videoThumbIv = (ImageView)view.findViewById(R.id.detail_view_project_video_thumb_iv);
+            videoNameTv = (TextView)view.findViewById(R.id.detail_view_project_video_name_tv);
             userNameTv = (TextView)view.findViewById(R.id.detail_view_project_video_user_name_tv);
             addedTimeTv = (TextView)view.findViewById(R.detail_view_project_video_added_time_tv);
             videoDescTv = (TextView)view.findViewById(R.id.detail_view_project_video_desc_tv);

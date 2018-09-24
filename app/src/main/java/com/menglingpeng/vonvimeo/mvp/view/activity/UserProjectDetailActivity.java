@@ -26,6 +26,7 @@ public class UserProjectDetailActivity extends BaseActivity {
     private static RecyclerFragment fragment;
     private Context context;
     private Project project;
+    private Menu viewMenu;
 
     @Override
     protected void initLayoutId() {
@@ -39,7 +40,7 @@ public class UserProjectDetailActivity extends BaseActivity {
         project = (Project)getIntent().getSerializableExtra(Constants.PROJECT);
         title = project.getName();
         projectDetailCdl = (CoordinatorLayout)findViewById(R.id.user_project_detail_cdl);
-        floatingActionButton = (floatingActionButton)findViewById(R.id.user_project_detail_upload_video_fab);
+        floatingActionButton = (FloatingActionButton)findViewById(R.id.user_project_detail_upload_video_fab);
         toolbar = (Toolbar) findViewById(R.id.user_project_detail_tb);
         toolbar.setTitle(title);
         setSupportActionBar(toolbar);
@@ -73,23 +74,29 @@ public class UserProjectDetailActivity extends BaseActivity {
                 break;
             case R.id.project_detail_remove:
                 type = Constants.REQUEST_REMOVE_A_VIDEO_FROM_A_PROJECT;
+
                 break;
             case R.id.project_detail_sort_title:
                 type = Constants.REQUEST_GET_ALL_VIDEOS_IN_A_PROJECT_SORY_BY_TITLE;
-                replaceFragment(RecyclerFragment.newInstance(type));
-
+                replaceFragment(RecyclerFragment.newInstance(Constants.PROJECT_ID, type));
                 break;
             case R.id.project_detail_sort_date_modified:
                 type = Constants.REQUEST_GET_ALL_VIDEOS_IN_A_PROJECT_SORY_BY_DATE_MODIFIED;
-                replaceFragment(RecyclerFragment.newInstance(type));
+                replaceFragment(RecyclerFragment.newInstance(Constants.PROJECT_ID, type));
                 break;
             case R.id.project_detail_sort_date_added:
                 type = Constants.REQUEST_GET_ALL_VIDEOS_IN_A_PROJECT_SORY_BY_DATE_ADDED;
-                replaceFragment(RecyclerFragment.newInstance(type));
+                replaceFragment(RecyclerFragment.newInstance(Constants.PROJECT_ID, type));
                 break;
             case R.id.project_detail_sort_duration:
                 type = Constants.REQUEST_GET_ALL_VIDEOS_IN_A_PROJECT_SORY_BY_DURATION;
-                replaceFragment(RecyclerFragment.newInstance(type));
+                replaceFragment(RecyclerFragment.newInstance(Constants.PROJECT_ID, type));
+                break;
+            case R.id.project_detail_view_thumb:
+                item.setIcon(getDrawable(R.drawable.ic_view_thumb_blue_600_24dp));
+                break;
+            case R.id.project_detail_view_detail:
+                item.setIcon(getDrawable(R.drawable.ic_view_detail_blue_600_24dp))
                 break;
             default:
                 break;

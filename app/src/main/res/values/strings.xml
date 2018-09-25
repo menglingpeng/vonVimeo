@@ -62,6 +62,8 @@
     <string name="album_privacy_settings_anyone_rb_text">Anyone </string>
     <string name="album_privacy_settings_people_with_password_rb_text">Only people with a password</string>
     <string name="album_delete_tv_text">Delete this album</string>
+    <string name="snack_create_a_bucket_text"></string>
+    <string name="snack_delete_a_bucket_text"></string>
 
     <string name="creat_a_channle">Create a Channle</string>
     <string name="channle_name">A Name</string>
@@ -70,16 +72,26 @@
     <string name="channle_privacy_settings_moderators_rb_text">Only moderators can see this channle</string>
     <string name="channle_privacy_settings_moderators_and_choose_rb_text">Only moderators and people I choose can see
         this channle</string>
+    <string name="snack_create_a_channel_text"></string>
+    <string name="snack_delete_a_channel_text"></string>
 
     <string name="creat_a_group">Create a Group</string>
     <string name="group_name">A Name</string>
     <string name="group_desc">A Description</string>
     <string name="group_privacy_settings_anyone_rb_text">Anyone can see this group</string>
     <string name="group_privacy_settings_members_rb_text">Only members can see this group</string>
+    <string name="snack_delete_a_group_text"></string>
+    <string name="snack_create_a_group_text"></string>
 
     <string name="creat_a_project">Create a Project</string>
     <string name="project_name">Project Name</string>
-    <string name="project_desc">Project Description</string>
+    <string name="edit_project">Edit project</string>
+    <string name="snack_delete_a_project_text"></string>
+    <string name="snack_create_a_project_text"></string>
+    <string name="snack_edit_a_project_text"></string>
+    <string name="snack_the_name_of_project_is_not_null"></string>
+    <string name="dialog_delete_this_project_title_tv">Delete this project?</string>
+    <string name="dialog_delete_this_project_content_tv">Are you sure want to delete this project?</string>
 
 
     <string name="name">名称</string>

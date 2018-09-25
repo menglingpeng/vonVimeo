@@ -164,6 +164,7 @@ public class Constants {
     public static final String REQUEST_LIST_USER_PROJECTS = "request_list_user_projects";
     public static final String REQUEST_REQUEST_CREATE_A_PROJECT = "request_create_a_project";
     public static final String REQUEST_REQUEST_DELETE_A_PROJECT = "request_delete_a_project";
+    public static final String REQUEST_REQUEST_EDIT_A_PROJECT = "request_edit_a_project";
 
     public static final String REQUEST_LIST_ALL_VIDEO_FOR_A_CHANNEL = "request_list_all_video_for_a_channel";
 

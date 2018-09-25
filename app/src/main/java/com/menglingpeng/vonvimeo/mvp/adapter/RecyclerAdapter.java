@@ -37,6 +37,7 @@ import com.menglingpeng.vonvimeo.mvp.model.Video;
 import com.menglingpeng.vonvimeo.mvp.presenter.RecyclerPresenter;
 import com.menglingpeng.vonvimeo.mvp.view.UserAlbumDetailActivity;
 import com.menglingpeng.vonvimeo.mvp.view.UserAlbumsActivity;
+import com.menglingpeng.vonvimeo.mvp.view.UserProjectActivity;
 import com.menglingpeng.vonvimeo.mvp.view.activity.UserChannelsActivity;
 import com.menglingpeng.vonvimeo.mvp.view.activity.UserFollowingActivity;
 import com.menglingpeng.vonvimeo.mvp.view.activity.UserGroupActivity;
@@ -1127,12 +1128,69 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             final Project project = (Project)list.get(position);
             viewHolder.projectNameTv.setText(project.getName());
             viewHolder.projectVideosCountTv.setText(project.getMetadata().getConnections().getVideos().getTotal());
+            viewHolder.settingsIv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    final TextInputEditText projectNameEt;
+                    AlertDialog dialog;
+                    AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                    View dialogView = fragment.getActivity().getLayoutInflater().inflate(
+                            R.layout.dialog_creat_a_project, null);
+                    builder.setTitle(R.string.edit_project);
+                    builder.setView(dialogView);
+                    projectNameEt = (TextInputEditText) dialogView.findViewById(R.id.project_name_tiet);
+                    projectNameEt.setText(project.getName());
+                    builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+                    builder.setPositiveButton(R.string.create, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            String name = projectNameEt.getText().toString();
+                            if (name.equals("")) {
+                                SnackbarUtils.showSnackShort(context, fragment.getActivity().findViewById(
+                                        R.id.user_projects_cdl), context.getString(R.string
+                                        .snack_the_name_of_project_is_not_null));
+                            } else {
+                                HashMap<String, String> map = new HashMap<>();
+                                map.put(Constants.ACCESS_TOKEN, SharedPrefUtils.getAuthToken());
+                                map.put(Constants.NAME, projectNameEt.getText().toString());
+                                type = Constants.REQUEST_REQUEST_EDIT_A_PROJECT;
+                                RecyclerPresenter presenter = new RecyclerPresenter(
+                                        fragment.getActivity(), type, Constants
+                                        .REQUEST_NORMAL, Constants.REQUEST_POST_MEIHOD, map, context);
+                                presenter.loadJson();
+                                SnackbarUtils.showSnackShort(context, fragment.getActivity().findViewById(
+                                        R.id.user_projects_cdl), context.getString(R.string
+                                        .snack_edit_a_project_text));
+                            }
 
+                        }
+                    });
+                    builder.setPositiveButton(R.string.create, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                        }
+                    });
+                    projectNameEt.setFocusable(true);
+                    dialog = builder.create();
+                    dialog.show();
+                }
+            });
+            viewHolder.deleteIv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     if (mListener != null) {
-                        mListener.onRecyclerFragmentListListener(viewHolder, project.getName());
+                        mListener.onRecyclerFragmentListListener(viewHolder, project);
                     }
                 }
             });
@@ -1524,12 +1582,16 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         public final RelativeLayout projectRl;
         public final TextView projectNameTv;
         public final TextView projectVideosCountTv;
+        public final ImageView settingsIv;
+        public final ImageView deleteIv;
 
         public ProjectViewHolder(View view) {
             super(view);
             projectRl = (RelativeLayout) view.findViewById(R.id.project_rl);
             projectNameTv = (TextView) view.findViewById(R.id.project_name_tv);
             projectVideosCountTv = (TextView) view.findViewById(R.id.project_videos_count_tv);
+            settingsIv = (ImageView)view.findViewById(R.id.project_settings_iv);
+            deleteIv = (ImageView)view.findViewById(R.id.project_delete_iv);
         }
     }
 

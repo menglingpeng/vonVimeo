@@ -32,11 +32,21 @@
     <dimen name="recycler_item_empty_iv_layout_marginTop">100dp</dimen>
     <dimen name="recycler_item_empty_tv_layout_marginTop">20dp</dimen>
 
-    <dimen name="user_albums_recycler_item_bucket_name_tv_ayout_marginLeft">15dp</dimen>
-    <dimen name="user_albums_recycler_item_bucket_name_tv_ayout_marginTop">5dp</dimen>
+    <dimen name="user_albums_recycler_item_name_tv_layout_marginLeft">15dp</dimen>
+    <dimen name="user_albums_recycler_item_name_tv_layout_marginTop">5dp</dimen>
     <dimen name="user_albums_recycler_item_text_view_layout_marginBottom">10dp</dimen>
     <dimen name="user_albums_recycler_item_view_layout_height">1dp</dimen>
     <dimen name="user_albums_recycler_item_bucket_fab_layout_marginRight">15dp</dimen>
+
+    <dimen name="project_name_tv_layout_marginTop">20dp</dimen>
+    <dimen name="project_settings_iv_layout_marginEnd">10dp</dimen>
+    <dimen name="project_delete_iv_layout_marginTop">10dp</dimen>
+
+    <dimen name="dialog_delete_title_tv_layout_marginTop">15dp</dimen>
+    <dimen name="dialog_delete_title_tv_layout_marginLeft">15dp</dimen>
+    <dimen name="dialog_delete_title_tv_text_size">20dp</dimen>
+    <dimen name="dialog_delete_close_iv_layout_marginEnd">10dp</dimen>
+    <dimen name="dialog_delete_content_tv_layout_marginTop">30dp</dimen>
 
     <dimen name="floating_action_button_layout_margin">20dp</dimen>
     <dimen name="floating_action_button_borderWidth">0dp</dimen>

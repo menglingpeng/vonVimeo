@@ -11,9 +11,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/user_albums_recycler_item_text_view_layout_marginBottom"
-        android:layout_marginLeft="@dimen/user_albums_recycler_item_bucket_name_tv_ayout_marginLeft"
-        android:layout_marginTop="@dimen/user_albums_recycler_item_bucket_name_tv_ayout_marginTop"
+        android:layout_marginLeft="@dimen/user_albums_recycler_item_name_tv_layout_marginLeft"
+        android:layout_marginTop="@dimen/project_name_tv_layout_marginTop"
         android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title" />
+
+    <ImageView
+        android:id="@+id/project_settings_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/project_name_tv"
+        android:layout_marginEnd="@dimen/project_settings_iv_layout_marginEnd"
+        android:src="@drawable/ic_settings_grey_600_18dp"/>
+
+    <ImageView
+        android:id="@+id/project_delete_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/project_settings_iv"
+        android:layout_alignLeft="@+id/project_settings_iv"
+        android:layout_marginTop="@dimen/project_delete_iv_layout_marginTop"
+        android:src="@drawable/ic_delete_grey_600_18dp"/>
 
     <TextView
         android:id="@+id/project_videos_count_tv"

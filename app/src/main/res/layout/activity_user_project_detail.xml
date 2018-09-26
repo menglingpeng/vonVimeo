@@ -25,6 +25,12 @@
             android:layout_height="wrap_content" />
     </android.support.design.widget.AppBarLayout>
 
+    <ProgressBar
+        android:id="@+id/user_project_detail_pb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+
     <include layout="@layout/container"></include>
 
     <android.support.design.widget.FloatingActionButton

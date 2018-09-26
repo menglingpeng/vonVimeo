@@ -65,6 +65,8 @@
     <string name="snack_create_a_bucket_text"></string>
     <string name="snack_delete_a_bucket_text"></string>
 
+    <string name="search_my_videos">Search my videos</string>
+
     <string name="creat_a_channle">Create a Channle</string>
     <string name="channle_name">A Name</string>
     <string name="channle_desc">A Description</string>

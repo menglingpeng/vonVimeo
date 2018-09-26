@@ -121,7 +121,7 @@ public class UserProjectActivity extends BaseActivity implements RecyclerView{
         AlertDialog dialog;
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.dialog_delete_this_project_title_tv);
-        builder.setc
+        builder.setTitle(getString(R.string.delete_a_project));
         builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

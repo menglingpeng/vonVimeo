@@ -466,8 +466,20 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
-        if(holder instanceof FeedVideoViewHolder){
-            final FeedVideoViewHolder videoViewHolder = (FeedVideoViewHolder)holder;
+        if(holder instanceof FeedVideoTypeThumbViewHolder){
+            final FeedVideoTypeThumbViewHolder viewHolder = (FeedVideoTypeThumbViewHolder)holder;
+            final Video video = (Video)list.get(position);
+            ImageLoader.load(fragment, video.getPictures().getUri(), viewHolder.videoThumbIv, false);
+            viewHolder.videoNameTv.setText(video.getName());
+            viewHolder.videoAddedTimeTv.setText(video.getCreated_time());
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (mListener != null) {
+                        mListener.onRecyclerFragmentListListener(viewHolder, video);
+                    }
+                }
+            });
         } else if(holder instanceof UploadedVideoThumbViewHolder){
             final UploadedVideoThumbViewHolder viewHolder = (UploadedVideoThumbViewHolder)holder;
             final Video video = (Video)list.get(position);
@@ -1420,6 +1432,21 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             }
     }
 
+    public class FeedVideoTypeThumbViewHolder extends RecyclerView.ViewHolder{
+
+        public final ImageView videoThumbIv;
+        public final TextView videoNameTv;
+        public final TextView videoAddedTimeTv;
+
+        public FeedVideoTypeThumbViewHolder(View itemView) {
+            super(itemView);
+
+            videoThumbIv = (ImageView)view.findViewById(R.id.thumb_view_feed_video_thumb_iv);
+            videoNameTv = (TextView)view.findViewById(R.id.thumb_view_feed_video_name_tv);
+            videoAddedTimeTv = (TextView)view.findViewById(R.id.thumb_view_feed_video_added_time);
+        }
+    }
+
     public class UploadedVideoThumbViewHolder extends RecyclerView.ViewHolder {
         public final ImageView videoThumbIv;
         public final TextView videoNameTv;
@@ -1480,14 +1507,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
-
-
-    public class FeedVideoViewHolder extends RecyclerView.ViewHolder{
-
-        public FeedVideoViewHolder(View itemView) {
-            super(itemView);
-        }
-    }
 
     public class EmptyViewHolder extends RecyclerView.ViewHolder {
         public final ImageView emptyIv;

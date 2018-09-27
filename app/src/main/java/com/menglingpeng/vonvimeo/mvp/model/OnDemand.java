@@ -1182,6 +1182,8 @@ public class OnDemand {
         private String modified_time;
         private String release_time;
         private List<String> content_rating;
+        private Object license;
+        private PrivacyBean privacy;
 
         public void setUri(String uri) {
             this.uri = uri;
@@ -1285,6 +1287,22 @@ public class OnDemand {
 
         public List<String> getContent_rating() {
             return content_rating;
+        }
+
+        public void setLicense(Object license) {
+            this.license = license;
+        }
+
+        public void setPrivacy(PrivacyBean privacy) {
+            this.privacy = privacy;
+        }
+
+        public Object getLicense() {
+            return license;
+        }
+
+        public PrivacyBean getPrivacy() {
+            return privacy;
         }
 
 
@@ -1418,6 +1436,55 @@ public class OnDemand {
                         return premiere;
                     }
                 }
+            }
+        }
+
+        public static class PrivacyBean {
+
+            private String view;
+            private String embed;
+            private boolean download;
+            private boolean add;
+            private String comments;
+
+            public void setView(String view) {
+                this.view = view;
+            }
+
+            public void setEmbed(String embed) {
+                this.embed = embed;
+            }
+
+            public void setDownload(boolean download) {
+                this.download = download;
+            }
+
+            public void setAdd(boolean add) {
+                this.add = add;
+            }
+
+            public void setComments(String comments) {
+                this.comments = comments;
+            }
+
+            public String getView() {
+                return view;
+            }
+
+            public String getEmbed() {
+                return embed;
+            }
+
+            public boolean getDownload() {
+                return download;
+            }
+
+            public boolean getAdd() {
+                return add;
+            }
+
+            public String getComments() {
+                return comments;
             }
         }
     }

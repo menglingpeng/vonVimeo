@@ -51,7 +51,8 @@
         <activity android:name=".mvp.view.activity.GroupsActivity" />
         <activity android:name=".mvp.view.activity.ChannelsActivity" />
         <activity android:name=".mvp.view.activity.WatchLaterVideosActivity" />
-        <activity android:name=".mvp.view.activity.UserProjectDetailActivity"></activity>
+        <activity android:name=".mvp.view.activity.UserProjectDetailActivity" />
+        <activity android:name=".mvp.view.activity.MyFeedVideosActivity"></activity>
     </application>
 
 </manifest>

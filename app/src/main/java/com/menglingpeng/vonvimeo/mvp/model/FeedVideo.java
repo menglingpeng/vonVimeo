@@ -34,11 +34,13 @@ public class FeedVideo implements Serializable {
         private int width;
         private Object language;
         private int height;
-
         private String created_time;
         private String modified_time;
         private String release_time;
         private List<String> content_rating;
+        private Object license;
+        private PrivacyBean privacy;
+        private PicturesBean pictures;
 
         public void setUri(String uri) {
             this.uri = uri;
@@ -136,5 +138,109 @@ public class FeedVideo implements Serializable {
             return content_rating;
         }
 
+        public void setLicense(Object license) {
+            this.license = license;
+        }
+
+        public void setPrivacy(PrivacyBean privacy) {
+            this.privacy = privacy;
+        }
+
+        public Object getLicense() {
+            return license;
+        }
+
+        public PrivacyBean getPrivacy() {
+            return privacy;
+        }
+
+        public void setPictures(PicturesBean pictures) {
+            this.pictures = pictures;
+        }
+
+        public PicturesBean getPictures() {
+            return pictures;
+        }
+
+
+        public static class PrivacyBean {
+
+            private String view;
+            private String embed;
+            private boolean download;
+            private boolean add;
+            private String comments;
+
+            public void setView(String view) {
+                this.view = view;
+            }
+
+            public void setEmbed(String embed) {
+                this.embed = embed;
+            }
+
+            public void setDownload(boolean download) {
+                this.download = download;
+            }
+
+            public void setAdd(boolean add) {
+                this.add = add;
+            }
+
+            public void setComments(String comments) {
+                this.comments = comments;
+            }
+
+            public String getView() {
+                return view;
+            }
+
+            public String getEmbed() {
+                return embed;
+            }
+
+            public boolean getDownload() {
+                return download;
+            }
+
+            public boolean getAdd() {
+                return add;
+            }
+
+            public String getComments() {
+                return comments;
+            }
+        }
+
+        public static class PicturesBean {
+
+            private String uri;
+            private boolean active;
+            private String type;
+
+            public void setUri(String uri) {
+                this.uri = uri;
+            }
+
+            public void setActive(boolean active) {
+                this.active = active;
+            }
+
+            public void setType(String type) {
+                this.type = type;
+            }
+
+            public String getUri() {
+                return uri;
+            }
+
+            public boolean getActive() {
+                return active;
+            }
+
+            public String getType() {
+                return type;
+            }
+        }
     }
 }

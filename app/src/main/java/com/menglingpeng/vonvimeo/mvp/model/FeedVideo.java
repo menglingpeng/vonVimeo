@@ -41,6 +41,7 @@ public class FeedVideo implements Serializable {
         private Object license;
         private PrivacyBean privacy;
         private PicturesBean pictures;
+        private List<TagsBean> tags;
 
         public void setUri(String uri) {
             this.uri = uri;
@@ -162,6 +163,14 @@ public class FeedVideo implements Serializable {
             return pictures;
         }
 
+        public void setTags(List<TagsBean> tags) {
+            this.tags = tags;
+        }
+
+        public List<TagsBean> getTags() {
+            return tags;
+        }
+
 
         public static class PrivacyBean {
 
@@ -217,6 +226,8 @@ public class FeedVideo implements Serializable {
             private String uri;
             private boolean active;
             private String type;
+            private String resource_key;
+            private List<SizesBean> sizes;
 
             public void setUri(String uri) {
                 this.uri = uri;
@@ -240,6 +251,178 @@ public class FeedVideo implements Serializable {
 
             public String getType() {
                 return type;
+            }
+
+            public void setResource_key(String resource_key) {
+                this.resource_key = resource_key;
+            }
+
+            public void setSizes(List<SizesBean> sizes) {
+                this.sizes = sizes;
+            }
+
+            public String getResource_key() {
+                return resource_key;
+            }
+
+            public List<SizesBean> getSizes() {
+                return sizes;
+            }
+
+
+            public static class SizesBean {
+
+                private int width;
+                private int height;
+                private String link;
+                private String link_with_play_button;
+
+                public void setWidth(int width) {
+                    this.width = width;
+                }
+
+                public void setHeight(int height) {
+                    this.height = height;
+                }
+
+                public void setLink(String link) {
+                    this.link = link;
+                }
+
+                public void setLink_with_play_button(String link_with_play_button) {
+                    this.link_with_play_button = link_with_play_button;
+                }
+
+                public int getWidth() {
+                    return width;
+                }
+
+                public int getHeight() {
+                    return height;
+                }
+
+                public String getLink() {
+                    return link;
+                }
+
+                public String getLink_with_play_button() {
+                    return link_with_play_button;
+                }
+            }
+        }
+
+        public static class TagsBean {
+
+            private String uri;
+            private String name;
+            private String tag;
+            private String canonical;
+            private MetadataBean metadata;
+            private String resource_key;
+
+            public void setUri(String uri) {
+                this.uri = uri;
+            }
+
+            public void setName(String name) {
+                this.name = name;
+            }
+
+            public void setTag(String tag) {
+                this.tag = tag;
+            }
+
+            public void setCanonical(String canonical) {
+                this.canonical = canonical;
+            }
+
+            public void setMetadata(MetadataBean metadata) {
+                this.metadata = metadata;
+            }
+
+            public void setResource_key(String resource_key) {
+                this.resource_key = resource_key;
+            }
+
+            public String getUri() {
+                return uri;
+            }
+
+            public String getName() {
+                return name;
+            }
+
+            public String getTag() {
+                return tag;
+            }
+
+            public String getCanonical() {
+                return canonical;
+            }
+
+            public MetadataBean getMetadata() {
+                return metadata;
+            }
+
+            public String getResource_key() {
+                return resource_key;
+            }
+
+            public static class MetadataBean {
+
+                private ConnectionsBean connections;
+
+                public void setConnections(ConnectionsBean connections) {
+                    this.connections = connections;
+                }
+
+                public ConnectionsBean getConnections() {
+                    return connections;
+                }
+
+                public static class ConnectionsBean {
+
+                    private VideosBean videos;
+
+                    public void setVideos(VideosBean videos) {
+                        this.videos = videos;
+                    }
+
+                    public VideosBean getVideos() {
+                        return videos;
+                    }
+
+                    public static class VideosBean {
+
+                        private String uri;
+                        private int total;
+                        private List<String> options;
+
+                        public void setUri(String uri) {
+                            this.uri = uri;
+                        }
+
+                        public void setTotal(int total) {
+                            this.total = total;
+                        }
+
+                        public void setOptions(List<String> options) {
+                            this.options = options;
+                        }
+
+                        public String getUri() {
+                            return uri;
+                        }
+
+                        public int getTotal() {
+                            return total;
+                        }
+
+                        public List<String> getOptions() {
+                            return options;
+                        }
+                    }
+                }
             }
         }
     }

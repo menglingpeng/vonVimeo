@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/my_feed_videos_search"
+        android:icon="@drawable/ic_search_white_24dp"
+        android:title=""
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        app:showAsAction="always">
+
+    </item>
+
+    <item
+        android:id="@+id/my_feed_videos_sort_all"
+        android:title="@string/sort_all"
+        app:showAsAction="always">
+
+        <menu>
+
+            <item
+                android:id="@+id/my_feed_videos_sort_likes"
+                android:title="@string/sort_likes"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/my_feed_videos_sort_uploads"
+                android:title="@string/sort_uploads"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/my_feed_videos_sort_appearances"
+                android:title="@string/sort_appearances"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/my_feed_videos_sort_channels"
+                android:title="@string/sort_channels"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/my_feed_videos_sort_groups"
+                android:title="@string/sort_groups"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/my_feed_videos_sort_categories"
+                android:title="@string/sort_categories"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/my_feed_videos_sort_tags"
+                android:title="@string/sort_tags"
+                app:showAsAction="never"></item>
+
+
+        </menu>
+
+</item>
+
+    <item
+        android:id="@+id/my_feed_videos_view_thumb"
+        android:title=""
+        android:icon="@drawable/ic_view_thumb_blue_600_24dp"
+        app:showAsAction="always">
+
+        <menu>
+
+            <item
+                android:title=""
+                android:id="@+id/my_feed_videos_view_detail"
+                android:icon="@drawable/ic_view_detail_black_24dp"
+                app:showAsAction="never">
+
+            </item>
+
+        </menu>
+    </item>
+
+
+</menu>

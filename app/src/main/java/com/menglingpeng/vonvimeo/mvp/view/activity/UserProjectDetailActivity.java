@@ -112,7 +112,7 @@ public class UserProjectDetailActivity extends BaseActivity implements RecyclerV
                 item.setIcon(getDrawable(R.drawable.ic_view_thumb_blue_600_24dp));
                 break;
             case R.id.project_detail_view_detail:
-                item.setIcon(getDrawable(R.drawable.ic_view_detail_blue_600_24dp))
+                item.setIcon(getDrawable(R.drawable.ic_view_detail_blue_600_24dp));
                 break;
             default:
                 break;

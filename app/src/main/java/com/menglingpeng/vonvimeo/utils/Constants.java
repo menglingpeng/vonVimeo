@@ -54,6 +54,18 @@ public class Constants {
     public static final String VIDEO = "video";
     public static final String VIDEO_THUMB = "video_thumb";
 
+    public static final String TYPE_ALL = "";
+    public static final String TYPE_UPLOADS = "uploads";
+    public static final String TYPE_LIKES = "likes";
+    public static final String TYPE_APPEARS = "appears";
+    public static final String TYPE_CHANNELS = "channel";
+    public static final String TYPE_GROUPS = "group";
+    public static final String TYPE_CATEGORIES = "category_featured";
+    public static final String TYPE_TAGS = "tagged_with";
+
+
+
+
     public static final String AUTH_USER_URL = "https://api.vimeo.com/me";
     public static final String SIGNLE_USER_URL = "https://api.vimeo.com/users";
     public static final String USER_ID = "user_id";

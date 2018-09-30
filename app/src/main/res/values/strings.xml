@@ -47,6 +47,13 @@
     <string name="sort_videos">Videos</string>
     <string name="sort_members">Members</string>
     <string name="sort_followers">Followers</string>
+    <string name="sort_all">All</string>
+    <string name="sort_uploads">Uploads</string>
+    <string name="sort_appearances">Appearances</string>
+    <string name="sort_channels">Channels</string>
+    <string name="sort_groups">Groups</string>
+    <string name="sort_categories">Categories</string>
+    <string name="sort_tags">Tags</string>
 
     <string name="your_stuff">YOUR STUFF</string>
     <string name="portfolios">Portfolios</string>

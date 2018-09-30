@@ -27,6 +27,7 @@ import com.menglingpeng.vonvimeo.mvp.interf.OnRecyclerListItemListener;
 import com.menglingpeng.vonvimeo.mvp.model.Album;
 import com.menglingpeng.vonvimeo.mvp.model.Category;
 import com.menglingpeng.vonvimeo.mvp.model.Channel;
+import com.menglingpeng.vonvimeo.mvp.model.FeedVideo;
 import com.menglingpeng.vonvimeo.mvp.model.Follow;
 import com.menglingpeng.vonvimeo.mvp.model.Group;
 import com.menglingpeng.vonvimeo.mvp.model.Project;
@@ -468,10 +469,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
         if(holder instanceof FeedVideoTypeThumbViewHolder){
             final FeedVideoTypeThumbViewHolder viewHolder = (FeedVideoTypeThumbViewHolder)holder;
-            final Video video = (Video)list.get(position);
-            ImageLoader.load(fragment, video.getPictures().getUri(), viewHolder.videoThumbIv, false);
-            viewHolder.videoNameTv.setText(video.getName());
-            viewHolder.videoAddedTimeTv.setText(video.getCreated_time());
+            final FeedVideo video = (FeedVideo) list.get(position);
+            ImageLoader.load(fragment, video.getClip().getPictures().getUri(), viewHolder.videoThumbIv, false);
+            viewHolder.videoNameTv.setText(video.getClip().getName());
+            viewHolder.videoAddedTimeTv.setText(video.getClip().getCreated_time());
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -482,17 +483,17 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             });
         }else if (holder instanceof FeedVideoTypeDetailViewHolder){
             final FeedVideoTypeDetailViewHolder viewHolder = (FeedVideoTypeDetailViewHolder)holder;
-            final Video video = (Video)list.get(position);
-            String pictureUrl = video.getPictures().getUri();
+            final FeedVideo video = (FeedVideo)list.get(position);
+            String pictureUrl = video.getClip().getPictures().getUri();
             ImageLoader.load(fragment, pictureUrl, viewHolder.VideoThumbIv, false);
-            viewHolder.VideoNameTv.setText(video.getName());
-            viewHolder.userNameTv.setText(video.getUser().getName());
-            viewHolder.addedTimeTv.setText(video.getModified_time());
-            viewHolder.videoDescTv.setText(video.getDescription());
-            viewHolder.videoDurationTv.setText(video.getDuration());
-            viewHolder.likesCountTv.setText(video.getMetadataBean().getConnections().getLikes().getTotal());
-            viewHolder.commentsCountTv.setText(video.getMetadataBean().getConnections().getComments().getTotal());
-            viewHolder.playsCountTv.setText(video.getStats().getPlays());
+            viewHolder.VideoNameTv.setText(video.getClip().getName());
+            viewHolder.userNameTv.setText(video.getClip().getUser().getName());
+            viewHolder.addedTimeTv.setText(video.getClip().getModified_time());
+            viewHolder.videoDescTv.setText(video.getClip().getDescription());
+            viewHolder.videoDurationTv.setText(video.getClip().getDuration());
+            viewHolder.likesCountTv.setText(video.getClip().getMetadataBean().getConnections().getLikes().getTotal());
+            viewHolder.commentsCountTv.setText(video.getClip().getMetadataBean().getConnections().getComments().getTotal());
+            viewHolder.playsCountTv.setText(video.getClip().getStats().getPlays());
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

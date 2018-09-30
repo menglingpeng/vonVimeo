@@ -42,6 +42,7 @@ public class FeedVideo implements Serializable {
         private PrivacyBean privacy;
         private PicturesBean pictures;
         private List<TagsBean> tags;
+        private User user;
 
         public void setUri(String uri) {
             this.uri = uri;
@@ -171,6 +172,13 @@ public class FeedVideo implements Serializable {
             return tags;
         }
 
+        public User getUser() {
+            return user;
+        }
+
+        public void setUser(User user) {
+            this.user = user;
+        }
 
         public static class PrivacyBean {
 

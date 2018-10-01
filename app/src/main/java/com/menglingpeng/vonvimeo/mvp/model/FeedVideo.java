@@ -24,6 +24,7 @@ public class FeedVideo implements Serializable {
         return clip;
     }
 
+
     public static class ClipBean {
 
         private String uri;
@@ -43,6 +44,7 @@ public class FeedVideo implements Serializable {
         private PicturesBean pictures;
         private List<TagsBean> tags;
         private User user;
+        private MetadataBean metadata;
 
         public void setUri(String uri) {
             this.uri = uri;
@@ -179,6 +181,15 @@ public class FeedVideo implements Serializable {
         public void setUser(User user) {
             this.user = user;
         }
+
+        public void setMetadata(MetadataBean metadata) {
+            this.metadata = metadata;
+        }
+
+        public MetadataBean getMetadata() {
+            return metadata;
+        }
+
 
         public static class PrivacyBean {
 
@@ -431,6 +442,114 @@ public class FeedVideo implements Serializable {
                         }
                     }
                 }
+            }
+        }
+
+        public static class MetadataBean {
+
+            private ConnectionsBean connections;
+
+            public void setConnections(ConnectionsBean connections) {
+                this.connections = connections;
+            }
+
+            public ConnectionsBean getConnections() {
+                return connections;
+            }
+
+            public static class ConnectionsBean {
+
+                private CommentsBean comments;
+                private LikesBean likes;
+                private Object related;
+
+                public void setComments(CommentsBean comments) {
+                    this.comments = comments;
+                }
+
+                public void setLikes(LikesBean likes) {
+                    this.likes = likes;
+                }
+
+                public void setRelated(Object related) {
+                    this.related = related;
+                }
+
+                public CommentsBean getComments() {
+                    return comments;
+                }
+
+                public LikesBean getLikes() {
+                    return likes;
+                }
+
+
+                public Object getRelated() {
+                    return related;
+                }
+
+                public static class CommentsBean {
+
+                    private String uri;
+                    private int total;
+                    private List<String> options;
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public void setTotal(int total) {
+                        this.total = total;
+                    }
+
+                    public void setOptions(List<String> options) {
+                        this.options = options;
+                    }
+
+                    public String getUri() {
+                        return uri;
+                    }
+
+                    public int getTotal() {
+                        return total;
+                    }
+
+                    public List<String> getOptions() {
+                        return options;
+                    }
+                }
+
+                public static class LikesBean {
+
+                    private String uri;
+                    private int total;
+                    private List<String> options;
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public void setTotal(int total) {
+                        this.total = total;
+                    }
+
+                    public void setOptions(List<String> options) {
+                        this.options = options;
+                    }
+
+                    public String getUri() {
+                        return uri;
+                    }
+
+                    public int getTotal() {
+                        return total;
+                    }
+
+                    public List<String> getOptions() {
+                        return options;
+                    }
+                }
+
             }
         }
     }

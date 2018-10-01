@@ -427,6 +427,9 @@ public class Constants {
     public static final String REQUEST_DELETE_A_VIDEO_FROM_A_USER_WATCH_LATER =
             "request_delete_a_video_from_a_user_watch_later";
 
+    public static final String REQUEST_GET_ALL_VIDEOS_OF_A_USER_ON_DEMAND_PAGES =
+            "request_get_all_videos_of_a_user_on_demand_pages";
+
     //默认值1
     public static final int PAGE_VALUE = 1;
     //默认值10，最高到100

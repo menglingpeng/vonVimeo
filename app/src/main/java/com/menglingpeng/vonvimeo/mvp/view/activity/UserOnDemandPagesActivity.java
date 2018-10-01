@@ -41,6 +41,7 @@ public class UserOnDemandPagesActivity extends BaseActivity {
                 finish();
             }
         });
+        type = Constants.REQUEST_GET_ALL_VIDEOS_OF_A_USER_ON_DEMAND_PAGES;
         replaceFragment(RecyclerFragment.newInstance(type));
 
     }

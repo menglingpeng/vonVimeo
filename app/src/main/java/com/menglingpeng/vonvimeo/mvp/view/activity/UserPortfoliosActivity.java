@@ -1,9 +1,7 @@
 package com.menglingpeng.vonvimeo.mvp.view.activity;
 
 import android.content.Context;
-import android.provider.ContactsContract;
 import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -22,7 +20,7 @@ import com.menglingpeng.vonvimeo.utils.Constants;
 import com.menglingpeng.vonvimeo.utils.IdStringUtil;
 import com.menglingpeng.vonvimeo.utils.ImageLoader;
 
-public class UserOnDemandPagesActivity extends BaseActivity implements RecyclerView{
+public class UserPortfoliosActivity extends BaseActivity implements RecyclerView {
 
     private Toolbar toolbar;
     private CoordinatorLayout coordinatorLayout;
@@ -48,12 +46,12 @@ public class UserOnDemandPagesActivity extends BaseActivity implements RecyclerV
         context = getApplicationContext();
         user = (User)getIntent().getSerializableExtra(Constants.USER);
         userId = IdStringUtil.getId(user.getUri());
-        coordinatorLayout = (CoordinatorLayout) findViewById(R.id.demand_cdl);
-        toolbar = (Toolbar) findViewById(R.id.demand_tb);
-        avatarIv = (ImageView)findViewById(R.id.demand_user_avatar_iv);
-        userNameTv = (TextView)findViewById(R.id.demand_user_name_tv);
-        demandDescTv = (TextView)findViewById(R.id.demand_desc_tv);
-        progressBar = (ProgressBar)findViewById(R.id.demand_pb);
+        coordinatorLayout = (CoordinatorLayout) findViewById(R.id.user_portfolios_cdl);
+        toolbar = (Toolbar) findViewById(R.id.user_portfolios_tb);
+        avatarIv = (ImageView)findViewById(R.id.user_portfolios_user_avatar_iv);
+        userNameTv = (TextView)findViewById(R.id.user_portfolios_user_name_tv);
+        demandDescTv = (TextView)findViewById(R.id.user_portfolios_desc_tv);
+        progressBar = (ProgressBar)findViewById(R.id.user_portfolios_pb);
         title = user.getName();
         toolbar.setTitle(title);
         setSupportActionBar(toolbar);
@@ -66,47 +64,10 @@ public class UserOnDemandPagesActivity extends BaseActivity implements RecyclerV
         });
         ImageLoader.loadCricleImage(context, user.getPictures().getUri(), avatarIv);
         userNameTv.setText(user.getName());
-        type = Constants.REQUEST_GET_ALL_VIDEOS_OF_A_USER_ON_DEMAND_PAGES;
         replaceFragment(RecyclerFragment.newInstance(Constants.USER_ID, userId));
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.user_on_demand_pages_toolbar_overflow_menu, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.user_on_demand_pages_sort_date:
-                sortType = Constants.TYPE_DATE;
-                break;
-            case R.id.user_on_demand_pages_sort_alphabetical:
-                sortType = Constants.TYPE_ALPHABETICAL;
-                break;
-            case R.id.user_on_demand_pages_sort_videos:
-                sortType = Constants.TYPE_VIDEOS;
-                break;
-            case R.id.user_on_demand_pages_sort_comments:
-                sortType = Constants.TYPE_COMMENTS;
-                break;
-            case R.id.user_on_demand_pages_thumb:
-                break;
-            case R.id.user_on_demand_pages_detail:
-                break;
-            default:
-                break;
-        }
-        if(type.indexOf(Constants.AUTH_USER) != -1) {
-            replaceFragment(RecyclerFragment.newInstance(type));
-        }else {
-            replaceFragment(RecyclerFragment.newInstance(Constants.USER_ID, type));
-        }
-        return super.onOptionsItemSelected(item);
-    }
 
     @Override
     public void hideProgress() {

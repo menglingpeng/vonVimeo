@@ -5,6 +5,8 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
@@ -19,6 +21,7 @@ public class UserOnDemandPagesActivity extends BaseActivity {
     private String title;
     private String type;
     private User user;
+    private String sortType;
 
     @Override
     protected void initLayoutId() {
@@ -44,5 +47,42 @@ public class UserOnDemandPagesActivity extends BaseActivity {
         type = Constants.REQUEST_GET_ALL_VIDEOS_OF_A_USER_ON_DEMAND_PAGES;
         replaceFragment(RecyclerFragment.newInstance(type));
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.channles_toolbar_overflow_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.user_on_demand_pages_sort_date:
+                sortType = Constants.TYPE_DATE;
+                break;
+            case R.id.user_on_demand_pages_sort_alphabetical:
+                sortType = Constants.TYPE_ALPHABETICAL;
+                break;
+            case R.id.user_on_demand_pages_sort_videos:
+                sortType = Constants.TYPE_VIDEOS;
+                break;
+            case R.id.user_on_demand_pages_sort_comments:
+                sortType = Constants.TYPE_COMMENTS;
+                break;
+            case R.id.user_on_demand_pages_thumb:
+                break;
+            case R.id.user_on_demand_pages_detail:
+                break;
+            default:
+                break;
+        }
+        if(type.indexOf(Constants.AUTH_USER) != -1) {
+            replaceFragment(RecyclerFragment.newInstance(type));
+        }else {
+            replaceFragment(RecyclerFragment.newInstance(Constants.USER_ID, type));
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

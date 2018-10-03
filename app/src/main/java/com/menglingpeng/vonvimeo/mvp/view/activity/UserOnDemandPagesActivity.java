@@ -39,7 +39,7 @@ public class UserOnDemandPagesActivity extends BaseActivity implements RecyclerV
 
     @Override
     protected void initLayoutId() {
-        layoutId = R.layout.activity_user_project;
+        layoutId = R.layout.activity_user_on_demand_pages;
     }
 
     @Override

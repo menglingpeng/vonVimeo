@@ -49,11 +49,12 @@
                     android:layout_marginTop="@dimen/profile_desc_tv_layout_marginTop"
                     android:layout_below="@+id/user_portfolios_user_avatar_iv"
                     android:gravity="center"
+                    android:clickable="true"
                     android:textColor="@android:color/white"
                     android:textAppearance="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Title"/>
 
                 <TextView
-                    android:id="@+id/user_portfoliosdesc_tv"
+                    android:id="@+id/user_portfolios_desc_tv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/user_portfolios_user_name_tv"
@@ -80,7 +81,7 @@
                     android:textColor="@android:color/white"
                     android:textSize="18dp"/>
                 <Button
-                    android:id="@+id/user_portfolios_videos__bt"
+                    android:id="@+id/user_portfolios_on_demand_pages_bt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/demand_videos_bt"

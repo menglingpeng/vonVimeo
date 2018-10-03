@@ -448,6 +448,7 @@ public class FeedVideo implements Serializable {
         public static class MetadataBean {
 
             private ConnectionsBean connections;
+            private InteractionsBean interactions;
 
             public void setConnections(ConnectionsBean connections) {
                 this.connections = connections;
@@ -457,6 +458,15 @@ public class FeedVideo implements Serializable {
                 return connections;
             }
 
+            public void setInteractions(InteractionsBean interactions) {
+                this.interactions = interactions;
+            }
+
+            public InteractionsBean getInteractions() {
+                return interactions;
+            }
+
+
             public static class ConnectionsBean {
 
                 private CommentsBean comments;
@@ -465,6 +475,7 @@ public class FeedVideo implements Serializable {
                 private PicturesBean pictures;
                 private TexttracksBean texttracks;
                 private RecommendationsBean recommendations;
+                private VersionsBean versions;
 
                 public void setComments(CommentsBean comments) {
                     this.comments = comments;
@@ -515,6 +526,15 @@ public class FeedVideo implements Serializable {
                 public RecommendationsBean getRecommendations() {
                     return recommendations;
                 }
+
+                public void setVersions(VersionsBean versions) {
+                    this.versions = versions;
+                }
+
+                public VersionsBean getVersions() {
+                    return versions;
+                }
+
 
                 public static class CommentsBean {
 
@@ -655,6 +675,99 @@ public class FeedVideo implements Serializable {
 
                     public String getUri() {
                         return uri;
+                    }
+
+                    public List<String> getOptions() {
+                        return options;
+                    }
+                }
+
+                public static class VersionsBean {
+
+                    private String uri;
+                    private int total;
+                    private String current_uri;
+                    private List<String> options;
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public void setTotal(int total) {
+                        this.total = total;
+                    }
+
+                    public void setCurrent_uri(String current_uri) {
+                        this.current_uri = current_uri;
+                    }
+
+                    public void setOptions(List<String> options) {
+                        this.options = options;
+                    }
+
+                    public String getUri() {
+                        return uri;
+                    }
+
+                    public int getTotal() {
+                        return total;
+                    }
+
+                    public String getCurrent_uri() {
+                        return current_uri;
+                    }
+
+                    public List<String> getOptions() {
+                        return options;
+                    }
+                }
+            }
+
+            public static class InteractionsBean {
+
+                private WatchlaterBean watchlater;
+
+                public void setWatchlater(WatchlaterBean watchlater) {
+                    this.watchlater = watchlater;
+                }
+
+                public WatchlaterBean getWatchlater() {
+                    return watchlater;
+                }
+
+                public static class WatchlaterBean {
+
+                    private String uri;
+                    private boolean added;
+                    private Object added_time;
+                    private List<String> options;
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public void setAdded(boolean added) {
+                        this.added = added;
+                    }
+
+                    public void setAdded_time(Object added_time) {
+                        this.added_time = added_time;
+                    }
+
+                    public void setOptions(List<String> options) {
+                        this.options = options;
+                    }
+
+                    public String getUri() {
+                        return uri;
+                    }
+
+                    public boolean getAdded() {
+                        return added;
+                    }
+
+                    public Object getAdded_time() {
+                        return added_time;
                     }
 
                     public List<String> getOptions() {

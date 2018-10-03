@@ -460,7 +460,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     case Constants.REQUEST_GET_ALL_VIDEOS_OF_A_USER_ON_DEMAND_PAGES:
                         view = inflater.inflate(R.layout.
                                 recycler_videos_of_a_user_on_demand_pages_thumb_view_item, parent, false);
-                        viewHolder = new VidoeOfUserOnDemandPagesTypeThumbViewHolder(view);
+                        viewHolder = new VideoOfUserOnDemandPagesTypeThumbViewHolder(view);
+                        break;
+                    case Constants.REQUEST_GET_ALL_VIDEOS_IN_PORTFOLIO_OF_A_USR:
+                        view = inflater.inflate(R.layout.
+                                recycler_videos_in_portfolio_of_a_user_thumb_view_item, parent, false);
+                        viewHolder = new VideoInPortfolioTypeThumbViewHolder(view);
                         break;
                     default:
                         break;
@@ -507,9 +512,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     }
                 }
             });
-        }else if (holder instanceof VidoeOfUserOnDemandPagesTypeThumbViewHolder){
-            final VidoeOfUserOnDemandPagesTypeThumbViewHolder viewHolder =
-                    (VidoeOfUserOnDemandPagesTypeThumbViewHolder)holder;
+        }else if (holder instanceof VideoOfUserOnDemandPagesTypeThumbViewHolder){
+            final VideoOfUserOnDemandPagesTypeThumbViewHolder viewHolder =
+                    (VideoOfUserOnDemandPagesTypeThumbViewHolder)holder;
             final FeedVideo video = (FeedVideo) list.get(position);
             ImageLoader.load(fragment, video.getClip().getPictures().getUri(), viewHolder.videoThumbIv, false);
             viewHolder.videoNameTv.setText(video.getClip().getName());
@@ -522,9 +527,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     }
                 }
             });
-        }else if(holder instanceof VidoeOfUserOnDemandPagesTypeDetailViewHolder){
-            final VidoeOfUserOnDemandPagesTypeDetailViewHolder viewHolder =
-                    (VidoeOfUserOnDemandPagesTypeDetailViewHolder)holder;
+        }else if(holder instanceof VideoOfUserOnDemandPagesTypeDetailViewHolder){
+            final VideoOfUserOnDemandPagesTypeDetailViewHolder viewHolder =
+                    (VideoOfUserOnDemandPagesTypeDetailViewHolder)holder;
             final FeedVideo video = (FeedVideo)list.get(position);
             String pictureUrl = video.getClip().getPictures().getUri();
             ImageLoader.load(fragment, pictureUrl, viewHolder.VideoThumbIv, false);
@@ -536,6 +541,21 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             viewHolder.likesCountTv.setText(video.getClip().getMetadataBean().getConnections().getLikes().getTotal());
             viewHolder.commentsCountTv.setText(video.getClip().getMetadataBean().getConnections().getComments().getTotal());
             viewHolder.playsCountTv.setText(video.getClip().getStats().getPlays());
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (mListener != null) {
+                        mListener.onRecyclerFragmentListListener(viewHolder, video);
+                    }
+                }
+            });
+        }
+        else if (holder instanceof VideoInPortfolioTypeThumbViewHolder){
+            final VideoInPortfolioTypeThumbViewHolder viewHolder = (VideoInPortfolioTypeThumbViewHolder)holder;
+            final Video video = (Video)list.get(position);
+            ImageLoader.load(fragment, video.getPictures().getUri(), viewHolder.videoThumbIv, false);
+            viewHolder.videoNameTv.setText(video.getName());
+            viewHolder.videoAddedTimeTv.setText(video.getCreated_time());
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -1540,13 +1560,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
-    public class VidoeOfUserOnDemandPagesTypeThumbViewHolder extends RecyclerView.ViewHolder{
+    public class VideoOfUserOnDemandPagesTypeThumbViewHolder extends RecyclerView.ViewHolder{
 
         public final ImageView videoThumbIv;
         public final TextView videoNameTv;
         public final TextView videoAddedTimeTv;
 
-        public  VidoeOfUserOnDemandPagesTypeThumbViewHolder(View view) {
+        public  VideoOfUserOnDemandPagesTypeThumbViewHolder(View view) {
             super(view);
 
             videoThumbIv = (ImageView)view.findViewById(R.id.thumb_view_on_demand_pages_video_thumb_iv);
@@ -1555,7 +1575,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
-    private class VidoeOfUserOnDemandPagesTypeDetailViewHolder extends RecyclerView.ViewHolder {
+    private class VideoOfUserOnDemandPagesTypeDetailViewHolder extends RecyclerView.ViewHolder {
 
         public final ImageView VideoThumbIv;
         public final TextView VideoNameTv;
@@ -1568,7 +1588,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         public final TextView videoDurationTv;
 
 
-        public VidoeOfUserOnDemandPagesTypeDetailViewHolder(View view) {
+        public VideoOfUserOnDemandPagesTypeDetailViewHolder(View view) {
             super(view);
 
             VideoThumbIv = (ImageView)view.findViewById(R.id.detail_view_on_demand_pages_video_thumb_iv);
@@ -1580,6 +1600,21 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             likesCountTv = (TextView)view.findViewById(R.id.detail_view_on_demand_pages_video_likes_count_i);
             commentsCountTv = (TextView)view.findViewById(R.id.detail_view_on_demand_pages_video_comments_count_i);
             videoDurationTv = (TextView)view.findViewById(R.id.detail_view_on_demand_pages_duration_tv);
+        }
+    }
+
+    public class VideoInPortfolioTypeThumbViewHolder extends RecyclerView.ViewHolder{
+
+        public final ImageView videoThumbIv;
+        public final TextView videoNameTv;
+        public final TextView videoAddedTimeTv;
+
+        public  VideoInPortfolioTypeThumbViewHolder(View view) {
+            super(view);
+
+            videoThumbIv = (ImageView)view.findViewById(R.id.thumb_view_portfolio_video_thumb_iv);
+            videoNameTv = (TextView)view.findViewById(R.id.thumb_view_portfolio_video_name_tv);
+            videoAddedTimeTv = (TextView)view.findViewById(R.id.thumb_view_portfolio_video_added_time);
         }
     }
 

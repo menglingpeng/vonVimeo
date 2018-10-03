@@ -45,6 +45,7 @@ public class FeedVideo implements Serializable {
         private List<TagsBean> tags;
         private User user;
         private MetadataBean metadata;
+        private StatsBean stats;
 
         public void setUri(String uri) {
             this.uri = uri;
@@ -188,6 +189,14 @@ public class FeedVideo implements Serializable {
 
         public MetadataBean getMetadata() {
             return metadata;
+        }
+
+        public void setStats(StatsBean stats) {
+            this.stats = stats;
+        }
+
+        public StatsBean getStats() {
+            return stats;
         }
 
 
@@ -726,6 +735,7 @@ public class FeedVideo implements Serializable {
             public static class InteractionsBean {
 
                 private WatchlaterBean watchlater;
+                private LikeBean like;
 
                 public void setWatchlater(WatchlaterBean watchlater) {
                     this.watchlater = watchlater;
@@ -734,6 +744,15 @@ public class FeedVideo implements Serializable {
                 public WatchlaterBean getWatchlater() {
                     return watchlater;
                 }
+
+                public void setLike(LikeBean like) {
+                    this.like = like;
+                }
+
+                public LikeBean getLike() {
+                    return like;
+                }
+
 
                 public static class WatchlaterBean {
 
@@ -774,6 +793,59 @@ public class FeedVideo implements Serializable {
                         return options;
                     }
                 }
+
+                public static class LikeBean {
+
+                    private String uri;
+                    private boolean added;
+                    private Object added_time;
+                    private List<String> options;
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public void setAdded(boolean added) {
+                        this.added = added;
+                    }
+
+                    public void setAdded_time(Object added_time) {
+                        this.added_time = added_time;
+                    }
+
+                    public void setOptions(List<String> options) {
+                        this.options = options;
+                    }
+
+                    public String getUri() {
+                        return uri;
+                    }
+
+                    public boolean getAdded() {
+                        return added;
+                    }
+
+                    public Object getAdded_time() {
+                        return added_time;
+                    }
+
+                    public List<String> getOptions() {
+                        return options;
+                    }
+                }
+            }
+        }
+
+        public static class StatsBean {
+
+            private int plays;
+
+            public void setPlays(int plays) {
+                this.plays = plays;
+            }
+
+            public int getPlays() {
+                return plays;
             }
         }
     }

@@ -538,9 +538,17 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             viewHolder.addedTimeTv.setText(video.getClip().getModified_time());
             viewHolder.videoDescTv.setText(video.getClip().getDescription());
             viewHolder.videoDurationTv.setText(video.getClip().getDuration());
-            viewHolder.likesCountTv.setText(video.getClip().getMetadataBean().getConnections().getLikes().getTotal());
-            viewHolder.commentsCountTv.setText(video.getClip().getMetadataBean().getConnections().getComments().getTotal());
+            viewHolder.likesCountTv.setText(video.getClip().getMetadata().getConnections().getLikes().getTotal());
+            viewHolder.commentsCountTv.setText(video.getClip().getMetadata().getConnections().getComments().getTotal());
             viewHolder.playsCountTv.setText(video.getClip().getStats().getPlays());
+            viewHolder.userNameTv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(fragment.getActivity(), UserProfileActivity.class);
+                    intent.putExtra(Constants.USER, video.getClip().getUser());
+                    context.startActivity(intent);
+                }
+            });
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -556,6 +564,35 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             ImageLoader.load(fragment, video.getPictures().getUri(), viewHolder.videoThumbIv, false);
             viewHolder.videoNameTv.setText(video.getName());
             viewHolder.videoAddedTimeTv.setText(video.getCreated_time());
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (mListener != null) {
+                        mListener.onRecyclerFragmentListListener(viewHolder, video);
+                    }
+                }
+            });
+        }else if(holder instanceof VideoInPortfolioTypeDetailViewHolder){
+            final VideoInPortfolioTypeDetailViewHolder viewHolder = (VideoInPortfolioTypeDetailViewHolder)holder;
+            final Video video = (Video)list.get(position);
+            String pictureUrl = video.getPictures().getUri();
+            ImageLoader.load(fragment, pictureUrl, viewHolder.VideoThumbIv, false);
+            viewHolder.VideoNameTv.setText(video.getName());
+            viewHolder.userNameTv.setText(video.getUser().getName());
+            viewHolder.addedTimeTv.setText(video.getModified_time());
+            viewHolder.videoDescTv.setText(video.getDescription());
+            viewHolder.videoDurationTv.setText(video.getDuration());
+            viewHolder.likesCountTv.setText(video.getMetadataBean().getConnections().getLikes().getTotal());
+            viewHolder.commentsCountTv.setText(video.getMetadataBean().getConnections().getComments().getTotal());
+            viewHolder.playsCountTv.setText(video.getStats().getPlays());
+            viewHolder.userNameTv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(fragment.getActivity(), UserProfileActivity.class);
+                    intent.putExtra(Constants.USER, video.getUser());
+                    context.startActivity(intent);
+                }
+            });
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -1615,6 +1652,34 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             videoThumbIv = (ImageView)view.findViewById(R.id.thumb_view_portfolio_video_thumb_iv);
             videoNameTv = (TextView)view.findViewById(R.id.thumb_view_portfolio_video_name_tv);
             videoAddedTimeTv = (TextView)view.findViewById(R.id.thumb_view_portfolio_video_added_time);
+        }
+    }
+
+    private class VideoInPortfolioTypeDetailViewHolder extends RecyclerView.ViewHolder {
+
+        public final ImageView VideoThumbIv;
+        public final TextView VideoNameTv;
+        public final TextView userNameTv;
+        public final TextView addedTimeTv;
+        public final TextView videoDescTv;
+        public final TextView playsCountTv;
+        public final TextView likesCountTv;
+        public final TextView commentsCountTv;
+        public final TextView videoDurationTv;
+
+
+        public VideoInPortfolioTypeDetailViewHolder(View view) {
+            super(view);
+
+            VideoThumbIv = (ImageView)view.findViewById(R.id.detail_view_portfolio_video_thumb_iv);
+            VideoNameTv = (TextView)view.findViewById(R.id.detail_view_portfolio_video_name_tv);
+            userNameTv = (TextView)view.findViewById(R.id.detail_view_portfolio_video_user_name_tv);
+            addedTimeTv = (TextView)view.findViewById(R.detail_view_portfolio_video_added_time_tv);
+            videoDescTv = (TextView)view.findViewById(R.id.detail_view_portfolio_video_desc_tv);
+            playsCountTv = (TextView)view.findViewById(R.id.detail_view_portfolio_video_plays_count_i);
+            likesCountTv = (TextView)view.findViewById(R.id.detail_view_portfolio_video_likes_count_i);
+            commentsCountTv = (TextView)view.findViewById(R.id.detail_view_portfolio_video_comments_count_i);
+            videoDurationTv = (TextView)view.findViewById(R.id.detail_view_portfolio_duration_tv);
         }
     }
 

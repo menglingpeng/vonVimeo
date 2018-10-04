@@ -54,7 +54,8 @@
         <activity android:name=".mvp.view.activity.UserProjectDetailActivity" />
         <activity android:name=".mvp.view.activity.MyFeedVideosActivity" />
         <activity android:name=".mvp.view.activity.UserOnDemandPagesActivity" />
-        <activity android:name=".mvp.view.activity.UserPortfolioDetailActivity"></activity>
+        <activity android:name=".mvp.view.activity.UserPortfolioDetailActivity" />
+        <activity android:name=".mvp.view.activity.UserPortfoliosActivity"></activity>
     </application>
 
 </manifest>

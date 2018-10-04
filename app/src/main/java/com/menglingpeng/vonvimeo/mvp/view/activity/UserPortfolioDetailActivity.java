@@ -76,22 +76,59 @@ public class UserPortfolioDetailActivity extends BaseActivity implements View.On
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.user_portfolio_toolbar_overflow_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.user_portfolio_sort_date:
+                sortType = Constants.TYPE_DATE;
+                break;
+            case R.id.user_portfolio_sort_alphabetical:
+                sortType = Constants.TYPE_ALPHABETICAL;
+                break;
+            case R.id.user_portfolio_sort_videos:
+                sortType = Constants.TYPE_VIDEOS;
+                break;
+            case R.id.user_portfolio_sort_comments:
+                sortType = Constants.TYPE_COMMENTS;
+                break;
+            case R.id.user_portfolio_thumb:
+                break;
+            case R.id.user_portfolio_detail:
+                break;
+            default:
+                break;
+        }
+        if(type.indexOf(Constants.AUTH_USER) != -1) {
+            replaceFragment(RecyclerFragment.newInstance(type));
+        }else {
+            replaceFragment(RecyclerFragment.newInstance(Constants.USER_ID, type));
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
     public void onClick(View view) {
         Intent intent;
         switch (view.getId()){
-            case R.id.user_portfolios_user_avatar_iv:
+            case R.id.user_portfolio_user_avatar_iv:
                 intent = new Intent(this, UserProfileActivity.class);
                 intent.putExtra(Constants.USER, user);
                 break;
-            case R.id.user_portfolios_user_name_tv:
+            case R.id.user_portfolio_user_name_tv:
                 intent = new Intent(this, UserProfileActivity.class);
                 intent.putExtra(Constants.USER, user);
                 break;
-            case R.id.user_portfolios_on_demand_pages_bt:
+            case R.id.user_portfolio_on_demand_pages_bt:
                 intent = new Intent(this, UserOnDemandPagesActivity.class);
                 intent.putExtra(Constants.USER, user);
                 break;
-            case R.id.user_portfolios_videos_bt:
+            case R.id.user_portfolio_videos_bt:
                 intent = new Intent(this, UserUploadedVideosActivity.class);
                 intent.putExtra(Constants.USER, user);
                 break;

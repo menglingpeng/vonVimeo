@@ -485,6 +485,7 @@ public class FeedVideo implements Serializable {
                 private TexttracksBean texttracks;
                 private RecommendationsBean recommendations;
                 private VersionsBean versions;
+                private CreditsBean credits;
 
                 public void setComments(CommentsBean comments) {
                     this.comments = comments;
@@ -505,8 +506,6 @@ public class FeedVideo implements Serializable {
                 public LikesBean getLikes() {
                     return likes;
                 }
-
-
 
                 public Object getRelated() {
                     return related;
@@ -542,6 +541,14 @@ public class FeedVideo implements Serializable {
 
                 public VersionsBean getVersions() {
                     return versions;
+                }
+
+                public void setCredits(CreditsBean credits) {
+                    this.credits = credits;
+                }
+
+                public CreditsBean getCredits() {
+                    return credits;
                 }
 
 
@@ -730,12 +737,44 @@ public class FeedVideo implements Serializable {
                         return options;
                     }
                 }
+
+                public static class CreditsBean {
+
+                    private String uri;
+                    private int total;
+                    private List<String> options;
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public void setTotal(int total) {
+                        this.total = total;
+                    }
+
+                    public void setOptions(List<String> options) {
+                        this.options = options;
+                    }
+
+                    public String getUri() {
+                        return uri;
+                    }
+
+                    public int getTotal() {
+                        return total;
+                    }
+
+                    public List<String> getOptions() {
+                        return options;
+                    }
+                }
             }
 
             public static class InteractionsBean {
 
                 private WatchlaterBean watchlater;
                 private LikeBean like;
+                private ReportBean report;
 
                 public void setWatchlater(WatchlaterBean watchlater) {
                     this.watchlater = watchlater;
@@ -751,6 +790,14 @@ public class FeedVideo implements Serializable {
 
                 public LikeBean getLike() {
                     return like;
+                }
+
+                public void setReport(ReportBean report) {
+                    this.report = report;
+                }
+
+                public ReportBean getReport() {
+                    return report;
                 }
 
 
@@ -831,6 +878,37 @@ public class FeedVideo implements Serializable {
 
                     public List<String> getOptions() {
                         return options;
+                    }
+                }
+
+                public static class ReportBean {
+
+                    private String uri;
+                    private List<String> options;
+                    private List<String> reason;
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public void setOptions(List<String> options) {
+                        this.options = options;
+                    }
+
+                    public void setReason(List<String> reason) {
+                        this.reason = reason;
+                    }
+
+                    public String getUri() {
+                        return uri;
+                    }
+
+                    public List<String> getOptions() {
+                        return options;
+                    }
+
+                    public List<String> getReason() {
+                        return reason;
                     }
                 }
             }

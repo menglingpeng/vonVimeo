@@ -1,6 +1,7 @@
 package com.menglingpeng.vonvimeo.mvp.view.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,13 +13,14 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
+import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
 import com.menglingpeng.vonvimeo.mvp.model.User;
 import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
 import com.menglingpeng.vonvimeo.utils.Constants;
 import com.menglingpeng.vonvimeo.utils.IdStringUtil;
 import com.menglingpeng.vonvimeo.utils.ImageLoader;
 
-public class UserPortfoliosActivity extends BaseActivity {
+public class UserPortfoliosActivity extends BaseActivity implements RecyclerView, View.OnClickListener{
 
     private Toolbar toolbar;
     private CoordinatorLayout coordinatorLayout;
@@ -70,4 +72,47 @@ public class UserPortfoliosActivity extends BaseActivity {
         replaceFragment(RecyclerFragment.newInstance(Constants.USER_ID, userId));
 
     }
+
+    @Override
+    public void onClick(View view) {
+        Intent intent;
+        switch (view.getId()){
+            case R.id.user_portfolio_user_avatar_iv:
+                intent = new Intent(this, UserProfileActivity.class);
+                intent.putExtra(Constants.USER, user);
+                break;
+            case R.id.user_portfolio_user_name_tv:
+                intent = new Intent(this, UserProfileActivity.class);
+                intent.putExtra(Constants.USER, user);
+                break;
+            case R.id.user_portfolio_on_demand_pages_bt:
+                intent = new Intent(this, UserOnDemandPagesActivity.class);
+                intent.putExtra(Constants.USER, user);
+                break;
+            case R.id.user_portfolio_videos_bt:
+                intent = new Intent(this, UserUploadedVideosActivity.class);
+                intent.putExtra(Constants.USER, user);
+                break;
+            default:
+                break;
+            startActivity(intent);
+        }
+    }
+
+    @Override
+    public void hideProgress() {
+        progressBar.setVisibility(ProgressBar.GONE);
+    }
+
+    @Override
+    public void loadFailed(String msg) {
+
+    }
+
+    @Override
+    public void loadSuccess(String json, String requestType) {
+
+    }
+
+
 }

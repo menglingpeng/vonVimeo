@@ -30,6 +30,7 @@ import com.menglingpeng.vonvimeo.mvp.model.Channel;
 import com.menglingpeng.vonvimeo.mvp.model.FeedVideo;
 import com.menglingpeng.vonvimeo.mvp.model.Follow;
 import com.menglingpeng.vonvimeo.mvp.model.Group;
+import com.menglingpeng.vonvimeo.mvp.model.Portfolio;
 import com.menglingpeng.vonvimeo.mvp.model.Project;
 import com.menglingpeng.vonvimeo.mvp.model.Stuff;
 import com.menglingpeng.vonvimeo.mvp.model.Tag;
@@ -557,6 +558,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     }
                 }
             });
+        }else if(holder instanceof PortfolioThumbTypeViewHolder){
+            final PortfolioThumbTypeViewHolder viewHolder = (PortfolioThumbTypeViewHolder)holder;
+            final Portfolio portfolio = (Portfolio)list.get(position);
+            viewHolder.portfolioNameTv.setText(portfolio.getName());
+            viewHolder.sortTv.setText(portfolio.getSort());
         }
         else if (holder instanceof VideoInPortfolioTypeThumbViewHolder){
             final VideoInPortfolioTypeThumbViewHolder viewHolder = (VideoInPortfolioTypeThumbViewHolder)holder;
@@ -1637,6 +1643,22 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             likesCountTv = (TextView)view.findViewById(R.id.detail_view_on_demand_pages_video_likes_count_i);
             commentsCountTv = (TextView)view.findViewById(R.id.detail_view_on_demand_pages_video_comments_count_i);
             videoDurationTv = (TextView)view.findViewById(R.id.detail_view_on_demand_pages_duration_tv);
+        }
+    }
+
+    public class PortfolioThumbTypeViewHolder extends RecyclerView.ViewHolder {
+
+        public final ImageView portfolioThumbIv;
+        public final TextView portfolioNameTv;
+        public final TextView sortTv;
+
+
+        public PortfolioThumbTypeViewHolder(View view) {
+            super(view);
+            portfolioThumbIv = (ImageView)view.findViewById(R.id.portfolio_thumb_iv_iv);
+            portfolioNameTv = (TextView)view.findViewById(R.id.portfolio_name_tv);
+            sortTv = (TextView)view.findViewById(R.id.portfolio_sort_tv);
+
         }
     }
 

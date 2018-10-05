@@ -77,7 +77,7 @@ public class UserPortfolioDetailActivity extends BaseActivity implements View.On
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.user_portfolio_toolbar_overflow_menu, menu);
+        getMenuInflater().inflate(R.user_portfolio_detail_toolbar_overflow_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 

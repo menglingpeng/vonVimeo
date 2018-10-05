@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/user_portfolios_thumb"
+        android:title=""
+        android:icon="@drawable/ic_view_thumb_blue_600_24dp"
+        app:showAsAction="always">
+
+        <menu>
+
+            <item
+                android:id="@+id/user_portfolios_detail"
+                android:title=""
+                android:icon="@drawable/ic_view_detail_black_24dp"
+                app:showAsAction="never"></item>
+        </menu>
+
+    </item>
+
+
+
+</menu>

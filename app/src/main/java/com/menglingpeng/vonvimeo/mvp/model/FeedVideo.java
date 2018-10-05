@@ -42,6 +42,7 @@ public class FeedVideo implements Serializable {
         private Object license;
         private PrivacyBean privacy;
         private PicturesBean pictures;
+        private Category category;
         private List<TagsBean> tags;
         private User user;
         private MetadataBean metadata;
@@ -51,6 +52,8 @@ public class FeedVideo implements Serializable {
         private String resource_key;
         private UploadBean upload;
         private TranscodeBean transcode;
+        private String type;
+        private String time;
 
         public void setUri(String uri) {
             this.uri = uri;
@@ -242,6 +245,30 @@ public class FeedVideo implements Serializable {
 
         public TranscodeBean getTranscode() {
             return transcode;
+        }
+
+        public Category getCategory() {
+            return category;
+        }
+
+        public void setCategory(Category category) {
+            this.category = category;
+        }
+
+        public void setType(String type) {
+            this.type = type;
+        }
+
+        public void setTime(String time) {
+            this.time = time;
+        }
+
+        public String getType() {
+            return type;
+        }
+
+        public String getTime() {
+            return time;
         }
 
 

@@ -463,11 +463,17 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                                 recycler_videos_of_a_user_on_demand_pages_thumb_view_item, parent, false);
                         viewHolder = new VideoOfUserOnDemandPagesTypeThumbViewHolder(view);
                         break;
+                    case Constants.REQUEST_GET_ALL_PORTFOLIOS_OF_A_USR:
+                        view = inflater.inflate(R.layout.
+                                recycler_user_portfolios_thumb_view_item, parent, false);
+                        viewHolder = new PortfolioDetailTypeViewHolder(view);
+                        break;
                     case Constants.REQUEST_GET_ALL_VIDEOS_IN_PORTFOLIO_OF_A_USR:
                         view = inflater.inflate(R.layout.
                                 recycler_videos_in_portfolio_of_a_user_thumb_view_item, parent, false);
                         viewHolder = new VideoInPortfolioTypeThumbViewHolder(view);
                         break;
+
                     default:
                         break;
                 }
@@ -563,6 +569,27 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             final Portfolio portfolio = (Portfolio)list.get(position);
             viewHolder.portfolioNameTv.setText(portfolio.getName());
             viewHolder.sortTv.setText(portfolio.getSort());
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (mListener != null) {
+                        mListener.onRecyclerFragmentListListener(viewHolder, portfolio);
+                    }
+                }
+            });
+        }else if(holder instanceof PortfolioDetailTypeViewHolder){
+            final PortfolioDetailTypeViewHolder viewHolder = (PortfolioDetailTypeViewHolder)holder;
+            final Portfolio portfolio = (Portfolio)list.get(position);
+            viewHolder.portfolioNameTv.setText(portfolio.getName());
+            viewHolder.addedTimeTv.setText(portfolio.getCreated_time());
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (mListener != null) {
+                        mListener.onRecyclerFragmentListListener(viewHolder, portfolio);
+                    }
+                }
+            });
         }
         else if (holder instanceof VideoInPortfolioTypeThumbViewHolder){
             final VideoInPortfolioTypeThumbViewHolder viewHolder = (VideoInPortfolioTypeThumbViewHolder)holder;
@@ -1658,6 +1685,22 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             portfolioThumbIv = (ImageView)view.findViewById(R.id.portfolio_thumb_iv_iv);
             portfolioNameTv = (TextView)view.findViewById(R.id.portfolio_name_tv);
             sortTv = (TextView)view.findViewById(R.id.portfolio_sort_tv);
+
+        }
+    }
+
+    public class PortfolioDetailTypeViewHolder extends RecyclerView.ViewHolder {
+
+        public final ImageView portfolioThumbIv;
+        public final TextView portfolioNameTv;
+        public final TextView addedTimeTv;
+
+
+        public PortfolioDetailTypeViewHolder(View view) {
+            super(view);
+            portfolioThumbIv = (ImageView)view.findViewById(R.id.detail_view_portfolio_thumb_iv_iv);
+            portfolioNameTv = (TextView)view.findViewById(R.id.detail_view_portfolio_name_tv);
+            addedTimeTv = (TextView)view.findViewById(R.id.detail_view_portfolio_added_time_tv);
 
         }
     }

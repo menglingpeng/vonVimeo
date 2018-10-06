@@ -34,6 +34,7 @@ public class UserPortfolioDetailActivity extends BaseActivity implements View.On
     private Button videosBt;
     private ProgressBar progressBar;
     private String type;
+    private String viewType;
     private User user;
     private String sortType;
     private Context context;
@@ -98,8 +99,10 @@ public class UserPortfolioDetailActivity extends BaseActivity implements View.On
                 sortType = Constants.TYPE_COMMENTS;
                 break;
             case R.id.user_portfolio_thumb:
+                viewType = Constants.VIEW_TYPE_THUMBNAILS;
                 break;
             case R.id.user_portfolio_detail:
+                viewType = Constants.VIEW_TYPE_DETAIL;
                 break;
             default:
                 break;

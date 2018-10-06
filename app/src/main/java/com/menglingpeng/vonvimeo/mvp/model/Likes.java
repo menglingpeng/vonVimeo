@@ -8,7 +8,7 @@ public class Likes {
     private int page;
     private int per_page;
     private PagingBean paging;
-    private List<Videos> videos;
+    private List<LikeVideo> likeVideos;
 
     public void setTotal(int total) {
         this.total = total;
@@ -42,12 +42,12 @@ public class Likes {
         return paging;
     }
 
-    public List<Videos> getVideos() {
-        return videos;
+    public List<LikeVideo> getLikeVideos() {
+        return likeVideos;
     }
 
-    public void setVideos(List<Videos> videos) {
-        this.videos = videos;
+    public void setLikeVideos(List<LikeVideo> likeVideos) {
+        this.likeVideos = likeVideos;
     }
 
     public static class PagingBean {

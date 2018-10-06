@@ -19,6 +19,34 @@
 
     </item>
 
+    <item
+        android:id="@+id/user_portfolios_sort"
+        android:icon="@drawable/ic_more"
+        android:title=""
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/user_portfolios_sort_date"
+                android:title="@string/sort_date"
+                app:showAsAction="never"></item>
 
+            <item
+                android:id="@+id/user_portfolios_sort_alphabetical"
+                android:title="@string/sort_alphabetical"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/user_portfolios_sort_videos"
+                android:title="@string/sort_videos"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/user_portfolios_sort_modified"
+                android:title="@string/sort_modified"
+                app:showAsAction="never"></item>
+        </menu>
+
+
+    </item>
 
 </menu>

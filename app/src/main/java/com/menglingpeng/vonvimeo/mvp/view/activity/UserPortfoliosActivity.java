@@ -34,6 +34,7 @@ public class UserPortfoliosActivity extends BaseActivity implements RecyclerView
     private Button videosBt;
     private ProgressBar progressBar;
     private String type;
+    private String viewType;
     private User user;
     private String sortType;
     private Context context;
@@ -111,11 +112,23 @@ public class UserPortfoliosActivity extends BaseActivity implements RecyclerView
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
-            case R.id.user_portfolio_thumb:
-                type = Constants.VIEW_TYPE_THUMBNAILS;
+            case R.id.user_portfolios_thumb:
+                viewType = Constants.VIEW_TYPE_THUMBNAILS;
                 break;
-            case R.id.user_portfolio_detail:
-                type = Constants.VIEW_TYPE_DETAIL;
+            case R.id.user_portfolios_detail:
+                 viewType = Constants.VIEW_TYPE_DETAIL;
+                break;
+            case R.id.user_portfolios_sort_date:
+                sortType = Constants.TYPE_DATE;
+                break;
+            case R.id.user_portfolios_sort_alphabetical:
+                sortType = Constants.TYPE_ALPHABETICAL;
+                break;
+            case R.id.user_portfolios_sort_videos:
+                sortType = Constants.TYPE_VIDEOS;
+                break;
+            case R.id.user_portfolios_sort_comments:
+                sortType = Constants.TYPE_COMMENTS;
                 break;
             default:
                 break;

@@ -21,6 +21,9 @@ public class LikeVideo implements Serializable {
     private Object license;
     private PrivacyBean privacy;
     private PicturesBean pictures;
+    private MetadataBean metadataBean;
+    private StatsBean stats;
+    private TranscodeBean transcode;
 
     public void setUri(String uri) {
         this.uri = uri;
@@ -150,6 +153,29 @@ public class LikeVideo implements Serializable {
         return pictures;
     }
 
+    public MetadataBean getMetadataBean() {
+        return metadataBean;
+    }
+
+    public void setMetadataBean(MetadataBean metadataBean) {
+        this.metadataBean = metadataBean;
+    }
+
+    public StatsBean getStats() {
+        return stats;
+    }
+
+    public void setStats(StatsBean stats) {
+        this.stats = stats;
+    }
+
+    public TranscodeBean getTranscode() {
+        return transcode;
+    }
+
+    public void setTranscode(TranscodeBean transcode) {
+        this.transcode = transcode;
+    }
 
     public static class EmbedBean {
 
@@ -420,6 +446,330 @@ public class LikeVideo implements Serializable {
             public String getLink_with_play_button() {
                 return link_with_play_button;
             }
+        }
+    }
+
+    public static class MetadataBean{
+
+        private ConnectionsBean connections;
+
+        public void setConnections(ConnectionsBean connections) {
+            this.connections = connections;
+        }
+
+        public ConnectionsBean getConnections() {
+            return connections;
+        }
+
+        public static class ConnectionsBean {
+
+            private CommentsBean comments;
+            private LikesBean likes;
+            private PicturesBean pictures;
+            private TexttracksBean texttracks;
+            private Object related;
+            private RecommendationsBean recommendations;
+
+            public void setComments(CommentsBean comments) {
+                this.comments = comments;
+            }
+
+            public void setLikes(LikesBean likes) {
+                this.likes = likes;
+            }
+
+            public CommentsBean getComments() {
+                return comments;
+            }
+
+            public LikesBean getLikes() {
+                return likes;
+            }
+
+            public void setPictures(PicturesBean pictures) {
+                this.pictures = pictures;
+            }
+
+            public void setTexttracks(TexttracksBean texttracks) {
+                this.texttracks = texttracks;
+            }
+
+            public void setRelated(Object related) {
+                this.related = related;
+            }
+
+            public void setRecommendations(RecommendationsBean recommendations) {
+                this.recommendations = recommendations;
+            }
+
+            public PicturesBean getPictures() {
+                return pictures;
+            }
+
+            public TexttracksBean getTexttracks() {
+                return texttracks;
+            }
+
+            public Object getRelated() {
+                return related;
+            }
+
+            public RecommendationsBean getRecommendations() {
+                return recommendations;
+            }
+
+            public static class CommentsBean {
+
+                private String uri;
+                private int total;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public int getTotal() {
+                    return total;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class LikesBean {
+
+                private String uri;
+                private int total;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public int getTotal() {
+                    return total;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class PicturesBean {
+
+                private String uri;
+                private int total;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public int getTotal() {
+                    return total;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class TexttracksBean {
+
+                private String uri;
+                private int total;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public int getTotal() {
+                    return total;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class RecommendationsBean {
+
+                private String uri;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+        }
+    }
+
+    public static class StatsBean {
+
+
+        private int plays;
+
+        public void setPlays(int plays) {
+            this.plays = plays;
+        }
+
+        public int getPlays() {
+            return plays;
+        }
+    }
+
+    public static class TranscodeBean {
+
+        private String status;
+
+        public void setStatus(String status) {
+            this.status = status;
+        }
+
+        public String getStatus() {
+            return status;
+        }
+    }
+
+    public static class TagsBean {
+
+        private String uri;
+        private String name;
+        private String tag;
+        private String canonical;
+        private String resource_key;
+
+        public void setUri(String uri) {
+            this.uri = uri;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public void setTag(String tag) {
+            this.tag = tag;
+        }
+
+        public void setCanonical(String canonical) {
+            this.canonical = canonical;
+        }
+
+        public void setResource_key(String resource_key) {
+            this.resource_key = resource_key;
+        }
+
+        public String getUri() {
+            return uri;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getTag() {
+            return tag;
+        }
+
+        public String getCanonical() {
+            return canonical;
+        }
+
+        public String getResource_key() {
+            return resource_key;
+        }
+    }
+
+    public static class SubcategoriesBean {
+
+        private String uri;
+        private String name;
+        private String link;
+
+        public void setUri(String uri) {
+            this.uri = uri;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public void setLink(String link) {
+            this.link = link;
+        }
+
+        public String getUri() {
+            return uri;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getLink() {
+            return link;
         }
     }
 }

@@ -473,7 +473,16 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                                 recycler_videos_in_portfolio_of_a_user_thumb_view_item, parent, false);
                         viewHolder = new VideoInPortfolioTypeThumbViewHolder(view);
                         break;
-
+                    case Constants.MENU_VIMEO_STOCK:
+                        view = inflater.inflate(R.layout.
+                                recycler_user_portfolios_thumb_view_item, parent, false);
+                        viewHolder = new PortfolioDetailTypeViewHolder(view);
+                        break;
+                    case Constants.MENU_ON_DEMAND:
+                        view = inflater.inflate(R.layout.
+                                recycler_videos_of_a_user_on_demand_pages_thumb_view_item, parent, false);
+                        viewHolder = new VideoOfUserOnDemandPagesTypeThumbViewHolder(view);
+                        break;
                     default:
                         break;
                 }

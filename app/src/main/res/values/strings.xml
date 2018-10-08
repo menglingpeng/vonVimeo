@@ -61,6 +61,12 @@
 
     <string name="weekly">Weekly</string>
     <string name="total_limit">Total limit</string>
+    <string name="button_upload_text">Choose files</string>
+    <string name="upload_privacy_settings_anyone_rb_text">Anyone can see this video</string>
+    <string name="upload_privacy_settings_only_i_rb_text">Only I can see this video</string>
+    <string name="upload_privacy_settings_only_choose_rb_text">Only people I choose can see this video</string>
+    <string name="upload_privacy_settings_only_follow_rb_text">Only people I follow can see this video</string>
+    <string name="upload_privacy_settings_only_with_password_rb_text">Only people with a password can see this video</string>
 
     <string name="cancle">关闭</string>
     <string name="ok">确定</string>

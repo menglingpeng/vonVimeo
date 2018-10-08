@@ -59,6 +59,9 @@
     <string name="your_stuff">YOUR STUFF</string>
     <string name="portfolios">Portfolios</string>
 
+    <string name="weekly">Weekly</string>
+    <string name="total_limit">Total limit</string>
+
     <string name="cancle">关闭</string>
     <string name="ok">确定</string>
 

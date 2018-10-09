@@ -452,6 +452,7 @@ public class LikeVideo implements Serializable {
     public static class MetadataBean{
 
         private ConnectionsBean connections;
+        private InteractionsBean interactions;
 
         public void setConnections(ConnectionsBean connections) {
             this.connections = connections;
@@ -461,6 +462,15 @@ public class LikeVideo implements Serializable {
             return connections;
         }
 
+        public void setInteractions(InteractionsBean interactions) {
+            this.interactions = interactions;
+        }
+
+        public InteractionsBean getInteractions() {
+            return interactions;
+        }
+
+
         public static class ConnectionsBean {
 
             private CommentsBean comments;
@@ -469,6 +479,7 @@ public class LikeVideo implements Serializable {
             private TexttracksBean texttracks;
             private Object related;
             private RecommendationsBean recommendations;
+            private CreditsBean credits;
 
             public void setComments(CommentsBean comments) {
                 this.comments = comments;
@@ -517,6 +528,15 @@ public class LikeVideo implements Serializable {
             public RecommendationsBean getRecommendations() {
                 return recommendations;
             }
+
+            public void setCredits(CreditsBean credits) {
+                this.credits = credits;
+            }
+
+            public CreditsBean getCredits() {
+                return credits;
+            }
+
 
             public static class CommentsBean {
 
@@ -657,6 +677,90 @@ public class LikeVideo implements Serializable {
 
                 public String getUri() {
                     return uri;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class CreditsBean {
+
+                private String uri;
+                private int total;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public int getTotal() {
+                    return total;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+        }
+
+        public static class InteractionsBean {
+
+            private WatchlaterBean watchlater;
+
+            public void setWatchlater(WatchlaterBean watchlater) {
+                this.watchlater = watchlater;
+            }
+
+            public WatchlaterBean getWatchlater() {
+                return watchlater;
+            }
+
+            public static class WatchlaterBean {
+
+                private String uri;
+                private boolean added;
+                private Object added_time;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setAdded(boolean added) {
+                    this.added = added;
+                }
+
+                public void setAdded_time(Object added_time) {
+                    this.added_time = added_time;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public boolean getAdded() {
+                    return added;
+                }
+
+                public Object getAdded_time() {
+                    return added_time;
                 }
 
                 public List<String> getOptions() {

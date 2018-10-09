@@ -43,6 +43,7 @@ public class UploadActivity extends BaseActivity implements RecyclerView, View.O
     private String title;
     private User user;
     private String userId;
+    private String privacy;
     public static final int REQUEST_VIDEO_CODE = 1;
 
     @Override
@@ -60,6 +61,12 @@ public class UploadActivity extends BaseActivity implements RecyclerView, View.O
         progressBar = (ProgressBar)findViewById(R.id.upload_storage_pb);
         weeklyStorageCountTv = (TextView)findViewById(R.id.weekly_upload_storage_count_iv);
         totalStorageCountTv = (TextView)findViewById(R.id.total_upload_storage_count_tv);
+        radioGroup = (RadioGroup)findViewById(R.id.upload_privacy_settings_rg);
+        anyoneRb = (RadioButton)findViewById(R.id.upload_privacy_settings_anyone_rb);
+        iRb = (RadioButton)findViewById(R.id.upload_privacy_settings_only_i_rb);
+        followRb = (RadioButton)findViewById(R.id.upload_privacy_settings_only_follow_rb);
+        chooseRb = (RadioButton)findViewById(R.id.upload_privacy_settings_only_choose_rb);
+        passwordRb = (RadioButton)findViewById(R.id.upload_privacy_settings_only_with_password_rb);
         uploadBt = (Button)findViewById(R.id.upload_bt);
         toolbar.setTitle(title);
         setSupportActionBar(toolbar);
@@ -70,7 +77,37 @@ public class UploadActivity extends BaseActivity implements RecyclerView, View.O
                 finish();
             }
         });
+        radioGroup.check(R.id.upload_privacy_settings_anyone_rb);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch (radioGroup.getCheckedRadioButtonId()){
+                    case R.upload_privacy_settings_anyone_rb:
+                        anyoneRb.setText(getString(R.sting.upload_privacy_settings_anyone_rb_text));
+                        privacy = Constants.PRIVACY_ANYONE;
 
+                        break;
+                    case R.upload_privacy_settings_only_i_rb:
+                        anyoneRb.setText((R.sting.upload_privacy_settings_only_i_rb_text));
+                        privacy = Constants.PRIVACY_ONLY_I;
+                        break;
+                    case R.upload_privacy_settings_only_follow_rb:
+                        anyoneRb.setText((R.sting.upload_privacy_settings_only_follow_rb_text));
+                        privacy = Constants.PRIVACY_ONLY_I_FOLLOW;
+                        break;
+                    case R.upload_privacy_settings_only_choose_rb:
+                        anyoneRb.setText((R.sting.upload_privacy_settings_only_choose_rb_text));
+                        privacy = Constants.PRIVACY_ONLY_I_CHOOSE;
+                        break;
+                    case R.id.upload_privacy_settings_only_with_password_rb:
+                        passwordRb.setText((R.sting.upload_privacy_settings_only_with_password_rb_text));
+                        privacy = Constants.PRIVACY_WITH_A_PASSWORD;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
     }
 
     @Override

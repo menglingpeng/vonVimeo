@@ -88,8 +88,12 @@ public class Constants {
     public static final String FEED = "feed";
 
     public static final String PRIVACY = "privacy";
-    public static final String PRIVACY_ANYONE = "privacy_anyone";
-    public static final String PRIVACY_WITH_A_PASSWORD = "privacy_anyone";
+    public static final String PRIVACY_ANYONE = "anyone";
+    public static final String PRIVACY_ONLY_I = "nobody";
+    public static final String PRIVACY_ONLY_I_CHOOSE = "users";
+    public static final String PRIVACY_ONLY_I_FOLLOW = "contacts";
+    public static final String PRIVACY_WITH_A_PASSWORD = "password";
+    public static final String PRIVACY_VIEW = "privacy.view";
 
     public static final String REQUEST_LIST_MY_VIDEOS = "request_list_my_videos";
     public static final String REQUEST_LIST_VIEW_STATS = "request_list_view_stats";

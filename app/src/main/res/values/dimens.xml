@@ -176,4 +176,6 @@
     <dimen name="channel_detail_video_user_pciture_iv_layout_width_and_height">15dp</dimen>
     <dimen name="channel_detail_video_user_pciture_iv_layout_marginBottom">10dp</dimen>
     <dimen name="channel_detail_video_user_name_tv_layout_marginLeft">5dp</dimen>
+
+    <dimen name="dialog_upload_video_settings_iv_layout_height_width">40dp</dimen>
 </resources>

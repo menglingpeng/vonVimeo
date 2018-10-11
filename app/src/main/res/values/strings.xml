@@ -114,14 +114,17 @@
 
 
     <string name="name">名称</string>
+    <string name="title">Title</string>
     <string name="description">说明</string>
     <string name="privacy_settings">Privacy Settings</string>
+    <string name="language_settings">Language</string>
     <string name="url">网址</string>
     <string name="channel_detail_start_bt_text">开始观看</string>
     <string name="channel_detail_share">分享</string>
     <string name="channel_detail_follow">关注</string>
     <string name="s">的</string>
     <string name="watched_history">观看历史</string>
+    <string name="save">Save</string>
 
     <string name="email_share_title">-- 来自VonVimeo(Android APP for Vimeo)的分享</string>
     <string name="detail_toolbar_overflow_menu_share_create_chooser_title">分享</string>

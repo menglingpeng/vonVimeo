@@ -72,6 +72,107 @@
             android:layout_alignTop="@+id/upload_video_of_tv"
             android:layout_toRightOf="@+id/upload_video_of_tv"/>
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/upload_video_title_til"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/upload_video_title_tiet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/title" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/upload_video_desc_til"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/upload_video_title_til">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/upload_video_desc_tiet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/description" />
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:id="@+id/privacy_settings_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/privacy_settings"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="5dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+
+            <RadioGroup
+                android:id="@+id/upload_privacy_settings_rg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:id="@+id/upload_privacy_settings_anyone_rb"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/upload_privacy_settings_anyone_rb_text"/>
+
+                <RadioButton
+                    android:id="@+id/upload_privacy_settings_only_i_rb"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/upload_privacy_settings_only_i_rb_text"/>
+
+                <RadioButton
+                    android:id="@+id/upload_privacy_settings_only_with_password_rb"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/upload_privacy_settings_only_with_password_rb_text"/>
+
+                <RadioButton
+                    android:id="@+id/upload_privacy_settings_only_follow_rb"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/upload_privacy_settings_only_follow_rb_text"/>
+
+                <RadioButton
+                    android:id="@+id/upload_privacy_settings_only_choose_rb"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/upload_privacy_settings_only_choose_rb_text"/>
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/language_settings_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/upload_privacy_settings_rg"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/language_settings"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+
+            <RadioGroup
+                android:id="@+id/language_settings_rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></RadioGroup>
+
+            <Button
+                android:id="@+id/upload_video_seetings_save_bt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/language_settings_rb"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="30dp"
+                android:text="@string/save"/>
+
+        </RelativeLayout>
 
     </RelativeLayout>
 

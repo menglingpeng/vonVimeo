@@ -18,6 +18,13 @@
     <string name="groups">群组</string>
     <string name="albums">Albums</string>
 
+    <string name="video_seetings_nav_general_menu">General</string>
+    <string name="video_seetings_nav_collaboration_menu">Collaboration</string>
+    <string name="video_seetings_nav_embed_menu">Embed</string>
+    <string name="video_seetings_nav_interaction_tools_menu">Interaction tools</string>
+    <string name="video_seetings_nav_distribution_menu">Distribution</string>
+    <string name="video_seetings_nav_stats_menu">Stats</string>
+    <string name="video_seetings_nav_upgrade_menu">Upgrade</string>
 
     <string name="expore_spinner_manage_myvideos">My videos</string>
     <string name="expore_spinner_manage_viewstats">View stats</string>

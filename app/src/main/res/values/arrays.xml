@@ -18,7 +18,9 @@
     <string-array name="my_video">
         <item>@string/my_video_spinner_title</item>
         <item>@string/my_video_spinner_date_modified</item>
-        <item>@string/my_video_spinner__date_added</item>
-        <item>@string/my_video_spinner__duration</item>
+        <item>@string/my_video_spinner_date_added</item>
+        <item>@string/my_video_spinner_duration</item>
     </string-array>
+
+
 </resources>

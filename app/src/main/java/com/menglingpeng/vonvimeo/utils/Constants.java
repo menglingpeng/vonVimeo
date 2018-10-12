@@ -38,6 +38,14 @@ public class Constants {
     public static final String MENU_MY_PROJECTS = "my_projects";
     public static final String MENU_SETTING = "setting";
 
+    public static final String MENU_GENERAL = "general";
+    public static final String MENU_COLLABORATION = "collaboration";
+    public static final String MENU_EMBED = "embed";
+    public static final String MENU_INTERACTION = "interaction";
+    public static final String MENU_DISTRIBUTION = "distribution";
+    public static final String MENU_STATS = "stats";
+    public static final String MENU_UPGRADE = "upgrade";
+
     public static final String MENU_VIMEO_STOCK = "Vimeo Stock";
     public static final String MENU_ON_DEMAND = "On Demand";
 

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/general_info_rl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp">
+
+        <TextView
+            android:id="@+id/general_info_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="@string/general_info_tv_text"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/general_info_desc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/general_info_tv"
+            android:layout_alignLeft="@+id/general_info_tv"
+            android:layout_marginBottom="25dp"
+            android:text="@string/general_info_desc_tv_text"/>
+
+        <TextView
+            android:id="@+id/general_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/general_info_desc_tv"
+            android:layout_alignLeft="@+id/general_info_desc_tv"
+            android:layout_marginBottom="5dp"
+            android:text="@string/general_title_tv_text"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+
+        <EditText
+            android:id="@+id/general_title_et"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/general_title_tv"
+            android:layout_alignLeft="@+id/general_title_tv"
+            android:layout_marginBottom="25dp"
+            android:textAppearance="@style/Base.DialogWindowTitle.AppCompat"/>
+
+        <TextView
+            android:id="@+id/general_desc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/general_title_et"
+            android:layout_alignLeft="@+id/general_title_et"
+            android:layout_marginBottom="5dp"
+            android:text="@string/general_desc_tv_text"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+
+        <EditText
+            android:id="@+id/general_desc_et"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/general_desc_tv"
+            android:layout_alignLeft="@+id/general_desc_tv"
+            android:hint="@string/general_desc_hint_tv_text"
+            android:layout_marginBottom="25dp"/>
+
+        <TextView
+            android:id="@+id/general_thumb_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/general_desc_et"
+            android:layout_alignLeft="@+id/general_desc_et"
+            android:layout_marginBottom="5dp"
+            android:text="@string/general_thumbnail_tv_text"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+
+        <ImageView
+            android:id="@+id/general_thumb_1_iv"
+            android:layout_width="400dp"
+            android:layout_height="200dp"
+            android:layout_below="@+id/general_thumb_tv"
+            android:layout_alignLeft="@+id/general_thumb_tv"
+            android:layout_marginBottom="25dp"/>
+
+        <ImageView
+            android:id="@+id/general_thumb_2_iv"
+            android:layout_width="400dp"
+            android:layout_height="200dp"
+            android:layout_toRightOf="@+id/general_thumb_1_iv"
+            android:layout_alignTop="@+id/general_thumb_1_iv"
+            android:layout_marginLeft="10dp"/>
+
+        <view
+            android:id="@+id/general_info_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/recycler_item_view_background">
+
+        </view>
+
+        <TextView
+            android:id="@+id/general_privacy_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/general_info_view"
+            android:layout_alignLeft="@+id/general_info_view"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="10dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:text="@string/general_privacy_tv_text"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/general_privacy_desc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/general_privacy_tv"
+            android:layout_alignLeft="@+id/general_privacy_tv"
+            android:layout_marginBottom="25dp"
+            android:text="@string/general_privacy_desc_tv_text"/>
+
+        <TextView
+            android:id="@+id/general_privacy_watch_settings_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/general_privacy_desc_tv"
+            android:layout_alignLeft="@+id/general_privacy_desc_tv"
+            android:text="@string/general_privacy_watch_settings_title_tv_text"
+            android:layout_marginBottom="10dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+
+        <RadioGroup
+            android:id="@+id/general_privacy_watch_settings_rg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RadioButton
+                android:id="@+id/general_privacy_watch_settings_anyone_rb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/general_privacy_watch_settings_anyone_rb_text"/>
+
+            <RadioButton
+                android:id="@+id/general_privacy_watch_settings_only_me_rb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/general_privacy_watch_settings_only_i_rb_text"/>
+
+            <RadioButton
+                android:id="@+id/general_privacy_watch_settings_only_with_password_rb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/general_privacy_watch_settings_only_with_password_rb_text"/>
+
+            <RadioButton
+                android:id="@+id/general_privacy_watch_settings_only_follow_rb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/general_privacy_watch_settings_only_follow_rb_text"/>
+
+            <RadioButton
+                android:id="@+id/general_privacy_watch_settings_only_choose_rb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/general_privacy_watch_settings_only_choose_rb_text"/>
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/general_privacy_comment_settings_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/general_privacy_watch_settings_rg"
+            android:layout_alignLeft="@+id/general_privacy_watch_settings_rg"
+            android:text="@string/general_privacy_comment_settings_title_tv_text"
+            android:layout_marginBottom="10dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+
+        <RadioGroup
+            android:id="@+id/general_privacy_comment_settings_rg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RadioButton
+                android:id="@+id/general_privacy_comment_settings_anyone_rb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/general_privacy_comment_settings_anyone_rb_text"/>
+
+            <RadioButton
+                android:id="@+id/general_privacy_comment_settings_no_one_rb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/general_privacy_comment_settings_no_one_rb_text"/>
+
+            <RadioButton
+                android:id="@+id/general_privacy_comment_settings_only_i_follow_rb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/general_privacy_comment_settings_only_i_follow_rb_text"/>
+
+
+        </RadioGroup>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

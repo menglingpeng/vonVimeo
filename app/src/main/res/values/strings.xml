@@ -288,4 +288,23 @@
 
     <string name="groups_search_view_hint_text">Start typing here</string>
 
+    <string name="general_info_tv_text">Info</string>
+    <string name="general_info_desc_tv_text"> Edit the title and description, or pick a new thumbnail.</string>
+    <string name="general_title_tv_text">Title(required)</string>
+    <string name="general_desc_tv_text">Description</string>
+    <string name="general_desc_hint_tv_text">Tell the story behind your video (it is OK to include links</string>
+    <string name="general_thumbnail_tv_text">Thumbnail</string>
+    <string name="general_privacy_tv_text">Privacy</string>
+    <string name="general_privacy_desc_tv_text">Choose who can (or can't) see your video.</string>
+    <string name="general_privacy_watch_settings_title_tv_text">Who can watch?</string>
+    <string name="general_privacy_watch_settings_anyone_rb_text">Anyone</string>
+    <string name="general_privacy_watch_settings_only_i_rb_text">Only me</string>
+    <string name="general_privacy_watch_settings_only_choose_rb_text">People I follow</string>
+    <string name="general_privacy_watch_settings_only_follow_rb_text">People I choose</string>
+    <string name="general_privacy_watch_settings_only_with_password_rb_text">People with a password can</string>
+    <string name="general_privacy_comment_settings_title_tv_text">Who can comment?</string>
+    <string name="general_privacy_comment_settings_anyone_rb_text">Anyone</string>
+    <string name="general_privacy_comment_settings_no_one_rb_text">Only me</string>
+    <string name="general_privacy_comment_settings_only_i_follow_rb_text">People I follow</string>
+
 </resources>

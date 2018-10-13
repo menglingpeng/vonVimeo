@@ -95,6 +95,8 @@
             android:id="@+id/general_info_view"
             android:layout_width="match_parent"
             android:layout_height="1dp"
+            android:layout_below="@+id/general_thumb_1_iv"
+            android:layout_alignLeft="@+id/general_thumb_1_iv"
             android:background="@color/recycler_item_view_background">
 
         </view>

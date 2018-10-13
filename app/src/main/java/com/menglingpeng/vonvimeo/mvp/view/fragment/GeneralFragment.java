@@ -18,7 +18,7 @@ public class GeneralFragment extends BaseFragment {
 
     @Override
     protected void initLayoutId() {
-
+        layoutId = R.layout.fragment_general;
     }
 
     @Override

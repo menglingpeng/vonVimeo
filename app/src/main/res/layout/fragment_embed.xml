@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/embed_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="20dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textSize="20dp"
+        android:text="@string/embed_title_tv_text"/>
+
+    <TextView
+        android:id="@+id/embed_desc_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/embed_title_tv"
+        android:layout_alignLeft="@+id/embed_title_tv"
+        android:layout_marginBottom="20dp"
+        android:text="@string/embed_desc_tv_text"/>
+
+    <RelativeLayout
+        android:id="@+id/embed_controls_settings_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/embed_desc_tv"
+        android:layout_alignLeft="@+id/embed_desc_tv">
+
+        <TextView
+            android:id="@+id/embed_controls_settings_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:textAppearance="@style/Base.DialogWindowTitle.AppCompat"
+            android:text="@string/embed_controls_settings_tv_text"/>
+
+        <Switch
+            android:id="@+id/embed_controls_playbar_settings_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/embed_controls_settings_tv"
+            android:layout_alignLeft="@+id/embed_controls_settings_tv"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="10dp"/>
+
+        <TextView
+            android:id="@+id/embed_controls_playbar_settings_switch_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/embed_controls_playbar_settings_switch"
+            android:layout_alignTop="@+id/embed_controls_playbar_settings_switch"
+            android:text="@string/embed_controls_playbar_settings_switch_tv_text"/>
+
+        <Switch
+            android:id="@+id/embed_controls_volume_settings_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/embed_controls_playbar_settings_switch"
+            android:layout_alignLeft="@+id/embed_controls_playbar_settings_switch"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="10dp"/>
+
+        <TextView
+            android:id="@+id/embed_controls_volume_settings_switch_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/embed_controls_volume_settings_switch"
+            android:layout_alignTop="@+id/embed_controls_volume_settings_switch"
+            android:text="@string/embed_controls_volume_settings_switch_tv_text"/>
+
+        <Switch
+            android:id="@+id/embed_controls_speed_settings_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/embed_controls_volume_settings_switch"
+            android:layout_alignLeft="@+id/embed_controls_volume_settings_switch"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="10dp"/>
+
+        <TextView
+            android:id="@+id/embed_controls_speed_settings_switch_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/embed_controls_speed_settings_switch"
+            android:layout_alignTop="@+id/embed_controls_speed_settings_switch"
+            android:text="@string/embed_controls_speed_settings_switch_tv_text"/>
+
+        <Switch
+            android:id="@+id/embed_controls_fullscreen_settings_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/embed_controls_speed_settings_switch"
+            android:layout_alignLeft="@+id/embed_controls_speed_settings_switch"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="10dp"/>
+
+        <TextView
+            android:id="@+id/embed_controls_fullscreen_settings_switch_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/embed_controls_fullscreen_settings_switch"
+            android:layout_alignTop="@+id/embed_controls_fullscreen_settings_switch"
+            android:text="@string/embed_controls_fullscreen_settings_switch_tv_text"/>
+
+        <view
+            android:id="@+id/embed_controls_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/embed_controls_fullscreen_settings_switch"
+            android:layout_alignLeft="@+id/embed_controls_fullscreen_settings_switch"
+            android:background="@color/recycler_item_view_background">
+
+        </view>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/embed_actions_settings_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/embed_controls_settings_rl"
+        android:layout_alignLeft="@+id/embed_controls_settings_rl">
+
+        <TextView
+            android:id="@+id/embed_actions_settings_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:textAppearance="@style/Base.DialogWindowTitle.AppCompat"
+            android:text="@string/embed_actions_settings_tv_text"/>
+
+        <Switch
+            android:id="@+id/embed_actions_like_settings_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/embed_actions_settings_tv"
+            android:layout_alignLeft="@+id/embed_actions_settings_tv"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="10dp"/>
+
+        <TextView
+            android:id="@+id/embed_actions_like_settings_switch_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/embed_actions_like_settings_switch"
+            android:layout_alignTop="@+id/embed_actions_like_settings_switch"
+            android:text="@string/embed_actions_like_settings_switch_tv_text"/>
+
+        <Switch
+            android:id="@+id/embed_actions_watch_later_settings_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/embed_actions_like_settings_switch"
+            android:layout_alignLeft="@+id/embed_actions_like_settings_switch"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="10dp"/>
+
+        <TextView
+            android:id="@+id/embed_actions_watch_later_settings_switch_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/embed_actions_watch_later_settings_switch"
+            android:layout_alignTop="@+id/embed_actions_watch_later_settings_switch"
+            android:text="@string/embed_actions_watch_later_settings_switch_tv_text"/>
+
+        <Switch
+            android:id="@+id/embed_actions_share_settings_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/embed_actions_watch_later_settings_switch"
+            android:layout_alignLeft="@+id/embed_actions_watch_later_settings_switch"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="10dp"/>
+
+        <TextView
+            android:id="@+id/embed_actions_share_settings_switch_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/embed_actions_share_settings_switch"
+            android:layout_alignTop="@+id/embed_actions_share_settings_switch"
+            android:text="@string/embed_actions_share_settings_switch_tv_text"/>
+
+        <Switch
+            android:id="@+id/embed_actions_embed_settings_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/embed_actions_share_settings_switch"
+            android:layout_alignLeft="@+id/embed_actions_share_settings_switch"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="10dp"/>
+
+        <TextView
+            android:id="@+id/embed_actions_embed_settings_switch_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/embed_actions_embed_settings_switch"
+            android:layout_alignTop="@+id/embed_actions_embed_settings_switch"
+            android:text="@string/embed_actions_embed_settings_switch_tv_text"/>
+
+        <view
+            android:id="@+id/embed_actions_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/embed_actions_embed_settings_switch"
+            android:layout_alignLeft="@+id/embed_actions_embed_settings_switch"
+            android:background="@color/recycler_item_view_background">
+
+        </view>
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

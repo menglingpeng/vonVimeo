@@ -91,12 +91,24 @@
             android:layout_alignTop="@+id/general_thumb_1_iv"
             android:layout_marginLeft="10dp"/>
 
+        <Button
+            android:id="@+id/general_edit_thumbnail_bt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/general_thumb_1_iv"
+            android:layout_alignLeft="@+id/general_thumb_1_iv"
+            android:text="@string/dialog_edit_thumb_title_tv_text"
+            android:drawableRight="@drawable/ic_keyboard_arrow_down_white_24dp"
+            android:drawablePadding="10dp"
+            android:textColor="#FFFFFF"
+            android:background="@color/colorPrimaryDark"/>
+
         <view
             android:id="@+id/general_info_view"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_below="@+id/general_thumb_1_iv"
-            android:layout_alignLeft="@+id/general_thumb_1_iv"
+            android:layout_below="@+id/general_edit_thumbnail_bt"
+            android:layout_alignLeft="@+id/general_edit_thumbnail_bt"
             android:background="@color/recycler_item_view_background">
 
         </view>

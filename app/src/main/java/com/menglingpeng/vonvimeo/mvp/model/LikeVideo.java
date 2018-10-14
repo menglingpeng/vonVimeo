@@ -1027,7 +1027,7 @@ public class LikeVideo implements Serializable {
     }
 
     public static class UploadBean {
-        
+
         private String status;
         private Object link;
         private Object upload_link;

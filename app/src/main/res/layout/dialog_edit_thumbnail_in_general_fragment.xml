@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/edit_thumb_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dialog_edit_thumb_title_tv_layout_marginTop"
+        android:layout_marginBottom="@dimen/dialog_edit_thumb_title_tv_layout_marginBottom"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textSize="20dp"
+        android:text="@string/dialog_edit_thumb_title_tv_text"/>
+
+    <TextView
+        android:id="@+id/edit_thumb_select_from_video_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_thumb_title_tv"
+        android:layout_marginBottom="@dimen/dialog_edit_thumb_title_tv_layout_marginBottom"
+        android:layout_marginLeft="@dimen/dialog_edit_thumb_select_from_video_tv_layout_marginLeft"
+        android:text="@string/dialog_edit_thumb_select_from_video_tv_text"
+        android:clickable="true"/>
+
+    <TextView
+        android:id="@+id/edit_thumb_upload_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_thumb_select_from_video_tv"
+        android:layout_alignLeft="@+id/edit_thumb_select_from_video_tv"
+        android:layout_marginBottom="@dimen/dialog_edit_thumb_title_tv_layout_marginBottom"
+        android:text="@string/dialog_edit_thumb_upload_tv_text"
+        android:clickable="true"/>
+
+    <TextView
+        android:id="@+id/edit_thumb_random_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_thumb_upload_tv"
+        android:layout_alignLeft="@+id/edit_thumb_upload_tv"
+        android:layout_marginBottom="@dimen/dialog_edit_thumb_title_tv_layout_marginBottom"
+        android:text="@string/dialog_edit_thumb_random_tv_text"
+        android:clickable="true"/>
+
+</RelativeLayout>

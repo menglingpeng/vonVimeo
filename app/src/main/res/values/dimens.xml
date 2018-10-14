@@ -178,4 +178,8 @@
     <dimen name="channel_detail_video_user_name_tv_layout_marginLeft">5dp</dimen>
 
     <dimen name="dialog_upload_video_settings_iv_layout_height_width">40dp</dimen>
+
+    <dimen name="dialog_edit_thumb_title_tv_layout_marginBottom">20dp</dimen>
+    <dimen name="dialog_edit_thumb_title_tv_layout_marginTop">20dp</dimen>
+    <dimen name="dialog_edit_thumb_select_from_video_tv_layout_marginLeft">15dp</dimen>
 </resources>

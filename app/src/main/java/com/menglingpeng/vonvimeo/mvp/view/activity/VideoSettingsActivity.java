@@ -1,7 +1,14 @@
 package com.menglingpeng.vonvimeo.mvp.view.activity;
 
+import android.content.ContentResolver;
+import android.content.Intent;
 import android.content.res.ColorStateList;
+import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.media.ThumbnailUtils;
+import android.net.Uri;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -29,6 +36,7 @@ public class VideoSettingsActivity extends BaseActivity implements NavigationVie
     private String toolbarTitle;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
+    public static final int REQUEST_PICTURE_CODE = 1;
 
     @Override
     protected void initLayoutId() {
@@ -116,5 +124,41 @@ public class VideoSettingsActivity extends BaseActivity implements NavigationVie
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         return false;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST_PICTURE_CODE) {
+            if (resultCode == RESULT_OK) {
+                Uri uri = data.getData();
+                ContentResolver cr = this.getContentResolver();
+                /** 数据库查询操作。
+                 * 第一个参数 uri：为要查询的数据库+表的名称。
+                 * 第二个参数 projection ： 要查询的列。
+                 * 第三个参数 selection ： 查询的条件，相当于SQL where。
+                 * 第三个参数 selectionArgs ： 查询条件的参数，相当于 ？。
+                 * 第四个参数 sortOrder ： 结果排序。
+                 */
+                Cursor cursor = cr.query(uri, null, null, null, null);
+                if (cursor != null) {
+                    if (cursor.moveToFirst()) {
+                        // 图片ID:MediaStore.Images.Media._ID
+                        int videoId = cursor.getInt(cursor.getColumnIndexOrThrow(MediaStore.Images.Media._ID));
+                        // 图片名称：MediaStore.Images.Media.TITLE
+                        String title = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Images.Media.TITLE));
+                        // 图片路径：MediaStore.Images.Media.DATA
+                        String videoPath = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA));
+                        // 图片大小：MediaStore.Images.Media.SIZE
+                        long size = cursor.getLong(cursor.getColumnIndexOrThrow(MediaStore.Images.Media.SIZE));
+
+
+                    }
+                    cursor.close();
+                }
+            }
+        }
+
+        super.onActivityResult(requestCode, resultCode, data);
+
     }
 }

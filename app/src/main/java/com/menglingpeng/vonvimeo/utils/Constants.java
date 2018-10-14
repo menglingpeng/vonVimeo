@@ -101,6 +101,7 @@ public class Constants {
     public static final String PRIVACY_ONLY_I_CHOOSE = "users";
     public static final String PRIVACY_ONLY_I_FOLLOW = "contacts";
     public static final String PRIVACY_WITH_A_PASSWORD = "password";
+    public static final String PRIVACY_NO_ONE = "nobody";
     public static final String PRIVACY_VIEW = "privacy.view";
 
     public static final String REQUEST_LIST_MY_VIDEOS = "request_list_my_videos";

@@ -88,15 +88,15 @@ public class UploadActivity extends BaseActivity implements RecyclerView, View.O
 
                         break;
                     case R.upload_privacy_settings_only_i_rb:
-                        anyoneRb.setText((R.sting.upload_privacy_settings_only_i_rb_text));
+                        iRb.setText((R.sting.upload_privacy_settings_only_i_rb_text));
                         privacy = Constants.PRIVACY_ONLY_I;
                         break;
                     case R.upload_privacy_settings_only_follow_rb:
-                        anyoneRb.setText((R.sting.upload_privacy_settings_only_follow_rb_text));
+                        followRb.setText((R.sting.upload_privacy_settings_only_follow_rb_text));
                         privacy = Constants.PRIVACY_ONLY_I_FOLLOW;
                         break;
                     case R.upload_privacy_settings_only_choose_rb:
-                        anyoneRb.setText((R.sting.upload_privacy_settings_only_choose_rb_text));
+                        chooseRb.setText((R.sting.upload_privacy_settings_only_choose_rb_text));
                         privacy = Constants.PRIVACY_ONLY_I_CHOOSE;
                         break;
                     case R.id.upload_privacy_settings_only_with_password_rb:

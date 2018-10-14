@@ -24,6 +24,10 @@ public class LikeVideo implements Serializable {
     private MetadataBean metadataBean;
     private StatsBean stats;
     private TranscodeBean transcode;
+    private AppBean app;
+    private String status;
+    private String resource_key;
+    private UploadBean upload;
 
     public void setUri(String uri) {
         this.uri = uri;
@@ -176,6 +180,39 @@ public class LikeVideo implements Serializable {
     public void setTranscode(TranscodeBean transcode) {
         this.transcode = transcode;
     }
+
+    public void setApp(AppBean app) {
+        this.app = app;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void setResource_key(String resource_key) {
+        this.resource_key = resource_key;
+    }
+
+    public void setUpload(UploadBean upload) {
+        this.upload = upload;
+    }
+
+    public AppBean getApp() {
+        return app;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public String getResource_key() {
+        return resource_key;
+    }
+
+    public UploadBean getUpload() {
+        return upload;
+    }
+
 
     public static class EmbedBean {
 
@@ -964,6 +1001,104 @@ public class LikeVideo implements Serializable {
 
         public String getLink() {
             return link;
+        }
+    }
+
+    public static class AppBean {
+
+        private String name;
+        private String uri;
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public void setUri(String uri) {
+            this.uri = uri;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getUri() {
+            return uri;
+        }
+    }
+
+    public static class UploadBean {
+        
+        private String status;
+        private Object link;
+        private Object upload_link;
+        private Object complete_uri;
+        private Object form;
+        private Object approach;
+        private Object size;
+        private Object redirect_url;
+
+        public void setStatus(String status) {
+            this.status = status;
+        }
+
+        public void setLink(Object link) {
+            this.link = link;
+        }
+
+        public void setUpload_link(Object upload_link) {
+            this.upload_link = upload_link;
+        }
+
+        public void setComplete_uri(Object complete_uri) {
+            this.complete_uri = complete_uri;
+        }
+
+        public void setForm(Object form) {
+            this.form = form;
+        }
+
+        public void setApproach(Object approach) {
+            this.approach = approach;
+        }
+
+        public void setSize(Object size) {
+            this.size = size;
+        }
+
+        public void setRedirect_url(Object redirect_url) {
+            this.redirect_url = redirect_url;
+        }
+
+        public String getStatus() {
+            return status;
+        }
+
+        public Object getLink() {
+            return link;
+        }
+
+        public Object getUpload_link() {
+            return upload_link;
+        }
+
+        public Object getComplete_uri() {
+            return complete_uri;
+        }
+
+        public Object getForm() {
+            return form;
+        }
+
+        public Object getApproach() {
+            return approach;
+        }
+
+        public Object getSize() {
+            return size;
+        }
+
+        public Object getRedirect_url() {
+            return redirect_url;
         }
     }
 }

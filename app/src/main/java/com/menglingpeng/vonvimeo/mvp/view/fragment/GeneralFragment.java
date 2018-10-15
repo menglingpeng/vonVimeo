@@ -2,7 +2,11 @@ package com.menglingpeng.vonvimeo.mvp.view.fragment;
 
 
 import android.app.Dialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.design.widget.TextInputEditText;
+import android.support.v7.app.AlertDialog;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,8 +22,14 @@ import android.widget.TextView;
 import com.menglingpeng.vonvimeo.base.BaseFragment;
 import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
 import com.menglingpeng.vonvimeo.mvp.model.Video;
+import com.menglingpeng.vonvimeo.mvp.presenter.RecyclerPresenter;
+import com.menglingpeng.vonvimeo.mvp.view.UserAlbumsActivity;
 import com.menglingpeng.vonvimeo.utils.Constants;
 import com.menglingpeng.vonvimeo.utils.ImageLoader;
+import com.menglingpeng.vonvimeo.utils.SharedPrefUtils;
+import com.menglingpeng.vonvimeo.utils.SnackbarUtils;
+
+import java.util.HashMap;
 
 public class GeneralFragment extends BaseFragment implements RecyclerView, View.OnClickListener{
 
@@ -41,6 +51,12 @@ public class GeneralFragment extends BaseFragment implements RecyclerView, View.
     private Video video;
     private String privacy;
     private Dialog editThumbnailDialog;
+    private ImageView createAlbumIv;
+    private ImageView createChannelIv;
+    private ImageView createGroupIv;
+    private Context context;
+    private String type;
+
     public static final int REQUEST_PICTURE_CODE = 1;
 
 
@@ -52,6 +68,7 @@ public class GeneralFragment extends BaseFragment implements RecyclerView, View.
     @Override
     protected void initView() {
 
+        context =getContext();
         video = (Video)getActivity().getIntent().getSerializableExtra(Constants.VIDEO);
         titleEt = (EditText)rootView.findViewById(R.id.general_title_et);
         thumb1Iv = (ImageView)rootView.findViewById(R.id.general_thumb_1_iv);
@@ -68,6 +85,9 @@ public class GeneralFragment extends BaseFragment implements RecyclerView, View.
         anyoneCommentRb = (RadioButton)rootView.findViewById(R.id.general_privacy_comment_settings_anyone_rb);
         noOneCommentRb = (RadioButton)rootView.findViewById(R.id.general_privacy_comment_settings_no_one_rb);
         followCommentRb = (RadioButton)rootView.findViewById(R.id.general_privacy_comment_settings_only_follow_rb);
+        createAlbumIv = (ImageView)rootView.findViewById(R.id.general_collections_albums_settings_create_iv);
+        createChannelIv = (ImageView)rootView.findViewById(R.id.general_collections_channels_settings_create_iv);
+        createGroupIv = (ImageView)rootView.findViewById(R.id.general_collections_groups_settings_create_iv);
     }
 
     @Override
@@ -172,9 +192,84 @@ public class GeneralFragment extends BaseFragment implements RecyclerView, View.
                 break;
             case R.id.edit_thumb_random_tv:
                 break;
+            case R.id.general_collections_albums_settings_create_iv:
+                break;
+            case R.id.general_collections_channels_settings_create_iv:
+                break;
+            case R.id.general_collections_groups_settings_create_iv:
+                break;
             default:
                 break;
         }
+    }
+
+    private void showCreateAlbumDialog() {
+        final TextInputEditText albumNameEt;
+        final TextInputEditText albumDescEt;
+        final RadioGroup radioGroup;
+        final RadioButton radioButton1;
+        final RadioButton radioButton2;
+        AlertDialog dialog;
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        View dialogView = getLayoutInflater().inflate(R.layout.create_an_album_dialog_message, null);
+        builder.setTitle(R.string.create_a_bucket);
+        builder.setView(dialogView);
+        albumNameEt = (TextInputEditText) dialogView.findViewById(R.id.album_name_tiet);
+        albumDescEt = (TextInputEditText) dialogView.findViewById(R.id.album_desc_tiet);
+        radioGroup = (RadioGroup)dialogView.findViewById(R.id.album_privacy_settings_rg);
+        radioButton1 = (RadioButton)dialogView.findViewById(R.id.album_privacy_settings_anyone_rb);
+        radioButton2  = (RadioButton)dialogView.findViewById(R.id.album_privacy_settings_people_with_password_rb);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch (radioGroup.getCheckedRadioButtonId()){
+                    case R.id.album_privacy_settings_anyone_rb:
+                        radioButton1.setText(Constants.PRIVACY_ANYONE);
+                        break;
+                    case R.id.album_privacy_settings_people_with_password_rb:
+                        radioButton2.setText(Constants.PRIVACY_WITH_A_PASSWORD);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
+        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.setPositiveButton(R.string.create, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String name = albumNameEt.getText().toString();
+                if (name.equals("")) {
+                    SnackbarUtils.showSnackShort(context, coordinatorLayout, getString(R.string
+                            .the_name_of_album_is_not_null));
+                } else {
+                    HashMap<String, String> map = new HashMap<>();
+                    map.put(Constants.ACCESS_TOKEN, SharedPrefUtils.getAuthToken());
+                    map.put(Constants.NAME, albumNameEt.getText().toString());
+                    map.put(Constants.DESCRIPTION, albumDescEt.getText().toString());
+                    if(radioButton1.isChecked()) {
+                        map.put(Constants.PRIVACY, radioButton1.getText().toString());
+                    }else {
+                        map.put(Constants.PRIVACY, radioButton2.getText().toString());
+                    }
+                    type = Constants.REQUEST_CREATE_A_ALBUM;
+                    RecyclerPresenter presenter = new RecyclerPresenter(getActivity(), type, Constants
+                            .REQUEST_NORMAL, Constants.REQUEST_POST_MEIHOD, map, context);
+                    presenter.loadJson();
+                    SnackbarUtils.showSnackShort(context, coordinatorLayout, getString(R.string
+                            .snack_create_a_bucket_text));
+                }
+
+            }
+        });
+        albumNameEt.setFocusable(true);
+        dialog = builder.create();
+        dialog.show();
     }
 
     @Override

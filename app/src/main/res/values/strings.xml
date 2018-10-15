@@ -306,6 +306,14 @@
     <string name="general_privacy_comment_settings_anyone_rb_text">Anyone</string>
     <string name="general_privacy_comment_settings_no_one_rb_text">Only me</string>
     <string name="general_privacy_comment_settings_only_i_follow_rb_text">People I follow</string>
+    <string name="general_collections_tv_text">Collections</string>
+    <string name="general_collections_desc_tv_text">Use the boxes below to add and remove this video from collections.</string>
+    <string name="general_collections_albums_settings_title_tv_text">Albums</string>
+    <string name="general_collections_albums_settings_no_check_tv_text">Create an album of videos you love.</string>
+    <string name="general_collections_channels_settings_title_tv_text">Channels</string>
+    <string name="general_collections_channels_settings_no_check_tv_text">Create an channel of videos you love.</string>
+    <string name="general_collections_groups_settings_title_tv_text">Groups</string>
+    <string name="general_collections_groups_settings_no_check_tv_text">Create an group of videos you love.</string>
 
     <string name="embed_title_tv_text">Embed</string>
     <string name="embed_desc_tv_text">Customize the player and add your branding (only applies to embedded videos).</string>

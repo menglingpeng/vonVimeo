@@ -315,6 +315,8 @@
     <string name="general_collections_channels_settings_no_check_tv_text">Create an channel of videos you love.</string>
     <string name="general_collections_groups_settings_title_tv_text">Groups</string>
     <string name="general_collections_groups_settings_no_check_tv_text">Create an group of videos you love.</string>
+    <string name="general_collections_portfolios_settings_title_tv_text">Portfolios</string>
+    <string name="general_collections_portfolios_settings_no_check_tv_text">Create a customizable site to share your videos.</string>
     <string name="general_privacy_embed_settings_title_tv_text">Where can this be embedded?</string>
     <string name="general_privacy_embed_settings_anywhere_rb_text">Anywhere</string>
     <string name="general_privacy_embed_settings_nowhere_rb_text">Nowhere</string>

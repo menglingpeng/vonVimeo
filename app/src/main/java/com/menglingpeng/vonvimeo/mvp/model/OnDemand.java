@@ -1184,6 +1184,8 @@ public class OnDemand {
         private List<String> content_rating;
         private Object license;
         private PrivacyBean privacy;
+        private StatsBean stats;
+        private MetadataBean metadata;
 
         public void setUri(String uri) {
             this.uri = uri;
@@ -1303,6 +1305,22 @@ public class OnDemand {
 
         public PrivacyBean getPrivacy() {
             return privacy;
+        }
+
+        public void setStats(StatsBean stats) {
+            this.stats = stats;
+        }
+
+        public StatsBean getStats() {
+            return stats;
+        }
+
+        public void setMetadata(MetadataBean metadata) {
+            this.metadata = metadata;
+        }
+
+        public MetadataBean getMetadata() {
+            return metadata;
         }
 
 
@@ -1485,6 +1503,155 @@ public class OnDemand {
 
             public String getComments() {
                 return comments;
+            }
+        }
+
+        public static class StatsBean {
+
+            private int plays;
+
+            public void setPlays(int plays) {
+                this.plays = plays;
+            }
+
+            public int getPlays() {
+                return plays;
+            }
+        }
+
+        public static class MetadataBean {
+
+            private ConnectionsBean connections;
+
+            public void setConnections(ConnectionsBean connections) {
+                this.connections = connections;
+            }
+
+            public ConnectionsBean getConnections() {
+                return connections;
+            }
+
+            public static class ConnectionsBean {
+                private OndemandBean ondemand;
+                private TrailerBean trailer;
+                private SeasonBean season;
+
+                public void setOndemand(OndemandBean ondemand) {
+                    this.ondemand = ondemand;
+                }
+
+                public void setTrailer(TrailerBean trailer) {
+                    this.trailer = trailer;
+                }
+
+                public void setSeason(SeasonBean season) {
+                    this.season = season;
+                }
+
+                public OndemandBean getOndemand() {
+                    return ondemand;
+                }
+
+                public TrailerBean getTrailer() {
+                    return trailer;
+                }
+
+                public SeasonBean getSeason() {
+                    return season;
+                }
+
+                public static class OndemandBean {
+
+                    private String uri;
+                    private String resource_key;
+                    private List<String> options;
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public void setResource_key(String resource_key) {
+                        this.resource_key = resource_key;
+                    }
+
+                    public void setOptions(List<String> options) {
+                        this.options = options;
+                    }
+
+                    public String getUri() {
+                        return uri;
+                    }
+
+                    public String getResource_key() {
+                        return resource_key;
+                    }
+
+                    public List<String> getOptions() {
+                        return options;
+                    }
+                }
+
+                public static class TrailerBean {
+
+                    private String uri;
+                    private String resource_key;
+                    private List<String> options;
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public void setResource_key(String resource_key) {
+                        this.resource_key = resource_key;
+                    }
+
+                    public void setOptions(List<String> options) {
+                        this.options = options;
+                    }
+
+                    public String getUri() {
+                        return uri;
+                    }
+
+                    public String getResource_key() {
+                        return resource_key;
+                    }
+
+                    public List<String> getOptions() {
+                        return options;
+                    }
+                }
+
+                public static class SeasonBean {
+
+                    private String uri;
+                    private String name;
+                    private List<String> options;
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public void setName(String name) {
+                        this.name = name;
+                    }
+
+                    public void setOptions(List<String> options) {
+                        this.options = options;
+                    }
+
+                    public String getUri() {
+                        return uri;
+                    }
+
+                    public String getName() {
+                        return name;
+                    }
+
+                    public List<String> getOptions() {
+                        return options;
+                    }
+                }
             }
         }
     }

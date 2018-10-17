@@ -60,6 +60,7 @@ public class GeneralFragment extends BaseFragment implements RecyclerView, View.
     private ImageView createAlbumIv;
     private ImageView createChannelIv;
     private ImageView createGroupIv;
+    private Button portfoliosUpgradeBt;
     private Context context;
     private String type;
 
@@ -97,6 +98,7 @@ public class GeneralFragment extends BaseFragment implements RecyclerView, View.
         createAlbumIv = (ImageView)rootView.findViewById(R.id.general_collections_albums_settings_create_iv);
         createChannelIv = (ImageView)rootView.findViewById(R.id.general_collections_channels_settings_create_iv);
         createGroupIv = (ImageView)rootView.findViewById(R.id.general_collections_groups_settings_create_iv);
+        portfoliosUpgradeBt = (Button)rootView.findViewById(R.id.general_collections_portfolios_settings_upgrade_bt);
     }
 
     @Override
@@ -215,6 +217,8 @@ public class GeneralFragment extends BaseFragment implements RecyclerView, View.
             case R.id.general_privacy_embed_settings_upgrade_bt:
                 break;
             case R.id.general_privacy_comment_settings_upgrade_bt:
+                break;
+            case R.id.general_collections_portfolios_settings_upgrade_bt:
                 break;
             default:
                 break;

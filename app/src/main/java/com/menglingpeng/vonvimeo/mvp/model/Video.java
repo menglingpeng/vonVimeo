@@ -398,6 +398,8 @@ public class Video implements Serializable{
             private TexttracksBean texttracks;
             private Object related;
             private RecommendationsBean recommendations;
+            private OndemandBean ondemand;
+            private TrailerBean trailer;
 
             public void setComments(CommentsBean comments) {
                 this.comments = comments;
@@ -446,6 +448,23 @@ public class Video implements Serializable{
             public RecommendationsBean getRecommendations() {
                 return recommendations;
             }
+
+            public void setOndemand(OndemandBean ondemand) {
+                this.ondemand = ondemand;
+            }
+
+            public void setTrailer(TrailerBean trailer) {
+                this.trailer = trailer;
+            }
+
+            public OndemandBean getOndemand() {
+                return ondemand;
+            }
+
+            public TrailerBean getTrailer() {
+                return trailer;
+            }
+
 
             public static class CommentsBean {
 
@@ -586,6 +605,68 @@ public class Video implements Serializable{
 
                 public String getUri() {
                     return uri;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class OndemandBean {
+
+                private String uri;
+                private String resource_key;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setResource_key(String resource_key) {
+                    this.resource_key = resource_key;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public String getResource_key() {
+                    return resource_key;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class TrailerBean {
+
+                private String uri;
+                private String resource_key;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setResource_key(String resource_key) {
+                    this.resource_key = resource_key;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public String getResource_key() {
+                    return resource_key;
                 }
 
                 public List<String> getOptions() {

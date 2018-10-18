@@ -459,6 +459,11 @@ public class Constants {
 
     public static final String REQUEST_DELETE_A_VIDEO = "request_delete_a_video";
 
+    public static final String EMBED_CONTROLS_SETTINGS_TYPE_PLAYBAR = "playbar";
+    public static final String EMBED_CONTROLS_SETTINGS_TYPE_VOLUME = "volume";
+    public static final String EMBED_CONTROLS_SETTINGS_TYPE_SPEED = "speed_controls";
+    public static final String EMBED_CONTROLS_SETTINGS_TYPE_FULLSCREEN = "fullscreen";
+
     //默认值1
     public static final int PAGE_VALUE = 1;
     //默认值10，最高到100

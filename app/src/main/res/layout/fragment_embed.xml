@@ -13,6 +13,16 @@
         android:textSize="20dp"
         android:text="@string/embed_title_tv_text"/>
 
+    <Button
+        android:id="@+id/embed_title_upgrade_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/embed_title_tv"
+        android:layout_toRightOf="@+id/embed_title_tv"
+        android:layout_marginLeft="10dp"
+        android:visibility="gone"
+        android:text="general_privacy_settings_upgrade_bt_text"/>
+
     <TextView
         android:id="@+id/embed_desc_tv"
         android:layout_width="wrap_content"

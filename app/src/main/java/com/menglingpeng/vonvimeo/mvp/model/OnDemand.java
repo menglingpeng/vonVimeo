@@ -1535,6 +1535,8 @@ public class OnDemand {
                 private OndemandBean ondemand;
                 private TrailerBean trailer;
                 private SeasonBean season;
+                private CommentsBean comments;
+                private LikesBean likes;
 
                 public void setOndemand(OndemandBean ondemand) {
                     this.ondemand = ondemand;
@@ -1558,6 +1560,84 @@ public class OnDemand {
 
                 public SeasonBean getSeason() {
                     return season;
+                }
+
+                public CommentsBean getComments() {
+                    return comments;
+                }
+
+                public void setComments(CommentsBean comments) {
+                    this.comments = comments;
+                }
+
+                public LikesBean getLikes() {
+                    return likes;
+                }
+
+                public void setLikes(LikesBean likes) {
+                    this.likes = likes;
+                }
+
+                public static class CommentsBean {
+
+                    private String uri;
+                    private int total;
+                    private List<String> options;
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public void setTotal(int total) {
+                        this.total = total;
+                    }
+
+                    public void setOptions(List<String> options) {
+                        this.options = options;
+                    }
+
+                    public String getUri() {
+                        return uri;
+                    }
+
+                    public int getTotal() {
+                        return total;
+                    }
+
+                    public List<String> getOptions() {
+                        return options;
+                    }
+                }
+
+                public static class LikesBean {
+
+                    private String uri;
+                    private int total;
+                    private List<String> options;
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public void setTotal(int total) {
+                        this.total = total;
+                    }
+
+                    public void setOptions(List<String> options) {
+                        this.options = options;
+                    }
+
+                    public String getUri() {
+                        return uri;
+                    }
+
+                    public int getTotal() {
+                        return total;
+                    }
+
+                    public List<String> getOptions() {
+                        return options;
+                    }
                 }
 
                 public static class OndemandBean {

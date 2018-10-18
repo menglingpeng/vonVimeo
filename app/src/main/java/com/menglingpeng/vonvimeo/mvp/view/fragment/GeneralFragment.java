@@ -15,12 +15,14 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.base.BaseFragment;
 import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
+import com.menglingpeng.vonvimeo.mvp.model.User;
 import com.menglingpeng.vonvimeo.mvp.model.Video;
 import com.menglingpeng.vonvimeo.mvp.presenter.RecyclerPresenter;
 import com.menglingpeng.vonvimeo.mvp.view.UserAlbumsActivity;
@@ -28,11 +30,14 @@ import com.menglingpeng.vonvimeo.mvp.view.activity.ChannelsActivity;
 import com.menglingpeng.vonvimeo.mvp.view.activity.UserGroupActivity;
 import com.menglingpeng.vonvimeo.mvp.view.activity.VideoSettingsActivity;
 import com.menglingpeng.vonvimeo.utils.Constants;
+import com.menglingpeng.vonvimeo.utils.IdStringUtil;
 import com.menglingpeng.vonvimeo.utils.ImageLoader;
 import com.menglingpeng.vonvimeo.utils.SharedPrefUtils;
 import com.menglingpeng.vonvimeo.utils.SnackbarUtils;
 
 import java.util.HashMap;
+
+import io.reactivex.CompletableOnSubscribe;
 
 public class GeneralFragment extends BaseFragment implements RecyclerView, View.OnClickListener{
 
@@ -55,14 +60,27 @@ public class GeneralFragment extends BaseFragment implements RecyclerView, View.
     private Button embedUpgradeBt;
     private Button commentUpgradeBt;
     private Video video;
+    private User user;
     private String privacy;
+    private String videoId;
     private Dialog editThumbnailDialog;
     private ImageView createAlbumIv;
     private ImageView createChannelIv;
     private ImageView createGroupIv;
+    private TextView noAlbumsTv;
+    private TextView noChannelTv;
+    private TextView noGroupTv;
+    private ListView albumsLv;
+    private ListView channelsLv;
+    private ListView groupsLv;
     private Button portfoliosUpgradeBt;
+    private Button replaceVideoBt;
+    private Button deleteVideoBt;
     private Context context;
     private String type;
+    private int albumsCount;
+    private int channelsCount;
+    private int groupsCount;
 
     public static final int REQUEST_PICTURE_CODE = 1;
 
@@ -77,6 +95,11 @@ public class GeneralFragment extends BaseFragment implements RecyclerView, View.
 
         context =getContext();
         video = (Video)getActivity().getIntent().getSerializableExtra(Constants.VIDEO);
+        videoId = IdStringUtil.getId(video.getUri());
+        user = video.getUser();
+        albumsCount = Integer.valueOf(user.getMetadata().getConnections().getAlbums().getTotal());
+        channelsCount = Integer.valueOf(user.getMetadata().getConnections().getChannels().getTotal());
+        groupsCount = Integer.valueOf(user.getMetadata().getConnections().getGroups().getTotal());
         titleEt = (EditText)rootView.findViewById(R.id.general_title_et);
         thumb1Iv = (ImageView)rootView.findViewById(R.id.general_thumb_1_iv);
         thumb2Iv = (ImageView)rootView.findViewById(R.id.general_thumb_2_iv);
@@ -98,7 +121,15 @@ public class GeneralFragment extends BaseFragment implements RecyclerView, View.
         createAlbumIv = (ImageView)rootView.findViewById(R.id.general_collections_albums_settings_create_iv);
         createChannelIv = (ImageView)rootView.findViewById(R.id.general_collections_channels_settings_create_iv);
         createGroupIv = (ImageView)rootView.findViewById(R.id.general_collections_groups_settings_create_iv);
+        noAlbumsTv = (TextView)rootView.findViewById(R.id.general_collections_albums_settings_no_check_tv);
+        noChannelTv = (TextView)rootView.findViewById(R.id.general_collections_channels_settings_no_check_tv);
+        noGroupTv = (TextView)rootView.findViewById(R.id.general_collections_groups_settings_no_check_tv);
+        albumsLv = (ListView)rootView.findViewById(R.id.general_collections_albums_settings_check_lv);
+        channelsLv = (ListView)rootView.findViewById(R.id.general_collections_channels_settings_check_lv);
+        groupsLv = (ListView)rootView.findViewById(R.id.general_collections_groups_settings_check_lv);
         portfoliosUpgradeBt = (Button)rootView.findViewById(R.id.general_collections_portfolios_settings_upgrade_bt);
+        replaceVideoBt = (Button)rootView.findViewById(R.id.general_replace_video_bt);
+        deleteVideoBt = (Button)rootView.findViewById(R.id.general_delete_video_bt);
     }
 
     @Override
@@ -107,6 +138,18 @@ public class GeneralFragment extends BaseFragment implements RecyclerView, View.
         titleEt.setText(video.getName());
         descEt.setText(video.getDescription());
         ImageLoader.load(this, video.getPictures().getUri(), thumb1Iv, false);
+        if(albumsCount != 0){
+            noAlbumsTv.setVisibility(TextView.GONE);
+            albumsLv.setVisibility(ListView.VISIBLE);
+        }
+        if(channelsCount != 0){
+            noChannelTv.setVisibility(TextView.GONE);
+            channelsLv.setVisibility(ListView.VISIBLE);
+        }
+        if(groupsCount != 0){
+            noGroupTv.setVisibility(TextView.GONE);
+            groupsLv.setVisibility(ListView.VISIBLE);
+        }
         watchRg.check(R.id.general_privacy_watch_settings_anyone_rb);
         watchRg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -219,6 +262,12 @@ public class GeneralFragment extends BaseFragment implements RecyclerView, View.
             case R.id.general_privacy_comment_settings_upgrade_bt:
                 break;
             case R.id.general_collections_portfolios_settings_upgrade_bt:
+                break;
+            case R.id.general_replace_video_bt:
+                showReplaceVideoDialog();
+                break;
+            case R.id.general_delete_video_bt:
+                showDeleteVideoDialog();
                 break;
             default:
                 break;
@@ -398,6 +447,52 @@ public class GeneralFragment extends BaseFragment implements RecyclerView, View.
         dialog.show();
     }
 
+    private void showReplaceVideoDialog(){
+
+        AlertDialog dialog;
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle(R.string.dialog_replace_video_title);
+        builder.setMessage(R.string.dialog_replace_video_msg);
+        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.setPositiveButton(R.sting.replace, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+
+        dialog = builder.create();
+        dialog.show();
+    }
+
+    private void showDeleteVideoDialog(){
+
+        AlertDialog dialog;
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle(R.string.dialog_delete_video_title);
+        builder.setMessage(R.string.dialog_delete_video_msg);
+        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.setPositiveButton(R.sting.delete, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+
+        dialog = builder.create();
+        dialog.show();
+    }
+
     @Override
     public void hideProgress() {
 
@@ -416,6 +511,13 @@ public class GeneralFragment extends BaseFragment implements RecyclerView, View.
             case Constants.REQUEST_LIST_CHANNELS:
                 break;
             case Constants.REQUEST_LIST_GROUPS:
+                break;
+            case Constants.REQUEST_DELETE_A_VIDEO:
+                if(json.indexOf(Constants.CODE_204_NO_CONTENT) != -1){
+
+                }else if(json.indexOf(Constants.CODE_403_FORBIDDEN) != -1){
+
+                }
                 break;
             default:
                 break;

@@ -466,6 +466,36 @@
 
         </RelativeLayout>
 
+        <view
+            android:id="@+id/general_collections_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/general_collections_portfolios_settings_check_rl"
+            android:layout_alignLeft="@+id/general_collections_portfolios_settings_check_rl"
+            android:background="@color/recycler_item_view_background"/>
+
+        <Button
+            android:id="@+id/general_replace_video_bt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/general_collections_view"
+            android:layout_alignLeft="@+id/general_collections_view"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="@string/general_replace_video_bt_text"/>
+
+        <Button
+            android:id="@+id/general_delete_video_bt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/general_replace_video_bt"
+            android:layout_alignLeft="@+id/general_replace_video_bt"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:textColor="#E53935"
+            android:gravity="center"
+            android:text="@string/general_delete_video_bt_text"/>
+
     </RelativeLayout>
 
     <RelativeLayout

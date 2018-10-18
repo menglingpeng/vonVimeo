@@ -456,6 +456,9 @@ public class Constants {
 
     public static final String REQUEST_GET_ALL_PORTFOLIOS_OF_A_USR =
             "request_get_all_portfolios_of_a_user";
+
+    public static final String REQUEST_DELETE_A_VIDEO = "request_delete_a_video";
+
     //默认值1
     public static final int PAGE_VALUE = 1;
     //默认值10，最高到100

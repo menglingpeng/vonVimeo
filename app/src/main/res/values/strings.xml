@@ -77,6 +77,8 @@
 
     <string name="cancle">关闭</string>
     <string name="ok">确定</string>
+    <string name="replace">Replace</string>
+    <string name="delete">Delete</string>
 
     <string name="clear_all">Clear all</string>
 
@@ -320,6 +322,8 @@
     <string name="general_privacy_embed_settings_title_tv_text">Where can this be embedded?</string>
     <string name="general_privacy_embed_settings_anywhere_rb_text">Anywhere</string>
     <string name="general_privacy_embed_settings_nowhere_rb_text">Nowhere</string>
+    <string name="general_replace_video_bt_text">Replace vidoe</string>
+    <string name="general_delete_video_bt_text">Delete vidoe</string>
 
     <string name="embed_title_tv_text">Embed</string>
     <string name="embed_desc_tv_text">Customize the player and add your branding (only applies to embedded videos).</string>
@@ -339,5 +343,11 @@
     <string name="dialog_edit_thumb_upload_tv_text">Upload</string>
     <string name="dialog_edit_thumb_random_tv_text">Random</string>
 
+    <string name="dialog_replace_video_title">Replace video</string>
+    <string name="dialog_replace_video_msg">Replace this file with a different version. Stats, public comments,
+        and likes associated with this video will not be affected.</string>
+    <string name="dialog_delete_video_title">Delete video</string>
+    <string name="dialog_delete_a_video_msg">Permanently delete this video and its associated data.
+        This video won't play anywhere it's embedded.</string>
 
 </resources>

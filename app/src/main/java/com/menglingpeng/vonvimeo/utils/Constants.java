@@ -463,6 +463,10 @@ public class Constants {
     public static final String EMBED_CONTROLS_SETTINGS_TYPE_VOLUME = "volume";
     public static final String EMBED_CONTROLS_SETTINGS_TYPE_SPEED = "speed_controls";
     public static final String EMBED_CONTROLS_SETTINGS_TYPE_FULLSCREEN = "fullscreen";
+    public static final String EMBED_ACTIONS_SETTINGS_TYPE_LIKE = "like";
+    public static final String EMBED_ACTIONS_SETTINGS_TYPE_WATCHLATER = "watch_later";
+    public static final String EMBED_ACTIONS_SETTINGS_TYPE_SHARE = "share";
+    public static final String EMBED_ACTIONS_SETTINGS_TYPE_EMBED = "embed";
 
     //默认值1
     public static final int PAGE_VALUE = 1;

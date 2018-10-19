@@ -21,7 +21,12 @@ public class EmbedFragment extends BaseFragment implements View.OnClickListener,
     private Switch volumeSwitch;
     private Switch speedSwitch;
     private Switch fullscreenSwitch;
-    private String controlsSetingsType;
+    private String controlsSettingsType;
+    private Switch likeSwitch;
+    private Switch watchLaterSwitch;
+    private Switch shareSwitch;
+    private Switch embedSwitch;
+    private String actionsSettingsType;
 
     @Override
     protected void initLayoutId() {
@@ -39,6 +44,10 @@ public class EmbedFragment extends BaseFragment implements View.OnClickListener,
         volumeSwitch = (Switch)rootView.findViewById(R.id.embed_controls_volume_settings_switch);
         speedSwitch = (Switch)rootView.findViewById(R.id.embed_controls_speed_settings_switch);
         fullscreenSwitch = (Switch)rootView.findViewById(R.id.embed_controls_fullscreen_settings_switch);
+        likeSwitch = (Switch)rootView.findViewById(R.id.embed_actions_like_settings_switch);
+        watchLaterSwitch = (Switch)rootView.findViewById(R.id.embed_actions_watch_later_settings_switch);
+        shareSwitch = (Switch)rootView.findViewById(R.id.embed_actions_share_settings_switch);
+        embedSwitch = (Switch)rootView.findViewById(R.id.embed_actions_embed_settings_switch);
     }
 
     @Override
@@ -63,16 +72,28 @@ public class EmbedFragment extends BaseFragment implements View.OnClickListener,
     public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
         switch (compoundButton.getId()){
             case R.id.embed_controls_playbar_settings_switch:
-                controlsSetingsType = Constants.EMBED_CONTROLS_SETTINGS_TYPE_PLAYBAR;
+                controlsSettingsType = Constants.EMBED_CONTROLS_SETTINGS_TYPE_PLAYBAR;
                 break;
             case R.id.embed_controls_volume_settings_switch:
-                controlsSetingsType = Constants.EMBED_CONTROLS_SETTINGS_TYPE_VOLUME;
+                controlsSettingsType = Constants.EMBED_CONTROLS_SETTINGS_TYPE_VOLUME;
                 break;
             case R.id.embed_controls_speed_settings_switch:
-                controlsSetingsType = Constants.EMBED_CONTROLS_SETTINGS_TYPE_SPEED;
+                controlsSettingsType = Constants.EMBED_CONTROLS_SETTINGS_TYPE_SPEED;
                 break;
             case R.id.embed_controls_fullscreen_settings_switch:
-                controlsSetingsType = Constants.EMBED_CONTROLS_SETTINGS_TYPE_FULLSCREEN;
+                controlsSettingsType = Constants.EMBED_CONTROLS_SETTINGS_TYPE_FULLSCREEN;
+                break;
+            case R.id.embed_actions_like_settings_switch:
+                actionsSettingsType = Constants.EMBED_ACTIONS_SETTINGS_TYPE_LIKE;
+                break;
+            case R.id.embed_actions_watch_later_settings_switch:
+                actionsSettingsType = Constants.EMBED_ACTIONS_SETTINGS_TYPE_WATCHLATER;
+                break;
+            case R.id.embed_actions_share_settings_switch:
+                actionsSettingsType = Constants.EMBED_ACTIONS_SETTINGS_TYPE_SHARE;
+                break;
+            case R.id.embed_actions_embed_settings_switch:
+                actionsSettingsType = Constants.EMBED_ACTIONS_SETTINGS_TYPE_EMBED;
                 break;
             default:
                 break;

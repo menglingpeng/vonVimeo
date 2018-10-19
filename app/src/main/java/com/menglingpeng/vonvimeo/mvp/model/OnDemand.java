@@ -1537,6 +1537,9 @@ public class OnDemand {
                 private SeasonBean season;
                 private CommentsBean comments;
                 private LikesBean likes;
+                private TexttracksBean texttracks;
+                private RelatedBean related;
+                private RecommendationsBean recommendations;
 
                 public void setOndemand(OndemandBean ondemand) {
                     this.ondemand = ondemand;
@@ -1577,6 +1580,31 @@ public class OnDemand {
                 public void setLikes(LikesBean likes) {
                     this.likes = likes;
                 }
+
+                public void setTexttracks(TexttracksBean texttracks) {
+                    this.texttracks = texttracks;
+                }
+
+                public void setRelated(RelatedBean related) {
+                    this.related = related;
+                }
+
+                public void setRecommendations(RecommendationsBean recommendations) {
+                    this.recommendations = recommendations;
+                }
+
+                public TexttracksBean getTexttracks() {
+                    return texttracks;
+                }
+
+                public RelatedBean getRelated() {
+                    return related;
+                }
+
+                public RecommendationsBean getRecommendations() {
+                    return recommendations;
+                }
+
 
                 public static class CommentsBean {
 
@@ -1726,6 +1754,81 @@ public class OnDemand {
 
                     public String getName() {
                         return name;
+                    }
+
+                    public List<String> getOptions() {
+                        return options;
+                    }
+                }
+
+                public static class TexttracksBean {
+
+                    private String uri;
+                    private int total;
+                    private List<String> options;
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public void setTotal(int total) {
+                        this.total = total;
+                    }
+
+                    public void setOptions(List<String> options) {
+                        this.options = options;
+                    }
+
+                    public String getUri() {
+                        return uri;
+                    }
+
+                    public int getTotal() {
+                        return total;
+                    }
+
+                    public List<String> getOptions() {
+                        return options;
+                    }
+                }
+
+                public static class RelatedBean {
+
+                    private String uri;
+                    private List<String> options;
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public void setOptions(List<String> options) {
+                        this.options = options;
+                    }
+
+                    public String getUri() {
+                        return uri;
+                    }
+
+                    public List<String> getOptions() {
+                        return options;
+                    }
+                }
+
+                public static class RecommendationsBean {
+
+                    private String uri;
+                    private List<String> options;
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public void setOptions(List<String> options) {
+                        this.options = options;
+                    }
+
+                    public String getUri() {
+                        return uri;
                     }
 
                     public List<String> getOptions() {

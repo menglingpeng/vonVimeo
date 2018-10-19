@@ -337,6 +337,10 @@
     <string name="embed_actions_watch_later_settings_switch_tv_text">Watch later</string>
     <string name="embed_actions_share_settings_switch_tv_text">Share</string>
     <string name="embed_actions_embed_settings_switch_tv_text">Embed</string>
+    <string name="embed_customization_settings_tv_text">Actions</string>
+    <string name="embed_customization_custom_color_settings_switch_tv_text">Custom color</string>
+    <string name="embed_customization_show_vimeo_logo_settings_switch_tv_text">Show vimeo logo</string>
+    <string name="embed_customization_display_custom_logo_settings_switch_tv_text">Display custom logo</string>
 
     <string name="dialog_edit_thumb_title_tv_text">Edit thumbnail</string>
     <string name="dialog_edit_thumb_select_from_video_tv_text">Select from video</string>

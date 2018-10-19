@@ -182,4 +182,14 @@
     <dimen name="dialog_edit_thumb_title_tv_layout_marginBottom">20dp</dimen>
     <dimen name="dialog_edit_thumb_title_tv_layout_marginTop">20dp</dimen>
     <dimen name="dialog_edit_thumb_select_from_video_tv_layout_marginLeft">15dp</dimen>
+
+    <dimen name="embed_title_tv_layout_marginTop">20dp</dimen>
+    <dimen name="embed_title_tv_layout_marginBottom">20dp</dimen>
+    <dimen name="embed_title_tv_layout_marginLeft">15dp</dimen>
+    <dimen name="embed_title_tv_textSize">20dp</dimen>
+    <dimen name="embed_title_upgrade_bt_layout_marginLeft">10dp</dimen>
+    <dimen name="embed_desc_tv_layout_marginBottom">20dp</dimen>
+    <dimen name="embed_controls_settings_tv_layout_marginBottom">15dp</dimen>
+    <dimen name="embed_controls_playbar_settings_switch_layout_marginBottom">20dp</dimen>
+    <dimen name="embed_controls_playbar_settings_switch_layout_marginRight">10dp</dimen>
 </resources>

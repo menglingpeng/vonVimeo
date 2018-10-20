@@ -27,6 +27,11 @@ public class EmbedFragment extends BaseFragment implements View.OnClickListener,
     private Switch shareSwitch;
     private Switch embedSwitch;
     private String actionsSettingsType;
+    private Switch profilePictureSwitch;
+    private Switch titleSwitch;
+    private Switch bylineSwitch;
+    private Switch userDecideSwitch;
+    private String yourDetailsSettingsType;
 
     @Override
     protected void initLayoutId() {
@@ -48,6 +53,10 @@ public class EmbedFragment extends BaseFragment implements View.OnClickListener,
         watchLaterSwitch = (Switch)rootView.findViewById(R.id.embed_actions_watch_later_settings_switch);
         shareSwitch = (Switch)rootView.findViewById(R.id.embed_actions_share_settings_switch);
         embedSwitch = (Switch)rootView.findViewById(R.id.embed_actions_embed_settings_switch);
+        profilePictureSwitch = (Switch)rootView.findViewById(R.id.embed_your_details_profile_picture_settings_switch);
+        titleSwitch = (Switch)rootView.findViewById(R.id.embed_your_details_title_settings_switch);
+        bylineSwitch = (Switch)rootView.findViewById(R.id.embed_your_details_byline_settings_switch);
+        userDecideSwitch = (Switch)rootView.findViewById(R.id.embed_your_details_user_decide_settings_switch);
     }
 
     @Override
@@ -94,6 +103,18 @@ public class EmbedFragment extends BaseFragment implements View.OnClickListener,
                 break;
             case R.id.embed_actions_embed_settings_switch:
                 actionsSettingsType = Constants.EMBED_ACTIONS_SETTINGS_TYPE_EMBED;
+                break;
+            case R.id.embed_your_details_profile_picture_settings_switch:
+                yourDetailsSettingsType = Constants.EMBED_YOUR_DETAILS_SETTINGS_TYPE_PROFILE_PICTURE;
+                break;
+            case R.id.embed_your_details_title_settings_switch:
+                yourDetailsSettingsType = Constants.EMBED_YOUR_DETAILS_SETTINGS_TYPE_TITLE;
+                break;
+            case R.id.embed_your_details_byline_settings_switch:
+                yourDetailsSettingsType = Constants.EMBED_YOUR_DETAILS_SETTINGS_TYPE_BYLINE;
+                break;
+            case R.id.embed_your_details_user_decide_settings_switch:
+                yourDetailsSettingsType = Constants.EMBED_YOUR_DETAILS_SETTINGS_TYPE_USERS_DECIDE;
                 break;
             default:
                 break;

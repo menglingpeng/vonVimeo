@@ -467,6 +467,10 @@ public class Constants {
     public static final String EMBED_ACTIONS_SETTINGS_TYPE_WATCHLATER = "watch_later";
     public static final String EMBED_ACTIONS_SETTINGS_TYPE_SHARE = "share";
     public static final String EMBED_ACTIONS_SETTINGS_TYPE_EMBED = "embed";
+    public static final String EMBED_YOUR_DETAILS_SETTINGS_TYPE_PROFILE_PICTURE = "profile_picture";
+    public static final String EMBED_YOUR_DETAILS_SETTINGS_TYPE_TITLE = "title";
+    public static final String EMBED_YOUR_DETAILS_SETTINGS_TYPE_BYLINE = "byline";
+    public static final String EMBED_YOUR_DETAILS_SETTINGS_TYPE_USERS_DECIDE = "embed";
 
     //默认值1
     public static final int PAGE_VALUE = 1;

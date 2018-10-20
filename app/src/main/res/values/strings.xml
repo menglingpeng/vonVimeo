@@ -337,6 +337,11 @@
     <string name="embed_actions_watch_later_settings_switch_tv_text">Watch later</string>
     <string name="embed_actions_share_settings_switch_tv_text">Share</string>
     <string name="embed_actions_embed_settings_switch_tv_text">Embed</string>
+    <string name="embed_your_details_settings_tv_text">Your details</string>
+    <string name="embed_your_details_profile_picture_settings_switch_tv_text">Profile picture</string>
+    <string name="embed_your_details_title_settings_switch_tv_text">Title</string>
+    <string name="embed_your_details_byline_settings_switch_tv_text">Byline</string>
+    <string name="embed_your_details_users_decide_settings_switch_tv_text">Let users decide</string>
     <string name="embed_customization_settings_tv_text">Actions</string>
     <string name="embed_customization_custom_color_settings_switch_tv_text">Custom color</string>
     <string name="embed_customization_show_vimeo_logo_settings_switch_tv_text">Show vimeo logo</string>

@@ -1540,6 +1540,9 @@ public class OnDemand {
                 private TexttracksBean texttracks;
                 private RelatedBean related;
                 private RecommendationsBean recommendations;
+                private CreditsBean credits;
+                private PicturesBean pictures;
+
 
                 public void setOndemand(OndemandBean ondemand) {
                     this.ondemand = ondemand;
@@ -1603,6 +1606,22 @@ public class OnDemand {
 
                 public RecommendationsBean getRecommendations() {
                     return recommendations;
+                }
+
+                public void setCredits(CreditsBean credits) {
+                    this.credits = credits;
+                }
+
+                public CreditsBean getCredits() {
+                    return credits;
+                }
+
+                public void setPictures(PicturesBean pictures) {
+                    this.pictures = pictures;
+                }
+
+                public PicturesBean getPictures() {
+                    return pictures;
                 }
 
 
@@ -1829,6 +1848,68 @@ public class OnDemand {
 
                     public String getUri() {
                         return uri;
+                    }
+
+                    public List<String> getOptions() {
+                        return options;
+                    }
+                }
+
+                public static class CreditsBean {
+
+                    private String uri;
+                    private int total;
+                    private List<String> options;
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public void setTotal(int total) {
+                        this.total = total;
+                    }
+
+                    public void setOptions(List<String> options) {
+                        this.options = options;
+                    }
+
+                    public String getUri() {
+                        return uri;
+                    }
+
+                    public int getTotal() {
+                        return total;
+                    }
+
+                    public List<String> getOptions() {
+                        return options;
+                    }
+                }
+
+                public static class PicturesBean {
+
+                    private String uri;
+                    private int total;
+                    private List<String> options;
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public void setTotal(int total) {
+                        this.total = total;
+                    }
+
+                    public void setOptions(List<String> options) {
+                        this.options = options;
+                    }
+
+                    public String getUri() {
+                        return uri;
+                    }
+
+                    public int getTotal() {
+                        return total;
                     }
 
                     public List<String> getOptions() {

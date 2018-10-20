@@ -223,11 +223,106 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/embed_your_details_settings_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/embed_actions_settings_rl"
+        android:layout_alignLeft="@+id/embed_actions_settings_rl">
+
+        <TextView
+            android:id="@+id/embed_your_details_settings_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/embed_controls_settings_tv_layout_marginBottom"
+            android:textAppearance="@style/Base.DialogWindowTitle.AppCompat"
+            android:text="@string/embed_your_details_settings_tv_text"/>
+
+        <Switch
+            android:id="@+id/embed_your_details_profile_picture_settings_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/embed_your_details_settings_tv"
+            android:layout_alignLeft="@+id/embed_your_details_settings_tv"
+            android:layout_marginBottom="@dimen/embed_controls_playbar_settings_switch_layout_marginBottom"
+            android:layout_marginRight="@dimen/embed_controls_playbar_settings_switch_layout_marginRight"/>
+
+        <TextView
+            android:id="@+id/embed_your_details_profile_picture_settings_switch_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/embed_your_details_profile_picture_settings_switch"
+            android:layout_alignTop="@+id/embed_your_details_profile_picture_settings_switch"
+            android:text="@string/embed_your_details_profile_picture_settings_switch_tv_text"/>
+
+        <Switch
+            android:id="@+id/embed_your_details_title_settings_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/embed_your_details_profile_picture_settings_switch"
+            android:layout_alignLeft="@+id/embed_your_details_profile_picture_settings_switch"
+            android:layout_marginBottom="@dimen/embed_controls_playbar_settings_switch_layout_marginBottom"
+            android:layout_marginRight="@dimen/embed_controls_playbar_settings_switch_layout_marginRight"/>
+
+        <TextView
+            android:id="@+id/embed_your_details_title_settings_switch_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/embed_your_details_title_settings_switch"
+            android:layout_alignTop="@+id/embed_your_details_title_settings_switch"
+            android:text="@string/embed_your_details_title_settings_switch_tv_text"/>
+
+        <Switch
+            android:id="@+id/embed_your_details_byline_settings_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/embed_your_details_title_settings_switch"
+            android:layout_alignLeft="@+id/embed_your_details_title_settings_switch"
+            android:layout_marginBottom="@dimen/embed_controls_playbar_settings_switch_layout_marginBottom"
+            android:layout_marginRight="@dimen/embed_controls_playbar_settings_switch_layout_marginRight"/>
+
+        <TextView
+            android:id="@+id/embed_your_details_byline_settings_switch_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/embed_your_details_byline_settings_switch"
+            android:layout_alignTop="@+id/embed_your_details_byline_settings_switch"
+            android:text="@string/embed_your_details_byline_settings_switch_tv_text"/>
+
+        <Switch
+            android:id="@+id/embed_your_details_users_decide_settings_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/embed_your_details_byline_settings_switch"
+            android:layout_alignLeft="@+id/embed_your_details_byline_settings_switch"
+            android:layout_marginBottom="@dimen/embed_controls_playbar_settings_switch_layout_marginBottom"
+            android:layout_marginRight="@dimen/embed_controls_playbar_settings_switch_layout_marginRight"/>
+
+        <TextView
+            android:id="@+id/embed_your_details_users_decide_settings_switch_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/embed_your_details_users_decide_settings_switch"
+            android:layout_alignTop="@+id/embed_your_details_users_decide_settings_switch"
+            android:text="@string/embed_your_details_users_decide_settings_switch_tv_text"/>
+
+        <view
+            android:id="@+id/embed_your_details_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/embed_your_details_users_decide_settings_switch"
+            android:layout_alignLeft="@+id/embed_your_details_users_decide_settings_switch"
+            android:background="@color/recycler_item_view_background">
+
+        </view>
+
+    </RelativeLayout>
+
+    <RelativeLayout
         android:id="@+id/embed_customization_settings_rl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/embed_controls_settings_rl"
-        android:layout_alignLeft="@+id/embed_controls_settings_rl">
+        android:layout_below="@+id/embed_your_detail_settings_rl"
+        android:layout_alignLeft="@+id/embed_your_detail_settings_rl">
 
         <TextView
             android:id="@+id/embed_customization_settings_tv"

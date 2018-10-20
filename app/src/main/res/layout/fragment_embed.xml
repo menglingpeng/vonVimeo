@@ -305,6 +305,15 @@
             android:layout_alignTop="@+id/embed_your_details_users_decide_settings_switch"
             android:text="@string/embed_your_details_users_decide_settings_switch_tv_text"/>
 
+        <ImageView
+            android:id="@+id/embed_your_details_users_decide_settings_switch_info_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/embed_your_details_users_decide_settings_switch_tv"
+            android:layout_alignTop="@+id/embed_your_details_users_decide_settings_switch_tv"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/ic_info_grey_600_18dp"/>
+
         <view
             android:id="@+id/embed_your_details_view"
             android:layout_width="match_parent"
@@ -321,8 +330,8 @@
         android:id="@+id/embed_customization_settings_rl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/embed_your_detail_settings_rl"
-        android:layout_alignLeft="@+id/embed_your_detail_settings_rl">
+        android:layout_below="@+id/embed_your_details_settings_rl"
+        android:layout_alignLeft="@+id/embed_your_details_settings_rl">
 
         <TextView
             android:id="@+id/embed_customization_settings_tv"
@@ -383,6 +392,15 @@
             android:layout_alignTop="@+id/embed_customization_display_custom_logo_settings_switch"
             android:text="@string/embed_customization_display_custom_logo_settings_switch_tv_text"/>
 
+        <Button
+            android:id="@+id/embed_customization_display_custom_logo_settings_upgrade_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/embed_customization_display_custom_logo_settings_switch_tv"
+            android:layout_toRightOf="@+id/embed_customization_display_custom_logo_settings_switch_tv"
+            android:layout_marginLeft="@dimen/embed_title_upgrade_bt_layout_marginLeft"
+            android:visibility="gone"
+            android:text="general_privacy_settings_upgrade_bt_text"/>
 
         <view
             android:id="@+id/embed_customization_view"

@@ -471,6 +471,9 @@ public class Constants {
     public static final String EMBED_YOUR_DETAILS_SETTINGS_TYPE_TITLE = "title";
     public static final String EMBED_YOUR_DETAILS_SETTINGS_TYPE_BYLINE = "byline";
     public static final String EMBED_YOUR_DETAILS_SETTINGS_TYPE_USERS_DECIDE = "embed";
+    public static final String EMBED_CUSTOMIZATION_SETTINGS_TYPE_CUSTOM_COLOR = "custom_color";
+    public static final String EMBED_CUSTOMIZATION_SETTINGS_TYPE_SHOW_VIMEO_LOGO = "show_vimeo_logo";
+    public static final String EMBED_CUSTOMIZATION_SETTINGS_TYPE_DISPLAY_CUSTOM_LOGO = "display_custom_logo";
 
     //默认值1
     public static final int PAGE_VALUE = 1;

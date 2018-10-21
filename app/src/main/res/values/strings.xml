@@ -347,6 +347,13 @@
     <string name="embed_customization_show_vimeo_logo_settings_switch_tv_text">Show vimeo logo</string>
     <string name="embed_customization_display_custom_logo_settings_switch_tv_text">Display custom logo</string>
 
+    <string name="collaboration_title_tv_text">Collaboration</string>
+    <string name="collaboration_desc_tv_text">Adjust collaboration settings, track video history, or get extensions for desktop apps.</string>
+    <string name="collaboration_review_tools_settings_tv_text">Review tools</string>
+    <string name="collaboration_review_tools_enable_private_review_page_settings_switch_tv_text">Playbar</string>
+    <string name="collaboration_review_tools_allow_notes_settings_switch_tv_text">Allow notes</string>
+    <string name="collaboration_review_tools_display_vimeo_logo_settings_switch_tv_text">Display Vimeo logo</string>
+
     <string name="dialog_edit_thumb_title_tv_text">Edit thumbnail</string>
     <string name="dialog_edit_thumb_select_from_video_tv_text">Select from video</string>
     <string name="dialog_edit_thumb_upload_tv_text">Upload</string>

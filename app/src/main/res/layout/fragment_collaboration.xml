@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/collaboration_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/embed_title_tv_layout_marginTop"
+            android:layout_marginLeft="@dimen/embed_title_tv_layout_marginLeft"
+            android:layout_marginBottom="@dimen/embed_title_tv_layout_marginBottom"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textSize="@dimen/embed_title_tv_textSize"
+            android:text="@string/collaboration_title_tv_text"/>
+
+        <TextView
+            android:id="@+id/collaboration_desc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/collaboration_title_tv"
+            android:layout_alignLeft="@+id/collaboration_title_tv"
+            android:layout_marginBottom="@dimen/embed_desc_tv_layout_marginBottom"
+            android:text="@string/collaboration_desc_tv_text"/>
+
+        <RelativeLayout
+            android:id="@+id/collaboration_review_tools_settings_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/collaboration_desc_tv"
+            android:layout_alignLeft="@+id/collaboration_desc_tv">
+
+            <TextView
+                android:id="@+id/collaboration_review_tools_settings_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/embed_controls_settings_tv_layout_marginBottom"
+                android:textAppearance="@style/Base.DialogWindowTitle.AppCompat"
+                android:text="@string/collaboration_review_tools_settings_tv_text"/>
+
+            <Button
+                android:id="@+id/collaboration_review_tools_upgrade_bt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/collaboration_review_tools_settings_tv"
+                android:layout_toRightOf="@+id/collaboration_review_tools_settings_tv"
+                android:layout_marginLeft="@dimen/embed_title_upgrade_bt_layout_marginLeft"
+                android:visibility="gone"
+                android:text="general_privacy_settings_upgrade_bt_text"/>
+
+            <Switch
+                android:id="@+id/collaboration_review_tools_enable_private_review_page_settings_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/collaboration_review_tools_settings_tv"
+                android:layout_alignLeft="@+id/collaboration_review_tools_settings_tv"
+                android:layout_marginBottom="@dimen/embed_controls_playbar_settings_switch_layout_marginBottom"
+                android:layout_marginRight="@dimen/embed_controls_playbar_settings_switch_layout_marginRight"/>
+
+            <TextView
+                android:id="@+id/collaboration_review_tools_enable_private_review_page_settings_switch_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/collaboration_review_tools_enable_private_review_page_settings_switch"
+                android:layout_alignTop="@+id/collaboration_review_tools_enable_private_review_page_settings_switch"
+                android:text="@string/collaboration_review_tools_enable_private_review_page_settings_switch_tv_text"/>
+
+            <Switch
+                android:id="@+id/collaboration_review_tools_allow_notes_settings_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/collaboration_review_tools_enable_private_review_page_settings_switch"
+                android:layout_alignLeft="@+id/collaboration_review_tools_enable_private_review_page_settings_switch"
+                android:layout_marginBottom="@dimen/embed_controls_playbar_settings_switch_layout_marginBottom"
+                android:layout_marginRight="@dimen/embed_controls_playbar_settings_switch_layout_marginRight"/>
+
+            <TextView
+                android:id="@+id/collaboration_review_tools_allow_notes_settings_switch_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/collaboration_review_tools_allow_notes_settings_switch"
+                android:layout_alignTop="@+id/collaboration_review_tools_allow_notes_settings_switch"
+                android:text="@string/collaboration_review_tools_allow_notes_settings_switch_tv_text"/>
+
+            <Switch
+                android:id="@+id/collaboration_review_tools_display_vimeo_logo_settings_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/collaboration_review_tools_allow_notes_settings_switch"
+                android:layout_alignLeft="@+id/collaboration_review_tools_allow_notes_settings_switch"
+                android:layout_marginBottom="@dimen/embed_controls_playbar_settings_switch_layout_marginBottom"
+                android:layout_marginRight="@dimen/embed_controls_playbar_settings_switch_layout_marginRight"/>
+
+            <TextView
+                android:id="@+id/collaboration_review_tools_display_vimeo_logo_settings_switch_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/collaboration_review_tools_display_vimeo_logo_settings_switch"
+                android:layout_alignTop="@+id/collaboration_review_tools_display_vimeo_logo_settings_switch"
+                android:text="@string/collaboration_review_tools_display_vimeo_logo_settings_switch_tv_text"/>
+
+
+            <view
+                android:id="@+id/embed_controls_view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/collaboration_review_tools_display_vimeo_logo_settings_switch"
+                android:layout_alignLeft="@+id/collaboration_review_tools_display_vimeo_logo_settings_switch"
+                android:background="@color/recycler_item_view_background">
+
+            </view>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

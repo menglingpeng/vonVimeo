@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
+import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.base.BaseFragment;
 import com.menglingpeng.vonvimeo.mvp.model.User;
@@ -22,6 +23,13 @@ public class CollaborationFragment extends BaseFragment implements Switch.OnChec
     private Switch allowNotesSwitch;
     private Switch vimeoLogoSwitch;
     private String reviewToolsType;
+    private Button versionsUpgradeBt;
+    private TextView videoNameTv;
+    private TextView videoSizeTv;
+    private TextView videoUplodedTimeTv;
+    private TextView videoDurationTv;
+    private Button replaceVideoBt;
+
 
     @Override
     protected void initLayoutId() {
@@ -40,17 +48,33 @@ public class CollaborationFragment extends BaseFragment implements Switch.OnChec
         allowNotesSwitch = (Switch)rootView.findViewById(R.id.collaboration_review_tools_allow_notes_settings_switch);
         vimeoLogoSwitch = (Switch)rootView.findViewById(R.id.
                 collaboration_review_tools_display_vimeo_logo_settings_switch);
+        versionsUpgradeBt = (Button)rootView.findViewById(R.id.collaboration_versions_settings_title_upgrade_bt);
+        videoNameTv = (TextView)rootView.findViewById(R.id.collaboration_versions_settings_video_name_tv);
+        videoSizeTv = (TextView)rootView.findViewById(R.id.collaboration_versions_settings_video_size_tv);
+        videoUplodedTimeTv = (TextView)rootView.findViewById(R.id.collaboration_versions_settings_video_uploaded_time_tv);
+        videoDurationTv = (TextView)rootView.findViewById(R.id.collaboration_versions_settings_video_duration_tv);
+        replaceVideoBt = (Button)rootView.findViewById(R.id.collaboration_versions_settings_replace_bt);
     }
 
     @Override
     protected void initData() {
 
+        videoNameTv.setText(video.getName());
+        videoDurationTv.setText(video.getDuration());
+        videoUplodedTimeTv.setText(video.getCreated_time());
+        videoSizeTv.setText(video.get);
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.collaboration_review_tools_upgrade_bt:
+
+                break;
+            case R.id.collaboration_versions_settings_title_upgrade_bt:
+
+                break;
+            case R.id.collaboration_versions_settings_replace_bt:
 
                 break;
             default:

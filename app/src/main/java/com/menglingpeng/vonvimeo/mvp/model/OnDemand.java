@@ -1930,6 +1930,7 @@ public class OnDemand {
 
             public static class InteractionsBean {
                 private RentBean rent;
+                private BuyBean buy;
 
                 public void setRent(RentBean rent) {
                     this.rent = rent;
@@ -1938,6 +1939,15 @@ public class OnDemand {
                 public RentBean getRent() {
                     return rent;
                 }
+
+                public void setBuy(BuyBean buy) {
+                    this.buy = buy;
+                }
+
+                public BuyBean getBuy() {
+                    return buy;
+                }
+
 
                 public static class RentBean {
 
@@ -1997,6 +2007,100 @@ public class OnDemand {
 
                     public Object getUri() {
                         return uri;
+                    }
+
+                    public String getStream() {
+                        return stream;
+                    }
+
+                    public Object getLink() {
+                        return link;
+                    }
+
+                    public Object getPrice() {
+                        return price;
+                    }
+
+                    public Object getCurrency() {
+                        return currency;
+                    }
+
+                    public Object getDisplay_price() {
+                        return display_price;
+                    }
+
+                    public boolean getDrm() {
+                        return drm;
+                    }
+                }
+
+                public static class BuyBean {
+
+                    private Object expires_time;
+                    private Object purchase_time;
+                    private Object uri;
+                    private String download;
+                    private String stream;
+                    private Object link;
+                    private Object price;
+                    private Object currency;
+                    private Object display_price;
+                    private boolean drm;
+
+                    public void setExpires_time(Object expires_time) {
+                        this.expires_time = expires_time;
+                    }
+
+                    public void setPurchase_time(Object purchase_time) {
+                        this.purchase_time = purchase_time;
+                    }
+
+                    public void setUri(Object uri) {
+                        this.uri = uri;
+                    }
+
+                    public void setDownload(String download) {
+                        this.download = download;
+                    }
+
+                    public void setStream(String stream) {
+                        this.stream = stream;
+                    }
+
+                    public void setLink(Object link) {
+                        this.link = link;
+                    }
+
+                    public void setPrice(Object price) {
+                        this.price = price;
+                    }
+
+                    public void setCurrency(Object currency) {
+                        this.currency = currency;
+                    }
+
+                    public void setDisplay_price(Object display_price) {
+                        this.display_price = display_price;
+                    }
+
+                    public void setDrm(boolean drm) {
+                        this.drm = drm;
+                    }
+
+                    public Object getExpires_time() {
+                        return expires_time;
+                    }
+
+                    public Object getPurchase_time() {
+                        return purchase_time;
+                    }
+
+                    public Object getUri() {
+                        return uri;
+                    }
+
+                    public String getDownload() {
+                        return download;
                     }
 
                     public String getStream() {

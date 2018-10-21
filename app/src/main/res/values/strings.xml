@@ -353,6 +353,7 @@
     <string name="collaboration_review_tools_enable_private_review_page_settings_switch_tv_text">Playbar</string>
     <string name="collaboration_review_tools_allow_notes_settings_switch_tv_text">Allow notes</string>
     <string name="collaboration_review_tools_display_vimeo_logo_settings_switch_tv_text">Display Vimeo logo</string>
+    <string name="collaboration_versions_settings_tv_text">Versions</string>
 
     <string name="dialog_edit_thumb_title_tv_text">Edit thumbnail</string>
     <string name="dialog_edit_thumb_select_from_video_tv_text">Select from video</string>

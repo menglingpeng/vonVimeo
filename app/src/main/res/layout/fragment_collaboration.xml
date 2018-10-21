@@ -104,7 +104,7 @@
 
 
             <view
-                android:id="@+id/embed_controls_view"
+                android:id="@+id/collaboration_review_tools_view"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_below="@+id/collaboration_review_tools_display_vimeo_logo_settings_switch"
@@ -113,8 +113,92 @@
 
             </view>
 
-        </RelativeLayout>
+            <TextView
+                android:id="@+id/collaboration_versions_settings_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/embed_title_tv_layout_marginTop"
+                android:layout_marginLeft="@dimen/embed_title_tv_layout_marginLeft"
+                android:layout_marginBottom="@dimen/embed_title_tv_layout_marginBottom"
+                android:layout_below="@+id/collaboration_review_tools_view"
+                android:layout_alignLeft="@+id/collaboration_review_tools_view"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textSize="@dimen/embed_title_tv_textSize"
+                android:text="@string/collaboration_versions_settings_tv_text"/>
 
+            <Button
+                android:id="@+id/collaboration_versions_settings_title_upgrade_bt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/collaboration_versions_settings_title_tv"
+                android:layout_toRightOf="@+id/collaboration_versions_settings_title_tv"
+                android:layout_marginLeft="@dimen/embed_title_upgrade_bt_layout_marginLeft"
+                android:visibility="gone"
+                android:text="general_privacy_settings_upgrade_bt_text"/>
+
+            <TextView
+                android:id="@+id/collaboration_versions_settings_desc_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/collaboration_versions_settings_title_tv"
+                android:layout_alignLeft="@+id/collaboration_versions_settings_title_tv"
+                android:layout_marginBottom="@dimen/embed_desc_tv_layout_marginBottom"
+                android:text="@string/embed_desc_tv_text"/>
+
+            <RelativeLayout
+                android:id="@+id/collaboration_versions_settings_rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/collaboration_versions_settings_title_tv"
+                android:layout_alignLeft="@+id/collaboration_versions_settings_title_tv">
+
+                <TextView
+                    android:id="@+id/collaboration_versions_settings_video_name_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/collaboration_versions_settings_video_size_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignTop="@+id/collaboration_versions_settings_video_name_tv"/>
+
+                <TextView
+                    android:id="@+id/collaboration_versions_settings_video_uploaded_time_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/collaboration_versions_settings_video_name_tv"/>
+
+                <TextView
+                    android:id="@+id/collaboration_versions_settings_video_duration_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignTop="@+id/collaboration_versions_settings_video_uploaded_time_tv"/>
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/collaboration_versions_settings_replace_bt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/collaboration_versions_settings_rl"
+                android:layout_alignLeft="@+id/collaboration_versions_settings_rl"
+                android:layout_marginTop="@dimen/collaboration_versions_settings_replace_bt_layout_marginTop"
+                android:layout_marginBottom="@dimen/collaboration_versions_settings_replace_bt_layout_marginBottom"/>
+
+            <view
+                android:id="@+id/collaboration_versions_settings_view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/collaboration_versions_settings_replace_bt"
+                android:layout_alignLeft="@+id/collaboration_versions_settings_replace_bt"
+                android:background="@color/recycler_item_view_background">
+
+            </view>
+
+        </RelativeLayout>
 
     </RelativeLayout>
 

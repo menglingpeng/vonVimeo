@@ -192,4 +192,7 @@
     <dimen name="embed_controls_settings_tv_layout_marginBottom">15dp</dimen>
     <dimen name="embed_controls_playbar_settings_switch_layout_marginBottom">20dp</dimen>
     <dimen name="embed_controls_playbar_settings_switch_layout_marginRight">10dp</dimen>
+
+    <dimen name="collaboration_versions_settings_replace_bt_layout_marginBottom">20dp</dimen>
+    <dimen name="collaboration_versions_settings_replace_bt_layout_marginTop">15dp</dimen>
 </resources>

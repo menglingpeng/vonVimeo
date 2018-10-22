@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -12,6 +13,7 @@ import com.menglingpeng.vonvimeo.base.BaseFragment;
 import com.menglingpeng.vonvimeo.mvp.model.User;
 import com.menglingpeng.vonvimeo.mvp.model.Video;
 import com.menglingpeng.vonvimeo.utils.Constants;
+import com.menglingpeng.vonvimeo.utils.ImageLoader;
 
 public class CollaborationFragment extends BaseFragment implements Switch.OnCheckedChangeListener, View.OnClickListener{
 
@@ -29,6 +31,8 @@ public class CollaborationFragment extends BaseFragment implements Switch.OnChec
     private TextView videoUplodedTimeTv;
     private TextView videoDurationTv;
     private Button replaceVideoBt;
+    private ImageView avatarIv;
+    private TextView uploadedTimeTv;
 
 
     @Override
@@ -54,6 +58,8 @@ public class CollaborationFragment extends BaseFragment implements Switch.OnChec
         videoUplodedTimeTv = (TextView)rootView.findViewById(R.id.collaboration_versions_settings_video_uploaded_time_tv);
         videoDurationTv = (TextView)rootView.findViewById(R.id.collaboration_versions_settings_video_duration_tv);
         replaceVideoBt = (Button)rootView.findViewById(R.id.collaboration_versions_settings_replace_bt);
+        avatarIv = (ImageView)rootView.findViewById(R.id.collaboration_history_avatar_iv);
+        uploadedTimeTv = (TextView)rootView.findViewById(R.id.collaboration_history_video_uploaded_time_tv)
     }
 
     @Override
@@ -63,6 +69,8 @@ public class CollaborationFragment extends BaseFragment implements Switch.OnChec
         videoDurationTv.setText(video.getDuration());
         videoUplodedTimeTv.setText(video.getCreated_time());
         videoSizeTv.setText(video.get);
+        ImageLoader.loadCricleImage(this, video.getPictures().getUri(), avatarIv);
+        uploadedTimeTv.setText(video.getCreated_time());
     }
 
     @Override

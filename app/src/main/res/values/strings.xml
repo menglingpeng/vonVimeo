@@ -354,6 +354,15 @@
     <string name="collaboration_review_tools_allow_notes_settings_switch_tv_text">Allow notes</string>
     <string name="collaboration_review_tools_display_vimeo_logo_settings_switch_tv_text">Display Vimeo logo</string>
     <string name="collaboration_versions_settings_tv_text">Versions</string>
+    <string name="collaboration_history_title_tv_text">History</string>
+    <string name="collaboration_history_desc_tv_text">Track team activity and changes to the video.</string>
+    <string name="collaboration_history_video_uploaded_tv_text">This video was uploaded</string>
+    <string name="collaboration_extensions_title_tv_text">Extensions</string>
+    <string name="collaboration_extensions_desc_tv_text">Bring Vimeo’s tools into the apps you use across your workflow.</string>
+
+    <string name="distribution_title_tv_text">Distribution</string>
+    <string name="distribution_desc_tv_text">Control how the video is distributed and discovered across social media,
+        search results, and Vimeo.</string>
 
     <string name="dialog_edit_thumb_title_tv_text">Edit thumbnail</string>
     <string name="dialog_edit_thumb_select_from_video_tv_text">Select from video</string>

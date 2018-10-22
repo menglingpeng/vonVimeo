@@ -198,6 +198,86 @@
 
             </view>
 
+            <TextView
+                android:id="@+id/collaboration_history_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/embed_title_tv_layout_marginTop"
+                android:layout_marginLeft="@dimen/embed_title_tv_layout_marginLeft"
+                android:layout_marginBottom="@dimen/embed_title_tv_layout_marginBottom"
+                android:layout_below="@+id/collaboration_versions_settings_view"
+                android:layout_alignLeft="@+id/collaboration_versions_settings_view"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textSize="@dimen/embed_title_tv_textSize"
+                android:text="@string/collaboration_history_title_tv_text"/>
+
+            <TextView
+                android:id="@+id/collaboration_history_desc_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/collaboration_history_title_tv"
+                android:layout_alignLeft="@+id/collaboration_history_title_tv"
+                android:layout_marginBottom="@dimen/embed_desc_tv_layout_marginBottom"
+                android:text="@string/collaboration_history_desc_tv_text"/>
+
+            <ImageView
+                android:id="@+id/collaboration_history_avatar_iv"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_below="@+id/collaboration_history_desc_tv"
+                android:layout_alignLeft="@+id/collaboration_history_desc_tv"
+                android:layout_marginRight="10dp"/>
+
+            <TextView
+                android:id="@+id/collaboration_history_video_uploaded_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/collaboration_history_avatar_iv"
+                android:layout_toRightOf="@+id/collaboration_history_avatar_iv"
+                android:layout_marginBottom="15dp"
+                android:gravity="center"
+                android:text="@string/collaboration_history_video_uploaded_tv_text"/>
+
+            <TextView
+                android:id="@+id/collaboration_history_video_uploaded_time_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/collaboration_history_video_uploaded_tv"
+                android:layout_alignLeft="@+id/collaboration_history_video_uploaded_tv"
+                android:layout_marginBottom="20dp"/>
+
+            <view
+                android:id="@+id/collaboration_history_view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/collaboration_history_video_uploaded_time_tv"
+                android:layout_alignLeft="@+id/collaboration_history_video_uploaded_time_tv"
+                android:background="@color/recycler_item_view_background">
+
+            </view>
+
+            <TextView
+                android:id="@+id/collaboration_extensions_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/embed_title_tv_layout_marginTop"
+                android:layout_marginLeft="@dimen/embed_title_tv_layout_marginLeft"
+                android:layout_marginBottom="@dimen/embed_title_tv_layout_marginBottom"
+                android:layout_below="@+id/collaboration_history_view"
+                android:layout_alignLeft="@+id/collaboration_history_view"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textSize="@dimen/embed_title_tv_textSize"
+                android:text="@string/collaboration_extensions_title_tv_text"/>
+
+            <TextView
+                android:id="@+id/collaboration_extensions_desc_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/collaboration_extensions_title_tv"
+                android:layout_alignLeft="@+id/collaboration_extensions_title_tv"
+                android:layout_marginBottom="@dimen/embed_desc_tv_layout_marginBottom"
+                android:text="@string/collaboration_extensions_desc_tv_text"/>
+
         </RelativeLayout>
 
     </RelativeLayout>

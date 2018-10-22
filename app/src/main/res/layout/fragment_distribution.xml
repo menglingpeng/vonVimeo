@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/distribution_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/embed_title_tv_layout_marginTop"
+        android:layout_marginLeft="@dimen/embed_title_tv_layout_marginLeft"
+        android:layout_marginBottom="@dimen/embed_title_tv_layout_marginBottom"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textSize="@dimen/embed_title_tv_textSize"
+        android:text="@string/distribution_title_tv_text"/>
+
+    <TextView
+        android:id="@+id/distribution_desc_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/distribution_title_tv"
+        android:layout_alignLeft="@+id/distribution_title_tv"
+        android:layout_marginBottom="@dimen/embed_desc_tv_layout_marginBottom"
+        android:text="@string/distribution_desc_tv_text"/>
+
+        <view
+            android:id="@+id/distribution_header_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/distribution_desc_tv"
+            android:layout_alignLeft="@+id/distribution_desc_tv"
+            android:layout_marginBottom="25dp"
+            android:background="@color/recycler_item_view_background">
+
+        </view>
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

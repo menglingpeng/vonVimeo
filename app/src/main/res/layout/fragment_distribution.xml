@@ -37,6 +37,136 @@
 
         </view>
 
+        <TextView
+            android:id="@+id/distribution_social_settings_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/embed_title_tv_layout_marginTop"
+            android:layout_marginLeft="@dimen/embed_title_tv_layout_marginLeft"
+            android:layout_marginBottom="@dimen/embed_title_tv_layout_marginBottom"
+            android:layout_below="@+id/distribution_header_view"
+            android:layout_alignLeft="@+id/distribution_header_view"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textSize="@dimen/embed_title_tv_textSize"
+            android:text="@string/distribution_social_title_tv_text"/>
+
+        <Button
+            android:id="@+id/distribution_social_settings_title_upgrade_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/distribution_social_settings_title_tv"
+            android:layout_toRightOf="@+id/distribution_social_settings_title_tv"
+            android:layout_marginLeft="@dimen/embed_title_upgrade_bt_layout_marginLeft"
+            android:visibility="gone"
+            android:text="@string/general_privacy_settings_upgrade_bt_text"/>
+
+        <TextView
+            android:id="@+id/distribution_social_settings_desc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/distribution_social_settings_title_tv"
+            android:layout_alignLeft="@+id/distribution_social_settings_title_tv"
+            android:layout_marginBottom="@dimen/embed_desc_tv_layout_marginBottom"
+            android:text="@string/distribution_social_desc_tv_text"/>
+
+        <RelativeLayout
+            android:id="@+id/distribution_social_settings_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/distribution_social_settings_desc_tv"
+            android:layout_alignLeft="@+id/distribution_social_settings_desc_tv">
+
+
+            <ImageView
+                android:id="@+id/distribution_social_settings_facebook_iv"
+                android:layout_width="@dimen/distribution_social_settings_facebook_iv_layout_width_height"
+                android:layout_height="@dimen/distribution_social_settings_facebook_iv_layout_width_height"
+                android:layout_marginRight="@dimen/distribution_social_settings_facebook_iv_layout_marginRight"
+                android:src=""/>
+
+            <TextView
+                android:id="@+id/distribution_social_settings_facebook_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/distribution_social_settings_facebook_iv"
+                android:layout_toRightOf="@+id/distribution_social_settings_facebook_iv"
+                android:text="@string/distribution_social_settings_facebook_tv_text"/>
+
+            <Button
+                android:id="@+id/distribution_social_settings_facebook_connect_bt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/distribution_social_settings_facebook_iv"
+                android:text="@string/distribution_social_settings_facebook_connect_bt_text"
+                android:background="@color/colorPrimary"/>
+
+            <ImageView
+                android:id="@+id/distribution_social_settings_youtube_iv"
+                android:layout_width="@dimen/distribution_social_settings_facebook_iv_layout_width_height"
+                android:layout_height="@dimen/distribution_social_settings_facebook_iv_layout_width_height"
+                android:layout_marginRight="@dimen/distribution_social_settings_facebook_iv_layout_marginRight"
+                android:layout_below="@+id/distribution_social_settings_facebook_iv"
+                android:layout_alignLeft="@+id/distribution_social_settings_facebook_iv"
+                android:src=""/>
+
+            <TextView
+                android:id="@+id/distribution_social_settings_youtube_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/distribution_social_settings_youtube_iv"
+                android:layout_toRightOf="@+id/distribution_social_settings_youtube_iv"
+                android:text="@string/distribution_social_settings_youtube_tv_text"/>
+
+            <Button
+                android:id="@+id/distribution_social_settings_youtube_connect_bt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/distribution_social_settings_youtube_iv"
+                android:text="@string/distribution_social_settings_facebook_connect_bt_text"
+                android:background="@color/colorPrimary"/>
+
+            <ImageView
+                android:id="@+id/distribution_social_settings_twiter_iv"
+                android:layout_width="@dimen/distribution_social_settings_facebook_iv_layout_width_height"
+                android:layout_height="@dimen/distribution_social_settings_facebook_iv_layout_width_height"
+                android:layout_marginRight="@dimen/distribution_social_settings_facebook_iv_layout_marginRight"
+                android:layout_below="@+id/distribution_social_settings_youtube_iv"
+                android:layout_alignLeft="@+id/distribution_social_settings_youtube_iv"
+                android:src=""/>
+
+            <TextView
+                android:id="@+id/distribution_social_settings_twiter_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/distribution_social_settings_twiter_iv"
+                android:layout_toRightOf="@+id/distribution_social_settings_twiter_iv"
+                android:text="@string/distribution_social_settings_youtube_tv_text"/>
+
+            <Button
+                android:id="@+id/distribution_social_settings_twiter_connect_bt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/distribution_social_settings_twiter_iv"
+                android:text="@string/distribution_social_settings_facebook_connect_bt_text"
+                android:background="@color/colorPrimary"/>
+
+            <view
+                android:id="@+id/distribution_social_settings_view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/distribution_desc_tv"
+                android:layout_alignLeft="@+id/distribution_desc_tv"
+                android:layout_marginBottom="25dp"
+                android:background="@color/recycler_item_view_background">
+
+            </view>
+
+        </RelativeLayout>
+
+
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

@@ -1,9 +1,11 @@
 package com.menglingpeng.vonvimeo.mvp.view.fragment;
 
 import android.content.Context;
+import android.provider.ContactsContract;
 import android.support.v4.app.Fragment;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.menglingpeng.vonvimeo.base.BaseFragment;
 import com.menglingpeng.vonvimeo.mvp.model.User;
@@ -19,6 +21,10 @@ public class DistributionFragment extends BaseFragment implements View.OnClickLi
     private Button facebookConnectBt;
     private Button youtubeConnectBt;
     private Button twiterConnectBt;
+    private ImageView createTagIv;
+    private ImageView createCategoriesIv;
+    private ImageView createCreditsIv;
+
 
     @Override
     protected void initLayoutId() {
@@ -35,7 +41,9 @@ public class DistributionFragment extends BaseFragment implements View.OnClickLi
         facebookConnectBt = (Button)rootView.findViewById(R.id.distribution_social_settings_facebook_connect_bt);
         youtubeConnectBt = (Button)rootView.findViewById(R.id.distribution_social_settings_youtube_connect_bt);
         twiterConnectBt = (Button)rootView.findViewById(R.id.distribution_social_settings_twiter_connect_bt);
-
+        createTagIv = (ImageView)rootView.findViewById(R.id.distribution_discovey_settings_tags_create_iv);
+        createCategoriesIv = (ImageView)rootView.findViewById(R.id.distribution_discovey_settings_categories_create_iv);
+        createCreditsIv = (ImageView)rootView.findViewById(R.id.distribution_discovey_settings_credits_create_iv);
 
     }
 
@@ -54,6 +62,12 @@ public class DistributionFragment extends BaseFragment implements View.OnClickLi
             case R.id.distribution_social_settings_youtube_connect_bt:
                 break;
             case R.id.distribution_social_settings_twiter_connect_bt:
+                break;
+            case R.id.distribution_discovey_settings_tags_create_iv:
+                break;
+            case R.id.distribution_discovey_settings_categories_create_iv:
+                break;
+            case R.id.distribution_discovey_settings_tags_credits_iv:
                 break;
             default:
                 break;

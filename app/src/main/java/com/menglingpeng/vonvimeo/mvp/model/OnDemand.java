@@ -1933,6 +1933,9 @@ public class OnDemand {
                 private BuyBean buy;
                 private WatchlaterBean watchlater;
                 private LikeBean like;
+                private Object subscribe;
+                private ReportBean report;
+
 
                 public void setRent(RentBean rent) {
                     this.rent = rent;
@@ -1949,6 +1952,23 @@ public class OnDemand {
                 public BuyBean getBuy() {
                     return buy;
                 }
+
+                public void setSubscribe(Object subscribe) {
+                    this.subscribe = subscribe;
+                }
+
+                public void setReport(ReportBean report) {
+                    this.report = report;
+                }
+
+                public Object getSubscribe() {
+                    return subscribe;
+                }
+
+                public ReportBean getReport() {
+                    return report;
+                }
+
 
                 public static class WatchlaterBean {
 
@@ -2206,6 +2226,37 @@ public class OnDemand {
 
                     public boolean getDrm() {
                         return drm;
+                    }
+                }
+
+                public static class ReportBean {
+
+                    private String uri;
+                    private List<String> options;
+                    private List<String> reason;
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public void setOptions(List<String> options) {
+                        this.options = options;
+                    }
+
+                    public void setReason(List<String> reason) {
+                        this.reason = reason;
+                    }
+
+                    public String getUri() {
+                        return uri;
+                    }
+
+                    public List<String> getOptions() {
+                        return options;
+                    }
+
+                    public List<String> getReason() {
+                        return reason;
                     }
                 }
             }

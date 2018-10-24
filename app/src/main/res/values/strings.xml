@@ -378,6 +378,10 @@
     <string name="distribution_discovey_settings_tags_title_tv_text">Tags</string>
     <string name="distribution_discovey_settings_categories_title_tv_text">Categories</string>
     <string name="distribution_discovey_settings_credits_title_tv_text">Credits</string>
+    <string name="distribution_discovey_settings_content_rating_title_tv_text">Content rating</string>
+    <string name="distribution_discovey_settings_content_rating_all_audiences_rb">All audiences</string>
+    <string name="distribution_discovey_settings_content_rating_mature_rb">Mature</string>
+    <string name="distribution_discovey_settings_recorded_switch_tv_text">Recorded in 360</string>
 
     <string name="dialog_edit_thumb_title_tv_text">Edit thumbnail</string>
     <string name="dialog_edit_thumb_select_from_video_tv_text">Select from video</string>

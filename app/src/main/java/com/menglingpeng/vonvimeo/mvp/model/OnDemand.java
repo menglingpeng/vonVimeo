@@ -21,6 +21,25 @@ public class OnDemand {
     private List<MetadataBean> metadatas;
     private Object rent;
     private FilmBean film;
+    private Category category;
+    private User user;
+    private TrailerBean trailer;
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public void setUri(String uri) {
         this.uri = uri;
@@ -156,6 +175,14 @@ public class OnDemand {
 
     public FilmBean getFilm() {
         return film;
+    }
+
+    public void setTrailer(TrailerBean trailer) {
+        this.trailer = trailer;
+    }
+
+    public TrailerBean getTrailer() {
+        return trailer;
     }
 
 
@@ -2259,6 +2286,86 @@ public class OnDemand {
                         return reason;
                     }
                 }
+            }
+        }
+    }
+
+
+    public static class TrailerBean {
+        private String name;
+        private String description;
+        private String link;
+        private int width;
+        private String language;
+        private int height;
+        private EmbedBean embed;
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public void setDescription(String description) {
+            this.description = description;
+        }
+
+        public void setLink(String link) {
+            this.link = link;
+        }
+
+        public void setWidth(int width) {
+            this.width = width;
+        }
+
+        public void setLanguage(String language) {
+            this.language = language;
+        }
+
+        public void setHeight(int height) {
+            this.height = height;
+        }
+
+        public void setEmbed(EmbedBean embed) {
+            this.embed = embed;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public String getLink() {
+            return link;
+        }
+
+        public int getWidth() {
+            return width;
+        }
+
+        public String getLanguage() {
+            return language;
+        }
+
+        public int getHeight() {
+            return height;
+        }
+
+        public EmbedBean getEmbed() {
+            return embed;
+        }
+
+        public static class EmbedBean {
+
+            private String html;
+
+            public void setHtml(String html) {
+                this.html = html;
+            }
+
+            public String getHtml() {
+                return html;
             }
         }
     }

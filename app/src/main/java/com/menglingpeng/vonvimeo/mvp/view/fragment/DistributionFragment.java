@@ -7,10 +7,12 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.Switch;
 
 import com.menglingpeng.vonvimeo.base.BaseFragment;
@@ -36,6 +38,11 @@ public class DistributionFragment extends BaseFragment implements View.OnClickLi
     private RadioButton allAudiencesRb;
     private RadioButton matureRb;
     private Switch recordedSwitch;
+    private Spinner licenseSpinner;
+    private EditText customUrlEt;
+    private ImageView createSubtitlesIv;
+    private ListView subtitlesLv;
+
 
 
     @Override
@@ -60,6 +67,11 @@ public class DistributionFragment extends BaseFragment implements View.OnClickLi
         allAudiencesRb = (RadioButton)rootView.findViewById(R.id.distribution_discovey_settings_content_rating_all_audiences_rb);
         matureRb = (RadioButton)rootView.findViewById(R.id.distribution_discovey_settings_content_rating_mature_rb);
         recordedSwitch = (Switch)rootView.findViewById(R.id.distribution_discovey_settings_recorded_switch);
+        licenseSpinner = (Spinner)rootView.findViewById(R.id.distribution_discovery_settings_license_spinner);
+        customUrlEt = (EditText)rootView.findViewById(R.id.distribution_discovery_settings_custom_url_et);
+        createSubtitlesIv = (ImageView)rootView.findViewById(R.
+                id.distribution_discovery_settings_subtitles_captions_create_iv);
+        subtitlesLv = (ListView)rootView.findViewById(R.id.distribution_subtitles_settings_subtitles_captions_check_lv);
 
 
     }
@@ -100,6 +112,9 @@ public class DistributionFragment extends BaseFragment implements View.OnClickLi
                 break;
             case R.id.distribution_discovey_settings_tags_credits_iv:
                 break;
+            case R.id.id.distribution_discovery_settings_subtitles_captions_create_iv:
+                showCreateSubtitlesDialog();
+                break;
             default:
                 break;
         }
@@ -114,6 +129,33 @@ public class DistributionFragment extends BaseFragment implements View.OnClickLi
         builder.setTitle(R.string.create_a_bucket);
         builder.setView(dialogView);
         listView = (ListView) dialogView.findViewById(R.id.categorites_lv);
+        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.setPositiveButton(R.string.create, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        dialog = builder.create();
+        dialog.show();
+    }
+
+    private void showCreateSubtitlesDialog(){
+
+        Spinner languageSpinner;
+        Spinner typeSpinner;
+        AlertDialog dialog;
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_create_subtitle_caption, null);
+        builder.setTitle(R.string.create_a_bucket);
+        builder.setView(dialogView);
+        languageSpinner = (Spinner) dialogView.findViewById(R.id.language_spinner);
+        typeSpinner = (Spinner) dialogView.findViewById(R.id.type_spinner);
         builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

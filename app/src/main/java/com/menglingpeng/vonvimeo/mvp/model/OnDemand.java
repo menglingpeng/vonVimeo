@@ -2359,6 +2359,8 @@ public class OnDemand {
         public static class EmbedBean {
 
             private String html;
+            private BadgesBean badges;
+
 
             public void setHtml(String html) {
                 this.html = html;
@@ -2366,6 +2368,58 @@ public class OnDemand {
 
             public String getHtml() {
                 return html;
+            }
+
+            public void setBadges(BadgesBean badges) {
+                this.badges = badges;
+            }
+
+            public BadgesBean getBadges() {
+                return badges;
+            }
+
+            public static class BadgesBean {
+
+                private boolean hdr;
+                private LiveBean live;
+
+                public void setHdr(boolean hdr) {
+                    this.hdr = hdr;
+                }
+
+                public void setLive(LiveBean live) {
+                    this.live = live;
+                }
+
+                public boolean getHdr() {
+                    return hdr;
+                }
+
+                public LiveBean getLive() {
+                    return live;
+                }
+
+                public static class LiveBean {
+
+                    private boolean streaming;
+                    private boolean archived;
+
+                    public void setStreaming(boolean streaming) {
+                        this.streaming = streaming;
+                    }
+
+                    public void setArchived(boolean archived) {
+                        this.archived = archived;
+                    }
+
+                    public boolean getStreaming() {
+                        return streaming;
+                    }
+
+                    public boolean getArchived() {
+                        return archived;
+                    }
+                }
             }
         }
     }

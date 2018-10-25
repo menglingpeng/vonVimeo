@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/language_spinner_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/language_settings"/>
+
+    <Spinner
+        android:id="@+id/language_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/language_spinner_title_tv"
+        android:layout_alignLeft="@+id/language_spinner_title_tv"
+        android:layout_marginBottom="15dp">
+
+    </Spinner>
+
+    <TextView
+        android:id="@+id/type_spinner_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/language_spinner"
+        android:layout_alignLeft="@+id/language_spinner"
+        android:text="@string/type"/>
+
+    <Spinner
+        android:id="@+id/type_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/type_spinner_title_tv"
+        android:layout_alignLeft="@+id/type_spinner_title_tv"
+        android:layout_marginBottom="10dp">
+
+    </Spinner>
+</RelativeLayout>

@@ -127,6 +127,7 @@
     <string name="description">说明</string>
     <string name="privacy_settings">Privacy Settings</string>
     <string name="language_settings">Language</string>
+    <string name="type">Type</string>
     <string name="url">网址</string>
     <string name="channel_detail_start_bt_text">开始观看</string>
     <string name="channel_detail_share">分享</string>
@@ -382,6 +383,11 @@
     <string name="distribution_discovey_settings_content_rating_all_audiences_rb">All audiences</string>
     <string name="distribution_discovey_settings_content_rating_mature_rb">Mature</string>
     <string name="distribution_discovey_settings_recorded_switch_tv_text">Recorded in 360</string>
+    <string name="distribution_subtitles_settings_title_tv_text">Subtitles</string>
+    <string name="distribution_subtitles_settings_desc_tv_text">Upload files in VTT, SRT, and more,
+        or create captions with 3play, Rev, or Amara. Learn more</string>
+    <string name="distribution_subtitles_settings_subtitles_captions_title_tv_text">Subtitles and captions</string>
+    <string name="distribution_subtitles_settings_subtitles_captions_no_check_tv_text">No captions or subtitles added</string>
 
     <string name="dialog_edit_thumb_title_tv_text">Edit thumbnail</string>
     <string name="dialog_edit_thumb_select_from_video_tv_text">Select from video</string>

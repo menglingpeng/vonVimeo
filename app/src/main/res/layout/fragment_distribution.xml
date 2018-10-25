@@ -167,7 +167,7 @@
         </RelativeLayout>
 
         <TextView
-            android:id="@+id/distribution_discovey_settings_tv"
+            android:id="@+id/distribution_discovery_settings_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/distribution_social_settings_rl"
@@ -179,49 +179,49 @@
             android:textSize="20dp"/>
 
         <TextView
-            android:id="@+id/distribution_discovey_settings_desc_tv"
+            android:id="@+id/distribution_discovery_settings_desc_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/distribution_discovey_settings_tv"
-            android:layout_alignLeft="@+id/distribution_discovey_settings_tv"
+            android:layout_below="@+id/distribution_discovery_settings_tv"
+            android:layout_alignLeft="@+id/distribution_discovery_settings_tv"
             android:layout_marginBottom="25dp"
             android:text="@string/distribution_discovery_desc_tv_text"/>
 
         <TextView
-            android:id="@+id/distribution_discovey_settings_tags_title_tv"
+            android:id="@+id/distribution_discovery_settings_tags_title_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/distribution_discovey_settings_desc_tv"
-            android:layout_alignLeft="@+id/distribution_discovey_settings_desc_tv"
+            android:layout_below="@+id/distribution_discovery_settings_desc_tv"
+            android:layout_alignLeft="@+id/distribution_discovery_settings_desc_tv"
             android:text="@string/distribution_discovey_settings_tags_title_tv_text"
             android:layout_marginBottom="20dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
 
         <ImageView
-            android:id="@+id/distribution_discovey_settings_tags_create_iv"
+            android:id="@+id/distribution_discovery_settings_tags_create_iv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_alignTop="@+id/distribution_discovey_settings_tags_title_tv"
+            android:layout_alignTop="@+id/distribution_discovery_settings_tags_title_tv"
             android:layout_marginEnd="15dp"
             android:src="@drawable/ic_add_grey_600_18dp"/>
 
         <RelativeLayout
-            android:id="@+id/distribution_discovey_settings_tags_check_rl"
+            android:id="@+id/distribution_discovery_settings_tags_check_rl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/distribution_discovey_settings_tags_title_tv"
-            android:layout_alignLeft="@+id/distribution_discovey_settings_tags_title_tv"
+            android:layout_below="@+id/distribution_discovery_settings_tags_title_tv"
+            android:layout_alignLeft="@+id/distribution_discovery_settings_tags_title_tv"
             android:layout_marginBottom="20dp">
 
             <TextView
-                android:id="@+id/distribution_discovey_settings_tags_no_check_tv"
+                android:id="@+id/distribution_discovery_settings_tags_no_check_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/general_collections_albums_settings_no_check_tv_text"/>
 
             <ListView
-                android:id="@+id/distribution_discovey_settings_tags_check_lv"
+                android:id="@+id/distribution_discovery_settings_tags_check_lv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:visibility="gone"/>
@@ -229,40 +229,40 @@
         </RelativeLayout>
 
         <TextView
-            android:id="@+id/distribution_discovey_settings_categories_title_tv"
+            android:id="@+id/distribution_discovery_settings_categories_title_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/distribution_discovey_settings_tags_check_rl"
-            android:layout_alignLeft="@+id/distribution_discovey_settings_tags_check_rl"
+            android:layout_below="@+id/distribution_discovery_settings_tags_check_rl"
+            android:layout_alignLeft="@+id/distribution_discovery_settings_tags_check_rl"
             android:text="@string/distribution_discovey_settings_categories_title_tv_text"
             android:layout_marginBottom="10dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
 
         <ImageView
-            android:id="@+id/distribution_discovey_settings_categories_create_iv"
+            android:id="@+id/distribution_discovery_settings_categories_create_iv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_alignTop="@+id/distribution_discovey_settings_categories_title_tv"
+            android:layout_alignTop="@+id/distribution_discovery_settings_categories_title_tv"
             android:layout_marginEnd="15dp"
             android:src="@drawable/ic_add_grey_600_18dp"/>
 
         <RelativeLayout
-            android:id="@+id/distribution_discovey_settings_categories_check_rl"
+            android:id="@+id/distribution_discovery_settings_categories_check_rl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/distribution_discovey_settings_categories_title_tv"
-            android:layout_alignLeft="@+id/distribution_discovey_settings_categories_title_tv"
+            android:layout_below="@+id/distribution_discovery_settings_categories_title_tv"
+            android:layout_alignLeft="@+id/distribution_discovery_settings_categories_title_tv"
             android:layout_marginBottom="20dp">
 
             <TextView
-                android:id="@+id/distribution_discovey_settings_categories_no_check_tv"
+                android:id="@+id/distribution_discovery_settings_categories_no_check_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/distribution_discovey_settings_categories_no_check_tv_text"/>
 
             <ListView
-                android:id="@+id/distribution_discovey_settings_categories_check_lv"
+                android:id="@+id/distribution_discovery_settings_categories_check_lv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:visibility="gone"/>
@@ -270,31 +270,31 @@
         </RelativeLayout>
 
         <TextView
-            android:id="@+id/distribution_discovey_settings_credits_title_tv"
+            android:id="@+id/distribution_discovery_settings_credits_title_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/distribution_discovey_settings_categories_check_rl"
-            android:layout_alignLeft="@+id/distribution_discovey_settings_categories_check_rl"
+            android:layout_below="@+id/distribution_discovery_settings_categories_check_rl"
+            android:layout_alignLeft="@+id/distribution_discovery_settings_categories_check_rl"
             android:text="@string/distribution_discovey_settings_content_rating_title_tv_text"
             android:layout_marginBottom="10dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
 
         <RelativeLayout
-            android:id="@+id/distribution_discovey_settings_credits_check_rl"
+            android:id="@+id/distribution_discovery_settings_credits_check_rl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/distribution_discovey_settings_credits_title_tv"
-            android:layout_alignLeft="@+id/distribution_discovey_settings_credits_title_tv"
+            android:layout_below="@+id/distribution_discovery_settings_credits_title_tv"
+            android:layout_alignLeft="@+id/distribution_discovery_settings_credits_title_tv"
             android:layout_marginBottom="20dp">
 
             <TextView
-                android:id="@+id/distribution_discovey_settings_credits_no_check_tv"
+                android:id="@+id/distribution_discovery_settings_credits_no_check_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/general_collections_groups_settings_no_check_tv_text"/>
 
             <ListView
-                android:id="@+id/distribution_discovey_settings_credits_check_lv"
+                android:id="@+id/distribution_discovery_settings_credits_check_lv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:visibility="gone"/>
@@ -302,31 +302,32 @@
         </RelativeLayout>
 
         <TextView
-            android:id="@+id/distribution_discovey_settings_content_rating_title_tv"
+            android:id="@+id/distribution_discovery_settings_content_rating_title_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/distribution_discovey_settings_credits_check_rl"
-            android:layout_alignLeft="@+id/distribution_discovey_settings_credits_check_rl"
+            android:layout_below="@+id/distribution_discovery_settings_credits_check_rl"
+            android:layout_alignLeft="@+id/distribution_discovery_settings_credits_check_rl"
             android:text="@string/distribution_discovey_settings_content_rating_title_tv_text"
             android:layout_marginBottom="10dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
 
 
         <RadioGroup
-            android:id="@+id/distribution_discovey_settings_content_rating_rg"
+            android:id="@+id/distribution_discovery_settings_content_rating_rg"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/distribution_discovey_settings_content_rating_title_tv"
-            android:layout_alignLeft="@+id/distribution_discovey_settings_content_rating_title_tv">
+            android:layout_below="@+id/distribution_discovery_settings_content_rating_title_tv"
+            android:layout_alignLeft="@+id/distribution_discovery_settings_content_rating_title_tv"
+            android:layout_marginBottom="20dp">
 
             <RadioButton
-                android:id="@+id/distribution_discovey_settings_content_rating_all_audiences_rb"
+                android:id="@+id/distribution_discovery_settings_content_rating_all_audiences_rb"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="@string/distribution_discovey_settings_content_rating_all_audiences_rb"/>
 
             <RadioButton
-                android:id="@+id/distribution_discovey_settings_content_rating_mature_rb"
+                android:id="@+id/distribution_discovery_settings_content_rating_mature_rb"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="@string/distribution_discovey_settings_content_rating_mature_rb"/>
@@ -334,21 +335,136 @@
         </RadioGroup>
 
         <Switch
-            android:id="@+id/distribution_discovey_settings_recorded_switch"
+            android:id="@+id/distribution_discovery_settings_recorded_switch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/distribution_discovey_settings_content_rating_rg"
-            android:layout_alignLeft="@+id/distribution_discovey_settings_content_rating_rg"
+            android:layout_below="@+id/distribution_discovery_settings_content_rating_rg"
+            android:layout_alignLeft="@+id/distribution_discovery_settings_content_rating_rg"
             android:layout_marginBottom="@dimen/embed_controls_playbar_settings_switch_layout_marginBottom"
             android:layout_marginRight="@dimen/embed_controls_playbar_settings_switch_layout_marginRight"/>
 
         <TextView
-            android:id="@+id/distribution_discovey_settings_recorded_switch_tv"
+            android:id="@+id/distribution_discovery_settings_recorded_switch_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/distribution_discovey_settings_recorded_switch"
-            android:layout_alignTop="@+id/distribution_discovey_settings_recorded_switch"
+            android:layout_toRightOf="@+id/distribution_discovery_settings_recorded_switch"
+            android:layout_alignTop="@+id/distribution_discovery_settings_recorded_switch"
             android:text="@string/distribution_discovey_settings_recorded_switch_tv_text"/>
+
+        <TextView
+            android:id="@+id/distribution_discovery_settings_license_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/distribution_discovery_settings_recorded_switch"
+            android:layout_alignLeft="@+id/distribution_discovery_settings_recorded_switch"/>
+
+        <Spinner
+            android:id="@+id/distribution_discovery_settings_license_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/distribution_discovery_settings_license_tv"
+            android:layout_alignLeft="@+id/distribution_discovery_settings_license_tv">
+
+        </Spinner>
+
+        <TextView
+            android:id="@+id/distribution_discovery_settings_custom_url_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/distribution_discovery_settings_license_spinner"
+            android:layout_alignLeft="@+id/distribution_discovery_settings_license_spinner"/>
+
+        <EditText
+            android:id="@+id/distribution_discovery_settings_custom_url_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/distribution_discovery_settings_custom_url_tv"
+            android:layout_alignLeft="@+id/distribution_discovery_settings_custom_url_tv"
+            android:layout_marginBottom="20dp"/>
+
+        <view
+            android:id="@+id/distribution_discovery_settings_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/distribution_discovery_settings_custom_url_et"
+            android:layout_alignLeft="@+id/distribution_discovery_settings_custom_url_et"
+            android:layout_marginBottom="25dp"
+            android:background="@color/recycler_item_view_background">
+
+        </view>
+
+        <TextView
+            android:id="@+id/distribution_subtitles_settings_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/distribution_social_settings_rl"
+            android:layout_alignLeft="@+id/distribution_social_settings_rl"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="10dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:text="@string/distribution_subtitles_settings_title_tv_text"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/distribution_subtitles_settings_desc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/distribution_subtitles_settings_tv"
+            android:layout_alignLeft="@+id/distribution_subtitles_settings_tv"
+            android:layout_marginBottom="25dp"
+            android:text="@string/distribution_subtitles_settings_desc_tv_text"/>
+
+        <TextView
+            android:id="@+id/distribution_subtitles_settings_subtitles_captions_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/distribution_subtitles_settings_desc_tv"
+            android:layout_alignLeft="@+id/distribution_subtitles_settings_desc_tv"
+            android:text="@string/distribution_subtitles_settings_subtitles_captions_title_tv_text"
+            android:layout_marginBottom="10dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+
+        <ImageView
+            android:id="@+id/distribution_discovery_settings_subtitles_captions_create_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/distribution_subtitles_settings_subtitles_captions_title_tv"
+            android:layout_marginEnd="15dp"
+            android:src="@drawable/ic_add_grey_600_18dp"/>
+
+        <RelativeLayout
+            android:id="@+id/distribution_subtitles_settings_subtitles_captions_check_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/distribution_subtitles_settings_subtitles_captions_title_tv"
+            android:layout_alignLeft="@+id/distribution_subtitles_settings_subtitles_captions_title_tv"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:id="@+id/distribution_subtitles_settings_subtitles_captions_no_check_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/distribution_subtitles_settings_subtitles_captions_no_check_tv_text"/>
+
+            <ListView
+                android:id="@+id/distribution_subtitles_settings_subtitles_captions_check_lv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
+        <view
+            android:id="@+id/distribution_subtitles_settings_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/distribution_subtitles_settings_subtitles_captions_check_rl"
+            android:layout_alignLeft="@+id/distribution_subtitles_settings_subtitles_captions_check_rl"
+            android:layout_marginBottom="25dp"
+            android:background="@color/recycler_item_view_background">
+
+        </view>
 
     </RelativeLayout>
 

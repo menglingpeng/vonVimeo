@@ -388,6 +388,9 @@
         or create captions with 3play, Rev, or Amara. Learn more</string>
     <string name="distribution_subtitles_settings_subtitles_captions_title_tv_text">Subtitles and captions</string>
     <string name="distribution_subtitles_settings_subtitles_captions_no_check_tv_text">No captions or subtitles added</string>
+    <string name="distribution_file_links_title_tv_text">Video file links</string>
+    <string name="distribution_file_links_desc_tv_text">Anyone with access to these links will be able to view and
+        download your video.</string>
 
     <string name="dialog_edit_thumb_title_tv_text">Edit thumbnail</string>
     <string name="dialog_edit_thumb_select_from_video_tv_text">Select from video</string>

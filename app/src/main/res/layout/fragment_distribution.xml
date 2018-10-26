@@ -466,6 +466,46 @@
 
         </view>
 
+        <TextView
+            android:id="@+id/distribution_file_links_settings_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/embed_title_tv_layout_marginTop"
+            android:layout_marginLeft="@dimen/embed_title_tv_layout_marginLeft"
+            android:layout_marginBottom="@dimen/embed_title_tv_layout_marginBottom"
+            android:layout_below="@+id/distribution_subtitles_settings_view"
+            android:layout_alignLeft="@+id/distribution_subtitles_settings_view"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textSize="@dimen/embed_title_tv_textSize"
+            android:text="@string/distribution_social_title_tv_text"/>
+
+        <Button
+            android:id="@+id/distribution_file_links_settings_title_upgrade_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/distribution_file_links_settings_title_tv"
+            android:layout_toRightOf="@+id/distribution_file_links_settings_title_tv"
+            android:layout_marginLeft="@dimen/embed_title_upgrade_bt_layout_marginLeft"
+            android:visibility="gone"
+            android:text="@string/general_privacy_settings_upgrade_bt_text"/>
+
+        <TextView
+            android:id="@+id/distribution_file_links_settings_desc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/distribution_file_links_settings_title_tv"
+            android:layout_alignLeft="@+id/distribution_file_links_settings_title_tv"
+            android:layout_marginBottom="@dimen/embed_desc_tv_layout_marginBottom"
+            android:text="@string/distribution_social_desc_tv_text"/>
+
+        <Spinner
+            android:id="@+id/distribution_file_links_settings_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/distribution_file_links_settings_desc_tv"
+            android:layout_alignLeft="@+id/distribution_file_links_settings_desc_tv"
+            android:layout_marginBottom="@dimen/distribution_file_links_settings_spinner_layout_marginBottom"></Spinner>
+
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

@@ -6,9 +6,12 @@ import android.provider.ContactsContract;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -42,6 +45,8 @@ public class DistributionFragment extends BaseFragment implements View.OnClickLi
     private EditText customUrlEt;
     private ImageView createSubtitlesIv;
     private ListView subtitlesLv;
+    private Button fileLinksUpgradeBt;
+    private Spinner fileLinksSpinner;
 
 
 
@@ -68,12 +73,11 @@ public class DistributionFragment extends BaseFragment implements View.OnClickLi
         matureRb = (RadioButton)rootView.findViewById(R.id.distribution_discovey_settings_content_rating_mature_rb);
         recordedSwitch = (Switch)rootView.findViewById(R.id.distribution_discovey_settings_recorded_switch);
         licenseSpinner = (Spinner)rootView.findViewById(R.id.distribution_discovery_settings_license_spinner);
-        customUrlEt = (EditText)rootView.findViewById(R.id.distribution_discovery_settings_custom_url_et);
         createSubtitlesIv = (ImageView)rootView.findViewById(R.
                 id.distribution_discovery_settings_subtitles_captions_create_iv);
         subtitlesLv = (ListView)rootView.findViewById(R.id.distribution_subtitles_settings_subtitles_captions_check_lv);
-
-
+        fileLinksUpgradeBt = (Button)rootView.findViewById(R.id.distribution_file_links_settings_title_upgrade_bt);
+        initSpinner();
     }
 
     @Override
@@ -114,6 +118,8 @@ public class DistributionFragment extends BaseFragment implements View.OnClickLi
                 break;
             case R.id.id.distribution_discovery_settings_subtitles_captions_create_iv:
                 showCreateSubtitlesDialog();
+                break;
+            case R.id.distribution_file_links_settings_title_upgrade_bt:
                 break;
             default:
                 break;
@@ -170,5 +176,87 @@ public class DistributionFragment extends BaseFragment implements View.OnClickLi
         });
         dialog = builder.create();
         dialog.show();
+    }
+
+    private void initSpinner() {
+        licenseSpinner = (Spinner) rootView.findViewById(R.id.distribution_discovery_settings_license_spinner);
+        fileLinksSpinner = (Spinner) rootView.findViewById(R.id.distribution_file_links_settings_spinner);
+        ArrayAdapter<String> licenseAdapter;
+        ArrayAdapter<String> fileLinksAdapter;
+        String[] sortArray = getResources().getStringArray(R.array.sort);
+        String[] listArray = getResources().getStringArray(R.array.list);
+        licenseAdapter = new ArrayAdapter<String>(context, R.layout.custom_spinner_text, sortArray);
+        fileLinksAdapter = new ArrayAdapter<String>(context, R.layout.custom_spinner_text, listArray);
+        fileLinksAdapter.setDropDownViewResource(R.layout.custom_spinner_dropdown_item);
+        licenseAdapter.setDropDownViewResource(R.layout.custom_spinner_dropdown_item);
+        licenseSpinner.setAdapter(licenseAdapter);
+        fileLinksSpinner.setAdapter(fileLinksAdapter);
+        fileLinksSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                switch (position) {
+                    case 0:
+
+                        break;
+                    case 1:
+
+                        break;
+                    case 2:
+
+                        break;
+                    case 3:
+
+                        break;
+                    case 4:
+
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+        licenseSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                switch (position) {
+                    case 0:
+
+                        break;
+                    case 1:
+
+                        break;
+                    case 2:
+
+                        break;
+                    case 3:
+
+                        break;
+                    case 4:
+
+                        break;
+                    case 5:
+
+                        break;
+                    case 6:
+
+                        break;
+                    case 7:
+
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
     }
 }

@@ -198,4 +198,6 @@
 
     <dimen name="distribution_social_settings_facebook_iv_layout_width_height">20dp</dimen>
     <dimen name="distribution_social_settings_facebook_iv_layout_marginRight">20dp</dimen>
+
+    <dimen name="distribution_file_links_settings_spinner_layout_marginBottom">20dp</dimen>
 </resources>

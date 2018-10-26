@@ -2299,6 +2299,12 @@ public class OnDemand {
         private String language;
         private int height;
         private EmbedBean embed;
+        private String created_time;
+        private String modified_time;
+        private String release_time;
+        private Object license;
+        private List<String> content_rating;
+
 
         public void setName(String name) {
             this.name = name;
@@ -2356,10 +2362,53 @@ public class OnDemand {
             return embed;
         }
 
+        public void setCreated_time(String created_time) {
+            this.created_time = created_time;
+        }
+
+        public void setModified_time(String modified_time) {
+            this.modified_time = modified_time;
+        }
+
+        public void setRelease_time(String release_time) {
+            this.release_time = release_time;
+        }
+
+        public void setLicense(Object license) {
+            this.license = license;
+        }
+
+        public void setContent_rating(List<String> content_rating) {
+            this.content_rating = content_rating;
+        }
+
+        public String getCreated_time() {
+            return created_time;
+        }
+
+        public String getModified_time() {
+            return modified_time;
+        }
+
+        public String getRelease_time() {
+            return release_time;
+        }
+
+        public Object getLicense() {
+            return license;
+        }
+
+        public List<String> getContent_rating() {
+            return content_rating;
+        }
+
         public static class EmbedBean {
 
             private String html;
             private BadgesBean badges;
+            private StaffPickBean staff_pick;
+            private boolean vod;
+            private boolean weekend_challenge;
 
 
             public void setHtml(String html) {
@@ -2376,6 +2425,30 @@ public class OnDemand {
 
             public BadgesBean getBadges() {
                 return badges;
+            }
+
+            public void setStaff_pick(StaffPickBean staff_pick) {
+                this.staff_pick = staff_pick;
+            }
+
+            public void setVod(boolean vod) {
+                this.vod = vod;
+            }
+
+            public void setWeekend_challenge(boolean weekend_challenge) {
+                this.weekend_challenge = weekend_challenge;
+            }
+
+            public StaffPickBean getStaff_pick() {
+                return staff_pick;
+            }
+
+            public boolean getVod() {
+                return vod;
+            }
+
+            public boolean getWeekend_challenge() {
+                return weekend_challenge;
             }
 
             public static class BadgesBean {
@@ -2419,6 +2492,46 @@ public class OnDemand {
                     public boolean getArchived() {
                         return archived;
                     }
+                }
+            }
+
+            public static class StaffPickBean {
+
+                private boolean normal;
+                private boolean best_of_the_month;
+                private boolean best_of_the_year;
+                private boolean premiere;
+
+                public void setNormal(boolean normal) {
+                    this.normal = normal;
+                }
+
+                public void setBest_of_the_month(boolean best_of_the_month) {
+                    this.best_of_the_month = best_of_the_month;
+                }
+
+                public void setBest_of_the_year(boolean best_of_the_year) {
+                    this.best_of_the_year = best_of_the_year;
+                }
+
+                public void setPremiere(boolean premiere) {
+                    this.premiere = premiere;
+                }
+
+                public boolean getNormal() {
+                    return normal;
+                }
+
+                public boolean getBest_of_the_month() {
+                    return best_of_the_month;
+                }
+
+                public boolean getBest_of_the_year() {
+                    return best_of_the_year;
+                }
+
+                public boolean getPremiere() {
+                    return premiere;
                 }
             }
         }

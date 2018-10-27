@@ -13,11 +13,13 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.base.BaseFragment;
@@ -39,7 +41,7 @@ import java.util.HashMap;
 
 import io.reactivex.CompletableOnSubscribe;
 
-public class GeneralFragment extends BaseFragment implements RecyclerView, View.OnClickListener{
+public class GeneralFragment extends BaseFragment implements RecyclerView, View.OnClickListener, Switch.OnCheckedChangeListener{
 
     private EditText titleEt;
     private EditText descEt;
@@ -59,6 +61,9 @@ public class GeneralFragment extends BaseFragment implements RecyclerView, View.
     private Button watchUpgradeBt;
     private Button embedUpgradeBt;
     private Button commentUpgradeBt;
+    private Switch downloadSwich;
+    private Switch collectionsSwitch;
+    private Button downloadUpgradeBt;
     private Video video;
     private User user;
     private String privacy;
@@ -118,6 +123,9 @@ public class GeneralFragment extends BaseFragment implements RecyclerView, View.
         commentUpgradeBt = (Button)rootView.findViewById(R.id.general_privacy_commentsettings_upgrade_bt);
         embedUpgradeBt = (Button)rootView.findViewById(R.id.general_privacy_embed_settings_upgrade_bt);
         watchUpgradeBt = (Button)rootView.findViewById(R.id.general_privacy_watch_settings_upgrade_bt);
+        downloadSwich = (Switch)rootView.findViewById(R.id.general_privacy_settings_download_switch);
+        deleteVideoBt = (Button) rootView.findViewById(R.id.general_privacy_settings_download_switch_upgrade_bt);
+        collectionsSwitch = (Switch)rootView.findViewById(R.id.general_privacyt_settings_collections_switch);
         createAlbumIv = (ImageView)rootView.findViewById(R.id.general_collections_albums_settings_create_iv);
         createChannelIv = (ImageView)rootView.findViewById(R.id.general_collections_channels_settings_create_iv);
         createGroupIv = (ImageView)rootView.findViewById(R.id.general_collections_groups_settings_create_iv);
@@ -525,4 +533,15 @@ public class GeneralFragment extends BaseFragment implements RecyclerView, View.
         }
     }
 
+    @Override
+    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+        switch (compoundButton.getId()){
+            case R.id.general_privacy_settings_download_switch:
+                break;
+            case R.id.general_privacyt_settings_collections_switch:
+                break;
+                default:
+                    break;
+        }
+    }
 }

@@ -310,6 +310,8 @@
     <string name="general_privacy_comment_settings_anyone_rb_text">Anyone</string>
     <string name="general_privacy_comment_settings_no_one_rb_text">Only me</string>
     <string name="general_privacy_comment_settings_only_i_follow_rb_text">People I follow</string>
+    <string name="general_privacy_settings_download_switch_tv_text">People can download this video </string>
+    <string name="general_privacy_settings_collections_switch_tv_text">People can add to collections</string>
     <string name="general_collections_tv_text">Collections</string>
     <string name="general_collections_desc_tv_text">Use the boxes below to add and remove this video from collections.</string>
     <string name="general_collections_albums_settings_title_tv_text">Albums</string>

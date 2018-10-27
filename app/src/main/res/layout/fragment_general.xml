@@ -273,12 +273,55 @@
 
         </RadioGroup>
 
+        <Switch
+            android:id="@+id/general_privacy_settings_download_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/general_privacy_comment_settings_rg"
+            android:layout_alignLeft="@+id/general_privacy_comment_settings_rg"
+            android:layout_marginBottom="@dimen/embed_controls_playbar_settings_switch_layout_marginBottom"
+            android:layout_marginRight="@dimen/embed_controls_playbar_settings_switch_layout_marginRight"/>
+
+        <TextView
+            android:id="@+id/general_privacy_settings_download_switch_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/general_privacy_settings_download_switch"
+            android:layout_alignTop="@+id/general_privacy_settings_download_switch"
+            android:text="@string/general_privacy_settings_download_switch_tv_text"/>
+
+        <Button
+            android:id="@+id/general_privacy_settings_download_switch_upgrade_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/general_privacy_settings_download_switch_tv"
+            android:layout_toRightOf="@+id/general_privacy_settings_download_switch_tv"
+            android:layout_marginLeft="10dp"
+            android:text="general_privacy_settings_upgrade_bt_text"/>
+
+        <Switch
+            android:id="@+id/general_privacyt_settings_collections_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/general_privacy_settings_download_switch"
+            android:layout_alignLeft="@+id/general_privacy_settings_download_switch"
+            android:layout_marginBottom="@dimen/embed_controls_playbar_settings_switch_layout_marginBottom"
+            android:layout_marginRight="@dimen/embed_controls_playbar_settings_switch_layout_marginRight"/>
+
+        <TextView
+            android:id="@+id/general_privacy_settings_collections_switch_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/general_privacyt_settings_collections_switch"
+            android:layout_alignTop="@+id/general_privacyt_settings_collections_switch"
+            android:text="@string/general_privacy_settings_collections_switch_tv_text"/>
+
         <view
             android:id="@+id/general_privacy_view"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_below="@+id/general_privacy_comment_settings_rg"
-            android:layout_alignLeft="@+id/general_privacy_comment_settings_rg"
+            android:layout_below="@+id/general_privacyt_settings_collections_switch"
+            android:layout_alignLeft="@+id/general_privacyt_settings_collections_switch"
             android:background="@color/recycler_item_view_background"/>
 
         <TextView

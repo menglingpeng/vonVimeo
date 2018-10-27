@@ -394,6 +394,13 @@
     <string name="distribution_file_links_desc_tv_text">Anyone with access to these links will be able to view and
         download your video.</string>
 
+    <string name="interaction_tools_title_tv_text">Interaction tools</string>
+    <string name="interaction_tools_desc_tv_text">Capture emails, add clickable cards, and customize what
+        appears when this video ends.</string>
+    <string name="interaction_tools_settings_before_video_tv_text">Before video</string>
+    <string name="interaction_tools_settings_during_video_tv_text">During video</string>
+    <string name="interaction_tools_settings_after_video_tv_text">After video</string>
+
     <string name="dialog_edit_thumb_title_tv_text">Edit thumbnail</string>
     <string name="dialog_edit_thumb_select_from_video_tv_text">Select from video</string>
     <string name="dialog_edit_thumb_upload_tv_text">Upload</string>

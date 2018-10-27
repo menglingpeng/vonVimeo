@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/interaction_tools_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/embed_title_tv_layout_marginTop"
+        android:layout_marginLeft="@dimen/embed_title_tv_layout_marginLeft"
+        android:layout_marginBottom="@dimen/embed_title_tv_layout_marginBottom"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textSize="@dimen/embed_title_tv_textSize"
+        android:text="@string/interaction_tools_title_tv_text"/>
+
+    <Button
+        android:id="@+id/interaction_tools_title_upgrade_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/interaction_tools_title_tv"
+        android:layout_toRightOf="@+id/interaction_tools_title_tv"
+        android:layout_marginLeft="@dimen/embed_title_upgrade_bt_layout_marginLeft"
+        android:visibility="gone"
+        android:text="general_privacy_settings_upgrade_bt_text"/>
+
+    <TextView
+        android:id="@+id/interaction_tools_desc_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/interaction_tools_title_tv"
+        android:layout_alignLeft="@+id/interaction_tools_title_tv"
+        android:layout_marginBottom="@dimen/embed_desc_tv_layout_marginBottom"
+        android:text="@string/interaction_tools_desc_tv_text"/>
+
+    <view
+        android:id="@+id/interaction_tools_title_view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/interaction_tools_desc_tv"
+        android:layout_alignLeft="@+id/interaction_tools_desc_tv"
+        android:layout_marginBottom="25dp"
+        android:background="@color/recycler_item_view_background">
+
+    </view>
+
+    <TextView
+        android:id="@+id/interaction_tools_settins_before_video_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/embed_title_tv_layout_marginTop"
+        android:layout_marginLeft="@dimen/embed_title_tv_layout_marginLeft"
+        android:layout_alignLeft="@+id/interaction_tools_title_view"
+        android:layout_below="@+id/interaction_tools_title_view"
+        android:layout_marginBottom="@dimen/embed_title_tv_layout_marginBottom"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:text="@string/interaction_tools_settings_before_video_tv_text"/>
+
+    <Button
+        android:id="@+id/interaction_tools_settins_before_video_upgrade_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/interaction_tools_settins_before_video_tv"
+        android:layout_toRightOf="@+id/interaction_tools_settins_before_video_tv"
+        android:layout_marginLeft="@dimen/embed_title_upgrade_bt_layout_marginLeft"
+        android:visibility="gone"
+        android:text="general_privacy_settings_upgrade_bt_text"/>
+
+    <EditText
+        android:id="@+id/interaction_tools_settins_before_video_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/interaction_tools_settins_before_video_tv"
+        android:layout_alignLeft="@+id/interaction_tools_settins_before_video_tv"
+        android:layout_marginBottom="20dp"
+        android:hint=""/>
+
+    <TextView
+        android:id="@+id/interaction_tools_settins_during_video_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/embed_title_tv_layout_marginTop"
+        android:layout_marginLeft="@dimen/embed_title_tv_layout_marginLeft"
+        android:layout_alignLeft="@+id/interaction_tools_settins_before_video_et"
+        android:layout_below="@+id/interaction_tools_settins_before_video_et"
+        android:layout_marginBottom="@dimen/embed_title_tv_layout_marginBottom"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:text="@string/interaction_tools_settings_during_video_tv_text"/>
+
+    <EditText
+        android:id="@+id/interaction_tools_settins_during_video_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/interaction_tools_settins_during_video_tv"
+        android:layout_alignLeft="@+id/interaction_tools_settins_during_video_tv"
+        android:layout_marginBottom="20dp"
+        android:hint=""/>
+
+    <TextView
+        android:id="@+id/interaction_tools_settins_after_video_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/embed_title_tv_layout_marginTop"
+        android:layout_marginLeft="@dimen/embed_title_tv_layout_marginLeft"
+        android:layout_alignLeft="@+id/interaction_tools_settins_during_video_et"
+        android:layout_below="@+id/interaction_tools_settins_during_video_et"
+        android:layout_marginBottom="@dimen/embed_title_tv_layout_marginBottom"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:text="@string/interaction_tools_settings_after_video_tv_text"/>
+
+    <EditText
+        android:id="@+id/interaction_tools_settins_after_video_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/interaction_tools_settins_after_video_tv"
+        android:layout_alignLeft="@+id/interaction_tools_settins_after_video_tv"
+        android:hint=""/>
+
+</RelativeLayout>

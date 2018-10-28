@@ -401,6 +401,16 @@
     <string name="interaction_tools_settings_during_video_tv_text">During video</string>
     <string name="interaction_tools_settings_after_video_tv_text">After video</string>
 
+    <string name="stats_title_tv_text">Stats</string>
+    <string name="stats_desc_tv_text">Get comprehensive stats and track viewer engagement
+        across multiple channels.</string>
+    <string name="stats_interaction_title_tv_text">Interaction</string>
+    <string name="stats_interaction_desc_tv_text">See stats when you add clickable cards,
+        email capture, or custom end screens to the video.</string>
+    <string name="stats_social_title_tv_text">Social</string>
+    <string name="stats_social_desc_tv_text">Get stats on social performance when you
+        publish this video to social media.</string>
+
     <string name="dialog_edit_thumb_title_tv_text">Edit thumbnail</string>
     <string name="dialog_edit_thumb_select_from_video_tv_text">Select from video</string>
     <string name="dialog_edit_thumb_upload_tv_text">Upload</string>

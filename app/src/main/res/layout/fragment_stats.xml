@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/stats_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/embed_title_tv_layout_marginTop"
+        android:layout_marginLeft="@dimen/embed_title_tv_layout_marginLeft"
+        android:layout_marginBottom="@dimen/embed_title_tv_layout_marginBottom"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textSize="@dimen/embed_title_tv_textSize"
+        android:text="@string/stats_title_tv_text"/>
+
+    <Button
+        android:id="@+id/stats_title_upgrade_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/stats_title_tv"
+        android:layout_toRightOf="@+id/stats_title_tv"
+        android:layout_marginLeft="@dimen/embed_title_upgrade_bt_layout_marginLeft"
+        android:visibility="gone"
+        android:text="general_privacy_settings_upgrade_bt_text"/>
+
+    <TextView
+        android:id="@+id/stats_desc_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/stats_title_tv"
+        android:layout_alignLeft="@+id/stats_title_tv"
+        android:layout_marginBottom="@dimen/embed_desc_tv_layout_marginBottom"
+        android:text="@string/stats_desc_tv_text"/>
+
+    <view
+        android:id="@+id/stats_title_view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/stats_desc_tv"
+        android:layout_alignLeft="@+id/stats_desc_tv"
+        android:layout_marginBottom="125dp"
+        android:background="@color/recycler_item_view_background">
+
+    </view>
+
+    <RelativeLayout
+        android:id="@+id/stats_video_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/stats_title_view"
+        android:layout_alignLeft="@+id/stats_title_view">
+
+        <view
+            android:id="@+id/stats_video_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/stats_desc_tv"
+            android:layout_alignLeft="@+id/stats_desc_tv"
+            android:layout_marginBottom="125dp"
+            android:background="@color/recycler_item_view_background">
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/stats_interaction_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/embed_title_tv_layout_marginTop"
+        android:layout_marginLeft="@dimen/embed_title_tv_layout_marginLeft"
+        android:layout_marginBottom="@dimen/embed_title_tv_layout_marginBottom"
+        android:layout_below="@+id/stats_video_rl"
+        android:layout_alignLeft="@+id/stats_video_rl"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:text="@string/stats_interaction_title_tv_text"/>
+
+    <Button
+        android:id="@+id/stats_interaction_title_upgrade_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/stats_interaction_title_tv"
+        android:layout_toRightOf="@+id/stats_interaction_title_tv"
+        android:layout_marginLeft="@dimen/embed_title_upgrade_bt_layout_marginLeft"
+        android:visibility="gone"
+        android:text="general_privacy_settings_upgrade_bt_text"/>
+
+    <TextView
+        android:id="@+id/stats_interaction_desc_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/stats_interaction_title_tv"
+        android:layout_alignLeft="@+id/stats_interaction_title_tv"
+        android:layout_marginBottom="@dimen/embed_desc_tv_layout_marginBottom"
+        android:text="@string/stats_interaction_desc_tv_text"/>
+
+    <view
+        android:id="@+id/stats_interaction_title_view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/stats_interaction_desc_tv"
+        android:layout_alignLeft="@+id/stats_interaction_desc_tv"
+        android:layout_marginBottom="125dp"
+        android:background="@color/recycler_item_view_background">
+
+    </view>
+
+    <TextView
+        android:id="@+id/stats_social_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/embed_title_tv_layout_marginTop"
+        android:layout_marginLeft="@dimen/embed_title_tv_layout_marginLeft"
+        android:layout_marginBottom="@dimen/embed_title_tv_layout_marginBottom"
+        android:layout_below="@+id/stats_interaction_title_view"
+        android:layout_alignLeft="@+id/stats_interaction_title_view"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:text="@string/stats_social_title_tv_text"/>
+
+    <Button
+        android:id="@+id/stats_social_title_upgrade_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/stats_social_title_tv"
+        android:layout_toRightOf="@+id/stats_social_title_tv"
+        android:layout_marginLeft="@dimen/embed_title_upgrade_bt_layout_marginLeft"
+        android:visibility="gone"
+        android:text="@string/general_privacy_settings_upgrade_bt_text"/>
+
+    <TextView
+        android:id="@+id/stats_social_desc_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/stats_social_title_tv"
+        android:layout_alignLeft="@+id/stats_social_title_tv"
+        android:layout_marginBottom="@dimen/embed_desc_tv_layout_marginBottom"
+        android:text="@string/stats_social_desc_tv_text"/>
+
+    <view
+        android:id="@+id/stats_social_title_view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/stats_interaction_desc_tv"
+        android:layout_alignLeft="@+id/stats_interaction_desc_tv"
+        android:layout_marginBottom="125dp"
+        android:background="@color/recycler_item_view_background">
+
+    </view>
+
+</RelativeLayout>

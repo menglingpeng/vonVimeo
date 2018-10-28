@@ -200,4 +200,9 @@
     <dimen name="distribution_social_settings_facebook_iv_layout_marginRight">20dp</dimen>
 
     <dimen name="distribution_file_links_settings_spinner_layout_marginBottom">20dp</dimen>
+
+    <dimen name="dialog_save_video_settings_cancel_bt_layout_marginLeft">15dp</dimen>
+    <dimen name="dialog_save_video_settings_cancel_bt_layout_marginRight">3dp</dimen>
+    <dimen name="dialog_save_video_settings_save_bt_layout_marginLeft">3dp</dimen>
+    <dimen name="dialog_save_video_settings_save_bt_layout_marginRight">15dp</dimen>
 </resources>

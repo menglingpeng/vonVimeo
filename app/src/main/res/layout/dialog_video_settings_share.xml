@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/share_copy_video_link_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/share_copy_video_link_layout_marginTop"
+        android:layout_marginLeft="@dimen/share_copy_video_link_layout_marginLeft"
+        android:clickable="true"
+        android:text="@string/share_copy_video_link_tv_text"/>
+
+    <TextView
+        android:id="@+id/share_copy_revidew_page_link_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/share_copy_video_link_tv"
+        android:layout_alignLeft="@+id/share_copy_video_link_tv"
+        android:layout_marginTop="@dimen/share_copy_revidew_page_link_layout_marginTop"
+        android:clickable="true"
+        android:text="@string/share_copy_review_page_link_tv_text"/>
+
+    <TextView
+        android:id="@+id/share_copy_embed_code_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/share_copy_video_link_tv"
+        android:layout_alignLeft="@+id/share_copy_video_link_tv"
+        android:layout_marginTop="@dimen/share_copy_revidew_page_link_layout_marginTop"
+        android:layout_marginBottom="@dimen/share_copy_revidew_page_link_layout_marginTop"
+        android:clickable="true"
+        android:text="@string/share_copy_embed_code_tv_text"/>
+
+    <view
+        android:id="@+id/share_video_view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/share_copy_embed_code_tv"
+        android:layout_alignLeft="@+id/share_copy_embed_code_tv"
+        android:background="@color/recycler_item_view_background">
+
+    </view>
+
+    <TextView
+        android:id="@+id/share_publish_to_social_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/share_video_view"
+        android:layout_alignLeft="@+id/share_video_view"
+        android:layout_marginTop="@dimen/share_copy_revidew_page_link_layout_marginTop"
+        android:layout_marginBottom="@dimen/share_copy_revidew_page_link_layout_marginTop"
+        android:clickable="true"
+        android:text="@string/share_publish_to_social_tv_text"/>
+
+</RelativeLayout>

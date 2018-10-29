@@ -1,6 +1,8 @@
 package com.menglingpeng.vonvimeo.mvp.view.activity;
 
+import android.app.Dialog;
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.database.Cursor;
@@ -19,15 +21,22 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
+import com.menglingpeng.vonvimeo.mvp.model.Video;
 import com.menglingpeng.vonvimeo.utils.Constants;
+import com.menglingpeng.vonvimeo.utils.IdStringUtil;
 
 public class VideoSettingsActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -37,6 +46,10 @@ public class VideoSettingsActivity extends BaseActivity implements NavigationVie
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     public static final int REQUEST_PICTURE_CODE = 1;
+    private Dialog shareVideoDialog;
+    private Context context;
+    private Video video;
+    private String videoId;
 
     @Override
     protected void initLayoutId() {
@@ -47,6 +60,9 @@ public class VideoSettingsActivity extends BaseActivity implements NavigationVie
     protected void initViews() {
         super.initViews();
 
+        context = getApplicationContext();
+        video = (Video)getIntent().getSerializableExtra(Constants.VIDEO);
+        videoId = IdStringUtil.getId(video.getUri());
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         initToolbar();
@@ -160,5 +176,52 @@ public class VideoSettingsActivity extends BaseActivity implements NavigationVie
 
         super.onActivityResult(requestCode, resultCode, data);
 
+    }
+
+    private void showSaveSettingsDialog(){
+        TextView copyVideoLinkTv;
+        TextView copyEmbedCodeTv;
+        TextView copyReviewPageLinkTv;
+        TextView publishToSocialTv;
+        shareVideoDialog = new Dialog(this, R.style.Theme_Light_Dialog);
+        View dialogView = LayoutInflater.from(context).inflate(R.layout.dialog_video_settings_share, null);
+        Window window = shareVideoDialog.getWindow();
+        window.setGravity(Gravity.BOTTOM);
+        window.setWindowAnimations(R.style.UploadChoosedialogStyle);
+        window.getDecorView().setPadding(0, 0 , 0, 0);
+        WindowManager.LayoutParams lp = window.getAttributes();
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        window.setAttributes(lp);
+        shareVideoDialog.setContentView(dialogView);
+        copyVideoLinkTv = (TextView)dialogView.findViewById(R.id.share_copy_video_link_tv);
+        copyEmbedCodeTv = (TextView)dialogView.findViewById(R.id.share_copy_revidew_page_link_tv);
+        copyReviewPageLinkTv = (TextView)dialogView.findViewById(R.id.share_copy_embed_code_tv);
+        publishToSocialTv = (TextView)dialogView.findViewById(R.id.share_publish_to_social_tv);
+        shareVideoDialog.show();
+        copyVideoLinkTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String link = video.getLink();
+            }
+        });
+        copyEmbedCodeTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        copyReviewPageLinkTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        publishToSocialTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
     }
 }

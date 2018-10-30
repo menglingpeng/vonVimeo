@@ -139,6 +139,29 @@ public class VideoSettingsActivity extends BaseActivity implements NavigationVie
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.video_settings_nav_general:
+
+                break;
+            case R.id.video_settings_nav_collaboration:
+
+                break;
+            case R.id.video_settings_nav_embed:
+
+                break;
+            case R.id.video_settings_nav_interaction_tools:
+
+                break;
+            case R.id.video_settings_nav_distribution:
+
+                break;
+            case R.id.video_settings_nav_stats:
+
+                break;
+            default:
+                break;
+        }
+
         return false;
     }
 

@@ -51,14 +51,201 @@
         android:layout_below="@+id/stats_title_view"
         android:layout_alignLeft="@+id/stats_title_view">
 
+        <TextView
+            android:id="@+id/stats_video_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/embed_title_tv_layout_marginTop"
+            android:layout_marginLeft="@dimen/embed_title_tv_layout_marginLeft"
+            android:layout_marginBottom="@dimen/embed_title_tv_layout_marginBottom"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:text="@string/stats_video_title_tv_text"/>
+
+        <LinearLayout
+            android:id="@+id/stats_video_plays_ll"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/stats_video_plays_ll_layout_height"
+            android:orientation="horizontal"
+            android:layout_below="@+id/stats_video_title_tv"
+            android:layout_alignLeft="@+id/stats_video_title_tv"
+            android:layout_marginBottom="@dimen/stats_video_plays_ll_layout_marginBottom"
+            android:layout_marginTop="@dimen/stats_video_plays_ll_layout_marginTop">
+
+            <RelativeLayout
+                android:id="@+id/stats_video_plays_rl"
+                android:layout_width="@dimen/stats_video_plays_rl_layout_width"
+                android:layout_height="match_parent"
+                android:layout_weight="@dimen/stats_video_plays_rl_layout_weight">
+
+                <TextView
+                    android:id="@+id/stats_video_plays_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/stats_video_plays_tv_text"
+                    android:layout_centerVertical="true"/>
+
+                <ImageView
+                    android:id="@+id/stats_video_plays_info_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/stats_video_plays_tv"
+                    android:layout_alignTop="@+id/stats_video_plays_tv"
+                    android:layout_marginLeft="@dimen/stats_video_plays_info_iv_layout_marginLeft"
+                    android:src="@drawable/ic_info_grey_600_18dp"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="@dimen/stats_video_plays_rl_layout_width"
+                android:layout_height="match_parent"
+                android:layout_weight="@dimen/stats_video_plays_rl_layout_weight">
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/stats_video_impressions_ll"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/stats_video_plays_ll_layout_height"
+            android:orientation="horizontal"
+            android:layout_below="@+id/stats_video_plays_ll"
+            android:layout_alignLeft="@+id/stats_video_plays_ll"
+            android:layout_marginBottom="@dimen/stats_video_plays_ll_layout_marginBottom"
+            android:layout_marginTop="@dimen/stats_video_plays_ll_layout_marginTop">
+
+            <RelativeLayout
+                android:id="@+id/stats_video_impressions_rl"
+                android:layout_width="@dimen/stats_video_plays_rl_layout_width"
+                android:layout_height="match_parent"
+                android:layout_weight="@dimen/stats_video_plays_rl_layout_weight">
+
+                <TextView
+                    android:id="@+id/stats_video_impressions_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/stats_video_imressions_tv_text"
+                    android:layout_centerVertical="true"/>
+
+                <ImageView
+                    android:id="@+id/stats_video_impressions_info_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/stats_video_impressions_tv"
+                    android:layout_alignTop="@+id/stats_video_impressions_tv"
+                    android:layout_marginLeft="@dimen/stats_video_plays_info_iv_layout_marginLeft"
+                    android:src="@drawable/ic_info_grey_600_18dp"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="@dimen/stats_video_plays_rl_layout_width"
+                android:layout_height="match_parent"
+                android:layout_weight="@dimen/stats_video_plays_rl_layout_weight">
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/stats_video_play_rate_ll"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/stats_video_plays_ll_layout_height"
+            android:orientation="horizontal"
+            android:layout_below="@+id/stats_video_impressions_ll"
+            android:layout_alignLeft="@+id/stats_video_impressions_ll"
+            android:layout_marginBottom="@dimen/stats_video_plays_ll_layout_marginBottom"
+            android:layout_marginTop="@dimen/stats_video_plays_ll_layout_marginTop">
+
+            <RelativeLayout
+                android:id="@+id/stats_video_play_rate_rl"
+                android:layout_width="@dimen/stats_video_plays_rl_layout_width"
+                android:layout_height="match_parent"
+                android:layout_weight="@dimen/stats_video_plays_rl_layout_weight">
+
+                <TextView
+                    android:id="@+id/stats_video_play_rate_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/stats_video_play_rate_tv_text"
+                    android:layout_centerVertical="true"/>
+
+                <ImageView
+                    android:id="@+id/stats_video_play_rate_info_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/stats_video_play_rate_tv"
+                    android:layout_alignTop="@+id/stats_video_play_rate_tv"
+                    android:layout_marginLeft="@dimen/stats_video_plays_info_iv_layout_marginLeft"
+                    android:src="@drawable/ic_info_grey_600_18dp"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="@dimen/stats_video_plays_rl_layout_width"
+                android:layout_height="match_parent"
+                android:layout_weight="@dimen/stats_video_plays_rl_layout_weight">
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/stats_video_play_by_url_ll"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/stats_video_plays_ll_layout_height"
+            android:orientation="horizontal"
+            android:layout_below="@+id/stats_video_play_rate_ll"
+            android:layout_alignLeft="@+id/stats_video_play_rate_ll"
+            android:layout_marginBottom="@dimen/stats_video_plays_ll_layout_marginBottom"
+            android:layout_marginTop="@dimen/stats_video_plays_ll_layout_marginTop">
+
+            <RelativeLayout
+                android:id="@+id/stats_video_play_by_url_rl"
+                android:layout_width="@dimen/stats_video_plays_rl_layout_width"
+                android:layout_height="match_parent"
+                android:layout_weight="@dimen/stats_video_plays_rl_layout_weight">
+
+                <TextView
+                    android:id="@+id/stats_video_play_by_url_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/stats_video_play_rate_tv_text"
+                    android:layout_centerVertical="true"/>
+
+                <ImageView
+                    android:id="@+id/stats_video_play_by_url_info_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/stats_video_play_by_url_tv"
+                    android:layout_alignTop="@+id/stats_video_play_by_url_tv"
+                    android:layout_marginLeft="@dimen/stats_video_plays_info_iv_layout_marginLeft"
+                    android:src="@drawable/ic_info_grey_600_18dp"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="@dimen/stats_video_plays_rl_layout_width"
+                android:layout_height="match_parent"
+                android:layout_weight="@dimen/stats_video_plays_rl_layout_weight">
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
         <view
             android:id="@+id/stats_video_view"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_below="@+id/stats_desc_tv"
-            android:layout_alignLeft="@+id/stats_desc_tv"
+            android:layout_below="@+id/stats_video_play_by_url_ll"
+            android:layout_alignLeft="@+id/stats_video_play_by_url_ll"
             android:layout_marginBottom="125dp"
             android:background="@color/recycler_item_view_background">
+        </view>
 
     </RelativeLayout>
 

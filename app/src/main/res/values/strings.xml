@@ -404,6 +404,16 @@
     <string name="stats_title_tv_text">Stats</string>
     <string name="stats_desc_tv_text">Get comprehensive stats and track viewer engagement
         across multiple channels.</string>
+    <string name="stats_video_title_tv_text">Video</string>
+    <string name="stats_video_plays_tv_text">Plays</string>
+    <string name="stats_video_imressions_tv_text">Impressions</string>
+    <string name="stats_video_play_rate_tv_text">Play rate</string>
+    <string name="stats_video_play_by_url_tv_text">Plays by URL</string>
+    <string name="stats_video_plays_info_text">The number of times the video stats playing.</string>
+    <string name="stats_video_play_rate_info_text">The number of times the video is loaded.</string>
+    <string name="stats_video_imressions_info_text">The rate at which viewers play the video after loading it.</string>
+    <string name="stats_video_play_by_url_info_text">The top sites playing this video.</string>
+
     <string name="stats_interaction_title_tv_text">Interaction</string>
     <string name="stats_interaction_desc_tv_text">See stats when you add clickable cards,
         email capture, or custom end screens to the video.</string>

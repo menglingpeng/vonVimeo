@@ -209,4 +209,12 @@
     <dimen name="share_copy_video_link_layout_marginTop">20dp</dimen>
     <dimen name="share_copy_video_link_layout_marginLeft">15dp</dimen>
     <dimen name="share_copy_revidew_page_link_layout_marginTop">20dp</dimen>
+    
+    <dimen name="stats_video_plays_ll_layout_height">40dp</dimen>
+    <dimen name="stats_video_plays_ll_layout_marginBottom">20dp</dimen>
+    <dimen name="stats_video_plays_ll_layout_marginTop">20dp</dimen>
+    <dimen name="stats_video_plays_rl_layout_width">0dp</dimen>
+    <item name="stats_video_plays_rl_layout_weight" format="integer" type="dimen">1</item>
+    <dimen name="stats_video_plays_info_iv_layout_marginLeft">5dp</dimen>
+
 </resources>

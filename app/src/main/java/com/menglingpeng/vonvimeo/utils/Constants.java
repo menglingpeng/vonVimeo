@@ -457,6 +457,11 @@ public class Constants {
     public static final String REQUEST_GET_ALL_PORTFOLIOS_OF_A_USR =
             "request_get_all_portfolios_of_a_user";
 
+    public static final String REQUEST_GET_ALL_PRIVATE_MESSAGES_OF_AUTH_USR =
+            "request_get_all_private_messages_of_auth_user";
+    public static final String REQUEST_GET_ALL_COMMENTS_OF_AUTH_USR =
+            "request_get_all_private_comments_of_auth_user";
+
     public static final String REQUEST_DELETE_A_VIDEO = "request_delete_a_video";
 
     public static final String EMBED_CONTROLS_SETTINGS_TYPE_PLAYBAR = "playbar";

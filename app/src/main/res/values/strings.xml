@@ -440,4 +440,13 @@
 
     <string name="dialog_user_decide_switch_info_msg">Allow users to decide what displays when then embed your video</string>
 
+    <string name="my_messages_activity_title">My Messages</string>
+
+    <string name="private_messages">Private Messages</string>
+    <string name="comments">Comments</string>
+    <string name="my_messages_desc_tv_text">This is where you can manage all your messages and comments on Vimeo.
+        When you send someone a message, only you and the recipient can see it. Comments can be seen by anyone.
+        As with everything you do on Vimeo, please keep your messages and comments respectful.
+        You currently have 0 unread messages.</string>
+
 </resources>

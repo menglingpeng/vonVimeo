@@ -106,7 +106,7 @@ public class UserChannelsActivity extends BaseActivity implements RecyclerView{
 
     private void initTabPager() {
         tabLayout = (TabLayout)findViewById(R.id.user_channles_tl);
-        viewPager = (ViewPager)findViewById(R.id.user_channles_vp)
+        viewPager = (ViewPager)findViewById(R.id.user_channles_vp);
         adapter = new TabPagerFragmentAdapter(getSupportFragmentManager());
         initTabFragments();
         viewPager.setAdapter(adapter);

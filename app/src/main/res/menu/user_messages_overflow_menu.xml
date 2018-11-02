@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/user_messages_sort"
+        android:icon="@drawable/ic_more"
+        android:title=""
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/user_messages_inbox"
+                android:title="@string/inbox"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/user_messages_unread"
+                android:title="@string/unread"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/user_messages_read"
+                android:title="@string/read"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/user_messages_sent"
+                android:title="@string/sent"
+                app:showAsAction="never"></item>
+        </menu>
+
+
+    </item>
+
+</menu>

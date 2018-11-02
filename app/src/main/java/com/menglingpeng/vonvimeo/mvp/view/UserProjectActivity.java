@@ -72,6 +72,8 @@ public class UserProjectActivity extends BaseActivity implements RecyclerView{
             case R.id.project_delete:
                 showDeleteProjectDialog();
                 break;
+            default:
+                break;
         }
         return super.onOptionsItemSelected(item);
     }

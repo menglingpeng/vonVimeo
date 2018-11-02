@@ -2713,6 +2713,13 @@ public class OnDemand {
         public static class MetadataBean {
 
             private ConnectionsBean connections;
+            /**
+             * interactions : {"watchlater":{"uri":"/users/86476471/watchlater/153500225","options":["GET","PUT",
+             * "DELETE"],"added":false,"added_time":null}}
+             */
+
+            private InteractionsBean interactions;
+
 
             public void setConnections(ConnectionsBean connections) {
                 this.connections = connections;
@@ -2720,6 +2727,14 @@ public class OnDemand {
 
             public ConnectionsBean getConnections() {
                 return connections;
+            }
+
+            public void setInteractions(InteractionsBean interactions) {
+                this.interactions = interactions;
+            }
+
+            public InteractionsBean getInteractions() {
+                return interactions;
             }
 
             public static class ConnectionsBean {
@@ -2731,6 +2746,7 @@ public class OnDemand {
                 private TexttracksBean texttracks;
                 private RelatedBean related;
                 private RecommendationsBean recommendations;
+                private OndemandBean ondemand;
 
 
                 public void setComments(CommentsBean comments) {
@@ -2787,6 +2803,14 @@ public class OnDemand {
 
                 public RecommendationsBean getRecommendations() {
                     return recommendations;
+                }
+
+                public void setOndemand(OndemandBean ondemand) {
+                    this.ondemand = ondemand;
+                }
+
+                public OndemandBean getOndemand() {
+                    return ondemand;
                 }
 
                 public static class CommentsBean {
@@ -2981,6 +3005,90 @@ public class OnDemand {
 
                     public String getUri() {
                         return uri;
+                    }
+
+                    public List<String> getOptions() {
+                        return options;
+                    }
+                }
+
+                public static class OndemandBean {
+
+                    private String uri;
+                    private String resource_key;
+                    private List<String> options;
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public void setResource_key(String resource_key) {
+                        this.resource_key = resource_key;
+                    }
+
+                    public void setOptions(List<String> options) {
+                        this.options = options;
+                    }
+
+                    public String getUri() {
+                        return uri;
+                    }
+
+                    public String getResource_key() {
+                        return resource_key;
+                    }
+
+                    public List<String> getOptions() {
+                        return options;
+                    }
+                }
+            }
+
+            public static class InteractionsBean {
+
+                private WatchlaterBean watchlater;
+
+                public void setWatchlater(WatchlaterBean watchlater) {
+                    this.watchlater = watchlater;
+                }
+
+                public WatchlaterBean getWatchlater() {
+                    return watchlater;
+                }
+
+                public static class WatchlaterBean {
+
+                    private String uri;
+                    private boolean added;
+                    private Object added_time;
+                    private List<String> options;
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public void setAdded(boolean added) {
+                        this.added = added;
+                    }
+
+                    public void setAdded_time(Object added_time) {
+                        this.added_time = added_time;
+                    }
+
+                    public void setOptions(List<String> options) {
+                        this.options = options;
+                    }
+
+                    public String getUri() {
+                        return uri;
+                    }
+
+                    public boolean getAdded() {
+                        return added;
+                    }
+
+                    public Object getAdded_time() {
+                        return added_time;
                     }
 
                     public List<String> getOptions() {

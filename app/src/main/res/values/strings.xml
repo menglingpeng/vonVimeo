@@ -62,6 +62,10 @@
     <string name="sort_groups">Groups</string>
     <string name="sort_categories">Categories</string>
     <string name="sort_tags">Tags</string>
+    <string name="inbox">Inbox</string>
+    <string name="unread">Unread</string>
+    <string name="read">Read</string>
+    <string name="sent">Sent</string>
 
     <string name="your_stuff">YOUR STUFF</string>
     <string name="portfolios">Portfolios</string>
@@ -444,6 +448,7 @@
 
     <string name="private_messages">Private Messages</string>
     <string name="comments">Comments</string>
+    <string name="my_people">My People</string>
     <string name="my_messages_desc_tv_text">This is where you can manage all your messages and comments on Vimeo.
         When you send someone a message, only you and the recipient can see it. Comments can be seen by anyone.
         As with everything you do on Vimeo, please keep your messages and comments respectful.

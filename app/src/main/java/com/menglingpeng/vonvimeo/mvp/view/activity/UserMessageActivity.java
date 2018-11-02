@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -68,6 +70,29 @@ public class UserMessageActivity extends BaseActivity {
         initTabPager();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.user_messages_toolbar_overflow_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.user_messages_inbox:
+                break;
+            case R.id.user_messages_unread:
+                break;
+            case R.id.user_messages_read:
+                break;
+            case R.id.user_messages_sent:
+                break;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     private void initTabPager() {
         tabLayout = (TabLayout)findViewById(R.id.user_messages_tl);
         viewPager = (ViewPager)findViewById(R.id.user_messages_vp);
@@ -112,10 +137,13 @@ public class UserMessageActivity extends BaseActivity {
         ArrayList<String> titlesList = new ArrayList<>();
         titlesList.add(getText(R.string.private_messages).toString());
         titlesList.add(getText(R.string.comments).toString());
+        titlesList.add(getText(R.string.my_people).toString());
         fragmentsList.add(RecyclerFragment.newInstance(
                 Constants.REQUEST_GET_ALL_PRIVATE_MESSAGES_OF_AUTH_USR));
         fragmentsList.add(RecyclerFragment.newInstance(
                 Constants.REQUEST_GET_ALL_COMMENTS_OF_AUTH_USR));
+        fragmentsList.add(RecyclerFragment.newInstance(
+                Constants.REQUEST_LIST_FOLLOWING_FOR_AUTH_USER));
         adapter.setFragments(fragmentsList, titlesList);
     }
 }

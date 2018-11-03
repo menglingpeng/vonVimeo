@@ -2686,6 +2686,40 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
+    public class UnReadMessageViewHolder extends RecyclerView.ViewHolder{
+
+        public final ImageView avatarIv;
+        public final TextView userNameTv;
+        public final TextView messageTitleTv;
+        public final TextView sendTimeTv;
+
+        public UnReadMessageViewHolder(View view) {
+            super(view);
+
+            avatarIv = (ImageView)view.findViewById(R.id.unread_message_avatar_iv);
+            userNameTv = (TextView)view.findViewById(R.id.unread_message_user_name_tv);
+            messageTitleTv = (TextView)view.findViewById(R.unid.read_message_title_tv);
+            sendTimeTv = (TextView)view.findViewById(R.id.unread_message_send_time_tv);
+        }
+    }
+
+    public class ReadMessageViewHolder extends RecyclerView.ViewHolder{
+
+        public final ImageView avatarIv;
+        public final TextView userNameTv;
+        public final TextView messageTitleTv;
+        public final TextView sendTimeTv;
+
+        public ReadMessageViewHolder(View view) {
+            super(view);
+
+            avatarIv = (ImageView)view.findViewById(R.id.read_message_avatar_iv);
+            userNameTv = (TextView)view.findViewById(R.id.read_message_user_name_tv);
+            messageTitleTv = (TextView)view.findViewById(R.id.read_message_title_tv);
+            sendTimeTv = (TextView)view.findViewById(R.id.read_message_send_time_tv);
+        }
+    }
+
     public class FooterViewHolder extends RecyclerView.ViewHolder {
 
         public FooterViewHolder(View view) {

@@ -3047,6 +3047,7 @@ public class OnDemand {
             public static class InteractionsBean {
 
                 private WatchlaterBean watchlater;
+                private LikeBean like;
 
                 public void setWatchlater(WatchlaterBean watchlater) {
                     this.watchlater = watchlater;
@@ -3056,7 +3057,55 @@ public class OnDemand {
                     return watchlater;
                 }
 
+                public void setLike(LikeBean like) {
+                    this.like = like;
+                }
+
+                public LikeBean getLike() {
+                    return like;
+                }
+
                 public static class WatchlaterBean {
+
+                    private String uri;
+                    private boolean added;
+                    private Object added_time;
+                    private List<String> options;
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public void setAdded(boolean added) {
+                        this.added = added;
+                    }
+
+                    public void setAdded_time(Object added_time) {
+                        this.added_time = added_time;
+                    }
+
+                    public void setOptions(List<String> options) {
+                        this.options = options;
+                    }
+
+                    public String getUri() {
+                        return uri;
+                    }
+
+                    public boolean getAdded() {
+                        return added;
+                    }
+
+                    public Object getAdded_time() {
+                        return added_time;
+                    }
+
+                    public List<String> getOptions() {
+                        return options;
+                    }
+                }
+
+                public static class LikeBean {
 
                     private String uri;
                     private boolean added;

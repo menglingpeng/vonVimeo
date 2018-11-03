@@ -80,12 +80,16 @@ public class UserMessageActivity extends BaseActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.user_messages_inbox:
+                type = Constants.REQUEST_GET_ALL_PRIVATE_MESSAGES_OF_AUTH_USR;
                 break;
             case R.id.user_messages_unread:
+                type = Constants.REQUEST_GET_ALL_UNREAD_MESSAGES_OF_AUTH_USR;
                 break;
             case R.id.user_messages_read:
+                type = Constants.REQUEST_GET_ALL_READ_MESSAGES_OF_AUTH_USR;
                 break;
             case R.id.user_messages_sent:
+                type = Constants.REQUEST_GET_ALL_SENT_MESSAGES_OF_AUTH_USR;
                 break;
             default:
                 break;

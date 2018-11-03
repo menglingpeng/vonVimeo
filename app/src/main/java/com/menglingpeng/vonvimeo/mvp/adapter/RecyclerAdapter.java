@@ -2720,6 +2720,23 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
+    public class SentMessageViewHolder extends RecyclerView.ViewHolder{
+
+        public final ImageView avatarIv;
+        public final TextView userNameTv;
+        public final TextView messageTitleTv;
+        public final TextView sendTimeTv;
+
+        public SentMessageViewHolder(View view) {
+            super(view);
+
+            avatarIv = (ImageView)view.findViewById(R.id.sent_message_avatar_iv);
+            userNameTv = (TextView)view.findViewById(R.id.sent_message_user_name_tv);
+            messageTitleTv = (TextView)view.findViewById(R.id.sent_message_title_tv);
+            sendTimeTv = (TextView)view.findViewById(R.id.sent_message_send_time_tv);
+        }
+    }
+
     public class FooterViewHolder extends RecyclerView.ViewHolder {
 
         public FooterViewHolder(View view) {

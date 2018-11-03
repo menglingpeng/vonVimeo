@@ -459,6 +459,13 @@ public class Constants {
 
     public static final String REQUEST_GET_ALL_PRIVATE_MESSAGES_OF_AUTH_USR =
             "request_get_all_private_messages_of_auth_user";
+    public static final String REQUEST_GET_ALL_UNREAD_MESSAGES_OF_AUTH_USR =
+            "request_get_all_unread_messages_of_auth_user";
+    public static final String REQUEST_GET_ALL_READ_MESSAGES_OF_AUTH_USR =
+            "request_get_all_read_messages_of_auth_user";
+    public static final String REQUEST_GET_ALL_SENT_MESSAGES_OF_AUTH_USR =
+            "request_get_all_sent_messages_of_auth_user";
+
     public static final String REQUEST_GET_ALL_COMMENTS_OF_AUTH_USR =
             "request_get_all_private_comments_of_auth_user";
 
@@ -482,6 +489,8 @@ public class Constants {
     public static final String EMBED_REVIEW_TOOLS_SETTINGS_TYPE_PRIVATE_REVIEW_PAGE = "private_review_page";
     public static final String EMBED_REVIEW_TOOLS_SETTINGS_TYPE_ALLOW_NOTES = "allow_notes";
     public static final String EMBED_REVIEW_TOOLS_SETTINGS_TYPE_DISPLAY_VIMEO_LOGO = "display_vimeo_logo";
+
+
 
     //默认值1
     public static final int PAGE_VALUE = 1;

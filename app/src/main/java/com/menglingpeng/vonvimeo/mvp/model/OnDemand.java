@@ -3046,8 +3046,13 @@ public class OnDemand {
 
             public static class InteractionsBean {
 
+
                 private WatchlaterBean watchlater;
                 private LikeBean like;
+                private Object rent;
+                private Object buy;
+                private Object subscribe;
+                private ReportBean report;
 
                 public void setWatchlater(WatchlaterBean watchlater) {
                     this.watchlater = watchlater;
@@ -3063,6 +3068,38 @@ public class OnDemand {
 
                 public LikeBean getLike() {
                     return like;
+                }
+
+                public void setRent(Object rent) {
+                    this.rent = rent;
+                }
+
+                public void setBuy(Object buy) {
+                    this.buy = buy;
+                }
+
+                public void setSubscribe(Object subscribe) {
+                    this.subscribe = subscribe;
+                }
+
+                public void setReport(ReportBean report) {
+                    this.report = report;
+                }
+
+                public Object getRent() {
+                    return rent;
+                }
+
+                public Object getBuy() {
+                    return buy;
+                }
+
+                public Object getSubscribe() {
+                    return subscribe;
+                }
+
+                public ReportBean getReport() {
+                    return report;
                 }
 
                 public static class WatchlaterBean {
@@ -3142,6 +3179,37 @@ public class OnDemand {
 
                     public List<String> getOptions() {
                         return options;
+                    }
+                }
+
+                public static class ReportBean {
+
+                    private String uri;
+                    private List<String> options;
+                    private List<String> reason;
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public void setOptions(List<String> options) {
+                        this.options = options;
+                    }
+
+                    public void setReason(List<String> reason) {
+                        this.reason = reason;
+                    }
+
+                    public String getUri() {
+                        return uri;
+                    }
+
+                    public List<String> getOptions() {
+                        return options;
+                    }
+
+                    public List<String> getReason() {
+                        return reason;
                     }
                 }
             }

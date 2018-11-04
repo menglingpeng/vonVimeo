@@ -64,6 +64,7 @@ public class Constants {
     public static final String ALBUM = "album";
     public static final String VIDEO = "video";
     public static final String VIDEO_THUMB = "video_thumb";
+    public static final String MESSAGE = "message";
 
     public static final String TYPE_ALL = "";
     public static final String TYPE_UPLOADS = "uploads";

@@ -59,7 +59,8 @@
         <activity android:name=".mvp.view.activity.UserPurchasesActivity" />
         <activity android:name=".mvp.view.activity.UploadActivity" />
         <activity android:name=".mvp.view.activity.VideoSettingsActivity" />
-        <activity android:name=".mvp.view.activity.UserMessageActivity"></activity>
+        <activity android:name=".mvp.view.activity.UserMessageActivity" />
+        <activity android:name=".utils.MessageActivity"></activity>
     </application>
 
 </manifest>

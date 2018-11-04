@@ -2737,6 +2737,23 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
+    public class CommentsActivityViewHolder extends RecyclerView.ViewHolder{
+
+        public final ImageView avatarIv;
+        public final TextView userNameTv;
+        public final TextView messageTitleTv;
+        public final TextView createTimeTv;
+
+        public CommentsActivityViewHolder(View view) {
+            super(view);
+
+            avatarIv = (ImageView)view.findViewById(R.id.comments_activity_avatar_iv);
+            userNameTv = (TextView)view.findViewById(R.id.comments_activity_user_name_tv);
+            messageTitleTv = (TextView)view.findViewById(R.id.comments_activity_title_tv);
+            createTimeTv = (TextView)view.findViewById(R.id.comments_activity_send_time_tv);
+        }
+    }
+
     public class FooterViewHolder extends RecyclerView.ViewHolder {
 
         public FooterViewHolder(View view) {

@@ -60,7 +60,8 @@
         <activity android:name=".mvp.view.activity.UploadActivity" />
         <activity android:name=".mvp.view.activity.VideoSettingsActivity" />
         <activity android:name=".mvp.view.activity.UserMessageActivity" />
-        <activity android:name=".utils.MessageActivity"></activity>
+        <activity android:name=".mvp.view.activity.MessageActivity" />
+        <activity android:name=".mvp.view.activity.MyActActivity"></activity>
     </application>
 
 </manifest>

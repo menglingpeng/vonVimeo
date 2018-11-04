@@ -32,7 +32,6 @@ public class UserMessageActivity extends BaseActivity {
     private Context context;
     private Toolbar toolbar;
     private TextView descTv;
-    private FloatingActionButton floatingActionButton;
     private CoordinatorLayout coordinatorLayout;
     private TabLayout tabLayout;
     private ViewPager viewPager;
@@ -44,7 +43,7 @@ public class UserMessageActivity extends BaseActivity {
 
     @Override
     protected void initLayoutId() {
-        layoutId = R.layout.activity_user_channle;
+        layoutId = R.layout.activity_user_messages;
     }
 
     @Override
@@ -55,7 +54,7 @@ public class UserMessageActivity extends BaseActivity {
         coordinatorLayout = (CoordinatorLayout) findViewById(R.id.user_messages_cdl);
         descTv = (TextView)findViewById(R.id.user_messages_desc_tv);
         progressBar = (ProgressBar)findViewById(R.id.user_messages_pb);
-        toolbar = (Toolbar) findViewById(R.id.user_messagestb);
+        toolbar = (Toolbar) findViewById(R.id.user_messages_tb);
         toolbar.setTitle(title);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_back);

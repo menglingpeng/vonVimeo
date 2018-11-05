@@ -2754,6 +2754,24 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
+    public class MyPeopelOfUserMessagesViewHolder extends RecyclerView.ViewHolder {
+        public final ImageView myPeopleAvatarIv;
+        public final TextView myPeopleNameTv;
+        public final TextView myPeopleLocationTv;
+        public final TextView myPeopleVideosCountTv;
+        public final TextView followersOfmyPeopleCountTv;
+
+        public MyPeopelOfUserMessagesViewHolder(View view) {
+            super(view);
+            myPeopleAvatarIv = (ImageView) view.findViewById(R.id.my_people_avatar_iv);
+            myPeopleLocationTv = (TextView) view.findViewById(R.id.my_people_location_tv);
+            myPeopleNameTv = (TextView) view.findViewById(R.id.my_people_name_tv);
+            myPeopleVideosCountTv = (TextView) view.findViewById(R.id.my_people_videos_count_tv);
+            followersOfmyPeopleCountTv = (TextView) view.findViewById(R.id
+                    .my_people_follow_count_tv);
+        }
+    }
+
     public class FooterViewHolder extends RecyclerView.ViewHolder {
 
         public FooterViewHolder(View view) {

@@ -1,13 +1,19 @@
 package com.menglingpeng.vonvimeo.mvp.view;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.base.BaseFragment;
@@ -21,11 +27,14 @@ import com.menglingpeng.vonvimeo.mvp.model.Tag;
 import com.menglingpeng.vonvimeo.mvp.model.User;
 import com.menglingpeng.vonvimeo.mvp.model.Video;
 import com.menglingpeng.vonvimeo.mvp.presenter.RecyclerPresenter;
+import com.menglingpeng.vonvimeo.mvp.view.activity.MessageActivity;
 import com.menglingpeng.vonvimeo.mvp.view.activity.TagActivity;
 import com.menglingpeng.vonvimeo.mvp.view.activity.UserChannelsActivity;
 import com.menglingpeng.vonvimeo.mvp.view.activity.UserFollowingActivity;
 import com.menglingpeng.vonvimeo.mvp.view.activity.UserGroupActivity;
+import com.menglingpeng.vonvimeo.mvp.view.activity.UserProfileActivity;
 import com.menglingpeng.vonvimeo.utils.Constants;
+import com.menglingpeng.vonvimeo.utils.ImageLoader;
 
 import java.util.HashMap;
 
@@ -175,6 +184,56 @@ public class RecyclerFragment extends BaseFragment implements com.menglingpeng.v
                 default:
                     break;
             }
+        }
+        else if(viewHolder instanceof  RecyclerAdapter.MyPrivateMessageViewHolder){
+            intent = new Intent(getActivity(), MessageActivity.class);
+            startActivity(intent);
+        }
+        else if(viewHolder instanceof RecyclerAdapter.MyPeopelOfUserMessagesViewHolder){
+                ImageView avatarIv;
+                TextView userNameTv;
+                final EditText messageEt;
+                final String message;
+                AlertDialog dialog;
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                View dialogView = getLayoutInflater().inflate(R.layout.dialog_send_a_message, null);
+                builder.setTitle(R.string.send_a_message);
+                builder.setView(dialogView);
+                avatarIv = (ImageView) dialogView.findViewById(R.id.send_a_message_user_picture_iv);
+                userNameTv = (TextView) dialogView.findViewById(R.id.send_a_message_user_name_tv);
+                messageEt = (EditText) dialogView.findViewById(R.id.send_a_message_et);
+                builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                builder.setPositiveButton(R.string.create, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        message = messageEt.getText().toString();
+                    }
+                });
+                dialog = builder.create();
+                ImageLoader.loadCricleImage(context, user.getPictures().getUri(),  avatarIv);
+                userNameTv.setText(user.getName());
+                avatarIv.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(context, UserProfileActivity.class);
+                        intent.putExtra(Constants.USER, user);
+                        startActivity(intent);
+                    }
+                });
+                userNameTv.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(context, UserProfileActivity.class);
+                        intent.putExtra(Constants.USER, user);
+                        startActivity(intent);
+                    }
+                });
+                dialog.show();
         }
     }
 

@@ -1,10 +1,13 @@
 package com.menglingpeng.vonvimeo.mvp.view.activity;
 
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,14 +15,19 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.base.BaseFragment;
 import com.menglingpeng.vonvimeo.mvp.adapter.TabPagerFragmentAdapter;
+import com.menglingpeng.vonvimeo.mvp.model.Message;
+import com.menglingpeng.vonvimeo.mvp.model.User;
 import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
 import com.menglingpeng.vonvimeo.utils.Constants;
+import com.menglingpeng.vonvimeo.utils.ImageLoader;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -38,6 +46,8 @@ public class UserMessageActivity extends BaseActivity {
     private ProgressBar progressBar;
     private TabPagerFragmentAdapter adapter;
     private HashMap<String, String> map;
+    private Message message;
+    private User user;
     private ArrayList<RecyclerFragment> fragmentsList;
     private static final int SMOOTHSCROLL_TOP_POSITION = 50;
 
@@ -89,6 +99,9 @@ public class UserMessageActivity extends BaseActivity {
                 break;
             case R.id.user_messages_sent:
                 type = Constants.REQUEST_GET_ALL_SENT_MESSAGES_OF_AUTH_USR;
+                break;
+            case R.id.send_compose_message:
+                showSendComposeMessageDialog();
                 break;
             default:
                 break;
@@ -148,5 +161,54 @@ public class UserMessageActivity extends BaseActivity {
         fragmentsList.add(RecyclerFragment.newInstance(
                 Constants.REQUEST_LIST_FOLLOWING_FOR_AUTH_USER));
         adapter.setFragments(fragmentsList, titlesList);
+    }
+
+    private void showSendComposeMessageDialog(){
+        final EditText toUserNameEt;
+        ImageView avatarIv;
+        TextView userNameTv;
+        final EditText messageEt;
+        final String message;
+        AlertDialog dialog;
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_send_a_message, null);
+        builder.setTitle(R.string.send_a_message);
+        builder.setView(dialogView);
+        toUserNameEt = (EditText) dialogView.findViewById(R.id.send_compose_message_to_user_name_tv);
+        avatarIv = (ImageView) dialogView.findViewById(R.id.send_compose_message_user_picture_iv);
+        userNameTv = (TextView) dialogView.findViewById(R.id.send_compose_message_user_name_tv);
+        messageEt = (EditText) dialogView.findViewById(R.id.send_compose_message_et);
+        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.setPositiveButton(R.string.create, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                message = messageEt.getText().toString();
+            }
+        });
+        dialog = builder.create();
+        ImageLoader.loadCricleImage(context, user.getPictures().getUri(),  avatarIv);
+        userNameTv.setText(user.getName());
+        avatarIv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, UserProfileActivity.class);
+                intent.putExtra(Constants.USER, user);
+                startActivity(intent);
+            }
+        });
+        userNameTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, UserProfileActivity.class);
+                intent.putExtra(Constants.USER, user);
+                startActivity(intent);
+            }
+        });
+        dialog.show();
     }
 }

@@ -23,6 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/send_a_message_user_picture_iv"
         android:layout_alignLeft="@+id/send_a_message_user_picture_iv"
+        android:hint="@string/message"
         android:layout_marginTop="@dimen/dialog_send_a_message_et_layout_marginTop"
         android:layout_marginBottom="@dimen/dialog_send_a_message_et_layout_marginBottom"/>
 

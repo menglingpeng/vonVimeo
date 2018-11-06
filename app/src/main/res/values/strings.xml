@@ -453,5 +453,6 @@
         When you send someone a message, only you and the recipient can see it. Comments can be seen by anyone.
         As with everything you do on Vimeo, please keep your messages and comments respectful.
         You currently have 0 unread messages.</string>
+    <string name="send_compose_message">Send Compose Message</string>
 
 </resources>

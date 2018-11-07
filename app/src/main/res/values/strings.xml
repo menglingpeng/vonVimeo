@@ -455,4 +455,16 @@
         You currently have 0 unread messages.</string>
     <string name="send_compose_message">Send Compose Message</string>
 
+    <string name="seetings_nav_account_menu">Account</string>
+    <string name="seetings_nav_profile_menu">Profile</string>
+    <string name="seetings_nav_notifiactions_menu">Notifications</string>
+    <string name="seetings_nav_viewing_preferences_menu">Viewing preferences</string>
+    <string name="seetings_nav_marketing_menu">Marketing</string>
+    <string name="seetings_nav_connected_aps_menu">Connected apps</string>
+    <string name="seetings_nav_billing_menu">Billing</string>
+    <string name="seetings_nav_videos_menu">Videos</string>
+    <string name="seetings_nav_on_demand_menu">On Demand</string>
+    <string name="seetings_nav_upgrade_menu">Upgrade</string>
+
+
 </resources>

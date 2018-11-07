@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/group1"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/settings_nav_account"
+            android:icon="@drawable/ic_keyboard_arrow_right_black_36dp"
+            android:title="@string/seetings_nav_account_menu" />
+
+        <item
+            android:id="@+id/settings_nav_profile"
+            android:icon="@drawable/ic_keyboard_arrow_right_black_36dp"
+            android:title="@string/seetings_nav_profile_menu" />
+
+        <item
+            android:id="@+id/settings_nav_notifiactions"
+            android:icon="@drawable/ic_keyboard_arrow_right_black_36dp"
+            android:title="@string/seetings_nav_notifiactions_menu" />
+
+        <item
+            android:id="@+id/settings_nav_viewing_preferences"
+            android:icon="@drawable/ic_keyboard_arrow_right_black_36dp"
+            android:title="@string/seetings_nav_viewing_preferences_menu" />
+
+        <item
+            android:id="@+id/settings_nav_marketing"
+            android:icon="@drawable/ic_keyboard_arrow_right_black_36dp"
+            android:title="@string/seetings_nav_marketing_menu" />
+
+        <item
+            android:id="@+id/settings_nav_connected_aps"
+            android:icon="@drawable/ic_keyboard_arrow_right_black_36dp"
+            android:title="@string/seetings_nav_connected_aps_menu" />
+
+        <item
+            android:id="@+id/settings_nav_billing"
+            android:icon="@drawable/ic_keyboard_arrow_right_black_36dp"
+            android:title="@string/seetings_nav_billing_menu" />
+
+        <item
+            android:id="@+id/settings_nav_videos"
+            android:icon="@drawable/ic_keyboard_arrow_right_black_36dp"
+            android:title="@string/seetings_nav_videos_menu" />
+
+        <item
+            android:id="@+id/settings_nav_on_demand"
+            android:icon="@drawable/ic_keyboard_arrow_right_black_36dp"
+            android:title="@string/seetings_nav_on_demand_menu" />
+
+
+    </group>
+
+    <group android:id="@+id/group2">
+        <item
+            android:id="@+id/settings_nav_upgrade"
+            android:title="@string/seetings_nav_upgrade_menu" />
+    </group>
+
+</menu>

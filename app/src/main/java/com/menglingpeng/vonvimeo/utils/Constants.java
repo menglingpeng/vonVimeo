@@ -46,6 +46,19 @@ public class Constants {
     public static final String MENU_STATS = "stats";
     public static final String MENU_UPGRADE = "upgrade";
 
+    public static final String MENU_SETTINGS_ACCOUNT = "account";
+    public static final String MENU_SETTINGS_PROFILE = "profile";
+    public static final String MENU_SETTINGS_NOTIFICATIONS = "notifications";
+    public static final String MENU_SETTINGS_VIEWING_PREFERENCES = "view_preferences";
+    public static final String MENU_SETTINGS_MARKETING = "marketing";
+    public static final String MENU_SETTINGS_CONNECTED_APPS = "connected_apps";
+    public static final String MENU_SETTINGS_BILLING = "billing";
+    public static final String MENU_SETTINGS_VIDEOS = "videos";
+    public static final String MENU_SETTINGS_ON_DEMAND = "on_demand";
+    public static final String MENU_SETTINGS_UPGRADE = "upgrade";
+
+
+
     public static final String MENU_VIMEO_STOCK = "Vimeo Stock";
     public static final String MENU_ON_DEMAND = "On Demand";
 

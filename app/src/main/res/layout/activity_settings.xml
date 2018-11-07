@@ -2,11 +2,11 @@
 <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/video_settings_dl"
+    android:id="@+id/settings_dl"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.menglingpeng.vonvimeo.mvp.view.activity.VideoSettingsActivity"
+    tools:context="com.menglingpeng.vonvimeo.mvp.view.activity.SettingsActivity"
     tools:openDrawer="start">
 
     <android.support.design.widget.CoordinatorLayout
@@ -18,21 +18,12 @@
             android:layout_height="wrap_content">
 
             <android.support.v7.widget.Toolbar
-                android:id="@+id/video_settings_tl"
+                android:id="@+id/settings_tl"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="@color/colorPrimary"
                 android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
                 app:layout_scrollFlags="scroll|enterAlways"></android.support.v7.widget.Toolbar>
-
-            <android.support.design.widget.TabLayout
-                android:id="@+id/tab_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:visibility="gone"
-                app:tabSelectedTextColor="@android:color/white"
-                app:tabTextAppearance="@style/TabLayoutTheme"
-                app:tabTextColor="@color/tablayout_text_color" />
 
         </android.support.design.widget.AppBarLayout>
 
@@ -41,7 +32,7 @@
     <include layout="@layout/container"></include>
 
     <android.support.design.widget.NavigationView
-        android:id="@+id/video_settings_nv"
+        android:id="@+id/settings_nv"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"

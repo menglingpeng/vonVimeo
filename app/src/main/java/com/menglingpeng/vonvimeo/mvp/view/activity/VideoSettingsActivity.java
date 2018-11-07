@@ -63,8 +63,8 @@ public class VideoSettingsActivity extends BaseActivity implements NavigationVie
         context = getApplicationContext();
         video = (Video)getIntent().getSerializableExtra(Constants.VIDEO);
         videoId = IdStringUtil.getId(video.getUri());
-        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        navigationView = (NavigationView) findViewById(R.id.nav_view);
+        drawerLayout = (DrawerLayout) findViewById(R.id.video_settings_dl);
+        navigationView = (NavigationView) findViewById(R.id.video_settings_nv);
         initToolbar();
         initNavigationView();
     }

@@ -466,5 +466,16 @@
     <string name="seetings_nav_on_demand_menu">On Demand</string>
     <string name="seetings_nav_upgrade_menu">Upgrade</string>
 
+    <string name="account_settings_general_title_tv_text">Account</string>
+    <string name="account_settings_general_name_title_tv_text">Name</string>
+    <string name="account_settings_general_name_desc_tv_text">A lot of people use their real name,
+        but anything you choose will probably be better than "user5582238."</string>
+    <string name="account_settings_general_email_title_tv_text">Email address</string>
+    <string name="account_settings_general_email_desc_tv_text">Use this to log in to your account
+        and to receive email notifications and updates from us.</string>
+    <string name="account_settings_general_pronouns_title_tv_text">Pronouns</string>
+    <string name="account_settings_general_pronouns_desc_tv_text">Help us call you by the
+        proper pronouns.</string>
+
 
 </resources>

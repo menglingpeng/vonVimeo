@@ -477,5 +477,13 @@
     <string name="account_settings_general_pronouns_desc_tv_text">Help us call you by the
         proper pronouns.</string>
 
+    <string name="account_settings_password_title_tv_text">Reset your password</string>
+    <string name="account_settings_password_new_title_tv_text">New Password</string>
+    <string name="account_settings_password_new_desc_tv_text">The most secure passwords are at
+        least 8 characters long and include a mix of letters, numbers, and symbols.</string>
+    <string name="account_settings_password_confirm_title_tv_text">Confirm new password</string>
+
+    <string name="account_settings_manage_team_title_tv_text">Manage team</string>
+
 
 </resources>

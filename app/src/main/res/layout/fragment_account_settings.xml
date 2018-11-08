@@ -7,7 +7,8 @@
         android:id="@+id/account_settings_general_rl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp">
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="20dp">
 
         <TextView
             android:id="@+id/account_settings_general_title_tv"
@@ -121,11 +122,152 @@
         </RadioGroup>
 
         <Button
-            android:id="@+id/account_settings_save_bt"
+            android:id="@+id/account_settings_general_save_bt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/account_settings_general_pronouns_desc_tv"
-            android:layout_alignLeft="@+id/account_settings_general_pronouns_desc_tv"/>
+            android:layout_alignLeft="@+id/account_settings_general_pronouns_desc_tv"
+            android:text="@string/save"/>
+
+        <view
+            android:id="@+id/account_settings_general_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/account_settings_general_save_bt"
+            android:layout_alignLeft="@+id/account_settings_general_save_bt"
+            android:background="@color/recycler_item_view_background"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/account_settings_password_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/account_settings_general_rl"
+        android:layout_alignLeft="@+id/account_settings_general_rl">
+
+        <TextView
+            android:id="@+id/account_settings_password_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textSize="25dp"
+            android:text="@string/account_settings_password_title_tv_text"/>
+
+        <TextView
+            android:id="@+id/account_settings_password_new_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/account_settings_password_title_tv"
+            android:layout_below="@+id/account_settings_password_title_tv"
+            android:layout_marginBottom="5dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:text="@string/account_settings_password_new_title_tv_text"/>
+
+        <TextView
+            android:id="@+id/account_settings_password_new_desc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/account_settings_password_new_title_tv"
+            android:layout_alignLeft="@+id/account_settings_password_new_title_tv"
+            android:layout_marginBottom="10dp"
+            android:text="@string/account_settings_password_new_desc_tv_text"/>
+
+        <EditText
+            android:id="@+id/account_settings_password_new_et"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/account_settings_password_new_desc_tv"
+            android:layout_alignLeft="@+id/account_settings_password_new_desc_tv"
+            android:layout_marginBottom="20dp"/>
+
+
+        <TextView
+            android:id="@+id/account_settings_password_confirm_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/account_settings_password_title_tv"
+            android:layout_below="@+id/account_settings_password_title_tv"
+            android:layout_marginBottom="5dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:text="@string/account_settings_password_confirm_title_tv_text"/>
+
+
+        <EditText
+            android:id="@+id/account_settings_password_confirm_et"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/account_settings_password_confirm_title_tv"
+            android:layout_alignLeft="@+id/account_settings_password_confirm_title_tv"
+            android:layout_marginBottom="20dp"/>
+
+        <Button
+            android:id="@+id/account_settings_password_save_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/account_settings_password_confirm_et"
+            android:layout_alignLeft="@+id/account_settings_password_confirm_et"
+            android:text="@string/save"/>
+
+        <view
+            android:id="@+id/account_settings_password_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/account_settings_password_save_bt"
+            android:layout_alignLeft="@+id/account_settings_password_save_bt"
+            android:background="@color/recycler_item_view_background"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/account_settings_manage_team_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/account_settings_password_rl"
+        android:layout_alignLeft="@+id/account_settings_password_rl">
+
+        <TextView
+            android:id="@+id/account_settings_manage_team_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textSize="25dp"
+            android:text="@string/account_settings_manage_team_title_tv_text"/>
+
+        <ImageView
+            android:id="@+id/owner_avatar_iv"
+            android:layout_width="@dimen/profile_tablayout_followers_avatar_iv_layout_width_height"
+            android:layout_height="@dimen/profile_tablayout_followers_avatar_iv_layout_width_height"
+            android:layout_marginLeft="@dimen/profile_tablayout_followers_avatar_iv_layout_margin_top_left"
+            android:layout_marginTop="@dimen/profile_tablayout_followers_avatar_iv_layout_margin_top_left" />
+
+        <TextView
+            android:id="@+id/owner_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/owner_avatar_iv"
+            android:layout_marginLeft="@dimen/profile_tablayout_followers_name_tv_layout_marginLeft"
+            android:layout_toRightOf="@+id/owner_avatar_iv"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+        <TextView
+            android:id="@+id/owner_email_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/owner_name_tv"
+            android:layout_below="@+id/owner_name_tv"
+            android:layout_marginTop="@dimen/profile_tablayout_followers_location_tv_layout_marginTop" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/user_albums_recycler_item_view_layout_height"
+            android:layout_below="@+id/owner_avatar_iv"
+            android:layout_alignLeft="@+id/owner_avatar_iv"
+            android:background="@color/recycler_item_view_background"></View>
 
     </RelativeLayout>
 

@@ -49,7 +49,8 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="@dimen/user_albums_recycler_item_view_layout_height"
-        android:layout_below="@+id/profile_tablayout_followers_of_follow_count_tv"
+        android:layout_below="@+id/group_member_followers_of_follow_count_tv"
+        android:layout_alignLeft="@+id/group_member_followers_of_follow_count_tv"
         android:background="@color/recycler_item_view_background"></View>
 
 </RelativeLayout>

@@ -1,7 +1,10 @@
 package com.menglingpeng.vonvimeo.mvp.view.fragment;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.provider.ContactsContract;
+import android.support.v7.app.AlertDialog;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -66,13 +69,84 @@ public class AccountSettingsFragment extends BaseFragment implements View.OnClic
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.account_settings_general_email_edit_tv:
+                showEditEmailDialog();
                 break;
             case R.id.account_settings_general_save_bt:
+                saveGeneralSettings();
                 break;
             case R.id.account_settings_password_save_bt:
+                savePsswordSettings();
                 break;
             default:
                 break;
         }
+    }
+
+    private void showEditEmailDialog(){
+        final AlertDialog dialog;
+        ImageView closeIv;
+        final EditText newAddressEt;
+        final EditText confirmAddressEt;
+        final EditText vimeoPasswordEt;
+        final String newAddress;
+        final String confirmAddress;
+        final String vimeoPassword;
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_edit_my_email, null);
+        builder.setView(dialogView);
+        dialog = builder.create();
+        closeIv = (ImageView) dialogView.findViewById(R.id.dialog_edit_email_close_iv);
+        newAddressEt = (EditText) dialogView.findViewById(R.id.dialog_edit_email_new_address_et);
+        confirmAddressEt = (EditText) dialogView.findViewById(R.id.dialog_edit_email_confirm_address_et);
+        vimeoPasswordEt = (EditText) dialogView.findViewById(R.id.dialog_edit_email_vimeo_password_et);
+        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.setPositiveButton(R.sting.ok, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                newAddress = newAddressEt.getText().toString();
+                confirmAddress = confirmAddressEt.getText().toString();
+                vimeoPassword = vimeoPasswordEt.getText().toString();
+            }
+        });
+        closeIv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+        confirmAddressEt.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if(b){
+
+                }else {
+                    //失去焦点验证两次输入的Email address是否一致。
+                    newAddress = newAddressEt.getText().toString();
+                    confirmAddress = confirmAddressEt.getText().toString();
+
+                    if(newAddress.equals(confirmAddress)){
+
+                    }else {
+
+                    }
+                }
+            }
+        });
+        vimeoPasswordEt.setTransformationMethod(PasswordTransformationMethod.getInstance());
+        dialog.show();
+    }
+
+    private void saveGeneralSettings(){
+
+    }
+
+    private void savePsswordSettings(){
+
     }
 }

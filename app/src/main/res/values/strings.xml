@@ -485,5 +485,10 @@
 
     <string name="account_settings_manage_team_title_tv_text">Manage team</string>
 
+    <string name="dialog_edit_email_title_tv_text">Edit email</string>
+    <string name="dialog_edit_email_new_address_tv_text">New email address</string>
+    <string name="dialog_edit_email_confirm_address_tv_text">Confirm email address</string>
+    <string name="dialog_edit_email_vimeo_password_tv_text">Enter your Vimeo password to confirm</string>
+
 
 </resources>

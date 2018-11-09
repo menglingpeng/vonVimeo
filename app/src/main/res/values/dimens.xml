@@ -217,4 +217,12 @@
     <item name="stats_video_plays_rl_layout_weight" format="integer" type="dimen">1</item>
     <dimen name="stats_video_plays_info_iv_layout_marginLeft">5dp</dimen>
 
+    <dimen name="dialog_edit_email_title_rl_layout_height">40dp</dimen>
+    <dimen name="dialog_edit_email_title_rl_layout_marginBottom">20dp</dimen>
+    <dimen name="dialog_edit_email_title_tv_layout_marginLeft">20dp</dimen>
+    <dimen name="dialog_edit_email_title_tv_textSize">24dp</dimen>
+    <dimen name="dialog_edit_email_close_iv_layout_marginEnd">10dp</dimen>
+    <dimen name="dialog_edit_email_new_address_tv_layout_marginLeft">15dp</dimen>
+    <dimen name="dialog_edit_email_new_address_et_layout_marginBottom">20dp</dimen>
+
 </resources>

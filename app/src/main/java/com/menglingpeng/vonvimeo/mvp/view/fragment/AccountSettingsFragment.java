@@ -33,6 +33,10 @@ public class AccountSettingsFragment extends BaseFragment implements View.OnClic
     private EditText newPasswordEt;
     private EditText confirmPasswordEt;
     private Button passwordSaveBt;
+    private TextView addBlockedPersonTv;
+    private TextView membershipTv;
+    private Button upgradeBt;
+    private Button savePrivacyBt;
 
     @Override
     protected void initLayoutId() {
@@ -55,6 +59,10 @@ public class AccountSettingsFragment extends BaseFragment implements View.OnClic
         ownerAvatarIv = (ImageView)rootView.findViewById(R.id.owner_avatar_iv);
         ownerNametv = (TextView)rootView.findViewById(R.id.owner_name_tv);
         ownerEmailTv = (TextView)rootView.findViewById(R.id.owner_email_tv);
+        addBlockedPersonTv = (TextView)rootView.findViewById(R.id.account_settings_privacy_add_blocked_person_tv);
+        membershipTv = (TextView)rootView.findViewById(R.id.account_settings_privacy_membership_tv);
+        upgradeBt = (Button)rootView.findViewById(R.id.account_settings_privacy_membership_upgrade_bt);
+        savePrivacyBt = (Button)rootView.findViewById(R.id.account_settings_privacy_save_bt);
     }
 
     @Override
@@ -63,6 +71,7 @@ public class AccountSettingsFragment extends BaseFragment implements View.OnClic
         emailTv.setText(user.);
         ImageLoader.loadCricleImage(context, user.getPictures().getUri(), ownerAvatarIv);
         ownerNametv.setText(user.getName());
+        membershipTv.setText(user.getAccount());
     }
 
     @Override
@@ -76,6 +85,13 @@ public class AccountSettingsFragment extends BaseFragment implements View.OnClic
                 break;
             case R.id.account_settings_password_save_bt:
                 savePsswordSettings();
+                break;
+            case R.id.account_settings_privacy_add_blocked_person_tv:
+                showAddAPersonToBlockDialog();
+                break;
+            case R.id.account_settings_privacy_membership_upgrade_bt:
+                break;
+            case R.id.account_settings_privacy_save_bt:
                 break;
             default:
                 break;
@@ -148,5 +164,38 @@ public class AccountSettingsFragment extends BaseFragment implements View.OnClic
 
     private void savePsswordSettings(){
 
+    }
+
+    private void showAddAPersonToBlockDialog(){
+        final AlertDialog dialog;
+        ImageView closeIv;
+        final EditText userIdOrURLEt;
+        final String userIdOrURL;
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_add_a_person_to_block, null);
+        builder.setView(dialogView);
+        dialog = builder.create();
+        closeIv = (ImageView) dialogView.findViewById(R.id.dialog_add_a_person_to_block_close_iv);
+        userIdOrURLEt = (EditText) dialogView.findViewById(R.id.dialog_add_a_person_to_block_id_url_et);
+        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.setPositiveButton(R.sting.ok, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+        closeIv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
     }
 }

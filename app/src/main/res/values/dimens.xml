@@ -225,4 +225,15 @@
     <dimen name="dialog_edit_email_new_address_tv_layout_marginLeft">15dp</dimen>
     <dimen name="dialog_edit_email_new_address_et_layout_marginBottom">20dp</dimen>
 
+    <dimen name="account_settings_general_rl_layout_marginTop">20dp</dimen>
+    <dimen name="account_settings_general_rl_layout_marginLeft">15dp</dimen>
+    <dimen name="account_settings_general_title_tv_layout_marginTop">20dp</dimen>
+    <dimen name="account_settings_general_title_tv_layout_marginBottom">20dp</dimen>
+    <dimen name="account_settings_general_title_tv_textSize">24dp</dimen>
+    <dimen name="account_settings_general_name_title_tv_layout_marginBottom">5dp</dimen>
+    <dimen name="account_settings_general_name_desc_tv_layout_marginBottom">10dp</dimen>
+    <dimen name="account_settings_privacy_add_blocked_person_tv_layout_marginTop">10dp</dimen>
+    <dimen name="account_settings_privacy_add_blocked_person_tv_layout_marginBottom">20dp</dimen>
+    <dimen name="account_settings_privacy_membership_upgrade_bt_layout_marginBottom">20dp</dimen>
+
 </resources>

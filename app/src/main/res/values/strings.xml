@@ -485,10 +485,22 @@
 
     <string name="account_settings_manage_team_title_tv_text">Manage team</string>
 
+    <string name="account_settings_privacy_title_tv_text">Privacy</string>
+    <string name="account_settings_privacy_blocked_people_title_tv_text">Blocked people</string>
+    <string name="account_settings_privacy_blocked_people_desc_tv_text">We feel it’s good to have control over
+        your connections which is why we gave you the ability to block other people on Vimeo. </string>
+    <string name="account_settings_privacy_add_blocked_person_tv_text">+ Add a person to block</string>
+    <string name="account_settings_privacy_membership_title_tv_text">Merbership:</string>
+    <string name="account_settings_privacy_membership_basic_desc_tv_text">Get up to 7TB of storage (no weekly limits),
+        advanced privacy options, and powerful stats tools.</string>
+
     <string name="dialog_edit_email_title_tv_text">Edit email</string>
     <string name="dialog_edit_email_new_address_tv_text">New email address</string>
     <string name="dialog_edit_email_confirm_address_tv_text">Confirm email address</string>
     <string name="dialog_edit_email_vimeo_password_tv_text">Enter your Vimeo password to confirm</string>
+
+    <string name="dialog_add_a_person_to_block_title_tv_text">Add a person to block</string>
+    <string name="dialog_add_a_person_to_block_id_url_tv_text">User ID or Vimeo profile URL</string>
 
 
 </resources>

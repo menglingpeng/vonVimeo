@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/dialog_add_a_person_to_block_title_rl"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dialog_edit_email_title_rl_layout_height"
+        android:background="@color/recycler_item_view_background"
+        android:layout_marginBottom="@dimen/dialog_edit_email_title_rl_layout_marginBottom">
+
+        <TextView
+            android:id="@+id/dialog_add_a_person_to_block_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dialog_edit_email_title_tv_layout_marginLeft"
+            android:gravity="center"
+            android:text="@string/dialog_add_a_person_to_block_title_tv_text"
+            android:textSize="@dimen/dialog_edit_email_title_tv_textSize"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+
+        <ImageView
+            android:id="@+id/dialog_add_a_person_to_block_close_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/dialog_edit_email_close_iv_layout_marginEnd"
+            android:src="@drawable/ic_close_blue_grey_700_18dp"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/dialog_add_a_person_to_block_id_url_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dialog_add_a_person_to_block_title_rl"
+        android:layout_marginLeft="@dimen/dialog_edit_email_new_address_tv_layout_marginLeft"
+        android:textAppearance="@style/Base.DialogWindowTitle.AppCompat"
+        android:text="@string/dialog_add_a_person_to_block_id_url_tv_text"/>
+
+    <EditText
+        android:id="@+id/dialog_add_a_person_to_block_id_url_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dialog_add_a_person_to_block_id_url_tv"
+        android:layout_alignLeft="@+id/dialog_add_a_person_to_block_id_url_tv"
+        android:layout_marginBottom="@dimen/dialog_edit_email_new_address_et_layout_marginBottom"/>
+
+</RelativeLayout>

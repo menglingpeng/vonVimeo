@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/notifications_settings_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/account_settings_general_title_tv_layout_marginTop"
+        android:layout_marginBottom="@dimen/account_settings_general_title_tv_layout_marginBottom"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textSize="@dimen/account_settings_general_title_tv_textSize"
+        android:text="@string/notifications_settings_title_tv_text"/>
+
+    <TextView
+        android:id="@+id/notifications_settings_desc_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/notifications_settings_title_tv"
+        android:layout_alignLeft="@+id/notifications_settings_title_tv"
+        android:layout_marginBottom="@dimen/account_settings_general_name_desc_tv_layout_marginBottom"
+        android:text="@string/notifications_settings_desc_tv_text"/>
+
+    <RelativeLayout
+        android:id="@+id/notifications_settings_on_site_activity_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/notifications_settings_desc_tv"
+        android:layout_alignLeft="@+id/notifications_settings_desc_tv">
+
+        <TextView
+            android:id="@+id/notifications_settings_on_site_activity_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/account_settings_general_name_title_tv_layout_marginBottom"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:text="@string/notifications_settings_on_site_activity_title_tv_text"/>
+
+        <TextView
+            android:id="@+id/notifications_settings_on_site_activity_no_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/notifications_settings_on_site_activity_title_tv"
+            android:layout_marginEnd="@dimen/notifications_settings_no_tv_layout_marginEnd"
+            android:text="@string/no"/>
+
+        <TextView
+            android:id="@+id/notifications_settings_on_site_activity_yes_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/notifications_settings_on_site_activity_no_tv"
+            android:layout_alignTop="@+id/notifications_settings_on_site_activity_no_tv"
+            android:layout_marginRight="@dimen/notifications_settings_yes_tv_layout_marginRight"
+            android:text="@string/yes"/>
+
+        <view
+            android:id="@+id/notifications_settings_on_site_activity_title_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/notifications_settings_on_site_activity_title_tv"
+            android:layout_alignLeft="@+id/notifications_settings_on_site_activity_title_tv"
+            android:layout_marginBottom="@dimen/notifications_settings_on_site_activity_title_view_layout_marginBottom"
+            />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/notifications_settings_vimeo_on_demand_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/notifications_settings_on_site_activity_rl"
+        android:layout_alignLeft="@+id/notifications_settings_on_site_activity_rl">
+
+        <TextView
+            android:id="@+id/notifications_settings_vimeo_on_demand_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/account_settings_general_name_title_tv_layout_marginBottom"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:text="@string/notifications_settings_vimeo_on_demand_title_tv_text"/>
+
+        <TextView
+            android:id="@+id/notifications_settings_vimeo_on_demand_no_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/notifications_settings_vimeo_on_demand_title_tv"
+            android:layout_marginEnd="@dimen/notifications_settings_no_tv_layout_marginEnd"
+            android:text="@string/no"/>
+
+        <TextView
+            android:id="@+id/notifications_settings_vimeo_on_demand_yes_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/notifications_settings_vimeo_on_demand_no_tv"
+            android:layout_alignTop="@+id/notifications_settings_vimeo_on_demand_no_tv"
+            android:layout_marginRight="@dimen/notifications_settings_yes_tv_layout_marginRight"
+            android:text="@string/yes"/>
+
+        <view
+            android:id="@+id/notifications_settings_vimeo_on_demand_title_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/notifications_settings_vimeo_on_demand_title_tv"
+            android:layout_alignLeft="@+id/notifications_settings_vimeo_on_demand_title_tv"
+            android:layout_marginBottom="@dimen/notifications_settings_on_site_activity_title_view_layout_marginBottom"
+            />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/notifications_settings_vimeo_news_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/notifications_settings_vimeo_on_demand_rl"
+        android:layout_alignLeft="@+id/notifications_settings_vimeo_on_demand_rl">
+
+        <TextView
+            android:id="@+id/notifications_settings_vimeo_news_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/account_settings_general_name_title_tv_layout_marginBottom"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:text="@string/notifications_settings_vimeo_news_title_tv_text"/>
+
+        <TextView
+            android:id="@+id/notifications_settings_vimeo_news_no_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/notifications_settings_vimeo_news_title_tv"
+            android:layout_marginEnd="@dimen/notifications_settings_no_tv_layout_marginEnd"
+            android:text="@string/no"/>
+
+        <TextView
+            android:id="@+id/notifications_settings_vimeo_news_yes_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/notifications_settings_vimeo_news_no_tv"
+            android:layout_alignTop="@+id/notifications_settings_vimeo_news_no_tv"
+            android:layout_marginRight="@dimen/notifications_settings_yes_tv_layout_marginRight"
+            android:text="@string/yes"/>
+
+        <view
+            android:id="@+id/notifications_settings_vimeo_news_title_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/notifications_settings_vimeo_news_title_tv"
+            android:layout_alignLeft="@+id/notifications_settings_vimeo_news_title_tv"
+            android:layout_marginBottom="@dimen/notifications_settings_on_site_activity_title_view_layout_marginBottom"
+            />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

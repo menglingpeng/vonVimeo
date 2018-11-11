@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/notifications_settings_on_site_activity_item_rl"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/notifications_settings_on_site_activity_post_new_video_rl_layout_marginBottom"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/notifications_settings_on_site_activity_item_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/notifications_settings_on_site_activity_post_new_video_tv_layout_marginBottom"
+        android:text=""/>
+
+    <RadioGroup
+        android:id="@+id/notifications_settings_on_site_activity_item_rg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/notifications_settings_on_site_activity_post_new_video_rg_layout_marginRight"
+        android:layout_alignTop="@+id/notifications_settings_on_site_activity_item_tv"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/notifications_settings_on_site_activity_item_yes_rb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/notifications_settings_on_site_activity_item_no_rb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RadioGroup>
+
+    <view
+        android:id="@+id/notifications_settings_on_site_activity_item_view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/notifications_settings_on_site_activity_item_rg"
+        android:layout_alignLeft="@+id/notifications_settings_on_site_activity_item_rg"
+        android:background="@color/recycler_item_view_background"
+        android:layout_marginBottom="@dimen/notifications_settings_on_site_activity_title_view_layout_marginBottom"
+        />
+
+</RelativeLayout>

@@ -511,5 +511,8 @@
     <string name="notifications_settings_vimeo_on_demand_title_tv_text">Vimeo On Demand</string>
     <string name="notifications_settings_vimeo_news_title_tv_text">Vimeo News</string>
 
+    <string name="notifications_settings_on_site_activity_send_notifications_only_i_follow_tv_text">Send me these
+        notifications only when they apply to someone or something I follow on Vimeo.</string>
+
 
 </resources>

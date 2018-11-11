@@ -22,5 +22,20 @@
         <item>@string/my_video_spinner_duration</item>
     </string-array>
 
+    <string-array name="on_site_activity_name">
+        <item>My new video is posted</item>
+        <item>Someone leaves a comment on my video, or replies to my comment</item>
+        <item>Someone mentions me in a comment</item>
+        <item>Someone likes one of my videos</item>
+        <item>Someone follows me</item>
+        <item>Someone sends me a private message</item>
+        <item>Someone shares a video with me	</item>
+        <item>Someone adds me to the credits of a video</item>
+        <item>Someone adds my video to an album, channel, or group</item>
+        <item>A moderator or video owner removes a video from a group or channel I created</item>
+    </string-array>
 
+    <string-array name="on_site_activity_rg">
+        <item></item>
+    </string-array>
 </resources>

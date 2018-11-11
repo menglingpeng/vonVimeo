@@ -240,4 +240,11 @@
     <dimen name="notifications_settings_yes_tv_layout_marginRight">15dp</dimen>
     <dimen name="notifications_settings_on_site_activity_title_view_layout_marginBottom">10dp</dimen>
 
+    <dimen name="notifications_settings_on_site_activity_post_new_video_rl_layout_marginBottom">10dp</dimen>
+    <dimen name="notifications_settings_on_site_activity_post_new_video_tv_layout_marginBottom">15dp</dimen>
+    <dimen name="notifications_settings_on_site_activity_post_new_video_rg_layout_marginRight">10dp</dimen>
+
+    <dimen name="notifications_settings_on_site_activity_send_notifications_only_i_follow_cb_layout_marginTop">20dp</dimen>
+    <dimen name="notifications_settings_on_site_activity_send_notifications_only_i_follow_tv_layout_marginLeft">5dp</dimen>
+
 </resources>

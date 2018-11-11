@@ -514,5 +514,15 @@
     <string name="notifications_settings_on_site_activity_send_notifications_only_i_follow_tv_text">Send me these
         notifications only when they apply to someone or something I follow on Vimeo.</string>
 
+    <string name="notifications_settings_vimeo_on_demand_add_demand_title_tv_text">When I purchase a Vimeo On Demand title</string>
+    <string name="notifications_settings_vimeo_on_demand_add_a_title_tv_text">Each time a new video is added to a
+        title I’ve purchased</string>
+    <string name="notifications_settings_vimeo_on_demand_someone_on_demand_title_tv_text">Each time someone purchases
+        my Vimeo On Demand title</string>
+    <string name="notifications_settings_vimeo_on_demand_daily_and_weekly_summaries_tv_text">Daily and weekly
+        performance summaries</string>
+    <string name="notifications_settings_vimeo_on_demand_monthly_and_annual_summaries_tv_text">Monthly and annual
+        performance summaries</string>
+
 
 </resources>

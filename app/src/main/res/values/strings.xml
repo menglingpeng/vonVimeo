@@ -510,6 +510,8 @@
     <string name="notifications_settings_on_site_activity_title_tv_text">On-site activity</string>
     <string name="notifications_settings_vimeo_on_demand_title_tv_text">Vimeo On Demand</string>
     <string name="notifications_settings_vimeo_news_title_tv_text">Vimeo News</string>
+    <string name="notifications_settings_vimeo_news_desc_tv_text">Get updates about our products and stuff you follow.
+        You can change your preferences at any time. Any changes you make here will take effect within 2-3 business days.</string>
 
     <string name="notifications_settings_on_site_activity_send_notifications_only_i_follow_tv_text">Send me these
         notifications only when they apply to someone or something I follow on Vimeo.</string>
@@ -523,6 +525,18 @@
         performance summaries</string>
     <string name="notifications_settings_vimeo_on_demand_monthly_and_annual_summaries_tv_text">Monthly and annual
         performance summaries</string>
+
+    <string name="notifications_settings_vimeo_news_daily_digest_title_tv_text">Daily Digest</string>
+    <string name="notifications_settings_vimeo_news_daily_digest_desc_tv_text">Your latest stats, new videos in your feed,
+        and updates from people you follow.</string>
+    <string name="notifications_settings_vimeo_news_newsletter_title_tv_text">Newsletter</string>
+    <string name="notifications_settings_vimeo_news_newsletter_desc_tv_text">A monthly cornucopia of innovations,
+        recommendations, and visual delights.</string>
+    <string name="notifications_settings_vimeo_news_product_updates_title_tv_text">Product updates</string>
+    <string name="notifications_settings_vimeo_news_product_updates_desc_tv_text">Learn what we’ve built,
+        why we built it, and how to use it.</string>
+    <string name="notifications_settings_vimeo_news_cool_offers_title_tv_text">Cool offers</string>
+    <string name="notifications_settings_vimeo_news_cool_offers_desc_tv_text">Exclusive deals, nice upgrades, and other temptations.</string>
 
 
 </resources>

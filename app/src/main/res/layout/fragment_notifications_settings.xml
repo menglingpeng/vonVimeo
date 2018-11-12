@@ -252,7 +252,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_marginEnd="@dimen/notifications_settings_on_site_activity_post_new_video_rg_layout_marginRight"
-                android:layout_alignTop="@+id/notifications_settings_vimeo_add_demand_add_demand_title_tv"
+                android:layout_alignTop="@+id/notifications_settings_vimeo_on_demand_add_demand_title_tv"
                 android:orientation="horizontal">
 
                 <RadioButton
@@ -327,7 +327,7 @@
             android:layout_marginBottom="@dimen/notifications_settings_on_site_activity_title_view_layout_marginBottom"
             />
 
-    </RelativeLayout>
+        </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/notifications_settings_vimeo_on_demand_someone_on_demand_title_rl"
@@ -378,6 +378,104 @@
 
         </RelativeLayout>
 
+        <RelativeLayout
+            android:id="@+id/notifications_settings_vimeo_on_demand_daily_and_weekly_summaries_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/notifications_settings_vimeo_on_demand_someone_on_demand_title_rl"
+            android:layout_alignLeft="@+id/notifications_settings_vimeo_on_demand_someone_on_demand_title_rl"
+            android:layout_marginBottom="@dimen/notifications_settings_on_site_activity_post_new_video_rl_layout_marginBottom">
+
+            <TextView
+                android:id="@+id/notifications_settings_vimeo_on_demand_daily_and_weekly_summaries_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/notifications_settings_on_site_activity_post_new_video_tv_layout_marginBottom"
+                android:text="@string/notifications_settings_vimeo_on_demand_daily_and_weekly_summaries_tv_text"/>
+
+            <RadioGroup
+                android:id="@+id/notifications_settings_vimeo_on_demand_daily_and_weekly_summaries_rg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/notifications_settings_on_site_activity_post_new_video_rg_layout_marginRight"
+                android:layout_alignTop="@+id/notifications_settings_vimeo_on_demand_daily_and_weekly_summaries_tv"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/notifications_settings_vimeo_on_demand_daily_and_weekly_summaries_yes_rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"/>
+
+                <RadioButton
+                    android:id="@+id/notifications_settings_vimeo_on_demand_daily_and_weekly_summaries_no_rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </RadioGroup>
+
+            <view
+                android:id="@+id/notifications_settings_vimeo_on_demand_daily_and_weekly_summaries_view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/notifications_settings_vimeo_on_demand_daily_and_weekly_summaries_rg"
+                android:layout_alignLeft="@+id/notifications_settings_vimeo_on_demand_daily_and_weekly_summaries_rg"
+                android:background="@color/recycler_item_view_background"
+                android:layout_marginBottom="@dimen/notifications_settings_on_site_activity_title_view_layout_marginBottom"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/notifications_settings_vimeo_on_demand_monthly_and_annual_summaries_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/notifications_settings_vimeo_on_demand_daily_and_weekly_summaries_rl"
+            android:layout_alignLeft="@+id/notifications_settings_vimeo_on_demand_daily_and_weekly_summaries_rl"
+            android:layout_marginBottom="@dimen/notifications_settings_on_site_activity_post_new_video_rl_layout_marginBottom">
+
+            <TextView
+                android:id="@+id/notifications_settings_vimeo_on_demand_monthly_and_annual_summaries_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/notifications_settings_on_site_activity_post_new_video_tv_layout_marginBottom"
+                android:text="@string/notifications_settings_vimeo_on_demand_monthly_and_annual_summaries_tv_text"/>
+
+            <RadioGroup
+                android:id="@+id/notifications_settings_vimeo_on_demand_monthly_and_annual_summaries_rg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/notifications_settings_on_site_activity_post_new_video_rg_layout_marginRight"
+                android:layout_alignTop="@+id/notifications_settings_vimeo_on_demand_monthly_and_annual_summaries_tv"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/notifications_settings_vimeo_on_demand_monthly_and_annual_summaries_yes_rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"/>
+
+                <RadioButton
+                    android:id="@+id/notifications_settings_vimeo_on_demand_monthly_and_annual_summaries_no_rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </RadioGroup>
+
+            <view
+                android:id="@+id/notifications_settings_vimeo_on_demand_monthly_and_annual_summaries_view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/notifications_settings_vimeo_on_demand_monthly_and_annual_summaries_rg"
+                android:layout_alignLeft="@+id/notifications_settings_vimeo_on_demand_monthly_and_annual_summaries_rg"
+                android:background="@color/recycler_item_view_background"
+                android:layout_marginBottom="@dimen/notifications_settings_on_site_activity_title_view_layout_marginBottom"
+                />
+
+        </RelativeLayout>
+
     </RelativeLayout>
 
     <RelativeLayout
@@ -396,11 +494,19 @@
             android:text="@string/notifications_settings_vimeo_news_title_tv_text"/>
 
         <TextView
+            android:id="@+id/notifications_settings_vimeo_news_desc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/notifications_settings_vimeo_news_title_tv"
+            android:layout_alignLeft="@+id/notifications_settings_vimeo_news_title_tv"
+            android:text="@string/notifications_settings_vimeo_news_desc_tv_text"/>
+
+        <TextView
             android:id="@+id/notifications_settings_vimeo_news_no_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_alignTop="@+id/notifications_settings_vimeo_news_title_tv"
+            android:layout_alignTop="@+id/notifications_settings_vimeo_news_desc_tv"
             android:layout_marginEnd="@dimen/notifications_settings_no_tv_layout_marginEnd"
             android:text="@string/no"/>
 
@@ -423,6 +529,117 @@
             android:layout_marginBottom="@dimen/notifications_settings_on_site_activity_title_view_layout_marginBottom"
             />
 
+        <RelativeLayout
+            android:id="@+id/notifications_settings_vimeo_news_daily_digest_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/notifications_settings_on_site_activity_post_new_video_rl_layout_marginBottom">
+
+            <TextView
+                android:id="@+id/notifications_settings_vimeo_news_daily_digest_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/notifications_settings_on_site_activity_post_new_video_tv_layout_marginBottom"
+                android:text="@string/notifications_settings_vimeo_news_daily_digest_title_tv_text"/>
+
+            <TextView
+                android:id="@+id/notifications_settings_vimeo_news_daily_digest_desc_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/notifications_settings_vimeo_news_daily_digest_title_tv"
+                android:layout_alignLeft="@+id/notifications_settings_vimeo_news_daily_digest_title_tv"
+                android:text="@string/notifications_settings_vimeo_news_daily_digest_desc_tv_text"/>
+
+            <RadioGroup
+                android:id="@+id/notifications_settings_vimeo_news_daily_digest_rg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/notifications_settings_on_site_activity_post_new_video_rg_layout_marginRight"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/notifications_settings_vimeo_news_daily_digest_yes_rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"/>
+
+                <RadioButton
+                    android:id="@+id/notifications_settings_vimeo_news_daily_digest_no_rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </RadioGroup>
+
+            <view
+                android:id="@+id/notifications_settings_vimeo_news_daily_digest_view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/notifications_settings_vimeo_news_daily_digest_rg"
+                android:layout_alignLeft="@+id/notifications_settings_vimeo_news_daily_digest_rg"
+                android:background="@color/recycler_item_view_background"
+                android:layout_marginBottom="@dimen/notifications_settings_on_site_activity_title_view_layout_marginBottom"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/notifications_settings_vimeo_news_newsletter_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/notifications_settings_on_site_activity_post_new_video_rl_layout_marginBottom"
+            android:layout_below="@+id/notifications_settings_vimeo_news_daily_digest_rl"
+            android:layout_alignLeft="@+id/notifications_settings_vimeo_news_daily_digest_rl">
+
+            <TextView
+                android:id="@+id/notifications_settings_vimeo_news_newsletter_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/notifications_settings_on_site_activity_post_new_video_tv_layout_marginBottom"
+                android:text="@string/notifications_settings_vimeo_news_newsletter_title_tv_text"/>
+
+            <TextView
+                android:id="@+id/notifications_settings_vimeo_news_newsletter_desc_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/notifications_settings_vimeo_news_newsletter_title_tv"
+                android:layout_alignLeft="@+id/notifications_settings_vimeo_news_newsletter_title_tv"
+                android:text="@string/notifications_settings_vimeo_news_newsletter_desc_tv_text"/>
+
+            <RadioGroup
+                android:id="@+id/notifications_settings_vimeo_news_newsletter_rg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/notifications_settings_on_site_activity_post_new_video_rg_layout_marginRight"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/notifications_settings_vimeo_news_newsletter_yes_rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"/>
+
+                <RadioButton
+                    android:id="@+id/notifications_settings_vimeo_news_newsletter_no_rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </RadioGroup>
+
+            <view
+                android:id="@+id/notifications_settings_vimeo_news_newsletter_view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/notifications_settings_vimeo_news_newsletter_rg"
+                android:layout_alignLeft="@+id/notifications_settings_vimeo_news_newsletter_rg"
+                android:background="@color/recycler_item_view_background"
+                android:layout_marginBottom="@dimen/notifications_settings_on_site_activity_title_view_layout_marginBottom"
+                />
+
+        </RelativeLayout>
 
     </RelativeLayout>
 

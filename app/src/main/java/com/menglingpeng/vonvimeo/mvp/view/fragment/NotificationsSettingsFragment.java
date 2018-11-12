@@ -21,6 +21,11 @@ public class NotificationsSettingsFragment extends BaseFragment {
     private RadioGroup demandTitleRg;
     private RadioGroup aTitleRg;
     private RadioGroup someoneTitleRg;
+    private RadioGroup dailyDigestRg;
+    private RadioGroup newsletterRg;
+    private RadioGroup dailyAndWeeklySummariesRg;
+    private RadioGroup monthlyAndAnnualSummariesRg;
+
 
 
     @Override
@@ -42,6 +47,12 @@ public class NotificationsSettingsFragment extends BaseFragment {
                 notifications_settings_vimeo_on_demand_add_a_title_rg);
         someoneTitleRg = (RadioGroup)rootView.findViewById(R.id.
                 notifications_settings_vimeo_on_demand_someone_on_demand_title_rg);
+        dailyDigestRg = (RadioGroup)rootView.findViewById(R.id.notifications_settings_vimeo_news_daily_digest_rg);
+        newsletterRg = (RadioGroup)rootView.findViewById(R.id.notifications_settings_vimeo_news_newsletter_rg);
+        dailyAndWeeklySummariesRg = (RadioGroup)rootView.findViewById(R.id.
+                notifications_settings_vimeo_on_demand_daily_and_weekly_summaries_rg);
+        monthlyAndAnnualSummariesRg = (RadioGroup)rootView.findViewById(R.id.
+                notifications_settings_vimeo_on_demand_monthly_and_annual_summaries_rg);
 
     }
 
@@ -67,6 +78,7 @@ public class NotificationsSettingsFragment extends BaseFragment {
                     case R.id.notifications_settings_vimeo_on_demand_add_demand_title_no_rb:
                         break;
                     default:
+                        break;
                 }
             }
         });
@@ -79,6 +91,7 @@ public class NotificationsSettingsFragment extends BaseFragment {
                     case R.id.notifications_settings_vimeo_on_demand_add_a_title_no_rb:
                         break;
                     default:
+                        break;
                 }
             }
         });
@@ -91,6 +104,59 @@ public class NotificationsSettingsFragment extends BaseFragment {
                     case R.id.notifications_settings_vimeo_on_demand_someone_on_demand_title_no_rb:
                         break;
                     default:
+                        break;
+                }
+            }
+        });
+        dailyAndWeeklySummariesRg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch (i){
+                    case R.id.notifications_settings_vimeo_on_demand_daily_and_weekly_summaries_yes_rb:
+                        break;
+                    case R.id.notifications_settings_vimeo_on_demand_daily_and_weekly_summaries_no_rb:
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
+        monthlyAndAnnualSummariesRg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch (i){
+                    case R.id.notifications_settings_vimeo_on_demand_monthly_and_annual_summaries_yes_rb:
+                        break;
+                    case R.id.notifications_settings_vimeo_on_demand_monthly_and_annual_summaries_no_rb:
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
+        newsletterRg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch (i){
+                    case R.id.notifications_settings_vimeo_news_newsletter_yes_rb:
+                        break;
+                    case R.id.notifications_settings_vimeo_news_newsletter_no_rb:
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
+        dailyDigestRg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch (i){
+                    case R.id.notifications_settings_vimeo_news_daily_digest_yes_rb:
+                        break;
+                    case R.id.notifications_settings_vimeo_news_daily_digest_no_rb:
+                        break;
+                    default:
+                        break;
                 }
             }
         });

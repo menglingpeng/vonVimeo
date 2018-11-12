@@ -2,6 +2,8 @@ package com.menglingpeng.vonvimeo.mvp.view.fragment;
 
 import android.content.Context;
 import android.graphics.ColorSpace;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ListView;
@@ -23,8 +25,11 @@ public class NotificationsSettingsFragment extends BaseFragment {
     private RadioGroup someoneTitleRg;
     private RadioGroup dailyDigestRg;
     private RadioGroup newsletterRg;
+    private RadioGroup productUpdatesRb;
+    private RadioGroup coolOffersRb;
     private RadioGroup dailyAndWeeklySummariesRg;
     private RadioGroup monthlyAndAnnualSummariesRg;
+    private Button saveSettingsBt;
 
 
 
@@ -49,10 +54,13 @@ public class NotificationsSettingsFragment extends BaseFragment {
                 notifications_settings_vimeo_on_demand_someone_on_demand_title_rg);
         dailyDigestRg = (RadioGroup)rootView.findViewById(R.id.notifications_settings_vimeo_news_daily_digest_rg);
         newsletterRg = (RadioGroup)rootView.findViewById(R.id.notifications_settings_vimeo_news_newsletter_rg);
+        productUpdatesRb = (RadioGroup) rootView.findViewById(R.id.notifications_settings_vimeo_news_product_updates_rg);
+        coolOffersRb = (RadioGroup) rootView.findViewById(R.id.notifications_settings_vimeo_news_cool_offers_rg);
         dailyAndWeeklySummariesRg = (RadioGroup)rootView.findViewById(R.id.
                 notifications_settings_vimeo_on_demand_daily_and_weekly_summaries_rg);
         monthlyAndAnnualSummariesRg = (RadioGroup)rootView.findViewById(R.id.
                 notifications_settings_vimeo_on_demand_monthly_and_annual_summaries_rg);
+        saveSettingsBt = (Button)rootView.findViewById(R.id.notifications_settings_save_bt);
 
     }
 
@@ -160,5 +168,41 @@ public class NotificationsSettingsFragment extends BaseFragment {
                 }
             }
         });
+        productUpdatesRb.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch (i){
+                    case R.id.notifications_settings_vimeo_news_product_updates_yes_rb:
+                        break;
+                    case R.id.notifications_settings_vimeo_news_product_updates_no_rb:
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
+        coolOffersRb.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch (i){
+                    case R.id.notifications_settings_vimeo_news_cool_offers_yes_rb:
+                        break;
+                    case R.id.notifications_settings_vimeo_news_cool_offers_no_rb:
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
+        saveSettingsBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+    }
+
+    private void saveSettings(){
+
     }
 }

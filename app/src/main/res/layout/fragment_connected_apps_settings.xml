@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/connected_apps_settings_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/account_settings_general_title_tv_layout_marginTop"
+        android:layout_marginBottom="@dimen/account_settings_general_title_tv_layout_marginBottom"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textSize="@dimen/account_settings_general_title_tv_textSize"
+        android:text="@string/connected_apps_settings_title_tv_text"/>
+
+    <RelativeLayout
+        android:id="@+id/connected_apps_settings_to_other_accounts_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/connected_apps_settings_title_tv"
+        android:layout_alignLeft="@+id/connected_apps_settings_title_tv"
+        android:layout_marginBottom="@dimen/connected_apps_settings_to_other_accounts_rl_layout_marginBottom">
+
+        <TextView
+            android:id="@+id/connected_apps_settings_to_other_accounts_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/connected_apps_settings_to_other_accounts_title_tv_layout_marginBottom"
+            android:textAppearance="@style/Base.DialogWindowTitle.AppCompat"
+            android:text="@string/connected_apps_settings_to_other_accounts_title_tv_text"/>
+
+        <ListView
+            android:id="@+id/connected_apps_settings_to_other_accounts_lv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/connected_apps_settings_to_other_accounts_title_tv"
+            android:layout_alignLeft="@+id/connected_apps_settings_to_other_accounts_title_tv"></ListView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/connected_apps_settings_upload_your_videos_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/connected_apps_settings_to_other_accounts_rl"
+        android:layout_alignLeft="@+id/connected_apps_settings_to_other_accounts_rl"
+        android:layout_marginBottom="@dimen/connected_apps_settings_to_other_accounts_rl_layout_marginBottom">
+
+        <TextView
+            android:id="@+id/connected_apps_settings_upload_your_videos_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/connected_apps_settings_to_other_accounts_title_tv_layout_marginBottom"
+            android:textAppearance="@style/Base.DialogWindowTitle.AppCompat"
+            android:text="@string/connected_apps_settings_upload_your_videos_title_tv_text"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

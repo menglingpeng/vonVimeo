@@ -538,5 +538,9 @@
     <string name="notifications_settings_vimeo_news_cool_offers_title_tv_text">Cool offers</string>
     <string name="notifications_settings_vimeo_news_cool_offers_desc_tv_text">Exclusive deals, nice upgrades, and other temptations.</string>
 
+    <string name="connected_apps_settings_title_tv_text">Connected apps</string>
+    <string name="connected_apps_settings_to_other_accounts_title_tv_text">Connect Vimeo to your other accounts</string>
+
+    <string name="connected_apps_settings_upload_your_videos_title_tv_text">Upload your videos</string>
 
 </resources>

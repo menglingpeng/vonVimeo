@@ -247,4 +247,7 @@
     <dimen name="notifications_settings_on_site_activity_send_notifications_only_i_follow_cb_layout_marginTop">20dp</dimen>
     <dimen name="notifications_settings_on_site_activity_send_notifications_only_i_follow_tv_layout_marginLeft">5dp</dimen>
 
+    <dimen name="connected_apps_settings_to_other_accounts_title_tv_layout_marginBottom">20dp</dimen>
+    <dimen name="connected_apps_settings_to_other_accounts_rl_layout_marginBottom">20dp</dimen>
+
 </resources>

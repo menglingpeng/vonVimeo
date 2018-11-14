@@ -543,4 +543,24 @@
 
     <string name="connected_apps_settings_upload_your_videos_title_tv_text">Upload your videos</string>
 
+    <string name="connect_to_other_accounts_bt_text">Connect</string>
+    <string name="connected_apps_settings_connect_to_facebook_name_tv_text">Facebook</string>
+    <string name="connected_apps_settings_connect_to_facebook_desc_tv_text">Let Vimeo post to my Facebook pages
+        with the actions I choose, including automatic posting of new uploads and likes.</string>
+    <string name="connected_apps_settings_connect_to_youtube_name_tv_text">YouTube</string>
+    <string name="connected_apps_settings_connect_to_youtube_desc_tv_text">Let Vimeo post to my YouTube channel with
+        the actions I choose, including publishing native videos.</string>
+    <string name="connected_apps_settings_connect_to_twitter_name_tv_text">Twitter</string>
+    <string name="connected_apps_settings_connect_to_twitter_desc_tv_text">Let Vimeo post Tweets with the actions I
+        choose and attribute shared videos to my Twitter account.</string>
+    <string name="connected_apps_settings_connect_to_linkedin_name_tv_text">LinkedIn</string>
+    <string name="connected_apps_settings_connect_to_linkedin_desc_tv_text">Let Vimeo post LinkedIn updates with the
+        actions I choose.</string>
+    <string name="connected_apps_settings_connect_to_tumblr_name_tv_text">Tumblr</string>
+    <string name="connected_apps_settings_connect_to_tumblr_desc_tv_text">Let Vimeo post to my Tumblr blog with the
+        actions I choose.</string>
+    <string name="connected_apps_settings_connect_to_dropbox_name_tv_text">Dropbox</string>
+    <string name="connected_apps_settings_connect_to_dropbox_desc_tv_text">Let Vimeo access my Dropbox so I can
+        upload automatically.</string>
+
 </resources>

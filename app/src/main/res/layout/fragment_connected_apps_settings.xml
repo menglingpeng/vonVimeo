@@ -35,6 +35,198 @@
             android:layout_below="@+id/connected_apps_settings_to_other_accounts_title_tv"
             android:layout_alignLeft="@+id/connected_apps_settings_to_other_accounts_title_tv"></ListView>
 
+        <RelativeLayout
+            android:id="@+id/connected_apps_settings_connect_to_facebook_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/connected_apps_settings_to_other_accounts_title_tv"
+            android:layout_alignLeft="@+id/connected_apps_settings_to_other_accounts_title_tv"
+            android:layout_marginBottom="@dimen/connected_apps_settings_connect_to_facebook_rl_layout_marginBottom">
+
+          <ImageView
+              android:id="@+id/connected_apps_settings_connect_to_facebook_picture_iv"
+              android:layout_width="@dimen/connected_apps_settings_connect_to_facebook_picture_iv_layout_width"
+              android:layout_height="@dimen/connected_apps_settings_connect_to_facebook_picture_iv_layout_height"
+              android:layout_marginRight="@dimen/connected_apps_settings_connect_to_facebook_picture_iv_layout_marginRight"
+              android:layout_marginBottom="@dimen/connected_apps_settings_connect_to_facebook_picture_iv_layout_marginBottom"
+              android:src=""/>
+
+            <Button
+                android:id="@+id/connected_apps_settings_connect_to_facebook_bt"
+                android:layout_width="@dimen/connected_apps_settings_connect_to_facebook_bt_layout_width"
+                android:layout_height="@dimen/connected_apps_settings_connect_to_facebook_bt_layout_height"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/connected_apps_settings_connect_to_facebook_bt_layout_marginLeft"
+                android:gravity="center"
+                android:text="@string/connect_to_other_accounts_bt_text"
+                android:textColor="@color/colorPrimaryDark"/>
+
+            <TextView
+                android:id="@+id/connected_apps_settings_connect_to_facebook_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/connected_apps_settings_connect_to_facebook_picture_iv"
+                android:layout_alignTop="@+id/connected_apps_settings_connect_to_facebook_picture_iv"
+                android:layout_marginBottom="@dimen/connected_apps_settings_connect_to_facebook_name_iv_layout_marginBottom"
+                android:textAppearance="@style/Base.DialogWindowTitle.AppCompat"
+                android:textSize="@dimen/connected_apps_settings_connect_to_facebook_name_iv_textSize"
+                android:text="@string/connected_apps_settings_connect_to_facebook_name_tv_text"/>
+
+            <TextView
+                android:id="@+id/connected_apps_settings_connect_to_facebook_desc_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/connected_apps_settings_connect_to_facebook_name_tv"
+                android:layout_alignLeft="@+id/connected_apps_settings_connect_to_facebook_name_tv"
+                android:text="@string/connected_apps_settings_connect_to_facebook_desc_tv_text"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/connected_apps_settings_connect_to_youtube_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/connected_apps_settings_connect_to_facebook_rl"
+            android:layout_alignLeft="@+id/connected_apps_settings_connect_to_facebook_rl"
+            android:layout_marginBottom="@dimen/connected_apps_settings_connect_to_facebook_rl_layout_marginBottom">
+
+            <ImageView
+                android:id="@+id/connected_apps_settings_connect_to_youtube_picture_iv"
+                android:layout_width="@dimen/connected_apps_settings_connect_to_facebook_picture_iv_layout_width"
+                android:layout_height="@dimen/connected_apps_settings_connect_to_facebook_picture_iv_layout_height"
+                android:layout_marginRight="@dimen/connected_apps_settings_connect_to_facebook_picture_iv_layout_marginRight"
+                android:layout_marginBottom="@dimen/connected_apps_settings_connect_to_facebook_picture_iv_layout_marginBottom"
+                android:src=""/>
+
+            <Button
+                android:id="@+id/connected_apps_settings_connect_to_youtube_bt"
+                android:layout_width="@dimen/connected_apps_settings_connect_to_facebook_bt_layout_width"
+                android:layout_height="@dimen/connected_apps_settings_connect_to_facebook_bt_layout_height"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/connected_apps_settings_connect_to_facebook_bt_layout_marginLeft"
+                android:gravity="center"
+                android:text="@string/connect_to_other_accounts_bt_text"
+                android:textColor="@color/colorPrimaryDark"/>
+
+            <TextView
+                android:id="@+id/connected_apps_settings_connect_to_youtube_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/connected_apps_settings_connect_to_youtube_picture_iv"
+                android:layout_alignTop="@+id/connected_apps_settings_connect_to_youtube_picture_iv"
+                android:layout_marginBottom="@dimen/connected_apps_settings_connect_to_facebook_name_iv_layout_marginBottom"
+                android:textAppearance="@style/Base.DialogWindowTitle.AppCompat"
+                android:textSize="@dimen/connected_apps_settings_connect_to_facebook_name_iv_textSize"
+                android:text="@string/connected_apps_settings_connect_to_youtube_name_tv_text"/>
+
+            <TextView
+                android:id="@+id/connected_apps_settings_connect_to_youtube_desc_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/connected_apps_settings_connect_to_youtube_name_tv"
+                android:layout_alignLeft="@+id/connected_apps_settings_connect_to_youtube_name_tv"
+                android:text="@string/connected_apps_settings_connect_to_youtube_desc_tv_text"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/connected_apps_settings_connect_to_twitter_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/connected_apps_settings_connect_to_youtube_rl"
+            android:layout_alignLeft="@+id/connected_apps_settings_connect_to_youtube_rl"
+            android:layout_marginBottom="@dimen/connected_apps_settings_connect_to_facebook_rl_layout_marginBottom">
+
+            <ImageView
+                android:id="@+id/connected_apps_settings_connect_to_twitter_picture_iv"
+                android:layout_width="@dimen/connected_apps_settings_connect_to_facebook_picture_iv_layout_width"
+                android:layout_height="@dimen/connected_apps_settings_connect_to_facebook_picture_iv_layout_height"
+                android:layout_marginRight="@dimen/connected_apps_settings_connect_to_facebook_picture_iv_layout_marginRight"
+                android:layout_marginBottom="@dimen/connected_apps_settings_connect_to_facebook_picture_iv_layout_marginBottom"
+                android:src=""/>
+
+            <Button
+                android:id="@+id/connected_apps_settings_connect_to_twitter_bt"
+                android:layout_width="@dimen/connected_apps_settings_connect_to_facebook_bt_layout_width"
+                android:layout_height="@dimen/connected_apps_settings_connect_to_facebook_bt_layout_height"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/connected_apps_settings_connect_to_facebook_bt_layout_marginLeft"
+                android:gravity="center"
+                android:text="@string/connect_to_other_accounts_bt_text"
+                android:textColor="@color/colorPrimaryDark"/>
+
+            <TextView
+                android:id="@+id/connected_apps_settings_connect_to_twitter_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/connected_apps_settings_connect_to_twitter_picture_iv"
+                android:layout_alignTop="@+id/connected_apps_settings_connect_to_twitter_picture_iv"
+                android:layout_marginBottom="@dimen/connected_apps_settings_connect_to_facebook_name_iv_layout_marginBottom"
+                android:textAppearance="@style/Base.DialogWindowTitle.AppCompat"
+                android:textSize="@dimen/connected_apps_settings_connect_to_facebook_name_iv_textSize"
+                android:text="@string/connected_apps_settings_connect_to_twitter_name_tv_text"/>
+
+            <TextView
+                android:id="@+id/connected_apps_settings_connect_to_twitter_desc_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/connected_apps_settings_connect_to_twitter_name_tv"
+                android:layout_alignLeft="@+id/connected_apps_settings_connect_to_twitter_name_tv"
+                android:text="@string/connected_apps_settings_connect_to_twitter_desc_tv_text"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/connected_apps_settings_connect_to_tumblr_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/connected_apps_settings_connect_to_twitter_rl"
+            android:layout_alignLeft="@+id/connected_apps_settings_connect_to_twitter_rl"
+            android:layout_marginBottom="@dimen/connected_apps_settings_connect_to_facebook_rl_layout_marginBottom">
+
+            <ImageView
+                android:id="@+id/connected_apps_settings_connect_to_tumblr_picture_iv"
+                android:layout_width="@dimen/connected_apps_settings_connect_to_facebook_picture_iv_layout_width"
+                android:layout_height="@dimen/connected_apps_settings_connect_to_facebook_picture_iv_layout_height"
+                android:layout_marginRight="@dimen/connected_apps_settings_connect_to_facebook_picture_iv_layout_marginRight"
+                android:layout_marginBottom="@dimen/connected_apps_settings_connect_to_facebook_picture_iv_layout_marginBottom"
+                android:src=""/>
+
+            <Button
+                android:id="@+id/connected_apps_settings_connect_to_tumblr_bt"
+                android:layout_width="@dimen/connected_apps_settings_connect_to_facebook_bt_layout_width"
+                android:layout_height="@dimen/connected_apps_settings_connect_to_facebook_bt_layout_height"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/connected_apps_settings_connect_to_facebook_bt_layout_marginLeft"
+                android:gravity="center"
+                android:text="@string/connect_to_other_accounts_bt_text"
+                android:textColor="@color/colorPrimaryDark"/>
+
+            <TextView
+                android:id="@+id/connected_apps_settings_connect_to_tumblr_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/connected_apps_settings_connect_to_tumblr_picture_iv"
+                android:layout_alignTop="@+id/connected_apps_settings_connect_to_tumblr_picture_iv"
+                android:layout_marginBottom="@dimen/connected_apps_settings_connect_to_facebook_name_iv_layout_marginBottom"
+                android:textAppearance="@style/Base.DialogWindowTitle.AppCompat"
+                android:textSize="@dimen/connected_apps_settings_connect_to_facebook_name_iv_textSize"
+                android:text="@string/connected_apps_settings_connect_to_tumblr_name_tv_text"/>
+
+            <TextView
+                android:id="@+id/connected_apps_settings_connect_to_tumblr_desc_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/connected_apps_settings_connect_to_tumblr_name_tv"
+                android:layout_alignLeft="@+id/connected_apps_settings_connect_to_tumblr_name_tv"
+                android:text="@string/connected_apps_settings_connect_to_twitter_desc_tv_text"/>
+
+        </RelativeLayout>
+
     </RelativeLayout>
 
     <RelativeLayout

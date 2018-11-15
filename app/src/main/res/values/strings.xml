@@ -563,4 +563,12 @@
     <string name="connected_apps_settings_connect_to_dropbox_desc_tv_text">Let Vimeo access my Dropbox so I can
         upload automatically.</string>
 
+    <string name="view_preferences_settings_title_tv_text">Viewing preferences</string>
+    <string name="view_preferences_settings_language_title_tv_text">Language</string>
+    <string name="view_preferences_settings_language_desc_tv_text">What language would you like to use vimeo.com in?</string>
+    <string name="view_preferences_settings_mature_content_filter_title_tv_text">Mature content filter</string>
+    <string name="view_preferences_settings_mature_content_filter_desc_tv_text">Choose what types of videos you do
+        and do not want to see on Vimeo. Learn more about what constitutes mature content in our FAQ.</string>
+    <string name="view_preferences_settings_manage_your_feed_title_tv_text">Manage your feed</string>
+
 </resources>

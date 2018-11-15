@@ -37,6 +37,15 @@
             android:layout_marginBottom="@dimen/account_settings_general_name_desc_tv_layout_marginBottom"
             android:text="@string/view_preferences_settings_language_desc_tv_text"/>
 
+        <Spinner
+            android:id="@+id/view_preferences_settings_language_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/white"
+            android:backgroundTintMode="src_atop"
+            android:dropDownWidth="@dimen/spinner_drop_down_width"
+            android:popupBackground="@color/cardview_dark_background"></Spinner>
+
 
     </RelativeLayout>
 

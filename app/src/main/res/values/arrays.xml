@@ -38,4 +38,15 @@
     <string-array name="on_site_activity_rg">
         <item></item>
     </string-array>
+
+    <string-array name="language">
+        <item>@string/language_english</item>
+        <item>@string/language_french</item>
+        <item>@string/language_german</item>
+        <item>@string/language_spanish</item>
+        <item>@string/language_portuguese</item>
+        <item>@string/language_korean</item>
+        <item>@string/language_japanese</item>
+
+    </string-array>
 </resources>

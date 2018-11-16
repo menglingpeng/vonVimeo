@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 
 import com.menglingpeng.vonvimeo.base.BaseFragment;
@@ -18,6 +19,7 @@ public class ViewingPreferencesSettingsFragment extends BaseFragment {
     private Spinner languageSpinner;
     private Button saveBt;
     private String language;
+    private RadioGroup radioGroup;
 
     @Override
     protected void initLayoutId() {
@@ -30,11 +32,27 @@ public class ViewingPreferencesSettingsFragment extends BaseFragment {
         user = (User)getActivity().getIntent().getSerializableExtra(Constants.USER);
         context = getContext();
         saveBt = (Button)rootView.findViewById(R.id.view_preferences_settings_save_bt);
+        radioGroup = (RadioGroup) rootView.findViewById(R.id.view_preferences_settings_mature_content_filter_rg);
 
         saveBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+            }
+        });
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch (i){
+                    case 0:
+                        break;
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    default:
+                        break;
+                }
             }
         });
     }

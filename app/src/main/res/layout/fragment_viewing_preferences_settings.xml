@@ -74,6 +74,43 @@
             android:layout_marginBottom="@dimen/account_settings_general_name_desc_tv_layout_marginBottom"
             android:text="@string/view_preferences_settings_mature_content_filter_desc_tv_text"/>
 
+        <RadioGroup
+            android:id="@+id/view_preferences_settings_mature_content_filter_rg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RadioButton
+                android:id="@+id/view_preferences_settings_mature_content_filter_show_me_everything_rb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/general_privacy_watch_settings_anyone_rb_text"/>
+
+            <RadioButton
+                android:id="@+id/view_preferences_settings_mature_content_filter_no_show_rb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/general_privacy_watch_settings_only_i_rb_text"/>
+
+            <RadioButton
+                android:id="@+id/view_preferences_settings_mature_content_filter_choose_rb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/general_privacy_watch_settings_only_with_password_rb_text"/>
+
+            <RadioButton
+                android:id="@+id/view_preferences_settings_mature_content_filter_only_follow_rb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/general_privacy_watch_settings_only_follow_rb_text"/>
+
+            <RadioButton
+                android:id="@+id/view_preferences_settings_mature_content_filter_only_choose_rb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/general_privacy_watch_settings_only_choose_rb_text"/>
+
+        </RadioGroup>
+
 
     </RelativeLayout>
 

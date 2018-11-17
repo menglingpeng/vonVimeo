@@ -49,4 +49,17 @@
         <item>@string/language_japanese</item>
 
     </string-array>
+
+    <string-array name="manage_your_feed_sort">
+        <item>@string/sort_date</item>
+        <item>@string/sort_alphabetical</item>
+    </string-array>
+
+    <string-array name="manage_your_feed_show">
+        <item>@string/show_people</item>
+        <item>@string/show_categories</item>
+        <item>@string/show_channels</item>
+        <item>@string/show_groups</item>
+
+    </string-array>
 </resources>

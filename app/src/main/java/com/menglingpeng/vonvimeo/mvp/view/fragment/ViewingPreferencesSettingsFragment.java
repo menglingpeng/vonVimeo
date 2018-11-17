@@ -20,6 +20,10 @@ public class ViewingPreferencesSettingsFragment extends BaseFragment {
     private Button saveBt;
     private String language;
     private RadioGroup radioGroup;
+    private Spinner sortSpinner;
+    private Spinner showSpinner;
+    private String sort;
+    private String show;
 
     @Override
     protected void initLayoutId() {
@@ -105,6 +109,71 @@ public class ViewingPreferencesSettingsFragment extends BaseFragment {
 
             }
         });
+    }
 
+    private void initManageYourFeedSpinner(){
+
+        sortSpinner = (Spinner)rootView.findViewById(R.id.view_preferences_settings_manage_your_feed_sort_spinner);
+        showSpinner = (Spinner)rootView.findViewById(R.id.view_preferences_settings_manage_your_feed_show_spinner);
+        ArrayAdapter<String> sortAdapter;
+        ArrayAdapter<String> showAdapter;
+        String[] sortArray = getResources().getStringArray(R.array.manage_your_feed_sort);
+        String[] showArray = getResources().getStringArray(R.array.manage_your_feed_show);
+        sortAdapter = new ArrayAdapter<String>(context, R.layout.custom_spinner_text, sortArray);
+        showAdapter = new ArrayAdapter<String>(context, R.layout.custom_spinner_text, showArray);
+        sortAdapter.setDropDownViewResource(R.layout.custom_spinner_dropdown_item);
+        showAdapter.setDropDownViewResource(R.layout.custom_spinner_dropdown_item);
+        sortSpinner.setAdapter(sortAdapter);
+        showSpinner.setAdapter(showAdapter);
+        showSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
+
+                switch (position) {
+                    case 0:
+                        show = context.getString(R.string.show_people);
+                        break;
+                    case 1:
+                        show = context.getString(R.string.show_categories);
+                        break;
+                    case 2:
+                        show = context.getString(R.string.show_groups);
+                        break;
+                    case 3:
+                        show = context.getString(R.string.show_channels);
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+        sortSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
+
+                switch (position) {
+                    case 0:
+                        sort = context.getString(R.string.sort_date);
+                        break;
+                    case 1:
+                        sort = context.getString(R.string.sort_alphabetical);
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
     }
 }

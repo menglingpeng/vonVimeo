@@ -78,6 +78,11 @@
     <string name="read">Read</string>
     <string name="sent">Sent</string>
 
+    <string name="show_people"></string>
+    <string name="show_categories">Categories</string>
+    <string name="show_groups">Groups</string>
+    <string name="show_channels">Channels</string>
+
     <string name="your_stuff">YOUR STUFF</string>
     <string name="portfolios">Portfolios</string>
 
@@ -578,5 +583,9 @@
     <string name="view_preferences_settings_mature_content_filter_desc_tv_text">Choose what types of videos you do
         and do not want to see on Vimeo. Learn more about what constitutes mature content in our FAQ.</string>
     <string name="view_preferences_settings_manage_your_feed_title_tv_text">Manage your feed</string>
+
+    <string name="view_preferences_settings_manage_your_feed_sort_tv_text">Sort</string>
+    <string name="view_preferences_settings_manage_your_feed_show_tv_text">Show</string>
+
 
 </resources>

@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/white"
             android:backgroundTintMode="src_atop"
-            android:dropDownWidth="@dimen/spinner_drop_down_width"
+            android:dropDownWidth="match_parent"
             android:popupBackground="@color/cardview_dark_background"></Spinner>
 
 
@@ -137,6 +137,60 @@
             android:layout_marginBottom="@dimen/account_settings_general_name_title_tv_layout_marginBottom"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
             android:text="@string/view_preferences_settings_manage_your_feed_title_tv_text"/>
+
+        <TextView
+            android:id="@+id/view_preferences_settings_manage_your_feed_sort_tv"
+            android:layout_width="@dimen/view_preferences_settings_manage_your_feed_sort_tv_layout_width"
+            android:layout_height="@dimen/view_preferences_settings_manage_your_feed_sort_tv_layout_height"
+            android:layout_below="@+id/view_preferences_settings_manage_your_feed_title_tv"
+            android:layout_alignLeft="@+id/view_preferences_settings_manage_your_feed_title_tv"
+            android:gravity="center"
+            android:layout_marginRight="@dimen/view_preferences_settings_manage_your_feed_sort_tv_layout_marginRight"
+            android:layout_marginBottom="@dimen/view_preferences_settings_manage_your_feed_sort_tv_layout_marginBottom"
+            android:text="@string/view_preferences_settings_manage_your_feed_sort_tv_text"/>
+
+        <Spinner
+            android:id="@+id/view_preferences_settings_manage_your_feed_sort_spinner"
+            android:layout_width="@dimen/view_preferences_settings_manage_your_feed__sort_spinner_layout_width"
+            android:layout_height="@dimen/view_preferences_settings_manage_your_feed__sort_spinner_layout_height"
+            android:layout_alignTop="@+id/view_preferences_settings_manage_your_feed_sort_tv"
+            android:layout_toRightOf="@+id/view_preferences_settings_manage_your_feed_sort_tv"
+            android:backgroundTint="@android:color/white"
+            android:backgroundTintMode="src_atop"
+            android:dropDownWidth="match_parent"
+            android:popupBackground="@color/cardview_dark_background"></Spinner>
+
+        <TextView
+            android:id="@+id/view_preferences_settings_manage_your_feed_show_tv"
+            android:layout_width="@dimen/view_preferences_settings_manage_your_feed_sort_tv_layout_width"
+            android:layout_height="@dimen/view_preferences_settings_manage_your_feed_sort_tv_layout_height"
+            android:layout_toRightOf="@+id/view_preferences_settings_manage_your_feed_sort_spinner"
+            android:layout_alignTop="@+id/view_preferences_settings_manage_your_feed_sort_spinner"
+            android:gravity="center"
+            android:layout_marginLeft="@dimen/view_preferences_settings_manage_your_feed_show_tv_layout_marginLeft"
+            android:layout_marginRight="@dimen/view_preferences_settings_manage_your_feed_sort_tv_layout_marginRight"
+            android:text="@string/view_preferences_settings_manage_your_feed_show_tv_text"/>
+
+        <Spinner
+            android:id="@+id/view_preferences_settings_manage_your_feed_show_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/view_preferences_settings_manage_your_feed_show_tv"
+            android:layout_toRightOf="@+id/view_preferences_settings_manage_your_feed__sort_spinner"
+            android:backgroundTint="@android:color/white"
+            android:backgroundTintMode="src_atop"
+            android:dropDownWidth="match_parent"
+            android:popupBackground="@color/cardview_dark_background"></Spinner>
+
+        <RelativeLayout
+            android:id="@+id/view_preferences_settings_manage_your_feed_list_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view_preferences_settings_manage_your_feed_sort_tv"
+            android:layout_alignLeft="@+id/view_preferences_settings_manage_your_feed_sort_tv">
+
+
+        </RelativeLayout>
 
 
     </RelativeLayout>

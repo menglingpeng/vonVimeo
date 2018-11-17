@@ -261,4 +261,12 @@
     <dimen name="connected_apps_settings_connect_to_facebook_name_iv_textSize">18dp</dimen>
     <dimen name="connected_apps_settings_connect_to_facebook_name_iv_layout_marginBottom">5dp</dimen>
 
+    <dimen name="view_preferences_settings_manage_your_feed_sort_tv_layout_width">20dp</dimen>
+    <dimen name="view_preferences_settings_manage_your_feed_sort_tv_layout_height">20dp</dimen>
+    <dimen name="view_preferences_settings_manage_your_feed_sort_tv_layout_marginBottom">20dp</dimen>
+    <dimen name="view_preferences_settings_manage_your_feed_sort_tv_layout_marginRight">5dp</dimen>
+    <dimen name="view_preferences_settings_manage_your_feed_show_tv_layout_marginLeft">10dp</dimen>
+    <dimen name="view_preferences_settings_manage_your_feed__sort_spinner_layout_width">40dp</dimen>
+    <dimen name="view_preferences_settings_manage_your_feed__sort_spinner_layout_height">20dp</dimen>
+
 </resources>

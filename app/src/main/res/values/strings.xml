@@ -588,5 +588,14 @@
     <string name="view_preferences_settings_manage_your_feed_show_tv_text">Show</string>
     <string name="view_preferences_settings_manage_your_feed_list_people_title_all_tv_text">All</string>
 
+    <string name="marketing_settings_title_tv_text">Marketing</string>
+    <string name="marketing_settings_email_service_providers_title_tv_text">Email service providers</string>
+    <string name="marketing_settings_email_service_providers_desc_tv_text">Send the contact info you capture in
+        your embedded videos to existing email lists.</string>
+    <string name="marketing_settings_connect_to_mailchimp_name_tv_text">MailChimp</string>
+    <string name="marketing_settings_google_analytics_title_tv_text">Google Analytics</string>
+    <string name="marketing_settings_google_analytics_desc_tv_text">To track events on all Vimeo players embedded
+        on your site, copy the code below and paste it underneath the Google Analytics script in the HTML of your website.</string>
+
 
 </resources>

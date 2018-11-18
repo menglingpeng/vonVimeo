@@ -176,7 +176,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/view_preferences_settings_manage_your_feed_show_tv"
-            android:layout_toRightOf="@+id/view_preferences_settings_manage_your_feed__sort_spinner"
+            android:layout_toRightOf="@+id/view_preferences_settings_manage_your_feed_sort_spinner"
             android:backgroundTint="@android:color/white"
             android:backgroundTintMode="src_atop"
             android:dropDownWidth="match_parent"
@@ -188,6 +188,91 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/view_preferences_settings_manage_your_feed_sort_tv"
             android:layout_alignLeft="@+id/view_preferences_settings_manage_your_feed_sort_tv">
+
+            <TextView
+                android:id="@+id/view_preferences_settings_manage_your_feed_list_people_title_all_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/view_preferences_settings_manage_your_feed_list_people_title_all_tv_text"
+                android:textAppearance="@style/Base.DialogWindowTitle.AppCompat"/>
+
+            <RelativeLayout
+                android:id="@+id/view_preferences_settings_manage_your_feed_list_people_title_rl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/view_preferences_settings_manage_your_feed_list_people_title_all_tv"
+                android:layout_alignParentEnd="true">
+
+                <TextView
+                    android:id="@+id/view_preferences_settings_manage_your_feed_list_people_title_likes_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="@string/sort_likes"
+                    android:textAppearance="@style/Base.DialogWindowTitle.AppCompat"/>
+
+                <TextView
+                    android:id="@+id/view_preferences_settings_manage_your_feed_list_people_title_appearances_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/view_preferences_settings_manage_your_feed_list_people_title_likes_tv"
+                    android:text="@string/sort_appearances"
+                    android:textAppearance="@style/Base.DialogWindowTitle.AppCompat"/>
+
+                <TextView
+                    android:id="@+id/view_preferences_settings_manage_your_feed_list_people_title_videos_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/view_preferences_settings_manage_your_feed_list_people_title_appearances_tv"
+                    android:text="@string/sort_videos"
+                    android:textAppearance="@style/Base.DialogWindowTitle.AppCompat"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/view_preferences_settings_manage_your_feed_list_categories_title_rl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/view_preferences_settings_manage_your_feed_list_people_title_all_tv"
+                android:layout_alignParentEnd="true"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/view_preferences_settings_manage_your_feed_list_categories_title_videos_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="@string/sort_videos"
+                    android:textAppearance="@style/Base.DialogWindowTitle.AppCompat" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/view_preferences_settings_manage_your_feed_list_channels_groups_title_rl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/view_preferences_settings_manage_your_feed_list_people_title_all_tv"
+                android:layout_alignParentEnd="true"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/view_preferences_settings_manage_your_feed_list_channels_groups_title_followers_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="@string/sort_followers"
+                    android:textAppearance="@style/Base.DialogWindowTitle.AppCompat"/>
+
+                <TextView
+                    android:id="@+id/view_preferences_settings_manage_your_feed_list_channels_groups_title_videos_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/view_preferences_settings_manage_your_feed_list_channels_groups_title_followers_tv"
+                    android:text="@string/sort_videos"
+                    android:textAppearance="@style/Base.DialogWindowTitle.AppCompat"/>
+
+
+            </RelativeLayout>
 
 
         </RelativeLayout>

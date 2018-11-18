@@ -1,83 +1,85 @@
 package com.menglingpeng.vonvimeo.mvp.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Poster implements Serializable {
 
-    private int total;
-    private int page;
-    private int per_page;
-    private PagingBean paging;
+    private String uri;
+    private boolean active;
+    private String type;
+    private List<SizesBean> sizes;
+    private String resource_key;
 
-    public void setTotal(int total) {
-        this.total = total;
+
+    public void setUri(String uri) {
+        this.uri = uri;
     }
 
-    public void setPage(int page) {
-        this.page = page;
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
-    public void setPer_page(int per_page) {
-        this.per_page = per_page;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public void setPaging(PagingBean paging) {
-        this.paging = paging;
+    public void setSizes(List<SizesBean> sizes) {
+        this.sizes = sizes;
     }
 
-    public int getTotal() {
-        return total;
+    public String getUri() {
+        return uri;
     }
 
-    public int getPage() {
-        return page;
+    public boolean getActive() {
+        return active;
     }
 
-    public int getPer_page() {
-        return per_page;
+    public String getType() {
+        return type;
     }
 
-    public PagingBean getPaging() {
-        return paging;
+    public List<SizesBean> getSizes() {
+        return sizes;
     }
 
-    public static class PagingBean {
+    public void setResource_key(String resource_key) {
+        this.resource_key = resource_key;
+    }
 
-        private Object next;
-        private Object previous;
-        private String first;
-        private String last;
+    public String getResource_key() {
+        return resource_key;
+    }
 
-        public void setNext(Object next) {
-            this.next = next;
+    public static class SizesBean {
+
+        private int width;
+        private int height;
+        private String link;
+
+        public void setWidth(int width) {
+            this.width = width;
         }
 
-        public void setPrevious(Object previous) {
-            this.previous = previous;
+        public void setHeight(int height) {
+            this.height = height;
         }
 
-        public void setFirst(String first) {
-            this.first = first;
+        public void setLink(String link) {
+            this.link = link;
         }
 
-        public void setLast(String last) {
-            this.last = last;
+        public int getWidth() {
+            return width;
         }
 
-        public Object getNext() {
-            return next;
+        public int getHeight() {
+            return height;
         }
 
-        public Object getPrevious() {
-            return previous;
-        }
-
-        public String getFirst() {
-            return first;
-        }
-
-        public String getLast() {
-            return last;
+        public String getLink() {
+            return link;
         }
     }
 }

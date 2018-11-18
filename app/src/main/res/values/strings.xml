@@ -586,6 +586,7 @@
 
     <string name="view_preferences_settings_manage_your_feed_sort_tv_text">Sort</string>
     <string name="view_preferences_settings_manage_your_feed_show_tv_text">Show</string>
+    <string name="view_preferences_settings_manage_your_feed_list_people_title_all_tv_text">All</string>
 
 
 </resources>

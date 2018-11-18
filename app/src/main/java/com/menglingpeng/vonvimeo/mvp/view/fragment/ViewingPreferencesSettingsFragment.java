@@ -6,6 +6,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 
 import com.menglingpeng.vonvimeo.base.BaseFragment;
@@ -22,6 +23,9 @@ public class ViewingPreferencesSettingsFragment extends BaseFragment {
     private RadioGroup radioGroup;
     private Spinner sortSpinner;
     private Spinner showSpinner;
+    private RelativeLayout listPeopleRl;
+    private RelativeLayout listCategoriesRl;
+    private RelativeLayout listChannelsOrGroupsRl;
     private String sort;
     private String show;
 
@@ -37,7 +41,12 @@ public class ViewingPreferencesSettingsFragment extends BaseFragment {
         context = getContext();
         saveBt = (Button)rootView.findViewById(R.id.view_preferences_settings_save_bt);
         radioGroup = (RadioGroup) rootView.findViewById(R.id.view_preferences_settings_mature_content_filter_rg);
-
+        listPeopleRl = (RelativeLayout) rootView.findViewById(R.id.
+                view_preferences_settings_manage_your_feed_list_people_title_rl);
+        listCategoriesRl = (RelativeLayout) rootView.findViewById(R.id.
+                view_preferences_settings_manage_your_feed_list_categories_title_rl);
+        listChannelsOrGroupsRl = (RelativeLayout) rootView.findViewById(R.id.
+                view_preferences_settings_manage_your_feed_list_channels_title_rl);
         saveBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -131,6 +140,7 @@ public class ViewingPreferencesSettingsFragment extends BaseFragment {
 
                 switch (position) {
                     case 0:
+
                         show = context.getString(R.string.show_people);
                         break;
                     case 1:
@@ -175,5 +185,27 @@ public class ViewingPreferencesSettingsFragment extends BaseFragment {
 
             }
         });
+    }
+
+    private void showView(RelativeLayout relativeLayout){
+        switch (relativeLayout.getId()){
+            case R.id.view_preferences_settings_manage_your_feed_list_people_title_rl:
+                listPeopleRl.setVisibility(RelativeLayout.VISIBLE);
+                listChannelsOrGroupsRl.setVisibility(RelativeLayout.GONE);
+                listCategoriesRl.setVisibility(RelativeLayout.GONE);
+                break;
+            case R.id.view_preferences_settings_manage_your_feed_list_people_title_rl:
+                listPeopleRl.setVisibility(RelativeLayout.GONE);
+                listChannelsOrGroupsRl.setVisibility(RelativeLayout.GONE);
+                listCategoriesRl.setVisibility(RelativeLayout.VISIBLE);
+                break;
+            case R.id.view_preferences_settings_manage_your_feed_list_people_title_rl:
+                listPeopleRl.setVisibility(RelativeLayout.GONE);
+                listChannelsOrGroupsRl.setVisibility(RelativeLayout.VISIBLE);
+                listCategoriesRl.setVisibility(RelativeLayout.GONE);
+                break;
+            default:
+                break;
+        }
     }
 }

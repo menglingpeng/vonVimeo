@@ -593,6 +593,9 @@
     <string name="marketing_settings_email_service_providers_desc_tv_text">Send the contact info you capture in
         your embedded videos to existing email lists.</string>
     <string name="marketing_settings_connect_to_mailchimp_name_tv_text">MailChimp</string>
+    <string name="marketing_settings_connect_to_campaign_monitor_name_tv_text">Campaign Monitor</string>
+    <string name="marketing_settings_connect_to_constant_contact_name_tv_text">Constant Contact</string>
+    <string name="marketing_settings_connect_to_infusionsoft_name_tv_text">Infusionsoftp</string>
     <string name="marketing_settings_google_analytics_title_tv_text">Google Analytics</string>
     <string name="marketing_settings_google_analytics_desc_tv_text">To track events on all Vimeo players embedded
         on your site, copy the code below and paste it underneath the Google Analytics script in the HTML of your website.</string>

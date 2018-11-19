@@ -97,6 +97,159 @@
 
         </RelativeLayout>
 
+        <RelativeLayout
+            android:id="@+id/marketing_settings_connect_to_campaign_monitor_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/marketing_settings_connect_to_mailchimp_rl"
+            android:layout_alignLeft="@+id/marketing_settings_connect_to_mailchimp_rl"
+            android:layout_marginBottom="@dimen/connected_apps_settings_connect_to_facebook_rl_layout_marginBottom">
+
+            <view
+                android:id="@+id/marketing_settings_connect_to_campaign_monitor_view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/recycler_item_view_background"
+                android:layout_marginBottom="@dimen/notifications_settings_on_site_activity_title_view_layout_marginBottom"
+                />
+
+            <ImageView
+                android:id="@+id/connected_apps_settings_connect_to_campaign_monitor_picture_iv"
+                android:layout_width="@dimen/connected_apps_settings_connect_to_facebook_picture_iv_layout_width"
+                android:layout_height="@dimen/connected_apps_settings_connect_to_facebook_picture_iv_layout_height"
+                android:layout_below="@+id/marketing_settings_connect_to_campaign_monitor_view"
+                android:layout_alignLeft="@+id/marketing_settings_connect_to_campaign_monitor_view"
+                android:layout_marginRight="@dimen/connected_apps_settings_connect_to_facebook_picture_iv_layout_marginRight"
+                android:layout_marginBottom="@dimen/connected_apps_settings_connect_to_facebook_picture_iv_layout_marginBottom"
+                android:src=""/>
+
+            <Button
+                android:id="@+id/connected_apps_settings_connect_to_campaign_monitor_bt"
+                android:layout_width="@dimen/connected_apps_settings_connect_to_facebook_bt_layout_width"
+                android:layout_height="@dimen/connected_apps_settings_connect_to_facebook_bt_layout_height"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/connected_apps_settings_connect_to_facebook_bt_layout_marginLeft"
+                android:gravity="center"
+                android:text="@string/connect_to_other_accounts_bt_text"
+                android:textColor="@color/colorPrimaryDark"/>
+
+            <TextView
+                android:id="@+id/connected_apps_settings_connect_to_campaign_monitor_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/connected_apps_settings_connect_to_campaign_monitor_picture_iv"
+                android:layout_alignTop="@+id/connected_apps_settings_connect_to_campaign_monitor_picture_iv"
+                android:layout_marginBottom="@dimen/connected_apps_settings_connect_to_facebook_name_iv_layout_marginBottom"
+                android:textAppearance="@style/Base.DialogWindowTitle.AppCompat"
+                android:textSize="@dimen/connected_apps_settings_connect_to_facebook_name_iv_textSize"
+                android:text="@string/marketing_settings_connect_to_campaign_monitor_name_tv_text"/>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/marketing_settings_connect_to_constant_contact_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/marketing_settings_connect_to_campaign_monitor_rl"
+            android:layout_alignLeft="@+id/marketing_settings_connect_to_campaign_monitor_rl"
+            android:layout_marginBottom="@dimen/connected_apps_settings_connect_to_facebook_rl_layout_marginBottom">
+
+            <view
+                android:id="@+id/marketing_settings_connect_to_constant_contact_view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/recycler_item_view_background"
+                android:layout_marginBottom="@dimen/notifications_settings_on_site_activity_title_view_layout_marginBottom"
+                />
+
+            <ImageView
+                android:id="@+id/connected_apps_settings_connect_to_constant_contact_picture_iv"
+                android:layout_width="@dimen/connected_apps_settings_connect_to_facebook_picture_iv_layout_width"
+                android:layout_height="@dimen/connected_apps_settings_connect_to_facebook_picture_iv_layout_height"
+                android:layout_below="@+id/marketing_settings_connect_to_constant_contact_view"
+                android:layout_alignLeft="@+id/marketing_settings_connect_to_constant_contact_view"
+                android:layout_marginRight="@dimen/connected_apps_settings_connect_to_facebook_picture_iv_layout_marginRight"
+                android:layout_marginBottom="@dimen/connected_apps_settings_connect_to_facebook_picture_iv_layout_marginBottom"
+                android:src=""/>
+
+            <Button
+                android:id="@+id/connected_apps_settings_connect_to_constant_contact_bt"
+                android:layout_width="@dimen/connected_apps_settings_connect_to_facebook_bt_layout_width"
+                android:layout_height="@dimen/connected_apps_settings_connect_to_facebook_bt_layout_height"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/connected_apps_settings_connect_to_facebook_bt_layout_marginLeft"
+                android:gravity="center"
+                android:text="@string/connect_to_other_accounts_bt_text"
+                android:textColor="@color/colorPrimaryDark"/>
+
+            <TextView
+                android:id="@+id/connected_apps_settings_connect_to_constant_contact_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/connected_apps_settings_connect_to_constant_contact_picture_iv"
+                android:layout_alignTop="@+id/connected_apps_settings_connect_to_constant_contact_picture_iv"
+                android:layout_marginBottom="@dimen/connected_apps_settings_connect_to_facebook_name_iv_layout_marginBottom"
+                android:textAppearance="@style/Base.DialogWindowTitle.AppCompat"
+                android:textSize="@dimen/connected_apps_settings_connect_to_facebook_name_iv_textSize"
+                android:text="@string/marketing_settings_connect_to_constant_contact_name_tv_text"/>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/marketing_settings_connect_to_infusionsoft_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/marketing_settings_connect_to_constant_contact_rl"
+            android:layout_alignLeft="@+id/marketing_settings_connect_to_constant_contact_rl"
+            android:layout_marginBottom="@dimen/connected_apps_settings_connect_to_facebook_rl_layout_marginBottom">
+
+            <view
+                android:id="@+id/marketing_settings_connect_to_infusionsoft_view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/recycler_item_view_background"
+                android:layout_marginBottom="@dimen/notifications_settings_on_site_activity_title_view_layout_marginBottom"
+                />
+
+            <ImageView
+                android:id="@+id/connected_apps_settings_connect_to_infusionsoft_picture_iv"
+                android:layout_width="@dimen/connected_apps_settings_connect_to_facebook_picture_iv_layout_width"
+                android:layout_height="@dimen/connected_apps_settings_connect_to_facebook_picture_iv_layout_height"
+                android:layout_below="@+id/marketing_settings_connect_to_infusionsoft_view"
+                android:layout_alignLeft="@+id/marketing_settings_connect_to_infusionsoft_view"
+                android:layout_marginRight="@dimen/connected_apps_settings_connect_to_facebook_picture_iv_layout_marginRight"
+                android:layout_marginBottom="@dimen/connected_apps_settings_connect_to_facebook_picture_iv_layout_marginBottom"
+                android:src=""/>
+
+            <Button
+                android:id="@+id/connected_apps_settings_connect_to_infusionsoft_bt"
+                android:layout_width="@dimen/connected_apps_settings_connect_to_facebook_bt_layout_width"
+                android:layout_height="@dimen/connected_apps_settings_connect_to_facebook_bt_layout_height"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/connected_apps_settings_connect_to_facebook_bt_layout_marginLeft"
+                android:gravity="center"
+                android:text="@string/connect_to_other_accounts_bt_text"
+                android:textColor="@color/colorPrimaryDark"/>
+
+            <TextView
+                android:id="@+id/connected_apps_settings_connect_to_infusionsoft_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/connected_apps_settings_connect_to_infusionsoft_picture_iv"
+                android:layout_alignTop="@+id/connected_apps_settings_connect_to_infusionsoft_picture_iv"
+                android:layout_marginBottom="@dimen/connected_apps_settings_connect_to_facebook_name_iv_layout_marginBottom"
+                android:textAppearance="@style/Base.DialogWindowTitle.AppCompat"
+                android:textSize="@dimen/connected_apps_settings_connect_to_facebook_name_iv_textSize"
+                android:text="@string/marketing_settings_connect_to_infusionsoft_name_tv_text"/>
+
+
+        </RelativeLayout>
+
     </RelativeLayout>
 
     <RelativeLayout

@@ -63,7 +63,7 @@
                 />
 
             <ImageView
-                android:id="@+id/connected_apps_settings_connect_to_mailchimp_picture_iv"
+                android:id="@+id/marketing_settings_connect_to_mailchimp_picture_iv"
                 android:layout_width="@dimen/connected_apps_settings_connect_to_facebook_picture_iv_layout_width"
                 android:layout_height="@dimen/connected_apps_settings_connect_to_facebook_picture_iv_layout_height"
                 android:layout_below="@+id/marketing_settings_connect_to_mailchimp_view"
@@ -73,7 +73,7 @@
                 android:src=""/>
 
             <Button
-                android:id="@+id/connected_apps_settings_connect_to_mailchimp_bt"
+                android:id="@+id/marketing_settings_connect_to_mailchimp_bt"
                 android:layout_width="@dimen/connected_apps_settings_connect_to_facebook_bt_layout_width"
                 android:layout_height="@dimen/connected_apps_settings_connect_to_facebook_bt_layout_height"
                 android:layout_alignParentEnd="true"
@@ -84,11 +84,11 @@
                 android:textColor="@color/colorPrimaryDark"/>
 
             <TextView
-                android:id="@+id/connected_apps_settings_connect_to_mailchimp_name_tv"
+                android:id="@+id/marketing_settings_connect_to_mailchimp_name_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/connected_apps_settings_connect_to_mailchimp_picture_iv"
-                android:layout_alignTop="@+id/connected_apps_settings_connect_to_mailchimp_picture_iv"
+                android:layout_toRightOf="@+id/marketing_settings_connect_to_mailchimp_picture_iv"
+                android:layout_alignTop="@+id/marketing_settings_connect_to_mailchimp_picture_iv"
                 android:layout_marginBottom="@dimen/connected_apps_settings_connect_to_facebook_name_iv_layout_marginBottom"
                 android:textAppearance="@style/Base.DialogWindowTitle.AppCompat"
                 android:textSize="@dimen/connected_apps_settings_connect_to_facebook_name_iv_textSize"
@@ -114,7 +114,7 @@
                 />
 
             <ImageView
-                android:id="@+id/connected_apps_settings_connect_to_campaign_monitor_picture_iv"
+                android:id="@+id/marketing_settings_connect_to_campaign_monitor_picture_iv"
                 android:layout_width="@dimen/connected_apps_settings_connect_to_facebook_picture_iv_layout_width"
                 android:layout_height="@dimen/connected_apps_settings_connect_to_facebook_picture_iv_layout_height"
                 android:layout_below="@+id/marketing_settings_connect_to_campaign_monitor_view"
@@ -124,7 +124,7 @@
                 android:src=""/>
 
             <Button
-                android:id="@+id/connected_apps_settings_connect_to_campaign_monitor_bt"
+                android:id="@+id/marketing_settings_connect_to_campaign_monitor_bt"
                 android:layout_width="@dimen/connected_apps_settings_connect_to_facebook_bt_layout_width"
                 android:layout_height="@dimen/connected_apps_settings_connect_to_facebook_bt_layout_height"
                 android:layout_alignParentEnd="true"
@@ -135,11 +135,11 @@
                 android:textColor="@color/colorPrimaryDark"/>
 
             <TextView
-                android:id="@+id/connected_apps_settings_connect_to_campaign_monitor_name_tv"
+                android:id="@+id/marketing_settings_connect_to_campaign_monitor_name_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/connected_apps_settings_connect_to_campaign_monitor_picture_iv"
-                android:layout_alignTop="@+id/connected_apps_settings_connect_to_campaign_monitor_picture_iv"
+                android:layout_toRightOf="@+id/marketing_settings_connect_to_campaign_monitor_picture_iv"
+                android:layout_alignTop="@+id/marketing_settings_connect_to_campaign_monitor_picture_iv"
                 android:layout_marginBottom="@dimen/connected_apps_settings_connect_to_facebook_name_iv_layout_marginBottom"
                 android:textAppearance="@style/Base.DialogWindowTitle.AppCompat"
                 android:textSize="@dimen/connected_apps_settings_connect_to_facebook_name_iv_textSize"
@@ -165,7 +165,7 @@
                 />
 
             <ImageView
-                android:id="@+id/connected_apps_settings_connect_to_constant_contact_picture_iv"
+                android:id="@+id/marketing_settings_connect_to_constant_contact_picture_iv"
                 android:layout_width="@dimen/connected_apps_settings_connect_to_facebook_picture_iv_layout_width"
                 android:layout_height="@dimen/connected_apps_settings_connect_to_facebook_picture_iv_layout_height"
                 android:layout_below="@+id/marketing_settings_connect_to_constant_contact_view"
@@ -175,7 +175,7 @@
                 android:src=""/>
 
             <Button
-                android:id="@+id/connected_apps_settings_connect_to_constant_contact_bt"
+                android:id="@+id/marketing_settings_connect_to_constant_contact_bt"
                 android:layout_width="@dimen/connected_apps_settings_connect_to_facebook_bt_layout_width"
                 android:layout_height="@dimen/connected_apps_settings_connect_to_facebook_bt_layout_height"
                 android:layout_alignParentEnd="true"
@@ -186,11 +186,11 @@
                 android:textColor="@color/colorPrimaryDark"/>
 
             <TextView
-                android:id="@+id/connected_apps_settings_connect_to_constant_contact_name_tv"
+                android:id="@+id/marketing_settings_connect_to_constant_contact_name_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/connected_apps_settings_connect_to_constant_contact_picture_iv"
-                android:layout_alignTop="@+id/connected_apps_settings_connect_to_constant_contact_picture_iv"
+                android:layout_toRightOf="@+id/marketing_settings_connect_to_constant_contact_picture_iv"
+                android:layout_alignTop="@+id/marketing_settings_connect_to_constant_contact_picture_iv"
                 android:layout_marginBottom="@dimen/connected_apps_settings_connect_to_facebook_name_iv_layout_marginBottom"
                 android:textAppearance="@style/Base.DialogWindowTitle.AppCompat"
                 android:textSize="@dimen/connected_apps_settings_connect_to_facebook_name_iv_textSize"
@@ -216,7 +216,7 @@
                 />
 
             <ImageView
-                android:id="@+id/connected_apps_settings_connect_to_infusionsoft_picture_iv"
+                android:id="@+id/marketing_settings_connect_to_infusionsoft_picture_iv"
                 android:layout_width="@dimen/connected_apps_settings_connect_to_facebook_picture_iv_layout_width"
                 android:layout_height="@dimen/connected_apps_settings_connect_to_facebook_picture_iv_layout_height"
                 android:layout_below="@+id/marketing_settings_connect_to_infusionsoft_view"
@@ -226,7 +226,7 @@
                 android:src=""/>
 
             <Button
-                android:id="@+id/connected_apps_settings_connect_to_infusionsoft_bt"
+                android:id="@+id/marketing_settings_connect_to_infusionsoft_bt"
                 android:layout_width="@dimen/connected_apps_settings_connect_to_facebook_bt_layout_width"
                 android:layout_height="@dimen/connected_apps_settings_connect_to_facebook_bt_layout_height"
                 android:layout_alignParentEnd="true"
@@ -237,17 +237,71 @@
                 android:textColor="@color/colorPrimaryDark"/>
 
             <TextView
-                android:id="@+id/connected_apps_settings_connect_to_infusionsoft_name_tv"
+                android:id="@+id/marketing_settings_connect_to_infusionsoft_name_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/connected_apps_settings_connect_to_infusionsoft_picture_iv"
-                android:layout_alignTop="@+id/connected_apps_settings_connect_to_infusionsoft_picture_iv"
+                android:layout_toRightOf="@+id/marketing_settings_connect_to_infusionsoft_picture_iv"
+                android:layout_alignTop="@+id/marketing_settings_connect_to_infusionsoft_picture_iv"
                 android:layout_marginBottom="@dimen/connected_apps_settings_connect_to_facebook_name_iv_layout_marginBottom"
                 android:textAppearance="@style/Base.DialogWindowTitle.AppCompat"
                 android:textSize="@dimen/connected_apps_settings_connect_to_facebook_name_iv_textSize"
                 android:text="@string/marketing_settings_connect_to_infusionsoft_name_tv_text"/>
 
 
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/marketing_settings_download_email_addresses_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/marketing_settings_connect_to_infusionsoft_rl"
+            android:layout_alignLeft="@+id/marketing_settings_connect_to_infusionsoft_rl"
+            android:layout_marginBottom="@dimen/connected_apps_settings_to_other_accounts_rl_layout_marginBottom">
+
+            <TextView
+                android:id="@+id/marketing_settings_download_email_addresses_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/connected_apps_settings_to_other_accounts_title_tv_layout_marginBottom"
+                android:textAppearance="@style/Base.DialogWindowTitle.AppCompat"
+                android:textSize="@dimen/marketing_settings_download_email_addresses_title_tv_textSize"
+                android:text="@string/marketing_settings_download_email_addresses_title_tv_text"/>
+
+            <TextView
+                android:id="@+id/marketing_settings_download_email_addresses_desc_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/marketing_settings_email_service_providers_desc_tv_layout_marginTop"
+                android:layout_marginBottom="@dimen/connected_apps_settings_to_other_accounts_title_tv_layout_marginBottom"
+                android:layout_below="@+id/marketing_settings_download_email_addresses_title_tv"
+                android:layout_alignLeft="@+id/marketing_settings_download_email_addresses_title_tv"
+                android:textSize="@dimen/marketing_settings_download_email_addresses_desc_tv_textSize"
+                android:text="@string/marketing_settings_download_email_addresses_desc_tv_text"/>
+
+            <Button
+                android:id="@+id/marketing_settings_download_email_addresses_download_bt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/marketing_settings_download_email_addresses_desc_tv"
+                android:layout_alignLeft="@+id/marketing_settings_download_email_addresses_desc_tv"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/marketing_settings_download_email_addresses_emails_captured_count_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/marketing_settings_download_email_addresses_download_bt"
+                android:layout_alignTop="@+id/marketing_settings_download_email_addresses_download_bt"
+                android:layout_marginRight="@dimen/marketing_settings_download_email_addresses_emails_captured_count_tv_layout_margin_left_and_right"
+                android:layout_marginLeft="@dimen/marketing_settings_download_email_addresses_emails_captured_count_tv_layout_margin_left_and_right"/>
+
+            <TextView
+                android:id="@+id/marketing_settings_download_email_addresses_emails_captured_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/marketing_settings_download_email_addresses_emails_captured_count_tv"
+                android:layout_alignTop="@+id/marketing_settings_download_email_addresses_emails_captured_count_tv"
+                android:text="@string/marketing_settings_download_email_addresses_emails_captured_tv_text"/>
         </RelativeLayout>
 
     </RelativeLayout>

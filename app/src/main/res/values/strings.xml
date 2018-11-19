@@ -596,9 +596,15 @@
     <string name="marketing_settings_connect_to_campaign_monitor_name_tv_text">Campaign Monitor</string>
     <string name="marketing_settings_connect_to_constant_contact_name_tv_text">Constant Contact</string>
     <string name="marketing_settings_connect_to_infusionsoft_name_tv_text">Infusionsoftp</string>
+    <string name="marketing_settings_download_email_addresses_title_tv_text">Download email addresses</string>
+    <string name="marketing_settings_download_email_addresses_desc_tv_text">Once you’ve enabled email capture,
+        you can download a CSV of all the email address you’ve collected on all your videos.
+        You can also export this list to your email service provider.</string>
+    <string name="marketing_settings_download_email_addresses_emails_captured_tv_text">emails captured</string>
     <string name="marketing_settings_google_analytics_title_tv_text">Google Analytics</string>
     <string name="marketing_settings_google_analytics_desc_tv_text">To track events on all Vimeo players embedded
         on your site, copy the code below and paste it underneath the Google Analytics script in the HTML of your website.</string>
+
 
 
 </resources>

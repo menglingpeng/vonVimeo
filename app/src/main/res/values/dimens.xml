@@ -270,5 +270,8 @@
     <dimen name="view_preferences_settings_manage_your_feed__sort_spinner_layout_height">20dp</dimen>
 
     <dimen name="marketing_settings_email_service_providers_desc_tv_layout_marginTop">5dp</dimen>
+    <dimen name="marketing_settings_download_email_addresses_title_tv_textSize">14dp</dimen>
+    <dimen name="marketing_settings_download_email_addresses_desc_tv_textSize">12dp</dimen>
+    <dimen name="marketing_settings_download_email_addresses_emails_captured_count_tv_layout_margin_left_and_right">5dp</dimen>
 
 </resources>

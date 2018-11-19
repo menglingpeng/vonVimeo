@@ -26,10 +26,10 @@ public class MarketingSettingsFragment extends BaseFragment implements View.OnCl
     protected void initView() {
         user = (User)getActivity().getIntent().getSerializableExtra(Constants.USER);
         context = getContext();
-        connectToMailChimpBt = (Button)rootView.findViewById(R.id.connected_apps_settings_connect_to_mailchimp_bt);
-        connectToCampaignMonitorBt = (Button)rootView.findViewById(R.id.connected_apps_settings_connect_to_campaign_monitor_bt);
-        connectToConstantContactBt = (Button)rootView.findViewById(R.id.connected_apps_settings_connect_to_constant_contact_bt);
-        connectToInfusionsoftBt = (Button)rootView.findViewById(R.id.connected_apps_settings_connect_to_infusionsoft_bt);
+        connectToMailChimpBt = (Button)rootView.findViewById(R.id.marketing_settings_connect_to_mailchimp_bt);
+        connectToCampaignMonitorBt = (Button)rootView.findViewById(R.id.marketing_settings_connect_to_campaign_monitor_bt);
+        connectToConstantContactBt = (Button)rootView.findViewById(R.id.marketing_settings_connect_to_constant_contact_bt);
+        connectToInfusionsoftBt = (Button)rootView.findViewById(R.id.marketing_settings_connect_to_infusionsoft_bt);
     }
 
     @Override
@@ -40,7 +40,34 @@ public class MarketingSettingsFragment extends BaseFragment implements View.OnCl
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-
+            case R.id.marketing_settings_connect_to_mailchimp_bt:
+                connectToMailChimp();
+                break;
+            case R.id.marketing_settings_connect_to_campaign_monitor_bt:
+                connectToCampaignMonitor();
+                break;
+            case R.id.marketing_settings_connect_to_constant_contact_bt:
+                connectToConstantContact();
+                break;
+            case R.id.marketing_settings_connect_to_infusionsoft_bt:
+                connectToInfusionsoft();
+                break;
         }
+    }
+
+    private void connectToMailChimp(){
+
+    }
+
+    private void connectToConstantContact(){
+
+    }
+
+    private void connectToCampaignMonitor(){
+
+    }
+
+    private void connectToInfusionsoft(){
+
     }
 }

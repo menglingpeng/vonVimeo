@@ -3,6 +3,7 @@ package com.menglingpeng.vonvimeo.mvp.view.fragment;
 import android.content.Context;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.menglingpeng.vonvimeo.base.BaseFragment;
 import com.menglingpeng.vonvimeo.mvp.model.User;
@@ -16,6 +17,8 @@ public class MarketingSettingsFragment extends BaseFragment implements View.OnCl
     private Button connectToConstantContactBt;
     private Button connectToCampaignMonitorBt;
     private Button connectToInfusionsoftBt;
+    private Button downloadBt;
+    private EditText trackingCodeEt;
 
     @Override
     protected void initLayoutId() {
@@ -30,6 +33,8 @@ public class MarketingSettingsFragment extends BaseFragment implements View.OnCl
         connectToCampaignMonitorBt = (Button)rootView.findViewById(R.id.marketing_settings_connect_to_campaign_monitor_bt);
         connectToConstantContactBt = (Button)rootView.findViewById(R.id.marketing_settings_connect_to_constant_contact_bt);
         connectToInfusionsoftBt = (Button)rootView.findViewById(R.id.marketing_settings_connect_to_infusionsoft_bt);
+        downloadBt = (Button)rootView.findViewById(R.id.marketing_settings_download_email_addresses_download_bt);
+        trackingCodeEt = (EditText)rootView.findViewById(R.id.marketing_settings_google_analytics_tracking_code_et);
     }
 
     @Override
@@ -51,6 +56,10 @@ public class MarketingSettingsFragment extends BaseFragment implements View.OnCl
                 break;
             case R.id.marketing_settings_connect_to_infusionsoft_bt:
                 connectToInfusionsoft();
+                break;
+            case R.id.marketing_settings_download_email_addresses_download_bt:
+                break;
+            default:
                 break;
         }
     }

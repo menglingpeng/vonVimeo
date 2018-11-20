@@ -20,6 +20,7 @@
 
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="download">Download</string>
 
     <string name="language_english">English</string>
     <string name="language_spanish">Español</string>
@@ -604,6 +605,7 @@
     <string name="marketing_settings_google_analytics_title_tv_text">Google Analytics</string>
     <string name="marketing_settings_google_analytics_desc_tv_text">To track events on all Vimeo players embedded
         on your site, copy the code below and paste it underneath the Google Analytics script in the HTML of your website.</string>
+    <string name="marketing_settings_google_analytics_tracking_code_tv_text">Tracking code</string>
 
 
 

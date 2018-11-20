@@ -273,5 +273,6 @@
     <dimen name="marketing_settings_download_email_addresses_title_tv_textSize">14dp</dimen>
     <dimen name="marketing_settings_download_email_addresses_desc_tv_textSize">12dp</dimen>
     <dimen name="marketing_settings_download_email_addresses_emails_captured_count_tv_layout_margin_left_and_right">5dp</dimen>
+    <dimen name="marketing_settings_google_analytics_tracking_code_tvlayout_marginBottom">5dp</dimen>
 
 </resources>

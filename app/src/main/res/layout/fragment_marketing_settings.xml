@@ -284,7 +284,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/marketing_settings_download_email_addresses_desc_tv"
                 android:layout_alignLeft="@+id/marketing_settings_download_email_addresses_desc_tv"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:text="@string/download"/>
 
             <TextView
                 android:id="@+id/marketing_settings_download_email_addresses_emails_captured_count_tv"
@@ -331,6 +332,22 @@
             android:layout_below="@+id/marketing_settings_google_analytics_title_tv"
             android:layout_alignLeft="@+id/marketing_settings_google_analytics_title_tv"
             android:text="@string/marketing_settings_google_analytics_desc_tv_text"/>
+
+        <TextView
+            android:id="@+id/marketing_settings_google_analytics_tracking_code_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/marketing_settings_google_analytics_desc_tv"
+            android:layout_alignLeft="@+id/marketing_settings_google_analytics_desc_tv"
+            android:layout_marginBottom="@dimen/marketing_settings_google_analytics_tracking_code_tvlayout_marginBottom"
+            android:text="@string/marketing_settings_google_analytics_tracking_code_tv_text"/>
+
+        <EditText
+            android:id="@+id/marketing_settings_google_analytics_tracking_code_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/marketing_settings_google_analytics_tracking_code_tv"
+            android:layout_below="@+id/marketing_settings_google_analytics_tracking_code_tv"/>
 
     </RelativeLayout>
 

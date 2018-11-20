@@ -607,6 +607,13 @@
         on your site, copy the code below and paste it underneath the Google Analytics script in the HTML of your website.</string>
     <string name="marketing_settings_google_analytics_tracking_code_tv_text">Tracking code</string>
 
+    <string name="videos_settings_upload_defaults_title_tv_text">Upload defaults</string>
+    <string name="videos_settings_content_rating_default_title_tv_text">Content rating default</string>
+    <string name="videos_settings_content_rating_default_desc_tv_text">What rating applies to most of your videos?</string>
+    <string name="videos_settings_video_preferences_title_tv_text">Video preferences</string>
+    <string name="videos_settings_privacy_title_tv_text">Privacy</string>
+    <string name="videos_settings_embed_presets_title_tv_text">Embed presets</string>
+    <string name="videos_settings_player_logos_title_tv_text">Player logos</string>
 
 
 </resources>

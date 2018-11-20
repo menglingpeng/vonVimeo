@@ -275,4 +275,6 @@
     <dimen name="marketing_settings_download_email_addresses_emails_captured_count_tv_layout_margin_left_and_right">5dp</dimen>
     <dimen name="marketing_settings_google_analytics_tracking_code_tvlayout_marginBottom">5dp</dimen>
 
+    <dimen name="videos_settings_upload_defaults_title_tv_textSize">18dp</dimen>
+
 </resources>

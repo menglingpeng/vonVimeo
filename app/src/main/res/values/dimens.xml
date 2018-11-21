@@ -276,5 +276,6 @@
     <dimen name="marketing_settings_google_analytics_tracking_code_tvlayout_marginBottom">5dp</dimen>
 
     <dimen name="videos_settings_upload_defaults_title_tv_textSize">18dp</dimen>
+    <dimen name="videos_settings_content_rating_default_no_rating_rb_desc_tv_layout_marginLeft">5dp</dimen>
 
 </resources>

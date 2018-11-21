@@ -615,5 +615,16 @@
     <string name="videos_settings_embed_presets_title_tv_text">Embed presets</string>
     <string name="videos_settings_player_logos_title_tv_text">Player logos</string>
 
+    <string name="videos_settings_content_rating_default_no_rating_rb_text">No Rating</string>
+    <string name="videos_settings_content_rating_default_no_rating_rb_desc_text">- don’t apply a default rating to my videos</string>
+    <string name="videos_settings_content_rating_default_all_audiences_rb_text">All Audiences</string>
+    <string name="videos_settings_content_rating_default_all_audiences_rb_desc_text">- my videos do not contain explicit content</string>
+    <string name="videos_settings_content_rating_default_mature_rb_text">Mature</string>
+    <string name="videos_settings_content_rating_default_mature_rb_desc_text">- my videos contain explicit content
+        like profanity, drugs, or nudity</string>
+
+    <dimen name="videos_settings_video_preferences_cb_desc_tv_text">Hide video stats and viewer count on the video page
+        and in search results</dimen>
+
 
 </resources>

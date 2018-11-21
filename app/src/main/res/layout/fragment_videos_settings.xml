@@ -43,6 +43,89 @@
                 android:layout_alignLeft="@+id/videos_settings_content_rating_default_title_tv"
                 android:text="@string/videos_settings_content_rating_default_desc_tv_text"/>
 
+            <RadioGroup
+                android:id="@+id/videos_settings_content_rating_default_rg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/videos_settings_content_rating_default_desc_tv"
+                android:layout_alignLeft="@+id/videos_settings_content_rating_default_desc_tv">
+
+                <RelativeLayout
+                    android:id="@+id/videos_settings_content_rating_default_no_rating_rl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/videos_settings_content_rating_default_no_rating_rb"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/videos_settings_content_rating_default_no_rating_rb_text"/>
+
+                    <TextView
+                        android:id="@+id/videos_settings_content_rating_default_no_rating_rb_desc_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/videos_settings_content_rating_default_no_rating_rb"
+                        android:layout_alignTop="@+id/videos_settings_content_rating_default_no_rating_rb"
+                        android:layout_marginLeft="@dimen/videos_settings_content_rating_default_no_rating_rb_desc_tv_layout_marginLeft"
+                        android:text="@string/videos_settings_content_rating_default_no_rating_rb_desc_text"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/videos_settings_content_rating_default_all_audiences_rl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/videos_settings_content_rating_default_all_audiences_rb"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/videos_settings_content_rating_default_all_audiences_rb_text"/>
+
+                    <TextView
+                        android:id="@+id/videos_settings_content_rating_default_all_audiences_rb_desc_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/videos_settings_content_rating_default_all_audiences_rb"
+                        android:layout_alignTop="@+id/videos_settings_content_rating_default_all_audiences_rb"
+                        android:layout_marginLeft="@dimen/videos_settings_content_rating_default_no_rating_rb_desc_tv_layout_marginLeft"
+                        android:text="@string/videos_settings_content_rating_default_all_audiences_rb_desc_text"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/videos_settings_content_rating_default_mature_rl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/videos_settings_content_rating_default_mature_rb"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/videos_settings_content_rating_default_mature_rb_text"/>
+
+                    <TextView
+                        android:id="@+id/videos_settings_content_rating_default_mature_desc_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/videos_settings_content_rating_default_mature_rb"
+                        android:layout_alignTop="@+id/videos_settings_content_rating_default_mature_rb"
+                        android:layout_marginLeft="@dimen/videos_settings_content_rating_default_no_rating_rb_desc_tv_layout_marginLeft"
+                        android:text="@string/videos_settings_content_rating_default_mature_rb_desc_text"/>
+
+                </RelativeLayout>
+
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/videos_settings_content_rating_default_save_bt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/videos_settings_content_rating_default_rg"
+                android:layout_alignLeft="@+id/videos_settings_content_rating_default_rg"/>
+
+
         </RelativeLayout>
 
         <RelativeLayout
@@ -58,6 +141,21 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/connected_apps_settings_to_other_accounts_title_tv_layout_marginBottom"
                 android:textAppearance="@style/Base.DialogWindowTitle.AppCompat"
+                android:text="@string/videos_settings_video_preferences_title_tv_text"/>
+
+            <CheckBox
+                android:id="@+id/videos_settings_video_preferences_cb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/videos_settings_video_preferences_title_tv"
+                android:layout_alignLeft="@+id/videos_settings_video_preferences_title_tv"/>
+
+            <TextView
+                android:id="@+id/videos_settings_video_preferences_cb_desc_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/videos_settings_video_preferences_cb"
+                android:layout_alignTop="@+id/videos_settings_video_preferences_cb"
                 android:text="@string/videos_settings_video_preferences_title_tv_text"/>
 
         </RelativeLayout>

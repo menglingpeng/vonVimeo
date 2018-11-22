@@ -612,6 +612,10 @@
     <string name="videos_settings_content_rating_default_desc_tv_text">What rating applies to most of your videos?</string>
     <string name="videos_settings_video_preferences_title_tv_text">Video preferences</string>
     <string name="videos_settings_privacy_title_tv_text">Privacy</string>
+    <string name="videos_settings_privacy_watch_vodeos_tv_text">Who can watch your videos?</string>
+    <string name="videos_settings_privacy_comment_on_vodeos_tv_text">Who can comment on your videos?</string>
+    <string name="videos_settings_privacy_embed_vodeos_tv_text">Where can your videos be embedded?</string>
+    <string name="videos_settings_privacy_do_with_vodeos_tv_text">What can people do with your videos?</string>
     <string name="videos_settings_embed_presets_title_tv_text">Embed presets</string>
     <string name="videos_settings_player_logos_title_tv_text">Player logos</string>
 

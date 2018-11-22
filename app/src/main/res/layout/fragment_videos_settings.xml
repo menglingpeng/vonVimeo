@@ -171,9 +171,144 @@
                 android:id="@+id/videos_settings_privacy_title_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/connected_apps_settings_to_other_accounts_title_tv_layout_marginBottom"
+                android:layout_marginBottom="@dimen/videos_settings_privacy_title_tv_layout_marginBottom"
                 android:textAppearance="@style/Base.DialogWindowTitle.AppCompat"
                 android:text="@string/videos_settings_privacy_title_tv_text"/>
+
+            <TextView
+                android:id="@+id/videos_settings_privacy_watch_vodeos_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/videos_settings_privacy_title_tv"
+                android:layout_alignLeft="@+id/videos_settings_privacy_title_tv"
+                android:layout_marginBottom="@dimen/videos_settings_privacy_title_tv_layout_marginBottom"
+                android:text="@string/videos_settings_privacy_watch_vodeos_tv_text"/>
+
+            <RadioGroup
+                android:id="@+id/videos_settings_privacy_watch_vodeos_rg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/videos_settings_privacy_watch_vodeos_tv"
+                android:layout_alignLeft="@+id/videos_settings_privacy_watch_vodeos_tv"
+                android:layout_marginBottom="@dimen/videos_settings_privacy_watch_vodeos_rglayout_marginBottom">
+
+                <RadioButton
+                    android:id="@+id/videos_settings_privacy_watch_vodeos_anyone_rb"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/general_privacy_watch_settings_anyone_rb_text"/>
+
+                <RadioButton
+                    android:id="@+id/videos_settings_privacy_watch_vodeos_only_me_rb"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/general_privacy_watch_settings_only_i_rb_text"/>
+
+                <RadioButton
+                    android:id="@+id/videos_settings_privacy_watch_vodeos_only_with_password_rb"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/general_privacy_watch_settings_only_with_password_rb_text"/>
+
+                <RadioButton
+                    android:id="@+id/videos_settings_privacy_watch_vodeos_only_follow_rb"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/general_privacy_watch_settings_only_follow_rb_text"/>
+
+                <RadioButton
+                    android:id="@+id/videos_settings_privacy_watch_vodeos_only_choose_rb"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/general_privacy_watch_settings_only_choose_rb_text"/>
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/videos_settings_privacy_comment_on_vodeos_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/videos_settings_privacy_watch_vodeos_rg"
+                android:layout_alignLeft="@+id/videos_settings_privacy_watch_vodeos_rg"
+                android:layout_marginBottom="@dimen/videos_settings_privacy_title_tv_layout_marginBottom"
+                android:text="@string/videos_settings_privacy_comment_on_vodeos_tv_text"/>
+
+            <RadioGroup
+                android:id="@+id/videos_settings_privacy_comment_on_vodeos_rg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/videos_settings_privacy_comment_on_vodeos_tv"
+                android:layout_alignLeft="@+id/videos_settings_privacy_comment_on_vodeos_tv"
+                android:layout_marginBottom="@dimen/videos_settings_privacy_watch_vodeos_rglayout_marginBottom">
+
+                <RadioButton
+                    android:id="@+id/videos_settings_privacy_comment_on_vodeos_anyone_rb"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/general_privacy_comment_settings_anyone_rb_text"/>
+
+                <RadioButton
+                    android:id="@+id/videos_settings_privacy_comment_on_vodeos_no_one_rb"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/general_privacy_comment_settings_no_one_rb_text"/>
+
+                <RadioButton
+                    android:id="@+id/videos_settings_privacy_comment_on_vodeos_only_i_follow_rb"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/general_privacy_comment_settings_only_i_follow_rb_text"/>
+
+
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/videos_settings_privacy_embed_vodeos_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/videos_settings_privacy_comment_on_vodeos_rg"
+                android:layout_alignLeft="@+id/videos_settings_privacy_comment_on_vodeos_rg"
+                android:layout_marginBottom="@dimen/videos_settings_privacy_title_tv_layout_marginBottom"
+                android:text="@string/videos_settings_privacy_embed_vodeos_tv_text"/>
+
+            <RadioGroup
+                android:id="@+id/videos_settings_privacy_embed_vodeos_rg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/videos_settings_privacy_embed_vodeos_tv"
+                android:layout_alignLeft="@+id/videos_settings_privacy_embed_vodeos_tv"
+                android:layout_marginBottom="@dimen/videos_settings_privacy_watch_vodeos_rglayout_marginBottom">
+
+                <RadioButton
+                    android:id="@+id/videos_settings_privacy_embed_vodeos_anywhere_rb"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/general_privacy_embed_settings_anywhere_rb_text"/>
+
+                <RadioButton
+                    android:id="@+id/videos_settings_privacy_embed_vodeos_nowhere_rb"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/general_privacy_embed_settings_nowhere_rb_text"/>
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/videos_settings_privacy_do_with_videos_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/videos_settings_privacy_embed_vodeos_rg"
+                android:layout_alignLeft="@+id/videos_settings_privacy_embed_vodeos_rg"
+                android:layout_marginBottom="@dimen/videos_settings_privacy_title_tv_layout_marginBottom"
+                android:text="@string/videos_settings_privacy_do_with_vodeos_tv_text"/>
+
+            <CheckBox
+                android:id="@+id/videos_settings_privacy_do_with_videos_download_cb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/videos_settings_privacy_do_with_videos_tv"
+                android:layout_alignLeft="@+id/videos_settings_privacy_do_with_videos_tv"/>
 
         </RelativeLayout>
 

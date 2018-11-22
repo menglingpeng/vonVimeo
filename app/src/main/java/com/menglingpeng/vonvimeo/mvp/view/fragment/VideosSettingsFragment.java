@@ -22,6 +22,19 @@ public class VideosSettingsFragment extends BaseFragment {
     private RadioButton matureRb;
     private Button contentRatingSaveBt;
     private CheckBox videoPreferencesCb;
+    private RadioGroup watchRg;
+    private RadioButton anyoneWatchRb;
+    private RadioButton iWatchRb;
+    private RadioButton followWatchRb;
+    private RadioButton chooseWatchRb;
+    private RadioButton passwordWatchRb;
+    private RadioGroup commentRg;
+    private RadioButton anyoneCommentRb;
+    private RadioButton noOneCommentRb;
+    private RadioButton followCommentRb;
+    private RadioGroup embedRg;
+    private RadioButton anywhereRb;
+    private RadioButton nowhereRb;
 
     @Override
     protected void initLayoutId() {
@@ -38,6 +51,19 @@ public class VideosSettingsFragment extends BaseFragment {
         matureRb = (RadioButton)rootView.findViewById(R.id.videos_settings_content_rating_default_mature_rb);
         contentRatingSaveBt = (Button) rootView.findViewById(R.id.videos_settings_content_rating_default_save_bt);
         videoPreferencesCb = (CheckBox)rootView.findViewById(R.id.videos_settings_video_preferences_cb);
+        watchRg = (RadioGroup)rootView.findViewById(R.id.videos_settings_privacy_watch_vodeos_rg);
+        anyoneWatchRb = (RadioButton)rootView.findViewById(R.id.videos_settings_privacy_watch_vodeos_anyone_rb);
+        iWatchRb = (RadioButton)rootView.findViewById(R.id.videos_settings_privacy_watch_vodeos_only_i_rb);
+        followWatchRb = (RadioButton)rootView.findViewById(R.id.videos_settings_privacy_watch_vodeos_only_follow_rb);
+        chooseWatchRb = (RadioButton)rootView.findViewById(R.id.videos_settings_privacy_watch_vodeos_only_choose_rb);
+        passwordWatchRb = (RadioButton)rootView.findViewById(R.id.videos_settings_privacy_watch_vodeos_only_with_password_rb);
+        commentRg = (RadioGroup)rootView.findViewById(R.id.videos_settings_privacy_comment_on_vodeos_rg);
+        anyoneCommentRb = (RadioButton)rootView.findViewById(R.id.videos_settings_privacy_comment_on_vodeos_anyone_rb);
+        noOneCommentRb = (RadioButton)rootView.findViewById(R.id.videos_settings_privacy_comment_on_vodeos_no_one_rb);
+        followCommentRb = (RadioButton)rootView.findViewById(R.id.videos_settings_privacy_comment_on_vodeos_only_follow_rb);
+        embedRg = (RadioButton)rootView.findViewById(R.id.videos_settings_privacy_embed_vodeos_rg);
+        anywhereRb = (RadioButton)rootView.findViewById(R.id.videos_settings_privacy_embed_vodeos_anywhere_rb);
+        nowhereRb = (RadioButton)rootView.findViewById(R.id.videos_settings_privacy_embed_vodeos_nowhere_rb);
     }
 
     @Override

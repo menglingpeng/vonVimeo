@@ -35,6 +35,11 @@ public class VideosSettingsFragment extends BaseFragment {
     private RadioGroup embedRg;
     private RadioButton anywhereRb;
     private RadioButton nowhereRb;
+    private String watchPrivacy;
+    private String commentPrivacy;
+    private String embedPrivacy;
+    private CheckBox downloadCb;
+    private CheckBox addCollectionsCh;
 
     @Override
     protected void initLayoutId() {
@@ -94,6 +99,81 @@ public class VideosSettingsFragment extends BaseFragment {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
 
+            }
+        });
+
+        watchRg.check(R.id.videos_settings_privacy_watch_vodeos_anyone_rb);
+        watchRg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch (i){
+                    case 0:
+                        anyoneWatchRb.setText(getString(R.sting.general_privacy_watch_settings_anyone_rb_text));
+                        watchPrivacy = Constants.PRIVACY_ANYONE;
+
+                        break;
+                    case 1:
+                        iWatchRb.setText((R.sting.general_privacy_watch_settings_only_i_rb_text));
+                        watchPrivacy = Constants.PRIVACY_ONLY_I;
+                        break;
+                    case 2:
+                        followWatchRb.setText((R.sting.general_privacy_watch_settings_only_follow_rb_text));
+                        watchPrivacy = Constants.PRIVACY_ONLY_I_FOLLOW;
+                        break;
+                    case 3:
+                        chooseWatchRb.setText((R.sting.general_privacy_watch_settings_only_choose_rb_text));
+                        watchPrivacy = Constants.PRIVACY_ONLY_I_CHOOSE;
+                        break;
+                    case 4:
+                        passwordWatchRb.setText((R.sting.general_privacy_watch_settings_only_with_password_rb_text));
+                        watchPrivacy = Constants.PRIVACY_WITH_A_PASSWORD;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
+
+        commentRg.check(R.id.videos_settings_privacy_comment_on_vodeos_anyone_rb);
+        commentRg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch (i){
+                    case 0:
+                        anyoneCommentRb.setText(getString(R.sting.general_privacy_comment_settings_anyone_rb_text));
+                        commentPrivacy= Constants.PRIVACY_ANYONE;
+
+                        break;
+                    case 1:
+                        noOneCommentRb.setText((R.sting.general_privacy_comment_settings_no_one_rb));
+                        commentPrivacy = Constants.PRIVACY_NO_ONE;
+                        break;
+                    case 2:
+                        followCommentRb.setText((R.sting.general_privacy_comment_settings_only_follow_rb_text));
+                        commentPrivacy = Constants.PRIVACY_ONLY_I_FOLLOW;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
+        embedRg.check(R.id.videos_settings_privacy_embed_vodeos_anywhere_rb);
+        embedRg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch (i){
+                    case 0:
+                        anywhereRb.setText(getString(R.sting.general_privacy_embed_settings_anywhere_rb_text));
+                        embedPrivacy= Constants.PRIVACY_ANYONE;
+
+                        break;
+                    case 1:
+                        nowhereRb.setText((R.sting.general_privacy_embed_settings_nowhere_rb_text));
+                        embedPrivacy = Constants.PRIVACY_NO_ONE;
+                        break;
+                    default:
+                        break;
+                }
             }
         });
     }

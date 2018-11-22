@@ -616,6 +616,11 @@
     <string name="videos_settings_privacy_comment_on_vodeos_tv_text">Who can comment on your videos?</string>
     <string name="videos_settings_privacy_embed_vodeos_tv_text">Where can your videos be embedded?</string>
     <string name="videos_settings_privacy_do_with_vodeos_tv_text">What can people do with your videos?</string>
+    <string name="videos_settings_privacy_do_with_videos_download_cb_desc_tv_text">Download them</string>
+    <string name="videos_settings_privacy_do_with_videos_add_collections_cb_desc_tv_text">Add them to collections
+        (albums, channels, groups)</string>
+    <string name="videos_settings_privacy_creative_commons_license_tv_text">Which Creative Commons license would you
+        like to apply to your videos. Learn more</string>
     <string name="videos_settings_embed_presets_title_tv_text">Embed presets</string>
     <string name="videos_settings_player_logos_title_tv_text">Player logos</string>
 

@@ -308,7 +308,42 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/videos_settings_privacy_do_with_videos_tv"
-                android:layout_alignLeft="@+id/videos_settings_privacy_do_with_videos_tv"/>
+                android:layout_alignLeft="@+id/videos_settings_privacy_do_with_videos_tv" />
+
+            <TextView
+                android:id="@+id/videos_settings_privacy_do_with_videos_download_cb_desc_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/videos_settings_privacy_do_with_videos_download_cb"
+                android:layout_alignTop="@+id/videos_settings_privacy_do_with_videos_download_cb"
+                android:layout_marginLeft="@dimen/videos_settings_privacy_do_with_videos_download_cb_desc_tv_layout_marginLeft"
+                android:text="@string/videos_settings_privacy_do_with_videos_download_cb_desc_tv_text"/>
+
+            <CheckBox
+                android:id="@+id/videos_settings_privacy_do_with_videos_add_collections_cb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/videos_settings_privacy_do_with_videos_download_cb"
+                android:layout_alignLeft="@+id/videos_settings_privacy_do_with_videos_download_cb"/>
+
+            <TextView
+                android:id="@+id/videos_settings_privacy_do_with_videos_add_collections_cb_desc_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/videos_settings_privacy_do_with_videos_add_collections_cb"
+                android:layout_alignTop="@+id/videos_settings_privacy_do_with_videos_add_collections_cb"
+                android:layout_marginLeft="@dimen/videos_settings_privacy_do_with_videos_download_cb_desc_tv_layout_marginLeft"
+                android:layout_marginBottom="20dp"
+                android:text="@string/videos_settings_privacy_do_with_videos_add_collections_cb_desc_tv_text"/>
+
+            <TextView
+                android:id="@+id/videos_settings_privacy_creative_commons_license_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/videos_settings_privacy_do_with_videos_add_collections_cb_desc_tv"
+                android:layout_alignLeft="@+id/videos_settings_privacy_do_with_videos_add_collections_cb_desc_tv"
+                android:layout_marginBottom="@dimen/videos_settings_privacy_title_tv_layout_marginBottom"
+                android:text="@string/videos_settings_privacy_creative_commons_license_tv_text"/>
 
         </RelativeLayout>
 

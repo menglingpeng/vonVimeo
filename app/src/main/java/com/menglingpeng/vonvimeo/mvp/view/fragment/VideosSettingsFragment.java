@@ -7,12 +7,13 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Switch;
 
 import com.menglingpeng.vonvimeo.base.BaseFragment;
 import com.menglingpeng.vonvimeo.mvp.model.User;
 import com.menglingpeng.vonvimeo.utils.Constants;
 
-public class VideosSettingsFragment extends BaseFragment {
+public class VideosSettingsFragment extends BaseFragment implements Switch.OnCheckedChangeListener{
 
     private User user;
     private Context context;
@@ -40,6 +41,11 @@ public class VideosSettingsFragment extends BaseFragment {
     private String embedPrivacy;
     private CheckBox downloadCb;
     private CheckBox addCollectionsCh;
+    private Switch playbarSwitch;
+    private Switch volumeSwitch;
+    private Switch speedSwitch;
+    private Switch fullscreenSwitch;
+    private String controlsSettingsType;
 
     @Override
     protected void initLayoutId() {
@@ -52,7 +58,8 @@ public class VideosSettingsFragment extends BaseFragment {
         context = getContext();
         contentRatingRg = (RadioGroup)rootView.findViewById(R.id.videos_settings_content_rating_default_rg);
         noRatingRb = (RadioButton)rootView.findViewById(R.id.videos_settings_content_rating_default_no_rating_rb);
-        allAudiencesRb = (RadioButton)rootView.findViewById(R.id.videos_settings_content_rating_default_all_audiences_rb);
+        allAudiencesRb = (RadioButton)rootView.findViewById(R.id.
+                videos_settings_content_rating_default_all_audiences_rb);
         matureRb = (RadioButton)rootView.findViewById(R.id.videos_settings_content_rating_default_mature_rb);
         contentRatingSaveBt = (Button) rootView.findViewById(R.id.videos_settings_content_rating_default_save_bt);
         videoPreferencesCb = (CheckBox)rootView.findViewById(R.id.videos_settings_video_preferences_cb);
@@ -61,14 +68,22 @@ public class VideosSettingsFragment extends BaseFragment {
         iWatchRb = (RadioButton)rootView.findViewById(R.id.videos_settings_privacy_watch_vodeos_only_i_rb);
         followWatchRb = (RadioButton)rootView.findViewById(R.id.videos_settings_privacy_watch_vodeos_only_follow_rb);
         chooseWatchRb = (RadioButton)rootView.findViewById(R.id.videos_settings_privacy_watch_vodeos_only_choose_rb);
-        passwordWatchRb = (RadioButton)rootView.findViewById(R.id.videos_settings_privacy_watch_vodeos_only_with_password_rb);
+        passwordWatchRb = (RadioButton)rootView.findViewById(R.id.
+                videos_settings_privacy_watch_vodeos_only_with_password_rb);
         commentRg = (RadioGroup)rootView.findViewById(R.id.videos_settings_privacy_comment_on_vodeos_rg);
         anyoneCommentRb = (RadioButton)rootView.findViewById(R.id.videos_settings_privacy_comment_on_vodeos_anyone_rb);
         noOneCommentRb = (RadioButton)rootView.findViewById(R.id.videos_settings_privacy_comment_on_vodeos_no_one_rb);
-        followCommentRb = (RadioButton)rootView.findViewById(R.id.videos_settings_privacy_comment_on_vodeos_only_follow_rb);
+        followCommentRb = (RadioButton)rootView.findViewById(R.id.
+                videos_settings_privacy_comment_on_vodeos_only_follow_rb);
         embedRg = (RadioButton)rootView.findViewById(R.id.videos_settings_privacy_embed_vodeos_rg);
         anywhereRb = (RadioButton)rootView.findViewById(R.id.videos_settings_privacy_embed_vodeos_anywhere_rb);
         nowhereRb = (RadioButton)rootView.findViewById(R.id.videos_settings_privacy_embed_vodeos_nowhere_rb);
+        playbarSwitch = (Switch)rootView.findViewById(R.id.
+                videos_settings_embed_presets_controls_playbar_settings_switch);
+        volumeSwitch = (Switch)rootView.findViewById(R.id.videos_settings_embed_presets_controls_volume_settings_switch);
+        speedSwitch = (Switch)rootView.findViewById(R.id.videos_settings_embed_presets_controls_speed_settings_switch);
+        fullscreenSwitch = (Switch)rootView.findViewById(R.id.
+                videos_settings_embed_presets_controls_fullscreen_settings_switch);
     }
 
     @Override
@@ -176,5 +191,25 @@ public class VideosSettingsFragment extends BaseFragment {
                 }
             }
         });
+    }
+
+    @Override
+    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+        switch (compoundButton.getId()){
+            case R.id.embed_controls_playbar_settings_switch:
+                controlsSettingsType = Constants.EMBED_CONTROLS_SETTINGS_TYPE_PLAYBAR;
+                break;
+            case R.id.embed_controls_volume_settings_switch:
+                controlsSettingsType = Constants.EMBED_CONTROLS_SETTINGS_TYPE_VOLUME;
+                break;
+            case R.id.embed_controls_speed_settings_switch:
+                controlsSettingsType = Constants.EMBED_CONTROLS_SETTINGS_TYPE_SPEED;
+                break;
+            case R.id.embed_controls_fullscreen_settings_switch:
+                controlsSettingsType = Constants.EMBED_CONTROLS_SETTINGS_TYPE_FULLSCREEN;
+                break;
+            default:
+                break;
+        }
     }
 }

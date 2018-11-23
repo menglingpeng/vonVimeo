@@ -635,5 +635,8 @@
     <dimen name="videos_settings_video_preferences_cb_desc_tv_text">Hide video stats and viewer count on the video page
         and in search results</dimen>
 
+    <string name="videos_settings_embed_presets_desc_tv_text">Customize the player and add your branding
+        (only applies to embedded videos).</string>
+
 
 </resources>

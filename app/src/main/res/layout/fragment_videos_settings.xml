@@ -368,14 +368,109 @@
             android:text="@string/videos_settings_embed_presets_title_tv_text"/>
 
         <TextView
-            android:id="@+id/videos_settings_content_rating_title_tv"
+            android:id="@+id/videos_settings_embed_presets_desc_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/connected_apps_settings_to_other_accounts_title_tv_layout_marginBottom"
             android:layout_below="@+id/videos_settings_embed_presets_title_tv"
             android:layout_alignLeft="@+id/videos_settings_embed_presets_title_tv"
             android:textAppearance="@style/Base.DialogWindowTitle.AppCompat"
-            android:text="@string/marketing_settings_email_service_providers_title_tv_text"/>
+            android:text="@string/videos_settings_embed_presets_desc_tv_text"/>
+
+        <RelativeLayout
+            android:id="@+id/videos_settings_embed_presets_controls_settings_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/embed_desc_tv"
+            android:layout_alignLeft="@+id/embed_desc_tv">
+
+            <TextView
+                android:id="@+id/videos_settings_embed_presets_controls_settings_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/embed_controls_settings_tv_layout_marginBottom"
+                android:textAppearance="@style/Base.DialogWindowTitle.AppCompat"
+                android:text="@string/embed_controls_settings_tv_text"/>
+
+            <Switch
+                android:id="@+id/videos_settings_embed_presets_controls_playbar_settings_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/videos_settings_embed_presets_controls_settings_tv"
+                android:layout_alignLeft="@+id/videos_settings_embed_presets_controls_settings_tv"
+                android:layout_marginBottom="@dimen/embed_controls_playbar_settings_switch_layout_marginBottom"
+                android:layout_marginRight="@dimen/embed_controls_playbar_settings_switch_layout_marginRight"/>
+
+            <TextView
+                android:id="@+id/videos_settings_embed_presets_controls_playbar_settings_switch_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/videos_settings_embed_presets_controls_playbar_settings_switch"
+                android:layout_alignTop="@+id/videos_settings_embed_presets_controls_playbar_settings_switch"
+                android:text="@string/embed_controls_playbar_settings_switch_tv_text"/>
+
+            <Switch
+                android:id="@+id/videos_settings_embed_presets_controls_volume_settings_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/videos_settings_embed_presets_controls_playbar_settings_switch"
+                android:layout_alignLeft="@+id/videos_settings_embed_presets_controls_playbar_settings_switch"
+                android:layout_marginBottom="@dimen/embed_controls_playbar_settings_switch_layout_marginBottom"
+                android:layout_marginRight="@dimen/embed_controls_playbar_settings_switch_layout_marginRight"/>
+
+            <TextView
+                android:id="@+id/videos_settings_embed_presets_controls_volume_settings_switch_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/videos_settings_embed_presets_controls_volume_settings_switch"
+                android:layout_alignTop="@+id/videos_settings_embed_presets_controls_volume_settings_switch"
+                android:text="@string/embed_controls_volume_settings_switch_tv_text"/>
+
+            <Switch
+                android:id="@+id/videos_settings_embed_presets_controls_speed_settings_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/videos_settings_embed_presets_controls_volume_settings_switch"
+                android:layout_alignLeft="@+id/videos_settings_embed_presets_controls_volume_settings_switch"
+                android:layout_marginBottom="@dimen/embed_controls_playbar_settings_switch_layout_marginBottom"
+                android:layout_marginRight="@dimen/embed_controls_playbar_settings_switch_layout_marginRight"/>
+
+            <TextView
+                android:id="@+id/videos_settings_embed_presets_controls_speed_settings_switch_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/videos_settings_embed_presets_controls_speed_settings_switch"
+                android:layout_alignTop="@+id/videos_settings_embed_presets_controls_speed_settings_switch"
+                android:text="@string/embed_controls_speed_settings_switch_tv_text"/>
+
+            <Switch
+                android:id="@+id/videos_settings_embed_presets_controls_fullscreen_settings_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/videos_settings_embed_presets_controls_speed_settings_switch"
+                android:layout_alignLeft="@+id/videos_settings_embed_presets_controls_speed_settings_switch"
+                android:layout_marginBottom="@dimen/embed_controls_playbar_settings_switch_layout_marginBottom"
+                android:layout_marginRight="@dimen/embed_controls_playbar_settings_switch_layout_marginRight"/>
+
+            <TextView
+                android:id="@+id/videos_settings_embed_presets_controls_fullscreen_settings_switch_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/videos_settings_embed_presets_controls_fullscreen_settings_switch"
+                android:layout_alignTop="@+id/embed_controls_fullscreen_settings_switch"
+                android:text="@string/embed_controls_fullscreen_settings_switch_tv_text"/>
+
+            <view
+                android:id="@+id/videos_settings_embed_presets_controls_view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/videos_settings_embed_presets_controls_fullscreen_settings_switch"
+                android:layout_alignLeft="@+id/videos_settings_embed_presets_controls_fullscreen_settings_switch"
+                android:background="@color/recycler_item_view_background">
+
+            </view>
+
+        </RelativeLayout>
 
     </RelativeLayout>
 

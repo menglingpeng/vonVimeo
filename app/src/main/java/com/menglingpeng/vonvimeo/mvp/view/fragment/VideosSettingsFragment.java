@@ -46,6 +46,11 @@ public class VideosSettingsFragment extends BaseFragment implements Switch.OnChe
     private Switch speedSwitch;
     private Switch fullscreenSwitch;
     private String controlsSettingsType;
+    private Switch likeSwitch;
+    private Switch watchLaterSwitch;
+    private Switch shareSwitch;
+    private Switch embedSwitch;
+    private String actionsSettingsType;
 
     @Override
     protected void initLayoutId() {
@@ -84,6 +89,11 @@ public class VideosSettingsFragment extends BaseFragment implements Switch.OnChe
         speedSwitch = (Switch)rootView.findViewById(R.id.videos_settings_embed_presets_controls_speed_settings_switch);
         fullscreenSwitch = (Switch)rootView.findViewById(R.id.
                 videos_settings_embed_presets_controls_fullscreen_settings_switch);
+        likeSwitch = (Switch)rootView.findViewById(R.id.videos_settings_embed_presets_actions_like_settings_switch);
+        watchLaterSwitch = (Switch)rootView.findViewById(R.id.
+                videos_settings_embed_presets_actions_watch_later_settings_switch);
+        shareSwitch = (Switch)rootView.findViewById(R.id.videos_settings_embed_presets_actions_share_settings_switch);
+        embedSwitch = (Switch)rootView.findViewById(R.id.videos_settings_embed_presets_actions_embed_settings_switch);
     }
 
     @Override
@@ -196,17 +206,45 @@ public class VideosSettingsFragment extends BaseFragment implements Switch.OnChe
     @Override
     public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
         switch (compoundButton.getId()){
-            case R.id.embed_controls_playbar_settings_switch:
-                controlsSettingsType = Constants.EMBED_CONTROLS_SETTINGS_TYPE_PLAYBAR;
+            case R.id.videos_settings_embed_presets_controls_playbar_settings_switch:
+                if(b) {
+                    controlsSettingsType = Constants.EMBED_CONTROLS_SETTINGS_TYPE_PLAYBAR;
+                }
                 break;
-            case R.id.embed_controls_volume_settings_switch:
-                controlsSettingsType = Constants.EMBED_CONTROLS_SETTINGS_TYPE_VOLUME;
+            case R.id.videos_settings_embed_presets_controls_volume_settings_switch:
+                if(b) {
+                    controlsSettingsType = Constants.EMBED_CONTROLS_SETTINGS_TYPE_VOLUME;
+                }
                 break;
-            case R.id.embed_controls_speed_settings_switch:
-                controlsSettingsType = Constants.EMBED_CONTROLS_SETTINGS_TYPE_SPEED;
+            case R.id.videos_settings_embed_presets_controls_speed_settings_switch:
+                if(b) {
+                    controlsSettingsType = Constants.EMBED_CONTROLS_SETTINGS_TYPE_SPEED;
+                }
                 break;
-            case R.id.embed_controls_fullscreen_settings_switch:
-                controlsSettingsType = Constants.EMBED_CONTROLS_SETTINGS_TYPE_FULLSCREEN;
+            case R.id.videos_settings_embed_presets_controls_fullscreen_settings_switch:
+                if(b) {
+                    controlsSettingsType = Constants.EMBED_CONTROLS_SETTINGS_TYPE_FULLSCREEN;
+                }
+                break;
+            case R.id.videos_settings_embed_presets_actions_like_settings_switch:
+                if(b) {
+                    actionsSettingsType = Constants.EMBED_ACTIONS_SETTINGS_TYPE_LIKE;
+                }
+                break;
+            case R.id.videos_settings_embed_presets_actions_watch_later_settings_switch:
+                if(b){
+                    actionsSettingsType = Constants.EMBED_ACTIONS_SETTINGS_TYPE_WATCHLATER;
+                }
+                break;
+            case R.id.videos_settings_embed_presets_actions_share_settings_switch:
+                if(b) {
+                    actionsSettingsType = Constants.EMBED_ACTIONS_SETTINGS_TYPE_SHARE;
+                }
+                break;
+            case R.id.videos_settings_embed_presets_actions_embed_settings_switch:
+                if(b) {
+                    actionsSettingsType = Constants.EMBED_ACTIONS_SETTINGS_TYPE_EMBED;
+                }
                 break;
             default:
                 break;

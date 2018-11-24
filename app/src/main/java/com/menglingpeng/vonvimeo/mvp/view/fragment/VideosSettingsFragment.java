@@ -1,10 +1,13 @@
 package com.menglingpeng.vonvimeo.mvp.view.fragment;
 
 import android.content.Context;
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Switch;
@@ -51,6 +54,12 @@ public class VideosSettingsFragment extends BaseFragment implements Switch.OnChe
     private Switch shareSwitch;
     private Switch embedSwitch;
     private String actionsSettingsType;
+    private Switch profilePictureSwitch;
+    private Switch titleSwitch;
+    private Switch bylineSwitch;
+    private Switch userDecideSwitch;
+    private String yourDetailsSettingsType;
+    private ImageView userDecideSwitchInfoIv;
 
     @Override
     protected void initLayoutId() {
@@ -94,6 +103,14 @@ public class VideosSettingsFragment extends BaseFragment implements Switch.OnChe
                 videos_settings_embed_presets_actions_watch_later_settings_switch);
         shareSwitch = (Switch)rootView.findViewById(R.id.videos_settings_embed_presets_actions_share_settings_switch);
         embedSwitch = (Switch)rootView.findViewById(R.id.videos_settings_embed_presets_actions_embed_settings_switch);
+        profilePictureSwitch = (Switch)rootView.findViewById(R.id.
+                videos_settings_embed_presets_your_details_profile_picture_settings_switch);
+        titleSwitch = (Switch)rootView.findViewById(R.id.videos_settings_embed_presets_your_details_title_settings_switch);
+        bylineSwitch = (Switch)rootView.findViewById(R.id.videos_settings_embed_presets_your_details_byline_settings_switch);
+        userDecideSwitch = (Switch)rootView.findViewById(R.id.
+                videos_settings_embed_presets_your_details_user_decide_settings_switch);
+        userDecideSwitchInfoIv = (ImageView)rootView.findViewById(R.id.
+                videos_settings_embed_presets_your_details_users_decide_settings_switch_info_tv);
     }
 
     @Override
@@ -246,8 +263,35 @@ public class VideosSettingsFragment extends BaseFragment implements Switch.OnChe
                     actionsSettingsType = Constants.EMBED_ACTIONS_SETTINGS_TYPE_EMBED;
                 }
                 break;
+            case R.id.embed_your_details_profile_picture_settings_switch:
+                yourDetailsSettingsType = Constants.EMBED_YOUR_DETAILS_SETTINGS_TYPE_PROFILE_PICTURE;
+                break;
+            case R.id.embed_your_details_title_settings_switch:
+                yourDetailsSettingsType = Constants.EMBED_YOUR_DETAILS_SETTINGS_TYPE_TITLE;
+                break;
+            case R.id.embed_your_details_byline_settings_switch:
+                yourDetailsSettingsType = Constants.EMBED_YOUR_DETAILS_SETTINGS_TYPE_BYLINE;
+                break;
+            case R.id.embed_your_details_user_decide_settings_switch:
+                yourDetailsSettingsType = Constants.EMBED_YOUR_DETAILS_SETTINGS_TYPE_USERS_DECIDE;
+                break;
             default:
                 break;
         }
+    }
+
+    private void showUserDecideInfoDialog(){
+
+        AlertDialog dialog;
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setMessage(R.string.dialog_user_decide_switch_info_msg);
+        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        dialog = builder.create();
+        dialog.show();
     }
 }

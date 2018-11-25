@@ -60,6 +60,11 @@ public class VideosSettingsFragment extends BaseFragment implements Switch.OnChe
     private Switch userDecideSwitch;
     private String yourDetailsSettingsType;
     private ImageView userDecideSwitchInfoIv;
+    private Switch customColorSwitch;
+    private Switch showVimeoLogoSwitch;
+    private Switch displayCustomLogeSwitch;
+    private String customizationSettingsType;
+    private Button customLogoUpgradeBt;
 
     @Override
     protected void initLayoutId() {
@@ -111,6 +116,14 @@ public class VideosSettingsFragment extends BaseFragment implements Switch.OnChe
                 videos_settings_embed_presets_your_details_user_decide_settings_switch);
         userDecideSwitchInfoIv = (ImageView)rootView.findViewById(R.id.
                 videos_settings_embed_presets_your_details_users_decide_settings_switch_info_tv);
+        customColorSwitch = (Switch)rootView.findViewById(R.id.
+                videos_settings_embed_presets_customization_custom_color_settings_switch);
+        showVimeoLogoSwitch = (Switch)rootView.findViewById(R.id.
+                videos_settings_embed_presets_customization_show_vimeo_logo_settings_switch);
+        displayCustomLogeSwitch = (Switch)rootView.findViewById(R.id.
+                videos_settings_embed_presets_customization_display_custom_logo_settings_switch);
+        customLogoUpgradeBt = (Button)rootView.findViewById(R.id.
+                videos_settings_embed_presets_customization_display_custom_logo_settings_upgrade_bt);
     }
 
     @Override
@@ -226,54 +239,107 @@ public class VideosSettingsFragment extends BaseFragment implements Switch.OnChe
             case R.id.videos_settings_embed_presets_controls_playbar_settings_switch:
                 if(b) {
                     controlsSettingsType = Constants.EMBED_CONTROLS_SETTINGS_TYPE_PLAYBAR;
+                }else {
+
                 }
                 break;
             case R.id.videos_settings_embed_presets_controls_volume_settings_switch:
                 if(b) {
                     controlsSettingsType = Constants.EMBED_CONTROLS_SETTINGS_TYPE_VOLUME;
+                }else {
+
                 }
                 break;
             case R.id.videos_settings_embed_presets_controls_speed_settings_switch:
                 if(b) {
                     controlsSettingsType = Constants.EMBED_CONTROLS_SETTINGS_TYPE_SPEED;
+                }else {
+
                 }
                 break;
             case R.id.videos_settings_embed_presets_controls_fullscreen_settings_switch:
                 if(b) {
                     controlsSettingsType = Constants.EMBED_CONTROLS_SETTINGS_TYPE_FULLSCREEN;
+                }else {
+
                 }
                 break;
             case R.id.videos_settings_embed_presets_actions_like_settings_switch:
                 if(b) {
                     actionsSettingsType = Constants.EMBED_ACTIONS_SETTINGS_TYPE_LIKE;
+                }else {
+
                 }
                 break;
             case R.id.videos_settings_embed_presets_actions_watch_later_settings_switch:
                 if(b){
                     actionsSettingsType = Constants.EMBED_ACTIONS_SETTINGS_TYPE_WATCHLATER;
+                }else {
+
                 }
                 break;
             case R.id.videos_settings_embed_presets_actions_share_settings_switch:
                 if(b) {
                     actionsSettingsType = Constants.EMBED_ACTIONS_SETTINGS_TYPE_SHARE;
+                }else {
+
                 }
                 break;
             case R.id.videos_settings_embed_presets_actions_embed_settings_switch:
                 if(b) {
                     actionsSettingsType = Constants.EMBED_ACTIONS_SETTINGS_TYPE_EMBED;
+                }else {
+
                 }
                 break;
-            case R.id.embed_your_details_profile_picture_settings_switch:
-                yourDetailsSettingsType = Constants.EMBED_YOUR_DETAILS_SETTINGS_TYPE_PROFILE_PICTURE;
+            case R.id.videos_settings_embed_presets_your_details_profile_picture_settings_switch:
+                if(b) {
+                    yourDetailsSettingsType = Constants.EMBED_YOUR_DETAILS_SETTINGS_TYPE_PROFILE_PICTURE;
+                }else {
+
+                }
                 break;
-            case R.id.embed_your_details_title_settings_switch:
-                yourDetailsSettingsType = Constants.EMBED_YOUR_DETAILS_SETTINGS_TYPE_TITLE;
+            case R.id.videos_settings_embed_presets_your_details_title_settings_switch:
+                if(b) {
+                    yourDetailsSettingsType = Constants.EMBED_YOUR_DETAILS_SETTINGS_TYPE_TITLE;
+                }else {
+
+                }
                 break;
-            case R.id.embed_your_details_byline_settings_switch:
-                yourDetailsSettingsType = Constants.EMBED_YOUR_DETAILS_SETTINGS_TYPE_BYLINE;
+            case R.id.videos_settings_embed_presets_your_details_byline_settings_switch:
+                if(b) {
+                    yourDetailsSettingsType = Constants.EMBED_YOUR_DETAILS_SETTINGS_TYPE_BYLINE;
+                }else {
+
+                }
                 break;
-            case R.id.embed_your_details_user_decide_settings_switch:
-                yourDetailsSettingsType = Constants.EMBED_YOUR_DETAILS_SETTINGS_TYPE_USERS_DECIDE;
+            case R.id.videos_settings_embed_presets_your_details_user_decide_settings_switch:
+                if(b) {
+                    yourDetailsSettingsType = Constants.EMBED_YOUR_DETAILS_SETTINGS_TYPE_USERS_DECIDE;
+                }else {
+
+                }
+                break;
+            case R.id.videos_settings_embed_presets_customization_custom_color_settings_switch:
+                if(b) {
+                    customizationSettingsType = Constants.EMBED_CUSTOMIZATION_SETTINGS_TYPE_CUSTOM_COLOR;
+                }else {
+
+                }
+                break;
+            case R.id.videos_settings_embed_presets_customization_display_custom_logo_settings_switch:
+                if(b) {
+                    customizationSettingsType = Constants.EMBED_CUSTOMIZATION_SETTINGS_TYPE_DISPLAY_CUSTOM_LOGO;
+                }else {
+
+                }
+                break;
+            case R.id.videos_settings_embed_presets_customization_show_vimeo_logo_settings_switch:
+                if(b) {
+                    customizationSettingsType = Constants.EMBED_CUSTOMIZATION_SETTINGS_TYPE_SHOW_VIMEO_LOGO;
+                }else {
+
+                }
                 break;
             default:
                 break;

@@ -106,49 +106,109 @@ public class EmbedFragment extends BaseFragment implements View.OnClickListener,
     public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
         switch (compoundButton.getId()){
             case R.id.embed_controls_playbar_settings_switch:
-                controlsSettingsType = Constants.EMBED_CONTROLS_SETTINGS_TYPE_PLAYBAR;
+                if(b) {
+                    controlsSettingsType = Constants.EMBED_CONTROLS_SETTINGS_TYPE_PLAYBAR;
+                }else {
+
+                }
                 break;
             case R.id.embed_controls_volume_settings_switch:
-                controlsSettingsType = Constants.EMBED_CONTROLS_SETTINGS_TYPE_VOLUME;
+                if(b) {
+                    controlsSettingsType = Constants.EMBED_CONTROLS_SETTINGS_TYPE_VOLUME;
+                }else {
+
+                }
                 break;
             case R.id.embed_controls_speed_settings_switch:
-                controlsSettingsType = Constants.EMBED_CONTROLS_SETTINGS_TYPE_SPEED;
+                if(b) {
+                    controlsSettingsType = Constants.EMBED_CONTROLS_SETTINGS_TYPE_SPEED;
+                }else {
+
+                }
                 break;
             case R.id.embed_controls_fullscreen_settings_switch:
-                controlsSettingsType = Constants.EMBED_CONTROLS_SETTINGS_TYPE_FULLSCREEN;
+                if(b) {
+                    controlsSettingsType = Constants.EMBED_CONTROLS_SETTINGS_TYPE_FULLSCREEN;
+                }else {
+
+                }
                 break;
             case R.id.embed_actions_like_settings_switch:
-                actionsSettingsType = Constants.EMBED_ACTIONS_SETTINGS_TYPE_LIKE;
+                if(b) {
+                    actionsSettingsType = Constants.EMBED_ACTIONS_SETTINGS_TYPE_LIKE;
+                }else {
+
+                }
                 break;
             case R.id.embed_actions_watch_later_settings_switch:
-                actionsSettingsType = Constants.EMBED_ACTIONS_SETTINGS_TYPE_WATCHLATER;
+                if(b) {
+                    actionsSettingsType = Constants.EMBED_ACTIONS_SETTINGS_TYPE_WATCHLATER;
+                }else {
+
+                }
                 break;
             case R.id.embed_actions_share_settings_switch:
-                actionsSettingsType = Constants.EMBED_ACTIONS_SETTINGS_TYPE_SHARE;
+                if(b) {
+                    actionsSettingsType = Constants.EMBED_ACTIONS_SETTINGS_TYPE_SHARE;
+                }else {
+
+                }
                 break;
             case R.id.embed_actions_embed_settings_switch:
-                actionsSettingsType = Constants.EMBED_ACTIONS_SETTINGS_TYPE_EMBED;
+                if(b) {
+                    actionsSettingsType = Constants.EMBED_ACTIONS_SETTINGS_TYPE_EMBED;
+                }else {
+
+                }
                 break;
             case R.id.embed_your_details_profile_picture_settings_switch:
-                yourDetailsSettingsType = Constants.EMBED_YOUR_DETAILS_SETTINGS_TYPE_PROFILE_PICTURE;
+                if(b) {
+                    yourDetailsSettingsType = Constants.EMBED_YOUR_DETAILS_SETTINGS_TYPE_PROFILE_PICTURE;
+                }else {
+
+                }
                 break;
             case R.id.embed_your_details_title_settings_switch:
-                yourDetailsSettingsType = Constants.EMBED_YOUR_DETAILS_SETTINGS_TYPE_TITLE;
+                if(b) {
+                    yourDetailsSettingsType = Constants.EMBED_YOUR_DETAILS_SETTINGS_TYPE_TITLE;
+                }else {
+
+                }
                 break;
             case R.id.embed_your_details_byline_settings_switch:
-                yourDetailsSettingsType = Constants.EMBED_YOUR_DETAILS_SETTINGS_TYPE_BYLINE;
+                if(b) {
+                    yourDetailsSettingsType = Constants.EMBED_YOUR_DETAILS_SETTINGS_TYPE_BYLINE;
+                }else {
+
+                }
                 break;
             case R.id.embed_your_details_user_decide_settings_switch:
-                yourDetailsSettingsType = Constants.EMBED_YOUR_DETAILS_SETTINGS_TYPE_USERS_DECIDE;
+                if(b) {
+                    yourDetailsSettingsType = Constants.EMBED_YOUR_DETAILS_SETTINGS_TYPE_USERS_DECIDE;
+                }else {
+
+                }
                 break;
             case R.id.embed_customization_custom_color_settings_switch:
-                customizationSettingsType = Constants.EMBED_CUSTOMIZATION_SETTINGS_TYPE_CUSTOM_COLOR;
+                if(b) {
+                    customizationSettingsType = Constants.EMBED_CUSTOMIZATION_SETTINGS_TYPE_CUSTOM_COLOR;
+                }else {
+
+                }
                 break;
             case R.id.embed_customization_display_custom_logo_settings_switch:
-                customizationSettingsType = Constants.EMBED_CUSTOMIZATION_SETTINGS_TYPE_DISPLAY_CUSTOM_LOGO;
+                if(b) {
+                    customizationSettingsType = Constants.EMBED_CUSTOMIZATION_SETTINGS_TYPE_DISPLAY_CUSTOM_LOGO;
+                }else {
+
+                }
                 break;
             case R.id.embed_customization_show_vimeo_logo_settings_switch:
-                customizationSettingsType = Constants.EMBED_CUSTOMIZATION_SETTINGS_TYPE_SHOW_VIMEO_LOGO;
+                if(b) {
+                    customizationSettingsType = Constants.EMBED_CUSTOMIZATION_SETTINGS_TYPE_SHOW_VIMEO_LOGO;
+                }else {
+
+                }
                 break;
             default:
                 break;

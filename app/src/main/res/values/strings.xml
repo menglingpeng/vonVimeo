@@ -637,6 +637,7 @@
 
     <string name="videos_settings_embed_presets_desc_tv_text">Customize the player and add your branding
         (only applies to embedded videos).</string>
+    <string name="videos_settings_player_logos_desc_tv_text">add custom logos to your embedded video player.</string>
 
 
 </resources>

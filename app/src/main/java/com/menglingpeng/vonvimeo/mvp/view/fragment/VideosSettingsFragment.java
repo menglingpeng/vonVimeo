@@ -65,6 +65,7 @@ public class VideosSettingsFragment extends BaseFragment implements Switch.OnChe
     private Switch displayCustomLogeSwitch;
     private String customizationSettingsType;
     private Button customLogoUpgradeBt;
+    private Button customLogosUploadBt;
 
     @Override
     protected void initLayoutId() {
@@ -124,6 +125,7 @@ public class VideosSettingsFragment extends BaseFragment implements Switch.OnChe
                 videos_settings_embed_presets_customization_display_custom_logo_settings_switch);
         customLogoUpgradeBt = (Button)rootView.findViewById(R.id.
                 videos_settings_embed_presets_customization_display_custom_logo_settings_upgrade_bt);
+        customLogosUploadBt = (Button)rootView.findViewById(R.id.videos_settings_player_logos_upload_bt);
     }
 
     @Override
@@ -229,6 +231,12 @@ public class VideosSettingsFragment extends BaseFragment implements Switch.OnChe
                     default:
                         break;
                 }
+            }
+        });
+        customLogosUploadBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
     }

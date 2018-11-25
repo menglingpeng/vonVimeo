@@ -789,6 +789,16 @@
             android:textAppearance="@style/Base.DialogWindowTitle.AppCompat"
             android:text="@string/videos_settings_player_logos_desc_tv_text"/>
 
+        <Button
+            android:id="@+id/videos_settings_player_logos_upload_bt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/videos_settings_player_logos_desc_tv"
+            android:layout_alignLeft="@+id/videos_settings_player_logos_desc_tv"
+            android:drawableLeft="@drawable/ic_cloud_upload_white_18dp"
+            android:text="@string/button_upload_text"
+            android:layout_marginTop="20dp"/>
+
 
 
     </RelativeLayout>

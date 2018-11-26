@@ -639,5 +639,9 @@
         (only applies to embedded videos).</string>
     <string name="videos_settings_player_logos_desc_tv_text">add custom logos to your embedded video player.</string>
 
+    <string name="billing_settings_purchases_title_tv_text">Purchases</string>
+    <string name="billing_settings_purchases_desc_tv_text">The receipts for any purchases you make on Vimeo will
+        show up here. To manage your Vimeo Plus or PRO subscription, go to membership plan.</string>
+
 
 </resources>

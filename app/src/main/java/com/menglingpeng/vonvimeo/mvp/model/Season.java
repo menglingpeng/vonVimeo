@@ -10,6 +10,11 @@ public class Season implements Serializable{
     private String description;
     private int position;
     private User user;
+    /**
+     * metadata : {"interactions":{"subscribe":null,"buy":null,"rent":null}}
+     */
+
+    private MetadataBean metadata;
 
     public void setUri(String uri) {
         this.uri = uri;
@@ -57,5 +62,58 @@ public class Season implements Serializable{
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public void setMetadata(MetadataBean metadata) {
+        this.metadata = metadata;
+    }
+
+    public MetadataBean getMetadata() {
+        return metadata;
+    }
+
+
+    public static class MetadataBean {
+
+        private InteractionsBean interactions;
+
+        public void setInteractions(InteractionsBean interactions) {
+            this.interactions = interactions;
+        }
+
+        public InteractionsBean getInteractions() {
+            return interactions;
+        }
+
+        public static class InteractionsBean {
+
+            private Object subscribe;
+            private Object buy;
+            private Object rent;
+
+            public void setSubscribe(Object subscribe) {
+                this.subscribe = subscribe;
+            }
+
+            public void setBuy(Object buy) {
+                this.buy = buy;
+            }
+
+            public void setRent(Object rent) {
+                this.rent = rent;
+            }
+
+            public Object getSubscribe() {
+                return subscribe;
+            }
+
+            public Object getBuy() {
+                return buy;
+            }
+
+            public Object getRent() {
+                return rent;
+            }
+        }
     }
 }

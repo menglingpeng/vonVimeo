@@ -1,11 +1,14 @@
 package com.menglingpeng.vonvimeo.mvp.model;
 
-public class OnDemandVideos {
+import java.util.List;
+
+public class OnDemandPageVideos {
 
     private int total;
     private int page;
     private int per_page;
     private PagingBean paging;
+    private List<OnDemandPageVideo> onDemandPageVideos;
 
     public void setTotal(int total) {
         this.total = total;
@@ -37,6 +40,14 @@ public class OnDemandVideos {
 
     public PagingBean getPaging() {
         return paging;
+    }
+
+    public List<OnDemandPageVideo> getOnDemandPageVideos() {
+        return onDemandPageVideos;
+    }
+
+    public void setOnDemandPageVideos(List<OnDemandPageVideo> onDemandPageVideos) {
+        this.onDemandPageVideos = onDemandPageVideos;
     }
 
     public static class PagingBean {

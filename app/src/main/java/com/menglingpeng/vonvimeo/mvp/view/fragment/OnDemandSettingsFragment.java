@@ -3,15 +3,17 @@ package com.menglingpeng.vonvimeo.mvp.view.fragment;
 import android.content.Context;
 
 import com.menglingpeng.vonvimeo.base.BaseFragment;
+import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
 import com.menglingpeng.vonvimeo.mvp.model.User;
 import com.menglingpeng.vonvimeo.utils.Constants;
 import com.menglingpeng.vonvimeo.utils.IdStringUtil;
 
-public class OnDemandSettingsFragment extends BaseFragment {
+public class OnDemandSettingsFragment extends BaseFragment implements RecyclerView{
 
     private User user;
     private Context context;
     private String userId;
+    private String type;
 
     @Override
     protected void initLayoutId() {
@@ -28,6 +30,21 @@ public class OnDemandSettingsFragment extends BaseFragment {
 
     @Override
     protected void initData() {
+
+    }
+
+    @Override
+    public void hideProgress() {
+
+    }
+
+    @Override
+    public void loadFailed(String msg) {
+
+    }
+
+    @Override
+    public void loadSuccess(String json, String requestType) {
 
     }
 }

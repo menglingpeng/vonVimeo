@@ -1450,11 +1450,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }else if (holder instanceof FeedChannleViewHolder){
             final FeedChannleViewHolder viewHolder = (FeedChannleViewHolder)holder;
             final Channel channel = (Channel)list.get(position);
-            viewHolder.channleNameTv.setText(channel.getData().get(position).getName());
-            viewHolder.channleFollowingTimeTv.setText(channel.getData().get(position).getModified_time());
-            viewHolder.channleVideosCountTv.setText(channel.getData().get(position).getMetadata().getConnections().
+            viewHolder.channleNameTv.setText(channel.getName());
+            viewHolder.channleFollowingTimeTv.setText(channel.getModified_time());
+            viewHolder.channleVideosCountTv.setText(channel.getMetadata().getConnections().
                     getVideos().getTotal());
-            viewHolder.channleFollowersCountTv.setText(channel.getData().get(position).getMetadata().getConnections().
+            viewHolder.channleFollowersCountTv.setText(channel.getMetadata().getConnections().
                     getUsers().getTotal());
             viewHolder.channleCb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
@@ -2772,11 +2772,22 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
+    public class OnDemandPageEmptyView extends RecyclerView.ViewHolder{
+
+        public final Button upgradeBt;
+
+        public OnDemandPageEmptyView(View view) {
+            super(view);
+            upgradeBt = (Button)view.findViewById(R.id.empty_view_upgrade_bt);
+        }
+    }
+
     public class FooterViewHolder extends RecyclerView.ViewHolder {
 
         public FooterViewHolder(View view) {
             super(view);
         }
+
     }
 
     public <T> void addData(T d) {

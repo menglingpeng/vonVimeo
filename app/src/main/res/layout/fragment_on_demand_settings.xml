@@ -22,12 +22,23 @@
         android:layout_alignLeft="@+id/on_demand_settings_purchases_title_tv"
         android:text="@string/on_demand_settings_desc_tv_text"/>
 
-    <ProgressBar
-        android:id="@+id/on_demand_settings_pb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/on_demand_settings_purchases_desc_tv"
+        android:layout_alignLeft="@+id/on_demand_settings_purchases_desc_tv">
 
-    <include layout="@layout/container"></include>
+        <ProgressBar
+            android:id="@+id/on_demand_settings_pb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"/>
+
+        <include layout="@layout/container"></include>
+
+
+    </RelativeLayout>
+
+
 
 </RelativeLayout>

@@ -642,6 +642,10 @@
     <string name="billing_settings_purchases_title_tv_text">Purchases</string>
     <string name="billing_settings_purchases_desc_tv_text">The receipts for any purchases you make on Vimeo will
         show up here. To manage your Vimeo Plus or PRO subscription, go to membership plan.</string>
+    <string name="on_demand_settings_title_tv_text">On Demand</string>
+    <string name="on_demand_settings_desc_tv_text">With Vimeo On Demand, you can sell your films, series,
+        and videos directly to your audience online and worldwide, and make more money when you do.
+        Creators take home 90% of the revenue after transaction costs.</string>
 
 
 </resources>

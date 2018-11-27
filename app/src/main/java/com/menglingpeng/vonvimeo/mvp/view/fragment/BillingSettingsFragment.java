@@ -12,6 +12,7 @@ import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
 import com.menglingpeng.vonvimeo.mvp.model.User;
 import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
 import com.menglingpeng.vonvimeo.utils.Constants;
+import com.menglingpeng.vonvimeo.utils.IdStringUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,13 +20,14 @@ import java.util.List;
 public class BillingSettingsFragment extends BaseFragment implements RecyclerView {
 
     private User user;
+
     private Context context;
     private ProgressBar progressBar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private ArrayList<RecyclerFragment> fragments;
     private TabPagerFragmentAdapter adapter;
-
+    private String userId;
     private ArrayList<RecyclerFragment> fragmentsList;
     private static final int SMOOTHSCROLL_TOP_POSITION = 50;
 
@@ -38,6 +40,7 @@ public class BillingSettingsFragment extends BaseFragment implements RecyclerVie
     protected void initView() {
         user = (User)getActivity().getIntent().getSerializableExtra(Constants.USER);
         context = getContext();
+        userId = IdStringUtil.getId(user.getUri());
 
     }
 

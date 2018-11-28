@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/profile_settings_general_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/account_settings_general_title_tv_layout_marginTop"
+        android:layout_marginBottom="@dimen/account_settings_general_title_tv_layout_marginBottom"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textSize="@dimen/account_settings_general_title_tv_textSize"
+        android:text="@string/profile_settings_title_tv_text"/>
+
+    <RelativeLayout
+        android:id="@+id/profile_settings_profile_picture_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_settings_general_title_tv"
+        android:layout_alignLeft="@+id/profile_settings_general_title_tv"
+        android:layout_marginBottom="@dimen/profile_settings_profile_picture_rl_layout_marginBottom">
+
+        <TextView
+            android:id="@+id/profile_settings_profile_picture_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/account_settings_general_name_title_tv_layout_marginBottom"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:text="@string/profile_settings_profile_picture_title_tv_text"/>
+
+        <TextView
+            android:id="@+id/profile_settings_profile_picture_desc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/profile_settings_profile_picture_title_tv"
+            android:layout_alignLeft="@+id/profile_settings_profile_picture_title_tv"
+            android:layout_marginBottom="@dimen/account_settings_general_name_desc_tv_layout_marginBottom"
+            android:text="@string/profile_settings_profile_picture_desc_tv_text"/>
+
+        <ImageView
+            android:id="@+id/profile_settings_profile_picture_iv"
+            android:layout_width="@dimen/profile_settings_profile_picture_iv_layout_width_height"
+            android:layout_height="@dimen/profile_settings_profile_picture_iv_layout_width_height"
+            android:layout_below="@+id/profile_settings_profile_picture_desc_tv"
+            android:layout_alignLeft="@+id/profile_settings_profile_picture_desc_tv"
+            android:layout_marginBottom="@dimen/account_settings_general_name_desc_tv_layout_marginBottom"/>
+
+        <TextView
+            android:id="@+id/profile_settings_profile_picture_upload_new_image_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/profile_settings_profile_picture_iv"
+            android:layout_alignLeft="@+id/profile_settings_profile_picture_iv"
+            android:textColor="@color/colorPrimary"/>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/profile_settings_bio_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_settings_profile_picture_rl"
+        android:layout_alignLeft="@+id/profile_settings_profile_picture_rl"
+        android:layout_marginBottom="@dimen/profile_settings_profile_picture_rl_layout_marginBottom">
+
+        <TextView
+            android:id="@+id/profile_settings_bio_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/account_settings_general_name_title_tv_layout_marginBottom"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:text="@string/profile_settings_bio_title_tv_text"/>
+
+        <TextView
+            android:id="@+id/profile_settings_bio_desc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/profile_settings_bio_title_tv"
+            android:layout_alignLeft="@+id/profile_settings_bio_title_tv"
+            android:layout_marginBottom="@dimen/account_settings_general_name_desc_tv_layout_marginBottom"
+            android:text="@string/profile_settings_profile_picture_desc_tv_text"/>
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/profile_settings_about_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_settings_bio_rl"
+        android:layout_alignLeft="@+id/profile_settings_bio_rl"
+        android:layout_marginBottom="@dimen/profile_settings_profile_picture_rl_layout_marginBottom">
+
+        <TextView
+            android:id="@+id/profile_settings_about_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/account_settings_general_name_title_tv_layout_marginBottom"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:text="@string/profile_settings_bio_title_tv_text"/>
+
+        <TextView
+            android:id="@+id/profile_settings_about_desc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/profile_settings_about_title_tv"
+            android:layout_alignLeft="@+id/profile_settings_about_title_tv"
+            android:layout_marginBottom="@dimen/account_settings_general_name_desc_tv_layout_marginBottom"
+            android:text="@string/profile_settings_profile_picture_desc_tv_text"/>
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

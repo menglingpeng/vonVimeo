@@ -20,14 +20,13 @@ import java.util.List;
 public class BillingSettingsFragment extends BaseFragment implements RecyclerView {
 
     private User user;
-
+    private String userId;
     private Context context;
     private ProgressBar progressBar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private ArrayList<RecyclerFragment> fragments;
     private TabPagerFragmentAdapter adapter;
-    private String userId;
     private ArrayList<RecyclerFragment> fragmentsList;
     private static final int SMOOTHSCROLL_TOP_POSITION = 50;
 

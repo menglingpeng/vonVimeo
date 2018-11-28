@@ -51,6 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/profile_settings_profile_picture_iv"
             android:layout_alignLeft="@+id/profile_settings_profile_picture_iv"
+            android:clickable="true"
             android:textColor="@color/colorPrimary"/>
 
 

@@ -283,6 +283,8 @@
 
     <dimen name="profile_settings_profile_picture_rl_layout_marginBottom">20dp</dimen>
     <dimen name="profile_settings_profile_picture_iv_layout_width_height">60dp</dimen>
+    <dimen name="profile_settings_bio_et_layout_height">40dp</dimen>
+    <dimen name="profile_settings_about_et_layout_height">120dp</dimen>
 
 
 

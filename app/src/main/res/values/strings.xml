@@ -656,6 +656,8 @@
     <string name="profile_settings_about_title_tv_text">About</string>
     <string name="profile_settings_about_desc_tv_text">Tell the world more about who you are, what you like to make,
         and what things you’re interested in working on next. This will appear on the About page of your profile.</string>
+    <string name="profile_settings_location_title_tv_text">Location</string>
+    <string name="profile_settings_location_desc_tv_text">Share your geographic coordinates, hometown, or state of mind.</string>
 
 
 </resources>

@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -43,6 +44,10 @@ public class ProfileSettingsFragment extends BaseFragment {
     private Dialog uploadChooseDialog;
     private String currentPhotoPath;
     private String uploadFilePath;
+    private EditText bioEt;
+    private EditText aboutEt;
+    private String bio;
+    private String about;
     private static final int REQUEST_TAKE_PHOTO_PERMISSION = 111;
     private static final int REQUEST_PICK_IMAGE_PERMISSION = 333;
     private static final int REQ_TAKE_PHOTO = 222;
@@ -64,6 +69,20 @@ public class ProfileSettingsFragment extends BaseFragment {
             @Override
             public void onClick(View view) {
                 showUploadChooseDialog();
+            }
+        });
+        bioEt = (EditText)rootView.findViewById(R.id.profile_settings_bio_et);
+        aboutEt = (EditText)rootView.findViewById(R.id.profile_settings_about_et);
+        bioEt.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+
+            }
+        });
+        aboutEt.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+
             }
         });
     }

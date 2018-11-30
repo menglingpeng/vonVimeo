@@ -658,6 +658,8 @@
         and what things you’re interested in working on next. This will appear on the About page of your profile.</string>
     <string name="profile_settings_location_title_tv_text">Location</string>
     <string name="profile_settings_location_desc_tv_text">Share your geographic coordinates, hometown, or state of mind.</string>
-
+    <string name="profile_settings_vimeo_url_title_tv_text">Vimeo URL</string>
+    <string name="profile_settings_vimeo_url_desc_tv_text">Create a unique URL for your profile. Many people use
+        their Vimeo username. [Ex: vimeo.com/mark]</string>
 
 </resources>

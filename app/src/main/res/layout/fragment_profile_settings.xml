@@ -157,10 +157,45 @@
         <EditText
             android:id="@+id/profile_settings_location_et"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/profile_settings_bio_et_layout_height"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/profile_settings_location_desc_tv"
             android:layout_alignLeft="@+id/profile_settings_location_desc_tv"/>
 
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/profile_settings_vimeo_url_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_settings_location_rl"
+        android:layout_alignLeft="@+id/profile_settings_location_rl"
+        android:layout_marginBottom="@dimen/profile_settings_profile_picture_rl_layout_marginBottom">
+
+        <TextView
+            android:id="@+id/profile_settings_vimeo_url_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/account_settings_general_name_title_tv_layout_marginBottom"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:text="@string/profile_settings_vimeo_url_title_tv_text"/>
+
+        <TextView
+            android:id="@+id/profile_settings_vimeo_url_desc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/profile_settings_vimeo_url_title_tv"
+            android:layout_alignLeft="@+id/profile_settings_vimeo_url_title_tv"
+            android:layout_marginBottom="@dimen/account_settings_general_name_desc_tv_layout_marginBottom"
+            android:text="@string/profile_settings_vimeo_url_desc_tv_text"/>
+
+        <EditText
+            android:id="@+id/profile_settings_vimeo_url_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/profile_settings_vimeo_url_desc_tv"
+            android:layout_alignLeft="@+id/profile_settings_vimeo_url_desc_tv"/>
 
 
     </RelativeLayout>

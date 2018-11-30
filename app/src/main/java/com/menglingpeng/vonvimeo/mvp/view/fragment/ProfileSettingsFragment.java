@@ -12,6 +12,8 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -48,6 +50,10 @@ public class ProfileSettingsFragment extends BaseFragment {
     private EditText aboutEt;
     private String bio;
     private String about;
+    private EditText locationEt;
+    private EditText vimeoURLEt;
+    private String location;
+    private String vimeoURL;
     private static final int REQUEST_TAKE_PHOTO_PERMISSION = 111;
     private static final int REQUEST_PICK_IMAGE_PERMISSION = 333;
     private static final int REQ_TAKE_PHOTO = 222;
@@ -73,18 +79,74 @@ public class ProfileSettingsFragment extends BaseFragment {
         });
         bioEt = (EditText)rootView.findViewById(R.id.profile_settings_bio_et);
         aboutEt = (EditText)rootView.findViewById(R.id.profile_settings_about_et);
-        bioEt.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+        location = (EditText)rootView.findViewById(R.id.profile_settings_location_et);
+        vimeoURLEt = (EditText)rootView.findViewById(R.id.profile_settings_vimeo_url_et);
+        vimeoURLEt.setText(user.getUri());
+        bioEt.addTextChangedListener(new TextWatcher() {
             @Override
-            public void onFocusChange(View view, boolean b) {
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
 
             }
         });
-        aboutEt.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+        aboutEt.addTextChangedListener(new TextWatcher() {
             @Override
-            public void onFocusChange(View view, boolean b) {
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
 
             }
         });
+        locationEt.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+        vimeoURLEt.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
     }
 
     @Override

@@ -661,5 +661,10 @@
     <string name="profile_settings_vimeo_url_title_tv_text">Vimeo URL</string>
     <string name="profile_settings_vimeo_url_desc_tv_text">Create a unique URL for your profile. Many people use
         their Vimeo username. [Ex: vimeo.com/mark]</string>
+    <string name="profile_settings_your_website_title_tv_text">Your website</string>
+    <string name="profile_settings_your_website_desc_tv_text">Add your personal site, social links, etc.</string>
+    <string name="profile_settings_add_a_new_link_tv_text">+ Add a new link</string>
+    <string name="dialog_add_a_new_link_title">Add a new link</string>
+    <string name="dialog_add_a_new_link_url_must_be_at_least_4_characters">URL must be at least 4 characters</string>
 
 </resources>

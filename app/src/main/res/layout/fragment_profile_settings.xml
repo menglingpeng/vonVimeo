@@ -200,4 +200,61 @@
 
     </RelativeLayout>
 
+    <RelativeLayout
+        android:id="@+id/profile_settings_your_website_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_settings_vimeo_url_rl"
+        android:layout_alignLeft="@+id/profile_settings_vimeo_url_rl"
+        android:layout_marginBottom="@dimen/profile_settings_profile_picture_rl_layout_marginBottom">
+
+        <TextView
+            android:id="@+id/profile_settings_your_website_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/account_settings_general_name_title_tv_layout_marginBottom"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:text="@string/profile_settings_your_website_title_tv_text"/>
+
+        <TextView
+            android:id="@+id/profile_settings_your_website_desc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/profile_settings_your_website_title_tv"
+            android:layout_alignLeft="@+id/profile_settings_your_website_title_tv"
+            android:layout_marginBottom="@dimen/account_settings_general_name_desc_tv_layout_marginBottom"
+            android:text="@string/profile_settings_your_website_desc_tv_text"/>
+
+        <ListView
+            android:id="@+id/profile_settings_your_website_lv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/profile_settings_your_website_desc_tv"
+            android:layout_alignLeft="@+id/profile_settings_your_website_desc_tv">
+
+        </ListView>
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/profile_settings_add_a_new_link_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_settings_your_website_rl"
+        android:layout_alignLeft="@+id/profile_settings_your_website_rl"
+        android:layout_marginBottom="@dimen/profile_settings_profile_picture_rl_layout_marginBottom"
+        android:textColor="@android:color/holo_blue_light"
+        android:text="@string/profile_settings_add_a_new_link_tv_text"
+        android:clickable="true"/>
+
+    <Button
+        android:id="@+id/profile_settings_save_bt"
+        android:layout_width="@dimen/profile_settings_save_bt_layout_width"
+        android:layout_height="@dimen/profile_settings_save_bt_layout_height"
+        android:layout_below="@+id/profile_settings_add_a_new_link_tv"
+        android:layout_alignLeft="@+id/profile_settings_add_a_new_link_tv"
+        android:gravity="center"
+        android:text="@string/save"/>
+
 </RelativeLayout>

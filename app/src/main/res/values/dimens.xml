@@ -285,6 +285,8 @@
     <dimen name="profile_settings_profile_picture_iv_layout_width_height">60dp</dimen>
     <dimen name="profile_settings_bio_et_layout_height">40dp</dimen>
     <dimen name="profile_settings_about_et_layout_height">120dp</dimen>
+    <dimen name="profile_settings_save_bt_layout_width">20dp</dimen>
+    <dimen name="profile_settings_save_bt_layout_height">50dp</dimen>
 
 
 

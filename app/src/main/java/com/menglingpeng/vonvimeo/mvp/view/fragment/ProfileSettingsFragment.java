@@ -3,6 +3,7 @@ package com.menglingpeng.vonvimeo.mvp.view.fragment;
 import android.Manifest;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
@@ -10,8 +11,10 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.design.widget.TextInputEditText;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
+import android.support.v7.app.AlertDialog;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Gravity;
@@ -22,16 +25,22 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.base.BaseFragment;
 import com.menglingpeng.vonvimeo.mvp.model.User;
+import com.menglingpeng.vonvimeo.mvp.presenter.RecyclerPresenter;
+import com.menglingpeng.vonvimeo.mvp.view.activity.EditUserProfileActivity;
 import com.menglingpeng.vonvimeo.utils.Constants;
 import com.menglingpeng.vonvimeo.utils.IdStringUtil;
+import com.menglingpeng.vonvimeo.utils.SharedPrefUtils;
+import com.menglingpeng.vonvimeo.utils.SnackbarUtils;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Locale;
 
 import static android.app.Activity.RESULT_OK;
@@ -54,6 +63,9 @@ public class ProfileSettingsFragment extends BaseFragment {
     private EditText vimeoURLEt;
     private String location;
     private String vimeoURL;
+    private ListView websiteLv;
+    private TextView addNewLinkTv;
+    private Button saveBt;
     private static final int REQUEST_TAKE_PHOTO_PERMISSION = 111;
     private static final int REQUEST_PICK_IMAGE_PERMISSION = 333;
     private static final int REQ_TAKE_PHOTO = 222;
@@ -81,6 +93,9 @@ public class ProfileSettingsFragment extends BaseFragment {
         aboutEt = (EditText)rootView.findViewById(R.id.profile_settings_about_et);
         location = (EditText)rootView.findViewById(R.id.profile_settings_location_et);
         vimeoURLEt = (EditText)rootView.findViewById(R.id.profile_settings_vimeo_url_et);
+        websiteLv = (ListView) rootView.findViewById(R.id.profile_settings_your_website_lv);
+        addNewLinkTv = (TextView) rootView.findViewById(R.id.profile_settings_add_a_new_link_tv);
+        saveBt = (Button) rootView.findViewById(R.id.profile_settings_save_bt);
         vimeoURLEt.setText(user.getUri());
         bioEt.addTextChangedListener(new TextWatcher() {
             @Override
@@ -144,6 +159,21 @@ public class ProfileSettingsFragment extends BaseFragment {
             @Override
             public void afterTextChanged(Editable editable) {
 
+            }
+        });
+        addNewLinkTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showAddWebsiteDialog();
+            }
+        });
+        saveBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                bio = bioEt.getText().toString();
+                about = aboutEt.getText().toString();
+                location = locationEt.getText().toString();
+                vimeoURL = vimeoURLEt.getText().toString();
             }
         });
 
@@ -260,5 +290,46 @@ public class ProfileSettingsFragment extends BaseFragment {
         }
         File file = new File(uploadFilePath);
         uploadFileNmae = file.getName();
+    }
+
+    private void showAddWebsiteDialog(){
+        final TextInputEditText websiteNameEt;
+        final TextInputEditText websiteURLEt;
+        final TextInputEditText websiteDescEt;
+        AlertDialog dialog;
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_add_a_new_link, null);
+        builder.setTitle(R.string.dialog_add_a_new_link_title);
+        builder.setView(dialogView);
+        websiteNameEt = (TextInputEditText) dialogView.findViewById(R.id.website_name_tiet);
+        websiteDescEt = (TextInputEditText) dialogView.findViewById(R.id.website_desc_tiet);
+        websiteURLEt = (TextInputEditText)dialogView.findViewById(R.id.website_url_tiet);
+        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.setPositiveButton(R.string.create, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String name = websiteNameEt.getText().toString();
+                String url = websiteURLEt.getText().toString();
+                if (url.length() < 4) {
+                    SnackbarUtils.showSnackShort(context, coordinatorLayout, getString(R.string
+                            .dialog_add_a_new_link_url_must_be_at_least_4_characters));
+                } else {
+                    HashMap<String, String> map = new HashMap<>();
+                    map.put(Constants.ACCESS_TOKEN, SharedPrefUtils.getAuthToken());
+                    map.put(Constants.NAME, websiteNameEt.getText().toString());
+                    map.put(Constants.URL, websiteURLEt.getText().toString());
+                    map.put(Constants.DESCRIPTION, websiteDescEt.getText().toString());
+                }
+
+            }
+        });
+        websiteNameEt.setFocusable(true);
+        dialog = builder.create();
+        dialog.show();
     }
 }

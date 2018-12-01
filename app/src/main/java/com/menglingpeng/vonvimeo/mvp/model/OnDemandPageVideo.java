@@ -20,6 +20,24 @@ public class OnDemandPageVideo implements Serializable{
     private Object license;
     private PrivacyBean privacy;
     private List<String> content_rating;
+    /**
+     * pictures : {"uri":"/videos/151610906/pictures/551400068","active":true,"type":"custom","sizes":[{"width":100,
+     * "height":75,"link":"https://i.vimeocdn.com/video/551400068_100x75.jpg?r=pad",
+     * "link_with_play_button":"https://i.vimeocdn.com/filter/overlay?src0=https%3A%2F%2Fi.vimeocdn
+     * .com%2Fvideo%2F551400068_100x75.jpg&src1=http%3A%2F%2Ff.vimeocdn.com%2Fp%2Fimages%2Fcrawler_play.png"}]}
+     */
+
+    private PicturesBean pictures;
+    /**
+     * stats : {"plays":null}
+     */
+
+    private StatsBean stats;
+    /**
+     * metadata : {"connections":{"comments":{"uri":"/videos/151610906/comments","options":["GET"],"total":0}}}
+     */
+
+    private MetadataBean metadata;
 
     public void setUri(String uri) {
         this.uri = uri;
@@ -139,6 +157,30 @@ public class OnDemandPageVideo implements Serializable{
 
     public List<String> getContent_rating() {
         return content_rating;
+    }
+
+    public void setPictures(PicturesBean pictures) {
+        this.pictures = pictures;
+    }
+
+    public PicturesBean getPictures() {
+        return pictures;
+    }
+
+    public void setStats(StatsBean stats) {
+        this.stats = stats;
+    }
+
+    public StatsBean getStats() {
+        return stats;
+    }
+
+    public void setMetadata(MetadataBean metadata) {
+        this.metadata = metadata;
+    }
+
+    public MetadataBean getMetadata() {
+        return metadata;
     }
 
 
@@ -321,6 +363,168 @@ public class OnDemandPageVideo implements Serializable{
 
         public String getComments() {
             return comments;
+        }
+    }
+
+
+    public static class PicturesBean {
+
+        private String uri;
+        private boolean active;
+        private String type;
+        private List<SizesBean> sizes;
+        private String resource_key;
+
+        public void setUri(String uri) {
+            this.uri = uri;
+        }
+
+        public void setActive(boolean active) {
+            this.active = active;
+        }
+
+        public void setType(String type) {
+            this.type = type;
+        }
+
+        public void setSizes(List<SizesBean> sizes) {
+            this.sizes = sizes;
+        }
+
+        public String getUri() {
+            return uri;
+        }
+
+        public boolean getActive() {
+            return active;
+        }
+
+        public String getType() {
+            return type;
+        }
+
+        public List<SizesBean> getSizes() {
+            return sizes;
+        }
+
+        public void setResource_key(String resource_key) {
+            this.resource_key = resource_key;
+        }
+
+        public String getResource_key() {
+            return resource_key;
+        }
+
+
+        public static class SizesBean {
+
+            private int width;
+            private int height;
+            private String link;
+            private String link_with_play_button;
+
+            public void setWidth(int width) {
+                this.width = width;
+            }
+
+            public void setHeight(int height) {
+                this.height = height;
+            }
+
+            public void setLink(String link) {
+                this.link = link;
+            }
+
+            public void setLink_with_play_button(String link_with_play_button) {
+                this.link_with_play_button = link_with_play_button;
+            }
+
+            public int getWidth() {
+                return width;
+            }
+
+            public int getHeight() {
+                return height;
+            }
+
+            public String getLink() {
+                return link;
+            }
+
+            public String getLink_with_play_button() {
+                return link_with_play_button;
+            }
+        }
+    }
+
+    public static class StatsBean {
+
+        private Object plays;
+
+        public void setPlays(Object plays) {
+            this.plays = plays;
+        }
+
+        public Object getPlays() {
+            return plays;
+        }
+    }
+
+
+    public static class MetadataBean {
+
+        private ConnectionsBean connections;
+
+        public void setConnections(ConnectionsBean connections) {
+            this.connections = connections;
+        }
+
+        public ConnectionsBean getConnections() {
+            return connections;
+        }
+
+        public static class ConnectionsBean {
+
+            private CommentsBean comments;
+
+            public void setComments(CommentsBean comments) {
+                this.comments = comments;
+            }
+
+            public CommentsBean getComments() {
+                return comments;
+            }
+
+            public static class CommentsBean {
+
+                private String uri;
+                private int total;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public int getTotal() {
+                    return total;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
         }
     }
 }

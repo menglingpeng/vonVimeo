@@ -254,6 +254,8 @@
         android:layout_height="@dimen/profile_settings_save_bt_layout_height"
         android:layout_below="@+id/profile_settings_add_a_new_link_tv"
         android:layout_alignLeft="@+id/profile_settings_add_a_new_link_tv"
+        android:clickable="false"
+        android:background="@android:color/darker_gray"
         android:gravity="center"
         android:text="@string/save"/>
 

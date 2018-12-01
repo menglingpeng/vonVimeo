@@ -58,6 +58,13 @@ public class Constants {
     public static final String MENU_SETTINGS_UPGRADE = "upgrade";
 
 
+    public static final String PARAMETER_BIO = "bio";
+    public static final String PARAMETER_LINK = "link";
+    public static final String PARAMETER_LOCATION = "location";
+    public static final String PARAMETER_NAME = "name";
+    public static final String PARAMETER_PASSWORD = "password";
+    public static final String PARAMETER_CONTENT_FILTER = "content_filter";
+
 
     public static final String MENU_VIMEO_STOCK = "Vimeo Stock";
     public static final String MENU_ON_DEMAND = "On Demand";

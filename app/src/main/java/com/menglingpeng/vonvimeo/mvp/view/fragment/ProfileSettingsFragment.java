@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
@@ -30,10 +31,9 @@ import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.base.BaseFragment;
 import com.menglingpeng.vonvimeo.mvp.model.User;
-import com.menglingpeng.vonvimeo.mvp.presenter.RecyclerPresenter;
-import com.menglingpeng.vonvimeo.mvp.view.activity.EditUserProfileActivity;
 import com.menglingpeng.vonvimeo.utils.Constants;
 import com.menglingpeng.vonvimeo.utils.IdStringUtil;
+import com.menglingpeng.vonvimeo.utils.ImageLoader;
 import com.menglingpeng.vonvimeo.utils.SharedPrefUtils;
 import com.menglingpeng.vonvimeo.utils.SnackbarUtils;
 
@@ -45,7 +45,7 @@ import java.util.Locale;
 
 import static android.app.Activity.RESULT_OK;
 
-public class ProfileSettingsFragment extends BaseFragment {
+public class ProfileSettingsFragment extends BaseFragment implements {
 
     private User user;
     private String userId;
@@ -82,6 +82,7 @@ public class ProfileSettingsFragment extends BaseFragment {
         context = getContext();
         userId = IdStringUtil.getId(user.getUri());
         pictureIv = (ImageView)rootView.findViewById(R.id.profile_settings_profile_picture_iv);
+        ImageLoader.loadCricleImage(context, user.getPictures().getUri(), pictureIv);
         uploadNewImageTv = (TextView)rootView.findViewById(R.id.profile_settings_profile_picture_upload_new_image_tv);
         uploadNewImageTv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,6 +97,9 @@ public class ProfileSettingsFragment extends BaseFragment {
         websiteLv = (ListView) rootView.findViewById(R.id.profile_settings_your_website_lv);
         addNewLinkTv = (TextView) rootView.findViewById(R.id.profile_settings_add_a_new_link_tv);
         saveBt = (Button) rootView.findViewById(R.id.profile_settings_save_bt);
+        bioEt.setText(user.getBio().toString());
+        aboutEt.setText(user.);
+        locationEt.setText(user.getLocation().toString());
         vimeoURLEt.setText(user.getUri());
         bioEt.addTextChangedListener(new TextWatcher() {
             @Override
@@ -105,6 +109,13 @@ public class ProfileSettingsFragment extends BaseFragment {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if(i1 > 0){
+                    saveBt.setClickable(true);
+                    saveBt.setBackgroundColor(Color.BLUE);
+                }else {
+                    saveBt.setClickable(false);
+                    saveBt.setBackgroundColor(Color.GRAY);
+                }
 
             }
 
@@ -122,6 +133,13 @@ public class ProfileSettingsFragment extends BaseFragment {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
+                if(i1 > 0){
+                    saveBt.setClickable(true);
+                    saveBt.setBackgroundColor(Color.BLUE);
+                }else {
+                    saveBt.setClickable(false);
+                    saveBt.setBackgroundColor(Color.GRAY);
+                }
             }
 
             @Override
@@ -138,6 +156,13 @@ public class ProfileSettingsFragment extends BaseFragment {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
+                if(i1 > 0){
+                    saveBt.setClickable(true);
+                    saveBt.setBackgroundColor(Color.BLUE);
+                }else {
+                    saveBt.setClickable(false);
+                    saveBt.setBackgroundColor(Color.GRAY);
+                }
             }
 
             @Override
@@ -154,6 +179,13 @@ public class ProfileSettingsFragment extends BaseFragment {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
+                if(i1 > 0){
+                    saveBt.setClickable(true);
+                    saveBt.setBackgroundColor(Color.BLUE);
+                }else {
+                    saveBt.setClickable(false);
+                    saveBt.setBackgroundColor(Color.GRAY);
+                }
             }
 
             @Override
@@ -170,10 +202,17 @@ public class ProfileSettingsFragment extends BaseFragment {
         saveBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                HashMap<String, String> map = new HashMap<>();
                 bio = bioEt.getText().toString();
                 about = aboutEt.getText().toString();
                 location = locationEt.getText().toString();
                 vimeoURL = vimeoURLEt.getText().toString();
+                map.put(Constants.USER_ID, userId);
+                map.put(Constants.PARAMETER_BIO , bio);
+                map.put(Constants.PARAMETER_LINK, vimeoURL);
+                map.put(Constants.PARAMETER_LOCATION, location);
+                map.put(Constants.NAME, user.getName());
+
             }
         });
 

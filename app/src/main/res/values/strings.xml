@@ -667,4 +667,8 @@
     <string name="dialog_add_a_new_link_title">Add a new link</string>
     <string name="dialog_add_a_new_link_url_must_be_at_least_4_characters">URL must be at least 4 characters</string>
 
+    <string name="upgrade_settings_title_tv_text">Want more control over your videos?</string>
+    <string name="upgrade_settings_desc_tv_text">Vimeo Plus, PRO, and Business give you access to advanced tools
+        and customization features that enable you to present your videos exactly how you want.</string>
+
 </resources>

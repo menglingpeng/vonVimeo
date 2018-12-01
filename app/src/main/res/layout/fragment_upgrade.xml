@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/upgrade_settings_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/account_settings_general_title_tv_layout_marginTop"
+        android:layout_marginBottom="@dimen/account_settings_general_title_tv_layout_marginBottom"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textSize="@dimen/account_settings_general_title_tv_textSize"
+        android:text="@string/upgrade_settings_title_tv_text"/>
+
+    <TextView
+        android:id="@+id/upgrade_settings_desc_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marketing_settings_email_service_providers_desc_tv_layout_marginTop"
+        android:layout_marginBottom="@dimen/connected_apps_settings_to_other_accounts_title_tv_layout_marginBottom"
+        android:layout_below="@+id/on_demand_settings_purchases_title_tv"
+        android:layout_alignLeft="@+id/on_demand_settings_purchases_title_tv"
+        android:text="@string/upgrade_settings_desc_tv_text"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/on_demand_settings_purchases_desc_tv"
+        android:layout_alignLeft="@+id/on_demand_settings_purchases_desc_tv">
+
+        <ProgressBar
+            android:id="@+id/upgrade_settings_pb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"/>
+
+        <RelativeLayout
+            android:id="@+id/upgrade_settings_plus_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/upgrade_settings_plus_rl_layout_marginBottom"
+            android:layout_centerInParent="true">
+
+            <Button
+                android:id="@+id/upgrade_settings_plus_upgrade_bt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/upgrade_settings_plus_upgrade_bt_layout_marginBottom"
+                android:background="@android:color/holo_blue_bright"
+                android:gravity="center"
+                android:textColor="@android:color/white"/>
+
+            <TextView
+                android:id="@+id/upgrade_settings_plus_upgrade_bt_desc_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/upgrade_settings_plus_upgrade_bt"
+                android:layout_alignLeft="@+id/upgrade_settings_plus_upgrade_bt" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/upgrade_settings_pro_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/upgrade_settings_plus_rl_layout_marginBottom"
+            android:layout_below="@+id/upgrade_settings_plus_rl"
+            android:layout_alignLeft="@+id/upgrade_settings_plus_rl"
+            android:layout_centerInParent="true">
+
+            <Button
+                android:id="@+id/upgrade_settings_pro_upgrade_bt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/upgrade_settings_plus_upgrade_bt_layout_marginBottom"
+                android:background="@android:color/holo_blue_light"
+                android:gravity="center"
+                android:textColor="@android:color/white"/>
+
+            <TextView
+                android:id="@+id/upgrade_settings_pro_bt_desc_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/upgrade_settings_pro_upgrade_bt"
+                android:layout_alignLeft="@+id/upgrade_settings_pro_upgrade_bt" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/upgrade_settings_business_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/upgrade_settings_plus_rl_layout_marginBottom"
+            android:layout_below="@+id/upgrade_settings_pro_rl"
+            android:layout_alignLeft="@+id/upgrade_settings_pro_rl"
+            android:layout_centerInParent="true">
+
+            <Button
+                android:id="@+id/upgrade_settings_pro_business_bt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/upgrade_settings_plus_upgrade_bt_layout_marginBottom"
+                android:background="@android:color/holo_blue_light"
+                android:gravity="center"
+                android:textColor="@android:color/white"/>
+
+            <TextView
+                android:id="@+id/upgrade_settings_business_bt_desc_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/upgrade_settings_business_upgrade_bt"
+                android:layout_alignLeft="@+id/upgrade_settings_business_upgrade_bt" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

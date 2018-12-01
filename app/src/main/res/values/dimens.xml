@@ -288,6 +288,9 @@
     <dimen name="profile_settings_save_bt_layout_width">20dp</dimen>
     <dimen name="profile_settings_save_bt_layout_height">50dp</dimen>
 
+    <dimen name="upgrade_settings_plus_rl_layout_marginBottom">20dp</dimen>
+    <dimen name="upgrade_settings_plus_upgrade_bt_layout_marginBottom">5dp</dimen>
+
 
 
 </resources>

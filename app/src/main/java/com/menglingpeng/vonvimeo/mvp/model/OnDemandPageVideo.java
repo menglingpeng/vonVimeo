@@ -486,6 +486,9 @@ public class OnDemandPageVideo implements Serializable{
         public static class ConnectionsBean {
 
             private CommentsBean comments;
+            private CreditsBean credits;
+            private LikesBean likes;
+            private PicturesBean pictures;
 
             public void setComments(CommentsBean comments) {
                 this.comments = comments;
@@ -495,7 +498,124 @@ public class OnDemandPageVideo implements Serializable{
                 return comments;
             }
 
+            public void setCredits(CreditsBean credits) {
+                this.credits = credits;
+            }
+
+            public void setLikes(LikesBean likes) {
+                this.likes = likes;
+            }
+
+            public void setPictures(PicturesBean pictures) {
+                this.pictures = pictures;
+            }
+
+            public CreditsBean getCredits() {
+                return credits;
+            }
+
+            public LikesBean getLikes() {
+                return likes;
+            }
+
+            public PicturesBean getPictures() {
+                return pictures;
+            }
+
             public static class CommentsBean {
+
+                private String uri;
+                private int total;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public int getTotal() {
+                    return total;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class CreditsBean {
+
+                private String uri;
+                private int total;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public int getTotal() {
+                    return total;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class LikesBean {
+
+                private String uri;
+                private int total;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public int getTotal() {
+                    return total;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class PicturesBean {
 
                 private String uri;
                 private int total;

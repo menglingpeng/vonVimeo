@@ -188,6 +188,18 @@
                 android:layout_height="match_parent"
                 android:text="@string/general_privacy_watch_settings_only_choose_rb_text"/>
 
+            <RadioButton
+                android:id="@+id/general_privacy_watch_settings_people_with_the_private_link_rb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/general_privacy_watch_settings_people_with_the_private_link_rb_text"/>
+
+            <RadioButton
+                android:id="@+id/general_privacy_watch_settings_hide_the_video_rb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/general_privacy_watch_settings_hide_the_video_rb_text"/>
+
         </RadioGroup>
 
         <TextView

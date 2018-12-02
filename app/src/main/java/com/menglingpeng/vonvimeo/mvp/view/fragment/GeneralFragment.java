@@ -54,6 +54,8 @@ public class GeneralFragment extends BaseFragment implements RecyclerView, View.
     private RadioButton followWatchRb;
     private RadioButton chooseWatchRb;
     private RadioButton passwordWatchRb;
+    private RadioButton withPrivateLinkWatchRb;
+    private RadioButton hideTheVideoRb;
     private RadioGroup commentRg;
     private RadioButton anyoneCommentRb;
     private RadioButton noOneCommentRb;
@@ -116,6 +118,9 @@ public class GeneralFragment extends BaseFragment implements RecyclerView, View.
         followWatchRb = (RadioButton)rootView.findViewById(R.id.general_privacy_watch_settings_only_follow_rb);
         chooseWatchRb = (RadioButton)rootView.findViewById(R.id.general_privacy_watch_settings_only_choose_rb);
         passwordWatchRb = (RadioButton)rootView.findViewById(R.id.general_privacy_watch_settings_only_with_password_rb);
+        withPrivateLinkWatchRb = (RadioButton)rootView.findViewById(R.id.
+                general_privacy_watch_settings_people_with_the_private_link_rb_rb);
+        hideTheVideoRb = (RadioButton)rootView.findViewById(R.id.general_privacy_watch_settings_hide_the_video_rb);
         commentRg = (RadioGroup)rootView.findViewById(R.id.general_privacy_comment_settings_rg);
         anyoneCommentRb = (RadioButton)rootView.findViewById(R.id.general_privacy_comment_settings_anyone_rb);
         noOneCommentRb = (RadioButton)rootView.findViewById(R.id.general_privacy_comment_settings_no_one_rb);

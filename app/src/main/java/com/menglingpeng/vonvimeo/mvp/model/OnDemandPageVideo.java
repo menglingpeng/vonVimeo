@@ -489,6 +489,15 @@ public class OnDemandPageVideo implements Serializable{
             private CreditsBean credits;
             private LikesBean likes;
             private PicturesBean pictures;
+            /**
+             * texttracks : {"uri":"/videos/151610906/texttracks","options":["GET","POST"],"total":0}
+             * related : {"uri":"/ondemand/pages/61923/videos?offset=1","options":["GET"]}
+             * recommendations : {"uri":"/videos/151610906/recommendations","options":["GET"]}
+             */
+
+            private TexttracksBean texttracks;
+            private RelatedBean related;
+            private RecommendationsBean recommendations;
 
             public void setComments(CommentsBean comments) {
                 this.comments = comments;
@@ -520,6 +529,30 @@ public class OnDemandPageVideo implements Serializable{
 
             public PicturesBean getPictures() {
                 return pictures;
+            }
+
+            public void setTexttracks(TexttracksBean texttracks) {
+                this.texttracks = texttracks;
+            }
+
+            public void setRelated(RelatedBean related) {
+                this.related = related;
+            }
+
+            public void setRecommendations(RecommendationsBean recommendations) {
+                this.recommendations = recommendations;
+            }
+
+            public TexttracksBean getTexttracks() {
+                return texttracks;
+            }
+
+            public RelatedBean getRelated() {
+                return related;
+            }
+
+            public RecommendationsBean getRecommendations() {
+                return recommendations;
             }
 
             public static class CommentsBean {
@@ -639,6 +672,82 @@ public class OnDemandPageVideo implements Serializable{
 
                 public int getTotal() {
                     return total;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+
+            public static class TexttracksBean {
+
+                private String uri;
+                private int total;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public int getTotal() {
+                    return total;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class RelatedBean {
+
+                private String uri;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class RecommendationsBean {
+
+                private String uri;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
                 }
 
                 public List<String> getOptions() {

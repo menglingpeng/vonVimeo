@@ -636,7 +636,8 @@
         like profanity, drugs, or nudity</string>
 
     <dimen name="videos_settings_video_preferences_cb_desc_tv_text">Hide video stats and viewer count on the video page
-        and in search results</dimen>
+        and in search results
+    </dimen>
 
     <string name="videos_settings_embed_presets_desc_tv_text">Customize the player and add your branding
         (only applies to embedded videos).</string>
@@ -673,5 +674,9 @@
     <string name="upgrade_settings_title_tv_text">Want more control over your videos?</string>
     <string name="upgrade_settings_desc_tv_text">Vimeo Plus, PRO, and Business give you access to advanced tools
         and customization features that enable you to present your videos exactly how you want.</string>
+
+    <string name="upgrade_order_pay_remaining_time_title_tv_text">支付剩余时间</string>
+    <string name="upgrade_order_content_detail_tv_text">详情</string>
+    <string name="activity_upgrade_order_title">在线支付</string>
 
 </resources>

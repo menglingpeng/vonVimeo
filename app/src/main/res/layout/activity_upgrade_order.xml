@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/upgrade_order_cdl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.menglingpeng.vonvimeo.mvp.view.activity.UpgradeOrderActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context="com.menglingpeng.vonvimeo.mvp.view.activity.UpgradeOrderActivity">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/upgrade_order_tb"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"></android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/upgrade_order_title_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/upgrade_order_pay_remaining_time_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/upgrade_order_pay_remaining_time_title_tv_layout_marginBottom"
+                android:layout_marginBottom="@dimen/upgrade_order_pay_remaining_time_title_tv_layout_marginBottom"
+                android:text="@string/upgrade_order_pay_remaining_time_title_tv_text"/>
+
+            <RelativeLayout
+                android:id="@+id/upgrade_order_pay_remaining_time_rl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/upgrade_order_pay_remaining_time_title_tv"
+                android:layout_marginBottom="@dimen/upgrade_order_pay_remaining_time_rl_layout_marginBottom"
+                android:layout_centerHorizontal="true">
+
+                <TextView
+                    android:id="@+id/upgrade_order_pay_remaining_time_minutes_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/upgrade_order_pay_remaining_time_minutes_tv_textSize"
+                    android:textAppearance="@style/Base.DialogWindowTitle.AppCompat"/>
+
+                <TextView
+                    android:id="@+id/upgrade_order_pay_remaining_time_colon_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/upgrade_order_pay_remaining_time_minutes_tv"
+                    android:layout_alignTop="@+id/upgrade_order_pay_remaining_time_minutes_tv"
+                    android:layout_marginRight="@dimen/upgrade_order_pay_remaining_time_colon_tv_layout_marginLeft"
+                    android:layout_marginLeft="@dimen/upgrade_order_pay_remaining_time_colon_tv_layout_marginLeft"
+                    android:textSize="@dimen/upgrade_order_pay_remaining_time_minutes_tv_textSize"
+                    android:textAppearance="@style/Base.DialogWindowTitle.AppCompat"
+                    android:text=":"/>
+
+                <TextView
+                    android:id="@+id/upgrade_order_pay_remaining_time_seconds_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/upgrade_order_pay_remaining_time_colon_tv"
+                    android:layout_alignTop="@+id/upgrade_order_pay_remaining_time_minutes_tv"
+                    android:textSize="@dimen/upgrade_order_pay_remaining_time_minutes_tv_textSize"
+                    android:textAppearance="@style/Base.DialogWindowTitle.AppCompat" />
+
+            </RelativeLayout>
+
+            <view
+                android:id="@+id/upgrade_order_pay_remaining_time_rl_view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/upgrade_order_pay_remaining_time_rl"
+                android:layout_alignLeft="@+id/upgrade_order_pay_remaining_time_rl"
+                android:background="@color/recycler_item_view_background"/>
+
+            <RelativeLayout
+                android:id="@+id/upgrade_order_content_rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/upgrade_order_pay_remaining_time_rl_view"
+                android:layout_alignLeft="@+id/upgrade_order_pay_remaining_time_rl_view">
+
+                <TextView
+                    android:id="@+id/upgrade_order_content_name_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/upgrade_order_content_name_tv_layout_margin_left_top_bottom"
+                    android:layout_marginTop="@dimen/upgrade_order_content_name_tv_layout_margin_left_top_bottom"
+                    android:layout_marginLeft="@dimen/upgrade_order_content_name_tv_layout_margin_left_top_bottom"
+                    android:textSize="@dimen/upgrade_order_pay_remaining_time_minutes_tv_textSize"
+                    android:textAppearance="@style/Base.DialogWindowTitle.AppCompat"/>
+
+                <TextView
+                    android:id="@+id/upgrade_order_content_detail_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/upgrade_order_content_name_tv"
+                    android:layout_alignTop="@+id/upgrade_order_content_name_tv"
+                    android:layout_marginLeft="@dimen/upgrade_order_content_detail_tv_layout_margin_left_right"
+                    android:layout_marginRight="@dimen/upgrade_order_content_detail_tv_layout_margin_left_right"
+                    android:clickable="true"
+                    android:textColor="@android:color/holo_blue_light"
+                    android:text="@string/upgrade_order_content_detail_tv_text"/>
+
+                <TextView
+                    android:id="@+id/upgrade_order_content_total_price_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/upgrade_order_content_detail_tv"
+                    android:layout_alignTop="@+id/upgrade_order_content_detail_tv"
+                    android:textSize="@dimen/upgrade_order_pay_remaining_time_minutes_tv_textSize"
+                    android:textAppearance="@style/Base.DialogWindowTitle.AppCompat"/>
+
+                <view
+                    android:id="@+id/upgrade_order_content_rl_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/upgrade_order_content_name_tv"
+                    android:layout_alignLeft="@+id/upgrade_order_content_name_tv"
+                    android:background="@color/recycler_item_view_background"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/upgrade_order_payment_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/upgrade_order_title_rl"
+            android:layout_alignLeft="@+id/upgrade_order_title_rl">
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+
+
+
+</android.support.design.widget.CoordinatorLayout>

@@ -291,6 +291,16 @@
     <dimen name="upgrade_settings_plus_rl_layout_marginBottom">20dp</dimen>
     <dimen name="upgrade_settings_plus_upgrade_bt_layout_marginBottom">5dp</dimen>
 
+    <dimen name="upgrade_order_desc_rl_layout_marginBottom">20dp</dimen>
+    <dimen name="upgrade_order_desc_rl_layout_marginTop">20dp</dimen>
+    <dimen name="upgrade_order_desc_rl_layout_marginleft">15dp</dimen>
+    <dimen name="upgrade_order_pay_remaining_time_minutes_tv_textSize">20dp</dimen>
+    <dimen name="upgrade_order_pay_remaining_time_colon_tv_layout_marginLeft">5dp</dimen>
+    <dimen name="upgrade_order_pay_remaining_time_title_tv_layout_marginBottom">10dp</dimen>
+    <dimen name="upgrade_order_pay_remaining_time_rl_layout_marginBottom">10dp</dimen>
+
+    <dimen name="upgrade_order_content_name_tv_layout_margin_left_top_bottom">5dp</dimen>
+    <dimen name="upgrade_order_content_detail_tv_layout_margin_left_right">10dp</dimen>
 
 
 </resources>

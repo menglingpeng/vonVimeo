@@ -678,5 +678,8 @@
     <string name="upgrade_order_pay_remaining_time_title_tv_text">支付剩余时间</string>
     <string name="upgrade_order_content_detail_tv_text">详情</string>
     <string name="activity_upgrade_order_title">在线支付</string>
+    <string name="sure">确定</string>
+    <string name="order_timeout_title">订单超时</string>
+    <string name="order_timeout_message">此订单已经超时，请重新下单</string>
 
 </resources>

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp">
+
+        <TextView
+            android:id="@+id/dialog_upgrade_order_detail_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dialog_upgrade_order_detail_title_tv_layout_marginBottom"
+            android:layout_marginTop="@dimen/dialog_upgrade_order_detail_title_tv_layout_marginTop"
+            android:textSize="@dimen/dialog_upgrade_order_detail_title_tv_textSize"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+
+        <TextView
+            android:id="@+id/dialog_upgrade_order_detail_price_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dialog_upgrade_order_detail_title_tv"
+            android:layout_alignLeft="@+id/dialog_upgrade_order_detail_title_tv"
+            android:layout_marginBottom="@dimen/dialog_upgrade_order_detail_price_tv_layout_marginBottom"
+            android:textSize="@dimen/dialog_upgrade_order_detail_title_tv_textSize"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+
+        <TextView
+            android:id="@+id/dialog_upgrade_order_detail_price_per_month_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/dialog_upgrade_order_detail_price_tv"
+            android:layout_alignBottom="@+id/dialog_upgrade_order_detail_price_tv"
+            android:text="@string/dialog_upgrade_order_detail_price_per_month_tv_text"/>
+
+        <TextView
+            android:id="@+id/dialog_upgrade_order_detail_billed_annually_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dialog_upgrade_order_detail_price_tv"
+            android:layout_alignLeft="@+id/dialog_upgrade_order_detail_price_tv"
+            android:layout_marginBottom="@dimen/dialog_upgrade_order_detail_billed_annually_tv_layout_marginBottom"
+            android:text="@string/dialog_upgrade_order_detail_billed_annually_tv_text"
+            android:textStyle="bold"/>
+
+        <view
+            android:id="@+id/dialog_upgrade_order_detail_price_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/dialog_upgrade_order_detail_billed_annually_tv"
+            android:layout_alignLeft="@+id/dialog_upgrade_order_detail_billed_annually_tv"
+            android:background="@color/recycler_item_view_background"/>
+
+        <TextView
+            android:id="@+id/dialog_upgrade_order_detail_membership_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dialog_upgrade_order_detail_price_view"
+            android:layout_alignLeft="@+id/dialog_upgrade_order_detail_price_view"
+            android:layout_marginBottom="@dimen/dialog_upgrade_order_detail_membership_title_layout_marginBottom"
+            android:layout_marginTop="@dimen/dialog_upgrade_order_detail_membership_title_layout_marginTop"/>
+
+        <RelativeLayout
+            android:id="@+id/dialog_upgrade_order_detail_membership_first_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dialog_upgrade_order_detail_membership_title"
+            android:layout_alignLeft="@+id/dialog_upgrade_order_detail_membership_title"
+            android:layout_marginBottom="@dimen/dialog_upgrade_order_detail_membership_first_rl_layout_marginBottom">
+
+            <ImageView
+                android:id="@+id/dialog_upgrade_order_detail_membership_first_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_check_blue_600_18dp"/>
+
+            <TextView
+                android:id="@+id/dialog_upgrade_order_detail_membership_first_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/dialog_upgrade_order_detail_membership_first_iv"
+                android:layout_alignTop="@+id/dialog_upgrade_order_detail_membership_first_iv"
+                android:layout_marginLeft="@dimen/dialog_upgrade_order_detail_membership_title_layout_marginBottom"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/dialog_upgrade_order_detail_membership_second_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dialog_upgrade_order_detail_membership_first_rl"
+            android:layout_alignLeft="@+id/dialog_upgrade_order_detail_membership_first_rl"
+            android:layout_marginBottom="@dimen/dialog_upgrade_order_detail_membership_first_rl_layout_marginBottom">
+
+            <ImageView
+                android:id="@+id/dialog_upgrade_order_detail_membership_second_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_check_blue_600_18dp"/>
+
+            <TextView
+                android:id="@+id/dialog_upgrade_order_detail_membership_second_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/dialog_upgrade_order_detail_membership_second_iv"
+                android:layout_alignTop="@+id/dialog_upgrade_order_detail_membership_second_iv"
+                android:layout_marginLeft="@dimen/dialog_upgrade_order_detail_membership_title_layout_marginBottom"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/dialog_upgrade_order_detail_membership_third_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dialog_upgrade_order_detail_membership_second_rl"
+            android:layout_alignLeft="@+id/dialog_upgrade_order_detail_membership_second_rl"
+            android:layout_marginBottom="@dimen/dialog_upgrade_order_detail_membership_first_rl_layout_marginBottom">
+
+            <ImageView
+                android:id="@+id/dialog_upgrade_order_detail_membership_third_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_check_blue_600_18dp"/>
+
+            <TextView
+                android:id="@+id/dialog_upgrade_order_detail_membership_third_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/dialog_upgrade_order_detail_membership_third_iv"
+                android:layout_alignTop="@+id/dialog_upgrade_order_detail_membership_third_iv"
+                android:layout_marginLeft="@dimen/dialog_upgrade_order_detail_membership_title_layout_marginBottom"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/dialog_upgrade_order_detail_membership_fourth_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dialog_upgrade_order_detail_membership_third_rl"
+            android:layout_alignLeft="@+id/dialog_upgrade_order_detail_membership_third_rl"
+            android:layout_marginBottom="@dimen/dialog_upgrade_order_detail_membership_fourth_rl_layout_marginBottom">
+
+            <ImageView
+                android:id="@+id/dialog_upgrade_order_detail_membership_fourth_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_check_blue_600_18dp"/>
+
+            <TextView
+                android:id="@+id/dialog_upgrade_order_detail_membership_fourth_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/dialog_upgrade_order_detail_membership_fourth_iv"
+                android:layout_alignTop="@+id/dialog_upgrade_order_detail_membership_fourth_iv"
+                android:layout_marginLeft="@dimen/dialog_upgrade_order_detail_membership_title_layout_marginBottom"/>
+
+        </RelativeLayout>
+
+        <view
+            android:id="@+id/dialog_upgrade_order_detail_membership_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/dialog_upgrade_order_detail_membership_fourth_rl"
+            android:layout_alignLeft="@+id/dialog_upgrade_order_detail_membership_fourth_rl"
+            android:background="@color/recycler_item_view_background"/>
+
+        <ImageView
+            android:id="@+id/dialog_upgrade_order_detail_close_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dialog_upgrade_order_detail_close_iv_layout_marginTop"
+            android:layout_marginBottom="@dimen/dialog_upgrade_order_detail_close_iv_layout_marginBottom"
+            android:src="@drawable/ic_close_white_24dp"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

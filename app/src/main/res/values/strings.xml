@@ -681,5 +681,7 @@
     <string name="sure">确定</string>
     <string name="order_timeout_title">订单超时</string>
     <string name="order_timeout_message">此订单已经超时，请重新下单</string>
+    <string name="dialog_upgrade_order_detail_price_per_month_tv_text">per month</string>
+    <string name="dialog_upgrade_order_detail_billed_annually_tv_text">Billed annually</string>
 
 </resources>

@@ -511,6 +511,15 @@ public class Constants {
     public static final String EMBED_REVIEW_TOOLS_SETTINGS_TYPE_ALLOW_NOTES = "allow_notes";
     public static final String EMBED_REVIEW_TOOLS_SETTINGS_TYPE_DISPLAY_VIMEO_LOGO = "display_vimeo_logo";
 
+    public static final String VIMEO_PLAN = "vimeo_plan";
+    public static final String VIMEO_PLAN_PLUS = "vimeo_plan_plus";
+    public static final String VIMEO_PLAN_PRO = "vimeo_plan_pro";
+    public static final String VIMEO_PLAN_BUSSINESS = "vimeo_plan_business";
+    public static final int VIMEO_PLAN_PLUS_TOTAL_PRICE = 8400;
+    public static final int VIMEO_PLAN_PRO_TOTAL_PRICE = 24000;
+    public static final int VIMEO_PLAN_BUSSINESS_TOTAL_PRICE = 59900;
+
+
 
 
     //默认值1

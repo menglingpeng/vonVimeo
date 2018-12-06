@@ -108,7 +108,7 @@ public class UserAlbumsActivity extends BaseActivity implements RecyclerView{
         AlertDialog dialog;
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         View dialogView = getLayoutInflater().inflate(R.layout.create_an_album_dialog_message, null);
-        builder.setTitle(R.string.create_a_bucket);
+        builder.setTitle(R.string.create_an_album);
         builder.setView(dialogView);
         albumNameEt = (TextInputEditText) dialogView.findViewById(R.id.album_name_tiet);
         albumDescEt = (TextInputEditText) dialogView.findViewById(R.id.album_desc_tiet);

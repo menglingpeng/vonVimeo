@@ -684,4 +684,29 @@
     <string name="dialog_upgrade_order_detail_price_per_month_tv_text">per month</string>
     <string name="dialog_upgrade_order_detail_billed_annually_tv_text">Billed annually</string>
 
+    <string name="dialog_upgrade_order_detail_title_tv_vimeo_plus_text">Vimeo Plus</string>
+    <string name="dialog_upgrade_order_detail_price_tv_vimeo_plus_text">JP¥700</string>
+    <string name="dialog_upgrade_order_detail_membership_first_tv_vimeo_plus_text">Upload 5GB per week
+        (up to 250GB per year)</string>
+    <string name="dialog_upgrade_order_detail_membership_second_tv_vimeo_plus_text">Priority video conversion</string>
+    <string name="dialog_upgrade_order_detail_membership_third_tv_vimeo_plus_text">Unlimited bandwidth in the Vimeo player</string>
+    <string name="dialog_upgrade_order_detail_membership_fourth_tv_vimeo_plus_text">Advanced privacy, embed, and more</string>
+
+    <string name="dialog_upgrade_order_detail_title_tv_vimeo_pro_text">Vimeo PRO</string>
+    <string name="dialog_upgrade_order_detail_price_tv_vimeo_pro_text">JP¥2,000 </string>
+    <string name="dialog_upgrade_order_detail_membership_first_tv_vimeo_pro_text">Upload 20GB per week
+        (up to 1TB per year)</string>
+    <string name="dialog_upgrade_order_detail_membership_second_tv_vimeo_pro_text">Video review tools</string>
+    <string name="dialog_upgrade_order_detail_membership_third_tv_vimeo_pro_text">Unlimited bandwidth in the Vimeo player</string>
+    <string name="dialog_upgrade_order_detail_membership_fourth_tv_vimeo_pro_text">Advanced privacy, embed, and more</string>
+
+    <string name="dialog_upgrade_order_detail_title_tv_vimeo_bussiness_text">Vimeo Business</string>
+    <string name="dialog_upgrade_order_detail_price_tv_vimeo_bussiness_text">P¥5,000</string>
+    <string name="dialog_upgrade_order_detail_membership_first_tv_vimeo_bussiness_text">Up to 5TB of video storage
+        (no weekly limits)</string>
+    <string name="dialog_upgrade_order_detail_membership_second_tv_vimeo_bussiness_text">Powerful tools for collaboration,
+        marketing, and customization</string>
+    <string name="dialog_upgrade_order_detail_membership_third_tv_vimeo_bussiness_text">Unlimited bandwidth in the Vimeo player</string>
+    <string name="dialog_upgrade_order_detail_membership_fourth_tv_vimeo_bussiness_text">Advanced privacy, embed options, and more</string>
+
 </resources>

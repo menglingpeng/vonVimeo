@@ -301,6 +301,9 @@
 
     <dimen name="upgrade_order_content_name_tv_layout_margin_left_top_bottom">5dp</dimen>
     <dimen name="upgrade_order_content_detail_tv_layout_margin_left_right">10dp</dimen>
+    <dimen name="upgrade_order_payment_choose_alipay_iv_layout_marginTop">10dp</dimen>
+    <dimen name="upgrade_order_payment_choose_alipay_iv_layout_marginLeft">10dp</dimen>
+    <dimen name="upgrade_order_payment_choose_alipay_cb_layout_marginEnd">10dp</dimen>
 
     <dimen name="dialog_upgrade_order_detail_title_tv_layout_marginBottom">20dp</dimen>
     <dimen name="dialog_upgrade_order_detail_title_tv_layout_marginTop">20dp</dimen>

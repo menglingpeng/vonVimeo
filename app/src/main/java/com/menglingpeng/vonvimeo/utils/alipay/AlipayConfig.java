@@ -1,4 +1,6 @@
-package com.menglingpeng.vonvimeo.utils;
+package com.menglingpeng.vonvimeo.utils.alipay;
+
+import com.menglingpeng.vonvimeo.utils.alipay.AliayOrderInfoUtil;
 
 public class AlipayConfig {
 

@@ -113,12 +113,149 @@
             android:layout_below="@+id/upgrade_order_title_rl"
             android:layout_alignLeft="@+id/upgrade_order_title_rl">
 
+            <TextView
+                android:id="@+id/upgrade_order_payment_choose_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/upgrade_order_payment_choose_title_tv_text"/>
+
+            <view
+                android:id="@+id/upgrade_order_payment_choose_title_view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/upgrade_order_payment_choose_title_tv"
+                android:layout_alignLeft="@+id/upgrade_order_payment_choose_title_tv"
+                android:background="@color/recycler_item_view_background"/>
+
+            <RelativeLayout
+                android:id="@+id/upgrade_order_payment_choose_alipay_rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/upgrade_order_payment_choose_title_view"
+                android:layout_alignLeft="@+id/upgrade_order_payment_choose_title_view"
+                android:layout_marginLeft="@dimen/upgrade_order_payment_choose_alipay_iv_layout_marginLeft"
+                android:layout_marginTop="@dimen/upgrade_order_payment_choose_alipay_iv_layout_marginTop">
+
+                <ImageView
+                    android:id="@+id/upgrade_order_payment_choose_alipay_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src=""/>
+
+                <TextView
+                    android:id="@+id/upgrade_order_payment_choose_alipay_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/upgrade_order_payment_choose_alipay_iv"
+                    android:layout_alignTop="@+id/upgrade_order_payment_choose_alipay_iv"
+                    android:gravity="center"
+                    android:text="@string/upgrade_order_payment_choose_alipay_tv_text"/>
+
+                <CheckBox
+                    android:id="@+id/upgrade_order_payment_choose_alipay_cb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignTop="@+id/upgrade_order_payment_choose_alipay_tv"
+                    android:layout_marginEnd="@dimen/upgrade_order_payment_choose_alipay_cb_layout_marginEnd"/>
+
+            </RelativeLayout>
+
+            <view
+                android:id="@+id/upgrade_order_payment_choose_alipay_view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/upgrade_order_payment_choose_alipay_rl"
+                android:layout_alignLeft="@+id/upgrade_order_payment_choose_alipay_rl"
+                android:background="@color/recycler_item_view_background"/>
+
+            <RelativeLayout
+                android:id="@+id/upgrade_order_payment_choose_wechat_pay_rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/upgrade_order_payment_choose_alipay_view"
+                android:layout_alignLeft="@+id/upgrade_order_payment_choose_alipay_view"
+                android:layout_marginLeft="@dimen/upgrade_order_payment_choose_alipay_iv_layout_marginLeft"
+                android:layout_marginTop="@dimen/upgrade_order_payment_choose_alipay_iv_layout_marginTop">
+
+                <ImageView
+                    android:id="@+id/upgrade_order_payment_choose_wechat_pay_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src=""/>
+
+                <TextView
+                    android:id="@+id/upgrade_order_payment_choose_wechat_pay_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/upgrade_order_payment_choose_wechat_pay_iv"
+                    android:layout_alignTop="@+id/upgrade_order_payment_choose_wechat_pay_iv"
+                    android:gravity="center"
+                    android:text="@string/upgrade_order_payment_choose_wechat_pay_tv_text"/>
+
+                <CheckBox
+                    android:id="@+id/upgrade_order_payment_choose_wechat_pay_cb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignTop="@+id/upgrade_order_payment_choose_wechat_pay_tv"
+                    android:layout_marginEnd="@dimen/upgrade_order_payment_choose_alipay_cb_layout_marginEnd"/>
+
+            </RelativeLayout>
+
+            <view
+                android:id="@+id/upgrade_order_payment_choose_wechat_pay_view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/upgrade_order_payment_choose_alipay_rl"
+                android:layout_alignLeft="@+id/upgrade_order_payment_choose_alipay_rl"
+                android:background="@color/recycler_item_view_background"/>
+            <RelativeLayout
+                android:id="@+id/upgrade_order_payment_choose_other_pay_rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/upgrade_order_payment_choose_wechat_pay_view"
+                android:layout_alignLeft="@+id/upgrade_order_payment_choose_wechat_pay_view"
+                android:layout_marginLeft="@dimen/upgrade_order_payment_choose_alipay_iv_layout_marginLeft"
+                android:layout_marginTop="@dimen/upgrade_order_payment_choose_alipay_iv_layout_marginTop">
+
+                <ImageView
+                    android:id="@+id/upgrade_order_payment_choose_other_pay_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src=""/>
+
+                <TextView
+                    android:id="@+id/upgrade_order_payment_choose_other_pay_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/upgrade_order_payment_choose_other_pay_iv"
+                    android:layout_alignTop="@+id/upgrade_order_payment_choose_other_pay_iv"
+                    android:gravity="center"
+                    android:text="@string/upgrade_order_payment_choose_wechat_pay_tv_text"/>
+
+                <CheckBox
+                    android:id="@+id/upgrade_order_payment_choose_other_pay_cb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignTop="@+id/upgrade_order_payment_choose_other_pay_tv"
+                    android:layout_marginEnd="@dimen/upgrade_order_payment_choose_alipay_cb_layout_marginEnd"/>
+
+            </RelativeLayout>
+
+            <view
+                android:id="@+id/upgrade_order_payment_choose_other_pay_view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/upgrade_order_payment_choose_other_pay_rl"
+                android:layout_alignLeft="@+id/upgrade_order_payment_choose_other_pay_rl"
+                android:background="@color/recycler_item_view_background"/>
+
         </RelativeLayout>
 
+
     </RelativeLayout>
-
-
-
 
 
 </android.support.design.widget.CoordinatorLayout>

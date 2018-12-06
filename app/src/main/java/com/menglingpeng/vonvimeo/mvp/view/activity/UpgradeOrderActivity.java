@@ -13,6 +13,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -22,7 +24,7 @@ import com.menglingpeng.vonvimeo.utils.Constants;
 import com.menglingpeng.vonvimeo.utils.CountDownTimerUtils;
 import com.menglingpeng.vonvimeo.utils.IdStringUtil;
 
-public class UpgradeOrderActivity extends BaseActivity implements View.OnClickListener{
+public class UpgradeOrderActivity extends BaseActivity implements View.OnClickListener, CheckBox.OnCheckedChangeListener{
 
 
     private User user;
@@ -34,6 +36,9 @@ public class UpgradeOrderActivity extends BaseActivity implements View.OnClickLi
     private TextView orderDetailTv;
     private TextView totalPriceTv;
     private String vimeoPlan;
+    private CheckBox chooseAlipayCb;
+    private CheckBox chooseWechatpayCb;
+    private CheckBox chooseOtherpayCb;
 
     @Override
     protected void initLayoutId() {
@@ -53,6 +58,9 @@ public class UpgradeOrderActivity extends BaseActivity implements View.OnClickLi
         payRemainingTimeTv = (TextView) findViewById(R.id.upgrade_order_pay_remaining_time_tv);
         orderDetailTv = (TextView) findViewById(R.id.upgrade_order_content_detail_tv);
         totalPriceTv = (TextView) findViewById(R.id.upgrade_order_content_total_price_tv);
+        chooseAlipayCb = (CheckBox) findViewById(R.id.upgrade_order_payment_choose_alipay_cb);
+        chooseWechatpayCb = (CheckBox) findViewById(R.id.upgrade_order_payment_choose_wechat_pay_cb);
+        chooseOtherpayCb = (CheckBox) findViewById(R.id.upgrade_order_payment_choose_other_pay_cb);
         toolbar.setTitle(getString(R.string.activity_upgrade_order_title));
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_back);
@@ -195,4 +203,17 @@ public class UpgradeOrderActivity extends BaseActivity implements View.OnClickLi
         });
     }
 
+    @Override
+    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+        switch (compoundButton.getId()){
+            case R.id.upgrade_order_payment_choose_alipay_cb:
+                break;
+            case R.id.upgrade_order_payment_choose_wechat_pay_cb:
+                break;
+            case R.id.upgrade_order_payment_choose_other_pay_cb:
+                break;
+            default:
+                break;
+        }
+    }
 }

@@ -1,4 +1,4 @@
-package com.menglingpeng.vonvimeo.utils;
+package com.menglingpeng.vonvimeo.utils.alipay;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -6,6 +6,9 @@ import android.os.Handler;
 import android.os.Message;
 import android.text.TextUtils;
 import android.util.Log;
+
+import com.menglingpeng.vonvimeo.utils.alipay.AliayOrderInfoUtil;
+import com.menglingpeng.vonvimeo.utils.alipay.AlipayConfig;
 
 import java.util.Map;
 

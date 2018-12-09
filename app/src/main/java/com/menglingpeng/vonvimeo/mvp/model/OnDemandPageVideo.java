@@ -489,12 +489,6 @@ public class OnDemandPageVideo implements Serializable{
             private CreditsBean credits;
             private LikesBean likes;
             private PicturesBean pictures;
-            /**
-             * texttracks : {"uri":"/videos/151610906/texttracks","options":["GET","POST"],"total":0}
-             * related : {"uri":"/ondemand/pages/61923/videos?offset=1","options":["GET"]}
-             * recommendations : {"uri":"/videos/151610906/recommendations","options":["GET"]}
-             */
-
             private TexttracksBean texttracks;
             private RelatedBean related;
             private RecommendationsBean recommendations;

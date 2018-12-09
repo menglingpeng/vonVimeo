@@ -635,7 +635,8 @@
     <string name="videos_settings_content_rating_default_mature_rb_desc_text">- my videos contain explicit content
         like profanity, drugs, or nudity</string>
 
-    <dimen name="videos_settings_video_preferences_cb_desc_tv_text">Hide video stats and viewer count on the video page
+    <dimen name="videos_settings_video_preferences_cb_desc_tv_text">Hide video stats and viewer
+        count on the video page
         and in search results
     </dimen>
 

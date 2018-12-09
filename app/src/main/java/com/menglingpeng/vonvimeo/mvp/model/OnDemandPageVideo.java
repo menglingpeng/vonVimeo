@@ -474,6 +474,7 @@ public class OnDemandPageVideo implements Serializable{
     public static class MetadataBean {
 
         private ConnectionsBean connections;
+        private InteractionsBean interactions;
 
         public void setConnections(ConnectionsBean connections) {
             this.connections = connections;
@@ -481,6 +482,14 @@ public class OnDemandPageVideo implements Serializable{
 
         public ConnectionsBean getConnections() {
             return connections;
+        }
+
+        public InteractionsBean getInteractions() {
+            return interactions;
+        }
+
+        public void setInteractions(InteractionsBean interactions) {
+            this.interactions = interactions;
         }
 
         public static class ConnectionsBean {
@@ -749,5 +758,59 @@ public class OnDemandPageVideo implements Serializable{
                 }
             }
         }
+
+        public static class InteractionsBean {
+
+            private WatchlaterBean watchlater;
+
+            public void setWatchlater(WatchlaterBean watchlater) {
+                this.watchlater = watchlater;
+            }
+
+            public WatchlaterBean getWatchlater() {
+                return watchlater;
+            }
+
+
+
+            public static class WatchlaterBean {
+
+                private String uri;
+                private boolean added;
+                private Object added_time;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setAdded(boolean added) {
+                    this.added = added;
+                }
+
+                public void setAdded_time(Object added_time) {
+                    this.added_time = added_time;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public boolean getAdded() {
+                    return added;
+                }
+
+                public Object getAdded_time() {
+                    return added_time;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
     }
 }

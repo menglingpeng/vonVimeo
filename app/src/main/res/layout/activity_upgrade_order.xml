@@ -219,28 +219,31 @@
                 android:layout_marginLeft="@dimen/upgrade_order_payment_choose_alipay_iv_layout_marginLeft"
                 android:layout_marginTop="@dimen/upgrade_order_payment_choose_alipay_iv_layout_marginTop">
 
-                <ImageView
-                    android:id="@+id/upgrade_order_payment_choose_other_pay_iv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src=""/>
-
                 <TextView
                     android:id="@+id/upgrade_order_payment_choose_other_pay_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_toRightOf="@+id/upgrade_order_payment_choose_other_pay_iv"
-                    android:layout_alignTop="@+id/upgrade_order_payment_choose_other_pay_iv"
+                    android:layout_centerInParent="true"
                     android:gravity="center"
-                    android:text="@string/upgrade_order_payment_choose_wechat_pay_tv_text"/>
+                    android:text="@string/upgrade_order_payment_choose_other_pay_tv_text"/>
 
-                <CheckBox
-                    android:id="@+id/upgrade_order_payment_choose_other_pay_cb"
+                <android.support.v7.widget.AppCompatSpinner
+                    android:id="@+id/upgrade_order_payment_choose_other_pay_spinner"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignTop="@+id/upgrade_order_payment_choose_other_pay_tv"
-                    android:layout_marginEnd="@dimen/upgrade_order_payment_choose_alipay_cb_layout_marginEnd"/>
+                    android:backgroundTint="@android:color/white"
+                    android:backgroundTintMode="src_atop">
+
+                </android.support.v7.widget.AppCompatSpinner>
+
+                <ListView
+                    android:id="@+id/upgrade_order_payment_choose_other_pay_lv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+                </ListView>
+
+
 
             </RelativeLayout>
 

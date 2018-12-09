@@ -62,4 +62,8 @@
         <item>@string/show_groups</item>
 
     </string-array>
+
+    <string-array name="choose_other_payment">
+        <item>@string/choose_other_pament</item>
+    </string-array>
 </resources>

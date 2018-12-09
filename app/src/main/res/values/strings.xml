@@ -686,6 +686,7 @@
     <string name="upgrade_order_payment_choose_alipay_tv_text">支付宝支付</string>
     <string name="upgrade_order_payment_choose_wechat_pay_tv_text">微信支付</string>
     <string name="upgrade_order_payment_choose_other_pay_tv_text">其他支付</string>
+    <string name="choose_other_pament">选择其他支付方式</string>
 
     <string name="dialog_upgrade_order_detail_price_per_month_tv_text">per month</string>
     <string name="dialog_upgrade_order_detail_billed_annually_tv_text">Billed annually</string>

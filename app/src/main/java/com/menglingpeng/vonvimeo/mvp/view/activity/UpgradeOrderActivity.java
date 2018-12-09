@@ -13,9 +13,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
@@ -39,6 +43,8 @@ public class UpgradeOrderActivity extends BaseActivity implements View.OnClickLi
     private CheckBox chooseAlipayCb;
     private CheckBox chooseWechatpayCb;
     private CheckBox chooseOtherpayCb;
+    private Spinner otherPaySpinner;
+    private ListView otherPayLv;
 
     @Override
     protected void initLayoutId() {
@@ -61,6 +67,8 @@ public class UpgradeOrderActivity extends BaseActivity implements View.OnClickLi
         chooseAlipayCb = (CheckBox) findViewById(R.id.upgrade_order_payment_choose_alipay_cb);
         chooseWechatpayCb = (CheckBox) findViewById(R.id.upgrade_order_payment_choose_wechat_pay_cb);
         chooseOtherpayCb = (CheckBox) findViewById(R.id.upgrade_order_payment_choose_other_pay_cb);
+        otherPayLv = (ListView) findViewById(R.id.upgrade_order_payment_choose_other_pay_lv);
+
         toolbar.setTitle(getString(R.string.activity_upgrade_order_title));
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_back);
@@ -215,5 +223,28 @@ public class UpgradeOrderActivity extends BaseActivity implements View.OnClickLi
             default:
                 break;
         }
+    }
+
+    private void initSpinner(){
+        otherPaySpinner = (Spinner) findViewById(R.id.upgrade_order_payment_choose_other_pay_spinner);
+        ArrayAdapter<String> arrayAdapter;
+        String[] array = getResources().getStringArray(R.array.choose_other_payment);
+        arrayAdapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.custom_spinner_text, array);
+        arrayAdapter.setDropDownViewResource(R.layout.custom_spinner_dropdown_item);
+        otherPaySpinner.setAdapter(arrayAdapter);
+        otherPaySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if(i == 0){
+                    otherPaySpinner.setVisibility(Spinner.GONE);
+                    otherPayLv.setVisibility(ListView.VISIBLE);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
     }
 }

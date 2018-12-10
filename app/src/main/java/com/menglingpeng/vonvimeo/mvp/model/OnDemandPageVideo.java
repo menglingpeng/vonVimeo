@@ -20,24 +20,27 @@ public class OnDemandPageVideo implements Serializable{
     private Object license;
     private PrivacyBean privacy;
     private List<String> content_rating;
-    /**
-     * pictures : {"uri":"/videos/151610906/pictures/551400068","active":true,"type":"custom","sizes":[{"width":100,
-     * "height":75,"link":"https://i.vimeocdn.com/video/551400068_100x75.jpg?r=pad",
-     * "link_with_play_button":"https://i.vimeocdn.com/filter/overlay?src0=https%3A%2F%2Fi.vimeocdn
-     * .com%2Fvideo%2F551400068_100x75.jpg&src1=http%3A%2F%2Ff.vimeocdn.com%2Fp%2Fimages%2Fcrawler_play.png"}]}
-     */
-
+    private TranscodeBean transcode;
+    private AppBean app;
     private PicturesBean pictures;
-    /**
-     * stats : {"plays":null}
-     */
-
     private StatsBean stats;
-    /**
-     * metadata : {"connections":{"comments":{"uri":"/videos/151610906/comments","options":["GET"],"total":0}}}
-     */
-
     private MetadataBean metadata;
+
+    public AppBean getApp() {
+        return app;
+    }
+
+    public void setApp(AppBean app) {
+        this.app = app;
+    }
+
+    public TranscodeBean getTranscode() {
+        return transcode;
+    }
+
+    public void setTranscode(TranscodeBean transcode) {
+        this.transcode = transcode;
+    }
 
     public void setUri(String uri) {
         this.uri = uri;
@@ -763,6 +766,7 @@ public class OnDemandPageVideo implements Serializable{
 
             private WatchlaterBean watchlater;
             private LikeBean like;
+            private ReportBean report;
 
             public LikeBean getLike() {
                 return like;
@@ -778,6 +782,14 @@ public class OnDemandPageVideo implements Serializable{
 
             public WatchlaterBean getWatchlater() {
                 return watchlater;
+            }
+
+            public ReportBean getReport() {
+                return report;
+            }
+
+            public void setReport(ReportBean report) {
+                this.report = report;
             }
 
             public static class WatchlaterBean {
@@ -859,6 +871,74 @@ public class OnDemandPageVideo implements Serializable{
                     return options;
                 }
             }
+
+            public static class ReportBean {
+
+                private String uri;
+                private List<String> options;
+                private List<String> reason;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public void setReason(List<String> reason) {
+                    this.reason = reason;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+
+                public List<String> getReason() {
+                    return reason;
+                }
+            }
         }
     }
+
+
+    public static class TranscodeBean {
+
+        private String status;
+
+        public void setStatus(String status) {
+            this.status = status;
+        }
+
+        public String getStatus() {
+            return status;
+        }
+    }
+
+    public static class AppBean {
+
+        private String name;
+        private String uri;
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public void setUri(String uri) {
+            this.uri = uri;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getUri() {
+            return uri;
+        }
+    }
+
 }

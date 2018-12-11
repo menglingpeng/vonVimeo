@@ -35,4 +35,11 @@
         <item name="android:scrollHorizontally">true</item>
     </style>
 
+    <!-- 数字键盘动画 -->
+    <style name="PopWindowstyle">
+        <item name="android:windowEnterAnimation">@anim/number_soft_keyboard_enter_anim</item>
+        <item name="android:windowExitAnimation">@anim/number_soft_keyboard_exit_anim</item>
+    </style>
+
+
 </resources>

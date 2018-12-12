@@ -6,8 +6,15 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
+import android.os.Build;
+import android.text.InputType;
 import android.util.AttributeSet;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
+import android.widget.EditText;
 
+import java.lang.reflect.Method;
 import java.util.List;
 
 public class NumberKeyboardView extends KeyboardView implements KeyboardView.OnKeyboardActionListener{
@@ -18,6 +25,9 @@ public class NumberKeyboardView extends KeyboardView implements KeyboardView.OnK
     private Drawable deleteDrawable;
     //最下面两个灰色的按键（空白按键跟删除按键）
     private int bgColor;
+    protected Context context;
+
+    protected ViewGroup rootView;
 
     public NumberKeyboardView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -80,6 +90,19 @@ public class NumberKeyboardView extends KeyboardView implements KeyboardView.OnK
         deleteDrawable.draw(canvas);
     }
 
+    public void bindToEditor(EditText editText, BaseKeyboard keyboard) {
+        hideSystemSoftKeyboard(editText);
+        editText.setTag(R.id.bind_keyboard_2_editor, keyboard);
+        editText.setOnFocusChangeListener(editorFocusChangeListener);
+    }
+
+    private BaseKeyboard getBindKeyboard(EditText editText) {
+        if (editText != null) {
+            return (BaseKeyboard) editText.getTag(R.id.bind_keyboard_2_editor);
+        }
+        return null;
+    }
+
 
     //回调接口
     public interface OnKeyPressListener{
@@ -118,6 +141,70 @@ public class NumberKeyboardView extends KeyboardView implements KeyboardView.OnK
 
 
     }
+
+    public void showSoftKeyboard(EditText editText) {
+
+        rootView.addOnLayoutChangeListener(mOnLayoutChangeListener);
+        BaseKeyboard keyboard = getBindKeyboard(editText);
+        if (keyboard == null) {
+            return;
+        }
+        keyboard.setEditText(editText);
+        keyboard.setNextFocusView(mKeyboardWithSearchView.getEditText());
+        initKeyboard(keyboard);
+    }
+
+    private void hideSoftKeyboard() {
+        //mRootView.removeView(mKeyboardWithSearchView);
+        mKeyboardWithSearchView.setVisibility(View.GONE);
+        mKeyboardWithSearchView.setAnimation(AnimationUtils.loadAnimation(context, R.anim.up_to_hide));
+        //mRootView.removeOnLayoutChangeListener(mOnLayoutChangeListener);
+    }
+
+    public void hideKeyboard() {
+        if(rootView != null) {
+            rootView.clearFocus();
+        }
+    }
+
+    public static void hideSystemSoftKeyboard(EditText editText) {
+        int sdkInt = Build.VERSION.SDK_INT;
+        if (sdkInt >= 11) {
+            try {
+                Class<EditText> cls = EditText.class;
+                Method setShowSoftInputOnFocus;
+                setShowSoftInputOnFocus = cls.getMethod("setShowSoftInputOnFocus", boolean.class);
+                setShowSoftInputOnFocus.setAccessible(true);
+                setShowSoftInputOnFocus.invoke(editText, false);
+            } catch (SecurityException e) {
+                e.printStackTrace();
+            } catch (NoSuchMethodException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            editText.setInputType(InputType.TYPE_NULL);
+        }
+    }
+
+    private final View.OnFocusChangeListener editorFocusChangeListener = new View.OnFocusChangeListener() {
+        @Override
+        public void onFocusChange(final View v, boolean hasFocus) {
+            if (v instanceof EditText) {
+                if (hasFocus) {
+                    v.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            showSoftKeyboard((EditText) v);
+                        }
+                    },300);
+                } else {
+                    hideSoftKeyboard();
+                }
+            }
+        }
+    };
 
     @Override
     public void onText(CharSequence charSequence) {

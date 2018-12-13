@@ -2,6 +2,9 @@ package com.menglingpeng.vonvimeo.mvp.view.custom;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.inputmethodservice.Keyboard;
@@ -26,8 +29,8 @@ public class NumberKeyboardView extends KeyboardView implements KeyboardView.OnK
     //最下面两个灰色的按键（空白按键跟删除按键）
     private int bgColor;
     protected Context context;
-
     protected ViewGroup rootView;
+    private Keyboard.Key rInvalidatedKey;
 
     public NumberKeyboardView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -230,4 +233,75 @@ public class NumberKeyboardView extends KeyboardView implements KeyboardView.OnK
     public void swipeUp() {
 
     }
-}
+
+    private void onRefreshKey(Canvas canvas) {
+        final Paint paint = (Paint) ReflectionUtils.getFieldValue(this, "mPaint");
+        final Rect padding = (Rect) ReflectionUtils.getFieldValue(this, "mPadding");
+        final int kbdPaddingLeft = getPaddingLeft();
+        final int kbdPaddingTop = getPaddingTop();
+        Drawable keyBackground = null;
+        final Keyboard.Key invalidKey = rInvalidatedKey;
+        boolean drawSingleKey = false;
+
+        //拿到当前键盘被弹起的输入源 和 键盘为每个key的定制实现customKeyStyle
+        EditText etCur = ((BaseKeyboard) getKeyboard()).getEditText();
+        BaseKeyboard.KeyStyle customKeyStyle = ((BaseKeyboard) getKeyboard()).getKeyStyle();
+
+        List<Keyboard.Key> keys = getKeyboard().getKeys();
+        final int keyCount = keys.size();
+        //canvas.drawColor(0x00000000, PorterDuff.Mode.CLEAR);
+        for (int i = 0; i < keyCount; i++) {
+            final Keyboard.Key key = keys.get(i);
+            if (drawSingleKey && invalidKey != key) {
+                continue;
+            }
+
+            //获取为Key自定义的背景, 若没有定制, 使用KeyboardView的默认属性keyBackground设置
+            keyBackground = customKeyStyle.getKeyBackound(key);
+            if (null == keyBackground) {
+                keyBackground = rKeyBackground;
+            }
+
+            int[] drawableState = key.getCurrentDrawableState();
+            keyBackground.setState(drawableState);
+
+            //获取为Key自定义的Label, 若没有定制, 使用xml布局中指定的
+            CharSequence keyLabel = customKeyStyle.getKeyLabel(key);
+            if (null == keyLabel) {
+                keyLabel = key.label;
+            }
+            // Switch the character to uppercase if shift is pressed
+            String label = keyLabel == null ? null : adjustCase(keyLabel).toString();
+
+            final Rect bounds = keyBackground.getBounds();
+            if (key.width != bounds.right ||
+                    key.height != bounds.bottom) {
+                keyBackground.setBounds(0, 0, key.width, key.height);
+            }
+            canvas.translate(key.x + kbdPaddingLeft, key.y + kbdPaddingTop);
+            keyBackground.draw(canvas);
+
+            if (label != null) {
+                //获取为Key的Label的字体大小, 若没有定制, 使用KeyboardView的默认属性keyTextSize设置
+                Float customKeyTextSize = customKeyStyle.getKeyTextSize(key);
+                // For characters, use large font. For labels like "Done", use small font.
+                if (null != customKeyTextSize) {
+                    paint.setTextSize(customKeyTextSize);
+                    paint.setTypeface(Typeface.DEFAULT);
+                } else {
+                    if (label.length() > 1 && key.codes.length < 2) {
+                        paint.setTextSize(rLabelTextSize);
+                        paint.setTypeface(Typeface.DEFAULT);
+                    } else {
+                        paint.setTextSize(rKeyTextSize);
+                        paint.setTypeface(Typeface.DEFAULT);
+                        //paint.setTypeface(Typeface.DEFAULT);
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    }

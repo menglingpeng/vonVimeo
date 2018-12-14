@@ -27,6 +27,8 @@ public class LikeVideo implements Serializable {
     private AppBean app;
     private String status;
     private String resource_key;
+    private TagsBean tags;
+    private SubcategoriesBean subcategories;
     private UploadBean upload;
 
     public void setUri(String uri) {
@@ -213,6 +215,21 @@ public class LikeVideo implements Serializable {
         return upload;
     }
 
+    public SubcategoriesBean getSubcategories() {
+        return subcategories;
+    }
+
+    public void setSubcategories(SubcategoriesBean subcategories) {
+        this.subcategories = subcategories;
+    }
+
+    public TagsBean getTags() {
+        return tags;
+    }
+
+    public void setTags(TagsBean tags) {
+        this.tags = tags;
+    }
 
     public static class EmbedBean {
 

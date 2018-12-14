@@ -20,10 +20,10 @@ import android.widget.EditText;
 import java.lang.reflect.Method;
 import java.util.List;
 
-public class NumberKeyboardView extends KeyboardView implements KeyboardView.OnKeyboardActionListener{
+public class NumberKeyboardView extends KeyboardView implements KeyboardView.OnKeyboardActionListener {
 
     //用于区分左下角空白按键,(要与xml里设置的数值相同)
-    private int KEYCODE_EMPTY=-10;
+    private int KEYCODE_EMPTY = -10;
     //删除按键背景图片
     private Drawable deleteDrawable;
     //最下面两个灰色的按键（空白按键跟删除按键）
@@ -45,7 +45,7 @@ public class NumberKeyboardView extends KeyboardView implements KeyboardView.OnK
 
 
         //获取xml中的按键布局
-        Keyboard keyboard=new Keyboard(context,R.xml.numkeyview);
+        Keyboard keyboard = new Keyboard(context, R.xml.numkeyview);
         setKeyboard(keyboard);
         setEnabled(true);
         setPreviewEnabled(false);
@@ -54,6 +54,7 @@ public class NumberKeyboardView extends KeyboardView implements KeyboardView.OnK
     }
 
     Override
+
     public void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         List<Keyboard.Key> keys = getKeyboard().getKeys();
@@ -71,25 +72,26 @@ public class NumberKeyboardView extends KeyboardView implements KeyboardView.OnK
     }
 
     private void drawKeyBackGround(Keyboard.Key key, Canvas canvas) {
-        ColorDrawable colordrawable=new ColorDrawable(bgColor);
-        colordrawable.setBounds(key.x,key.y,key.x+key.width,key.y+key.height);
+        ColorDrawable colordrawable = new ColorDrawable(bgColor);
+        colordrawable.setBounds(key.x, key.y, key.x + key.width, key.y + key.height);
         colordrawable.draw(canvas);
     }
-    private void drawkeyDelete(Keyboard.Key key, Canvas canvas) {
-        int intrinsicWidth=deleteDrawable.getIntrinsicWidth();
-        int intrinsicHeight=deleteDrawable.getIntrinsicHeight();
-        int drawWidth=key.width;
-        int drawHeight=key.height;
-        if(drawWidth<intrinsicWidth){
-            drawHeight=drawWidth*intrinsicHeight/intrinsicWidth;
-        }
-        drawWidth=drawWidth/6;
-        drawHeight=drawHeight/6;
-        int widthInterval=(key.width-drawWidth)/2;
-        int heightInterval=(key.height-drawHeight)/2;
 
-        deleteDrawable.setBounds(key.x+widthInterval,key.y+heightInterval,key.x+widthInterval+drawWidth,
-                key.y+heightInterval+drawHeight);
+    private void drawkeyDelete(Keyboard.Key key, Canvas canvas) {
+        int intrinsicWidth = deleteDrawable.getIntrinsicWidth();
+        int intrinsicHeight = deleteDrawable.getIntrinsicHeight();
+        int drawWidth = key.width;
+        int drawHeight = key.height;
+        if (drawWidth < intrinsicWidth) {
+            drawHeight = drawWidth * intrinsicHeight / intrinsicWidth;
+        }
+        drawWidth = drawWidth / 6;
+        drawHeight = drawHeight / 6;
+        int widthInterval = (key.width - drawWidth) / 2;
+        int heightInterval = (key.height - drawHeight) / 2;
+
+        deleteDrawable.setBounds(key.x + widthInterval, key.y + heightInterval, key.x + widthInterval + drawWidth,
+                key.y + heightInterval + drawHeight);
         deleteDrawable.draw(canvas);
     }
 
@@ -108,17 +110,19 @@ public class NumberKeyboardView extends KeyboardView implements KeyboardView.OnK
 
 
     //回调接口
-    public interface OnKeyPressListener{
+    public interface OnKeyPressListener {
         //添加数据回调
         void onInertKey(String text);
+
         //删除数据回调
         void onDeleteKey();
     }
-    private OnKeyPressListener onkeyPressListener;
-    public void setOnKeyPressListener(OnKeyPressListener li){
-        onkeyPressListener=li;
-    }
 
+    private OnKeyPressListener onkeyPressListener;
+
+    public void setOnKeyPressListener(OnKeyPressListener li) {
+        onkeyPressListener = li;
+    }
 
 
     @Override
@@ -134,10 +138,10 @@ public class NumberKeyboardView extends KeyboardView implements KeyboardView.OnK
     @Override
     public void onKey(int i, int[] ints) {
 
-        if (i== Keyboard.KEYCODE_DELETE&&onkeyPressListener!=null){
+        if (i == Keyboard.KEYCODE_DELETE && onkeyPressListener != null) {
             //添加数据回调
             onkeyPressListener.onDeleteKey();
-        }else if (i!=KEYCODE_EMPTY){
+        } else if (i != KEYCODE_EMPTY) {
             //删除数据回调
             onkeyPressListener.onInertKey(Character.toString((char) i));
         }
@@ -165,7 +169,7 @@ public class NumberKeyboardView extends KeyboardView implements KeyboardView.OnK
     }
 
     public void hideKeyboard() {
-        if(rootView != null) {
+        if (rootView != null) {
             rootView.clearFocus();
         }
     }
@@ -201,7 +205,7 @@ public class NumberKeyboardView extends KeyboardView implements KeyboardView.OnK
                         public void run() {
                             showSoftKeyboard((EditText) v);
                         }
-                    },300);
+                    }, 300);
                 } else {
                     hideSoftKeyboard();
                 }
@@ -298,10 +302,48 @@ public class NumberKeyboardView extends KeyboardView implements KeyboardView.OnK
                         //paint.setTypeface(Typeface.DEFAULT);
                     }
                 }
+
+                //获取为Key的Label的字体颜色, 若没有定制, 使用KeyboardView的默认属性keyTextColor设置
+                Integer customKeyTextColor = customKeyStyle.getKeyTextColor(key);
+                if (null != customKeyTextColor) {
+                    paint.setColor(customKeyTextColor);
+                } else {
+                    paint.setColor(rKeyTextColor);
+                }
+                // Draw a drop shadow for the text
+                paint.setShadowLayer(rShadowRadius, 0, 0, rShadowColor);
+                // Draw the text
+                canvas.drawText(label,
+                        (key.width - padding.left - padding.right) / 2
+                                + padding.left,
+                        (key.height - padding.top - padding.bottom) / 2
+                                + (paint.getTextSize() - paint.descent()) / 2 + padding.top,
+                        paint);
+                // Turn off drop shadow
+                paint.setShadowLayer(0, 0, 0, 0);
+            } else if (key.icon != null) {
+                final int drawableX = (key.width - padding.left - padding.right
+                        - key.icon.getIntrinsicWidth()) / 2 + padding.left;
+                final int drawableY = (key.height - padding.top - padding.bottom
+                        - key.icon.getIntrinsicHeight()) / 2 + padding.top;
+                canvas.translate(drawableX, drawableY);
+                key.icon.setBounds(0, 0,
+                        key.icon.getIntrinsicWidth(), key.icon.getIntrinsicHeight());
+                key.icon.draw(canvas);
+                canvas.translate(-drawableX, -drawableY);
             }
+            canvas.translate(-key.x - kbdPaddingLeft, -key.y - kbdPaddingTop);
         }
-
-
+        rInvalidatedKey = null;
     }
 
+    private CharSequence adjustCase(CharSequence label) {
+        if (getKeyboard().isShifted() && label != null && label.length() < 3
+                && Character.isLowerCase(label.charAt(0))) {
+            label = label.toString().toUpperCase();
+        }
+        return label;
     }
+}
+
+

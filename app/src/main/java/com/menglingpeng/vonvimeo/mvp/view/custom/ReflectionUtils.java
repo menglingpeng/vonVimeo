@@ -24,4 +24,21 @@ public class ReflectionUtils {
         return null;
     }
 
+    public static void setFieldValue(Object obj, String fieldName, Object value) {
+        if (obj == null || TextUtils.isEmpty(fieldName)) {
+            return;
+        }
+        Class<?> clazz = obj.getClass();
+        while (clazz != Object.class) {
+            try {
+                Field field = clazz.getDeclaredField(fieldName);
+                field.setAccessible(true);
+                field.set(obj, value);
+                return;
+            } catch (Exception e) {
+            }
+            clazz = clazz.getSuperclass();
+        }
+    }
+
 }

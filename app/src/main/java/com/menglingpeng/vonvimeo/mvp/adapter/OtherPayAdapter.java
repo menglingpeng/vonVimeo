@@ -1,5 +1,6 @@
 package com.menglingpeng.vonvimeo.mvp.adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,10 +11,19 @@ import com.menglingpeng.vonvimeo.mvp.model.CardPay;
 
 import java.util.List;
 
-public class OtherPayAdapter extends BaseAdapter {
+public class OtherPayAdapter extends ListViewAdapter {
 
     private LayoutInflater inflater;
     private List<CardPay> cardPays;
+
+    public OtherPayAdapter(Context context, List datas, int layoutId) {
+        super(context, datas, layoutId);
+    }
+
+    @Override
+    public void convert(ListViewAdapter.ViewHolder holder, Object o) {
+
+    }
 
     @Override
     public int getCount() {

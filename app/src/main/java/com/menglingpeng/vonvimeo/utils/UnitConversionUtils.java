@@ -2,7 +2,7 @@ package com.menglingpeng.vonvimeo.utils;
 
 import android.content.Context;
 
-public class UnitConversion {
+public class UnitConversionUtils {
 
     public static int dipToPx(Context context, float dpValue) {
         final float scale = context.getResources().getDisplayMetrics().density;

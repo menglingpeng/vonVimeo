@@ -718,5 +718,10 @@
     <string name="dialog_upgrade_order_detail_membership_fourth_tv_vimeo_bussiness_text">Advanced privacy,
         embed options, and more</string>
 
+    <string name="activity_add_card_title">添加银行卡</string>
+    <string name="cardholder_name_title_tv_text">持卡人</string>
+    <string name="card_number_title_tv_text">卡号</string>
+    <string name="verficate_card_number_bt_text">验证卡号</string>
+
 
 </resources>

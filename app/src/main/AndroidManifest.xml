@@ -78,7 +78,8 @@
             android:screenOrientation="behind"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity android:name=".mvp.view.activity.UpgradeOrderActivity" />
-        <activity android:name=".utils.wxpay.WxPayEntryActivity"></activity>
+        <activity android:name=".utils.wxpay.WxPayEntryActivity" />
+        <activity android:name=".mvp.view.activity.AddCardActivity"></activity>
     </application>
 
 </manifest>

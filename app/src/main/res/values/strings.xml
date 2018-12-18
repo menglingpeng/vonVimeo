@@ -722,6 +722,8 @@
     <string name="cardholder_name_title_tv_text">持卡人</string>
     <string name="card_number_title_tv_text">卡号</string>
     <string name="verficate_card_number_bt_text">验证卡号</string>
+    <string name="snackbar_verificate_card_number_error">卡号格式错误</string>
+    <string name="snackbar_verificate_card_number_success">卡号格式正确</string>
 
 
 </resources>

@@ -14,6 +14,8 @@ import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
+import com.menglingpeng.vonvimeo.utils.BankCardTextWatcher;
+import com.menglingpeng.vonvimeo.utils.SnackbarUtils;
 
 public class AddCardActivity extends BaseActivity implements View.OnClickListener{
 
@@ -24,6 +26,8 @@ public class AddCardActivity extends BaseActivity implements View.OnClickListene
     private TextView cardHolderNameTv;
     private EditText cardNumberEt;
     private Button verificateBt;
+    private String cardId;
+    private BankCardTextWatcher bankCardTextWatcher;
 
     @Override
     protected void initLayoutId() {
@@ -65,12 +69,21 @@ public class AddCardActivity extends BaseActivity implements View.OnClickListene
 
             }
         });
+        bankCardTextWatcher.bind(cardNumberEt);
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.verficate_card_number_bt:
+                cardId = cardNumberEt.getText().toString();
+                if(checkCardNumber(cardId)){
+                    SnackbarUtils.showSnackShort(context, coordinatorLayout,
+                            getText(R.string.snackbar_verificate_card_number_success));
+                }else {
+                    SnackbarUtils.showErrorSnackShort(context, coordinatorLayout,
+                            getText(R.string.snackbar_verificate_card_number_error));
+                }
                 break;
             default:
                 break;

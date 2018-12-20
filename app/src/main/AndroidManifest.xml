@@ -79,7 +79,8 @@
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity android:name=".mvp.view.activity.UpgradeOrderActivity" />
         <activity android:name=".utils.wxpay.WxPayEntryActivity" />
-        <activity android:name=".mvp.view.activity.AddCardActivity"></activity>
+        <activity android:name=".mvp.view.activity.AddCardActivity" />
+        <activity android:name=".mvp.view.payment.SupportedBankCardActivity"></activity>
     </application>
 
 </manifest>

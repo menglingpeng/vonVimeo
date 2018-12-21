@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/share_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/wechat_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/wechat_iv_layout_marginTop"
+            android:layout_marginLeft="@dimen/wechat_iv_layout_marginleft"
+            android:layout_marginRight="@dimen/wechat_iv_layout_marginRight"
+            android:src=""/>
+
+        <TextView
+            android:id="@+id/wechat_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/wechat_iv"
+            android:layout_alignLeft="@+id/wechat_iv"
+            android:layout_marginTop="@dimen/wechat_tv_layout_marginTop"
+            android:layout_marginBottom="@dimen/wechat_tv_layout_marginBottom"
+            android:text="@string/wechat_tv_text"/>
+
+        <ImageView
+            android:id="@+id/wechat_circle_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/wechat_iv"
+            android:layout_alignTop="@+id/wechat_iv"
+            android:layout_marginTop="@dimen/wechat_iv_layout_marginTop"
+            android:layout_marginLeft="@dimen/wechat_iv_layout_marginleft"
+            android:layout_marginRight="@dimen/wechat_iv_layout_marginRight"
+            android:src=""/>
+
+        <TextView
+            android:id="@+id/wechat_circle_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/wechat_circle_iv"
+            android:layout_alignLeft="@+id/wechat_circle_iv"
+            android:layout_marginTop="@dimen/wechat_tv_layout_marginTop"
+            android:layout_marginBottom="@dimen/wechat_tv_layout_marginBottom"
+            android:text="@string/wechat_circle_tv_text"/>
+
+        <ImageView
+            android:id="@+id/back_home_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/wechat_iv_layout_marginTop"
+            android:layout_marginLeft="@dimen/wechat_iv_layout_marginleft"
+            android:layout_marginRight="@dimen/wechat_iv_layout_marginRight"
+            android:src=""/>
+
+        <TextView
+            android:id="@+id/back_home_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/wechat_iv"
+            android:layout_alignLeft="@+id/wechat_iv"
+            android:layout_marginTop="@dimen/wechat_tv_layout_marginTop"
+            android:layout_marginBottom="@dimen/wechat_tv_layout_marginBottom"
+            android:text="@string/back_home_tv_text"/>
+
+        <view
+            android:id="@+id/share_spacer_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/wechat_tv"
+            android:layout_alignLeft="@+id/wechat_tv"
+            android:background="@color/recycler_item_view_background"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/cancel_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/share_rl"
+        android:layout_alignLeft="@+id/share_rl"
+        android:gravity="center"
+        android:text="@string/cancle"
+        android:clickable="true"/>
+
+</RelativeLayout>

@@ -1,6 +1,8 @@
 package com.menglingpeng.vonvimeo.mvp.view.payment;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.provider.ContactsContract;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
@@ -9,8 +11,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.adapter.TabPagerFragmentAdapter;
@@ -30,6 +40,8 @@ public class SupportedBankCardActivity extends BaseActivity{
     private ViewPager viewPager;
     private TabPagerFragmentAdapter adapter;
     private ArrayList<RecyclerFragment> fragmentsList;
+    private Dialog dialog;
+
     private static final int SMOOTHSCROLL_TOP_POSITION = 50;
 
     @Override
@@ -54,6 +66,21 @@ public class SupportedBankCardActivity extends BaseActivity{
             }
         });
         initTabPager();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.supported_bank_card_toolbar_overflow_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId() = R.id.operation_menu){
+            showOperationDialog();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void initTabPager() {
@@ -106,5 +133,45 @@ public class SupportedBankCardActivity extends BaseActivity{
         fragmentsList.add(RecyclerFragment.newInstance(
                 Constants.REQUEST_LIST_ALL_DIRECTORY_CHANNElS_SORT_BY_DATE));
         adapter.setFragments(fragmentsList, titlesList);
+    }
+
+    private void showOperationDialog(){
+        ImageView wechatIv;
+        ImageView wechatCircleIv;
+        TextView cancleTv;
+
+        dialog = new Dialog(context, R.style.ThemeLoginDialog);
+        View dialogView = LayoutInflater.from(context).inflate(R.layout.dialog_upload_a_video, null);
+        Window window = dialog.getWindow();
+        window.setGravity(Gravity.BOTTOM);
+        window.setWindowAnimations(R.style.LoginDialog);
+        window.getDecorView().setPadding(0, 0, 0, 0);
+        WindowManager.LayoutParams layoutParams = window.getAttributes();
+        layoutParams.width = WindowManager.LayoutParams.MATCH_PARENT;
+        layoutParams.height = WindowManager.LayoutParams.MATCH_PARENT;
+        window.setAttributes(layoutParams);
+        dialog.setContentView(dialogView);
+        wechatIv = (ImageView) dialogView.findViewById(R.id.wechat_iv);
+        wechatCircleIv = (ImageView) dialogView.findViewById(R.id.wechat_circle_iv);
+        cancleTv = (TextView) dialogView.findViewById(R.id.cancel_tv);
+        dialog.show();
+        wechatIv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        wechatCircleIv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        cancleTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.cancel();
+            }
+        });
     }
 }

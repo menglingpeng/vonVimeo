@@ -324,5 +324,13 @@
     <dimen name="cardholder_name_title_tv_layout_marginleft">10dp</dimen>
     <dimen name="cardholder_name_title_tv_layout_marginRight">20dp</dimen>
 
+    <dimen name="wechat_iv_layout_marginTop">20dp</dimen>
+    <dimen name="wechat_iv_layout_marginleft">15dp</dimen>
+    <dimen name="wechat_iv_layout_marginRight">20dp</dimen>
+    <dimen name="wechat_tv_layout_marginBottom">20dp</dimen>
+    <dimen name="wechat_tv_layout_marginTop">20dp</dimen>
+
+
+
 
 </resources>

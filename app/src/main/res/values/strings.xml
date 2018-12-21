@@ -724,6 +724,9 @@
     <string name="verficate_card_number_bt_text">验证卡号</string>
     <string name="snackbar_verificate_card_number_error">卡号格式错误</string>
     <string name="snackbar_verificate_card_number_success">卡号格式正确</string>
+    <string name="wechat_tv_text">微信好友</string>
+    <string name="wechat_circle_tv_text">朋友圈</string>
+    <string name="back_home_tv_text">返回首页</string>
 
 
 </resources>

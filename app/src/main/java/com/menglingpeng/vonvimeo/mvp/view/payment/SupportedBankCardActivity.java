@@ -2,6 +2,7 @@ package com.menglingpeng.vonvimeo.mvp.view.payment;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.provider.ContactsContract;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -25,6 +26,8 @@ import android.widget.TextView;
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.adapter.TabPagerFragmentAdapter;
 import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
+import com.menglingpeng.vonvimeo.mvp.view.activity.AddCardActivity;
+import com.menglingpeng.vonvimeo.mvp.view.activity.UpgradeOrderActivity;
 import com.menglingpeng.vonvimeo.utils.Constants;
 
 import java.util.ArrayList;
@@ -138,8 +141,9 @@ public class SupportedBankCardActivity extends BaseActivity{
     private void showOperationDialog(){
         ImageView wechatIv;
         ImageView wechatCircleIv;
+        ImageView homeIv;
+        ImageView refreshIv;
         TextView cancleTv;
-
         dialog = new Dialog(context, R.style.ThemeLoginDialog);
         View dialogView = LayoutInflater.from(context).inflate(R.layout.dialog_upload_a_video, null);
         Window window = dialog.getWindow();
@@ -153,6 +157,8 @@ public class SupportedBankCardActivity extends BaseActivity{
         dialog.setContentView(dialogView);
         wechatIv = (ImageView) dialogView.findViewById(R.id.wechat_iv);
         wechatCircleIv = (ImageView) dialogView.findViewById(R.id.wechat_circle_iv);
+        homeIv = (ImageView) dialogView.findViewById(R.id.back_home_iv);
+        refreshIv = (ImageView) dialogView.findViewById(R.id.refresh_iv);
         cancleTv = (TextView) dialogView.findViewById(R.id.cancel_tv);
         dialog.show();
         wechatIv.setOnClickListener(new View.OnClickListener() {
@@ -167,11 +173,42 @@ public class SupportedBankCardActivity extends BaseActivity{
 
             }
         });
+        homeIv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                backHome();
+            }
+        });
+        refreshIv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
         cancleTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dialog.cancel();
             }
         });
+    }
+
+    private void backHome(){
+        Intent intent = new Intent(this, AddCardActivity.class);
+        setResult(RESULT_OK, intent);
+    }
+
+    private void refresh(){
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 0 && resultCode == RESULT_OK) {
+            setResult(RESULT_OK);
+            super.onDestroy();
+            this.finish();
+        }
     }
 }

@@ -727,6 +727,7 @@
     <string name="wechat_tv_text">微信好友</string>
     <string name="wechat_circle_tv_text">朋友圈</string>
     <string name="back_home_tv_text">返回首页</string>
+    <string name="refresh_tv_text">刷新</string>
 
 
 </resources>

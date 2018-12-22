@@ -654,7 +654,78 @@ public class BankInfo {
             return "大连银行";
         } else if (Pattern.matches(s162, totalBankcode) || Pattern.matches(s163, totalBankcode)) {
             return "河北银行";
-        } else {
+        }else if (Pattern.matches(s164, totalBankcode) || Pattern.matches(s165, totalBankcode)) {
+            return "乌鲁木齐商业银行";
+        } else if (Pattern.matches(s166, totalBankcode) || Pattern.matches(s167, totalBankcode) || Pattern.matches(s168, totalBankcode)) {
+            return "绍兴银行";
+        } else if (Pattern.matches(s169, totalBankcode)) {
+            return "成都商业银行";
+        } else if (Pattern.matches(s170, totalBankcode) || Pattern.matches(s171, totalBankcode) || Pattern.matches(s172, totalBankcode)) {
+            return "抚顺银行";
+        } else if (Pattern.matches(s173, totalBankcode) || Pattern.matches(s174, totalBankcode) || Pattern.matches(s175, totalBankcode)) {
+            return "郑州银行";
+        } else if (Pattern.matches(s176, totalBankcode) || Pattern.matches(s177, totalBankcode)) {
+            return "宁夏银行";
+        } else if (Pattern.matches(s178, totalBankcode) || Pattern.matches(s179, totalBankcode)) {
+            return "重庆银行";
+        } else if (Pattern.matches(s180, totalBankcode) || Pattern.matches(s181, totalBankcode) || Pattern.matches(s182, totalBankcode)) {
+            return "哈尔滨银行";
+        } else if (Pattern.matches(s183, totalBankcode) || Pattern.matches(s184, totalBankcode)) {
+            return "兰州银行";
+        } else if (Pattern.matches(s185, totalBankcode) || Pattern.matches(s186, totalBankcode)) {
+            return "青岛银行";
+        } else if (Pattern.matches(s187, totalBankcode) || Pattern.matches(s188, totalBankcode)) {
+            return "秦皇岛市商业银行";
+        } else if (Pattern.matches(s189, totalBankcode) || Pattern.matches(s190, totalBankcode) || Pattern.matches(s191, totalBankcode)) {
+            return "青海银行";
+        } else if (Pattern.matches(s192, totalBankcode) || Pattern.matches(s193, totalBankcode) || Pattern.matches(s194, totalBankcode) || Pattern.matches(s195, totalBankcode) || Pattern.matches(s196, totalBankcode)) {
+            return "台州银行";
+        } else if (Pattern.matches(s197, totalBankcode) || Pattern.matches(s198, totalBankcode) || Pattern.matches(s199, totalBankcode) || Pattern.matches(s200, totalBankcode)) {
+            return "长沙银行";
+        } else if (Pattern.matches(s201, totalBankcode) || Pattern.matches(s202, totalBankcode) || Pattern.matches(s203, totalBankcode) || Pattern.matches(s204, totalBankcode)) {
+            return "泉州银行";
+        } else if (Pattern.matches(s205, totalBankcode) || Pattern.matches(s206, totalBankcode) || Pattern.matches(s207, totalBankcode)) {
+            return "包商银行";
+        } else if (Pattern.matches(s208, totalBankcode) || Pattern.matches(s209, totalBankcode) || Pattern.matches(s210, totalBankcode) || Pattern.matches(s211, totalBankcode)) {
+            return "龙江银行";
+        } else if (Pattern.matches(s212, totalBankcode) || Pattern.matches(s213, totalBankcode) || Pattern.matches(s214, totalBankcode)) {
+            return "上海农商银行";
+        } else if (Pattern.matches(s215, totalBankcode) || Pattern.matches(s216, totalBankcode)) {
+            return "浙江泰隆商业银行";
+        } else if (Pattern.matches(s217, totalBankcode) || Pattern.matches(s218, totalBankcode)) {
+            return "内蒙古银行";
+        } else if (Pattern.matches(s219, totalBankcode) || Pattern.matches(s220, totalBankcode)) {
+            return "广西北部湾银行";
+        } else if (Pattern.matches(s221, totalBankcode) || Pattern.matches(s222, totalBankcode) || Pattern.matches(s223, totalBankcode)) {
+            return "桂林银行";
+        } else if (Pattern.matches(s224, totalBankcode) || Pattern.matches(s225, totalBankcode) || Pattern.matches(s226, totalBankcode) || Pattern.matches(s227, totalBankcode) || Pattern.matches(s228, totalBankcode)) {
+            return "龙江银行";
+        } else if (Pattern.matches(s229, totalBankcode) || Pattern.matches(s230, totalBankcode)) {
+            return "成都农村商业银行";
+        } else if (Pattern.matches(s231, totalBankcode) || Pattern.matches(s232, totalBankcode)) {
+            return "福建省农村信用社联合社";
+        } else if (Pattern.matches(s233, totalBankcode) || Pattern.matches(s234, totalBankcode)) {
+            return "天津农村商业银行";
+        } else if (Pattern.matches(s235, totalBankcode) || Pattern.matches(s236, totalBankcode)) {
+            return "江苏省农村信用社联合社";
+        } else if (Pattern.matches(s237, totalBankcode)) {
+            return "湖南省农村信用社联合社";
+        } else if (Pattern.matches(s238, totalBankcode) || Pattern.matches(s239, totalBankcode)) {
+            return "江西省农村信用社联合社";
+        } else if (Pattern.matches(s240, totalBankcode) || Pattern.matches(s241, totalBankcode)) {
+            return "商丘市商业银行";
+        } else if (Pattern.matches(s242, totalBankcode) || Pattern.matches(s243, totalBankcode)) {
+            return "华融湘江银行";
+        } else if (Pattern.matches(s244, totalBankcode)) {
+            return "衡水市商业银行";
+        } else if (Pattern.matches(s245, totalBankcode)) {
+            return "重庆南川石银村镇银行";
+        } else if (Pattern.matches(s246, totalBankcode)) {
+            return "湖南省农村信用社联合社";
+        } else if (Pattern.matches(s247, totalBankcode)) {
+            return "邢台银行";
+        }
+        else {
             return "未知";
         }
     }

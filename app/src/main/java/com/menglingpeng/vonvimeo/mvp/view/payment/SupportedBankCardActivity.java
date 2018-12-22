@@ -143,6 +143,7 @@ public class SupportedBankCardActivity extends BaseActivity{
         ImageView wechatCircleIv;
         ImageView homeIv;
         ImageView refreshIv;
+        ImageView textsizeTv;
         TextView cancleTv;
         dialog = new Dialog(context, R.style.ThemeLoginDialog);
         View dialogView = LayoutInflater.from(context).inflate(R.layout.dialog_upload_a_video, null);
@@ -159,6 +160,7 @@ public class SupportedBankCardActivity extends BaseActivity{
         wechatCircleIv = (ImageView) dialogView.findViewById(R.id.wechat_circle_iv);
         homeIv = (ImageView) dialogView.findViewById(R.id.back_home_iv);
         refreshIv = (ImageView) dialogView.findViewById(R.id.refresh_iv);
+        textsizeTv = (ImageView) dialogView.findViewById(R.id.textsize_iv);
         cancleTv = (TextView) dialogView.findViewById(R.id.cancel_tv);
         dialog.show();
         wechatIv.setOnClickListener(new View.OnClickListener() {
@@ -182,7 +184,13 @@ public class SupportedBankCardActivity extends BaseActivity{
         refreshIv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                refresh();
+            }
+        });
+        textsizeTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showTextSizeDialog();
             }
         });
         cancleTv.setOnClickListener(new View.OnClickListener() {
@@ -199,6 +207,10 @@ public class SupportedBankCardActivity extends BaseActivity{
     }
 
     private void refresh(){
+
+    }
+
+    private void showTextSizeDialog(){
 
     }
 

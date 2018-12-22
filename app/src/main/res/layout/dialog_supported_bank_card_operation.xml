@@ -24,6 +24,7 @@
             android:layout_alignLeft="@+id/wechat_iv"
             android:layout_marginTop="@dimen/wechat_tv_layout_marginTop"
             android:layout_marginBottom="@dimen/wechat_tv_layout_marginBottom"
+            android:gravity="center"
             android:text="@string/wechat_tv_text"/>
 
         <ImageView
@@ -45,6 +46,7 @@
             android:layout_alignLeft="@+id/wechat_circle_iv"
             android:layout_marginTop="@dimen/wechat_tv_layout_marginTop"
             android:layout_marginBottom="@dimen/wechat_tv_layout_marginBottom"
+            android:gravity="center"
             android:text="@string/wechat_circle_tv_text"/>
 
         <ImageView
@@ -66,6 +68,7 @@
             android:layout_alignLeft="@+id/back_home_iv"
             android:layout_marginTop="@dimen/wechat_tv_layout_marginTop"
             android:layout_marginBottom="@dimen/wechat_tv_layout_marginBottom"
+            android:gravity="center"
             android:text="@string/back_home_tv_text"/>
 
         <ImageView
@@ -77,7 +80,7 @@
             android:layout_marginTop="@dimen/wechat_iv_layout_marginTop"
             android:layout_marginLeft="@dimen/wechat_iv_layout_marginleft"
             android:layout_marginRight="@dimen/wechat_iv_layout_marginRight"
-            android:src="@drawable/ic_home_grey_600_24dp"/>
+            android:src="@drawable/ic_refresh_grey_600_24dp"/>
 
         <TextView
             android:id="@+id/refresh_tv"
@@ -87,6 +90,29 @@
             android:layout_alignLeft="@+id/refresh_iv"
             android:layout_marginTop="@dimen/wechat_tv_layout_marginTop"
             android:layout_marginBottom="@dimen/wechat_tv_layout_marginBottom"
+            android:gravity="center"
+            android:text="@string/refresh_tv_text"/>
+
+        <ImageView
+            android:id="@+id/textsize_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/refresh_iv"
+            android:layout_toRightOf="@+id/refresh_iv"
+            android:layout_marginTop="@dimen/wechat_iv_layout_marginTop"
+            android:layout_marginLeft="@dimen/wechat_iv_layout_marginleft"
+            android:layout_marginRight="@dimen/wechat_iv_layout_marginRight"
+            android:src="@drawable/ic_refresh_grey_600_24dp"/>
+
+        <TextView
+            android:id="@+id/textsize_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textsize_iv"
+            android:layout_alignLeft="@+id/textsize_iv"
+            android:layout_marginTop="@dimen/wechat_tv_layout_marginTop"
+            android:layout_marginBottom="@dimen/wechat_tv_layout_marginBottom"
+            android:gravity="center"
             android:text="@string/refresh_tv_text"/>
 
         <view

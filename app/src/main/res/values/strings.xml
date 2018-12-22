@@ -728,6 +728,7 @@
     <string name="wechat_circle_tv_text">朋友圈</string>
     <string name="back_home_tv_text">返回首页</string>
     <string name="refresh_tv_text">刷新</string>
+    <string name="textsize_tv_text">字体大小</string>
 
 
 </resources>

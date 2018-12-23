@@ -21,6 +21,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
@@ -44,6 +45,7 @@ public class SupportedBankCardActivity extends BaseActivity{
     private TabPagerFragmentAdapter adapter;
     private ArrayList<RecyclerFragment> fragmentsList;
     private Dialog dialog;
+    private Dialog textsizeDialog;
 
     private static final int SMOOTHSCROLL_TOP_POSITION = 50;
 
@@ -146,14 +148,14 @@ public class SupportedBankCardActivity extends BaseActivity{
         ImageView textsizeTv;
         TextView cancleTv;
         dialog = new Dialog(context, R.style.ThemeLoginDialog);
-        View dialogView = LayoutInflater.from(context).inflate(R.layout.dialog_upload_a_video, null);
+        View dialogView = LayoutInflater.from(context).inflate(R.layout.dialog_supported_bank_card_operation, null);
         Window window = dialog.getWindow();
         window.setGravity(Gravity.BOTTOM);
         window.setWindowAnimations(R.style.LoginDialog);
         window.getDecorView().setPadding(0, 0, 0, 0);
         WindowManager.LayoutParams layoutParams = window.getAttributes();
         layoutParams.width = WindowManager.LayoutParams.MATCH_PARENT;
-        layoutParams.height = WindowManager.LayoutParams.MATCH_PARENT;
+        layoutParams.height = WindowManager.LayoutParams.WRAP_CONTENT;
         window.setAttributes(layoutParams);
         dialog.setContentView(dialogView);
         wechatIv = (ImageView) dialogView.findViewById(R.id.wechat_iv);
@@ -211,7 +213,39 @@ public class SupportedBankCardActivity extends BaseActivity{
     }
 
     private void showTextSizeDialog(){
+        SeekBar seekBar;
+        int min = 12;
+        int recommend = 20;
+        int max = 25;
+        textsizeDialog = new Dialog(context, R.style.ThemeLoginDialog);
+        View dialogView = LayoutInflater.from(context).inflate(R.layout.dialog_supported_bank_card_textsize_settings, null);
+        Window window = dialog.getWindow();
+        window.setGravity(Gravity.BOTTOM);
+        window.setWindowAnimations(R.style.LoginDialog);
+        window.getDecorView().setPadding(0, 0, 0, 0);
+        WindowManager.LayoutParams layoutParams = window.getAttributes();
+        layoutParams.width = WindowManager.LayoutParams.MATCH_PARENT;
+        layoutParams.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        window.setAttributes(layoutParams);
+        textsizeDialog.setContentView(dialogView);
+        seekBar = (SeekBar) dialogView.findViewById(R.id.textsize_sb);
+        textsizeDialog.create();
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
 
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
     }
 
     @Override

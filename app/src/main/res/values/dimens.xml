@@ -330,6 +330,13 @@
     <dimen name="wechat_tv_layout_marginBottom">20dp</dimen>
     <dimen name="wechat_tv_layout_marginTop">20dp</dimen>
 
+    <dimen name="textsize_sb_layout_marginTop">20dp</dimen>
+    <dimen name="textsize_sb_layout_marginleft">20dp</dimen>
+    <dimen name="textsize_sb_layout_marginRight">20dp</dimen>
+    <dimen name="textsize_sb_layout_marginBottom">10dp</dimen>
+    <item name="textsize_sb_max" type="dimen" format="integer">100</item>
+    <item name="textsize_sb_progress" type="dimen" format="integer">100</item>
+
 
 
 

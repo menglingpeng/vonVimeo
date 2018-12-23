@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <SeekBar
+        android:id="@+id/textsize_sb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/textsize_sb_layout_marginTop"
+        android:layout_marginLeft="@dimen/textsize_sb_layout_marginleft"
+        android:layout_marginRight="@dimen/textsize_sb_layout_marginRight"
+        android:layout_marginBottom="@dimen/textsize_sb_layout_marginBottom"
+        android:max="@dimen/textsize_sb_max"
+        android:progress="@dimen/textsize_sb_progress"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textsize_sb"
+        android:layout_alignLeft="@+id/textsize_sb"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:id="@+id/textsize_min_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/textsize_min_tv_text"/>
+
+        <TextView
+            android:id="@+id/textsize_recommend_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/textsize_recommend_tv_text"
+            android:textColor="@android:color/holo_blue_bright"
+            android:layout_centerInParent="true"/>
+
+        <TextView
+            android:id="@+id/textsize_max_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="@string/textsize_max_tv_text"/>
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

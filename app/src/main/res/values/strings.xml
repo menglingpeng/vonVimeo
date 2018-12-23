@@ -729,6 +729,9 @@
     <string name="back_home_tv_text">返回首页</string>
     <string name="refresh_tv_text">刷新</string>
     <string name="textsize_tv_text">字体大小</string>
+    <string name="textsize_min_tv_text">最小</string>
+    <string name="textsize_recommend_tv_text">推荐</string>
+    <string name="textsize_max_tv_text">最大</string>
 
 
 </resources>

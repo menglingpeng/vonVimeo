@@ -146,7 +146,7 @@ public class UpgradeOrderOperationDialogFragment extends DialogFragment {
     }
 
     public interface OperationDialogListener{
-        void onUploadDialogLoginListener(Button button, ProgressBar progressBar, Dialog dialog);
+        void onOperationDialogLoginListener(Button button, ProgressBar progressBar, Dialog dialog);
     }
 
 

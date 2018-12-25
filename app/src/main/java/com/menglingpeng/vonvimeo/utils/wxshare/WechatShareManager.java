@@ -150,4 +150,56 @@ public class WechatShareManager {
         mWXApi.sendReq(req);
     }
 
+    /**
+     * 设置分享链接的内容
+     * @author chengcj1
+     *
+     */
+    public class ShareContentWebpage extends ShareContent {
+        private String title;
+        private String content;
+        private String url;
+        private int pictureResource;
+        public ShareContentWebpage(String title, String content, String url, int pictureResource){
+            this.title = title;
+            this.content = content;
+            this.url = url;
+            this.pictureResource = pictureResource;
+        }
+
+        @Override
+        protected int getShareWay() {
+            return WECHAT_SHARE_WAY_WEBPAGE;
+        }
+
+        @Override
+        protected String getContent() {
+            return content;
+        }
+
+        @Override
+        protected String getTitle() {
+            return title;
+        }
+
+        @Override
+        protected String getURL() {
+            return url;
+        }
+
+        @Override
+        protected int getPictureResource() {
+            return pictureResource;
+        }
+    }
+
+    /*
+     * 获取网页分享对象
+     */
+    public ShareContent getShareContentWebpag(String title, String content, String url, int pictureResource) {
+        if (mShareContentWebpag == null) {
+            mShareContentWebpag = new ShareContentWebpage(title, content, url, pictureResource);
+        }
+        return (ShareContentWebpage) mShareContentWebpag;
+    }
 }

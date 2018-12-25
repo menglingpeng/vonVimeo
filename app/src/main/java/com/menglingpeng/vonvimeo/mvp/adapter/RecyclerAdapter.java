@@ -2782,6 +2782,21 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
+    public class BankCardViewHolder extends RecyclerView.ViewHolder{
+
+        public final ImageView iconIv;
+        public final TextView bankNameTv;
+        public final TextView cardLimitTv;
+
+        public BankCardViewHolder(View view) {
+            super(view);
+
+            iconIv = (ImageView)view.findViewById(R.id.bank_icon_iv);
+            bankNameTv = (TextView)view.findViewById(R.id.bank_name_tv);
+            cardLimitTv = (TextView)view.findViewById(R.id.bank_card_limit_tv);
+        }
+    }
+
     public class FooterViewHolder extends RecyclerView.ViewHolder {
 
         public FooterViewHolder(View view) {

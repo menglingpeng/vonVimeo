@@ -26,6 +26,7 @@ import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.adapter.TabPagerFragmentAdapter;
+import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
 import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
 import com.menglingpeng.vonvimeo.mvp.view.activity.AddCardActivity;
 import com.menglingpeng.vonvimeo.mvp.view.activity.UpgradeOrderActivity;
@@ -33,12 +34,13 @@ import com.menglingpeng.vonvimeo.utils.Constants;
 
 import java.util.ArrayList;
 
-public class SupportedBankCardActivity extends BaseActivity{
+public class SupportedBankCardActivity extends BaseActivity implements RecyclerView{
 
     private String title;
     private String type;
     private Context context;
     private Toolbar toolbar;
+    private ProgressBar progressBar;
     private CoordinatorLayout coordinatorLayout;
     private TabLayout tabLayout;
     private ViewPager viewPager;
@@ -61,6 +63,7 @@ public class SupportedBankCardActivity extends BaseActivity{
 
         coordinatorLayout = (CoordinatorLayout) findViewById(R.id.supported_bank_card_cdl);
         toolbar = (Toolbar) findViewById(R.id.supported_bank_card_tb);
+        progressBar = (ProgressBar) findViewById(R.id.supported_bank_card_pb)
         toolbar.setTitle(title);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_back);
@@ -256,5 +259,20 @@ public class SupportedBankCardActivity extends BaseActivity{
             super.onDestroy();
             this.finish();
         }
+    }
+
+    @Override
+    public void hideProgress() {
+        progressBar.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void loadFailed(String msg) {
+
+    }
+
+    @Override
+    public void loadSuccess(String json, String requestType) {
+
     }
 }

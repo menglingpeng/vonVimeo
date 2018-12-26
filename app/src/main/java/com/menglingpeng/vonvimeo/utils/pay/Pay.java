@@ -1,6 +1,12 @@
 package com.menglingpeng.vonvimeo.utils.pay;
 
 import android.app.Activity;
+import android.text.TextUtils;
+
+import com.menglingpeng.vonvimeo.utils.pay.unionpay.UPPay;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  * 支付步骤说明：
@@ -44,4 +50,45 @@ public class Pay {
         WXPAY, ALIPAY, UUPAY
     }
 
+    public void toUUPay(String payParameters, PayListener listener) {
+        if (payParameters != null) {
+            JSONObject param = null;
+            try {
+                param = new JSONObject(payParameters);
+            } catch (JSONException e) {
+                e.printStackTrace();
+                if (listener != null) {
+                    listener.onPayError(UPPay.PAY_PARAMETERS_ERROE, "参数异常");
+                }
+                return;
+            }
+            if (TextUtils.isEmpty(param.optString("mode")) || TextUtils.isEmpty(param.optString("tn"))){
+                if (listener != null) {
+                    listener.onPayError(UPPay.PAY_PARAMETERS_ERROE, "参数异常");
+                }
+                return;
+            }
+            toUUPay(param.optString("mode"),
+                    param.optString("tn"), listener);
+        } else {
+            if (listener != null) {
+                listener.onPayError(WeiXinPay.PAY_PARAMETERS_ERROE, "参数异常");
+            }
+        }
+    }
+
+    public void toUUPay(String mode, String tn, PayListener listener) {
+        if (listener == null) {
+            listener.onPayError(UPPay.PAY_PARAMETERS_ERROE, "参数异常");
+            return;
+        }
+        if (TextUtils.isEmpty(mode)) {
+            mode = "00";
+        }
+        if (TextUtils.isEmpty(tn)) {
+            listener.onPayError(UPPay.PAY_PARAMETERS_ERROE, "参数异常");
+            return;
+        }
+        UPPay.getInstance(mContext).startUPPay(mode, tn, listener);
+    }
 }

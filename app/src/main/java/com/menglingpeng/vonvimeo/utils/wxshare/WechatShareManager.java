@@ -1,10 +1,15 @@
 package com.menglingpeng.vonvimeo.utils.wxshare;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.widget.Toast;
 
 import com.tencent.mm.opensdk.modelmsg.SendMessageToWX;
+import com.tencent.mm.opensdk.modelmsg.WXImageObject;
 import com.tencent.mm.opensdk.modelmsg.WXMediaMessage;
 import com.tencent.mm.opensdk.modelmsg.WXTextObject;
+import com.tencent.mm.opensdk.modelmsg.WXWebpageObject;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 
@@ -60,10 +65,12 @@ public class WechatShareManager {
                 shareText(shareContent, shareType);
                 break;
             case WECHAT_SHARE_WAY_PICTURE:
+                sharePicture(shareContent, shareType);
                 break;
             case WECHAT_SHARE_WAY_WEBPAGE:
+                shareWebPage(shareContent, shareType);
                 break;
-            case WECHAT_SHARE_WAY_VIDEO:
+            default:
                 break;
         }
     }
@@ -202,4 +209,120 @@ public class WechatShareManager {
         }
         return (ShareContentWebpage) mShareContentWebpag;
     }
+
+    /**
+     * 设置分享图片的内容
+     * @author chengcj1
+     *
+     */
+    public class ShareContentPicture extends ShareContent {
+        private int pictureResource;
+        public ShareContentPicture(int pictureResource){
+            this.pictureResource = pictureResource;
+        }
+
+        @Override
+        protected int getShareWay() {
+            return WECHAT_SHARE_WAY_PICTURE;
+        }
+
+        @Override
+        protected int getPictureResource() {
+            return pictureResource;
+        }
+
+        @Override
+        protected String getContent() {
+            return null;
+        }
+
+        @Override
+        protected String getTitle() {
+            return null;
+        }
+
+        @Override
+        protected String getURL() {
+            return null;
+        }
+    }
+
+    /*
+     * 获取图片分享对象
+     */
+    public ShareContent getShareContentPicture(int pictureResource) {
+        if (mShareContentPicture == null) {
+            mShareContentPicture = new ShareContentPicture(pictureResource);
+        }
+        return (ShareContentPicture) mShareContentPicture;
+    }
+
+
+    /*
+     * 分享文字
+     */
+    private void shareText(ShareContent shareContent, int shareType) {
+        String text = shareContent.getContent();
+        //初始化一个WXTextObject对象
+        WXTextObject textObj = new WXTextObject();
+        textObj.text = text;
+        //用WXTextObject对象初始化一个WXMediaMessage对象
+        WXMediaMessage msg = new WXMediaMessage();
+        msg.mediaObject = textObj;
+        msg.description = text;
+        //构造一个Req
+        SendMessageToWX.Req req = new SendMessageToWX.Req();
+        //transaction字段用于唯一标识一个请求
+        req.transaction = buildTransaction("textshare");
+        req.message = msg;
+        //发送的目标场景， 可以选择发送到会话 WXSceneSession 或者朋友圈 WXSceneTimeline。 默认发送到会话。
+        req.scene = shareType;
+        mWXApi.sendReq(req);
+    }
+
+    /*
+     * 分享链接
+     */
+    private void shareWebPage(ShareContent shareContent, int shareType) {
+        WXWebpageObject webpage = new WXWebpageObject();
+        webpage.webpageUrl = shareContent.getURL();
+        WXMediaMessage msg = new WXMediaMessage(webpage);
+        msg.title = shareContent.getTitle();
+        msg.description = shareContent.getContent();
+
+        Bitmap thumb = BitmapFactory.decodeResource(mContext.getResources(), shareContent.getPictureResource());
+        if(thumb == null) {
+            Toast.makeText(mContext, "图片不能为空", Toast.LENGTH_SHORT).show();
+        } else {
+            msg.thumbData = Util.bmpToByteArray(thumb, true);
+        }
+
+        SendMessageToWX.Req req = new SendMessageToWX.Req();
+        req.transaction = buildTransaction("webpage");
+        req.message = msg;
+        req.scene = shareType;
+        mWXApi.sendReq(req);
+    }
+
+    /*
+     * 分享图片
+     */
+    private void sharePicture(ShareContent shareContent, int shareType) {
+        Bitmap bitmap = BitmapFactory.decodeResource(mContext.getResources(), shareContent.getPictureResource());
+        WXImageObject imgObj = new WXImageObject(bitmap);
+
+        WXMediaMessage msg = new WXMediaMessage();
+        msg.mediaObject = imgObj;
+
+        Bitmap thumbBitmap =  Bitmap.createScaledBitmap(bitmap, THUMB_SIZE, THUMB_SIZE, true);
+        bitmap.recycle();
+        msg.thumbData = Util.bmpToByteArray(thumbBitmap, true);  //设置缩略图
+
+        SendMessageToWX.Req req = new SendMessageToWX.Req();
+        req.transaction = buildTransaction("imgshareappdata");
+        req.message = msg;
+        req.scene = shareType;
+        mWXApi.sendReq(req);
+    }
+
 }

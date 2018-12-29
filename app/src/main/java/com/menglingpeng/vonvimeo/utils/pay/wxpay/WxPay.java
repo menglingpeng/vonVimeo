@@ -2,11 +2,16 @@ package com.menglingpeng.vonvimeo.utils.pay.wxpay;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 
 import com.menglingpeng.vonvimeo.utils.pay.Pay;
+import com.tencent.mm.opensdk.constants.Build;
 import com.tencent.mm.opensdk.modelpay.PayReq;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
+
+import java.util.List;
 
 public class WxPay {
 
@@ -86,5 +91,61 @@ public class WxPay {
         request.timeStamp= timeStamp;
         request.sign= sign;
         mIWXAPI.sendReq(request);
+    }
+
+    /**
+     * 响应支付回调
+     * @param error_code
+     * @param message
+     */
+    public void onResp(int error_code,String message) {
+        if(payListener == null) {
+            return;
+        }
+        if(error_code == 0) {
+            //支付成功
+            payListener.onPaySuccess();
+        } else if(error_code == -1) {
+            //支付异常
+            payListener.onPayError(PAY_ERROR,message);
+        } else if(error_code == -2) {
+            //支付取消
+            payListener.onPayCancel();
+        }
+
+        payListener = null;
+    }
+
+
+
+    //检测微信客户端是否支持微信支付
+    private boolean checkWx() {
+        return isWeixinAvilible() && mIWXAPI.isWXAppInstalled() && mIWXAPI.getWXAppSupportAPI() >= Build.PAY_SUPPORTED_SDK_INT;
+    }
+    /**
+     * 判断微信是否安装
+     * @return
+     */
+    private  boolean isWeixinAvilible() {
+        return appIsAvilible("com.tencent.mm");
+    }
+
+    /**
+     * 判断app是否安装
+     * @param packageName
+     * @return
+     */
+    private  boolean appIsAvilible(String packageName) {
+        final PackageManager packageManager = mContext.getPackageManager();// 获取packagemanager
+        List<PackageInfo> pinfo = packageManager.getInstalledPackages(0);// 获取所有已安装程序的包信息
+        if (pinfo != null) {
+            for (int i = 0; i < pinfo.size(); i++) {
+                String pn = pinfo.get(i).packageName;
+                if (pn.equals(packageName)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }

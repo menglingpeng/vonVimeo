@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.text.TextUtils;
 
 import com.menglingpeng.vonvimeo.utils.pay.unionpay.UPPay;
+import com.menglingpeng.vonvimeo.utils.pay.wxpay.WxPay;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -50,6 +51,38 @@ public class Pay {
         WXPAY, ALIPAY, UUPAY
     }
 
+    public void toWxPay(String payParameters, PayListener listener) {
+        if (payParameters != null) {
+            JSONObject param = null;
+            try {
+                param = new JSONObject(payParameters);
+            } catch (JSONException e) {
+                e.printStackTrace();
+                if (listener != null) {
+                    listener.onPayError(WxPay.PAY_PARAMETERS_ERROE, "参数异常");
+                }
+                return;
+            }
+            if (TextUtils.isEmpty(param.optString("appId")) || TextUtils.isEmpty(param.optString("partnerId"))
+                    || TextUtils.isEmpty(param.optString("prepayId")) || TextUtils.isEmpty(param.optString("nonceStr"))
+                    || TextUtils.isEmpty(param.optString("timeStamp")) || TextUtils.isEmpty(param.optString("sign"))) {
+                if (listener != null) {
+                    listener.onPayError(WxPay.PAY_PARAMETERS_ERROE, "参数异常");
+                }
+                return;
+            }
+            toWxPay(param.optString("appId"),
+                    param.optString("partnerId"), param.optString("prepayId"),
+                    param.optString("nonceStr"), param.optString("timeStamp"),
+                    param.optString("sign"), listener);
+
+        } else {
+            if (listener != null) {
+                listener.onPayError(WxPay.PAY_PARAMETERS_ERROE, "参数异常");
+            }
+        }
+    }
+
     public void toUUPay(String payParameters, PayListener listener) {
         if (payParameters != null) {
             JSONObject param = null;
@@ -72,7 +105,7 @@ public class Pay {
                     param.optString("tn"), listener);
         } else {
             if (listener != null) {
-                listener.onPayError(WeiXinPay.PAY_PARAMETERS_ERROE, "参数异常");
+                listener.onPayError(WxPay.PAY_PARAMETERS_ERROE, "参数异常");
             }
         }
     }

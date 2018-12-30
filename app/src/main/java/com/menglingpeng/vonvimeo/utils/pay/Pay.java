@@ -3,6 +3,7 @@ package com.menglingpeng.vonvimeo.utils.pay;
 import android.app.Activity;
 import android.text.TextUtils;
 
+import com.menglingpeng.vonvimeo.utils.pay.alipay.Alipay;
 import com.menglingpeng.vonvimeo.utils.pay.unionpay.UPPay;
 import com.menglingpeng.vonvimeo.utils.pay.wxpay.WxPay;
 
@@ -82,6 +83,19 @@ public class Pay {
             }
         }
     }
+
+    public void toAliPay(String payParameters, PayListener listener) {
+        if (payParameters != null) {
+            if (listener != null) {
+                Alipay.getInstance(mContext).startAliPay(payParameters, listener);
+            }
+        } else {
+            if (listener != null) {
+                listener.onPayError(Alipay.PAY_PARAMETERS_ERROE, "参数异常");
+            }
+        }
+    }
+
 
     public void toUUPay(String payParameters, PayListener listener) {
         if (payParameters != null) {

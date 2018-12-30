@@ -520,6 +520,11 @@ public class Constants {
     public static final int VIMEO_PLAN_BUSSINESS_TOTAL_PRICE = 59900;
 
 
+    public static final String UPGRADE_TYPE = "upgrade_type";
+    public static final String UPGRADE_TYPE_PLUS = "upgrade_type_plus";
+    public static final String UPGRADE_TYPE_PRO = "upgrade_type_pro";
+    public static final String UPGRADE_TYPE_BUSSINESS = "upgrade_type_bussiness";
+    public static final String UPGRADE_TYPE_PREMIUM = "upgrade_type_premium";
 
 
     //默认值1

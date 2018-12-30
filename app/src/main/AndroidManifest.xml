@@ -98,26 +98,39 @@
         <activity android:name="com.tencent.tauth.AuthActivity">
             <intent-filter>
 
+
                 　　　　
+
                 <action android:name="android.intent.action.VIEW" />
 
+
                 　　　　
+
                 <category android:name="android.intent.category.DEFAULT" />
 
+
                 　　　　
+
                 <category android:name="android.intent.category.BROWSABLE" />
 
+
                 　　　　
+
                 <data android:scheme="tencent2345" />
 
+
                 　　
+
             </intent-filter>
         </activity>
         <activity android:name="com.tencent.connect.common.AssistActivity" />
 
+
         　　
 
-        <activity android:name=".mvp.view.activity.UpgradeActivity"></activity>
+
+        <activity android:name=".mvp.view.activity.UpgradeActivity" />
+        <activity android:name=".utils.pay.wxpay.WxPayEntryActivity"></activity>
     </application>
 
 </manifest>

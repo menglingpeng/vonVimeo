@@ -2,6 +2,7 @@ package com.menglingpeng.vonvimeo.mvp.view.fragment;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.provider.ContactsContract;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
@@ -21,6 +22,7 @@ import android.widget.Switch;
 import com.menglingpeng.vonvimeo.base.BaseFragment;
 import com.menglingpeng.vonvimeo.mvp.model.User;
 import com.menglingpeng.vonvimeo.mvp.model.Video;
+import com.menglingpeng.vonvimeo.mvp.view.activity.UpgradeActivity;
 import com.menglingpeng.vonvimeo.utils.Constants;
 
 import java.util.List;
@@ -102,6 +104,9 @@ public class DistributionFragment extends BaseFragment implements View.OnClickLi
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.distribution_social_settings_title_upgrade_bt:
+                Intent intent = new Intent(getActivity(), UpgradeActivity.class);
+                intent.putExtra(Constants.USER, user);
+                startActivity(intent);
                 break;
             case R.id.distribution_social_settings_facebook_connect_bt:
                 break;
@@ -120,6 +125,9 @@ public class DistributionFragment extends BaseFragment implements View.OnClickLi
                 showCreateSubtitlesDialog();
                 break;
             case R.id.distribution_file_links_settings_title_upgrade_bt:
+                Intent intent1 = new Intent(getActivity(), UpgradeActivity.class);
+                intent1.putExtra(Constants.USER, user);
+                startActivity(intent1);
                 break;
             default:
                 break;

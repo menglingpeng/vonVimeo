@@ -29,6 +29,7 @@ import com.menglingpeng.vonvimeo.mvp.model.Video;
 import com.menglingpeng.vonvimeo.mvp.presenter.RecyclerPresenter;
 import com.menglingpeng.vonvimeo.mvp.view.UserAlbumsActivity;
 import com.menglingpeng.vonvimeo.mvp.view.activity.ChannelsActivity;
+import com.menglingpeng.vonvimeo.mvp.view.activity.UpgradeActivity;
 import com.menglingpeng.vonvimeo.mvp.view.activity.UserGroupActivity;
 import com.menglingpeng.vonvimeo.mvp.view.activity.VideoSettingsActivity;
 import com.menglingpeng.vonvimeo.utils.Constants;
@@ -243,6 +244,7 @@ public class GeneralFragment extends BaseFragment implements RecyclerView, View.
 
     @Override
     public void onClick(View view) {
+        Intent intent = null;
         switch (view.getId()){
             case R.id.general_thumb_1_iv:
                 break;
@@ -254,7 +256,7 @@ public class GeneralFragment extends BaseFragment implements RecyclerView, View.
             case R.id.edit_thumb_select_from_video_tv:
                 break;
             case R.id.edit_thumb_upload_tv:
-                Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Video.Media.EXTERNAL_CONTENT_URI);
+                intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Video.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(intent, REQUEST_PICTURE_CODE);
                 break;
             case R.id.edit_thumb_random_tv:
@@ -269,12 +271,24 @@ public class GeneralFragment extends BaseFragment implements RecyclerView, View.
                 showCreateGroupDialog();
                 break;
             case R.id.general_privacy_watch_settings_upgrade_bt:
+                intent = new Intent(getActivity(), UpgradeActivity.class);
+                intent.putExtra(Constants.USER, user);
+                startActivity(intent);
                 break;
             case R.id.general_privacy_embed_settings_upgrade_bt:
+                intent = new Intent(getActivity(), UpgradeActivity.class);
+                intent.putExtra(Constants.USER, user);
+                startActivity(intent);
                 break;
             case R.id.general_privacy_comment_settings_upgrade_bt:
+                intent = new Intent(getActivity(), UpgradeActivity.class);
+                intent.putExtra(Constants.USER, user);
+                startActivity(intent);
                 break;
             case R.id.general_collections_portfolios_settings_upgrade_bt:
+                intent = new Intent(getActivity(), UpgradeActivity.class);
+                intent.putExtra(Constants.USER, user);
+                startActivity(intent);
                 break;
             case R.id.general_replace_video_bt:
                 showReplaceVideoDialog();

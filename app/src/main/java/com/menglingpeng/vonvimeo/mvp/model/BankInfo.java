@@ -791,7 +791,8 @@ public class BankInfo {
             return "企业银行";
         } else if (Pattern.matches(s293, totalBankcode)) {
             return "华侨银行";
-        } else if (Pattern.matches(s294, totalBankcode) || Pattern.matches(s295, totalBankcode) || Pattern.matches(s296, totalBankcode) || Pattern.matches(s297, totalBankcode)) {
+        } else if (Pattern.matches(s294, totalBankcode) || Pattern.matches(s295, totalBankcode) || Pattern.matches(s296,
+                totalBankcode) || Pattern.matches(s297, totalBankcode)) {
             return "恒生银行";
         } else if (Pattern.matches(s298, totalBankcode)) {
             return "临沂商业银行";
@@ -801,9 +802,11 @@ public class BankInfo {
             return "齐鲁银行";
         } else if (Pattern.matches(s302, totalBankcode) || Pattern.matches(s303, totalBankcode)) {
             return "BC卡公司";
-        } else if (Pattern.matches(s304, totalBankcode) || Pattern.matches(s305, totalBankcode) || Pattern.matches(s306, totalBankcode) || Pattern.matches(s307, totalBankcode)) {
+        } else if (Pattern.matches(s304, totalBankcode) || Pattern.matches(s305, totalBankcode) || Pattern.matches(s306,
+                totalBankcode) || Pattern.matches(s307, totalBankcode)) {
             return "集友银行";
-        } else if (Pattern.matches(s308, totalBankcode) || Pattern.matches(s309, totalBankcode) || Pattern.matches(s310, totalBankcode) || Pattern.matches(s311, totalBankcode)) {
+        } else if (Pattern.matches(s308, totalBankcode) || Pattern.matches(s309, totalBankcode) || Pattern.matches(s310,
+                totalBankcode) || Pattern.matches(s311, totalBankcode)) {
             return "大丰银行";
         } else if (Pattern.matches(s312, totalBankcode) || Pattern.matches(s313, totalBankcode)) {
             return "AEON信贷财务亚洲有限公司";
@@ -924,9 +927,28 @@ public class BankInfo {
                 || Pattern.matches(s303, totalBankcode) || Pattern.matches(s306, totalBankcode)
                 || Pattern.matches(s313, totalBankcode)) {
             return "信用卡(贷记卡)";
-        } else {
+        }  else if (Pattern.matches(s11, totalBankcode) || Pattern.matches(s18, totalBankcode) || Pattern.matches(s22,
+                totalBankcode) || Pattern.matches(s23, totalBankcode) || Pattern.matches(s32, totalBankcode)
+                || Pattern.matches(s33, totalBankcode)
+                || Pattern.matches(s39, totalBankcode) || Pattern.matches(s76, totalBankcode) || Pattern.matches(s196,
+                totalBankcode) || Pattern.matches(s213, totalBankcode) || Pattern.matches(s215, totalBankcode)
+                || Pattern.matches(s227, totalBankcode)) {
+            return "准贷记卡";
+        } else if (Pattern.matches(s12, totalBankcode) || Pattern.matches(s13, totalBankcode) || Pattern.matches(s24,
+                totalBankcode) || Pattern.matches(s25, totalBankcode) || Pattern.matches(s40, totalBankcode)
+                || Pattern.matches(s46, totalBankcode) || Pattern.matches(s64, totalBankcode) || Pattern.matches(s69,
+                totalBankcode) || Pattern.matches(s77, totalBankcode) || Pattern.matches(s143, totalBankcode)
+                || Pattern.matches(s149, totalBankcode) || Pattern.matches(s200, totalBankcode) || Pattern.matches(s307,
+                totalBankcode) || Pattern.matches(s310, totalBankcode) || Pattern.matches(s311, totalBankcode)) {
+            return "预付费卡";
+        }
+        else {
             return "未知";
         }
+    }
+
+    public void setCardType(String cardType) {
+        this.cardType = cardType;
     }
 
     }

@@ -2,6 +2,7 @@ package com.menglingpeng.vonvimeo.mvp.view.fragment;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Gravity;
@@ -15,6 +16,7 @@ import android.widget.EditText;
 import com.menglingpeng.vonvimeo.base.BaseFragment;
 import com.menglingpeng.vonvimeo.mvp.model.User;
 import com.menglingpeng.vonvimeo.mvp.model.Video;
+import com.menglingpeng.vonvimeo.mvp.view.activity.UpgradeActivity;
 import com.menglingpeng.vonvimeo.utils.Constants;
 import com.menglingpeng.vonvimeo.utils.IdStringUtil;
 
@@ -60,10 +62,17 @@ public class InteractionToolsFragment extends BaseFragment implements View.OnCli
 
     @Override
     public void onClick(View view) {
+        Intent intent = null;
         switch (view.getId()){
             case R.id.interaction_tools_title_upgrade_bt:
+                intent = new Intent(getActivity(), UpgradeActivity.class);
+                intent.putExtra(Constants.USER, user);
+                startActivity(intent);
                 break;
             case R.id.interaction_tools_settins_before_video_upgrade_bt:
+                intent = new Intent(getActivity(), UpgradeActivity.class);
+                intent.putExtra(Constants.USER, user);
+                startActivity(intent);
                 break;
             default:
                 break;

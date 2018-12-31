@@ -2,6 +2,7 @@ package com.menglingpeng.vonvimeo.mvp.view.fragment;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.provider.ContactsContract;
 import android.support.v7.app.AlertDialog;
 import android.text.method.PasswordTransformationMethod;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.base.BaseFragment;
 import com.menglingpeng.vonvimeo.mvp.model.User;
+import com.menglingpeng.vonvimeo.mvp.view.activity.UpgradeActivity;
 import com.menglingpeng.vonvimeo.utils.Constants;
 import com.menglingpeng.vonvimeo.utils.ImageLoader;
 
@@ -90,6 +92,9 @@ public class AccountSettingsFragment extends BaseFragment implements View.OnClic
                 showAddAPersonToBlockDialog();
                 break;
             case R.id.account_settings_privacy_membership_upgrade_bt:
+                Intent intent = new Intent(getActivity(), UpgradeActivity.class);
+                intent.putExtra(Constants.USER, user);
+                startActivity(intent);
                 break;
             case R.id.account_settings_privacy_save_bt:
                 break;

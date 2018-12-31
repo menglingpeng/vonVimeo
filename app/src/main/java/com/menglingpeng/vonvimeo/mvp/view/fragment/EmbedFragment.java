@@ -2,6 +2,7 @@ package com.menglingpeng.vonvimeo.mvp.view.fragment;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.media.Image;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.Switch;
 import com.menglingpeng.vonvimeo.base.BaseFragment;
 import com.menglingpeng.vonvimeo.mvp.model.User;
 import com.menglingpeng.vonvimeo.mvp.model.Video;
+import com.menglingpeng.vonvimeo.mvp.view.activity.UpgradeActivity;
 import com.menglingpeng.vonvimeo.utils.Constants;
 
 public class EmbedFragment extends BaseFragment implements View.OnClickListener, Switch.OnCheckedChangeListener{
@@ -89,10 +91,17 @@ public class EmbedFragment extends BaseFragment implements View.OnClickListener,
 
     @Override
     public void onClick(View view) {
+        Intent intent = null;
         switch (view.getId()){
             case R.id.embed_title_upgrade_bt:
+                intent = new Intent(getActivity(), UpgradeActivity.class);
+                intent.putExtra(Constants.USER, user);
+                startActivity(intent);
                 break;
             case R.id.embed_customization_display_custom_logo_settings_upgrade_bt:
+                intent = new Intent(getActivity(), UpgradeActivity.class);
+                intent.putExtra(Constants.USER, user);
+                startActivity(intent);
                 break;
             case R.id.embed_your_details_users_decide_settings_switch_info_tv:
                 showUserDecideInfoDialog();

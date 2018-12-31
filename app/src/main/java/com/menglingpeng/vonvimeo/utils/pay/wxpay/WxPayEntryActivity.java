@@ -15,7 +15,6 @@ public class WxPayEntryActivity extends AppCompatActivity implements IWXAPIEvent
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_wx_pay_entry);
         if(WxPay.getInstance(this)!=null){
             WxPay.getInstance(this).getWXApi().handleIntent(getIntent(), this);
         }else {

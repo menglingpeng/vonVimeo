@@ -33,13 +33,13 @@ public class UpgradeOrderActivity extends BaseActivity implements View.OnClickLi
 
     private User user;
     private String userId;
+    private String upgradeType;
     private Context context;
     private Toolbar toolbar;
     private CoordinatorLayout coordinatorLayout;
     private TextView payRemainingTimeTv;
     private TextView orderDetailTv;
     private TextView totalPriceTv;
-    private String vimeoPlan;
     private CheckBox chooseAlipayCb;
     private CheckBox chooseWechatpayCb;
     private CheckBox chooseOtherpayCb;
@@ -58,7 +58,7 @@ public class UpgradeOrderActivity extends BaseActivity implements View.OnClickLi
         context = getApplicationContext();
         user = (User)getIntent().getSerializableExtra(Constants.USER);
         userId = IdStringUtil.getId(user.getUri());
-        vimeoPlan = getIntent().getStringExtra(Constants.VIMEO_PLAN);
+        upgradeType = getIntent().getStringExtra(Constants.UPGRADE_TYPE);
         coordinatorLayout = (CoordinatorLayout) findViewById(R.id.upgrade_order_cdl);
         toolbar = (Toolbar) findViewById(R.id.upgrade_order_tb);
         payRemainingTimeTv = (TextView) findViewById(R.id.upgrade_order_pay_remaining_time_tv);
@@ -84,7 +84,7 @@ public class UpgradeOrderActivity extends BaseActivity implements View.OnClickLi
         if(payRemainingTimeTv.getText().equals("00:00")){
             showOrderTimeoutDialog();
         }
-        switch (vimeoPlan){
+        switch (upgradeType){
             case Constants.VIMEO_PLAN_PLUS:
                 totalPriceTv.setText(String.valueOf(Constants.VIMEO_PLAN_PLUS_TOTAL_PRICE));
                 break;
@@ -105,7 +105,7 @@ public class UpgradeOrderActivity extends BaseActivity implements View.OnClickLi
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.upgrade_order_content_detail_tv:
-                showOrderDetailDialog(vimeoPlan);
+                showOrderDetailDialog(upgradeType);
                 break;
             default:
                 break;
@@ -168,7 +168,7 @@ public class UpgradeOrderActivity extends BaseActivity implements View.OnClickLi
         membershipThirdTv = (TextView)dialogView.findViewById(R.id.dialog_upgrade_order_detail_membership_third_tv);
         membershipFourthTv = (TextView)dialogView.findViewById(R.id.dialog_upgrade_order_detail_membership_fourth_tv);
         closeTv = (ImageView)dialogView.findViewById(R.id.dialog_upgrade_order_detail_close_iv);
-        switch (vimeoPlan){
+        switch (upgradeType){
             case Constants.VIMEO_PLAN_PLUS:
                 upgradePlanName = getString(R.string.dialog_upgrade_order_detail_title_tv_vimeo_plus_text);
                 upgradePlanPrice = getString(R.string.dialog_upgrade_order_detail_price_tv_vimeo_plus_text);

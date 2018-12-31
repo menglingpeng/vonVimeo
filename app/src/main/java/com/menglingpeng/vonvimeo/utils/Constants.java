@@ -527,6 +527,7 @@ public class Constants {
     public static final String UPGRADE_TYPE_PREMIUM = "upgrade_type_premium";
 
 
+
     //默认值1
     public static final int PAGE_VALUE = 1;
     //默认值10，最高到100

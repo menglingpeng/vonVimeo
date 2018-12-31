@@ -22,6 +22,7 @@ public class UpgradeActivity extends BaseActivity implements View.OnClickListene
     private Context context;
     private User user;
     private String userId;
+    private String account;
     private Toolbar toolbar;
     private CoordinatorLayout coordinatorLayout;
     private Button plusUpgradeBt;
@@ -40,6 +41,7 @@ public class UpgradeActivity extends BaseActivity implements View.OnClickListene
         user = (User)getIntent().getSerializableExtra(Constants.USER);
         context = getApplicationContext();
         userId = IdStringUtil.getId(user.getUri());
+        account = user.getAccount();
         title = getString(R.string.activity_add_card_title);
         coordinatorLayout = (CoordinatorLayout) findViewById(R.id.upgrade_cdl);
         toolbar = (Toolbar) findViewById(R.id.upgrade_tb);
@@ -56,6 +58,28 @@ public class UpgradeActivity extends BaseActivity implements View.OnClickListene
                 finish();
             }
         });
+        switch (account){
+            case Constants.ACCOUNT_BASIC:
+                break;
+            case Constants.ACCOUNT_PRO:
+                proUpgradeBt.setClickable(false);
+                break;
+            case Constants.ACCOUNT_PLUS:
+                proUpgradeBt.setClickable(false);
+                plusUpgradeBt.setClickable(false);
+                break;
+            case Constants.ACCOUNT_BUSINESS:
+                proUpgradeBt.setClickable(false);
+                plusUpgradeBt.setClickable(false);
+                businessUpgradeBt.setClickable(false);
+                break;
+            case Constants.ACCOUNT_PREMIUM:
+                proUpgradeBt.setClickable(false);
+                plusUpgradeBt.setClickable(false);
+                businessUpgradeBt.setClickable(false);
+                premiumUpgradeBt.setClickable(false);
+                break;
+        }
 
     }
 

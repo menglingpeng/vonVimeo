@@ -47,7 +47,7 @@ public class VimeoOndemandPagesActivity extends BaseActivity implements Recycler
 
     @Override
     public void hideProgress() {
-        
+
     }
 
     @Override

@@ -101,25 +101,30 @@
 
                 　　　　
 
+
                 <action android:name="android.intent.action.VIEW" />
 
 
                 　　　　
+
 
                 <category android:name="android.intent.category.DEFAULT" />
 
 
                 　　　　
 
+
                 <category android:name="android.intent.category.BROWSABLE" />
 
 
                 　　　　
 
+
                 <data android:scheme="tencent2345" />
 
 
                 　　
+
 
             </intent-filter>
         </activity>
@@ -130,7 +135,8 @@
 
 
         <activity android:name=".mvp.view.activity.UpgradeActivity" />
-        <activity android:name=".utils.pay.wxpay.WxPayEntryActivity"></activity>
+        <activity android:name=".utils.pay.wxpay.WxPayEntryActivity" />
+        <activity android:name=".mvp.view.activity.VimeoOndemandPagesActivity"></activity>
     </application>
 
 </manifest>

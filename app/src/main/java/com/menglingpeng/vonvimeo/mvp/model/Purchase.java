@@ -1,5 +1,7 @@
 package com.menglingpeng.vonvimeo.mvp.model;
 
+import java.util.List;
+
 public class Purchase {
 
     private String uri;
@@ -9,6 +11,7 @@ public class Purchase {
     private String created_time;
     private String modified_time;
     private String sort;
+    private MetadataBean metadata;
 
     public void setUri(String uri) {
         this.uri = uri;
@@ -68,6 +71,71 @@ public class Purchase {
 
     public String getSort() {
         return sort;
+    }
+
+    public MetadataBean getMetadata() {
+        return metadata;
+    }
+
+    public void setMetadata(MetadataBean metadata) {
+        this.metadata = metadata;
+    }
+
+    public static class MetadataBean {
+
+        private ConnectionsBean connections;
+
+        public void setConnections(ConnectionsBean connections) {
+            this.connections = connections;
+        }
+
+        public ConnectionsBean getConnections() {
+            return connections;
+        }
+
+        public static class ConnectionsBean {
+
+            private VideosBean videos;
+
+            public void setVideos(VideosBean videos) {
+                this.videos = videos;
+            }
+
+            public VideosBean getVideos() {
+                return videos;
+            }
+
+            public static class VideosBean {
+
+                private String uri;
+                private int total;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public int getTotal() {
+                    return total;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+        }
     }
 }
 

@@ -102,7 +102,7 @@
                     android:layout_toRightOf="@+id/detail_view_video_of_vimeo_on_demand_pages_plays_count_iv" />
 
                 <ImageView
-                    android:id="@+id/detail_view_on_demand_pages_video_likes_count_iv"
+                    android:id="@+id/detail_view_video_of_vimeo_on_demand_pages_likes_count_iv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/recycler_view_item_comments_layout_layout_imageview_layout_marginLeft"

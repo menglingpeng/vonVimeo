@@ -2772,6 +2772,49 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
+    public class VideoOfVimeoOnDemandPagesTypeThumbViewHolder extends RecyclerView.ViewHolder{
+
+        public final ImageView videoThumbIv;
+        public final TextView videoNameTv;
+        public final TextView videoAddedTimeTv;
+
+        public  VideoOfVimeoOnDemandPagesTypeThumbViewHolder(View view) {
+            super(view);
+
+            videoThumbIv = (ImageView)view.findViewById(R.id.thumb_iew_video_of_vimeo_on_demand_pagesthumb_iv);
+            videoNameTv = (TextView)view.findViewById(R.id.thumb_iew_video_of_vimeo_on_demand_pages_name_tv);
+            videoAddedTimeTv = (TextView)view.findViewById(R.id.thumb_iew_video_of_vimeo_on_demand_pages_added_time);
+        }
+    }
+
+    private class VideoOfVimeoOnDemandPagesTypeDetailViewHolder extends RecyclerView.ViewHolder {
+
+        public final ImageView VideoThumbIv;
+        public final TextView VideoNameTv;
+        public final TextView userNameTv;
+        public final TextView addedTimeTv;
+        public final TextView videoDescTv;
+        public final TextView playsCountTv;
+        public final TextView likesCountTv;
+        public final TextView commentsCountTv;
+        public final TextView videoDurationTv;
+
+
+        public VideoOfVimeoOnDemandPagesTypeDetailViewHolder(View view) {
+            super(view);
+
+            VideoThumbIv = (ImageView)view.findViewById(R.id.detail_iew_video_of_vimeo_on_demand_pages_video_thumb_iv);
+            VideoNameTv = (TextView)view.findViewById(R.id.detail_iew_video_of_vimeo_on_demand_pages_video_name_tv);
+            userNameTv = (TextView)view.findViewById(R.id.detail_iew_video_of_vimeo_on_demand_pages_user_name_tv);
+            addedTimeTv = (TextView)view.findViewById(R.detail_iew_video_of_vimeo_on_demand_pages_added_time_tv);
+            videoDescTv = (TextView)view.findViewById(R.id.detail_iew_video_of_vimeo_on_demand_pages_desc_tv);
+            playsCountTv = (TextView)view.findViewById(R.id.detail_iew_video_of_vimeo_on_demand_pages_plays_count_i);
+            likesCountTv = (TextView)view.findViewById(R.id.detail_iew_video_of_vimeo_on_demand_pages_likes_count_i);
+            commentsCountTv = (TextView)view.findViewById(R.id.detail_iew_video_of_vimeo_on_demand_pages_comments_count_i);
+            videoDurationTv = (TextView)view.findViewById(R.id.detail_iew_video_of_vimeo_on_demand_pages_duration_tv);
+        }
+    }
+
     public class OnDemandPageEmptyView extends RecyclerView.ViewHolder{
 
         public final Button upgradeBt;

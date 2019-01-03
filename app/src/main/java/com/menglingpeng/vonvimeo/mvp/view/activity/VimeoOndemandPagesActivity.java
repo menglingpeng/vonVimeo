@@ -51,7 +51,7 @@ public class VimeoOndemandPagesActivity extends BaseActivity implements Recycler
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.user_on_demand_pages_toolbar_overflow_menu, menu);
+        getMenuInflater().inflate(R.vimeo_on_demand_pages_toolbar_overflow_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -73,7 +73,7 @@ public class VimeoOndemandPagesActivity extends BaseActivity implements Recycler
                 break;
             case R.id.vimeo_on_demand_pages_thumb:
                 break;
-            case R.id.user_on_demand_pages_detail:
+            case R.id.vimeo_on_demand_pages_detail:
                 break;
             default:
                 break;

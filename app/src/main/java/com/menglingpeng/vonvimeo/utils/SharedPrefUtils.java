@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import com.menglingpeng.vonvimeo.base.BaseApplication;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class SharedPrefUtils {
 
@@ -72,6 +73,19 @@ public class SharedPrefUtils {
     public static void deleteAuthToken() {
         editor.putString(Constants.ACCESS_TOKEN, Constants.APP_ACCESS_TOKEN);
         editor.commit();
+    }
+
+    public static Boolean saveSearchHistory(HashMap<String, String> map) {
+
+        for (String key : map.keySet()) {
+            editor.putString(key, map.get(key));
+        }
+        return editor.commit();
+    }
+
+    public static Map getSearchHistory(HashMap<String, String> map){
+
+        return map;
     }
 
 }

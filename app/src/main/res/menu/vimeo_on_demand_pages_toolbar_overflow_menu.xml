@@ -20,6 +20,15 @@
     </item>
 
     <item
+        android:id="@+id/vimeo_on_demand_pages_search"
+        android:title="@string/search_my_videos"
+        android:orderInCategory="80"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        android:icon="@drawable/ic_search_white_24dp"
+        app:showAsAction="always" />
+
+
+    <item
         android:id="@+id/vimeo_on_demand_pages_sort"
         android:icon="@drawable/ic_more"
         android:title=""

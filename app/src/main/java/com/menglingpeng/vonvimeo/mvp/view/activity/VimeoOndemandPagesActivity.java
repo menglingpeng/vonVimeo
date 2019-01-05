@@ -2,8 +2,6 @@ package com.menglingpeng.vonvimeo.mvp.view.activity;
 
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -15,10 +13,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
-import com.menglingpeng.vonvimeo.mvp.adapter.HistoryAdapter;
 import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
-import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
 import com.menglingpeng.vonvimeo.utils.Constants;
+import com.menglingpeng.vonvimeo.utils.SearchViewUtils;
 import com.menglingpeng.vonvimeo.utils.SharedPrefUtils;
 
 import java.util.ArrayList;
@@ -150,7 +147,8 @@ public class VimeoOndemandPagesActivity extends BaseActivity implements Recycler
             searchViewOfKnowledge.setThreshold(0);
 
            //历史数据列表的 adapter,必须继承 ArrayAdater 或实现 filterable接口
-            HistoryAdapter adapter = new HistoryAdapter(this, R.layout.item_history, arr,searchView);
+            SearchViewUtils.HistoryAdapter adapter = new SearchViewUtils.HistoryAdapter(this,
+                    R.layout.searchview_list_history_item, arr,searchView);
 
             //设置 adapter
             searchViewOfKnowledge.setAdapter(adapter);
@@ -168,10 +166,14 @@ public class VimeoOndemandPagesActivity extends BaseActivity implements Recycler
         }
 
         //searchview 的关闭监听
-        searchView.setOnCloseListener(new SearchView.OnCloseListener() {        @Override        public boolean onClose() {
+        searchView.setOnCloseListener(new SearchView.OnCloseListener() {
+            @Override
+            public boolean onClose() {
+
             return false;
         }
-        });}
+        });
+    }
 
     @Override
     public void hideProgress() {

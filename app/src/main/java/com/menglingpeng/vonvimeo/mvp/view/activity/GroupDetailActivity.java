@@ -1,6 +1,7 @@
 package com.menglingpeng.vonvimeo.mvp.view.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.TabLayout;
@@ -24,6 +25,7 @@ import com.menglingpeng.vonvimeo.mvp.model.Group;
 import com.menglingpeng.vonvimeo.mvp.model.User;
 import com.menglingpeng.vonvimeo.mvp.presenter.RecyclerPresenter;
 import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
+import com.menglingpeng.vonvimeo.mvp.view.SearchActivity;
 import com.menglingpeng.vonvimeo.utils.Constants;
 import com.menglingpeng.vonvimeo.utils.IdStringUtil;
 import com.menglingpeng.vonvimeo.utils.ImageLoader;
@@ -100,22 +102,27 @@ public class GroupDetailActivity extends BaseActivity implements RecyclerView{
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
-            case R.id.liked_videos_sort_duration:
+            case R.id.group_detail_search:
+                Intent intent = new Intent(this, SearchActivity.class);
+                intent.putExtra(Constants.ACTIVITY, Constants.ACTIVITY_GROUP_DETAIL);
+                startActivity(intent);
+                break;
+            case R.id.group_detail_sort_duration:
                 type = Constants.REQUEST_GET_ALL_VIDEOS_IN_A_GROUP_SORY_BY_DURATION;
                 break;
-            case R.id.liked_videos_sort_date:
+            case R.id.group_detail_sort_date:
                 type = Constants.REQUEST_GET_ALL_VIDEOS_IN_A_GROUP_SORY_BY_DURATION;
                 break;
-            case R.id.liked_videos_sort_alphabetical:
+            case R.id.group_detail_sort_alphabetical:
                 type = Constants.REQUEST_GET_ALL_VIDEOS_IN_A_GROUP_SORY_BY_DURATION;
                 break;
-            case R.id.liked_videos_sort_plays:
+            case R.id.group_detail_sort_plays:
                 type = Constants.REQUEST_GET_ALL_VIDEOS_IN_A_GROUP_SORY_BY_DURATION;
                 break;
-            case R.id.liked_videos_sort_likes:
+            case R.id.group_detail_sort_likes:
                 type = Constants.REQUEST_GET_ALL_VIDEOS_IN_A_GROUP_SORY_BY_DURATION;
                 break;
-            case R.id.liked_videos_sort_comments:
+            case R.id.group_detail_sort_comments:
                 type = Constants.REQUEST_GET_ALL_VIDEOS_IN_A_GROUP_SORY_BY_DURATION;
 
                 break;

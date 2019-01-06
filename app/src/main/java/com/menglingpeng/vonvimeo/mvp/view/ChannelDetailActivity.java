@@ -1,6 +1,7 @@
 package com.menglingpeng.vonvimeo.mvp.view;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -100,6 +101,11 @@ public class ChannelDetailActivity extends BaseActivity implements RecyclerView{
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
+            case R.id.channel_detail_search:
+                Intent intent = new Intent(this, SearchActivity.class);
+                intent.putExtra(Constants.ACTIVITY, Constants.ACTIVITY_CHANNEL_DETAIL);
+                startActivity(intent);
+                break;
             case R.id.channel_detail_share:
                 break;
             case R.id.channel_detail_follow:

@@ -91,6 +91,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         switch (item.getItemId()){
             case R.id.main_search:
                 Intent intent = new Intent(this, SearchActivity.class);
+                intent.putExtra(Constants.ACTIVITY, Constants.ACTIVITY_MAIN);
                 startActivity(intent);
                 break;
             case R.id.main_more:

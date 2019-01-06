@@ -1,5 +1,6 @@
 package com.menglingpeng.vonvimeo.mvp.view.activity;
 
+import android.content.Intent;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.MenuItemCompat;
@@ -15,6 +16,7 @@ import android.widget.ProgressBar;
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
 import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
+import com.menglingpeng.vonvimeo.mvp.view.SearchActivity;
 import com.menglingpeng.vonvimeo.utils.Constants;
 
 public class MyFeedVideosActivity extends BaseActivity implements RecyclerView{
@@ -62,20 +64,19 @@ public class MyFeedVideosActivity extends BaseActivity implements RecyclerView{
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.project_detail_toolbar_overflow_menu, menu);
-        MenuItem searchItme = menu.findItem(R.id.project_detail_search);
-        searchView = (SearchView) MenuItemCompat.getActionView(searchItme);
-        //设置最大宽度
-        searchView.setMaxWidth(500);
-        //设置是否显示搜索框展开时的提交按钮
-        searchView.setSubmitButtonEnabled(true);
-        //设置输入框提示语
-        searchView.setQueryHint(getString(R.string.search_my_videos));
+
+
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
+            case R.id.my_feed_videos_search:
+                Intent intent = new Intent(this, SearchActivity.class);
+                intent.putExtra(Constants.ACTIVITY, Constants.ACTIVITY_MY_FEED_VIDEOS);
+                startActivity(intent);
+                break;
 
             case R.id.project_detail_sort_all:
 

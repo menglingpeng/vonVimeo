@@ -527,6 +527,14 @@ public class Constants {
     public static final String UPGRADE_TYPE_PREMIUM = "upgrade_type_premium";
 
 
+    public static final String ACTIVITY = "activity";
+    public static final String ACTIVITY_MAIN = "activity_main";
+    public static final String ACTIVITY_MY_FEED_VIDEOS = "activity_my_feed_videos";
+    public static final String ACTIVITY_PROJECT_DETAIL = "activity_project_detail";
+    public static final String ACTIVITY_CHANNEL_DETAIL = "activity_channel_detail";
+    public static final String ACTIVITY_GROUP_DETAIL = "activity_group_detail";
+    public static final String ACTIVITY_USER_UPLOADED_VIDEOS = "activity_user_uploaded_videos";
+    public static final String ACTIVITY_VIMEO_ONDEMAND_PAGES = "activity_vimeo_ondemand_pages";
 
     //默认值1
     public static final int PAGE_VALUE = 1;

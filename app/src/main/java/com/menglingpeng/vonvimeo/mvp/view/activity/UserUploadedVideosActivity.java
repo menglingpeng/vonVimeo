@@ -26,6 +26,7 @@ import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.adapter.TabPagerFragmentAdapter;
 import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
 import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
+import com.menglingpeng.vonvimeo.mvp.view.SearchActivity;
 import com.menglingpeng.vonvimeo.utils.Constants;
 import com.menglingpeng.vonvimeo.utils.SnackbarUtils;
 
@@ -96,6 +97,11 @@ public class UserUploadedVideosActivity extends BaseActivity implements Recycler
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
+            case R.id.uploaded_videos_search:
+                Intent intent = new Intent(this, SearchActivity.class);
+                intent.putExtra(Constants.ACTIVITY, Constants.ACTIVITY_USER_UPLOADED_VIDEOS);
+                startActivity(intent);
+                break;
             case R.id.uploaded_videos_share:
                 shareToWeichat();
                 break;

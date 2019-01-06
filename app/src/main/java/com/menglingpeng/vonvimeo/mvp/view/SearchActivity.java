@@ -19,6 +19,8 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
 import com.menglingpeng.vonvimeo.utils.Cheeses;
+import com.menglingpeng.vonvimeo.utils.Constants;
+import com.menglingpeng.vonvimeo.utils.SearchViewUtils;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -32,11 +34,13 @@ public class SearchActivity extends AppCompatActivity {
     private SearchView searchView;
     private ListView searchLv;
     private SearchView.SearchAutoComplete searchAutoComplete;
+    private String activity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+        activity = getIntent().getStringExtra(Constants.ACTIVITY);
         toolbar = (Toolbar)findViewById(R.id.search_tb);
         searchLv = (ListView) findViewById(R.id.search_lv);
         setSupportActionBar(toolbar);
@@ -67,8 +71,34 @@ public class SearchActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.search_toolbar_overflow_menu, menu);
-        MenuItem searchMenu = menu.findItem(R.id.search_menu);
-        searchView =  (SearchView) MenuItemCompat.getActionView(searchMenu);
+        MenuItem searchMenu = null;
+        switch (activity){
+            case Constants.ACTIVITY_MAIN:
+                searchMenu = menu.findItem(R.id.search_menu);
+                break;
+            case Constants.ACTIVITY_MY_FEED_VIDEOS:
+                searchMenu = menu.findItem(R.id.my_feed_videos_search);
+                break;
+            case Constants.ACTIVITY_PROJECT_DETAIL:
+                searchMenu = menu.findItem(R.id.project_detail_search);
+                break;
+            case Constants.ACTIVITY_CHANNEL_DETAIL:
+                searchMenu = menu.findItem(R.id.channel_detail_search);
+                break;
+            case Constants.ACTIVITY_GROUP_DETAIL:
+                searchMenu = menu.findItem(R.id.group_detail_search);
+                break;
+            case Constants.ACTIVITY_USER_UPLOADED_VIDEOS:
+                searchMenu = menu.findItem(R.id.uploaded_videos_search);
+                break;
+            case Constants.ACTIVITY_VIMEO_ONDEMAND_PAGES:
+                searchMenu = menu.findItem(R.id.vimeo_on_demand_pages_search);
+                break;
+            default:
+                break;
+        }
+        SearchViewUtils.initSearchView(searchMenu);
+       /* searchView =  (SearchView) MenuItemCompat.getActionView(searchMenu);
         searchAutoComplete = (SearchView.SearchAutoComplete)searchView.findViewById(R.id.search_src_text);
         searchView.setQueryHint("Search videos, peopel, and more");
 
@@ -88,25 +118,8 @@ public class SearchActivity extends AppCompatActivity {
         ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) search_edit_frame.getLayoutParams();
         params.leftMargin = 0;
         params.rightMargin = 0;
-        search_edit_frame.setLayoutParams(params);
+        search_edit_frame.setLayoutParams(params);*/
 
-        //监听SearchView的内容
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String s) {
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String s) {
-
-                Cursor cursor = TextUtils.isEmpty(s) ? null : queryData(s);
-
-                setAdapter(cursor);
-
-                return false;
-            }
-        });
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -116,39 +129,4 @@ public class SearchActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private Cursor queryData(String key) {
-        SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(getFilesDir() + "video.db", null);
-        Cursor cursor = null;
-        try {
-            String querySql = "select * from tb_video where name like '%" + key + "%'";
-            cursor = db.rawQuery(querySql, null);
-            Log.e("CSDN_LQR", "querySql = " + querySql);
-        } catch (Exception e) {
-            e.printStackTrace();
-            String createSql = "create table tb_video (_id integer primary key autoincrement,name varchar(100))";
-            db.execSQL(createSql);
-
-            String insertSql = "insert into tb_video values (null,?)";
-            for (int i = 0; i < Cheeses.sCheeseStrings.length; i++) {
-                db.execSQL(insertSql, new String[]{Cheeses.sCheeseStrings[i]});
-            }
-
-            String querySql = "select * from tb_video where name like '%" + key + "%'";
-            cursor = db.rawQuery(querySql, null);
-
-            Log.e("CSDN_LQR", "createSql = " + createSql);
-            Log.e("CSDN_LQR", "querySql = " + querySql);
-        }
-        return cursor;
-    }
-
-    private void setAdapter(Cursor cursor) {
-        if (searchLv.getAdapter() == null) {
-            SimpleCursorAdapter adapter = new SimpleCursorAdapter(SearchActivity.this,
-                    R.layout.item_layout, cursor, new String[]{"name"}, new int[]{R.id.text1});
-            searchLv.setAdapter(adapter);
-        } else {
-            ((SimpleCursorAdapter) searchLv.getAdapter()).changeCursor(cursor);
-        }
-    }
 }

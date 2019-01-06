@@ -22,7 +22,7 @@ public class SearchViewUtils {
 
         //通过 item 获取 actionview
         final SearchView searchView = (SearchView) item.getActionView();
-        searchView.setQueryHint("搜索知识库");
+        searchView.setQueryHint("搜索");
 
         //改变默认的搜索图标
         ((ImageView)searchView.findViewById(R.id.search_button)).setImageResource(R.drawable.ic_search);

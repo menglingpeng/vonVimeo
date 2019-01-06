@@ -49,7 +49,6 @@ public class GroupDetailActivity extends BaseActivity implements RecyclerView{
     private RecyclerPresenter presenter;
     private ProgressBar progressBar;
     private TabLayout groupDetailTl;
-    private ViewPager groupDetailVp;
     private Button joinGroupBt;
     private Button leaveGroupBt;
     private TabLayout tabLayout;
@@ -61,7 +60,6 @@ public class GroupDetailActivity extends BaseActivity implements RecyclerView{
     private String type;
     private String groupID;
     private Boolean isJoined;
-    private ArrayList<RecyclerFragment> fragmentsList;
     private static final int SMOOTHSCROLL_TOP_POSITION = 50;
 
     @Override

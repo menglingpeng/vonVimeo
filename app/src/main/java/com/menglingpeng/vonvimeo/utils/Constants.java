@@ -536,6 +536,10 @@ public class Constants {
     public static final String ACTIVITY_USER_UPLOADED_VIDEOS = "activity_user_uploaded_videos";
     public static final String ACTIVITY_VIMEO_ONDEMAND_PAGES = "activity_vimeo_ondemand_pages";
 
+    public static final String TAB_VIMEO_ONDEMAND_PAGES_VIDEOS = "tab_vimeo_ondemand_pages_videos";
+    public static final String TAB_VIMEO_ONDEMAND_PAGES_FOLLOW_VIDEOS = "tab_vimeo_ondemand_pages_follow_videos";
+    public static final String TAB_VIMEO_ONDEMAND_PAGES_REGIONS= "tab_vimeo_ondemand_pages_regions";
+
     //默认值1
     public static final int PAGE_VALUE = 1;
     //默认值10，最高到100

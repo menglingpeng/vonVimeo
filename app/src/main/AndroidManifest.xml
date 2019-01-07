@@ -136,7 +136,8 @@
 
         <activity android:name=".mvp.view.activity.UpgradeActivity" />
         <activity android:name=".utils.pay.wxpay.WxPayEntryActivity" />
-        <activity android:name=".mvp.view.activity.VimeoOndemandPagesActivity"></activity>
+        <activity android:name=".mvp.view.activity.VimeoOndemandPagesActivity" />
+        <activity android:name=".mvp.view.activity.RegionDetailActivity"></activity>
     </application>
 
 </manifest>

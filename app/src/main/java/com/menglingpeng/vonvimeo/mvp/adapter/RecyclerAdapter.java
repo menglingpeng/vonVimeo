@@ -1757,6 +1757,22 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
+    public class RegionDetailTypeViewHolder extends RecyclerView.ViewHolder {
+
+        public final ImageView regionThumbIv;
+        public final TextView regionNameTv;
+        public final TextView addedTimeTv;
+
+
+        public RegionDetailTypeViewHolder(View view) {
+            super(view);
+            regionThumbIv = (ImageView)view.findViewById(R.id.detail_view_added_thumb_iv_iv);
+            regionNameTv = (TextView)view.findViewById(R.id.detail_view_added_name_tv);
+            addedTimeTv = (TextView)view.findViewById(R.id.detail_view_added_added_time_tv);
+
+        }
+    }
+
     public class UploadedVideoThumbViewHolder extends RecyclerView.ViewHolder {
         public final ImageView videoThumbIv;
         public final TextView videoNameTv;

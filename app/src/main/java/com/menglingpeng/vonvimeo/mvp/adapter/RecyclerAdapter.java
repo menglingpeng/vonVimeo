@@ -2841,6 +2841,34 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
+    private class VideoOfRegionTypeDetailViewHolder extends RecyclerView.ViewHolder {
+
+        public final ImageView VideoThumbIv;
+        public final TextView VideoNameTv;
+        public final TextView userNameTv;
+        public final TextView addedTimeTv;
+        public final TextView videoDescTv;
+        public final TextView playsCountTv;
+        public final TextView likesCountTv;
+        public final TextView commentsCountTv;
+        public final TextView videoDurationTv;
+
+
+        public VideoOfRegionTypeDetailViewHolder(View view) {
+            super(view);
+
+            VideoThumbIv = (ImageView)view.findViewById(R.id.detail_iew_video_of_video_of_a_region_video_thumb_iv);
+            VideoNameTv = (TextView)view.findViewById(R.id.detail_iew_video_of_video_of_a_region_name_tv);
+            userNameTv = (TextView)view.findViewById(R.id.detail_iew_video_of_video_of_a_region_user_name_tv);
+            addedTimeTv = (TextView)view.findViewById(R.detail_iew_video_of_a_region_added_time_tv);
+            videoDescTv = (TextView)view.findViewById(R.id.detail_video_of_a_region_desc_tv);
+            playsCountTv = (TextView)view.findViewById(R.id.detail_video_of_a_region_plays_count_tv);
+            likesCountTv = (TextView)view.findViewById(R.id.detail_video_of_a_region_likes_count_tv);
+            commentsCountTv = (TextView)view.findViewById(R.id.detail_video_of_a_region_comments_count_tv);
+            videoDurationTv = (TextView)view.findViewById(R.id.detail_video_of_a_region_duration_tv);
+        }
+    }
+
     public class BankCardViewHolder extends RecyclerView.ViewHolder{
 
         public final ImageView iconIv;

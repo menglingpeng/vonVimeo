@@ -2797,9 +2797,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         public  VideoOfVimeoOnDemandPagesTypeThumbViewHolder(View view) {
             super(view);
 
-            videoThumbIv = (ImageView)view.findViewById(R.id.thumb_iew_video_of_vimeo_on_demand_pagesthumb_iv);
-            videoNameTv = (TextView)view.findViewById(R.id.thumb_iew_video_of_vimeo_on_demand_pages_name_tv);
-            videoAddedTimeTv = (TextView)view.findViewById(R.id.thumb_iew_video_of_vimeo_on_demand_pages_added_time);
+            videoThumbIv = (ImageView)view.findViewById(R.id.thumb_iew_video_of_vimeo_on_demand_pages_thumb_iv);
+            videoNameTv = (TextView)view.findViewById(R.id.thumb_view_video_of_vimeo_on_demand_pages_name_tv);
+            videoAddedTimeTv = (TextView)view.findViewById(R.id.thumb_view_video_of_vimeo_on_demand_pages_added_time);
         }
     }
 
@@ -2866,6 +2866,21 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             likesCountTv = (TextView)view.findViewById(R.id.detail_video_of_a_region_likes_count_tv);
             commentsCountTv = (TextView)view.findViewById(R.id.detail_video_of_a_region_comments_count_tv);
             videoDurationTv = (TextView)view.findViewById(R.id.detail_video_of_a_region_duration_tv);
+        }
+    }
+
+    public class VideoOfRegionTypeThumbViewHolder extends RecyclerView.ViewHolder{
+
+        public final ImageView videoThumbIv;
+        public final TextView videoNameTv;
+        public final TextView videoAddedTimeTv;
+
+        public  VideoOfRegionTypeThumbViewHolder(View view) {
+            super(view);
+
+            videoThumbIv = (ImageView)view.findViewById(R.id.thumb_iew_video_of_a_region_thumb_iv);
+            videoNameTv = (TextView)view.findViewById(R.id.thumb_view_video_of_a_region_name_tv);
+            videoAddedTimeTv = (TextView)view.findViewById(R.id.thumb_view_video_of_a_region_added_time);
         }
     }
 

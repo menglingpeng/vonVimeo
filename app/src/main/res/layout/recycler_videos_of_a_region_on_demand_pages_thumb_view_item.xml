@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/recycler_view_item_layout_marginTop"
+    android:layout_marginRight="@dimen/recycler_view_item_layout_marginTop"
+    android:layout_marginTop="@dimen/recycler_view_item_layout_marginTop"
+    android:clickable="true"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/recycler_view_item_padding"
+    card_view:cardCornerRadius="@dimen/recycler_view_item_card_view_card_corner_radius">
+
+    <RelativeLayout
+        android:id="@+id/thumb_view_video_of_a_region_rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <CheckBox
+            android:id="@+id/thumb_view_video_of_a_region_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/thumb_view_video_of_a_region_thumb_iv"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_marginBottom="10dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/thumb_view_video_of_a_region_thumb_iv"
+            android:layout_alignLeft="@+id/thumb_view_video_of_a_region_thumb_iv">
+
+            <TextView
+                android:id="@+id/thumb_view_video_of_a_region_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:textSize="20dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+
+            <TextView
+                android:id="@+id/thumb_view_video_of_a_region_added_time_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/thumb_view_video_of_a_region_name_tv"
+                android:layout_marginBottom="5dp"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</android.support.v7.widget.CardView>

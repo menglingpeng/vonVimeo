@@ -2899,6 +2899,22 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
+    public class SeasonDetailTypeViewHolder extends RecyclerView.ViewHolder {
+
+        public final ImageView seasonThumbIv;
+        public final TextView seasonNameTv;
+        public final TextView addedTimeTv;
+
+
+        public SeasonDetailTypeViewHolder(View view) {
+            super(view);
+            seasonThumbIv = (ImageView)view.findViewById(R.id.detail_view_season_thumb_iv_iv);
+            seasonNameTv = (TextView)view.findViewById(R.id.detail_view_season_name_tv);
+            addedTimeTv = (TextView)view.findViewById(R.id.detail_view_season_added_time_tv);
+
+        }
+    }
+
     public class FooterViewHolder extends RecyclerView.ViewHolder {
 
         public FooterViewHolder(View view) {

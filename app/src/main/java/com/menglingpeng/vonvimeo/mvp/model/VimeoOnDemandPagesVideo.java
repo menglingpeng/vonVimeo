@@ -21,6 +21,8 @@ public class VimeoOnDemandPagesVideo implements Serializable{
     private Object license;
     private PrivacyBean privacy;
     private PicturesBean pictures;
+    private StatsBean stats;
+    private MetadataBean metadataBean;
 
     public String getUri() {
         return uri;
@@ -141,6 +143,23 @@ public class VimeoOnDemandPagesVideo implements Serializable{
     public void setPictures(PicturesBean pictures) {
         this.pictures = pictures;
     }
+
+    public StatsBean getStats() {
+        return stats;
+    }
+
+    public void setStats(StatsBean stats) {
+        this.stats = stats;
+    }
+
+    public MetadataBean getMetadataBean() {
+        return metadataBean;
+    }
+
+    public void setMetadataBean(MetadataBean metadataBean) {
+        this.metadataBean = metadataBean;
+    }
+
 
     public static class EmbedBean {
 
@@ -413,4 +432,115 @@ public class VimeoOnDemandPagesVideo implements Serializable{
             }
         }
     }
+
+    public static class StatsBean {
+
+        private Object plays;
+
+        public void setPlays(Object plays) {
+            this.plays = plays;
+        }
+
+        public Object getPlays() {
+            return plays;
+        }
+    }
+
+    public static class MetadataBean {
+
+        private ConnectionsBean connections;
+
+        public void setConnections(ConnectionsBean connections) {
+            this.connections = connections;
+        }
+
+        public ConnectionsBean getConnections() {
+            return connections;
+        }
+
+        public static class ConnectionsBean {
+
+            private CommentsBean comments;
+            private CreditsBean credits;
+
+            public void setComments(CommentsBean comments) {
+                this.comments = comments;
+            }
+
+            public CommentsBean getComments() {
+                return comments;
+            }
+
+            public void setCredits(CreditsBean credits) {
+                this.credits = credits;
+            }
+
+            public CreditsBean getCredits() {
+                return credits;
+            }
+
+
+
+
+            public static class CommentsBean {
+
+                private String uri;
+                private int total;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public int getTotal() {
+                    return total;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class CreditsBean {
+
+                private String uri;
+                private int total;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public int getTotal() {
+                    return total;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
 }

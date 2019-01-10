@@ -67,7 +67,7 @@ public class RegionDetailActivity extends BaseActivity {
         switch (item.getItemId()) {
             case R.id.region_detail_search:
                 Intent intent = new Intent(this, SearchActivity.class);
-                intent.putExtra(Constants.ACTIVITY, Constants.ACTIVITY_VIMEO_ONDEMAND_PAGES);
+                intent.putExtra(Constants.ACTIVITY, Constants.ACTIVITY_REGION_DETAIL);
                 startActivity(intent);
                 break;
             case R.id.region_detail_sort_date:

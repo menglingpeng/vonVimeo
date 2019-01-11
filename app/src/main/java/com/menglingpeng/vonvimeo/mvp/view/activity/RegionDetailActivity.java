@@ -89,5 +89,6 @@ public class RegionDetailActivity extends BaseActivity {
             default:
                 break;
         }
+        return super.onOptionsItemSelected(item);
     }
 }

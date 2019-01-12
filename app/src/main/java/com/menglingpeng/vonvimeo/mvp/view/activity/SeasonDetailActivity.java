@@ -9,8 +9,9 @@ import android.view.View;
 import android.widget.ProgressBar;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
+import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
 
-public class SeasonDetailActivity extends BaseActivity {
+public class SeasonDetailActivity extends BaseActivity implements RecyclerView{
 
     private String title;
     private Context context;
@@ -39,6 +40,21 @@ public class SeasonDetailActivity extends BaseActivity {
                 finish();
             }
         });
+
+    }
+
+    @Override
+    public void hideProgress() {
+        progressBar.setVisibility(ProgressBar.GONE);
+    }
+
+    @Override
+    public void loadFailed(String msg) {
+
+    }
+
+    @Override
+    public void loadSuccess(String json, String requestType) {
 
     }
 }

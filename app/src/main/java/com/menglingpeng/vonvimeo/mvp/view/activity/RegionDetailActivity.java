@@ -15,6 +15,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
+import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
 import com.menglingpeng.vonvimeo.mvp.model.User;
 import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
 import com.menglingpeng.vonvimeo.mvp.view.SearchActivity;
@@ -22,7 +23,7 @@ import com.menglingpeng.vonvimeo.utils.Constants;
 import com.menglingpeng.vonvimeo.utils.IdStringUtil;
 import com.menglingpeng.vonvimeo.utils.ImageLoader;
 
-public class RegionDetailActivity extends BaseActivity {
+public class RegionDetailActivity extends BaseActivity implements RecyclerView {
 
     private Toolbar toolbar;
     private CoordinatorLayout coordinatorLayout;
@@ -90,5 +91,20 @@ public class RegionDetailActivity extends BaseActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void hideProgress() {
+        progressBar.setVisibility(ProgressBar.GONE);
+    }
+
+    @Override
+    public void loadFailed(String msg) {
+
+    }
+
+    @Override
+    public void loadSuccess(String json, String requestType) {
+
     }
 }

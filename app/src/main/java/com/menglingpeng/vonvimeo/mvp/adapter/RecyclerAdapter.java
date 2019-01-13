@@ -2943,6 +2943,21 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
+    public class VideoOfSeasonTypeThumbViewHolder extends RecyclerView.ViewHolder{
+
+        public final ImageView videoThumbIv;
+        public final TextView videoNameTv;
+        public final TextView videoAddedTimeTv;
+
+        public  VideoOfSeasonTypeThumbViewHolder(View view) {
+            super(view);
+
+            videoThumbIv = (ImageView)view.findViewById(R.id.thumb_iew_video_of_a_season__thumb_iv);
+            videoNameTv = (TextView)view.findViewById(R.id.thumb_view_video_of_a_season__name_tv);
+            videoAddedTimeTv = (TextView)view.findViewById(R.id.thumb_view_video_of_a_season__added_time);
+        }
+    }
+
     public class FooterViewHolder extends RecyclerView.ViewHolder {
 
         public FooterViewHolder(View view) {

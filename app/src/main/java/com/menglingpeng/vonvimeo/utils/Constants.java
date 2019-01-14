@@ -99,6 +99,7 @@ public class Constants {
     public static final String TYPE_PLAYS = "plays";
     public static final String TYPE_VIDEOS = "videoss";
     public static final String TYPE_COMMENTS = "comments";
+    public static final String TYPE_DURATION = "duration";
 
 
 
@@ -536,6 +537,7 @@ public class Constants {
     public static final String ACTIVITY_USER_UPLOADED_VIDEOS = "activity_user_uploaded_videos";
     public static final String ACTIVITY_VIMEO_ONDEMAND_PAGES = "activity_vimeo_ondemand_pages";
     public static final String ACTIVITY_REGION_DETAIL = "activity_region_detail";
+    public static final String ACTIVITY_SEASON_DETAIL = "activity_season_detail";
 
     public static final String TAB_VIMEO_ONDEMAND_PAGES_VIDEOS = "tab_vimeo_ondemand_pages_videos";
     public static final String TAB_VIMEO_ONDEMAND_PAGES_FOLLOW_VIDEOS = "tab_vimeo_ondemand_pages_follow_videos";

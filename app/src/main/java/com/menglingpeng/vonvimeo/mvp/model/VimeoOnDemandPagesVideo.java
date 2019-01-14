@@ -23,6 +23,8 @@ public class VimeoOnDemandPagesVideo implements Serializable{
     private PicturesBean pictures;
     private StatsBean stats;
     private MetadataBean metadataBean;
+    private TranscodeBean transcode;
+    private AppBean app;
 
     public String getUri() {
         return uri;
@@ -160,6 +162,22 @@ public class VimeoOnDemandPagesVideo implements Serializable{
         this.metadataBean = metadataBean;
     }
 
+
+    public AppBean getApp() {
+        return app;
+    }
+
+    public void setApp(AppBean app) {
+        this.app = app;
+    }
+
+    public TranscodeBean getTranscode() {
+        return transcode;
+    }
+
+    public void setTranscode(TranscodeBean transcode) {
+        this.transcode = transcode;
+    }
 
     public static class EmbedBean {
 
@@ -736,6 +754,8 @@ public class VimeoOnDemandPagesVideo implements Serializable{
         public static class InteractionsBean {
 
             private WatchlaterBean watchlater;
+            private LikeBean like;
+            private ReportBean report;
 
             public void setWatchlater(WatchlaterBean watchlater) {
                 this.watchlater = watchlater;
@@ -743,6 +763,22 @@ public class VimeoOnDemandPagesVideo implements Serializable{
 
             public WatchlaterBean getWatchlater() {
                 return watchlater;
+            }
+
+            public LikeBean getLike() {
+                return like;
+            }
+
+            public void setLike(LikeBean like) {
+                this.like = like;
+            }
+
+            public ReportBean getReport() {
+                return report;
+            }
+
+            public void setReport(ReportBean report) {
+                this.report = report;
             }
 
             public static class WatchlaterBean {
@@ -785,5 +821,111 @@ public class VimeoOnDemandPagesVideo implements Serializable{
                 }
             }
 
+            public static class LikeBean {
+
+                private String uri;
+                private boolean added;
+                private String added_time;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setAdded(boolean added) {
+                    this.added = added;
+                }
+
+                public void setAdded_time(String added_time) {
+                    this.added_time = added_time;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public boolean getAdded() {
+                    return added;
+                }
+
+                public String getAdded_time() {
+                    return added_time;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class ReportBean {
+
+                private String uri;
+                private List<String> options;
+                private List<String> reason;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public void setReason(List<String> reason) {
+                    this.reason = reason;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+
+                public List<String> getReason() {
+                    return reason;
+                }
+            }
+        }
+    }
+
+    public static class TranscodeBean {
+
+        private String status;
+
+        public void setStatus(String status) {
+            this.status = status;
+        }
+
+        public String getStatus() {
+            return status;
+        }
+    }
+
+    public static class AppBean {
+
+        private String name;
+        private String uri;
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public void setUri(String uri) {
+            this.uri = uri;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getUri() {
+            return uri;
+        }
     }
 }

@@ -77,8 +77,8 @@ public class RegionDetailActivity extends BaseActivity implements RecyclerView {
             case R.id.region_detail_sort_alphabetical:
                 sortType = Constants.TYPE_ALPHABETICAL;
                 break;
-            case R.id.region_detail_sort_videos:
-                sortType = Constants.TYPE_VIDEOS;
+            case R.id.region_detail_sort_plays:
+                sortType = Constants.TYPE_PLAYS;
                 break;
             case R.id.region_detail_sort_comments:
                 sortType = Constants.TYPE_COMMENTS;

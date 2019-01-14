@@ -2952,9 +2952,23 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         public  VideoOfSeasonTypeThumbViewHolder(View view) {
             super(view);
 
-            videoThumbIv = (ImageView)view.findViewById(R.id.thumb_iew_video_of_a_season__thumb_iv);
-            videoNameTv = (TextView)view.findViewById(R.id.thumb_view_video_of_a_season__name_tv);
-            videoAddedTimeTv = (TextView)view.findViewById(R.id.thumb_view_video_of_a_season__added_time);
+            videoThumbIv = (ImageView)view.findViewById(R.id.thumb_iew_video_of_a_season_thumb_iv);
+            videoNameTv = (TextView)view.findViewById(R.id.thumb_view_video_of_a_season_name_tv);
+            videoAddedTimeTv = (TextView)view.findViewById(R.id.thumb_view_video_of_a_season_added_time);
+        }
+    }
+
+    public class  GenreOfOndemandPagesViewHolder extends RecyclerView.ViewHolder{
+
+        public final ImageView genreThumbIv;
+        public final TextView genreNameTv;
+        public final TextView genreConnectionsCountsTv;
+        public GenreOfOndemandPagesViewHolder(View view) {
+            super(view);
+
+            genreThumbIv = (ImageView)view.findViewById(R.id.genre_thumb_iv);
+            genreNameTv = (TextView)view.findViewById(R.id.genre_name_tv);
+            genreConnectionsCountsTv = (TextView)view.findViewById(R.id.genre_connections_count_tv);
         }
     }
 

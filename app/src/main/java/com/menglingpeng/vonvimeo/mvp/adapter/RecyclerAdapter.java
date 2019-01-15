@@ -2972,6 +2972,34 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
+    private class VideoOfGenreTypeDetailViewHolder extends RecyclerView.ViewHolder {
+
+        public final ImageView VideoThumbIv;
+        public final TextView VideoNameTv;
+        public final TextView userNameTv;
+        public final TextView addedTimeTv;
+        public final TextView videoDescTv;
+        public final TextView playsCountTv;
+        public final TextView likesCountTv;
+        public final TextView commentsCountTv;
+        public final TextView videoDurationTv;
+
+
+        public VideoOfGenreTypeDetailViewHolder(View view) {
+            super(view);
+
+            VideoThumbIv = (ImageView)view.findViewById(R.id.detail_view_video_of_a_genre_video_thumb_iv);
+            VideoNameTv = (TextView)view.findViewById(R.id.detail_view_video_of_a_genre_name_tv);
+            userNameTv = (TextView)view.findViewById(R.id.detail_view_video_of_a_genre_user_name_tv);
+            addedTimeTv = (TextView)view.findViewById(R.detail_view_video_of_a_genre_added_time_tv);
+            videoDescTv = (TextView)view.findViewById(R.id.detail_view_video_of_a_genre_desc_tv);
+            playsCountTv = (TextView)view.findViewById(R.id.detail_view_video_of_a_genre_plays_count_tv);
+            likesCountTv = (TextView)view.findViewById(R.id.detail_view_video_of_a_genre_likes_count_tv);
+            commentsCountTv = (TextView)view.findViewById(R.id.detail_view_video_of_a_genre_comments_count_tv);
+            videoDurationTv = (TextView)view.findViewById(R.id.detail_view_video_of_a_genre_duration_tv);
+        }
+    }
+
     public class FooterViewHolder extends RecyclerView.ViewHolder {
 
         public FooterViewHolder(View view) {

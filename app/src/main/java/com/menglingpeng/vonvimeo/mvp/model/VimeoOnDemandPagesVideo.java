@@ -26,6 +26,7 @@ public class VimeoOnDemandPagesVideo implements Serializable{
     private TranscodeBean transcode;
     private AppBean app;
     private TagsBean tags;
+    private SubcategoriesBean subcategories;
 
 
     public String getUri() {
@@ -187,6 +188,14 @@ public class VimeoOnDemandPagesVideo implements Serializable{
 
     public void setTags(TagsBean tags) {
         this.tags = tags;
+    }
+
+    public SubcategoriesBean getSubcategories() {
+        return subcategories;
+    }
+
+    public void setSubcategories(SubcategoriesBean subcategories) {
+        this.subcategories = subcategories;
     }
 
     public static class EmbedBean {
@@ -985,6 +994,37 @@ public class VimeoOnDemandPagesVideo implements Serializable{
 
         public String getResource_key() {
             return resource_key;
+        }
+    }
+
+    public static class SubcategoriesBean {
+
+        private String uri;
+        private String name;
+        private String link;
+
+        public void setUri(String uri) {
+            this.uri = uri;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public void setLink(String link) {
+            this.link = link;
+        }
+
+        public String getUri() {
+            return uri;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getLink() {
+            return link;
         }
     }
 }

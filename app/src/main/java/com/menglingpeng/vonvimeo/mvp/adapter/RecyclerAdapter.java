@@ -3000,6 +3000,21 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
+    public class VideoOfGenreTypeThumbViewHolder extends RecyclerView.ViewHolder{
+
+        public final ImageView videoThumbIv;
+        public final TextView videoNameTv;
+        public final TextView videoAddedTimeTv;
+
+        public  VideoOfGenreTypeThumbViewHolder(View view) {
+            super(view);
+
+            videoThumbIv = (ImageView)view.findViewById(R.id.thumb_iew_video_of_a_genre_thumb_iv);
+            videoNameTv = (TextView)view.findViewById(R.id.thumb_view_video_of_a_genre_name_tv);
+            videoAddedTimeTv = (TextView)view.findViewById(R.id.thumb_view_video_of_a_genre_added_time);
+        }
+    }
+
     public class FooterViewHolder extends RecyclerView.ViewHolder {
 
         public FooterViewHolder(View view) {

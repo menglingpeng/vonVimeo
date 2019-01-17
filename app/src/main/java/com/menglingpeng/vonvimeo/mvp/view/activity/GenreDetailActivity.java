@@ -68,6 +68,24 @@ public class GenreDetailActivity extends BaseActivity implements RecyclerView{
                 break;
             case R.id.genre_detail_detail_view:
                 break;
+            case R.id.genre_detail_sort_date:
+                sortType = Constants.TYPE_DATE;
+                break;
+            case R.id.genre_detail_sort_alphabetical:
+                sortType = Constants.TYPE_ALPHABETICAL;
+                break;
+            case R.id.genre_detail_sort_plays:
+                sortType = Constants.TYPE_PLAYS;
+                break;
+            case R.id.genre_detail_sort_likes:
+                sortType = Constants.TYPE_LIKES;
+                break;
+            case R.id.genre_detail_sort_comments:
+                sortType = Constants.TYPE_COMMENTS;
+                break;
+            case R.id.genre_detail_sort_duration:
+                sortType = Constants.TYPE_DURATION;
+                break;
             default:
                 break;
         }

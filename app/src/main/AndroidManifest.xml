@@ -139,7 +139,8 @@
         <activity android:name=".mvp.view.activity.VimeoOndemandPagesActivity" />
         <activity android:name=".mvp.view.activity.RegionDetailActivity" />
         <activity android:name=".mvp.view.activity.SeasonDetailActivity" />
-        <activity android:name=".mvp.view.activity.GenreDetailActivity"></activity>
+        <activity android:name=".mvp.view.activity.GenreDetailActivity" />
+        <activity android:name=".mvp.view.activity.PosterDetailActivity"></activity>
     </application>
 
 </manifest>

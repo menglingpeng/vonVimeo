@@ -543,6 +543,9 @@ public class Constants {
     public static final String TAB_VIMEO_ONDEMAND_PAGES_VIDEOS = "tab_vimeo_ondemand_pages_videos";
     public static final String TAB_VIMEO_ONDEMAND_PAGES_FOLLOW_VIDEOS = "tab_vimeo_ondemand_pages_follow_videos";
     public static final String TAB_VIMEO_ONDEMAND_PAGES_REGIONS= "tab_vimeo_ondemand_pages_regions";
+    public static final String TAB_VIMEO_ONDEMAND_PAGES_SEASONS= "tab_vimeo_ondemand_pages_seasons";
+    public static final String TAB_VIMEO_ONDEMAND_PAGES_GENRES= "tab_vimeo_ondemand_pages_genres";
+    public static final String TAB_VIMEO_ONDEMAND_PAGES_POSTERS= "tab_vimeo_ondemand_pages_posters";
 
     public static final String LIST_ALL_VIDEOS_OF_REGOIN = "list_all_videos_of_a_regoin";
     public static final String LIST_ALL_VIDEOS_OF_SEASON = "list_all_videos_of_a_season";

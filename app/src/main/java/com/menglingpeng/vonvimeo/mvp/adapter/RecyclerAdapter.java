@@ -3015,6 +3015,20 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
+    public class  PosterOfOndemandPagesViewHolder extends RecyclerView.ViewHolder{
+
+        public final ImageView genreThumbIv;
+        public final TextView genreNameTv;
+        public final TextView genreConnectionsCountsTv;
+        public PosterOfOndemandPagesViewHolder(View view) {
+            super(view);
+
+            genreThumbIv = (ImageView)view.findViewById(R.id.poster_thumb_iv);
+            genreNameTv = (TextView)view.findViewById(R.id.poster_name_tv);
+            genreConnectionsCountsTv = (TextView)view.findViewById(R.id.poster_connections_count_tv);
+        }
+    }
+
     public class FooterViewHolder extends RecyclerView.ViewHolder {
 
         public FooterViewHolder(View view) {

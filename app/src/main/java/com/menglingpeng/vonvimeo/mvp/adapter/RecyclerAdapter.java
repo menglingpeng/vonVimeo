@@ -2952,7 +2952,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         public  VideoOfSeasonTypeThumbViewHolder(View view) {
             super(view);
 
-            videoThumbIv = (ImageView)view.findViewById(R.id.thumb_iew_video_of_a_season_thumb_iv);
+            videoThumbIv = (ImageView)view.findViewById(R.id.thumb_view_video_of_a_season_thumb_iv);
             videoNameTv = (TextView)view.findViewById(R.id.thumb_view_video_of_a_season_name_tv);
             videoAddedTimeTv = (TextView)view.findViewById(R.id.thumb_view_video_of_a_season_added_time);
         }
@@ -3009,7 +3009,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         public  VideoOfGenreTypeThumbViewHolder(View view) {
             super(view);
 
-            videoThumbIv = (ImageView)view.findViewById(R.id.thumb_iew_video_of_a_genre_thumb_iv);
+            videoThumbIv = (ImageView)view.findViewById(R.id.thumb_view_video_of_a_genre_thumb_iv);
             videoNameTv = (TextView)view.findViewById(R.id.thumb_view_video_of_a_genre_name_tv);
             videoAddedTimeTv = (TextView)view.findViewById(R.id.thumb_view_video_of_a_genre_added_time);
         }
@@ -3054,6 +3054,21 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             likesCountTv = (TextView)view.findViewById(R.id.detail_view_video_of_a_poster_likes_count_tv);
             commentsCountTv = (TextView)view.findViewById(R.id.detail_view_video_of_a_poster_comments_count_tv);
             videoDurationTv = (TextView)view.findViewById(R.id.detail_view_video_of_a_poster_duration_tv);
+        }
+    }
+
+    public class VideoOfPosterTypeThumbViewHolder extends RecyclerView.ViewHolder{
+
+        public final ImageView videoThumbIv;
+        public final TextView videoNameTv;
+        public final TextView videoAddedTimeTv;
+
+        public  VideoOfPosterTypeThumbViewHolder(View view) {
+            super(view);
+
+            videoThumbIv = (ImageView)view.findViewById(R.id.thumb_view_video_of_a_poster_thumb_iv);
+            videoNameTv = (TextView)view.findViewById(R.id.thumb_view_video_of_a_poster_name_tv);
+            videoAddedTimeTv = (TextView)view.findViewById(R.id.thumb_view_video_of_a_poster_added_time);
         }
     }
 

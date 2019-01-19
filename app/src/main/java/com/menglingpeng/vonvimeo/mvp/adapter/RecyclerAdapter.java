@@ -3017,15 +3017,43 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     public class  PosterOfOndemandPagesViewHolder extends RecyclerView.ViewHolder{
 
-        public final ImageView genreThumbIv;
-        public final TextView genreNameTv;
-        public final TextView genreConnectionsCountsTv;
+        public final ImageView posterThumbIv;
+        public final TextView posterNameTv;
+        public final TextView posterConnectionsCountsTv;
         public PosterOfOndemandPagesViewHolder(View view) {
             super(view);
 
-            genreThumbIv = (ImageView)view.findViewById(R.id.poster_thumb_iv);
-            genreNameTv = (TextView)view.findViewById(R.id.poster_name_tv);
-            genreConnectionsCountsTv = (TextView)view.findViewById(R.id.poster_connections_count_tv);
+            posterThumbIv = (ImageView)view.findViewById(R.id.poster_thumb_iv);
+            posterNameTv = (TextView)view.findViewById(R.id.poster_name_tv);
+            posterConnectionsCountsTv = (TextView)view.findViewById(R.id.poster_connections_count_tv);
+        }
+    }
+
+    private class VideoOfPosterTypeDetailViewHolder extends RecyclerView.ViewHolder {
+
+        public final ImageView VideoThumbIv;
+        public final TextView VideoNameTv;
+        public final TextView userNameTv;
+        public final TextView addedTimeTv;
+        public final TextView videoDescTv;
+        public final TextView playsCountTv;
+        public final TextView likesCountTv;
+        public final TextView commentsCountTv;
+        public final TextView videoDurationTv;
+
+
+        public VideoOfPosterTypeDetailViewHolder(View view) {
+            super(view);
+
+            VideoThumbIv = (ImageView)view.findViewById(R.id.detail_view_video_of_a_poster_video_thumb_iv);
+            VideoNameTv = (TextView)view.findViewById(R.id.detail_view_video_of_a_poster_name_tv);
+            userNameTv = (TextView)view.findViewById(R.id.detail_view_video_of_a_poster_user_name_tv);
+            addedTimeTv = (TextView)view.findViewById(R.detail_view_video_of_a_poster_added_time_tv);
+            videoDescTv = (TextView)view.findViewById(R.id.detail_view_video_of_a_poster_desc_tv);
+            playsCountTv = (TextView)view.findViewById(R.id.detail_view_video_of_a_poster_plays_count_tv);
+            likesCountTv = (TextView)view.findViewById(R.id.detail_view_video_of_a_poster_likes_count_tv);
+            commentsCountTv = (TextView)view.findViewById(R.id.detail_view_video_of_a_poster_comments_count_tv);
+            videoDurationTv = (TextView)view.findViewById(R.id.detail_view_video_of_a_poster_duration_tv);
         }
     }
 

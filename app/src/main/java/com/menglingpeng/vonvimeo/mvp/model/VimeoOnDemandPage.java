@@ -1,6 +1,7 @@
 package com.menglingpeng.vonvimeo.mvp.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class VimeoOnDemandPage implements Serializable {
 
@@ -14,6 +15,9 @@ public class VimeoOnDemandPage implements Serializable {
     private ColorsBean colors;
     private PublishBean publish;
     private PreorderBean preorder;
+    private PicturesBean pictures;
+    private List<String> content_rating;
+    private List<GenresBean> genres;
 
     public String getUri() {
         return uri;
@@ -93,6 +97,30 @@ public class VimeoOnDemandPage implements Serializable {
 
     public void setPreorder(PreorderBean preorder) {
         this.preorder = preorder;
+    }
+
+    public List<GenresBean> getGenres() {
+        return genres;
+    }
+
+    public void setGenres(List<GenresBean> genres) {
+        this.genres = genres;
+    }
+
+    public List<String> getContent_rating() {
+        return content_rating;
+    }
+
+    public void setContent_rating(List<String> content_rating) {
+        this.content_rating = content_rating;
+    }
+
+    public PicturesBean getPictures() {
+        return pictures;
+    }
+
+    public void setPictures(PicturesBean pictures) {
+        this.pictures = pictures;
     }
 
     public static class ColorsBean {
@@ -178,4 +206,136 @@ public class VimeoOnDemandPage implements Serializable {
             return publish_time;
         }
     }
+
+    public static class PicturesBean {
+
+        private String uri;
+        private boolean active;
+        private String type;
+        private String resource_key;
+        private List<SizesBean> sizes;
+
+        public void setUri(String uri) {
+            this.uri = uri;
+        }
+
+        public void setActive(boolean active) {
+            this.active = active;
+        }
+
+        public void setType(String type) {
+            this.type = type;
+        }
+
+        public void setResource_key(String resource_key) {
+            this.resource_key = resource_key;
+        }
+
+        public void setSizes(List<SizesBean> sizes) {
+            this.sizes = sizes;
+        }
+
+        public String getUri() {
+            return uri;
+        }
+
+        public boolean getActive() {
+            return active;
+        }
+
+        public String getType() {
+            return type;
+        }
+
+        public String getResource_key() {
+            return resource_key;
+        }
+
+        public List<SizesBean> getSizes() {
+            return sizes;
+        }
+
+        public static class SizesBean {
+
+            private int width;
+            private int height;
+            private String link;
+
+            public void setWidth(int width) {
+                this.width = width;
+            }
+
+            public void setHeight(int height) {
+                this.height = height;
+            }
+
+            public void setLink(String link) {
+                this.link = link;
+            }
+
+            public int getWidth() {
+                return width;
+            }
+
+            public int getHeight() {
+                return height;
+            }
+
+            public String getLink() {
+                return link;
+            }
+        }
+    }
+
+    public static class GenresBean{
+
+        private String uri;
+        private String name;
+        private String canonical;
+        private String link;
+        private ConnectionsBean connections;
+
+        public void setUri(String uri) {
+            this.uri = uri;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public void setCanonical(String canonical) {
+            this.canonical = canonical;
+        }
+
+        public void setLink(String link) {
+            this.link = link;
+        }
+
+        public void setConnections(ConnectionsBean connections) {
+            this.connections = connections;
+        }
+
+        public String getUri() {
+            return uri;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getCanonical() {
+            return canonical;
+        }
+
+        public String getLink() {
+            return link;
+        }
+
+        public ConnectionsBean getConnections() {
+            return connections;
+        }
+
+        public static class ConnectionsBean {
+        }
+        }
 }

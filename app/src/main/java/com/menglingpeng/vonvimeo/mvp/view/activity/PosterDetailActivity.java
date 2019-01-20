@@ -23,6 +23,7 @@ public class PosterDetailActivity extends BaseActivity implements RecyclerView{
     private CoordinatorLayout coordinatorLayout;
     private Toolbar toolbar;
     private ProgressBar progressBar;
+    private String sortType;
 
     @Override
     protected void initLayoutId() {
@@ -61,6 +62,29 @@ public class PosterDetailActivity extends BaseActivity implements RecyclerView{
             case R.id.poster_detail_thumb_view:
                 break;
             case R.id.poster_detail_detail_view:
+                break;
+            case R.id.genre_detail_search:
+                Intent intent = new Intent(this, SearchActivity.class);
+                intent.putExtra(Constants.ACTIVITY, Constants.ACTIVITY_GENRE_DETAIL);
+                startActivity(intent);
+                break;
+            case R.id.poster_detail_sort_date:
+                sortType = Constants.TYPE_DATE;
+                break;
+            case R.id.poster_detail_sort_alphabetical:
+                sortType = Constants.TYPE_ALPHABETICAL;
+                break;
+            case R.id.poster_detail_sort_plays:
+                sortType = Constants.TYPE_PLAYS;
+                break;
+            case R.id.poster_detail_sort_likes:
+                sortType = Constants.TYPE_LIKES;
+                break;
+            case R.id.poster_detail_sort_comments:
+                sortType = Constants.TYPE_COMMENTS;
+                break;
+            case R.id.poster_detail_sort_duration:
+                sortType = Constants.TYPE_DURATION;
                 break;
             default:
                 break;

@@ -10,13 +10,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
 import com.menglingpeng.vonvimeo.mvp.view.SearchActivity;
 import com.menglingpeng.vonvimeo.utils.Constants;
 
-public class PosterDetailActivity extends BaseActivity implements RecyclerView{
+public class PosterDetailActivity extends BaseActivity implements RecyclerView, View.OnClickListener{
 
     private String title;
     private Context context;
@@ -24,6 +25,9 @@ public class PosterDetailActivity extends BaseActivity implements RecyclerView{
     private Toolbar toolbar;
     private ProgressBar progressBar;
     private String sortType;
+    private TextView seasonTitleTv;
+    private TextView regionTitleTv;
+    private TextView genreTitleTv;
 
     @Override
     protected void initLayoutId() {
@@ -37,6 +41,9 @@ public class PosterDetailActivity extends BaseActivity implements RecyclerView{
         coordinatorLayout = (CoordinatorLayout) findViewById(R.id.poster_detail_cdl);
         toolbar = (Toolbar) findViewById(R.id.poster_detail_tb);
         progressBar = (ProgressBar)findViewById(R.id.poster_detail_pb);
+        seasonTitleTv = (TextView) findViewById(R.id.season_title_tv);
+        regionTitleTv = (TextView) findViewById(R.id.region_title_tv);
+        genreTitleTv = (TextView) findViewById(R.id.genre_title_tv);
         toolbar.setTitle(title);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_back);
@@ -105,5 +112,24 @@ public class PosterDetailActivity extends BaseActivity implements RecyclerView{
     @Override
     public void loadSuccess(String json, String requestType) {
 
+    }
+
+    @Override
+    public void onClick(View view) {
+        Intent intent = null;
+        switch (view.getId()){
+            case R.id.season_title_tv:
+                intent = new Intent(this, SeasonDetailActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.region_title_tv:
+                intent = new Intent(this, RegionDetailActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.genre_title_tv:
+                intent = new Intent(this, GenreDetailActivity.class);
+                startActivity(intent);
+                break;
+        }
     }
 }

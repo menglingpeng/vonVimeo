@@ -287,7 +287,7 @@ public class VimeoOnDemandPage implements Serializable {
         }
     }
 
-    public static class GenresBean{
+    public static class GenresBean {
 
         private String uri;
         private String name;
@@ -336,6 +336,75 @@ public class VimeoOnDemandPage implements Serializable {
         }
 
         public static class ConnectionsBean {
+
+            private PagesBean pages;
+
+            public void setPages(PagesBean pages) {
+                this.pages = pages;
+            }
+
+            public PagesBean getPages() {
+                return pages;
+            }
+
+            public static class PagesBean {
+
+                private String uri;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+
         }
+
+        public static class BuyBean {
+
+            private boolean active;
+            private PriceBean price;
+            private String link;
+
+            public void setActive(boolean active) {
+                this.active = active;
+            }
+
+            public void setPrice(PriceBean price) {
+                this.price = price;
+            }
+
+            public void setLink(String link) {
+                this.link = link;
+            }
+
+            public boolean getActive() {
+                return active;
+            }
+
+            public PriceBean getPrice() {
+                return price;
+            }
+
+            public String getLink() {
+                return link;
+            }
+
+            public static class PriceBean {
+            }
         }
+    }
+
 }

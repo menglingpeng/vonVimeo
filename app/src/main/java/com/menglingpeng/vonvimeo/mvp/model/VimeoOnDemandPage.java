@@ -403,6 +403,116 @@ public class VimeoOnDemandPage implements Serializable {
             }
 
             public static class PriceBean {
+
+                private double USD;
+                private double GBP;
+                private double EUR;
+                private int CAD;
+                private double AUD;
+                private double DKK;
+                private int JPY;
+                private double NOK;
+                private double PLN;
+                private int KRW;
+                private double SEK;
+                private double CHF;
+
+                public void setUSD(double USD) {
+                    this.USD = USD;
+                }
+
+                public void setGBP(double GBP) {
+                    this.GBP = GBP;
+                }
+
+                public void setEUR(double EUR) {
+                    this.EUR = EUR;
+                }
+
+                public void setCAD(int CAD) {
+                    this.CAD = CAD;
+                }
+
+                public void setAUD(double AUD) {
+                    this.AUD = AUD;
+                }
+
+                public void setDKK(double DKK) {
+                    this.DKK = DKK;
+                }
+
+                public void setJPY(int JPY) {
+                    this.JPY = JPY;
+                }
+
+                public void setNOK(double NOK) {
+                    this.NOK = NOK;
+                }
+
+                public void setPLN(double PLN) {
+                    this.PLN = PLN;
+                }
+
+                public void setKRW(int KRW) {
+                    this.KRW = KRW;
+                }
+
+                public void setSEK(double SEK) {
+                    this.SEK = SEK;
+                }
+
+                public void setCHF(double CHF) {
+                    this.CHF = CHF;
+                }
+
+                public double getUSD() {
+                    return USD;
+                }
+
+                public double getGBP() {
+                    return GBP;
+                }
+
+                public double getEUR() {
+                    return EUR;
+                }
+
+                public int getCAD() {
+                    return CAD;
+                }
+
+                public double getAUD() {
+                    return AUD;
+                }
+
+                public double getDKK() {
+                    return DKK;
+                }
+
+                public int getJPY() {
+                    return JPY;
+                }
+
+                public double getNOK() {
+                    return NOK;
+                }
+
+                public double getPLN() {
+                    return PLN;
+                }
+
+                public int getKRW() {
+                    return KRW;
+                }
+
+                public double getSEK() {
+                    return SEK;
+                }
+
+                public double getCHF() {
+                    return CHF;
+                }
+            }
             }
         }
     }

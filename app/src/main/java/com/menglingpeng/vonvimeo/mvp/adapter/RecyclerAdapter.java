@@ -3086,6 +3086,20 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
+    public class  BackgroudPictureOfOndemandPagesViewHolder extends RecyclerView.ViewHolder{
+
+        public final ImageView backgroudPictureThumbIv;
+        public final TextView backgroudPictureNameTv;
+        public final TextView backgroudPictureTypeTv;
+        public BackgroudPictureOfOndemandPagesViewHolder(View view) {
+            super(view);
+
+            backgroudPictureThumbIv = (ImageView)view.findViewById(R.id.backgroud_picture_iv);
+            backgroudPictureNameTv = (TextView)view.findViewById(R.id.backgroud_picture_name_tv);
+            backgroudPictureTypeTv = (TextView)view.findViewById(R.id.backgroud_picture_type_tv);
+        }
+    }
+
     public class FooterViewHolder extends RecyclerView.ViewHolder {
 
         public FooterViewHolder(View view) {

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/group1"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/vimeo_on_demand_pages_nav_season"
+            android:icon="@drawable/ic_keyboard_arrow_right_black_36dp"
+            android:title="@string/vimeo_on_demand_pages_nav_season_menu_text" />
+
+        <item
+            android:id="@+id/vimeo_on_demand_pages_nav_genre"
+            android:icon="@drawable/ic_keyboard_arrow_right_black_36dp"
+            android:title="@string/vimeo_on_demand_pages_nav_genre_menu_text" />
+
+        <item
+            android:id="@+id/vimeo_on_demand_pages_nav_region"
+            android:icon="@drawable/ic_keyboard_arrow_right_black_36dp"
+            android:title="@string/vimeo_on_demand_pages_nav_region_menu_text" />
+
+        <item
+            android:id="@+id/vimeo_on_demand_pages_nav_poster"
+            android:icon="@drawable/ic_keyboard_arrow_right_black_36dp"
+            android:title="@string/vimeo_on_demand_pages_nav_poster_menu_text" />
+
+
+    </group>
+
+    <group android:id="@+id/group2">
+        <item
+            android:id="@+id/nav_upgrade"
+            android:title="@string/video_seetings_nav_upgrade_menu" />
+    </group>
+
+</menu>

@@ -734,4 +734,9 @@
     <string name="textsize_max_tv_text">最大</string>
 
 
+    <string name="vimeo_on_demand_pages_nav_season_menu_text">Season</string>
+    <string name="vimeo_on_demand_pages_nav_genre_menu_text">Genre</string>
+    <string name="vimeo_on_demand_pages_nav_region_menu_text">Region</string>
+    <string name="vimeo_on_demand_pages_nav_poster_menu_text">Poster</string>
+
 </resources>

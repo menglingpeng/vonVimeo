@@ -35,6 +35,7 @@ public class Constants {
     public static final String MENU_EXPLORE = "Explore";
     public static final String MENU_MY_LIKES = "my_likes";
     public static final String MENU_MY_ALBUMS = "my_albums";
+    public static final String MENU_MY_VIDEOS = "my_videos";
     public static final String MENU_MY_PROJECTS = "my_projects";
     public static final String MENU_SETTING = "setting";
 
@@ -550,6 +551,11 @@ public class Constants {
     public static final String LIST_ALL_VIDEOS_OF_REGOIN = "list_all_videos_of_a_regoin";
     public static final String LIST_ALL_VIDEOS_OF_SEASON = "list_all_videos_of_a_season";
     public static final String LIST_ALL_VIDEOS_OF_GENRE = "list_all_videos_of_a_genre";
+
+    public static final String MENU_REGIONS = "Regions";
+    public static final String MENU_SEASONS = "Seasons";
+    public static final String MENU_GENRES = "Genres";
+    public static final String MENU_POSTERS = "Posters";
 
     //默认值1
     public static final int PAGE_VALUE = 1;

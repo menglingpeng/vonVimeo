@@ -2,11 +2,13 @@ package com.menglingpeng.vonvimeo.mvp.view.activity;
 
 import android.content.Intent;
 import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -45,6 +47,8 @@ public class VimeoOndemandPagesActivity extends BaseActivity implements Recycler
     private String title;
     private TextView demandDescTv;
     private ProgressBar progressBar;
+    private String toolbarTitle;
+    private String currentType;
     private String sortType;
     private MenuItem menuItem;
     private TabLayout tabLayout;
@@ -79,7 +83,50 @@ public class VimeoOndemandPagesActivity extends BaseActivity implements Recycler
                 finish();
             }
         });
+        initToolbar();
         initNavigationView();
+    }
+
+    private void initToolbar() {
+        switch (currentType) {
+            case Constants.MENU_REGIONS:
+                toolbarTitle = getString(R.string.vimeo_on_demand_pages_nav_regions_menu_text);
+                break;
+            case Constants.MENU_SEASONS:
+                toolbarTitle = getString(R.string.vimeo_on_demand_pages_nav_seasons_menu_text);
+                break;
+            case Constants.MENU_GENRES:
+                toolbarTitle = getString(R.string.vimeo_on_demand_pages_nav_genres_menu_text);
+                break;
+            case Constants.MENU_POSTERS:
+                toolbarTitle = getString(R.string.vimeo_on_demand_pages_nav_posters_menu_text);
+                break;
+            case Constants.MENU_UPGRADE:
+                toolbarTitle = getString(R.string.video_seetings_nav_upgrade_menu);
+                break;
+            default:
+                break;
+        }
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(toolbarTitle);
+        if (null != toolbar) {
+            setSupportActionBar(toolbar);
+        }
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+        toolbar.setTitleTextColor(Color.WHITE);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                    drawerLayout.closeDrawer(GravityCompat.START);
+                } else {
+                    drawerLayout.openDrawer(GravityCompat.START);
+                }
+
+            }
+        });
     }
 
     @Override
@@ -143,17 +190,31 @@ public class VimeoOndemandPagesActivity extends BaseActivity implements Recycler
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
-            case R.id.vimeo_on_demand_pages_nav_season:
-
+            case R.id.vimeo_on_demand_pages_nav_seasons:
+                currentType = Constants.MENU_SEASONS;
+                drawerLayout.closeDrawer(GravityCompat.START);
+                replaceFragment(RecyclerFragment.newInstance(currentType));
                 break;
-            case R.id.vimeo_on_demand_pages_nav_genre:
-
+            case R.id.vimeo_on_demand_pages_nav_genres:
+                currentType = Constants.MENU_GENRES;
+                drawerLayout.closeDrawer(GravityCompat.START);
+                replaceFragment(RecyclerFragment.newInstance(currentType));
                 break;
-            case R.id.vimeo_on_demand_pages_nav_region:
-
+            case R.id.vimeo_on_demand_pages_nav_regions:
+                currentType = Constants.MENU_REGIONS;
+                drawerLayout.closeDrawer(GravityCompat.START);
+                replaceFragment(RecyclerFragment.newInstance(currentType));
                 break;
-            case R.id.vimeo_on_demand_pages_nav_poster:
-
+            case R.id.vimeo_on_demand_pages_nav_posters:
+                currentType = Constants.MENU_POSTERS;
+                drawerLayout.closeDrawer(GravityCompat.START);
+                replaceFragment(RecyclerFragment.newInstance(currentType));
+                break;
+            case R.id.nav_upgrade:
+                currentType = Constants.MENU_UPGRADE;
+                drawerLayout.closeDrawer(GravityCompat.START);
+                Intent intent = new Intent(this, UpgradeActivity.class);
+                startActivity(intent);
                 break;
             default:
                 break;

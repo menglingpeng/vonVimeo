@@ -21,12 +21,12 @@
             android:title="@string/nav_my_likes_menu" />
 
         <item
-            android:id="@+id/nav_all_video"
+            android:id="@+id/nav_all_videos"
             android:icon="@drawable/ic_all_video_grey_600_36dp"
             android:title="@string/nav_all_video_menu" />
 
         <item
-            android:id="@+id/nav_album"
+            android:id="@+id/nav_albums"
             android:icon="@drawable/ic_album_grey_600_36dp"
             android:title="@string/nav_album_menu"/>
 

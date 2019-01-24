@@ -30,6 +30,7 @@ import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.adapter.TabPagerFragmentAdapter;
 import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
 import com.menglingpeng.vonvimeo.mvp.view.SearchActivity;
+import com.menglingpeng.vonvimeo.mvp.view.activity.UpgradeActivity;
 import com.menglingpeng.vonvimeo.utils.Constants;
 
 import java.util.ArrayList;
@@ -171,6 +172,42 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()){
+            case R.id.nav_home:
+                currentType = Constants.MENU_HOME;
+                drawerLayout.closeDrawer(GravityCompat.START);
+                replaceFragment(RecyclerFragment.newInstance(currentType));
+                break;
+            case R.id.nav_explore:
+                currentType = Constants.MENU_EXPLORE;
+                drawerLayout.closeDrawer(GravityCompat.START);
+                replaceFragment(RecyclerFragment.newInstance(currentType));
+                break;
+            case R.id.nav_likes:
+                currentType = Constants.MENU_MY_LIKES;
+                drawerLayout.closeDrawer(GravityCompat.START);
+                replaceFragment(RecyclerFragment.newInstance(currentType));
+                break;
+            case R.id.nav_all_videos:
+                currentType = Constants.MENU_MY_VIDEOS;
+                drawerLayout.closeDrawer(GravityCompat.START);
+                replaceFragment(RecyclerFragment.newInstance(currentType));
+                break;
+            case R.id.nav_albums:
+                currentType = Constants.MENU_MY_ALBUMS;
+                drawerLayout.closeDrawer(GravityCompat.START);
+                replaceFragment(RecyclerFragment.newInstance(currentType));
+                break;
+            case R.id.nav_upgrade:
+                currentType = Constants.MENU_UPGRADE;
+                drawerLayout.closeDrawer(GravityCompat.START);
+                Intent intent = new Intent(this, UpgradeActivity.class);
+                startActivity(intent);
+                break;
+            default:
+                break;
+        }
         return false;
     }
 

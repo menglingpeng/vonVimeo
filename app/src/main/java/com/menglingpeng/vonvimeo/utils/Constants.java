@@ -20,6 +20,8 @@ public class Constants {
             ".com/oauth/authorize?client_id=2824a0365fffaa9fe9b74dce83921d185e5a45ad6c879a06f83399a25ce128a0" +
             "&redirect_uri=shots://dribbble-login-callback/shotDetail&scope=public+write+comment+upload";
 
+    public static final String DOUBLE_BACK_TO_EXIT = "double_back_to_exit";
+
     public static final String ACCOUNT_BASIC = "basic";
     public static final String ACCOUNT_PLUS = "plus";
     public static final String ACCOUNT_PRO = "pro";

@@ -3,6 +3,7 @@ package com.menglingpeng.vonvimeo;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -32,6 +33,8 @@ import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
 import com.menglingpeng.vonvimeo.mvp.view.SearchActivity;
 import com.menglingpeng.vonvimeo.mvp.view.activity.UpgradeActivity;
 import com.menglingpeng.vonvimeo.utils.Constants;
+import com.menglingpeng.vonvimeo.utils.SharedPrefUtils;
+import com.menglingpeng.vonvimeo.utils.SnackbarUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,7 +62,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     private Spinner watchSpinner;
     private Spinner myVideoSpinner;
     private static RecyclerFragment currentFragment = null;
-
+    private Boolean backPressed = false;
     private static final int SMOOTHSCROLL_TOP_POSITION = 50;
 
 
@@ -346,6 +349,34 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                 }
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            if(SharedPrefUtils.getState(Constants.DOUBLE_BACK_TO_EXIT)) {
+                doubleBackToQuit();
+            }else {
+                super.onBackPressed();
+            }
+        }
+    }
+
+    private void doubleBackToQuit() {
+        if (backPressed) {
+            super.onBackPressed();
+        }
+        backPressed = true;
+        SnackbarUtils.showSnackShort(getApplicationContext(), drawerLayout, getResources().getString(R.string
+                .double_back_quit));
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                backPressed = false;
+            }
+        }, 2000);
     }
 
     private RecyclerFragment newFragment(String type) {

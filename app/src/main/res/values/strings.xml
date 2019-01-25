@@ -739,4 +739,6 @@
     <string name="vimeo_on_demand_pages_nav_regions_menu_text">Regions</string>
     <string name="vimeo_on_demand_pages_nav_posters_menu_text">Posters</string>
 
+    <string name="double_back_quit">再次点击离开应用</string>
+
 </resources>

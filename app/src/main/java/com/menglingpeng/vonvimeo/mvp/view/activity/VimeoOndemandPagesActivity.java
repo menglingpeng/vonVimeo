@@ -3,6 +3,7 @@ package com.menglingpeng.vonvimeo.mvp.view.activity;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.NavigationView;
@@ -31,6 +32,7 @@ import com.menglingpeng.vonvimeo.mvp.view.SearchActivity;
 import com.menglingpeng.vonvimeo.utils.Constants;
 import com.menglingpeng.vonvimeo.utils.SearchViewUtils;
 import com.menglingpeng.vonvimeo.utils.SharedPrefUtils;
+import com.menglingpeng.vonvimeo.utils.SnackbarUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -55,6 +57,7 @@ public class VimeoOndemandPagesActivity extends BaseActivity implements Recycler
     private ViewPager viewPager;
     private ArrayList<RecyclerFragment> fragments;
     private TabPagerFragmentAdapter adapter;
+    private Boolean backPressed = false;
 
     private static final int SMOOTHSCROLL_TOP_POSITION = 50;
 
@@ -289,5 +292,33 @@ public class VimeoOndemandPagesActivity extends BaseActivity implements Recycler
     @Override
     public void loadSuccess(String json, String requestType) {
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            if(SharedPrefUtils.getState(Constants.DOUBLE_BACK_TO_EXIT)) {
+                doubleBackToQuit();
+            }else {
+                super.onBackPressed();
+            }
+        }
+    }
+
+    private void doubleBackToQuit() {
+        if (backPressed) {
+            super.onBackPressed();
+        }
+        backPressed = true;
+        SnackbarUtils.showSnackShort(getApplicationContext(), drawerLayout, getResources().getString(R.string
+                .double_back_quit));
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                backPressed = false;
+            }
+        }, 2000);
     }
 }

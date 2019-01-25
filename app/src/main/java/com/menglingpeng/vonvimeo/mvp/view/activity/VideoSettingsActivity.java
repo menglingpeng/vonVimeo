@@ -35,6 +35,13 @@ import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.model.Video;
+import com.menglingpeng.vonvimeo.mvp.view.fragment.CollaborationFragment;
+import com.menglingpeng.vonvimeo.mvp.view.fragment.DistributionFragment;
+import com.menglingpeng.vonvimeo.mvp.view.fragment.EmbedFragment;
+import com.menglingpeng.vonvimeo.mvp.view.fragment.GeneralFragment;
+import com.menglingpeng.vonvimeo.mvp.view.fragment.GenresFragment;
+import com.menglingpeng.vonvimeo.mvp.view.fragment.InteractionToolsFragment;
+import com.menglingpeng.vonvimeo.mvp.view.fragment.StatsFragment;
 import com.menglingpeng.vonvimeo.utils.Constants;
 import com.menglingpeng.vonvimeo.utils.IdStringUtil;
 
@@ -141,22 +148,34 @@ public class VideoSettingsActivity extends BaseActivity implements NavigationVie
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.video_settings_nav_general:
-
+                currentType = Constants.MENU_GENERAL;
+                drawerLayout.closeDrawer(GravityCompat.START);
+                replaceFragment(new GeneralFragment());
                 break;
             case R.id.video_settings_nav_collaboration:
-
+                currentType = Constants.MENU_COLLABORATION;
+                drawerLayout.closeDrawer(GravityCompat.START);
+                replaceFragment(new CollaborationFragment());
                 break;
             case R.id.video_settings_nav_embed:
-
+                currentType = Constants.MENU_EMBED;
+                drawerLayout.closeDrawer(GravityCompat.START);
+                replaceFragment(new EmbedFragment());
                 break;
             case R.id.video_settings_nav_interaction_tools:
-
+                currentType = Constants.MENU_INTERACTION;
+                drawerLayout.closeDrawer(GravityCompat.START);
+                replaceFragment(new InteractionToolsFragment());
                 break;
             case R.id.video_settings_nav_distribution:
-
+                currentType = Constants.MENU_DISTRIBUTION;
+                drawerLayout.closeDrawer(GravityCompat.START);
+                replaceFragment(new DistributionFragment());
                 break;
             case R.id.video_settings_nav_stats:
-
+                currentType = Constants.MENU_STATS;
+                drawerLayout.closeDrawer(GravityCompat.START);
+                replaceFragment(new StatsFragment());
                 break;
             default:
                 break;

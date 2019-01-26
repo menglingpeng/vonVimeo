@@ -6,24 +6,29 @@
         android:checkableBehavior="single">
 
         <item
-            android:id="@+id/vimeo_on_demand_pages_nav_season"
+            android:id="@+id/vimeo_on_demand_pages_nav_seasons"
             android:icon="@drawable/ic_keyboard_arrow_right_black_36dp"
             android:title="@string/vimeo_on_demand_pages_nav_seasons_menu_text" />
 
         <item
-            android:id="@+id/vimeo_on_demand_pages_nav_genre"
+            android:id="@+id/vimeo_on_demand_pages_nav_genres"
             android:icon="@drawable/ic_keyboard_arrow_right_black_36dp"
             android:title="@string/vimeo_on_demand_pages_nav_genres_menu_text" />
 
         <item
-            android:id="@+id/vimeo_on_demand_pages_nav_region"
+            android:id="@+id/vimeo_on_demand_pages_nav_regions"
             android:icon="@drawable/ic_keyboard_arrow_right_black_36dp"
             android:title="@string/vimeo_on_demand_pages_nav_regions_menu_text" />
 
         <item
-            android:id="@+id/vimeo_on_demand_pages_nav_poster"
+            android:id="@+id/vimeo_on_demand_pages_nav_posters"
             android:icon="@drawable/ic_keyboard_arrow_right_black_36dp"
             android:title="@string/vimeo_on_demand_pages_nav_posters_menu_text" />
+
+        <item
+            android:id="@+id/vimeo_on_demand_pages_nav_backgrouds"
+            android:icon="@drawable/ic_keyboard_arrow_right_black_36dp"
+            android:title="@string/vimeo_on_demand_pages_nav_backgrouds_menu_text" />
 
 
     </group>

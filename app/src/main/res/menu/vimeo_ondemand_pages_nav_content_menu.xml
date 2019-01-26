@@ -30,6 +30,11 @@
             android:icon="@drawable/ic_keyboard_arrow_right_black_36dp"
             android:title="@string/vimeo_on_demand_pages_nav_backgrouds_menu_text" />
 
+        <item
+            android:id="@+id/vimeo_on_demand_pages_nav_promotions"
+            android:icon="@drawable/ic_keyboard_arrow_right_black_36dp"
+            android:title="@string/vimeo_on_demand_pages_nav_promotions_menu_text" />
+
 
     </group>
 

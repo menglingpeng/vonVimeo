@@ -218,6 +218,11 @@ public class VimeoOndemandPagesActivity extends BaseActivity implements Recycler
                 drawerLayout.closeDrawer(GravityCompat.START);
                 replaceFragment(RecyclerFragment.newInstance(currentType));
                 break;
+            case R.id.vimeo_on_demand_pages_nav_promotionss:
+                currentType = Constants.MENU_POSTERS;
+                drawerLayout.closeDrawer(GravityCompat.START);
+                replaceFragment(RecyclerFragment.newInstance(currentType));
+                break;
             case R.id.nav_upgrade:
                 currentType = Constants.MENU_UPGRADE;
                 drawerLayout.closeDrawer(GravityCompat.START);

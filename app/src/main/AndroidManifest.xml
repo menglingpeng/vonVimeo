@@ -141,7 +141,8 @@
         <activity android:name=".mvp.view.activity.SeasonDetailActivity" />
         <activity android:name=".mvp.view.activity.GenreDetailActivity" />
         <activity android:name=".mvp.view.activity.PosterDetailActivity" />
-        <activity android:name=".mvp.view.activity.VimeoOnDemandPageBackgroudDetailActivity"></activity>
+        <activity android:name=".mvp.view.activity.VimeoOnDemandPageBackgroudDetailActivity" />
+        <activity android:name=".mvp.view.activity.PromotionDetailActivity"></activity>
     </application>
 
 </manifest>

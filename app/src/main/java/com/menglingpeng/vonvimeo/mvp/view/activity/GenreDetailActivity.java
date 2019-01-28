@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
+import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
 import com.menglingpeng.vonvimeo.mvp.view.SearchActivity;
 import com.menglingpeng.vonvimeo.utils.Constants;
 
@@ -53,6 +54,7 @@ public class GenreDetailActivity extends BaseActivity implements RecyclerView, V
                 finish();
             }
         });
+        replaceFragment(RecyclerFragment.newInstance(Constants.LIST_ALL_ONDEMAND_PAGES_OF_GENRE));
 
     }
 
@@ -81,17 +83,11 @@ public class GenreDetailActivity extends BaseActivity implements RecyclerView, V
             case R.id.genre_detail_sort_alphabetical:
                 sortType = Constants.TYPE_ALPHABETICAL;
                 break;
-            case R.id.genre_detail_sort_plays:
-                sortType = Constants.TYPE_PLAYS;
+            case R.id.genre_detail_sort_name:
+                sortType = Constants.TYPE_NAME;
                 break;
-            case R.id.genre_detail_sort_likes:
-                sortType = Constants.TYPE_LIKES;
-                break;
-            case R.id.genre_detail_sort_comments:
-                sortType = Constants.TYPE_COMMENTS;
-                break;
-            case R.id.genre_detail_sort_duration:
-                sortType = Constants.TYPE_DURATION;
+            case R.id.genre_detail_sort_videos:
+                sortType = Constants.TYPE_VIDEOS;
                 break;
             default:
                 break;

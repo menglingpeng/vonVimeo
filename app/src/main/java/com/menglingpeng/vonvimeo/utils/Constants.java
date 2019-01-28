@@ -100,7 +100,8 @@ public class Constants {
     public static final String TYPE_DATE = "date";
     public static final String TYPE_ALPHABETICAL = "alphabetical";
     public static final String TYPE_PLAYS = "plays";
-    public static final String TYPE_VIDEOS = "videoss";
+    public static final String TYPE_VIDEOS = "videos";
+    public static final String TYPE_NAME = "name";
     public static final String TYPE_COMMENTS = "comments";
     public static final String TYPE_DURATION = "duration";
 

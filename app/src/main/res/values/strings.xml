@@ -65,6 +65,7 @@
     <string name="sort_likes">Likes</string>
     <string name="sort_comments">Comments</string>
     <string name="sort_videos">Videos</string>
+    <string name="sort_name">name</string>
     <string name="sort_members">Members</string>
     <string name="sort_followers">Followers</string>
     <string name="sort_all">All</string>

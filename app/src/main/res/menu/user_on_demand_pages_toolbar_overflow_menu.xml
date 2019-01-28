@@ -36,13 +36,13 @@
                 app:showAsAction="never"></item>
 
             <item
-                android:id="@+id/user_on_demand_pages_sort_videos"
-                android:title="@string/sort_videos"
+                android:id="@+id/user_on_demand_pages_sort_name"
+                android:title="@string/sort_name"
                 app:showAsAction="never"></item>
 
             <item
-                android:id="@+id/user_on_demand_pages_sort_comments"
-                android:title="@string/sort_comments"
+                android:id="@+id/user_on_demand_pages_sort_videos"
+                android:title="@string/sort_videos"
                 app:showAsAction="never"></item>
         </menu>
 

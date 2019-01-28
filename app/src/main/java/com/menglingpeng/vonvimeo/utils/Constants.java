@@ -553,6 +553,7 @@ public class Constants {
     public static final String LIST_ALL_VIDEOS_OF_REGOIN = "list_all_videos_of_a_regoin";
     public static final String LIST_ALL_VIDEOS_OF_SEASON = "list_all_videos_of_a_season";
     public static final String LIST_ALL_VIDEOS_OF_GENRE = "list_all_videos_of_a_genre";
+    public static final String LIST_ALL_ONDEMAND_PAGES_OF_GENRE = "list_all_the_demand_pages_of_a_genre";
 
     public static final String MENU_REGIONS = "Regions";
     public static final String MENU_SEASONS = "Seasons";

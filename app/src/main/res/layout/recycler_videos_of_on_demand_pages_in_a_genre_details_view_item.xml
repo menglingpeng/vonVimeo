@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/detail_view_video_of_on_demand_pages_in_a_genre_cv"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/recycler_view_item_layout_marginTop"
+    android:layout_marginRight="@dimen/recycler_view_item_layout_marginTop"
+    android:layout_marginTop="@dimen/recycler_view_item_layout_marginTop"
+    android:clickable="true"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/recycler_view_item_padding"
+    card_view:cardCornerRadius="@dimen/recycler_view_item_card_view_card_corner_radius">
+
+    <RelativeLayout
+        android:id="@+id/detail_view_video_of_on_demand_pages_in_a_genre_rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <CheckBox
+            android:id="@+id/detail_view_video_of_on_demand_pages_in_a_genre_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/detail_view_video_of_on_demand_pages_in_a_genre_thumb_iv"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignLeft="@+id/detail_view_video_of_on_demand_pages_in_a_genre_thumb_iv"
+            android:layout_below="@+id/detail_view_video_of_on_demand_pages_in_a_genre_thumb_iv">
+
+
+            <TextView
+                android:id="@+id/detail_view_video_of_on_demand_pages_in_a_genre_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/detail_view_video_of_on_demand_pages_in_a_genre_from_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/detail_view_video_of_on_demand_pages_in_a_genre_name_tv"
+                android:layout_marginTop="10dp"
+                android:text="@string/from" />
+
+            <TextView
+                android:id="@+id/detail_view_video_of_on_demand_pages_in_a_genre_user_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/detail_view_video_of_on_demand_pages_in_a_genre_from_tv"
+                android:layout_toRightOf="@+id/detail_view_video_of_on_demand_pages_in_a_genre_from_tv"
+                android:textAppearance="@style/Base.DialogWindowTitle.AppCompat" />
+
+            <TextView
+                android:id="@+id/detail_view_video_of_on_demand_pages_in_a_genre_added_time_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/detail_view_video_of_on_demand_pages_in_a_genre_from_tv"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/detail_view_video_of_on_demand_pages_in_a_genre_user_name_tv" />
+
+            <TextView
+                android:id="@+id/detail_view_video_of_on_demand_pages_in_a_genre_desc_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/detail_view_video_of_on_demand_pages_in_a_genre_from_tv"
+                android:layout_marginTop="20dp" />
+
+            <RelativeLayout
+                android:id="@+id/comments_rl"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/recycler_view_item_comments_layout_layout_height"
+                android:layout_below="@+id/detail_view_video_of_on_demand_pages_in_a_genre_desc_tv"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/detail_view_video_of_on_demand_pages_in_a_genre_plays_count_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/recycler_view_item_comments_layout_layout_imageview_layout_marginLeft"
+                    android:src="@drawable/ic_play_arrow_grey_600_24dp" />
+
+                <TextView
+                    android:id="@+id/detail_view_video_of_on_demand_pages_in_a_genre_plays_count_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/recycler_view_item_comments_layout_layout_textview_layout_marginLeft"
+                    android:layout_toRightOf="@+id/detail_view_video_of_on_demand_pages_in_a_genre_plays_count_iv" />
+
+                <ImageView
+                    android:id="@+id/detail_view_video_of_on_demand_pages_in_a_genre_likes_count_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/recycler_view_item_comments_layout_layout_imageview_layout_marginLeft"
+                    android:layout_toRightOf="@+id/detail_view_video_of_on_demand_pages_in_a_genre_plays_count_tv"
+                    android:src="@drawable/ic_favorite_grey_600_24dp" />
+
+                <TextView
+                    android:id="@+id/detail_view_video_of_on_demand_pages_in_a_genre_likes_count_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/recycler_view_item_comments_layout_layout_textview_layout_marginLeft"
+                    android:layout_toRightOf="@+id/detail_view_video_of_on_demand_pages_in_a_genre_likes_count_iv" />
+
+                <ImageView
+                    android:id="@+id/detail_view_video_of_on_demand_pages_in_a_genre_comments_count_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/recycler_view_item_comments_layout_layout_imageview_layout_marginLeft"
+                    android:layout_toRightOf="@+id/detail_view_video_of_on_demand_pages_in_a_genre_likes_count_tv"
+                    android:src="@drawable/ic_play_arrow_grey_600_24dp" />
+
+                <TextView
+                    android:id="@+id/detail_view_video_of_on_demand_pages_in_a_genre_comments_count_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/recycler_view_item_comments_layout_layout_textview_layout_marginLeft"
+                    android:layout_toRightOf="@+id/detail_view_video_of_on_demand_pages_in_a_genre_comments_count_iv" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+</android.support.v7.widget.CardView>

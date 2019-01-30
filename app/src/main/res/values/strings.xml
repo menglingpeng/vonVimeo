@@ -744,4 +744,18 @@
 
     <string name="double_back_quit">再次点击离开应用</string>
 
+    <string name="add_a_video_to_a_genre_http_status_code_204">视频已经成功添加到Genre</string>
+    <string name="add_a_video_to_a_genre_http_status_code_403">用户没有权限执行此操作</string>
+    <string name="add_a_video_to_a_genre_http_status_code_404">Album不存在</string>
+    <string name="remove_a_video_from_a_genre_http_status_code_204">视频已经成功移出Genre</string>
+    <string name="remove_a_video_from_a_genre_http_status_code_403">用户没有权限执行此操作</string>
+    <string name="remove_a_video_from_a_genre_http_status_code_404">Album不存在</string>
+
+    <string name="add_a_video_to_a_season_http_status_code_204">视频已经成功添加到Season</string>
+    <string name="add_a_video_to_a_season_http_status_code_403">用户没有权限执行此操作</string>
+    <string name="add_a_video_to_a_season_http_status_code_404">Album不存在</string>
+    <string name="remove_a_video_from_a_season_http_status_code_204">视频已经成功移出Season</string>
+    <string name="remove_a_video_from_a_season_http_status_code_403">用户没有权限执行此操作</string>
+    <string name="remove_a_video_from_a_season_http_status_code_404">Season不存在</string>
+
 </resources>

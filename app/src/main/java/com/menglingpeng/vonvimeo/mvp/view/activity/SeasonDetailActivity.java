@@ -16,6 +16,7 @@ import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
 import com.menglingpeng.vonvimeo.mvp.model.Season;
 import com.menglingpeng.vonvimeo.mvp.view.SearchActivity;
 import com.menglingpeng.vonvimeo.utils.Constants;
+import com.menglingpeng.vonvimeo.utils.SnackbarUtils;
 import com.menglingpeng.vonvimeo.utils.wxshare.WechatShareManager;
 
 public class SeasonDetailActivity extends BaseActivity implements RecyclerView{
@@ -110,6 +111,30 @@ public class SeasonDetailActivity extends BaseActivity implements RecyclerView{
 
     @Override
     public void loadSuccess(String json, String requestType) {
+
+        switch (json){
+            case Constants.REQUEST_ADD_A_VIDEO_TO_A_SEASON:
+                if(json.indexOf(Constants.CODE_204_NO_CONTENT) != -1){
+                    SnackbarUtils.showSnackShort(context ,coordinatorLayout, getString(
+                            R.add_video_to_a_season_http_status_code_200));
+                }
+                break;
+            break;
+            case Constants.REQUEST_REMOVE_A_VIDEO_FROM_A_SEASON:
+                if(json.indexOf(Constants.CODE_204_NO_CONTENT) != -1){
+                    SnackbarUtils.showSnackShort(context ,coordinatorLayout, getString(
+                            R.delete_a_season_http_status_code_204));
+                }else if(json.indexOf(Constants.CODE_403_FORBIDDEN) != -1){
+                    SnackbarUtils.showSnackShort(context ,coordinatorLayout, getString(
+                            R.delete_a_season_http_status_code_404));
+                }else if(json.indexOf(Constants.CODE_403_FORBIDDEN) != -1) {
+                    SnackbarUtils.showSnackShort(context, coordinatorLayout, getString(
+                            R.delete_a_season_http_status_code_404));
+                }
+                break;
+            default:
+                break;
+        }
 
     }
 }

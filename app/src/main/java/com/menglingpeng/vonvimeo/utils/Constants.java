@@ -551,10 +551,16 @@ public class Constants {
     public static final String TAB_VIMEO_ONDEMAND_PAGES_GENRES= "tab_vimeo_ondemand_pages_genres";
     public static final String TAB_VIMEO_ONDEMAND_PAGES_POSTERS= "tab_vimeo_ondemand_pages_posters";
 
-    public static final String LIST_ALL_VIDEOS_OF_REGOIN = "list_all_videos_of_a_regoin";
-    public static final String LIST_ALL_VIDEOS_OF_SEASON = "list_all_videos_of_a_season";
-    public static final String LIST_ALL_VIDEOS_OF_GENRE = "list_all_videos_of_a_genre";
-    public static final String LIST_ALL_ONDEMAND_PAGES_OF_GENRE = "list_all_the_demand_pages_of_a_genre";
+    public static final String REQUEST_LIST_ALL_VIDEOS_OF_REGOIN = "request_list_all_videos_of_a_regoin";
+    public static final String REQUEST_LIST_ALL_VIDEOS_OF_SEASON = "request_list_all_videos_of_a_season";
+    public static final String REQUEST_LIST_ALL_VIDEOS_OF_GENRE = "request_list_all_videos_of_a_genre";
+    public static final String REQUEST_LIST_ALL_ONDEMAND_PAGES_OF_GENRE = "request_list_all_the_demand_pages_of_a_genre";
+    public static final String REQUEST_ADD_A_VIDEO_TO_A_GENRE = "request_add_a_video_to_a_genre";
+    public static final String REQUEST_REMOVE_A_VIDEO_FROM_A_GENRE =
+            "request_remove_a_video_from_a_genre";
+    public static final String REQUEST_ADD_A_VIDEO_TO_A_SEASON = "request_add_a_video_to_a_season";
+    public static final String REQUEST_REMOVE_A_VIDEO_FROM_A_SEASON =
+            "request_remove_a_video_from_a_season";
 
     public static final String MENU_REGIONS = "Regions";
     public static final String MENU_SEASONS = "Seasons";

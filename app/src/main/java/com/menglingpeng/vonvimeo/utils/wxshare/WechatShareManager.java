@@ -309,27 +309,7 @@ public class WechatShareManager {
     }
 
 
-    /*
-     * 分享文字
-     */
-    private void shareText(ShareContent shareContent, int shareType) {
-        String text = shareContent.getContent();
-        //初始化一个WXTextObject对象
-        WXTextObject textObj = new WXTextObject();
-        textObj.text = text;
-        //用WXTextObject对象初始化一个WXMediaMessage对象
-        WXMediaMessage msg = new WXMediaMessage();
-        msg.mediaObject = textObj;
-        msg.description = text;
-        //构造一个Req
-        SendMessageToWX.Req req = new SendMessageToWX.Req();
-        //transaction字段用于唯一标识一个请求
-        req.transaction = buildTransaction("textshare");
-        req.message = msg;
-        //发送的目标场景， 可以选择发送到会话 WXSceneSession 或者朋友圈 WXSceneTimeline。 默认发送到会话。
-        req.scene = shareType;
-        mWXApi.sendReq(req);
-    }
+
 
     /*
      * 分享链接

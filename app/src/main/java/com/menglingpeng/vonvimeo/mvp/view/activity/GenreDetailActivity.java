@@ -14,9 +14,11 @@ import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
+import com.menglingpeng.vonvimeo.mvp.model.OnDemandGenre;
 import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
 import com.menglingpeng.vonvimeo.mvp.view.SearchActivity;
 import com.menglingpeng.vonvimeo.utils.Constants;
+import com.menglingpeng.vonvimeo.utils.wxshare.WechatShareManager;
 
 public class GenreDetailActivity extends BaseActivity implements RecyclerView, View.OnClickListener{
 
@@ -29,6 +31,7 @@ public class GenreDetailActivity extends BaseActivity implements RecyclerView, V
     private TextView seasonTitleTv;
     private TextView regionTitleTv;
     private TextView posterTitleTv;
+    private OnDemandGenre genre;
 
     @Override
     protected void initLayoutId() {
@@ -88,6 +91,9 @@ public class GenreDetailActivity extends BaseActivity implements RecyclerView, V
                 break;
             case R.id.genre_detail_sort_videos:
                 sortType = Constants.TYPE_VIDEOS;
+                break;
+            case R.id.genre_detail_share:
+                WechatShareManager.getInstance(context).getShareContentText(genre.getUri().toString());
                 break;
             default:
                 break;

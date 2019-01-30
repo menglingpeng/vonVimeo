@@ -58,5 +58,24 @@
 
     </item>
 
+    <item
+        android:id="@+id/season_detail_more"
+        android:icon="@drawable/ic_more"
+        android:title=""
+        app:showAsAction="always">
+
+        <menu>
+            <item
+                android:id="@+id/season_detail_share"
+                android:title="@string/share"
+                android:icon="@drawable/ic_share_white_24dp"
+                app:showAsAction="never">
+
+            </item>
+
+        </menu>
+
+    </item>
+
 
 </menu>

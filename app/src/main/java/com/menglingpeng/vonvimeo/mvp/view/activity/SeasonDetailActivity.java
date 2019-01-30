@@ -13,8 +13,10 @@ import android.widget.ProgressBar;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
+import com.menglingpeng.vonvimeo.mvp.model.Season;
 import com.menglingpeng.vonvimeo.mvp.view.SearchActivity;
 import com.menglingpeng.vonvimeo.utils.Constants;
+import com.menglingpeng.vonvimeo.utils.wxshare.WechatShareManager;
 
 public class SeasonDetailActivity extends BaseActivity implements RecyclerView{
 
@@ -24,6 +26,7 @@ public class SeasonDetailActivity extends BaseActivity implements RecyclerView{
     private CoordinatorLayout coordinatorLayout;
     private ProgressBar progressBar;
     private String sortType;
+    private Season season;
 
     @Override
     protected void initLayoutId() {
@@ -85,6 +88,9 @@ public class SeasonDetailActivity extends BaseActivity implements RecyclerView{
             case R.id.season_detail_thumb_view:
                 break;
             case R.id.season_detail_detail_view:
+                break;
+            case R.id.genre_detail_share:
+                WechatShareManager.getInstance(context).getShareContentText(season.getUri().toString());
                 break;
             default:
                 break;

@@ -715,6 +715,8 @@ public class VimeoOnDemandPage implements Serializable {
                 private CreditsBean credits;
                 private VideosBean videos;
                 private GenresBean genresBean;
+                private PicturesBean pictures;
+                private LikesBean likes;
 
                 public void setComments(CommentsBean comments) {
                     this.comments = comments;
@@ -746,6 +748,22 @@ public class VimeoOnDemandPage implements Serializable {
 
                 public void setGenresBean(GenresBean genresBean) {
                     this.genresBean = genresBean;
+                }
+
+                public PicturesBean getPictures() {
+                    return pictures;
+                }
+
+                public void setPictures(PicturesBean pictures) {
+                    this.pictures = pictures;
+                }
+
+                public LikesBean getLikes() {
+                    return likes;
+                }
+
+                public void setLikes(LikesBean likes) {
+                    this.likes = likes;
                 }
 
                 public static class CommentsBean {
@@ -869,6 +887,59 @@ public class VimeoOnDemandPage implements Serializable {
                 }
 
                 public static class GenresBean {
+
+                    private String uri;
+                    private int total;
+                    private List<String> options;
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public void setTotal(int total) {
+                        this.total = total;
+                    }
+
+                    public void setOptions(List<String> options) {
+                        this.options = options;
+                    }
+
+                    public String getUri() {
+                        return uri;
+                    }
+
+                    public int getTotal() {
+                        return total;
+                    }
+
+                    public List<String> getOptions() {
+                        return options;
+                    }
+                }
+
+                public static class PicturesBean {
+
+                    private String uri;
+                    private List<String> options;
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public void setOptions(List<String> options) {
+                        this.options = options;
+                    }
+
+                    public String getUri() {
+                        return uri;
+                    }
+
+                    public List<String> getOptions() {
+                        return options;
+                    }
+                }
+
+                public static class LikesBean {
 
                     private String uri;
                     private int total;

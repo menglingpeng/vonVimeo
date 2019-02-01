@@ -2,7 +2,7 @@ package com.menglingpeng.vonvimeo.mvp.model;
 
 import java.util.List;
 
-public class OnDemand {
+public class OnDemandPage {
 
     private String uri;
     private String name;

@@ -14,8 +14,6 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -25,6 +23,7 @@ import android.view.View;
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.adapter.TabPagerFragmentAdapter;
 import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
+import com.menglingpeng.vonvimeo.mvp.model.OnDemandPage;
 import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
 import com.menglingpeng.vonvimeo.mvp.view.SearchActivity;
 import com.menglingpeng.vonvimeo.utils.Constants;
@@ -47,6 +46,9 @@ public class UserUploadedVideosActivity extends BaseActivity implements Recycler
     private TabPagerFragmentAdapter adapter;
     private String type;
     private Context context;
+    private OnDemandPage onDemandPage;
+    private String videoId;
+    private String onDemandId;
     public static final int REQUEST_VIDEO_CODE = 1;
     private static final int SMOOTHSCROLL_TOP_POSITION = 50;
 
@@ -59,7 +61,7 @@ public class UserUploadedVideosActivity extends BaseActivity implements Recycler
     protected void initViews() {
         super.initViews();
         context = getApplicationContext();
-        floatingActionButton = (FloatingActionButton) findViewById(R.id.upload_video_fab);
+        floatingActionButton = (FloatingActionButton) findViewById(R.id.upload_videos_fab);
         coordinatorLayout = (CoordinatorLayout) findViewById(R.id.upload_videos_cdl);
         toolbar = (Toolbar) findViewById(R.id.upload_videos_tb);
         toolbar.setTitle(title);
@@ -109,18 +111,18 @@ public class UserUploadedVideosActivity extends BaseActivity implements Recycler
                 showDeleteUploadedVideoDialog();
             case R.id.uploaded_videos_sort_date:
                 if(type.equals(Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_AUTH_USER)) {
-                    type = Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_AUTH_USER_SORY_BY_TITLE;
+                    type = Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_AUTH_USER_SORY_BY_DATE_ADDED;
                 }else {
-                    type = Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_SINGLE_USER_SORY_BY_TITLE;
+                    type = Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_SINGLE_USER_SORY_BY_DATE;
                 }
                 replaceFragment(RecyclerFragment.newInstance(type));
 
                 break;
             case R.id.uploaded_videos_sort_alphabetical:
                 if(type.equals(Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_AUTH_USER)) {
-                    type = Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_AUTH_USER_SORY_BY_DATE_MODIFIED;
+                    type = Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_AUTH_USER_SORY_BY_ALPHABETICAL;
                 }else {
-                    type = Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_SINGLE_USER_SORY_BY_DATE_MODIFIED;
+                    type = Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_SINGLE_USER_SORY_BY_ALPHABETICAL;
 
                 }
                 replaceFragment(RecyclerFragment.newInstance(type));
@@ -152,6 +154,8 @@ public class UserUploadedVideosActivity extends BaseActivity implements Recycler
             case R.id.uploaded_videos_sort_comments:
                 type = Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_SINGLE_USER_SORY_BY_COMMENTS;
                 replaceFragment(RecyclerFragment.newInstance(type));
+                break;
+            case R.id.uploaded_videos_add_to_on_demand_page:
                 break;
             default:
                 break;
@@ -320,7 +324,19 @@ public class UserUploadedVideosActivity extends BaseActivity implements Recycler
                 }
                 break;
             case Constants.REQUEST_UPLOADED_A_VIDEO:
+                break;
+            case Constants.REQUEST_ADD_A_VIDEO_TO_A_GENRE:
 
+                if(json.indexOf(Constants.CODE_204_NO_CONTENT) != -1){
+                    SnackbarUtils.showSnackShort(context ,coordinatorLayout, getString(
+                            R.string.add_a_video_to_on_demand_page_http_status_code_204));
+                }else if(json.indexOf(Constants.CODE_403_FORBIDDEN) != -1){
+                    SnackbarUtils.showSnackShort(context ,coordinatorLayout, getString(
+                            R.string.add_a_video_to_on_demand_page_http_status_code_403));
+                }else {
+                    SnackbarUtils.showSnackShort(context ,coordinatorLayout, getString(
+                            R.string.add_a_video_to_on_demand_page_http_status_code_404));
+                }
                 break;
             case R.id.project_detail_sort_title:
                 break;

@@ -359,6 +359,8 @@ public class Constants {
             "request_get_all_videos_uploaded_by_auth_user_sort_by_title";
     public static final String REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_AUTH_USER_SORY_BY_DATE_MODIFIED =
             "request_get_all_videos_uploaded_by_auth_user_sort_by_date_modified";
+    public static final String REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_AUTH_USER_SORY_BY_ALPHABETICAL =
+            "request_get_all_videos_uploaded_by_auth_user_sort_by_alphabetical";
     public static final String REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_AUTH_USER_SORY_BY_DATE_ADDED =
             "request_get_all_videos_uploaded_by_auth_user_sort_by_date_added";
     public static final String REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_AUTH_USER_SORY_BY_DURATION =

@@ -53,6 +53,7 @@ import com.menglingpeng.vonvimeo.utils.TextUtil;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
@@ -69,6 +70,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     onLoadingMore loadingMore;
     //加载更多的提前量
     private int visibleThreshold = 2;
+    private List<Boolean> booleanlist;
 
     public RecyclerAdapter(RecyclerView recyclerView, Context context, Fragment fragment, final String type,
                            OnRecyclerListItemListener listener) {
@@ -76,6 +78,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         this.context = context;
         this.fragment = fragment;
         mListener = listener;
+        booleanlist = new ArrayList<>();
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
@@ -93,7 +96,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 }
             }
         });
+
+        for (int i = 0; i < list.size(); i++) {
+            //设置默认的显示
+            booleanlist.add(false);
+        }
     }
+
 
     @Override
     public int getItemViewType(int position) {
@@ -683,6 +692,14 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             viewHolder.addedTimeTv.setText(video.getModified_time());
             viewHolder.videoDescTv.setText(video.getDescription());
             viewHolder.videoDurationTv.setText(video.getDuration());
+            viewHolder.uploadedVideoCb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                    //用集合保存当前的状态
+                    booleanlist.set(position,isChecked);
+                }
+            });
+            viewHolder.uploadedVideoCb.setChecked(booleanlist.get(position));
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -1788,6 +1805,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     public class UploadedVideoDetailViewHolder extends RecyclerView.ViewHolder {
+        public final CheckBox uploadedVideoCb;
         public final ImageView videoThumbIv;
         public final TextView videoNameTv;
         public final TextView userNameTv;
@@ -1799,7 +1817,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
         public UploadedVideoDetailViewHolder(View view) {
             super(view);
-
+            uploadedVideoCb = (CheckBox) view.findViewById(R.id.detail_view_uploaded_video_cb)
             videoThumbIv = (ImageView)view.findViewById(R.id.detail_view_uploaded_video_thumb_iv);
             videoNameTv = (TextView)view.findViewById(R.detail_view_uploaded_view_name_tv);
             userNameTv = (TextView)view.findViewById(R.id.detail_view_uploaded_video_user_name_tv);
@@ -3153,8 +3171,49 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     public <T> void addData(T d) {
         list.add(d);
+        for (int i = 0; i < list.size(); i++) {
+            booleanlist.add(false);
+        }
         notifyDataSetChanged();
     }
+
+    //更改集合内部存储的状态
+    public void initCheck(boolean flag) {
+        for (int i = 0; i < list.size(); i++) {
+            //更改指定位置的数据
+            booleanlist.set(i,flag);
+        }
+    }
+
+    //清空所有数据
+    public void deleteAllData() {
+        list.clear();
+        booleanlist.clear();
+        notifyDataSetChanged();
+    }
+
+    //删除选中的数据
+    public void deletingData() {
+        int y=0;
+        for (int i = 0; i < list.size(); i++) {
+            if(booleanlist.get(i)!=null && booleanlist.get(i) ) {
+                list.remove(i);
+                booleanlist.remove(i);
+                y++;
+                i--;
+            }
+        }
+        notifyDataSetChanged();
+    }
+    public void selectAll(){
+        initCheck(true);
+        notifyDataSetChanged();
+    }
+    public void unSelectAll(){
+        initCheck(false);
+        notifyDataSetChanged();
+    }
+
 
     public void setLoading(boolean isLoading) {
         this.isLoading = isLoading;

@@ -1127,5 +1127,63 @@ public class VimeoOnDemandPage implements Serializable {
                 }
             }
         }
+
+        public static class FilmBean {
+
+            private String uri;
+            private String name;
+            private String description;
+            private String link;
+            private int duration;
+            private int width;
+
+            public void setUri(String uri) {
+                this.uri = uri;
+            }
+
+            public void setName(String name) {
+                this.name = name;
+            }
+
+            public void setDescription(String description) {
+                this.description = description;
+            }
+
+            public void setLink(String link) {
+                this.link = link;
+            }
+
+            public void setDuration(int duration) {
+                this.duration = duration;
+            }
+
+            public void setWidth(int width) {
+                this.width = width;
+            }
+
+            public String getUri() {
+                return uri;
+            }
+
+            public String getName() {
+                return name;
+            }
+
+            public String getDescription() {
+                return description;
+            }
+
+            public String getLink() {
+                return link;
+            }
+
+            public int getDuration() {
+                return duration;
+            }
+
+            public int getWidth() {
+                return width;
+            }
+        }
     }
 }

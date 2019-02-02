@@ -188,6 +188,9 @@
     <string name="album_delete">删除</string>
     <string name="deleta_an_album">确定要删除</string>
 
+    <string name="no_checked">取消全选</string>
+    <string name="all_checked">全选</string>
+
     <string name="uploaded_videos_add_to_on_demand_page">添加视频到OnDemandPage</string>
 
     <string name="choose_a_project">选择项目</string>

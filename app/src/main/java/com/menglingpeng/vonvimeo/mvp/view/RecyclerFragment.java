@@ -39,6 +39,7 @@ import com.menglingpeng.vonvimeo.utils.ImageLoader;
 import java.util.HashMap;
 
 import jp.wasabeef.recyclerview.adapters.AlphaInAnimationAdapter;
+import jp.wasabeef.recyclerview.animators.LandingAnimator;
 
 public class RecyclerFragment extends BaseFragment implements com.menglingpeng.vonvimeo.mvp.interf.RecyclerView<Video>,
         OnRecyclerListItemListener, SwipeRefreshLayout.OnRefreshListener{
@@ -106,6 +107,20 @@ public class RecyclerFragment extends BaseFragment implements com.menglingpeng.v
         if(type.equals(Constants.REQUEST_LIST_DETAIL_FOR_AUTH_USER) || type.equals(
                 Constants.REQUEST_LIST_DETAIL_FOR_A_USER)){
             setUserAdapter(user);
+        }
+        if(type.equals(Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_AUTH_USER_SORY_BY_DATE_ADDED)){
+            getActivity().findViewById(R.id.uploaded_videos_all_checked).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    adapter.selectAll();
+                }
+            });
+            getActivity().findViewById(R.id.uploaded_videos_no_checked).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    adapter.unSelectAll();
+                }
+            });
         }
     }
 

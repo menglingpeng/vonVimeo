@@ -21,6 +21,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
+import com.menglingpeng.vonvimeo.mvp.adapter.RecyclerAdapter;
 import com.menglingpeng.vonvimeo.mvp.adapter.TabPagerFragmentAdapter;
 import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
 import com.menglingpeng.vonvimeo.mvp.model.OnDemandPage;
@@ -44,6 +45,7 @@ public class UserUploadedVideosActivity extends BaseActivity implements Recycler
     private ViewPager viewPager;
     private List<RecyclerFragment> fragments;
     private TabPagerFragmentAdapter adapter;
+    private RecyclerAdapter recyclerAdapter;
     private String type;
     private Context context;
     private OnDemandPage onDemandPage;
@@ -64,6 +66,7 @@ public class UserUploadedVideosActivity extends BaseActivity implements Recycler
         floatingActionButton = (FloatingActionButton) findViewById(R.id.upload_videos_fab);
         coordinatorLayout = (CoordinatorLayout) findViewById(R.id.upload_videos_cdl);
         toolbar = (Toolbar) findViewById(R.id.upload_videos_tb);
+        adapter = new RecyclerAdapter()
         toolbar.setTitle(title);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_back);
@@ -107,8 +110,14 @@ public class UserUploadedVideosActivity extends BaseActivity implements Recycler
             case R.id.uploaded_videos_share:
                 shareToWeichat();
                 break;
-            case R.id.uploaded_videos_delete:
+            case R.id.uploaded_videos_all_checked:
+                break;
+            case R.id.uploaded_videos_no_checked:
+                break;
+            case R.id.uploaded_videos_delete_checked:
                 showDeleteUploadedVideoDialog();
+                break;
+
             case R.id.uploaded_videos_sort_date:
                 if(type.equals(Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_AUTH_USER)) {
                     type = Constants.REQUEST_GET_ALL_VIDEOS_UPLOADED_BY_AUTH_USER_SORY_BY_DATE_ADDED;

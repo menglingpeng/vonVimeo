@@ -58,7 +58,11 @@ public class UserWathcedActivity extends BaseActivity implements RecyclerView{
         switch (item.getItemId()){
             case R.id.watched_share:
                 break;
-            case R.id.watched_delete:
+            case R.id.watched_all_checked:
+                break;
+            case R.id.watched_no_checked:
+                break;
+            case R.id.watched_delete_checked:
                 break;
             default:
                 break;

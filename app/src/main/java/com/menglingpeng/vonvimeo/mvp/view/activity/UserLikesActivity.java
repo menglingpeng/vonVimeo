@@ -79,8 +79,11 @@ public class UserLikesActivity extends BaseActivity implements RecyclerView, Vie
             case R.id.user_likes_share:
                 shareProject();
                 break;
-            case R.id.user_likes_remove:
-
+            case R.id.user_likes_all_checked:
+                break;
+            case R.id.user_likes_no_checked:
+                break;
+            case R.id.user_likes_delete_checked:
                 break;
             case R.id.liked_videos_sort_duration:
                 if(type.indexOf(Constants.REQUEST_AUTH_USER) != -1) {

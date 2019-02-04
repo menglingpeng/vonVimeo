@@ -1139,6 +1139,13 @@ public class VimeoOnDemandPage implements Serializable {
             private Object language;
             private int height;
             private EmbedBean embed;
+            private String created_time;
+            private String modified_time;
+            private String release_time;
+            private List<String> content_rating;
+            private Object license;
+            private PrivacyBean privacy;
+            private StatsBean stats;
 
             public void setUri(String uri) {
                 this.uri = uri;
@@ -1210,6 +1217,62 @@ public class VimeoOnDemandPage implements Serializable {
 
             public void setEmbed(EmbedBean embed) {
                 this.embed = embed;
+            }
+
+            public String getCreated_time() {
+                return created_time;
+            }
+
+            public void setCreated_time(String created_time) {
+                this.created_time = created_time;
+            }
+
+            public String getModified_time() {
+                return modified_time;
+            }
+
+            public void setModified_time(String modified_time) {
+                this.modified_time = modified_time;
+            }
+
+            public String getRelease_time() {
+                return release_time;
+            }
+
+            public void setRelease_time(String release_time) {
+                this.release_time = release_time;
+            }
+
+            public List<String> getContent_rating() {
+                return content_rating;
+            }
+
+            public void setContent_rating(List<String> content_rating) {
+                this.content_rating = content_rating;
+            }
+
+            public Object getLicense() {
+                return license;
+            }
+
+            public void setLicense(Object license) {
+                this.license = license;
+            }
+
+            public PrivacyBean getPrivacy() {
+                return privacy;
+            }
+
+            public void setPrivacy(PrivacyBean privacy) {
+                this.privacy = privacy;
+            }
+
+            public StatsBean getStats() {
+                return stats;
+            }
+
+            public void setStats(StatsBean stats) {
+                this.stats = stats;
             }
 
             public static class EmbedBean {
@@ -1344,6 +1407,69 @@ public class VimeoOnDemandPage implements Serializable {
                     }
                 }
             }
+
+            public static class PrivacyBean {
+
+                private String view;
+                private String embed;
+                private boolean download;
+                private boolean add;
+                private String comments;
+
+                public void setView(String view) {
+                    this.view = view;
+                }
+
+                public void setEmbed(String embed) {
+                    this.embed = embed;
+                }
+
+                public void setDownload(boolean download) {
+                    this.download = download;
+                }
+
+                public void setAdd(boolean add) {
+                    this.add = add;
+                }
+
+                public void setComments(String comments) {
+                    this.comments = comments;
+                }
+
+                public String getView() {
+                    return view;
+                }
+
+                public String getEmbed() {
+                    return embed;
+                }
+
+                public boolean getDownload() {
+                    return download;
+                }
+
+                public boolean getAdd() {
+                    return add;
+                }
+
+                public String getComments() {
+                    return comments;
+                }
+            }
+
+            public static class StatsBean {
+
+                private int plays;
+
+                public void setPlays(int plays) {
+                    this.plays = plays;
+                }
+
+                public int getPlays() {
+                    return plays;
+                }
+            }
+
         }
     }
 }

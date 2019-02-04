@@ -93,7 +93,11 @@ public class WatchLaterVideosActivity extends BaseActivity implements RecyclerVi
                 type = Constants.REQUEST_GET_ALL_VIDEOS_OF_AUTH_USER_WATCH_LATER_SORY_BY_DURATION;
                 replaceFragment(RecyclerFragment.newInstance(type));
                 break;
-            case R.id.user_watch_later_clear_all:
+            case R.id.user_likes_all_checked:
+                break;
+            case R.id.user_likes_no_checked:
+                break;
+            case R.id.user_likes_delete_checked:
                 break;
             default:
                 break;

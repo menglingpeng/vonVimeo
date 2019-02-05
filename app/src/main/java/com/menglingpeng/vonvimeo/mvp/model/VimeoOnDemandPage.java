@@ -1470,6 +1470,101 @@ public class VimeoOnDemandPage implements Serializable {
                 }
             }
 
+            public static class MetadataBean {
+
+                private ConnectionsBean connections;
+
+                public void setConnections(ConnectionsBean connections) {
+                    this.connections = connections;
+                }
+
+                public ConnectionsBean getConnections() {
+                    return connections;
+                }
+
+                public static class ConnectionsBean {
+                    private CommentsBean comments;
+                    private LikesBean likes;
+
+                    public CommentsBean getComments() {
+                        return comments;
+                    }
+
+                    public void setComments(CommentsBean comments) {
+                        this.comments = comments;
+                    }
+
+                    public LikesBean getLikes() {
+                        return likes;
+                    }
+
+                    public void setLikes(LikesBean likes) {
+                        this.likes = likes;
+                    }
+
+                    public static class CommentsBean {
+
+                        private String uri;
+                        private int total;
+                        private List<String> options;
+
+                        public void setUri(String uri) {
+                            this.uri = uri;
+                        }
+
+                        public void setTotal(int total) {
+                            this.total = total;
+                        }
+
+                        public void setOptions(List<String> options) {
+                            this.options = options;
+                        }
+
+                        public String getUri() {
+                            return uri;
+                        }
+
+                        public int getTotal() {
+                            return total;
+                        }
+
+                        public List<String> getOptions() {
+                            return options;
+                        }
+                    }
+
+                    public static class LikesBean {
+
+                        private String uri;
+                        private int total;
+                        private List<String> options;
+
+                        public void setUri(String uri) {
+                            this.uri = uri;
+                        }
+
+                        public void setTotal(int total) {
+                            this.total = total;
+                        }
+
+                        public void setOptions(List<String> options) {
+                            this.options = options;
+                        }
+
+                        public String getUri() {
+                            return uri;
+                        }
+
+                        public int getTotal() {
+                            return total;
+                        }
+
+                        public List<String> getOptions() {
+                            return options;
+                        }
+                    }
+                }
+            }
         }
     }
 }

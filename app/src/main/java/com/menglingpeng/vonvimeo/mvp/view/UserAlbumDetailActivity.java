@@ -81,6 +81,12 @@ public class UserAlbumDetailActivity extends BaseActivity {
                         append(album.getDescription()).toString();
                 ShareAndOpenInBrowserUtil.sendMail(context, title, text);
                 break;
+            case R.id.album_detail_all_checked:
+                break;
+            case R.id.album_detail_no_checked:
+                break;
+            case R.id.album_detail_delete_checked:
+                break;
             default:
                 break;
         }

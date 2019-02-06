@@ -76,7 +76,11 @@ public class ProjectDetailActivity extends BaseActivity implements RecyclerView{
             case R.id.project_detail_share:
                 shareProject();
                 break;
-            case R.id.project_detail_remove:
+            case R.id.project_detail_all_checked:
+                break;
+            case R.id.project_detail_no_checked:
+                break;
+            case R.id.project_detail_delete_checked:
                 type = Constants.REQUEST_REMOVE_A_VIDEO_FROM_A_PROJECT;
                 showRemoveVideoFromProject();
                 break;

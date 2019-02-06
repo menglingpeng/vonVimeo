@@ -1485,6 +1485,10 @@ public class VimeoOnDemandPage implements Serializable {
                 public static class ConnectionsBean {
                     private CommentsBean comments;
                     private LikesBean likes;
+                    private OndemandBean ondemand;
+                    private TrailerBean trailer;
+                    private SeasonBean season;
+                    private TexttracksBean texttracks;
 
                     public CommentsBean getComments() {
                         return comments;
@@ -1500,6 +1504,38 @@ public class VimeoOnDemandPage implements Serializable {
 
                     public void setLikes(LikesBean likes) {
                         this.likes = likes;
+                    }
+
+                    public OndemandBean getOndemand() {
+                        return ondemand;
+                    }
+
+                    public void setOndemand(OndemandBean ondemand) {
+                        this.ondemand = ondemand;
+                    }
+
+                    public SeasonBean getSeason() {
+                        return season;
+                    }
+
+                    public void setSeason(SeasonBean season) {
+                        this.season = season;
+                    }
+
+                    public TrailerBean getTrailer() {
+                        return trailer;
+                    }
+
+                    public void setTrailer(TrailerBean trailer) {
+                        this.trailer = trailer;
+                    }
+
+                    public TexttracksBean getTexttracks() {
+                        return texttracks;
+                    }
+
+                    public void setTexttracks(TexttracksBean texttracks) {
+                        this.texttracks = texttracks;
                     }
 
                     public static class CommentsBean {
@@ -1534,6 +1570,130 @@ public class VimeoOnDemandPage implements Serializable {
                     }
 
                     public static class LikesBean {
+
+                        private String uri;
+                        private int total;
+                        private List<String> options;
+
+                        public void setUri(String uri) {
+                            this.uri = uri;
+                        }
+
+                        public void setTotal(int total) {
+                            this.total = total;
+                        }
+
+                        public void setOptions(List<String> options) {
+                            this.options = options;
+                        }
+
+                        public String getUri() {
+                            return uri;
+                        }
+
+                        public int getTotal() {
+                            return total;
+                        }
+
+                        public List<String> getOptions() {
+                            return options;
+                        }
+                    }
+
+                    public static class OndemandBean {
+
+                        private String uri;
+                        private String resource_key;
+                        private List<String> options;
+
+                        public void setUri(String uri) {
+                            this.uri = uri;
+                        }
+
+                        public void setResource_key(String resource_key) {
+                            this.resource_key = resource_key;
+                        }
+
+                        public void setOptions(List<String> options) {
+                            this.options = options;
+                        }
+
+                        public String getUri() {
+                            return uri;
+                        }
+
+                        public String getResource_key() {
+                            return resource_key;
+                        }
+
+                        public List<String> getOptions() {
+                            return options;
+                        }
+                    }
+
+                    public static class TrailerBean {
+
+                        private String uri;
+                        private String resource_key;
+                        private List<String> options;
+
+                        public void setUri(String uri) {
+                            this.uri = uri;
+                        }
+
+                        public void setResource_key(String resource_key) {
+                            this.resource_key = resource_key;
+                        }
+
+                        public void setOptions(List<String> options) {
+                            this.options = options;
+                        }
+
+                        public String getUri() {
+                            return uri;
+                        }
+
+                        public String getResource_key() {
+                            return resource_key;
+                        }
+
+                        public List<String> getOptions() {
+                            return options;
+                        }
+                    }
+
+                    public static class SeasonBean {
+
+                        private String uri;
+                        private String name;
+                        private List<String> options;
+
+                        public void setUri(String uri) {
+                            this.uri = uri;
+                        }
+
+                        public void setName(String name) {
+                            this.name = name;
+                        }
+
+                        public void setOptions(List<String> options) {
+                            this.options = options;
+                        }
+
+                        public String getUri() {
+                            return uri;
+                        }
+
+                        public String getName() {
+                            return name;
+                        }
+
+                        public List<String> getOptions() {
+                            return options;
+                        }
+                    }
+
+                    public static class TexttracksBean {
 
                         private String uri;
                         private int total;

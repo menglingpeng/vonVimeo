@@ -1,11 +1,13 @@
 package com.menglingpeng.vonvimeo.mvp.view.activity;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -124,6 +126,14 @@ public class GroupDetailActivity extends BaseActivity implements RecyclerView{
                 type = Constants.REQUEST_GET_ALL_VIDEOS_IN_A_GROUP_SORY_BY_DURATION;
 
                 break;
+            case R.id.group_detail_all_checked:
+                break;
+            case R.id.group1_detail_no_checked:
+                break;
+            case R.id.project_detail_delete_checked:
+                type = Constants.REQUEST_REMOVE_A_VIDEO_FROM_A_PROJECT;
+                showRemoveVideoFromProject();
+                break;
             default:
                 break;
         }
@@ -182,6 +192,27 @@ public class GroupDetailActivity extends BaseActivity implements RecyclerView{
                 list.scrollToPosition(0);
             }
         }
+    }
+
+    private void showRemoveVideoFromGroup(){
+        AlertDialog dialog;
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.dialog_remove_video_from_group_title);
+        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.setPositiveButton(R.sting.ok, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+
+        dialog = builder.create();
+        dialog.show();
     }
 
     @Override

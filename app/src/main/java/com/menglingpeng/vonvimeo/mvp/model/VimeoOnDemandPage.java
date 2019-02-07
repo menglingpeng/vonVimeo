@@ -1489,6 +1489,9 @@ public class VimeoOnDemandPage implements Serializable {
                     private TrailerBean trailer;
                     private SeasonBean season;
                     private TexttracksBean texttracks;
+                    private RelatedBean related;
+                    private RecommendationsBean recommendations;
+                    private CreditsBean credits;
 
                     public CommentsBean getComments() {
                         return comments;
@@ -1538,6 +1541,30 @@ public class VimeoOnDemandPage implements Serializable {
                         this.texttracks = texttracks;
                     }
 
+                    public RecommendationsBean getRecommendations() {
+                        return recommendations;
+                    }
+
+                    public void setRecommendations(RecommendationsBean recommendations) {
+                        this.recommendations = recommendations;
+                    }
+
+                    public RelatedBean getRelated() {
+                        return related;
+                    }
+
+                    public void setRelated(RelatedBean related) {
+                        this.related = related;
+                    }
+
+                    public CreditsBean getCredits() {
+                        return credits;
+                    }
+
+                    public void setCredits(CreditsBean credits) {
+                        this.credits = credits;
+                    }
+
                     public static class CommentsBean {
 
                         private String uri;
@@ -1570,7 +1597,6 @@ public class VimeoOnDemandPage implements Serializable {
                     }
 
                     public static class LikesBean {
-
                         private String uri;
                         private int total;
                         private List<String> options;
@@ -1694,6 +1720,81 @@ public class VimeoOnDemandPage implements Serializable {
                     }
 
                     public static class TexttracksBean {
+
+                        private String uri;
+                        private int total;
+                        private List<String> options;
+
+                        public void setUri(String uri) {
+                            this.uri = uri;
+                        }
+
+                        public void setTotal(int total) {
+                            this.total = total;
+                        }
+
+                        public void setOptions(List<String> options) {
+                            this.options = options;
+                        }
+
+                        public String getUri() {
+                            return uri;
+                        }
+
+                        public int getTotal() {
+                            return total;
+                        }
+
+                        public List<String> getOptions() {
+                            return options;
+                        }
+                    }
+
+                    public static class RelatedBean {
+
+                        private String uri;
+                        private List<String> options;
+
+                        public void setUri(String uri) {
+                            this.uri = uri;
+                        }
+
+                        public void setOptions(List<String> options) {
+                            this.options = options;
+                        }
+
+                        public String getUri() {
+                            return uri;
+                        }
+
+                        public List<String> getOptions() {
+                            return options;
+                        }
+                    }
+
+                    public static class RecommendationsBean {
+
+                        private String uri;
+                        private List<String> options;
+
+                        public void setUri(String uri) {
+                            this.uri = uri;
+                        }
+
+                        public void setOptions(List<String> options) {
+                            this.options = options;
+                        }
+
+                        public String getUri() {
+                            return uri;
+                        }
+
+                        public List<String> getOptions() {
+                            return options;
+                        }
+                    }
+
+                    public static class CreditsBean {
 
                         private String uri;
                         private int total;

@@ -272,6 +272,8 @@
     <string name="remove_a_video_from_a_project_http_status_code_404">此视频已经不在Project内</string>
     <string name="dialog_remove_video_from_project_title">确定要把视频移出此Project吗？</string>
 
+    <string name="dialog_remove_video_from_group_title">确定要把视频移出此Group吗？</string>
+
 
     <string name="following">Following</string>
     <string name="online">Online</string>

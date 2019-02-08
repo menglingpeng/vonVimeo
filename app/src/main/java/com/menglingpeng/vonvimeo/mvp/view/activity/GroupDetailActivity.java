@@ -41,6 +41,7 @@ import java.util.List;
 public class GroupDetailActivity extends BaseActivity implements RecyclerView{
 
     private Group group;
+    private User user;
     private Toolbar toolbar;
     private CoordinatorLayout coordinatorLayout;
     private CollapsingToolbarLayout collapsingToolbarLayout;
@@ -60,7 +61,8 @@ public class GroupDetailActivity extends BaseActivity implements RecyclerView{
     private Context context;
     private String title;
     private String type;
-    private String groupID;
+    private String groupId;
+    private String videoId;
     private Boolean isJoined;
     private static final int SMOOTHSCROLL_TOP_POSITION = 50;
 
@@ -74,7 +76,7 @@ public class GroupDetailActivity extends BaseActivity implements RecyclerView{
         super.initViews();
         context = getApplicationContext();
         group = (Group)getIntent().getSerializableExtra(Constants.GROUP);
-        groupID = IdStringUtil.getId(group.getUri());
+        groupId = IdStringUtil.getId(group.getUri());
         coordinatorLayout = (CoordinatorLayout) findViewById(R.id.group_detail_cdl);
         toolbar = (Toolbar) findViewById(R.id.group_detail_tb);
         toolbar.setTitle(title);
@@ -132,7 +134,7 @@ public class GroupDetailActivity extends BaseActivity implements RecyclerView{
                 break;
             case R.id.project_detail_delete_checked:
                 type = Constants.REQUEST_REMOVE_A_VIDEO_FROM_A_PROJECT;
-                showRemoveVideoFromProject();
+                showRemoveVideoFromGroup();
                 break;
             default:
                 break;
@@ -280,6 +282,15 @@ public class GroupDetailActivity extends BaseActivity implements RecyclerView{
                             R.string.leave_a_group_http_status_code_403));
                 }
                 break;
+            case Constants.REQUEST_REMOVE_A_VIDEO_FROM_A_PROJECT:
+                if(json.equals(Constants.CODE_204_NO_CONTENT)){
+                    SnackbarUtils.showSnackShort(context, coordinatorLayout,getString(
+                            R.string.remove_a_video_from_a_project_http_status_code_204));
+                }else if(json.indexOf(Constants.CODE_403_FORBIDDEN) != -1){
+                    SnackbarUtils.showErrorSnackShort(context, coordinatorLayout, getString(
+                            R.string.leave_a_group_http_status_code_403));
+                }
+                break;
             default:
                 progressBar.setVisibility(ProgressBar.GONE);
 
@@ -316,9 +327,9 @@ public class GroupDetailActivity extends BaseActivity implements RecyclerView{
                         });
                     }
                 }
-                groupDetailTl = (TabLayout) findViewById(R.id.profile_tl);
+                groupDetailTl = (TabLayout) findViewById(R.id.group_detail_tl);
                 groupDetailTl.setVisibility(TabLayout.VISIBLE);
-                groupDetailVp = (ViewPager) findViewById(R.id.profile_vp);
+                groupDetailVp = (ViewPager) findViewById(R.id.group_detail_vp);
                 fragmentsList = new ArrayList<>();
                 setSupportActionBar(toolbar);
                 //隐藏Toolbar的标题
@@ -331,9 +342,6 @@ public class GroupDetailActivity extends BaseActivity implements RecyclerView{
                     }
                 });
                 groupDetailNameTv.setText(user.getName());
-                TextUtil.setHtmlText(groupDetailTv, user.getBio());
-                ImageLoader.loadBlurImage(getApplicationContext(), user.getAvatar_url(), groupDetailBackgroundIv);
-                ImageLoader.loadCricleImage(getApplicationContext(), user.getAvatar_url(), groupDetailAvatarIv);
                 groupDetailBackgroundIv.setAlpha(100);
         }
     }

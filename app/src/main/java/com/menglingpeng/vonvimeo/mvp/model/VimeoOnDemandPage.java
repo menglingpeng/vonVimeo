@@ -1473,6 +1473,7 @@ public class VimeoOnDemandPage implements Serializable {
             public static class MetadataBean {
 
                 private ConnectionsBean connections;
+                private InteractionsBean interactions;
 
                 public void setConnections(ConnectionsBean connections) {
                     this.connections = connections;
@@ -1480,6 +1481,14 @@ public class VimeoOnDemandPage implements Serializable {
 
                 public ConnectionsBean getConnections() {
                     return connections;
+                }
+
+                public InteractionsBean getInteractions() {
+                    return interactions;
+                }
+
+                public void setInteractions(InteractionsBean interactions) {
+                    this.interactions = interactions;
                 }
 
                 public static class ConnectionsBean {
@@ -1492,6 +1501,7 @@ public class VimeoOnDemandPage implements Serializable {
                     private RelatedBean related;
                     private RecommendationsBean recommendations;
                     private CreditsBean credits;
+                    private PicturesBean pictures;
 
                     public CommentsBean getComments() {
                         return comments;
@@ -1563,6 +1573,14 @@ public class VimeoOnDemandPage implements Serializable {
 
                     public void setCredits(CreditsBean credits) {
                         this.credits = credits;
+                    }
+
+                    public PicturesBean getPictures() {
+                        return pictures;
+                    }
+
+                    public void setPictures(PicturesBean pictures) {
+                        this.pictures = pictures;
                     }
 
                     public static class CommentsBean {
@@ -1822,6 +1840,134 @@ public class VimeoOnDemandPage implements Serializable {
 
                         public List<String> getOptions() {
                             return options;
+                        }
+                    }
+
+                    public static class PicturesBean {
+
+                        private String uri;
+                        private int total;
+                        private List<String> options;
+
+                        public void setUri(String uri) {
+                            this.uri = uri;
+                        }
+
+                        public void setTotal(int total) {
+                            this.total = total;
+                        }
+
+                        public void setOptions(List<String> options) {
+                            this.options = options;
+                        }
+
+                        public String getUri() {
+                            return uri;
+                        }
+
+                        public int getTotal() {
+                            return total;
+                        }
+
+                        public List<String> getOptions() {
+                            return options;
+                        }
+                    }
+                }
+
+                public static class InteractionsBean {
+                    private RentBean rent;
+
+                    public RentBean getRent() {
+                        return rent;
+                    }
+
+                    public void setRent(RentBean rent) {
+                        this.rent = rent;
+                    }
+
+                    public static class RentBean {
+
+                        private Object expires_time;
+                        private Object purchase_time;
+                        private Object uri;
+                        private String stream;
+                        private Object link;
+                        private Object price;
+                        private Object currency;
+                        private Object display_price;
+                        private boolean drm;
+
+                        public void setExpires_time(Object expires_time) {
+                            this.expires_time = expires_time;
+                        }
+
+                        public void setPurchase_time(Object purchase_time) {
+                            this.purchase_time = purchase_time;
+                        }
+
+                        public void setUri(Object uri) {
+                            this.uri = uri;
+                        }
+
+                        public void setStream(String stream) {
+                            this.stream = stream;
+                        }
+
+                        public void setLink(Object link) {
+                            this.link = link;
+                        }
+
+                        public void setPrice(Object price) {
+                            this.price = price;
+                        }
+
+                        public void setCurrency(Object currency) {
+                            this.currency = currency;
+                        }
+
+                        public void setDisplay_price(Object display_price) {
+                            this.display_price = display_price;
+                        }
+
+                        public void setDrm(boolean drm) {
+                            this.drm = drm;
+                        }
+
+                        public Object getExpires_time() {
+                            return expires_time;
+                        }
+
+                        public Object getPurchase_time() {
+                            return purchase_time;
+                        }
+
+                        public Object getUri() {
+                            return uri;
+                        }
+
+                        public String getStream() {
+                            return stream;
+                        }
+
+                        public Object getLink() {
+                            return link;
+                        }
+
+                        public Object getPrice() {
+                            return price;
+                        }
+
+                        public Object getCurrency() {
+                            return currency;
+                        }
+
+                        public Object getDisplay_price() {
+                            return display_price;
+                        }
+
+                        public boolean getDrm() {
+                            return drm;
                         }
                     }
                 }

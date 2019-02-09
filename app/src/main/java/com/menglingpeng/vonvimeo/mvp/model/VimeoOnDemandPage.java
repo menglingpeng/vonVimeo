@@ -1877,6 +1877,8 @@ public class VimeoOnDemandPage implements Serializable {
 
                 public static class InteractionsBean {
                     private RentBean rent;
+                    private WatchlaterBean watchlater;
+                    private LikeBean like;
 
                     public RentBean getRent() {
                         return rent;
@@ -1884,6 +1886,22 @@ public class VimeoOnDemandPage implements Serializable {
 
                     public void setRent(RentBean rent) {
                         this.rent = rent;
+                    }
+
+                    public LikeBean getLike() {
+                        return like;
+                    }
+
+                    public void setLike(LikeBean like) {
+                        this.like = like;
+                    }
+
+                    public WatchlaterBean getWatchlater() {
+                        return watchlater;
+                    }
+
+                    public void setWatchlater(WatchlaterBean watchlater) {
+                        this.watchlater = watchlater;
                     }
 
                     public static class RentBean {
@@ -1968,6 +1986,86 @@ public class VimeoOnDemandPage implements Serializable {
 
                         public boolean getDrm() {
                             return drm;
+                        }
+                    }
+
+                    public static class WatchlaterBean {
+
+                        private String uri;
+                        private boolean added;
+                        private Object added_time;
+                        private List<String> options;
+
+                        public void setUri(String uri) {
+                            this.uri = uri;
+                        }
+
+                        public void setAdded(boolean added) {
+                            this.added = added;
+                        }
+
+                        public void setAdded_time(Object added_time) {
+                            this.added_time = added_time;
+                        }
+
+                        public void setOptions(List<String> options) {
+                            this.options = options;
+                        }
+
+                        public String getUri() {
+                            return uri;
+                        }
+
+                        public boolean getAdded() {
+                            return added;
+                        }
+
+                        public Object getAdded_time() {
+                            return added_time;
+                        }
+
+                        public List<String> getOptions() {
+                            return options;
+                        }
+                    }
+
+                    public static class LikeBean {
+
+                        private String uri;
+                        private boolean added;
+                        private String added_time;
+                        private List<String> options;
+
+                        public void setUri(String uri) {
+                            this.uri = uri;
+                        }
+
+                        public void setAdded(boolean added) {
+                            this.added = added;
+                        }
+
+                        public void setAdded_time(String added_time) {
+                            this.added_time = added_time;
+                        }
+
+                        public void setOptions(List<String> options) {
+                            this.options = options;
+                        }
+
+                        public String getUri() {
+                            return uri;
+                        }
+
+                        public boolean getAdded() {
+                            return added;
+                        }
+
+                        public String getAdded_time() {
+                            return added_time;
+                        }
+
+                        public List<String> getOptions() {
+                            return options;
                         }
                     }
                 }

@@ -100,6 +100,7 @@ public class ChannelDetailActivity extends BaseActivity implements RecyclerView{
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        String text;
         switch (item.getItemId()){
             case R.id.channel_detail_search:
                 Intent intent = new Intent(this, SearchActivity.class);
@@ -107,8 +108,16 @@ public class ChannelDetailActivity extends BaseActivity implements RecyclerView{
                 startActivity(intent);
                 break;
             case R.id.channel_detail_share:
+                text = new StringBuilder().append(channel.getName()).append("\n").append(channel.getUri()).append("\n").
+                        append(channel.getDescription()).toString();
                 break;
             case R.id.channel_detail_follow:
+                break;
+            case R.id.channel_detail_all_checked:
+                break;
+            case R.id.channel_detail_no_checked:
+                break;
+            case R.id.channel_detail_delete_checked:
                 break;
             default:
                 break;

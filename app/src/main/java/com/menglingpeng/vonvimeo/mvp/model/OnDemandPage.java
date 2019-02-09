@@ -1996,6 +1996,21 @@ public class OnDemandPage {
                     return report;
                 }
 
+                public LikeBean getLike() {
+                    return like;
+                }
+
+                public void setLike(LikeBean like) {
+                    this.like = like;
+                }
+
+                public WatchlaterBean getWatchlater() {
+                    return watchlater;
+                }
+
+                public void setWatchlater(WatchlaterBean watchlater) {
+                    this.watchlater = watchlater;
+                }
 
                 public static class WatchlaterBean {
 

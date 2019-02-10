@@ -1879,6 +1879,9 @@ public class VimeoOnDemandPage implements Serializable {
                     private RentBean rent;
                     private WatchlaterBean watchlater;
                     private LikeBean like;
+                    private BuyBean buyBean;
+                    private Object subscribe;
+                    private ReportBean report;
 
                     public RentBean getRent() {
                         return rent;
@@ -1902,6 +1905,30 @@ public class VimeoOnDemandPage implements Serializable {
 
                     public void setWatchlater(WatchlaterBean watchlater) {
                         this.watchlater = watchlater;
+                    }
+
+                    public BuyBean getBuyBean() {
+                        return buyBean;
+                    }
+
+                    public void setBuyBean(BuyBean buyBean) {
+                        this.buyBean = buyBean;
+                    }
+
+                    public ReportBean getReport() {
+                        return report;
+                    }
+
+                    public void setReport(ReportBean report) {
+                        this.report = report;
+                    }
+
+                    public Object getSubscribe() {
+                        return subscribe;
+                    }
+
+                    public void setSubscribe(Object subscribe) {
+                        this.subscribe = subscribe;
                     }
 
                     public static class RentBean {
@@ -2066,6 +2093,131 @@ public class VimeoOnDemandPage implements Serializable {
 
                         public List<String> getOptions() {
                             return options;
+                        }
+                    }
+
+                    public static class BuyBean {
+
+                        private Object expires_time;
+                        private Object purchase_time;
+                        private Object uri;
+                        private String download;
+                        private String stream;
+                        private Object link;
+                        private Object price;
+                        private Object currency;
+                        private Object display_price;
+                        private boolean drm;
+
+                        public void setExpires_time(Object expires_time) {
+                            this.expires_time = expires_time;
+                        }
+
+                        public void setPurchase_time(Object purchase_time) {
+                            this.purchase_time = purchase_time;
+                        }
+
+                        public void setUri(Object uri) {
+                            this.uri = uri;
+                        }
+
+                        public void setDownload(String download) {
+                            this.download = download;
+                        }
+
+                        public void setStream(String stream) {
+                            this.stream = stream;
+                        }
+
+                        public void setLink(Object link) {
+                            this.link = link;
+                        }
+
+                        public void setPrice(Object price) {
+                            this.price = price;
+                        }
+
+                        public void setCurrency(Object currency) {
+                            this.currency = currency;
+                        }
+
+                        public void setDisplay_price(Object display_price) {
+                            this.display_price = display_price;
+                        }
+
+                        public void setDrm(boolean drm) {
+                            this.drm = drm;
+                        }
+
+                        public Object getExpires_time() {
+                            return expires_time;
+                        }
+
+                        public Object getPurchase_time() {
+                            return purchase_time;
+                        }
+
+                        public Object getUri() {
+                            return uri;
+                        }
+
+                        public String getDownload() {
+                            return download;
+                        }
+
+                        public String getStream() {
+                            return stream;
+                        }
+
+                        public Object getLink() {
+                            return link;
+                        }
+
+                        public Object getPrice() {
+                            return price;
+                        }
+
+                        public Object getCurrency() {
+                            return currency;
+                        }
+
+                        public Object getDisplay_price() {
+                            return display_price;
+                        }
+
+                        public boolean getDrm() {
+                            return drm;
+                        }
+                    }
+
+                    public static class ReportBean {
+
+                        private String uri;
+                        private List<String> options;
+                        private List<String> reason;
+
+                        public void setUri(String uri) {
+                            this.uri = uri;
+                        }
+
+                        public void setOptions(List<String> options) {
+                            this.options = options;
+                        }
+
+                        public void setReason(List<String> reason) {
+                            this.reason = reason;
+                        }
+
+                        public String getUri() {
+                            return uri;
+                        }
+
+                        public List<String> getOptions() {
+                            return options;
+                        }
+
+                        public List<String> getReason() {
+                            return reason;
                         }
                     }
                 }

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/user_groups_search"
+        android:title=""
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_search_white_24dp"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        app:showAsAction="always">
+    </item>
+
+    <item
+        android:id="@+id/user_groups_thumbnails_view"
+        android:title=""
+        app:showAsAction="always">
+
+        <menu>
+            <item
+                android:id="@+id/user_groups_detail_view"
+                android:title=""
+                app:showAsAction="never"></item>
+        </menu>
+
+    </item>
+
+    <item
+        android:id="@+id/user_groups_sort"
+        android:icon="@drawable/ic_more"
+        android:title=""
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/user_groups_sort_date"
+                android:title="@string/sort_date"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/user_groups_sort_alphabetical"
+                android:title="@string/sort_alphabetical"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/user_groups_sort_videos"
+                android:title="@string/sort_videos"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/user_groups_sort_members"
+                android:title="@string/sort_members"
+                app:showAsAction="never"></item>
+        </menu>
+
+    </item>
+
+    <item
+        android:id="@+id/user_groups_more"
+        android:icon="@drawable/ic_more"
+        android:title=""
+        app:showAsAction="always">
+        <menu>
+
+            <item
+                android:id="@+id/user_groups_all_checked"
+                android:icon="@drawable/ic_delete_grey_600_24dp"
+                android:title="@string/all_checked"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/user_groups_no_checked"
+                android:icon="@drawable/ic_delete_grey_600_24dp"
+                android:title="@string/no_checked"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/user_groups_delete_checked"
+                android:icon="@drawable/ic_delete_grey_600_24dp"
+                android:title="@string/album_delete"
+                app:showAsAction="never"></item>
+
+        </menu>
+    </item>
+
+</menu>

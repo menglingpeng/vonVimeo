@@ -18,6 +18,9 @@ public class VimeoOnDemandPage implements Serializable {
     private PicturesBean pictures;
     private List<String> content_rating;
     private List<GenresBean> genres;
+    private List<MetadataBean> metadatas;
+    private FilmBean film;
+    private TrailerBean trailer;
 
     public String getUri() {
         return uri;
@@ -121,6 +124,30 @@ public class VimeoOnDemandPage implements Serializable {
 
     public void setPictures(PicturesBean pictures) {
         this.pictures = pictures;
+    }
+
+    public List<MetadataBean> getMetadatas() {
+        return metadatas;
+    }
+
+    public void setMetadatas(List<MetadataBean> metadatas) {
+        this.metadatas = metadatas;
+    }
+
+    public FilmBean getFilm() {
+        return film;
+    }
+
+    public void setFilm(FilmBean film) {
+        this.film = film;
+    }
+
+    public TrailerBean getTrailer() {
+        return trailer;
+    }
+
+    public void setTrailer(TrailerBean trailer) {
+        this.trailer = trailer;
     }
 
     public static class ColorsBean {
@@ -294,6 +321,8 @@ public class VimeoOnDemandPage implements Serializable {
         private String canonical;
         private String link;
         private ConnectionsBean connections;
+        private BuyBean buyBean;
+        private Episodes episodes;
 
         public void setUri(String uri) {
             this.uri = uri;
@@ -333,6 +362,22 @@ public class VimeoOnDemandPage implements Serializable {
 
         public ConnectionsBean getConnections() {
             return connections;
+        }
+
+        public BuyBean getBuyBean() {
+            return buyBean;
+        }
+
+        public void setBuyBean(BuyBean buyBean) {
+            this.buyBean = buyBean;
+        }
+
+        public Episodes getEpisodes() {
+            return episodes;
+        }
+
+        public void setEpisodes(Episodes episodes) {
+            this.episodes = episodes;
         }
 
         public static class ConnectionsBean {
@@ -2222,6 +2267,63 @@ public class VimeoOnDemandPage implements Serializable {
                     }
                 }
             }
+        }
+    }
+
+    public static class TrailerBean {
+        private String name;
+        private String description;
+        private String link;
+        private int width;
+        private String language;
+        private int height;
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public void setDescription(String description) {
+            this.description = description;
+        }
+
+        public void setLink(String link) {
+            this.link = link;
+        }
+
+        public void setWidth(int width) {
+            this.width = width;
+        }
+
+        public void setLanguage(String language) {
+            this.language = language;
+        }
+
+        public void setHeight(int height) {
+            this.height = height;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public String getLink() {
+            return link;
+        }
+
+        public int getWidth() {
+            return width;
+        }
+
+        public String getLanguage() {
+            return language;
+        }
+
+        public int getHeight() {
+            return height;
         }
     }
 }

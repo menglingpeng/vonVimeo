@@ -4,6 +4,7 @@
 
     <item
         android:id="@+id/groups_search"
+        android:title=""
         android:orderInCategory="100"
         android:icon="@drawable/ic_search_white_24dp"
         app:actionViewClass="android.support.v7.widget.SearchView"
@@ -12,7 +13,6 @@
 
     <item
         android:id="@+id/groups_thumbnails_view"
-        android:icon=""
         android:title=""
         app:showAsAction="always">
 
@@ -51,7 +51,6 @@
                 android:title="@string/sort_members"
                 app:showAsAction="never"></item>
         </menu>
-
 
     </item>
 

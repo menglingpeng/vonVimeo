@@ -119,7 +119,7 @@ public class UserGroupActivity extends BaseActivity implements RecyclerView{
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
-            case R.id.groups_sort_date:
+            case R.id.user_groups_sort_date:
                 if(groupType.equals(Constants.GROUP_TYPE_FEATURED)){
                     if(viewType.equals(Constants.VIEW_TYPE_THUMBNAILS)){
 
@@ -130,15 +130,21 @@ public class UserGroupActivity extends BaseActivity implements RecyclerView{
 
                 }
                 break;
-            case R.id.groups_sort_alphabetical:
+            case R.id.user_groups_sort_alphabetical:
                 break;
-            case R.id.groups_sort_videos:
+            case R.id.user_groups_sort_videos:
                 break;
-            case R.id.groups_sort_members:
+            case R.id.user_groups_sort_members:
                 break;
-            case R.id.groups_sort_groups_thumbnails_view:
+            case R.id.user_groups_sort_groups_thumbnails_view:
                 break;
-            case R.id.groups_sort_groups_detail_view:
+            case R.id.user_groups_sort_groups_detail_view:
+                break;
+            case R.id.user_groups_all_checked:
+                break;
+            case R.id.user_groups_no_checked:
+                break;
+            case R.id.user_groups_delete_checked:
                 break;
             default:
                 break;

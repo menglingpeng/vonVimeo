@@ -98,11 +98,11 @@ public class UserChannelsActivity extends BaseActivity implements RecyclerView{
                 break;
             case R.id.user_channels_detail:
                 break;
-            case R.id.channel_detail_all_checked:
+            case R.id.user_channels_all_checked:
                 break;
-            case R.id.channel_detail_no_checked:
+            case R.id.user_channels_no_checked:
                 break;
-            case R.id.channel_detail_delete_checked:
+            case R.id.user_channels_delete_checked:
                 break;
             default:
                 break;

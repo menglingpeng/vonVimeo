@@ -80,17 +80,23 @@ public class UserAlbumsActivity extends BaseActivity implements RecyclerView{
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
-            case R.id.albums_sort_date:
+            case R.id.user_albums_sort_date:
                 type = Constants.REQUEST_LIST_ALL_ALBUMS_OF_A_USER_SORT_BY_DATE;
                 break;
-            case R.id.album_albums_sort_alphabetical:
+            case R.id.user_album_albums_sort_alphabetical:
                 type = Constants.REQUEST_LIST_ALL_ALBUMS_OF_A_USER_SORT_BY_DATE;
                 break;
-            case R.id.albums_sort_videos:
+            case R.id.user_albums_sort_videos:
                 type = Constants.REQUEST_LIST_ALL_ALBUMS_OF_A_USER_SORT_BY_DATE;
                 break;
-            case R.id.albums_sort_duration:
+            case R.id.user_albums_sort_duration:
                 type = Constants.REQUEST_LIST_ALL_ALBUMS_OF_A_USER_SORT_BY_DATE;
+                break;
+            case R.id.user_albums_all_checked:
+                break;
+            case R.id.user_albums_no_checked:
+                break;
+            case R.id.user_albums_delete_checked:
                 break;
             default:
                 break;

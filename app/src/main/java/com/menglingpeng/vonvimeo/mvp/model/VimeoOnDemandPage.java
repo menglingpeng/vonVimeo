@@ -742,437 +742,6 @@ public class VimeoOnDemandPage implements Serializable {
             }
         }
 
-        public static class MetadataBean {
-
-            private ConnectionsBean connections;
-            private InteractionsBean interactions;
-
-            public void setConnections(ConnectionsBean connections) {
-                this.connections = connections;
-            }
-
-            public ConnectionsBean getConnections() {
-                return connections;
-            }
-
-            public InteractionsBean getInteractions() {
-                return interactions;
-            }
-
-            public void setInteractions(InteractionsBean interactions) {
-                this.interactions = interactions;
-            }
-
-            public static class ConnectionsBean {
-
-                private CommentsBean comments;
-                private CreditsBean credits;
-                private VideosBean videos;
-                private GenresBean genresBean;
-                private PicturesBean pictures;
-                private LikesBean likes;
-                private SeasonsBean seasons;
-
-                public void setComments(CommentsBean comments) {
-                    this.comments = comments;
-                }
-
-                public void setCredits(CreditsBean credits) {
-                    this.credits = credits;
-                }
-
-                public CommentsBean getComments() {
-                    return comments;
-                }
-
-                public CreditsBean getCredits() {
-                    return credits;
-                }
-
-                public VideosBean getVideos() {
-                    return videos;
-                }
-
-                public void setVideos(VideosBean videos) {
-                    this.videos = videos;
-                }
-
-                public GenresBean getGenresBean() {
-                    return genresBean;
-                }
-
-                public void setGenresBean(GenresBean genresBean) {
-                    this.genresBean = genresBean;
-                }
-
-                public PicturesBean getPictures() {
-                    return pictures;
-                }
-
-                public void setPictures(PicturesBean pictures) {
-                    this.pictures = pictures;
-                }
-
-                public LikesBean getLikes() {
-                    return likes;
-                }
-
-                public void setLikes(LikesBean likes) {
-                    this.likes = likes;
-                }
-
-                public SeasonsBean getSeasons() {
-                    return seasons;
-                }
-
-                public void setSeasons(SeasonsBean seasons) {
-                    this.seasons = seasons;
-                }
-
-                public static class CommentsBean {
-
-                    private String uri;
-                    private int total;
-                    private List<String> options;
-
-                    public void setUri(String uri) {
-                        this.uri = uri;
-                    }
-
-                    public void setTotal(int total) {
-                        this.total = total;
-                    }
-
-                    public void setOptions(List<String> options) {
-                        this.options = options;
-                    }
-
-                    public String getUri() {
-                        return uri;
-                    }
-
-                    public int getTotal() {
-                        return total;
-                    }
-
-                    public List<String> getOptions() {
-                        return options;
-                    }
-                }
-
-                public static class CreditsBean {
-
-                    private String uri;
-                    private int total;
-                    private List<String> options;
-
-                    public void setUri(String uri) {
-                        this.uri = uri;
-                    }
-
-                    public void setTotal(int total) {
-                        this.total = total;
-                    }
-
-                    public void setOptions(List<String> options) {
-                        this.options = options;
-                    }
-
-                    public String getUri() {
-                        return uri;
-                    }
-
-                    public int getTotal() {
-                        return total;
-                    }
-
-                    public List<String> getOptions() {
-                        return options;
-                    }
-                }
-
-                public static class VideosBean {
-
-                    private String uri;
-                    private int total;
-                    private int main_total;
-                    private int extra_total;
-                    private int viewable_total;
-                    private List<String> options;
-
-                    public void setUri(String uri) {
-                        this.uri = uri;
-                    }
-
-                    public void setTotal(int total) {
-                        this.total = total;
-                    }
-
-                    public void setMain_total(int main_total) {
-                        this.main_total = main_total;
-                    }
-
-                    public void setExtra_total(int extra_total) {
-                        this.extra_total = extra_total;
-                    }
-
-                    public void setViewable_total(int viewable_total) {
-                        this.viewable_total = viewable_total;
-                    }
-
-                    public void setOptions(List<String> options) {
-                        this.options = options;
-                    }
-
-                    public String getUri() {
-                        return uri;
-                    }
-
-                    public int getTotal() {
-                        return total;
-                    }
-
-                    public int getMain_total() {
-                        return main_total;
-                    }
-
-                    public int getExtra_total() {
-                        return extra_total;
-                    }
-
-                    public int getViewable_total() {
-                        return viewable_total;
-                    }
-
-                    public List<String> getOptions() {
-                        return options;
-                    }
-                }
-
-                public static class GenresBean {
-
-                    private String uri;
-                    private int total;
-                    private List<String> options;
-
-                    public void setUri(String uri) {
-                        this.uri = uri;
-                    }
-
-                    public void setTotal(int total) {
-                        this.total = total;
-                    }
-
-                    public void setOptions(List<String> options) {
-                        this.options = options;
-                    }
-
-                    public String getUri() {
-                        return uri;
-                    }
-
-                    public int getTotal() {
-                        return total;
-                    }
-
-                    public List<String> getOptions() {
-                        return options;
-                    }
-                }
-
-                public static class PicturesBean {
-
-                    private String uri;
-                    private List<String> options;
-
-                    public void setUri(String uri) {
-                        this.uri = uri;
-                    }
-
-                    public void setOptions(List<String> options) {
-                        this.options = options;
-                    }
-
-                    public String getUri() {
-                        return uri;
-                    }
-
-                    public List<String> getOptions() {
-                        return options;
-                    }
-                }
-
-                public static class LikesBean {
-
-                    private String uri;
-                    private int total;
-                    private List<String> options;
-
-                    public void setUri(String uri) {
-                        this.uri = uri;
-                    }
-
-                    public void setTotal(int total) {
-                        this.total = total;
-                    }
-
-                    public void setOptions(List<String> options) {
-                        this.options = options;
-                    }
-
-                    public String getUri() {
-                        return uri;
-                    }
-
-                    public int getTotal() {
-                        return total;
-                    }
-
-                    public List<String> getOptions() {
-                        return options;
-                    }
-                }
-
-                public static class SeasonsBean {
-
-                    private String uri;
-                    private int total;
-                    private List<String> options;
-
-                    public void setUri(String uri) {
-                        this.uri = uri;
-                    }
-
-                    public void setTotal(int total) {
-                        this.total = total;
-                    }
-
-                    public void setOptions(List<String> options) {
-                        this.options = options;
-                    }
-
-                    public String getUri() {
-                        return uri;
-                    }
-
-                    public int getTotal() {
-                        return total;
-                    }
-
-                    public List<String> getOptions() {
-                        return options;
-                    }
-                }
-            }
-
-            public static class InteractionsBean {
-
-                private Object subscribe;
-                private BuyBean buy;
-                private Object rent;
-
-                public void setSubscribe(Object subscribe) {
-                    this.subscribe = subscribe;
-                }
-
-                public void setBuy(BuyBean buy) {
-                    this.buy = buy;
-                }
-
-                public void setRent(Object rent) {
-                    this.rent = rent;
-                }
-
-                public Object getSubscribe() {
-                    return subscribe;
-                }
-
-                public BuyBean getBuy() {
-                    return buy;
-                }
-
-                public Object getRent() {
-                    return rent;
-                }
-
-                public static class BuyBean {
-
-                    private Object expires_time;
-                    private Object purchase_time;
-                    private Object uri;
-                    private String download;
-                    private String stream;
-                    private String link;
-                    private boolean drm;
-                    private List<String> options;
-
-                    public void setExpires_time(Object expires_time) {
-                        this.expires_time = expires_time;
-                    }
-
-                    public void setPurchase_time(Object purchase_time) {
-                        this.purchase_time = purchase_time;
-                    }
-
-                    public void setUri(Object uri) {
-                        this.uri = uri;
-                    }
-
-                    public void setDownload(String download) {
-                        this.download = download;
-                    }
-
-                    public void setStream(String stream) {
-                        this.stream = stream;
-                    }
-
-                    public void setLink(String link) {
-                        this.link = link;
-                    }
-
-                    public void setDrm(boolean drm) {
-                        this.drm = drm;
-                    }
-
-                    public void setOptions(List<String> options) {
-                        this.options = options;
-                    }
-
-                    public Object getExpires_time() {
-                        return expires_time;
-                    }
-
-                    public Object getPurchase_time() {
-                        return purchase_time;
-                    }
-
-                    public Object getUri() {
-                        return uri;
-                    }
-
-                    public String getDownload() {
-                        return download;
-                    }
-
-                    public String getStream() {
-                        return stream;
-                    }
-
-                    public String getLink() {
-                        return link;
-                    }
-
-                    public boolean getDrm() {
-                        return drm;
-                    }
-
-                    public List<String> getOptions() {
-                        return options;
-                    }
-                }
-            }
-        }
-
         public static class FilmBean {
 
             private String uri;
@@ -2270,7 +1839,439 @@ public class VimeoOnDemandPage implements Serializable {
         }
     }
 
-    public static class TrailerBean {
+    public static class MetadataBean {
+
+        private ConnectionsBean connections;
+        private InteractionsBean interactions;
+
+        public void setConnections(ConnectionsBean connections) {
+            this.connections = connections;
+        }
+
+        public ConnectionsBean getConnections() {
+            return connections;
+        }
+
+        public InteractionsBean getInteractions() {
+            return interactions;
+        }
+
+        public void setInteractions(InteractionsBean interactions) {
+            this.interactions = interactions;
+        }
+
+        public static class ConnectionsBean {
+
+            private CommentsBean comments;
+            private CreditsBean credits;
+            private VideosBean videos;
+            private GenresBean genresBean;
+            private PicturesBean pictures;
+            private LikesBean likes;
+            private SeasonsBean seasons;
+
+            public void setComments(CommentsBean comments) {
+                this.comments = comments;
+            }
+
+            public void setCredits(CreditsBean credits) {
+                this.credits = credits;
+            }
+
+            public CommentsBean getComments() {
+                return comments;
+            }
+
+            public CreditsBean getCredits() {
+                return credits;
+            }
+
+            public VideosBean getVideos() {
+                return videos;
+            }
+
+            public void setVideos(VideosBean videos) {
+                this.videos = videos;
+            }
+
+            public GenresBean getGenresBean() {
+                return genresBean;
+            }
+
+            public void setGenresBean(GenresBean genresBean) {
+                this.genresBean = genresBean;
+            }
+
+            public PicturesBean getPictures() {
+                return pictures;
+            }
+
+            public void setPictures(PicturesBean pictures) {
+                this.pictures = pictures;
+            }
+
+            public LikesBean getLikes() {
+                return likes;
+            }
+
+            public void setLikes(LikesBean likes) {
+                this.likes = likes;
+            }
+
+            public SeasonsBean getSeasons() {
+                return seasons;
+            }
+
+            public void setSeasons(SeasonsBean seasons) {
+                this.seasons = seasons;
+            }
+
+            public static class CommentsBean {
+
+                private String uri;
+                private int total;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public int getTotal() {
+                    return total;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class CreditsBean {
+
+                private String uri;
+                private int total;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public int getTotal() {
+                    return total;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class VideosBean {
+
+                private String uri;
+                private int total;
+                private int main_total;
+                private int extra_total;
+                private int viewable_total;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public void setMain_total(int main_total) {
+                    this.main_total = main_total;
+                }
+
+                public void setExtra_total(int extra_total) {
+                    this.extra_total = extra_total;
+                }
+
+                public void setViewable_total(int viewable_total) {
+                    this.viewable_total = viewable_total;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public int getTotal() {
+                    return total;
+                }
+
+                public int getMain_total() {
+                    return main_total;
+                }
+
+                public int getExtra_total() {
+                    return extra_total;
+                }
+
+                public int getViewable_total() {
+                    return viewable_total;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class GenresBean {
+
+                private String uri;
+                private int total;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public int getTotal() {
+                    return total;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class PicturesBean {
+
+                private String uri;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class LikesBean {
+
+                private String uri;
+                private int total;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public int getTotal() {
+                    return total;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class SeasonsBean {
+
+                private String uri;
+                private int total;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public int getTotal() {
+                    return total;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+        }
+
+        public static class InteractionsBean {
+
+            private Object subscribe;
+            private BuyBean buy;
+            private Object rent;
+
+            public void setSubscribe(Object subscribe) {
+                this.subscribe = subscribe;
+            }
+
+            public void setBuy(BuyBean buy) {
+                this.buy = buy;
+            }
+
+            public void setRent(Object rent) {
+                this.rent = rent;
+            }
+
+            public Object getSubscribe() {
+                return subscribe;
+            }
+
+            public BuyBean getBuy() {
+                return buy;
+            }
+
+            public Object getRent() {
+                return rent;
+            }
+
+            public static class BuyBean {
+
+                private Object expires_time;
+                private Object purchase_time;
+                private Object uri;
+                private String download;
+                private String stream;
+                private String link;
+                private boolean drm;
+                private List<String> options;
+
+                public void setExpires_time(Object expires_time) {
+                    this.expires_time = expires_time;
+                }
+
+                public void setPurchase_time(Object purchase_time) {
+                    this.purchase_time = purchase_time;
+                }
+
+                public void setUri(Object uri) {
+                    this.uri = uri;
+                }
+
+                public void setDownload(String download) {
+                    this.download = download;
+                }
+
+                public void setStream(String stream) {
+                    this.stream = stream;
+                }
+
+                public void setLink(String link) {
+                    this.link = link;
+                }
+
+                public void setDrm(boolean drm) {
+                    this.drm = drm;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public Object getExpires_time() {
+                    return expires_time;
+                }
+
+                public Object getPurchase_time() {
+                    return purchase_time;
+                }
+
+                public Object getUri() {
+                    return uri;
+                }
+
+                public String getDownload() {
+                    return download;
+                }
+
+                public String getStream() {
+                    return stream;
+                }
+
+                public String getLink() {
+                    return link;
+                }
+
+                public boolean getDrm() {
+                    return drm;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+        }
+    }
+
+
+        public static class TrailerBean {
         private String name;
         private String description;
         private String link;

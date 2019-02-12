@@ -3,20 +3,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/project_more"
+        android:id="@+id/user_projects_more"
         android:icon="@drawable/ic_more"
         android:title=""
         app:showAsAction="always">
         <menu>
             <item
-                android:id="@+id/project_edit"
+                android:id="@+id/user_projects_edit"
                 android:icon="@drawable/ic_share_white_24dp"
                 android:title="@string/album_edit"
                 app:showAsAction="never"></item>
 
             <item
-                android:id="@+id/project_delete"
-                android:icon="@drawable/ic_login_out_white_24dp"
+                android:id="@+id/user_projects_all_checked"
+                android:icon="@drawable/ic_delete_grey_600_24dp"
+                android:title="@string/all_checked"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/user_projects_no_checked"
+                android:icon="@drawable/ic_delete_grey_600_24dp"
+                android:title="@string/no_checked"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/user_projects_delete_checked"
+                android:icon="@drawable/ic_delete_grey_600_24dp"
                 android:title="@string/album_delete"
                 app:showAsAction="never"></item>
         </menu>

@@ -26,7 +26,7 @@
         <activity android:name=".mvp.view.UserAlbumsActivity" />
         <activity android:name=".mvp.view.UserAlbumDetailActivity" />
         <activity android:name=".mvp.view.VideoDetailActivity" />
-        <activity android:name=".mvp.view.UserProjectActivity" />
+        <activity android:name=".mvp.view.UserProjectsActivity" />
         <activity android:name=".mvp.view.CategoritesActivity" />
         <activity android:name=".mvp.view.ChannelDetailActivity" />
         <activity android:name=".mvp.view.SearchActivity" />

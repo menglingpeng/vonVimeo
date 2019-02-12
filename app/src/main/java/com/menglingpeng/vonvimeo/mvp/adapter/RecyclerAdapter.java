@@ -39,7 +39,6 @@ import com.menglingpeng.vonvimeo.mvp.model.Video;
 import com.menglingpeng.vonvimeo.mvp.presenter.RecyclerPresenter;
 import com.menglingpeng.vonvimeo.mvp.view.UserAlbumDetailActivity;
 import com.menglingpeng.vonvimeo.mvp.view.UserAlbumsActivity;
-import com.menglingpeng.vonvimeo.mvp.view.UserProjectActivity;
 import com.menglingpeng.vonvimeo.mvp.view.activity.UserChannelsActivity;
 import com.menglingpeng.vonvimeo.mvp.view.activity.UserFollowingActivity;
 import com.menglingpeng.vonvimeo.mvp.view.activity.UserGroupActivity;

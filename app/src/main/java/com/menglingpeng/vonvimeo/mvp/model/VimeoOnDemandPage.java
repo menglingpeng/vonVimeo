@@ -635,7 +635,7 @@ public class VimeoOnDemandPage implements Serializable {
             }
         }
 
-        public static class InteractionsBean{
+        public static class InteractionsBean {
 
             private Object subscribe;
             private BuyBean buy;
@@ -2271,13 +2271,14 @@ public class VimeoOnDemandPage implements Serializable {
     }
 
 
-        public static class TrailerBean {
+    public static class TrailerBean {
         private String name;
         private String description;
         private String link;
         private int width;
         private String language;
         private int height;
+        private EmbedBean embedBean;
 
         public void setName(String name) {
             this.name = name;
@@ -2325,6 +2326,148 @@ public class VimeoOnDemandPage implements Serializable {
 
         public int getHeight() {
             return height;
+        }
+
+        public EmbedBean getEmbedBean() {
+            return embedBean;
+        }
+
+        public void setEmbedBean(EmbedBean embedBean) {
+            this.embedBean = embedBean;
+        }
+
+        public static class EmbedBean {
+
+            private String html;
+            private BadgesBean badges;
+            private StaffPickBean staff_pick;
+            private boolean vod;
+            private boolean weekend_challenge;
+
+
+            public void setHtml(String html) {
+                this.html = html;
+            }
+
+            public String getHtml() {
+                return html;
+            }
+
+            public void setBadges(BadgesBean badges) {
+                this.badges = badges;
+            }
+
+            public BadgesBean getBadges() {
+                return badges;
+            }
+
+            public void setStaff_pick(StaffPickBean staff_pick) {
+                this.staff_pick = staff_pick;
+            }
+
+            public void setVod(boolean vod) {
+                this.vod = vod;
+            }
+
+            public void setWeekend_challenge(boolean weekend_challenge) {
+                this.weekend_challenge = weekend_challenge;
+            }
+
+            public StaffPickBean getStaff_pick() {
+                return staff_pick;
+            }
+
+            public boolean getVod() {
+                return vod;
+            }
+
+            public boolean getWeekend_challenge() {
+                return weekend_challenge;
+            }
+
+            public static class BadgesBean {
+
+                private boolean hdr;
+                private LiveBean live;
+
+                public void setHdr(boolean hdr) {
+                    this.hdr = hdr;
+                }
+
+                public void setLive(LiveBean live) {
+                    this.live = live;
+                }
+
+                public boolean getHdr() {
+                    return hdr;
+                }
+
+                public LiveBean getLive() {
+                    return live;
+                }
+
+                public static class LiveBean {
+
+                    private boolean streaming;
+                    private boolean archived;
+
+                    public void setStreaming(boolean streaming) {
+                        this.streaming = streaming;
+                    }
+
+                    public void setArchived(boolean archived) {
+                        this.archived = archived;
+                    }
+
+                    public boolean getStreaming() {
+                        return streaming;
+                    }
+
+                    public boolean getArchived() {
+                        return archived;
+                    }
+                }
+            }
+
+            public static class StaffPickBean {
+
+                private boolean normal;
+                private boolean best_of_the_month;
+                private boolean best_of_the_year;
+                private boolean premiere;
+
+                public void setNormal(boolean normal) {
+                    this.normal = normal;
+                }
+
+                public void setBest_of_the_month(boolean best_of_the_month) {
+                    this.best_of_the_month = best_of_the_month;
+                }
+
+                public void setBest_of_the_year(boolean best_of_the_year) {
+                    this.best_of_the_year = best_of_the_year;
+                }
+
+                public void setPremiere(boolean premiere) {
+                    this.premiere = premiere;
+                }
+
+                public boolean getNormal() {
+                    return normal;
+                }
+
+                public boolean getBest_of_the_month() {
+                    return best_of_the_month;
+                }
+
+                public boolean getBest_of_the_year() {
+                    return best_of_the_year;
+                }
+
+                public boolean getPremiere() {
+                    return premiere;
+                }
+            }
         }
     }
 }

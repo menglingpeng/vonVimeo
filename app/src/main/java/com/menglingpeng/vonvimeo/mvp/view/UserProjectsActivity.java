@@ -19,7 +19,7 @@ import com.menglingpeng.vonvimeo.utils.SnackbarUtils;
 
 import java.util.HashMap;
 
-public class UserProjectActivity extends BaseActivity implements RecyclerView{
+public class UserProjectsActivity extends BaseActivity implements RecyclerView{
 
     private Toolbar toolbar;
     private FloatingActionButton floatingActionButton;
@@ -67,9 +67,15 @@ public class UserProjectActivity extends BaseActivity implements RecyclerView{
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
-            case R.id.project_edit:
+            case R.id.user_projects_edit:
                 break;
-            case R.id.project_delete:
+            case R.id.user_projects_all_checked:
+                break;
+            case R.id.user_projects_no_checked:
+                break;
+            case R.id.user_projects_delete_checked:
+                break;
+            case R.id.user_projects_delete:
                 showDeleteProjectDialog();
                 break;
             default:
@@ -104,7 +110,7 @@ public class UserProjectActivity extends BaseActivity implements RecyclerView{
                     map.put(Constants.ACCESS_TOKEN, SharedPrefUtils.getAuthToken());
                     map.put(Constants.NAME, projectNameEt.getText().toString());
                     type = Constants.REQUEST_REQUEST_CREATE_A_PROJECT;
-                    RecyclerPresenter presenter = new RecyclerPresenter(UserProjectActivity.this, type, Constants
+                    RecyclerPresenter presenter = new RecyclerPresenter(UserProjectsActivity.this, type, Constants
                             .REQUEST_NORMAL, Constants.REQUEST_POST_MEIHOD, map, getApplicationContext());
                     presenter.loadJson();
                     SnackbarUtils.showSnackShort(getApplicationContext(), coordinatorLayout, getString(R.string
@@ -166,7 +172,7 @@ public class UserProjectActivity extends BaseActivity implements RecyclerView{
                     map.put(Constants.NAME, projectNameEt.getText().toString());
                     map.put(Constants.DESCRIPTION, projectDescEt.getText().toString());
                     type = Constants.REQUEST_CREATE_A_ALBUM;
-                    RecyclerPresenter presenter = new RecyclerPresenter(UserProjectActivity.this, type, Constants
+                    RecyclerPresenter presenter = new RecyclerPresenter(UserProjectsActivity.this, type, Constants
                             .REQUEST_NORMAL, Constants.REQUEST_POST_MEIHOD, map, getApplicationContext());
                     presenter.loadJson();
                     SnackbarUtils.showSnackShort(getApplicationContext(), coordinatorLayout, getString(R.string

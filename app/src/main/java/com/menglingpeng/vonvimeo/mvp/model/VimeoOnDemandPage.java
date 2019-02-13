@@ -2279,6 +2279,11 @@ public class VimeoOnDemandPage implements Serializable {
         private String language;
         private int height;
         private EmbedBean embedBean;
+        private PrivacyBean privacy;
+        private String created_time;
+        private String modified_time;
+        private String release_time;
+        private Object license;
 
         public void setName(String name) {
             this.name = name;
@@ -2334,6 +2339,46 @@ public class VimeoOnDemandPage implements Serializable {
 
         public void setEmbedBean(EmbedBean embedBean) {
             this.embedBean = embedBean;
+        }
+
+        public PrivacyBean getPrivacy() {
+            return privacy;
+        }
+
+        public void setPrivacy(PrivacyBean privacy) {
+            this.privacy = privacy;
+        }
+
+        public String getCreated_time() {
+            return created_time;
+        }
+
+        public void setCreated_time(String created_time) {
+            this.created_time = created_time;
+        }
+
+        public String getRelease_time() {
+            return release_time;
+        }
+
+        public void setRelease_time(String release_time) {
+            this.release_time = release_time;
+        }
+
+        public Object getLicense() {
+            return license;
+        }
+
+        public void setLicense(Object license) {
+            this.license = license;
+        }
+
+        public String getModified_time() {
+            return modified_time;
+        }
+
+        public void setModified_time(String modified_time) {
+            this.modified_time = modified_time;
         }
 
         public static class EmbedBean {
@@ -2467,6 +2512,55 @@ public class VimeoOnDemandPage implements Serializable {
                 public boolean getPremiere() {
                     return premiere;
                 }
+            }
+        }
+
+        public static class PrivacyBean {
+
+            private String view;
+            private String embed;
+            private boolean download;
+            private boolean add;
+            private String comments;
+
+            public void setView(String view) {
+                this.view = view;
+            }
+
+            public void setEmbed(String embed) {
+                this.embed = embed;
+            }
+
+            public void setDownload(boolean download) {
+                this.download = download;
+            }
+
+            public void setAdd(boolean add) {
+                this.add = add;
+            }
+
+            public void setComments(String comments) {
+                this.comments = comments;
+            }
+
+            public String getView() {
+                return view;
+            }
+
+            public String getEmbed() {
+                return embed;
+            }
+
+            public boolean getDownload() {
+                return download;
+            }
+
+            public boolean getAdd() {
+                return add;
+            }
+
+            public String getComments() {
+                return comments;
             }
         }
     }

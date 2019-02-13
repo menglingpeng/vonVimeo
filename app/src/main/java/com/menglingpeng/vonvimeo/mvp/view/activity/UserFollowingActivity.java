@@ -89,6 +89,27 @@ public class UserFollowingActivity extends BaseActivity implements RecyclerView,
             case R.id.user_following_sort_alphabetical:
                 sortType = Constants.REQUEST_GET_FOLLOWINGS_OF_AUTH_USER_SORY_BY_DATE;
                 break;
+            case R.id.user_following_all_checked:
+                if(type.equals(Constants.REQUEST_LIST_FOLLOWING_FOR_AUTH_USER)){
+
+                }else if(type.equals(Constants.REQUEST_LIST_FOLLOWERS_FOR_AUTH_USER)){
+
+                }
+                break;
+            case R.id.user_following_no_checked:
+                if(type.equals(Constants.REQUEST_LIST_FOLLOWING_FOR_AUTH_USER)){
+
+                }else if(type.equals(Constants.REQUEST_LIST_FOLLOWERS_FOR_AUTH_USER)){
+
+                }
+                break;
+            case R.id.user_following_delete_checked:
+                if(type.equals(Constants.REQUEST_LIST_FOLLOWING_FOR_AUTH_USER)){
+
+                }else if(type.equals(Constants.REQUEST_LIST_FOLLOWERS_FOR_AUTH_USER)){
+
+                }
+                break;
             default:
                 break;
         }

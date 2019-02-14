@@ -119,6 +119,12 @@ public class UserProfileActivity extends BaseActivity implements RecyclerView {
                 case R.id.profile_logout:
                     showLogoutDialog();
                     break;
+                case R.id.profile_all_checked:
+                    break;
+                case R.id.profile_no_checked:
+                    break;
+                case R.id.profile_delete_checked:
+                    break;
                 default:
                     break;
             }

@@ -103,10 +103,13 @@ public class UserFollowingActivity extends BaseActivity implements RecyclerView,
 
                 }
                 break;
-            case R.id.user_following_delete_checked:
+            case R.id.user_following_unfollow_checked:
                 if(type.equals(Constants.REQUEST_LIST_FOLLOWING_FOR_AUTH_USER)){
 
-                }else if(type.equals(Constants.REQUEST_LIST_SUGGESTED_FOR_AUTH_USER)){
+                }
+                break;
+            case R.id.user_following_follow_checked:
+                if(type.equals(Constants.REQUEST_LIST_SUGGESTED_FOR_AUTH_USER)){
 
                 }
                 break;

@@ -2285,6 +2285,9 @@ public class VimeoOnDemandPage implements Serializable {
         private String release_time;
         private Object license;
         private PicturesBean pictures;
+        private Tag tag;
+        private String resource_key;
+        private MetadataBean metadata;
 
         public void setName(String name) {
             this.name = name;
@@ -2389,6 +2392,33 @@ public class VimeoOnDemandPage implements Serializable {
         public void setPictures(PicturesBean pictures) {
             this.pictures = pictures;
         }
+
+
+
+        public MetadataBean getMetadata() {
+            return metadata;
+        }
+
+        public void setMetadata(MetadataBean metadata) {
+            this.metadata = metadata;
+        }
+
+        public Tag getTag() {
+            return tag;
+        }
+
+        public void setTag(Tag tag) {
+            this.tag = tag;
+        }
+
+        public String getResource_key() {
+            return resource_key;
+        }
+
+        public void setResource_key(String resource_key) {
+            this.resource_key = resource_key;
+        }
+
 
         public static class EmbedBean {
 
@@ -2649,6 +2679,105 @@ public class VimeoOnDemandPage implements Serializable {
 
                 public String getLink_with_play_button() {
                     return link_with_play_button;
+                }
+            }
+        }
+
+        public static class MetadataBean {
+
+            private ConnectionsBean connections;
+
+
+            public void setConnections(ConnectionsBean connections) {
+                this.connections = connections;
+            }
+
+            public ConnectionsBean getConnections() {
+                return connections;
+            }
+
+            public static class ConnectionsBean {
+
+                private CommentsBean comments;
+                private CreditsBean credits;
+
+
+                public void setComments(CommentsBean comments) {
+                    this.comments = comments;
+                }
+
+                public void setCredits(CreditsBean credits) {
+                    this.credits = credits;
+                }
+
+                public CommentsBean getComments() {
+                    return comments;
+                }
+
+                public CreditsBean getCredits() {
+                    return credits;
+                }
+
+                public static class CommentsBean {
+
+                    private String uri;
+                    private int total;
+                    private List<String> options;
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public void setTotal(int total) {
+                        this.total = total;
+                    }
+
+                    public void setOptions(List<String> options) {
+                        this.options = options;
+                    }
+
+                    public String getUri() {
+                        return uri;
+                    }
+
+                    public int getTotal() {
+                        return total;
+                    }
+
+                    public List<String> getOptions() {
+                        return options;
+                    }
+                }
+
+                public static class CreditsBean {
+
+                    private String uri;
+                    private int total;
+                    private List<String> options;
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public void setTotal(int total) {
+                        this.total = total;
+                    }
+
+                    public void setOptions(List<String> options) {
+                        this.options = options;
+                    }
+
+                    public String getUri() {
+                        return uri;
+                    }
+
+                    public int getTotal() {
+                        return total;
+                    }
+
+                    public List<String> getOptions() {
+                        return options;
+                    }
                 }
             }
         }

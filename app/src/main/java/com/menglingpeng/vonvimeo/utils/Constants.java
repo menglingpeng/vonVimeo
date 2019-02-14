@@ -442,10 +442,12 @@ public class Constants {
             "request_get_all_videos_liked_by_singleuser_sort_by_comments";
 
     public static final String REQUEST_GET_FOLLOWINGS_OF_AUTH_USER_SORY_BY_ALPHABETICAL =
-            "request_get_followingsof_auth_user_sort_by_alphabetical";
+            "request_get_followings_of_auth_user_sort_by_alphabetical";
 
     public static final String REQUEST_GET_FOLLOWINGS_OF_AUTH_USER_SORY_BY_DATE =
-            "request_get_followingsof_auth_user_sort_by_date";
+            "request_get_followings_of_auth_user_sort_by_date";
+
+
 
     public static final String REQUEST_LIST_FEED_PEOPLE_OF_AUHT_USER = "request_list_feed_people_of_auth_user";
     public static final String REQUEST_LIST_FEED_CHANNEL_OF_AUHT_USER = "request_list_feed_channel_of_auth_user";

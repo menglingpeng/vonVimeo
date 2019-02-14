@@ -92,21 +92,21 @@ public class UserFollowingActivity extends BaseActivity implements RecyclerView,
             case R.id.user_following_all_checked:
                 if(type.equals(Constants.REQUEST_LIST_FOLLOWING_FOR_AUTH_USER)){
 
-                }else if(type.equals(Constants.REQUEST_LIST_FOLLOWERS_FOR_AUTH_USER)){
+                }else if(type.equals(Constants.REQUEST_LIST_SUGGESTED_FOR_AUTH_USER)){
 
                 }
                 break;
             case R.id.user_following_no_checked:
                 if(type.equals(Constants.REQUEST_LIST_FOLLOWING_FOR_AUTH_USER)){
 
-                }else if(type.equals(Constants.REQUEST_LIST_FOLLOWERS_FOR_AUTH_USER)){
+                }else if(type.equals(Constants.REQUEST_LIST_SUGGESTED_FOR_AUTH_USER)){
 
                 }
                 break;
             case R.id.user_following_delete_checked:
                 if(type.equals(Constants.REQUEST_LIST_FOLLOWING_FOR_AUTH_USER)){
 
-                }else if(type.equals(Constants.REQUEST_LIST_FOLLOWERS_FOR_AUTH_USER)){
+                }else if(type.equals(Constants.REQUEST_LIST_SUGGESTED_FOR_AUTH_USER)){
 
                 }
                 break;
@@ -215,6 +215,13 @@ public class UserFollowingActivity extends BaseActivity implements RecyclerView,
 
     @Override
     public void loadSuccess(String json, String requestType) {
-
+        switch (requestType){
+            case Constants.REQUEST_UNFOLLOW_A_USER:
+                break;
+            case Constants.REQUEST_FOLLOW_A_LIST_OF_USERS:
+                break;
+            default:
+                break;
+        }
     }
 }

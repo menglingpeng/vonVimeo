@@ -2728,11 +2728,6 @@ public class OnDemandPage {
         public static class MetadataBean {
 
             private ConnectionsBean connections;
-            /**
-             * interactions : {"watchlater":{"uri":"/users/86476471/watchlater/153500225","options":["GET","PUT",
-             * "DELETE"],"added":false,"added_time":null}}
-             */
-
             private InteractionsBean interactions;
 
 

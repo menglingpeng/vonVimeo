@@ -108,6 +108,10 @@ public class MyFeedVideosActivity extends BaseActivity implements RecyclerView{
             case R.id.project_detail_view_detail:
                 item.setIcon(getDrawable(R.drawable.ic_view_detail_blue_600_24dp));
                 break;
+            case R.id.my_feed_videos_all_checked:
+                break;
+            case R.id.my_feed_videos_no_checked:
+                break;
             case R.id.my_feed_videos_like:
                 type = Constants.REQUEST_LIKE_A_VIDEO;
                 break;

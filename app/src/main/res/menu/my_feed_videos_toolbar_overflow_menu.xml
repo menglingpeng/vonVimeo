@@ -83,6 +83,19 @@
         android:title=""
         app:showAsAction="always">
         <menu>
+
+            <item
+                android:id="@+id/my_feed_videos_all_checked"
+                android:icon="@drawable/ic_delete_grey_600_24dp"
+                android:title="@string/all_checked"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/my_feed_videos_no_checked"
+                android:icon="@drawable/ic_delete_grey_600_24dp"
+                android:title="@string/no_checked"
+                app:showAsAction="never"></item>
+
             <item
                 android:id="@+id/my_feed_videos_like"
                 android:icon="@drawable/ic_favorite_grey_600_24dp"

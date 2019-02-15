@@ -571,6 +571,8 @@ public class Constants {
     public static final String MENU_GENRES = "Genres";
     public static final String MENU_POSTERS = "Posters";
 
+    public static final String REQUEST_LIKE_A_VIDEO = "request_like_a_video";
+
     //默认值1
     public static final int PAGE_VALUE = 1;
     //默认值10，最高到100

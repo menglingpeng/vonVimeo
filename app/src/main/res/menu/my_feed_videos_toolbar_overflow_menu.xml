@@ -77,5 +77,20 @@
         </menu>
     </item>
 
+    <item
+        android:id="@+id/my_feed_videos_more"
+        android:icon="@drawable/ic_more"
+        android:title=""
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/my_feed_videos_like"
+                android:icon="@drawable/ic_favorite_grey_600_24dp"
+                android:title="@string/sort_likes"
+                app:showAsAction="never"></item>
+
+        </menu>
+    </item>
+
 
 </menu>

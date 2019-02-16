@@ -86,23 +86,29 @@ public class UserPortfolioDetailActivity extends BaseActivity implements View.On
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
-            case R.id.user_portfolio_sort_date:
+            case R.id.user_portfolio_detail_sort_date:
                 sortType = Constants.TYPE_DATE;
                 break;
-            case R.id.user_portfolio_sort_alphabetical:
+            case R.id.user_portfolio_detail_sort_alphabetical:
                 sortType = Constants.TYPE_ALPHABETICAL;
                 break;
-            case R.id.user_portfolio_sort_videos:
+            case R.id.user_portfolio_detail_sort_videos:
                 sortType = Constants.TYPE_VIDEOS;
                 break;
-            case R.id.user_portfolio_sort_comments:
+            case R.id.user_portfolio_detail_sort_comments:
                 sortType = Constants.TYPE_COMMENTS;
                 break;
-            case R.id.user_portfolio_thumb:
+            case R.id.user_portfolio_detail_thumb:
                 viewType = Constants.VIEW_TYPE_THUMBNAILS;
                 break;
-            case R.id.user_portfolio_detail:
+            case R.id.user_portfolio_detail_detail:
                 viewType = Constants.VIEW_TYPE_DETAIL;
+                break;
+            case R.id.user_portfolio_detail_all_checked:
+                break;
+            case R.id.user_portfolio_detail_no_checked:
+                break;
+            case R.id.user_portfolio_detail_delete_checked:
                 break;
             default:
                 break;

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/user_portfolio_thumb"
+        android:id="@+id/user_portfolio_detail_thumb"
         android:title=""
         android:icon="@drawable/ic_view_thumb_blue_600_24dp"
         app:showAsAction="always">
@@ -11,7 +11,7 @@
         <menu>
 
             <item
-                android:id="@+id/user_portfolio_detail"
+                android:id="@+id/user_portfolio_detail_detail"
                 android:title=""
                 android:icon="@drawable/ic_view_detail_black_24dp"
                 app:showAsAction="never"></item>
@@ -20,33 +20,61 @@
     </item>
 
     <item
-        android:id="@+id/user_portfolio_sort"
+        android:id="@+id/user_portfolio_detail_sort"
         android:icon="@drawable/ic_more"
         android:title=""
         app:showAsAction="always">
         <menu>
             <item
-                android:id="@+id/user_portfolio_sort_date"
+                android:id="@+id/user_portfolio_detail_sort_date"
                 android:title="@string/sort_date"
                 app:showAsAction="never"></item>
 
             <item
-                android:id="@+id/user_portfolio_sort_alphabetical"
+                android:id="@+id/user_portfolio_detail_sort_alphabetical"
                 android:title="@string/sort_alphabetical"
                 app:showAsAction="never"></item>
 
             <item
-                android:id="@+id/user_portfolio_sort_videos"
+                android:id="@+id/user_portfolio_detail_sort_videos"
                 android:title="@string/sort_videos"
                 app:showAsAction="never"></item>
 
             <item
-                android:id="@+id/user_portfolio_sort_comments"
+                android:id="@+id/user_portfolio_detail_sort_comments"
                 android:title="@string/sort_comments"
                 app:showAsAction="never"></item>
         </menu>
 
 
+    </item>
+
+    <item
+        android:id="@+id/user_portfolio_detail_more"
+        android:icon="@drawable/ic_more"
+        android:title=""
+        app:showAsAction="always">
+        <menu>
+
+            <item
+                android:id="@+id/user_portfolio_detail_all_checked"
+                android:icon="@drawable/ic_delete_grey_600_24dp"
+                android:title="@string/all_checked"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/user_portfolio_detail_no_checked"
+                android:icon="@drawable/ic_delete_grey_600_24dp"
+                android:title="@string/no_checked"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/user_portfolio_detail_remove_checked"
+                android:icon="@drawable/ic_delete_grey_600_24dp"
+                android:title="@string/remove"
+                app:showAsAction="never"></item>
+
+        </menu>
     </item>
 
 </menu>

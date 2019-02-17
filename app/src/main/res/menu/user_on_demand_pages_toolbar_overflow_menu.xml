@@ -46,7 +46,34 @@
                 app:showAsAction="never"></item>
         </menu>
 
+    </item>
 
+    <item
+        android:id="@+id/user_on_demand_pages_more"
+        android:icon="@drawable/ic_more"
+        android:title=""
+        app:showAsAction="always">
+        <menu>
+
+            <item
+                android:id="@+id/user_on_demand_pages_all_checked"
+                android:icon="@drawable/ic_delete_grey_600_24dp"
+                android:title="@string/all_checked"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/user_on_demand_pages_no_checked"
+                android:icon="@drawable/ic_delete_grey_600_24dp"
+                android:title="@string/no_checked"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/user_on_demand_pages_remove_checked"
+                android:icon="@drawable/ic_delete_grey_600_24dp"
+                android:title="@string/remove"
+                app:showAsAction="never"></item>
+
+        </menu>
     </item>
 
 </menu>

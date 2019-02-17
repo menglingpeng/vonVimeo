@@ -97,6 +97,21 @@ public class UserOnDemandPagesActivity extends BaseActivity implements RecyclerV
                 break;
             case R.id.user_on_demand_pages_detail:
                 break;
+            case R.id.user_on_demand_pages_all_checked:
+                if(type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_GENRES)){
+
+                }
+                break;
+            case R.id.user_on_demand_pages_no_checked:
+                if(type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_GENRES)){
+
+                }
+                break;
+            case R.id.user_on_demand_pages_delete_checked:
+                if(type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_GENRES)){
+
+                }
+                break;
             default:
                 break;
         }

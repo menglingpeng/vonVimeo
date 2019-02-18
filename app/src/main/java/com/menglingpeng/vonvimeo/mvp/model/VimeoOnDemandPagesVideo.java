@@ -785,6 +785,8 @@ public class VimeoOnDemandPagesVideo implements Serializable{
             private ReportBean report;
             private BuyBean buy;
             private RentBean rent;
+            private SubscribeBean subscribe;
+            private WatchedBean watched;
 
 
             public void setWatchlater(WatchlaterBean watchlater) {
@@ -825,6 +827,22 @@ public class VimeoOnDemandPagesVideo implements Serializable{
 
             public RentBean getRent() {
                 return rent;
+            }
+
+            public void setSubscribe(SubscribeBean subscribe) {
+                this.subscribe = subscribe;
+            }
+
+            public void setWatched(WatchedBean watched) {
+                this.watched = watched;
+            }
+
+            public SubscribeBean getSubscribe() {
+                return subscribe;
+            }
+
+            public WatchedBean getWatched() {
+                return watched;
             }
 
             public static class WatchlaterBean {
@@ -1105,6 +1123,86 @@ public class VimeoOnDemandPagesVideo implements Serializable{
 
                 public String getUri() {
                     return uri;
+                }
+            }
+
+            public static class SubscribeBean {
+
+                private String drm;
+                private String expires_time;
+                private String purchase_time;
+                private String stream;
+
+                public void setDrm(String drm) {
+                    this.drm = drm;
+                }
+
+                public void setExpires_time(String expires_time) {
+                    this.expires_time = expires_time;
+                }
+
+                public void setPurchase_time(String purchase_time) {
+                    this.purchase_time = purchase_time;
+                }
+
+                public void setStream(String stream) {
+                    this.stream = stream;
+                }
+
+                public String getDrm() {
+                    return drm;
+                }
+
+                public String getExpires_time() {
+                    return expires_time;
+                }
+
+                public String getPurchase_time() {
+                    return purchase_time;
+                }
+
+                public String getStream() {
+                    return stream;
+                }
+            }
+
+            public static class WatchedBean {
+
+                private String added;
+                private String added_time;
+                private String uri;
+                private List<String> options;
+
+                public void setAdded(String added) {
+                    this.added = added;
+                }
+
+                public void setAdded_time(String added_time) {
+                    this.added_time = added_time;
+                }
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getAdded() {
+                    return added;
+                }
+
+                public String getAdded_time() {
+                    return added_time;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public List<String> getOptions() {
+                    return options;
                 }
             }
         }

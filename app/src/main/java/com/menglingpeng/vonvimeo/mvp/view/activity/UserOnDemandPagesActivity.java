@@ -39,6 +39,10 @@ public class UserOnDemandPagesActivity extends BaseActivity implements RecyclerV
     private Context context;
     private String userId;
     private String onDemandId;
+    private int checkedCounts;
+    private String regionId;
+    private String genreId;
+    private String backgroundId;
 
     @Override
     protected void initLayoutId() {
@@ -119,18 +123,7 @@ public class UserOnDemandPagesActivity extends BaseActivity implements RecyclerV
                 }
                 break;
             case R.id.user_on_demand_pages_delete_checked:
-                String title = null;
-                if(type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_GENRES)){
-                    title = getString(R.string.dilog_remove_a_genre_title);
-                    type = Constants.REQUEST_REMOVE_A_GENRE_FROM_AN_ON_DEMAND_PAGE;
-                }else if(type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_REGIONS)){
-                    title = getString(R.string.dilog_remove_a_genre_title);
-                    type = Constants.REQUEST_REMOVE_A_REGION_FROM_AN_ON_DEMAND_PAGE;
-                } else if(type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_BACKGROUNDS)){
-                    title = getString(R.string.dilog_remove_a_genre_title);
-                    type = Constants.REQUEST_REMOVE_A_BACKGROUND_FROM_AN_ON_DEMAND_PAGE;
-                }
-                showDeleteDialog(title, type);
+
                 break;
             default:
                 break;
@@ -143,7 +136,35 @@ public class UserOnDemandPagesActivity extends BaseActivity implements RecyclerV
         return super.onOptionsItemSelected(item);
     }
 
-    private void showDeleteDialog(String title, String type){
+    private void remove(String type){
+        String title = null;
+        if(checkedCounts == 1) {
+            if (type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_GENRES)) {
+                title = getString(R.string.dilog_remove_a_genre_title);
+                type = Constants.REQUEST_REMOVE_A_GENRE_FROM_AN_ON_DEMAND_PAGE;
+            } else if (type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_REGIONS)) {
+                title = getString(R.string.dilog_remove_a_genre_title);
+                type = Constants.REQUEST_REMOVE_A_REGION_FROM_AN_ON_DEMAND_PAGE;
+            } else if (type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_BACKGROUNDS)) {
+                title = getString(R.string.dilog_remove_a_genre_title);
+                type = Constants.REQUEST_REMOVE_A_BACKGROUND_FROM_AN_ON_DEMAND_PAGE;
+            }
+        }else if(checkedCounts > 1){
+            if (type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_GENRES)) {
+                title = getString(R.string.dilog_remove_a_genre_title);
+                type = Constants.REQUEST_REMOVE_A_LIST_OF_GENRES_FROM_AN_ON_DEMAND_PAGE;
+            } else if (type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_REGIONS)) {
+                title = getString(R.string.dilog_remove_a_genre_title);
+                type = Constants.REQUEST_REMOVE_A_LIST_OF_REGIONS_FROM_AN_ON_DEMAND_PAGE;
+            } else if (type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_BACKGROUNDS)) {
+                title = getString(R.string.dilog_remove_a_genre_title);
+                type = Constants.REQUEST_REMOVE_A_LIST_OF_BACKGROUND_FROM_AN_ON_DEMAND_PAGE;
+            }
+        }
+        showRemoveDialog(title, type);
+    }
+
+    private void showRemoveDialog(String title, String type){
         AlertDialog dialog;
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(title);

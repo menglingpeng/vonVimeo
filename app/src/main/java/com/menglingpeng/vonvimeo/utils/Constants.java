@@ -574,8 +574,12 @@ public class Constants {
 
     public static final String REQUEST_LIKE_A_VIDEO = "request_like_a_video";
 
+    public static final String REQUEST_REMOVE_A_LIST_OF_GENRES_FROM_AN_ON_DEMAND_PAGE =
+            "request_remove_a_list_of_genres_from_an_on_demand_page";
     public static final String REQUEST_REMOVE_A_LIST_OF_REGIONS_FROM_AN_ON_DEMAND_PAGE =
             "request_remove_a_list_of_regions_from_an_on_demand_page";
+    public static final String REQUEST_REMOVE_A_LIST_OF_BACKGROUND_FROM_AN_ON_DEMAND_PAGE =
+            "request_remove_a_list_of_backgrounds_from_an_on_demand_page";
     public static final String REQUEST_REMOVE_A_GENRE_FROM_AN_ON_DEMAND_PAGE =
             "request_remove_a_genre_from_an_on_demand_page";
     public static final String REQUEST_REMOVE_A_REGION_FROM_AN_ON_DEMAND_PAGE =

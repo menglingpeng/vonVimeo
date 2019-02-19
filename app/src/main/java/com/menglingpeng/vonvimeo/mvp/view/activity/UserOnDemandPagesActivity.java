@@ -1,9 +1,11 @@
 package com.menglingpeng.vonvimeo.mvp.view.activity;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.provider.ContactsContract;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -103,6 +105,8 @@ public class UserOnDemandPagesActivity extends BaseActivity implements RecyclerV
 
                 }else if(type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_REGIONS)){
 
+                }else if(type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_BACKGROUNDS)){
+
                 }
                 break;
             case R.id.user_on_demand_pages_no_checked:
@@ -110,14 +114,23 @@ public class UserOnDemandPagesActivity extends BaseActivity implements RecyclerV
 
                 }else if(type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_REGIONS)){
 
+                }else if(type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_BACKGROUNDS)){
+
                 }
                 break;
             case R.id.user_on_demand_pages_delete_checked:
+                String title = null;
                 if(type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_GENRES)){
-
+                    title = getString(R.string.dilog_remove_a_genre_title);
+                    type = Constants.REQUEST_REMOVE_A_GENRE_FROM_AN_ON_DEMAND_PAGE;
                 }else if(type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_REGIONS)){
-
+                    title = getString(R.string.dilog_remove_a_genre_title);
+                    type = Constants.REQUEST_REMOVE_A_REGION_FROM_AN_ON_DEMAND_PAGE;
+                } else if(type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_BACKGROUNDS)){
+                    title = getString(R.string.dilog_remove_a_genre_title);
+                    type = Constants.REQUEST_REMOVE_A_BACKGROUND_FROM_AN_ON_DEMAND_PAGE;
                 }
+                showDeleteDialog(title, type);
                 break;
             default:
                 break;
@@ -128,6 +141,27 @@ public class UserOnDemandPagesActivity extends BaseActivity implements RecyclerV
             replaceFragment(RecyclerFragment.newInstance(Constants.USER_ID, type));
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void showDeleteDialog(String title, String type){
+        AlertDialog dialog;
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(title);
+        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.setPositiveButton(R.sting.ok, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+
+        dialog = builder.create();
+        dialog.show();
     }
 
     @Override

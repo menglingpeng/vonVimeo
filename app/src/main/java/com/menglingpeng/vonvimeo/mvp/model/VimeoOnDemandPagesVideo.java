@@ -521,6 +521,8 @@ public class VimeoOnDemandPagesVideo implements Serializable{
             private TexttracksBean texttracks;
             private RelatedBean related;
             private RecommendationsBean recommendations;
+            private OndemandBean ondemand;
+
 
             public void setComments(CommentsBean comments) {
                 this.comments = comments;
@@ -576,6 +578,14 @@ public class VimeoOnDemandPagesVideo implements Serializable{
 
             public void setRecommendations(RecommendationsBean recommendations) {
                 this.recommendations = recommendations;
+            }
+
+            public void setOndemand(OndemandBean ondemand) {
+                this.ondemand = ondemand;
+            }
+
+            public OndemandBean getOndemand() {
+                return ondemand;
             }
 
             public static class CommentsBean {
@@ -776,6 +786,37 @@ public class VimeoOnDemandPagesVideo implements Serializable{
                     return options;
                 }
             }
+
+            public static class OndemandBean {
+                
+                private String resource_key;
+                private String uri;
+                private List<String> options;
+
+                public void setResource_key(String resource_key) {
+                    this.resource_key = resource_key;
+                }
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getResource_key() {
+                    return resource_key;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
         }
 
         public static class InteractionsBean {
@@ -787,6 +828,7 @@ public class VimeoOnDemandPagesVideo implements Serializable{
             private RentBean rent;
             private SubscribeBean subscribe;
             private WatchedBean watched;
+            private ChannelBean channel;
 
 
             public void setWatchlater(WatchlaterBean watchlater) {
@@ -843,6 +885,14 @@ public class VimeoOnDemandPagesVideo implements Serializable{
 
             public WatchedBean getWatched() {
                 return watched;
+            }
+
+            public void setChannel(ChannelBean channel) {
+                this.channel = channel;
+            }
+
+            public ChannelBean getChannel() {
+                return channel;
             }
 
             public static class WatchlaterBean {
@@ -1195,6 +1245,28 @@ public class VimeoOnDemandPagesVideo implements Serializable{
 
                 public String getAdded_time() {
                     return added_time;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class ChannelBean {
+
+                private String uri;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
                 }
 
                 public String getUri() {

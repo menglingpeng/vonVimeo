@@ -27,6 +27,7 @@ public class VimeoOnDemandPagesVideo implements Serializable{
     private TagsBean tags;
     private SubcategoriesBean subcategories;
     private UploadBean upload;
+    private List<ParentProjectBean> parent_project;
 
 
     public String getUri() {
@@ -204,6 +205,14 @@ public class VimeoOnDemandPagesVideo implements Serializable{
 
     public void setUpload(UploadBean upload) {
         this.upload = upload;
+    }
+
+    public void setParent_project(List<ParentProjectBean> parent_project) {
+        this.parent_project = parent_project;
+    }
+
+    public List<ParentProjectBean> getParent_project() {
+        return parent_project;
     }
 
     public static class EmbedBean {
@@ -525,6 +534,8 @@ public class VimeoOnDemandPagesVideo implements Serializable{
             private PlaybackBean playback;
             private SeasonBean season;
             private UsersWithAccessBean users_with_access;
+            private TrailerBean trailer;
+            private VersionsBean versions;
 
 
             public void setComments(CommentsBean comments) {
@@ -613,6 +624,22 @@ public class VimeoOnDemandPagesVideo implements Serializable{
 
             public UsersWithAccessBean getUsers_with_access() {
                 return users_with_access;
+            }
+
+            public void setTrailer(TrailerBean trailer) {
+                this.trailer = trailer;
+            }
+
+            public void setVersions(VersionsBean versions) {
+                this.versions = versions;
+            }
+
+            public TrailerBean getTrailer() {
+                return trailer;
+            }
+
+            public VersionsBean getVersions() {
+                return versions;
             }
 
             public static class CommentsBean {
@@ -914,6 +941,77 @@ public class VimeoOnDemandPagesVideo implements Serializable{
 
                 public void setOptions(List<String> options) {
                     this.options = options;
+                }
+
+                public int getTotal() {
+                    return total;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class TrailerBean {
+
+                private String resource_key;
+                private String uri;
+                private List<String> options;
+
+                public void setResource_key(String resource_key) {
+                    this.resource_key = resource_key;
+                }
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getResource_key() {
+                    return resource_key;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class VersionsBean {
+
+                private String current_uri;
+                private int total;
+                private String uri;
+                private List<String> options;
+
+                public void setCurrent_uri(String current_uri) {
+                    this.current_uri = current_uri;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getCurrent_uri() {
+                    return current_uri;
                 }
 
                 public int getTotal() {
@@ -1391,6 +1489,8 @@ public class VimeoOnDemandPagesVideo implements Serializable{
         }
     }
 
+
+
     public static class TranscodeBean {
 
         private String status;
@@ -1579,6 +1679,91 @@ public class VimeoOnDemandPagesVideo implements Serializable{
 
         public Object getRedirect_url() {
             return redirect_url;
+        }
+    }
+
+    public static class ParentProjectBean {
+
+        private String created_time;
+        private MetadataBean metadata;
+
+        public void setCreated_time(String created_time) {
+            this.created_time = created_time;
+        }
+
+        public void setMetadata(MetadataBean metadata) {
+            this.metadata = metadata;
+        }
+
+        public String getCreated_time() {
+            return created_time;
+        }
+
+        public MetadataBean getMetadata() {
+            return metadata;
+        }
+
+        public static class MetadataBean {
+
+            private ConnectionsBean connections;
+
+            public void setConnections(ConnectionsBean connections) {
+                this.connections = connections;
+            }
+
+            public ConnectionsBean getConnections() {
+                return connections;
+            }
+
+            public static class ConnectionsBean {
+
+
+                private VideosBean videos;
+
+                public void setVideos(VideosBean videos) {
+                    this.videos = videos;
+                }
+
+                public VideosBean getVideos() {
+                    return videos;
+                }
+
+                public static class VideosBean {
+                    /**
+                     * options : ["string"]
+                     * total : 12
+                     * uri : /users/152184/projects/12345/videos
+                     */
+
+                    private int total;
+                    private String uri;
+                    private List<String> options;
+
+                    public void setTotal(int total) {
+                        this.total = total;
+                    }
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public void setOptions(List<String> options) {
+                        this.options = options;
+                    }
+
+                    public int getTotal() {
+                        return total;
+                    }
+
+                    public String getUri() {
+                        return uri;
+                    }
+
+                    public List<String> getOptions() {
+                        return options;
+                    }
+                }
+            }
         }
     }
 }

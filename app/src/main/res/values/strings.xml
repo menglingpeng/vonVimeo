@@ -221,6 +221,11 @@
     <string name="dilog_remove_a_genre_title">删除此Genre</string>
     <string name="dilog_remove_a_region_title">删除此Region</string>
     <string name="dilog_remove_a_background_title">删除此Background</string>
+    <string name="dilog_remove_a_promotion_title">删除此Promotion</string>
+    <string name="dilog_remove_a_list_of_genre_title">删除选中的Genres</string>
+    <string name="dilog_remove_a_a_list_of_region_title">删除选中的Regions</string>
+    <string name="dilog_remove_a_a_list_of_background_title">删除选中的Backgrounds</string>
+    <string name="dilog_remove_a_a_list_of_promotion_title">删除选中的Promotions</string>
 
     <string name="share">分享</string>
     <string name="email">Email</string>

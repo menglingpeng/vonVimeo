@@ -140,25 +140,32 @@ public class UserOnDemandPagesActivity extends BaseActivity implements RecyclerV
         String title = null;
         if(checkedCounts == 1) {
             if (type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_GENRES)) {
-                title = getString(R.string.dilog_remove_a_genre_title);
+                title = getString(R.string.dilog_remove_a_genres_title);
                 type = Constants.REQUEST_REMOVE_A_GENRE_FROM_AN_ON_DEMAND_PAGE;
             } else if (type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_REGIONS)) {
-                title = getString(R.string.dilog_remove_a_genre_title);
+                title = getString(R.string.dilog_remove_a_regions_title);
                 type = Constants.REQUEST_REMOVE_A_REGION_FROM_AN_ON_DEMAND_PAGE;
             } else if (type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_BACKGROUNDS)) {
-                title = getString(R.string.dilog_remove_a_genre_title);
+                title = getString(R.string.dilog_remove_a_backgrounds_title);
                 type = Constants.REQUEST_REMOVE_A_BACKGROUND_FROM_AN_ON_DEMAND_PAGE;
+            }else if (type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_PROMOTIONS)) {
+                title = getString(R.string.dilog_remove_a_list_of_promotions_title);
+                type = Constants.REQUEST_REMOVE_A_PROMOTION_FROM_AN_ON_DEMAND_PAGE;
             }
+
         }else if(checkedCounts > 1){
             if (type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_GENRES)) {
-                title = getString(R.string.dilog_remove_a_genre_title);
-                type = Constants.REQUEST_REMOVE_A_LIST_OF_GENRES_FROM_AN_ON_DEMAND_PAGE;
+                title = getString(R.string.dilog_remove_a_list_of_genres_title);
+                type = Constants.REQUEST_REMOVE_A_GENRE_FROM_AN_ON_DEMAND_PAGE;
             } else if (type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_REGIONS)) {
-                title = getString(R.string.dilog_remove_a_genre_title);
-                type = Constants.REQUEST_REMOVE_A_LIST_OF_REGIONS_FROM_AN_ON_DEMAND_PAGE;
+                title = getString(R.string.dilog_remove_a_list_of_regions_title);
+                type = Constants.REQUEST_REMOVE_A_REGION_FROM_AN_ON_DEMAND_PAGE;
             } else if (type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_BACKGROUNDS)) {
-                title = getString(R.string.dilog_remove_a_genre_title);
-                type = Constants.REQUEST_REMOVE_A_LIST_OF_BACKGROUND_FROM_AN_ON_DEMAND_PAGE;
+                title = getString(R.string.dilog_remove_a_list_of_backgrounds_title);
+                type = Constants.REQUEST_REMOVE_A_BACKGROUND_FROM_AN_ON_DEMAND_PAGE;
+            }else if (type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_PROMOTIONS)) {
+                title = getString(R.string.dilog_remove_a_list_of_promotions_title);
+                type = Constants.REQUEST_REMOVE_A_LIST_OF_PROMOTIONS_FROM_AN_ON_DEMAND_PAGE;
             }
         }
         showRemoveDialog(title, type);

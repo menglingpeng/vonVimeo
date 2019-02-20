@@ -555,6 +555,7 @@ public class Constants {
     public static final String TAB_VIMEO_ONDEMAND_PAGES_GENRES= "tab_vimeo_ondemand_pages_genres";
     public static final String TAB_VIMEO_ONDEMAND_PAGES_POSTERS= "tab_vimeo_ondemand_pages_posters";
     public static final String TAB_VIMEO_ONDEMAND_PAGES_BACKGROUNDS= "tab_vimeo_ondemand_pages_backgrounds";
+    public static final String TAB_VIMEO_ONDEMAND_PAGES_PROMOTIONS= "tab_vimeo_ondemand_pages_promotions";
 
     public static final String REQUEST_LIST_ALL_VIDEOS_OF_REGOIN = "request_list_all_videos_of_a_regoin";
     public static final String REQUEST_LIST_ALL_VIDEOS_OF_SEASON = "request_list_all_videos_of_a_season";
@@ -580,12 +581,16 @@ public class Constants {
             "request_remove_a_list_of_regions_from_an_on_demand_page";
     public static final String REQUEST_REMOVE_A_LIST_OF_BACKGROUND_FROM_AN_ON_DEMAND_PAGE =
             "request_remove_a_list_of_backgrounds_from_an_on_demand_page";
+    public static final String REQUEST_REMOVE_A_LIST_OF_PROMOTIONS_FROM_AN_ON_DEMAND_PAGE =
+            "request_remove_a_list_of_promotions_from_an_on_demand_page";
     public static final String REQUEST_REMOVE_A_GENRE_FROM_AN_ON_DEMAND_PAGE =
             "request_remove_a_genre_from_an_on_demand_page";
     public static final String REQUEST_REMOVE_A_REGION_FROM_AN_ON_DEMAND_PAGE =
             "request_remove_a_region_from_an_on_demand_page";
     public static final String REQUEST_REMOVE_A_BACKGROUND_FROM_AN_ON_DEMAND_PAGE =
             "request_remove_a_background_from_an_on_demand_page";
+    public static final String REQUEST_REMOVE_A_PROMOTION_FROM_AN_ON_DEMAND_PAGE =
+            "request_remove_a_promotion_from_an_on_demand_page";
 
     //默认值1
     public static final int PAGE_VALUE = 1;

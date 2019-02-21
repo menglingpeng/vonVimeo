@@ -579,7 +579,7 @@ public class Constants {
             "request_remove_a_list_of_genres_from_an_on_demand_page";
     public static final String REQUEST_REMOVE_A_LIST_OF_REGIONS_FROM_AN_ON_DEMAND_PAGE =
             "request_remove_a_list_of_regions_from_an_on_demand_page";
-    public static final String REQUEST_REMOVE_A_LIST_OF_BACKGROUND_FROM_AN_ON_DEMAND_PAGE =
+    public static final String REQUEST_REMOVE_A_LIST_OF_BACKGROUNDS_FROM_AN_ON_DEMAND_PAGE =
             "request_remove_a_list_of_backgrounds_from_an_on_demand_page";
     public static final String REQUEST_REMOVE_A_LIST_OF_PROMOTIONS_FROM_AN_ON_DEMAND_PAGE =
             "request_remove_a_list_of_promotions_from_an_on_demand_page";

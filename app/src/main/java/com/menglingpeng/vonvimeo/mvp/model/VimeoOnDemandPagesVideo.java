@@ -13,7 +13,7 @@ public class VimeoOnDemandPagesVideo implements Serializable{
     private int width;
     private String language;
     private int height;
-    private EmbedBean embed;
+
     private String created_time;
     private String modified_time;
     private String release_time;
@@ -29,6 +29,12 @@ public class VimeoOnDemandPagesVideo implements Serializable{
     private UploadBean upload;
     private List<ParentProjectBean> parent_project;
     private SpatialBean spatial;
+    /**
+     * embed : [{"buttons":{"embed":"true","fullscreen":"true","hd":"true","like":"true","scaling":"true",
+     * "share":"true","watchlater":"true"},"color":"#0a0808"}]
+     */
+
+    private List<EmbedBean> embed;
 
 
     public String getUri() {
@@ -93,14 +99,6 @@ public class VimeoOnDemandPagesVideo implements Serializable{
 
     public void setLanguage(String language) {
         this.language = language;
-    }
-
-    public EmbedBean getEmbed() {
-        return embed;
-    }
-
-    public void setEmbed(EmbedBean embed) {
-        this.embed = embed;
     }
 
     public String getCreated_time() {
@@ -224,138 +222,14 @@ public class VimeoOnDemandPagesVideo implements Serializable{
         return spatial;
     }
 
-    public static class EmbedBean {
-
-        private String html;
-        private BadgesBean badges;
-
-        public void setHtml(String html) {
-            this.html = html;
-        }
-
-        public void setBadges(BadgesBean badges) {
-            this.badges = badges;
-        }
-
-        public String getHtml() {
-            return html;
-        }
-
-        public BadgesBean getBadges() {
-            return badges;
-        }
-
-        public static class BadgesBean {
-
-            private boolean hdr;
-            private LiveBean live;
-            private StaffPickBean staff_pick;
-            private boolean vod;
-            private boolean weekend_challenge;
-
-            public void setHdr(boolean hdr) {
-                this.hdr = hdr;
-            }
-
-            public void setLive(LiveBean live) {
-                this.live = live;
-            }
-
-            public void setStaff_pick(StaffPickBean staff_pick) {
-                this.staff_pick = staff_pick;
-            }
-
-            public void setVod(boolean vod) {
-                this.vod = vod;
-            }
-
-            public void setWeekend_challenge(boolean weekend_challenge) {
-                this.weekend_challenge = weekend_challenge;
-            }
-
-            public boolean getHdr() {
-                return hdr;
-            }
-
-            public LiveBean getLive() {
-                return live;
-            }
-
-            public StaffPickBean getStaff_pick() {
-                return staff_pick;
-            }
-
-            public boolean getVod() {
-                return vod;
-            }
-
-            public boolean getWeekend_challenge() {
-                return weekend_challenge;
-            }
-
-            public static class LiveBean {
-
-                private boolean streaming;
-                private boolean archived;
-
-                public void setStreaming(boolean streaming) {
-                    this.streaming = streaming;
-                }
-
-                public void setArchived(boolean archived) {
-                    this.archived = archived;
-                }
-
-                public boolean getStreaming() {
-                    return streaming;
-                }
-
-                public boolean getArchived() {
-                    return archived;
-                }
-            }
-
-            public static class StaffPickBean {
-
-                private boolean normal;
-                private boolean best_of_the_month;
-                private boolean best_of_the_year;
-                private boolean premiere;
-
-                public void setNormal(boolean normal) {
-                    this.normal = normal;
-                }
-
-                public void setBest_of_the_month(boolean best_of_the_month) {
-                    this.best_of_the_month = best_of_the_month;
-                }
-
-                public void setBest_of_the_year(boolean best_of_the_year) {
-                    this.best_of_the_year = best_of_the_year;
-                }
-
-                public void setPremiere(boolean premiere) {
-                    this.premiere = premiere;
-                }
-
-                public boolean getNormal() {
-                    return normal;
-                }
-
-                public boolean getBest_of_the_month() {
-                    return best_of_the_month;
-                }
-
-                public boolean getBest_of_the_year() {
-                    return best_of_the_year;
-                }
-
-                public boolean getPremiere() {
-                    return premiere;
-                }
-            }
-        }
+    public void setEmbed(List<EmbedBean> embed) {
+        this.embed = embed;
     }
+
+    public List<EmbedBean> getEmbed() {
+        return embed;
+    }
+
 
     public static class PrivacyBean {
 
@@ -1894,6 +1768,95 @@ public class VimeoOnDemandPagesVideo implements Serializable{
 
             public int getYaw() {
                 return yaw;
+            }
+        }
+    }
+
+    public static class EmbedBean {
+
+        private ButtonsBean buttons;
+        private String color;
+
+        public void setButtons(ButtonsBean buttons) {
+            this.buttons = buttons;
+        }
+
+        public void setColor(String color) {
+            this.color = color;
+        }
+
+        public ButtonsBean getButtons() {
+            return buttons;
+        }
+
+        public String getColor() {
+            return color;
+        }
+
+        public static class ButtonsBean {
+
+            private String embed;
+            private String fullscreen;
+            private String hd;
+            private String like;
+            private String scaling;
+            private String share;
+            private String watchlater;
+
+            public void setEmbed(String embed) {
+                this.embed = embed;
+            }
+
+            public void setFullscreen(String fullscreen) {
+                this.fullscreen = fullscreen;
+            }
+
+            public void setHd(String hd) {
+                this.hd = hd;
+            }
+
+            public void setLike(String like) {
+                this.like = like;
+            }
+
+            public void setScaling(String scaling) {
+                this.scaling = scaling;
+            }
+
+            public void setShare(String share) {
+                this.share = share;
+            }
+
+            public void setWatchlater(String watchlater) {
+                this.watchlater = watchlater;
+            }
+
+            public String getEmbed() {
+                return embed;
+            }
+
+            public String getFullscreen() {
+                return fullscreen;
+            }
+
+            public String getHd() {
+                return hd;
+            }
+
+            public String getLike() {
+                return like;
+            }
+
+            public String getScaling() {
+                return scaling;
+            }
+
+            public String getShare() {
+                return share;
+            }
+
+            public String getWatchlater() {
+                return watchlater;
             }
         }
     }

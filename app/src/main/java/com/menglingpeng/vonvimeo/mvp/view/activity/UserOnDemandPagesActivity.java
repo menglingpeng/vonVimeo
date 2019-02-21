@@ -176,7 +176,7 @@ public class UserOnDemandPagesActivity extends BaseActivity implements RecyclerV
                 type = Constants.REQUEST_REMOVE_A_LIST_OF_REGIONS_FROM_AN_ON_DEMAND_PAGE;
             } else if (type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_BACKGROUNDS)) {
                 title = getString(R.string.dilog_remove_a_list_of_backgrounds_title);
-                type = Constants.REQUEST_REMOVE_A_LIST_OF_BACKGROUND_FROM_AN_ON_DEMAND_PAGE;
+                type = Constants.REQUEST_REMOVE_A_LIST_OF_BACKGROUNDS_FROM_AN_ON_DEMAND_PAGE;
             }else if (type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_PROMOTIONS)) {
                 title = getString(R.string.dilog_remove_a_list_of_promotions_title);
                 type = Constants.REQUEST_REMOVE_A_LIST_OF_PROMOTIONS_FROM_AN_ON_DEMAND_PAGE;
@@ -228,6 +228,16 @@ public class UserOnDemandPagesActivity extends BaseActivity implements RecyclerV
             case Constants.REQUEST_REMOVE_A_BACKGROUND_FROM_AN_ON_DEMAND_PAGE:
                 break;
             case Constants.REQUEST_REMOVE_A_PROMOTION_FROM_AN_ON_DEMAND_PAGE:
+                break;
+            case Constants.REQUEST_REMOVE_A_LIST_OF_VIDEOS_FROM_AN_ON_DEMAND_PAGE:
+                break;
+            case Constants.REQUEST_REMOVE_A_LIST_OF_GENRES_FROM_AN_ON_DEMAND_PAGE:
+                break;
+            case Constants.REQUEST_REMOVE_A_LIST_OF_REGIONS_FROM_AN_ON_DEMAND_PAGE:
+                break;
+            case Constants.REQUEST_REMOVE_A_LIST_OF_BACKGROUNDS_FROM_AN_ON_DEMAND_PAGE:
+                break;
+            case Constants.REQUEST_REMOVE_A_LIST_OF_PROMOTIONS_FROM_AN_ON_DEMAND_PAGE:
                 break;
             default:
                 break;

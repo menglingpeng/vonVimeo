@@ -583,6 +583,8 @@ public class Constants {
             "request_remove_a_list_of_backgrounds_from_an_on_demand_page";
     public static final String REQUEST_REMOVE_A_LIST_OF_PROMOTIONS_FROM_AN_ON_DEMAND_PAGE =
             "request_remove_a_list_of_promotions_from_an_on_demand_page";
+    public static final String REQUEST_REMOVE_A_LIST_OF_VIDEOS_FROM_AN_ON_DEMAND_PAGE =
+            "request_remove_a_list_of_videos_from_an_on_demand_page";
     public static final String REQUEST_REMOVE_A_GENRE_FROM_AN_ON_DEMAND_PAGE =
             "request_remove_a_genre_from_an_on_demand_page";
     public static final String REQUEST_REMOVE_A_REGION_FROM_AN_ON_DEMAND_PAGE =
@@ -591,6 +593,8 @@ public class Constants {
             "request_remove_a_background_from_an_on_demand_page";
     public static final String REQUEST_REMOVE_A_PROMOTION_FROM_AN_ON_DEMAND_PAGE =
             "request_remove_a_promotion_from_an_on_demand_page";
+    public static final String REQUEST_REMOVE_A_VIDEO_FROM_AN_ON_DEMAND_PAGE =
+            "request_remove_a_video_from_an_on_demand_page";
 
     //默认值1
     public static final int PAGE_VALUE = 1;

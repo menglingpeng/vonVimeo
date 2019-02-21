@@ -105,25 +105,33 @@ public class UserOnDemandPagesActivity extends BaseActivity implements RecyclerV
             case R.id.user_on_demand_pages_detail:
                 break;
             case R.id.user_on_demand_pages_all_checked:
-                if(type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_GENRES)){
+                if(type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_VIDEOS)){
+
+                } else if(type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_GENRES)){
 
                 }else if(type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_REGIONS)){
 
                 }else if(type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_BACKGROUNDS)){
+
+                }else if(type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_PROMOTIONS)){
 
                 }
                 break;
             case R.id.user_on_demand_pages_no_checked:
-                if(type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_GENRES)){
+                if(type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_VIDEOS)){
+
+                } else if(type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_GENRES)){
 
                 }else if(type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_REGIONS)){
 
                 }else if(type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_BACKGROUNDS)){
 
+                }else if(type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_PROMOTIONS)){
+
                 }
                 break;
             case R.id.user_on_demand_pages_delete_checked:
-
+                remove(type);
                 break;
             default:
                 break;
@@ -139,30 +147,36 @@ public class UserOnDemandPagesActivity extends BaseActivity implements RecyclerV
     private void remove(String type){
         String title = null;
         if(checkedCounts == 1) {
-            if (type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_GENRES)) {
-                title = getString(R.string.dilog_remove_a_genres_title);
+            if (type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_VIDEOS)) {
+                title = getString(R.string.dilog_remove_a_video_title);
+                type = Constants.REQUEST_REMOVE_A_VIDEO_FROM_AN_ON_DEMAND_PAGE;
+            } else if (type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_GENRES)) {
+                title = getString(R.string.dilog_remove_a_genre_title);
                 type = Constants.REQUEST_REMOVE_A_GENRE_FROM_AN_ON_DEMAND_PAGE;
             } else if (type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_REGIONS)) {
-                title = getString(R.string.dilog_remove_a_regions_title);
+                title = getString(R.string.dilog_remove_a_region_title);
                 type = Constants.REQUEST_REMOVE_A_REGION_FROM_AN_ON_DEMAND_PAGE;
             } else if (type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_BACKGROUNDS)) {
-                title = getString(R.string.dilog_remove_a_backgrounds_title);
+                title = getString(R.string.dilog_remove_a_background_title);
                 type = Constants.REQUEST_REMOVE_A_BACKGROUND_FROM_AN_ON_DEMAND_PAGE;
             }else if (type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_PROMOTIONS)) {
-                title = getString(R.string.dilog_remove_a_list_of_promotions_title);
+                title = getString(R.string.dilog_remove_a_promotion_title);
                 type = Constants.REQUEST_REMOVE_A_PROMOTION_FROM_AN_ON_DEMAND_PAGE;
             }
 
         }else if(checkedCounts > 1){
-            if (type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_GENRES)) {
+            if (type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_VIDEOS)) {
+                title = getString(R.string.dilog_remove_a_list_of_videos_title);
+                type = Constants.REQUEST_REMOVE_A_LIST_OF_VIDEOS_FROM_AN_ON_DEMAND_PAGE;
+            } else if (type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_GENRES)) {
                 title = getString(R.string.dilog_remove_a_list_of_genres_title);
-                type = Constants.REQUEST_REMOVE_A_GENRE_FROM_AN_ON_DEMAND_PAGE;
+                type = Constants.REQUEST_REMOVE_A_LIST_OF_GENRES_FROM_AN_ON_DEMAND_PAGE;
             } else if (type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_REGIONS)) {
                 title = getString(R.string.dilog_remove_a_list_of_regions_title);
-                type = Constants.REQUEST_REMOVE_A_REGION_FROM_AN_ON_DEMAND_PAGE;
+                type = Constants.REQUEST_REMOVE_A_LIST_OF_REGIONS_FROM_AN_ON_DEMAND_PAGE;
             } else if (type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_BACKGROUNDS)) {
                 title = getString(R.string.dilog_remove_a_list_of_backgrounds_title);
-                type = Constants.REQUEST_REMOVE_A_BACKGROUND_FROM_AN_ON_DEMAND_PAGE;
+                type = Constants.REQUEST_REMOVE_A_LIST_OF_BACKGROUND_FROM_AN_ON_DEMAND_PAGE;
             }else if (type.equals(Constants.TAB_VIMEO_ONDEMAND_PAGES_PROMOTIONS)) {
                 title = getString(R.string.dilog_remove_a_list_of_promotions_title);
                 type = Constants.REQUEST_REMOVE_A_LIST_OF_PROMOTIONS_FROM_AN_ON_DEMAND_PAGE;
@@ -204,6 +218,19 @@ public class UserOnDemandPagesActivity extends BaseActivity implements RecyclerV
 
     @Override
     public void loadSuccess(String json, String requestType) {
-
+        switch (requestType){
+            case Constants.REQUEST_REMOVE_A_VIDEO_FROM_AN_ON_DEMAND_PAGE:
+                break;
+            case Constants.REQUEST_REMOVE_A_GENRE_FROM_AN_ON_DEMAND_PAGE:
+                break;
+            case Constants.REQUEST_REMOVE_A_REGION_FROM_AN_ON_DEMAND_PAGE:
+                break;
+            case Constants.REQUEST_REMOVE_A_BACKGROUND_FROM_AN_ON_DEMAND_PAGE:
+                break;
+            case Constants.REQUEST_REMOVE_A_PROMOTION_FROM_AN_ON_DEMAND_PAGE:
+                break;
+            default:
+                break;
+        }
     }
 }

@@ -28,6 +28,7 @@ public class VimeoOnDemandPagesVideo implements Serializable{
     private SubcategoriesBean subcategories;
     private UploadBean upload;
     private List<ParentProjectBean> parent_project;
+    private SpatialBean spatial;
 
 
     public String getUri() {
@@ -213,6 +214,14 @@ public class VimeoOnDemandPagesVideo implements Serializable{
 
     public List<ParentProjectBean> getParent_project() {
         return parent_project;
+    }
+
+    public void setSpatial(SpatialBean spatial) {
+        this.spatial = spatial;
+    }
+
+    public SpatialBean getSpatial() {
+        return spatial;
     }
 
     public static class EmbedBean {
@@ -1686,6 +1695,12 @@ public class VimeoOnDemandPagesVideo implements Serializable{
 
         private String created_time;
         private MetadataBean metadata;
+        private String modified_time;
+        private String name;
+        private String resource_key;
+        private String uri;
+        private User user;
+
 
         public void setCreated_time(String created_time) {
             this.created_time = created_time;
@@ -1701,6 +1716,46 @@ public class VimeoOnDemandPagesVideo implements Serializable{
 
         public MetadataBean getMetadata() {
             return metadata;
+        }
+
+        public void setModified_time(String modified_time) {
+            this.modified_time = modified_time;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public void setResource_key(String resource_key) {
+            this.resource_key = resource_key;
+        }
+
+        public void setUri(String uri) {
+            this.uri = uri;
+        }
+
+        public String getModified_time() {
+            return modified_time;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getResource_key() {
+            return resource_key;
+        }
+
+        public String getUri() {
+            return uri;
+        }
+
+        public User getUser() {
+            return user;
+        }
+
+        public void setUser(User user) {
+            this.user = user;
         }
 
         public static class MetadataBean {
@@ -1729,11 +1784,6 @@ public class VimeoOnDemandPagesVideo implements Serializable{
                 }
 
                 public static class VideosBean {
-                    /**
-                     * options : ["string"]
-                     * total : 12
-                     * uri : /users/152184/projects/12345/videos
-                     */
 
                     private int total;
                     private String uri;
@@ -1763,6 +1813,87 @@ public class VimeoOnDemandPagesVideo implements Serializable{
                         return options;
                     }
                 }
+            }
+        }
+    }
+
+
+    public static class SpatialBean {
+
+        private int field_of_view;
+        private String projection;
+        private String stereo_format;
+        private List<DirectorTimelineBean> director_timeline;
+
+        public void setField_of_view(int field_of_view) {
+            this.field_of_view = field_of_view;
+        }
+
+        public void setProjection(String projection) {
+            this.projection = projection;
+        }
+
+        public void setStereo_format(String stereo_format) {
+            this.stereo_format = stereo_format;
+        }
+
+        public void setDirector_timeline(List<DirectorTimelineBean> director_timeline) {
+            this.director_timeline = director_timeline;
+        }
+
+        public int getField_of_view() {
+            return field_of_view;
+        }
+
+        public String getProjection() {
+            return projection;
+        }
+
+        public String getStereo_format() {
+            return stereo_format;
+        }
+
+        public List<DirectorTimelineBean> getDirector_timeline() {
+            return director_timeline;
+        }
+
+        public static class DirectorTimelineBean {
+
+            private int pitch;
+            private int roll;
+            private int time_code;
+            private int yaw;
+
+            public void setPitch(int pitch) {
+                this.pitch = pitch;
+            }
+
+            public void setRoll(int roll) {
+                this.roll = roll;
+            }
+
+            public void setTime_code(int time_code) {
+                this.time_code = time_code;
+            }
+
+            public void setYaw(int yaw) {
+                this.yaw = yaw;
+            }
+
+            public int getPitch() {
+                return pitch;
+            }
+
+            public int getRoll() {
+                return roll;
+            }
+
+            public int getTime_code() {
+                return time_code;
+            }
+
+            public int getYaw() {
+                return yaw;
             }
         }
     }

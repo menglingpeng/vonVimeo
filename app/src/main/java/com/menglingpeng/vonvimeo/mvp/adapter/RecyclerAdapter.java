@@ -41,7 +41,7 @@ import com.menglingpeng.vonvimeo.mvp.view.UserAlbumDetailActivity;
 import com.menglingpeng.vonvimeo.mvp.view.UserAlbumsActivity;
 import com.menglingpeng.vonvimeo.mvp.view.activity.UserChannelsActivity;
 import com.menglingpeng.vonvimeo.mvp.view.activity.UserFollowingActivity;
-import com.menglingpeng.vonvimeo.mvp.view.activity.UserGroupActivity;
+import com.menglingpeng.vonvimeo.mvp.view.activity.UserGroupsActivity;
 import com.menglingpeng.vonvimeo.mvp.view.activity.UserProfileActivity;
 import com.menglingpeng.vonvimeo.mvp.view.activity.UserUploadedVideosActivity;
 import com.menglingpeng.vonvimeo.utils.Constants;
@@ -867,7 +867,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             viewHolder.groupsTv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(context, UserGroupActivity.class);
+                    Intent intent = new Intent(context, UserGroupsActivity.class);
                     intent.putExtra(Constants.USER, user);
                     context.startActivity(intent);
                 }
@@ -1220,7 +1220,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             viewHolder.groupsTv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(context, UserGroupActivity.class);
+                    Intent intent = new Intent(context, UserGroupsActivity.class);
                     intent.putExtra(Constants.USER, user);
                     context.startActivity(intent);
                 }
@@ -1293,7 +1293,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             viewHolder.groupsTv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(context, UserGroupActivity.class);
+                    Intent intent = new Intent(context, UserGroupsActivity.class);
                     intent.putExtra(Constants.USER, user);
                     context.startActivity(intent);
                 }

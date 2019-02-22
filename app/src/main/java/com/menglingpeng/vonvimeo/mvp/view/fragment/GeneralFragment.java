@@ -27,11 +27,7 @@ import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
 import com.menglingpeng.vonvimeo.mvp.model.User;
 import com.menglingpeng.vonvimeo.mvp.model.Video;
 import com.menglingpeng.vonvimeo.mvp.presenter.RecyclerPresenter;
-import com.menglingpeng.vonvimeo.mvp.view.UserAlbumsActivity;
-import com.menglingpeng.vonvimeo.mvp.view.activity.ChannelsActivity;
 import com.menglingpeng.vonvimeo.mvp.view.activity.UpgradeActivity;
-import com.menglingpeng.vonvimeo.mvp.view.activity.UserGroupActivity;
-import com.menglingpeng.vonvimeo.mvp.view.activity.VideoSettingsActivity;
 import com.menglingpeng.vonvimeo.utils.Constants;
 import com.menglingpeng.vonvimeo.utils.IdStringUtil;
 import com.menglingpeng.vonvimeo.utils.ImageLoader;
@@ -39,8 +35,6 @@ import com.menglingpeng.vonvimeo.utils.SharedPrefUtils;
 import com.menglingpeng.vonvimeo.utils.SnackbarUtils;
 
 import java.util.HashMap;
-
-import io.reactivex.CompletableOnSubscribe;
 
 public class GeneralFragment extends BaseFragment implements RecyclerView, View.OnClickListener, Switch.OnCheckedChangeListener{
 

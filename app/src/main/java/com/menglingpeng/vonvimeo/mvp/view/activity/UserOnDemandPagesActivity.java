@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.provider.ContactsContract;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,15 +15,22 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
 import com.menglingpeng.vonvimeo.mvp.model.User;
+import com.menglingpeng.vonvimeo.mvp.presenter.RecyclerPresenter;
 import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
 import com.menglingpeng.vonvimeo.utils.Constants;
 import com.menglingpeng.vonvimeo.utils.IdStringUtil;
 import com.menglingpeng.vonvimeo.utils.ImageLoader;
+import com.menglingpeng.vonvimeo.utils.SharedPrefUtils;
+import com.menglingpeng.vonvimeo.utils.SnackbarUtils;
+
+import java.util.HashMap;
 
 public class UserOnDemandPagesActivity extends BaseActivity implements RecyclerView{
 
@@ -183,6 +191,68 @@ public class UserOnDemandPagesActivity extends BaseActivity implements RecyclerV
             }
         }
         showRemoveDialog(title, type);
+    }
+
+    private void showCreateOnDemandPageDialog() {
+        final TextInputEditText onDemandPageNameEt;
+        final TextInputEditText onDemandPageDescEt;
+        final RadioGroup radioGroup;
+        final RadioButton filmRb;
+        final RadioButton seriesRb;
+        AlertDialog dialog;
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_create_an_on_demand_page, null);
+        builder.setTitle(R.string.dialog_create_an_on_demand_page_title);
+        builder.setView(dialogView);
+        onDemandPageNameEt = (TextInputEditText) dialogView.findViewById(R.id.on_demand_page_name_tiet);
+        onDemandPageDescEt = (TextInputEditText) dialogView.findViewById(R.id.on_demand_page_desc_tiet);
+        radioGroup = (RadioGroup)dialogView.findViewById(R.id.on_demand_page_type_settings_rg);
+        filmRb = (RadioButton)dialogView.findViewById(R.id.on_demand_page_type_settings_film_rb);
+        seriesRb = (RadioButton)dialogView.findViewById(R.id.on_demand_page_type_settings_series_rb);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch (radioGroup.getCheckedRadioButtonId()){
+                    case R.id.group_privacy_settings_anyone_rb:
+                        break;
+                    case R.id.group_privacy_settings_members_rb:
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
+        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.setPositiveButton(R.string.create, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String name = onDemandPageNameEt.getText().toString();
+                if (name.equals("")) {
+                    SnackbarUtils.showSnackShort(getApplicationContext(), coordinatorLayout, getString(R.string
+                            .the_name_of_group_is_not_null));
+                } else {
+                    HashMap<String, String> map = new HashMap<>();
+                    map.put(Constants.ACCESS_TOKEN, SharedPrefUtils.getAuthToken());
+                    map.put(Constants.NAME, onDemandPageNameEt.getText().toString());
+                    map.put(Constants.DESCRIPTION, onDemandPageDescEt.getText().toString());
+                    type = Constants.REQUEST_CREATE_AN_ON_DEMAND_PAGE;
+                    RecyclerPresenter presenter = new RecyclerPresenter(UserOnDemandPagesActivity.this, type, Constants
+                            .REQUEST_NORMAL, Constants.REQUEST_POST_MEIHOD, map, getApplicationContext());
+                    presenter.loadJson();
+                    SnackbarUtils.showSnackShort(getApplicationContext(), coordinatorLayout, getString(R.string
+                            .snack_create_a_album_text));
+                }
+
+            }
+        });
+        onDemandPageNameEt.setFocusable(true);
+        dialog = builder.create();
+        dialog.show();
     }
 
     private void showRemoveDialog(String title, String type){

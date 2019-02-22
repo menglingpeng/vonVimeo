@@ -145,6 +145,11 @@
     <string name="dialog_delete_this_project_content_tv">Are you sure want to delete this project?</string>
 
 
+    <string name="dialog_create_an_on_demand_page_title">Create an OnDemandPage</string>
+    <string name="on_demand_page_type_settings">Type Settings</string>
+    <string name="on_demand_page_type_settings_film_rb_text">Film</string>
+    <string name="on_demand_page_type_settings_series_rb_text">Series</string>
+
     <string name="name">名称</string>
     <string name="title">Title</string>
     <string name="description">说明</string>

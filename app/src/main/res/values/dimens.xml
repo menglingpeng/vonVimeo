@@ -337,6 +337,8 @@
     <item name="textsize_sb_max" type="dimen" format="integer">100</item>
     <item name="textsize_sb_progress" type="dimen" format="integer">100</item>
 
+    <dimen name="content_rating_spinner_layout_marginTop">20dp</dimen>
+
 
 
 

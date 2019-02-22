@@ -595,6 +595,8 @@ public class Constants {
             "request_remove_a_promotion_from_an_on_demand_page";
     public static final String REQUEST_REMOVE_A_VIDEO_FROM_AN_ON_DEMAND_PAGE =
             "request_remove_a_video_from_an_on_demand_page";
+    public static final String REQUEST_CREATE_AN_ON_DEMAND_PAGE =
+            "request_create_an_on_demand_page";
 
     //默认值1
     public static final int PAGE_VALUE = 1;

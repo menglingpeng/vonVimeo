@@ -9,8 +9,6 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TextInputEditText;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -30,7 +28,7 @@ import com.menglingpeng.vonvimeo.utils.SnackbarUtils;
 
 import java.util.HashMap;
 
-public class UserGroupActivity extends BaseActivity implements RecyclerView{
+public class UserGroupsActivity extends BaseActivity implements RecyclerView{
 
     private Toolbar toolbar;
     private FloatingActionButton floatingActionButton;
@@ -199,8 +197,8 @@ public class UserGroupActivity extends BaseActivity implements RecyclerView{
                     map.put(Constants.ACCESS_TOKEN, SharedPrefUtils.getAuthToken());
                     map.put(Constants.NAME, groupNameEt.getText().toString());
                     map.put(Constants.DESCRIPTION, groupDescEt.getText().toString());
-                    type = Constants.REQUEST_CREATE_A_ALBUM;
-                    RecyclerPresenter presenter = new RecyclerPresenter(UserGroupActivity.this, type, Constants
+                    type = Constants.REQUEST_CREATE_A_GROUP;
+                    RecyclerPresenter presenter = new RecyclerPresenter(UserGroupsActivity.this, type, Constants
                             .REQUEST_NORMAL, Constants.REQUEST_POST_MEIHOD, map, getApplicationContext());
                     presenter.loadJson();
                     SnackbarUtils.showSnackShort(getApplicationContext(), coordinatorLayout, getString(R.string

@@ -339,7 +339,7 @@ public class UserCollectionsActivity extends BaseActivity implements View.OnClic
                     map.put(Constants.NAME, groupNameEt.getText().toString());
                     map.put(Constants.DESCRIPTION, groupDescEt.getText().toString());
                     type = Constants.REQUEST_CREATE_A_ALBUM;
-                    RecyclerPresenter presenter = new RecyclerPresenter(UserGroupActivity.this, type, Constants
+                    RecyclerPresenter presenter = new RecyclerPresenter(UserGroupsActivity.this, type, Constants
                             .REQUEST_NORMAL, Constants.REQUEST_POST_MEIHOD, map, getApplicationContext());
                     presenter.loadJson();
                     SnackbarUtils.showSnackShort(getApplicationContext(), coordinatorLayout, getString(R.string

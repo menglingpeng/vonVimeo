@@ -31,7 +31,7 @@ import com.menglingpeng.vonvimeo.mvp.view.activity.MessageActivity;
 import com.menglingpeng.vonvimeo.mvp.view.activity.TagActivity;
 import com.menglingpeng.vonvimeo.mvp.view.activity.UserChannelsActivity;
 import com.menglingpeng.vonvimeo.mvp.view.activity.UserFollowingActivity;
-import com.menglingpeng.vonvimeo.mvp.view.activity.UserGroupActivity;
+import com.menglingpeng.vonvimeo.mvp.view.activity.UserGroupsActivity;
 import com.menglingpeng.vonvimeo.mvp.view.activity.UserProfileActivity;
 import com.menglingpeng.vonvimeo.utils.Constants;
 import com.menglingpeng.vonvimeo.utils.ImageLoader;
@@ -161,7 +161,7 @@ public class RecyclerFragment extends BaseFragment implements com.menglingpeng.v
             intent.putExtra(Constants.TYPE, Constants.REQUEST_LIST_FEED_CHANNEL_OF_AUHT_USER);
             startActivity(intent);
         }else if(viewHolder instanceof RecyclerAdapter.FeedChannleViewHolder){
-            intent = new Intent(getActivity(), UserGroupActivity.class);
+            intent = new Intent(getActivity(), UserGroupsActivity.class);
             intent.putExtra(Constants.GROUP, (Group)t);
             intent.putExtra(Constants.TYPE, Constants.REQUEST_LIST_FEED_GROUP_OF_AUHT_USER);
             startActivity(intent);
@@ -183,7 +183,7 @@ public class RecyclerFragment extends BaseFragment implements com.menglingpeng.v
                     startActivity(intent);
                     break;
                 case 1:
-                    intent = new Intent(getActivity(), UserGroupActivity.class);
+                    intent = new Intent(getActivity(), UserGroupsActivity.class);
                     startActivity(intent);
                     break;
                 case 2:

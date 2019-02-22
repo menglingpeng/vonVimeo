@@ -1776,6 +1776,8 @@ public class VimeoOnDemandPagesVideo implements Serializable{
 
         private ButtonsBean buttons;
         private String color;
+        private LogosBean logos;
+
 
         public void setButtons(ButtonsBean buttons) {
             this.buttons = buttons;
@@ -1791,6 +1793,14 @@ public class VimeoOnDemandPagesVideo implements Serializable{
 
         public String getColor() {
             return color;
+        }
+
+        public void setLogos(LogosBean logos) {
+            this.logos = logos;
+        }
+
+        public LogosBean getLogos() {
+            return logos;
         }
 
         public static class ButtonsBean {
@@ -1857,6 +1867,59 @@ public class VimeoOnDemandPagesVideo implements Serializable{
 
             public String getWatchlater() {
                 return watchlater;
+            }
+        }
+
+        public static class LogosBean {
+
+            private CustomBean custom;
+            private String vimeo;
+
+            public void setCustom(CustomBean custom) {
+                this.custom = custom;
+            }
+
+            public void setVimeo(String vimeo) {
+                this.vimeo = vimeo;
+            }
+
+            public CustomBean getCustom() {
+                return custom;
+            }
+
+            public String getVimeo() {
+                return vimeo;
+            }
+
+            public static class CustomBean {
+
+                private String active;
+                private String link;
+                private String sticky;
+
+                public void setActive(String active) {
+                    this.active = active;
+                }
+
+                public void setLink(String link) {
+                    this.link = link;
+                }
+
+                public void setSticky(String sticky) {
+                    this.sticky = sticky;
+                }
+
+                public String getActive() {
+                    return active;
+                }
+
+                public String getLink() {
+                    return link;
+                }
+
+                public String getSticky() {
+                    return sticky;
+                }
             }
         }
     }

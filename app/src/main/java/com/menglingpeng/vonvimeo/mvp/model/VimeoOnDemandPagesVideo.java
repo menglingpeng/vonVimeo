@@ -1777,6 +1777,9 @@ public class VimeoOnDemandPagesVideo implements Serializable{
         private ButtonsBean buttons;
         private String color;
         private LogosBean logos;
+        private String playbar;
+        private String speed;
+        private TitleBean title;
 
 
         public void setButtons(ButtonsBean buttons) {
@@ -1801,6 +1804,30 @@ public class VimeoOnDemandPagesVideo implements Serializable{
 
         public LogosBean getLogos() {
             return logos;
+        }
+
+        public void setPlaybar(String playbar) {
+            this.playbar = playbar;
+        }
+
+        public void setSpeed(String speed) {
+            this.speed = speed;
+        }
+
+        public void setTitle(TitleBean title) {
+            this.title = title;
+        }
+
+        public String getPlaybar() {
+            return playbar;
+        }
+
+        public String getSpeed() {
+            return speed;
+        }
+
+        public TitleBean getTitle() {
+            return title;
         }
 
         public static class ButtonsBean {
@@ -1920,6 +1947,37 @@ public class VimeoOnDemandPagesVideo implements Serializable{
                 public String getSticky() {
                     return sticky;
                 }
+            }
+        }
+
+        public static class TitleBean {
+
+            private String name;
+            private String owner;
+            private String portrait;
+
+            public void setName(String name) {
+                this.name = name;
+            }
+
+            public void setOwner(String owner) {
+                this.owner = owner;
+            }
+
+            public void setPortrait(String portrait) {
+                this.portrait = portrait;
+            }
+
+            public String getName() {
+                return name;
+            }
+
+            public String getOwner() {
+                return owner;
+            }
+
+            public String getPortrait() {
+                return portrait;
             }
         }
     }

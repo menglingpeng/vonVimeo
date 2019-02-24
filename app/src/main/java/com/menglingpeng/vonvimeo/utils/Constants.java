@@ -599,6 +599,8 @@ public class Constants {
             "request_create_an_on_demand_page";
     public static final String REQUEST_EDIT_AN_ON_DEMAND_PAGE =
             "request_edit_an_on_demand_page";
+    public static final String REQUEST_EDIT_A_POSTER_OF_AN_ON_DEMAND_PAGE =
+            "request_edit_a_poster_of_an_on_demand_page";
 
     //默认值1
     public static final int PAGE_VALUE = 1;

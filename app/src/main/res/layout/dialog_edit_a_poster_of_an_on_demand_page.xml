@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp">
+
+    <RelativeLayout
+        android:id="@+id/edit_poster_of_an_on_demand_page_active_settings_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/edit_poster_of_an_on_demand_page_active_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/on_demand_page_type_settings"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+
+        <RadioonGroup
+            android:id="@+id/edit_poster_of_an_on_demand_page_active_settings_rg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RadioButton
+                android:id="@+id/edit_poster_of_an_on_demand_page_active_settings_true_rb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/edit_poster_of_an_on_demand_page_active_settings_true_rb_text"/>
+
+            <RadioButton
+                android:id="@+id/edit_poster_of_an_on_demand_page_active_settings_false_rb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/edit_poster_of_an_on_demand_page_active_settings_false_rb_text"/>
+
+        </RadioonGroup>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -13,7 +13,6 @@ public class VimeoOnDemandPagesVideo implements Serializable{
     private int width;
     private String language;
     private int height;
-
     private String created_time;
     private String modified_time;
     private String release_time;
@@ -29,12 +28,8 @@ public class VimeoOnDemandPagesVideo implements Serializable{
     private UploadBean upload;
     private List<ParentProjectBean> parent_project;
     private SpatialBean spatial;
-    /**
-     * embed : [{"buttons":{"embed":"true","fullscreen":"true","hd":"true","like":"true","scaling":"true",
-     * "share":"true","watchlater":"true"},"color":"#0a0808"}]
-     */
-
     private List<EmbedBean> embed;
+    private List<ParentFolderBean> parent_folder;
 
 
     public String getUri() {
@@ -228,6 +223,14 @@ public class VimeoOnDemandPagesVideo implements Serializable{
 
     public List<EmbedBean> getEmbed() {
         return embed;
+    }
+
+    public void setParent_folder(List<ParentFolderBean> parent_folder) {
+        this.parent_folder = parent_folder;
+    }
+
+    public List<ParentFolderBean> getParent_folder() {
+        return parent_folder;
     }
 
 
@@ -1780,6 +1783,8 @@ public class VimeoOnDemandPagesVideo implements Serializable{
         private String playbar;
         private String speed;
         private TitleBean title;
+        private String uri;
+        private String volume;
 
 
         public void setButtons(ButtonsBean buttons) {
@@ -1828,6 +1833,22 @@ public class VimeoOnDemandPagesVideo implements Serializable{
 
         public TitleBean getTitle() {
             return title;
+        }
+
+        public void setUri(String uri) {
+            this.uri = uri;
+        }
+
+        public void setVolume(String volume) {
+            this.volume = volume;
+        }
+
+        public String getUri() {
+            return uri;
+        }
+
+        public String getVolume() {
+            return volume;
         }
 
         public static class ButtonsBean {
@@ -1978,6 +1999,85 @@ public class VimeoOnDemandPagesVideo implements Serializable{
 
             public String getPortrait() {
                 return portrait;
+            }
+        }
+    }
+
+    public static class ParentFolderBean {
+
+        private String created_time;
+        private MetadataBean metadata;
+
+        public void setCreated_time(String created_time) {
+            this.created_time = created_time;
+        }
+
+        public void setMetadata(MetadataBean metadata) {
+            this.metadata = metadata;
+        }
+
+        public String getCreated_time() {
+            return created_time;
+        }
+
+        public MetadataBean getMetadata() {
+            return metadata;
+        }
+
+        public static class MetadataBean {
+
+            private ConnectionsBean connections;
+
+            public void setConnections(ConnectionsBean connections) {
+                this.connections = connections;
+            }
+
+            public ConnectionsBean getConnections() {
+                return connections;
+            }
+
+            public static class ConnectionsBean {
+
+                private VideosBean videos;
+
+                public void setVideos(VideosBean videos) {
+                    this.videos = videos;
+                }
+
+                public VideosBean getVideos() {
+                    return videos;
+                }
+
+                public static class VideosBean {
+
+                    private int total;
+                    private String uri;
+                    private List<String> options;
+
+                    public void setTotal(int total) {
+                        this.total = total;
+                    }
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public void setOptions(List<String> options) {
+                        this.options = options;
+                    }
+
+                    public int getTotal() {
+                        return total;
+                    }
+
+                    public String getUri() {
+                        return uri;
+                    }
+
+                    public List<String> getOptions() {
+                        return options;
+                    }
+                }
             }
         }
     }

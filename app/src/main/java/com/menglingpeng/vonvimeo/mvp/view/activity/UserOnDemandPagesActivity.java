@@ -321,6 +321,55 @@ public class UserOnDemandPagesActivity extends BaseActivity implements RecyclerV
         dialog.show();
     }
 
+    private void showEditPosterDialog() {
+        final RadioGroup radioGroup;
+        final RadioButton trueRb;
+        final RadioButton falseRb;
+        AlertDialog dialog;
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_edit_a_poster_of_an_on_demand_page, null);
+        builder.setTitle(R.string.dialog_edit_a_poster_of_an_on_demand_page_title);
+        builder.setView(dialogView);
+        radioGroup = (RadioGroup)dialogView.findViewById(R.id.edit_poster_of_an_on_demand_page_active_settings_rg);
+        trueRb = (RadioButton)dialogView.findViewById(R.id.edit_poster_of_an_on_demand_page_active_settings_true_rb);
+        falseRb = (RadioButton)dialogView.findViewById(R.id.edit_poster_of_an_on_demand_page_active_settings_false_rb);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch (radioGroup.getCheckedRadioButtonId()){
+                    case R.id.edit_poster_of_an_on_demand_page_active_settings_true_rb:
+                        break;
+                    case R.id.edit_poster_of_an_on_demand_page_active_settings_false_rb:
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
+        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.setPositiveButton(R.string.create, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                    HashMap<String, String> map = new HashMap<>();
+                    map.put(Constants.ACCESS_TOKEN, SharedPrefUtils.getAuthToken());
+                    type = Constants.REQUEST_EDIT_A_POSTER_OF_AN_ON_DEMAND_PAGE;
+                    RecyclerPresenter presenter = new RecyclerPresenter(UserOnDemandPagesActivity.this, type, Constants
+                            .REQUEST_NORMAL, Constants.REQUEST_POST_MEIHOD, map, getApplicationContext());
+                    presenter.loadJson();
+                    SnackbarUtils.showSnackShort(getApplicationContext(), coordinatorLayout, getString(R.string
+                            .snack_create_a_album_text));
+                }
+
+        });
+        dialog = builder.create();
+        dialog.show();
+    }
+
     private void showRemoveDialog(String title, String type){
         AlertDialog dialog;
         AlertDialog.Builder builder = new AlertDialog.Builder(this);

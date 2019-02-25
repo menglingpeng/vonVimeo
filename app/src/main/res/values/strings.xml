@@ -313,6 +313,16 @@
     <string name="remove_a_promotion_from_an_on_demand_pape_http_status_code_403">用户没有权限执行此操作</string>
     <string name="remove_a_promotion_from_an_on_demand_pape_http_status_code_404">选择的Promotion或者OnDemandPage不存在</string>
 
+    <string name="remove_a_draft_of_an_on_demand_pape_http_status_code_204">选择的Page已经成功移除！</string>
+    <string name="remove_a_draft_of_an_on_demand_pape_http_status_code_403">用户没有权限执行此操作</string>
+    <string name="remove_a_draft_of_an_on_demand_pape_http_status_code_404">选择的Page不存在</string>
+
+    <string name="edit_an_on_demand_pape_http_status_code_200">选择的Page已经成功编辑！</string>
+    <string name="edit_of_an_on_demand_pape_http_status_code_403">用户没有权限执行此操作</string>
+    <string name="edit_an_on_demand_pape_http_status_code_404">选择的Page不存在</string>
+
+
+
 
     <string name="following">Following</string>
     <string name="online">Online</string>

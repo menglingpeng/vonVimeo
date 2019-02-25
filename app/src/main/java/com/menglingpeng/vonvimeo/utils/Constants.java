@@ -599,8 +599,13 @@ public class Constants {
             "request_create_an_on_demand_page";
     public static final String REQUEST_EDIT_AN_ON_DEMAND_PAGE =
             "request_edit_an_on_demand_page";
+    public static final String REQUEST_DELETE_A_DRAFT_OF_AN_ON_DEMAND_PAGE =
+            "request_delete_a_draft_of_an_on_demand_page";
     public static final String REQUEST_EDIT_A_POSTER_OF_AN_ON_DEMAND_PAGE =
             "request_edit_a_poster_of_an_on_demand_page";
+
+    public static final String REQUEST_REMOVE_A_VIDEO_FROM_A_PORTFOLIO =
+            "request_remove_a_video_from_a_portfolio";
 
     //默认值1
     public static final int PAGE_VALUE = 1;

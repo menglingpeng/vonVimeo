@@ -424,6 +424,34 @@ public class UserOnDemandPagesActivity extends BaseActivity implements RecyclerV
                 break;
             case Constants.REQUEST_REMOVE_A_LIST_OF_PROMOTIONS_FROM_AN_ON_DEMAND_PAGE:
                 break;
+            case Constants.REQUEST_EDIT_AN_ON_DEMAND_PAGE:
+                if(requestType.equals(Constants.CODE_200_OK)){
+                    SnackbarUtils.showSnackShort(context, coordinatorLayout, getString(R.string.
+                            edit_an_on_demand_pape_http_status_code_200));
+                }else if(requestType.equals(Constants.CODE_403_FORBIDDEN)){
+                    SnackbarUtils.showErrorSnackShort(context, coordinatorLayout, getString(R.id.
+                            edit_an_on_demand_pape_http_status_code_403));
+                }else if(requestType.equals(Constants.CODE_404_NOT_FOUND)){
+                    SnackbarUtils.showErrorSnackShort(context, coordinatorLayout, getString(R.id.
+                            edit_an_on_demand_pape_http_status_code_404));
+                }
+                break;
+            case Constants.REQUEST_CREATE_AN_ON_DEMAND_PAGE:
+                break;
+
+            case Constants.REQUEST_DELETE_A_DRAFT_OF_AN_ON_DEMAND_PAGE:
+                if(requestType.equals(Constants.CODE_204_NO_CONTENT)){
+                    SnackbarUtils.showSnackShort(context, coordinatorLayout, getString(R.string.
+                            remove_a_draft_of_an_on_demand_pape_http_status_code_204));
+                }else if(requestType.equals(Constants.CODE_403_FORBIDDEN)){
+                    SnackbarUtils.showErrorSnackShort(context, coordinatorLayout, getString(R.id.
+                            remove_a_draft_of_an_on_demand_pape_http_status_code_403));
+
+                }else if(requestType.equals(Constants.CODE_404_NOT_FOUND)){
+                    SnackbarUtils.showErrorSnackShort(context, coordinatorLayout, getString(R.id.
+                            remove_a_draft_of_an_on_demand_pape_http_status_code_404));
+                }
+                break;
             default:
                 break;
         }

@@ -156,6 +156,13 @@
     <string name="edit_poster_of_an_on_demand_page_active_series_rb_text">False</string>
     <string name="dialog_edit_poster_of_an_on_demand_page_active_title">Edit a Poster</string>
 
+    <string name="dialog_create_a_promotion_title">Create a Promotion</string>
+    <string name="promotion_type_settings">Type Settings</string>
+    <string name="promotion_type_settings_batch_rb_text">Batch</string>
+    <string name="promotion_type_settings_single_rb_text">Single</string>
+
+
+
     <string name="name">名称</string>
     <string name="title">Title</string>
     <string name="description">说明</string>

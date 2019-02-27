@@ -161,6 +161,8 @@
     <string name="promotion_type_settings_batch_rb_text">Batch</string>
     <string name="promotion_type_settings_single_rb_text">Single</string>
 
+    <string name="dialog_create_a_poster_title">Create a Poster</string>
+
 
 
     <string name="name">名称</string>

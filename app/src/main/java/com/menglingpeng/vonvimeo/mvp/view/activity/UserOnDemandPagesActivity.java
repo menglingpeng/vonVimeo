@@ -1,18 +1,34 @@
 package com.menglingpeng.vonvimeo.mvp.view.activity;
 
+import android.Manifest;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.net.Uri;
+import android.os.Build;
+import android.os.Environment;
 import android.provider.ContactsContract;
+import android.provider.MediaStore;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TextInputEditText;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
@@ -25,13 +41,18 @@ import com.menglingpeng.vonvimeo.mvp.model.OnDemandPage;
 import com.menglingpeng.vonvimeo.mvp.model.User;
 import com.menglingpeng.vonvimeo.mvp.presenter.RecyclerPresenter;
 import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
+import com.menglingpeng.vonvimeo.mvp.view.fragment.ProfileSettingsFragment;
 import com.menglingpeng.vonvimeo.utils.Constants;
 import com.menglingpeng.vonvimeo.utils.IdStringUtil;
 import com.menglingpeng.vonvimeo.utils.ImageLoader;
 import com.menglingpeng.vonvimeo.utils.SharedPrefUtils;
 import com.menglingpeng.vonvimeo.utils.SnackbarUtils;
 
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 
 public class UserOnDemandPagesActivity extends BaseActivity implements RecyclerView{
 
@@ -54,6 +75,13 @@ public class UserOnDemandPagesActivity extends BaseActivity implements RecyclerV
     private String backgroundId;
     private OnDemandPage onDemandPage;
     private FloatingActionButton ftBt;
+    private Dialog createPosterDialog;
+    private String currentPhotoPath;
+    private String uploadFilePath;
+    private static final int REQUEST_TAKE_PHOTO_PERMISSION = 111;
+    private static final int REQUEST_PICK_IMAGE_PERMISSION = 333;
+    private static final int REQ_TAKE_PHOTO = 222;
+    private static final int REQ_PICK_IMAGE = 444;
 
     @Override
     protected void initLayoutId() {
@@ -388,30 +416,51 @@ public class UserOnDemandPagesActivity extends BaseActivity implements RecyclerV
     }
 
     private void showCreatePromotionDialog() {
-        final RadioGroup radioGroup;
+        final RadioGroup downloadSettingsRg;
         final RadioButton trueRb;
         final RadioButton falseRb;
+        final RadioGroup typeSettingsRg;
+        final RadioButton batchRb;
+        final RadioButton singleRb;
+
         AlertDialog dialog;
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        View dialogView = getLayoutInflater().inflate(R.layout.dialog_edit_a_poster_of_an_on_demand_page, null);
-        builder.setTitle(R.string.dialog_edit_a_poster_of_an_on_demand_page_title);
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_create_a_promotion, null);
+        builder.setTitle(R.string.dialog_create_a_promotion_title);
         builder.setView(dialogView);
-        radioGroup = (RadioGroup)dialogView.findViewById(R.id.edit_poster_of_an_on_demand_page_active_settings_rg);
-        trueRb = (RadioButton)dialogView.findViewById(R.id.edit_poster_of_an_on_demand_page_active_settings_true_rb);
-        falseRb = (RadioButton)dialogView.findViewById(R.id.edit_poster_of_an_on_demand_page_active_settings_false_rb);
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        downloadSettingsRg = (RadioGroup)dialogView.findViewById(R.id.promotion_download_settings_rg);
+        trueRb = (RadioButton)dialogView.findViewById(R.id.promotion_download_settings_true_rb);
+        falseRb = (RadioButton)dialogView.findViewById(R.id.promotion_download_settings_false_rb);
+        typeSettingsRg = (RadioGroup)dialogView.findViewById(R.id.promotion_type_settings_rg);
+        batchRb = (RadioButton)dialogView.findViewById(R.id.promotion_type_settings_batch_rb);
+        singleRb = (RadioButton)dialogView.findViewById(R.id.promotion_type_settings_single_rb);
+        downloadSettingsRg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 switch (radioGroup.getCheckedRadioButtonId()){
-                    case R.id.edit_poster_of_an_on_demand_page_active_settings_true_rb:
+                    case R.id.promotion_download_settings_true_rb:
                         break;
-                    case R.id.edit_poster_of_an_on_demand_page_active_settings_false_rb:
+                    case R.id.promotion_download_settings_false_rb:
                         break;
                     default:
                         break;
                 }
             }
         });
+        typeSettingsRg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch (radioGroup.getCheckedRadioButtonId()){
+                    case R.id.promotion_type_settings_batch_rb:
+                        break;
+                    case R.id.promotion_type_settings_single_rb:
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
+
         builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -423,7 +472,7 @@ public class UserOnDemandPagesActivity extends BaseActivity implements RecyclerV
             public void onClick(DialogInterface dialog, int which) {
                 HashMap<String, String> map = new HashMap<>();
                 map.put(Constants.ACCESS_TOKEN, SharedPrefUtils.getAuthToken());
-                type = Constants.REQUEST_EDIT_A_POSTER_OF_AN_ON_DEMAND_PAGE;
+                type = Constants.REQUEST_CREATE_A_PROMOTION;
                 RecyclerPresenter presenter = new RecyclerPresenter(UserOnDemandPagesActivity.this, type, Constants
                         .REQUEST_NORMAL, Constants.REQUEST_POST_MEIHOD, map, getApplicationContext());
                 presenter.loadJson();
@@ -455,6 +504,114 @@ public class UserOnDemandPagesActivity extends BaseActivity implements RecyclerV
 
         dialog = builder.create();
         dialog.show();
+    }
+
+    private void showcreatePosterDialog(){
+        createPosterDialog = new Dialog(this, R.style.Theme_Light_Dialog);
+        View dialogView = LayoutInflater.from(context).inflate(R.layout.dialog_upload_user_picture_choose, null);
+        Window window = createPosterDialog.getWindow();
+        window.setGravity(Gravity.BOTTOM);
+        window.setWindowAnimations(R.style.createPosterDialogStyle);
+        window.getDecorView().setPadding(0, 0 , 0, 0);
+        WindowManager.LayoutParams lp = window.getAttributes();
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        window.setAttributes(lp);
+        createPosterDialog.setContentView(dialogView);
+        Button bt_gallery = (Button)dialogView.findViewById(R.id.button_gallery) ;
+        Button bt_camera = (Button)dialogView.findViewById(R.id.button_camera) ;
+        createPosterDialog.show();
+        bt_camera.setOnClickListener(new UploadChooseListener());
+        bt_gallery.setOnClickListener(new UploadChooseListener());
+    }
+
+    class UploadChooseListener implements View.OnClickListener {
+
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()){
+
+                case R.id.button_gallery :
+                    //申请图库权限
+                    if(ContextCompat.checkSelfPermission(context, Manifest.permission.READ_EXTERNAL_STORAGE) !=
+                            PackageManager.PERMISSION_GRANTED){
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                            requestPermissions(new String[] {Manifest.permission.READ_EXTERNAL_STORAGE},
+                                    REQUEST_PICK_IMAGE_PERMISSION);
+                        }
+                    }
+                    //调用图库
+                    Intent pickImage = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                    startActivityForResult(pickImage, REQUEST_PICK_IMAGE_PERMISSION);
+                    createPosterDialog.dismiss();
+                    break;
+
+                case R.id.button_camera :
+                    //申请相机权限
+                    if(ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA) != PackageManager.
+                            PERMISSION_GRANTED){
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                            requestPermissions(new String[]{Manifest.permission.CAMERA, Manifest
+                                    .permission.WRITE_EXTERNAL_STORAGE}, REQUEST_TAKE_PHOTO_PERMISSION);
+                        }
+                    }
+                    //调用相机
+                    Intent takePhoto = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                    //确保设备有相机应用接收Intent
+                    if(takePhoto.resolveActivity(context.getPackageManager()) != null){
+                        File photoFile = createPhotoFile();
+                        if(photoFile != null){
+                            //FileProvider 是一个特殊的 ContentProvider 的子类，
+                            //它使用 content:// Uri 代替了 file:/// Uri. ，更便利而且安全的为另一个app分享文件
+                            Uri photoUri = FileProvider.getUriForFile(context,
+                                    "com.menglingpeng.vonvimeo.fileprovider", photoFile);
+                            takePhoto.putExtra(MediaStore.EXTRA_OUTPUT, photoUri);
+                            startActivityForResult(takePhoto, REQ_TAKE_PHOTO);
+                        }
+                    }
+                    createPosterDialog.dismiss();
+                    break;
+            }
+        }
+    }
+
+    private File createPhotoFile(){
+        //使用拍照时间命名
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.CHINA).format(new Date());
+        String photoFileName = "IMG" + "_" +timeStamp ;
+        //getExternalFilesDir()方法可以获取到 SDCard/Android/data/你的应用的包名/files/ 目录，一般放一些长时间保存的数据
+        String storagePath = context.getExternalFilesDir(Environment.DIRECTORY_PICTURES).getPath();
+        //创建临时照片文件
+        File photoFile = new File(storagePath + File.separator + photoFileName + ".JPG");
+        currentPhotoPath = photoFile.getAbsolutePath();
+        return  photoFile;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        String uploadFileNmae = null;
+        switch (requestCode){
+            //获取照片的路径
+            case REQ_TAKE_PHOTO :
+                if(resultCode == RESULT_OK){
+                    uploadFilePath = currentPhotoPath;
+                }
+                break;
+            //获取选择图片路径
+            case REQ_PICK_IMAGE :
+                if(resultCode == RESULT_OK && data != null){
+                    Uri selectedImage = data.getData();
+                    String[] imagePathColumns ={MediaStore.Images.Media.DATA};
+                    Cursor cursor = context.getContentResolver().query(selectedImage, imagePathColumns, null,
+                            null, null);
+                    cursor.moveToFirst();
+                    uploadFilePath = getString(cursor.getColumnIndex(imagePathColumns[0]));
+                }
+                break;
+        }
+        File file = new File(uploadFilePath);
+        uploadFileNmae = file.getName();
     }
 
     @Override

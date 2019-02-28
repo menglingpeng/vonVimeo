@@ -151,10 +151,16 @@
     <string name="on_demand_page_type_settings_series_rb_text">Series</string>
     <string name="dialog_edit_an_on_demand_page_title">Edit an OnDemandPage</string>
 
-    <string name="edit_poster_of_an_on_demand_page_active_settings">Active Settings</string>
+
+    <string name="edit_poster_of_an_on_demand_page_active_settings_text">Active Settings</string>
     <string name="edit_poster_of_an_on_demand_page_active_film_rb_text">True</string>
     <string name="edit_poster_of_an_on_demand_page_active_series_rb_text">False</string>
     <string name="dialog_edit_poster_of_an_on_demand_page_active_title">Edit a Poster</string>
+
+    <string name="edit_background_of_an_on_demand_page_active_settings_text">Active Settings</string>
+    <string name="edit_background_of_an_on_demand_page_active_film_rb_text">True</string>
+    <string name="edit_background_of_an_on_demand_page_active_series_rb_text">False</string>
+    <string name="dialog_edit_background_of_an_on_demand_page_active_title">Edit a Background</string>
 
     <string name="dialog_create_a_promotion_title">Create a Promotion</string>
     <string name="promotion_type_settings">Type Settings</string>

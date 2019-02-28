@@ -25,9 +25,9 @@ public class OnDemandPageVideo implements Serializable{
     private PicturesBean pictures;
     private StatsBean stats;
     private MetadataBean metadata;
-    private TagsBean tags;
     private SubcategoriesBean subcategories;
     private UploadBean upload;
+    private List<TagsBean> tags;
 
     public UploadBean getUpload() {
         return upload;
@@ -43,14 +43,6 @@ public class OnDemandPageVideo implements Serializable{
 
     public void setSubcategories(SubcategoriesBean subcategories) {
         this.subcategories = subcategories;
-    }
-
-    public TagsBean getTags() {
-        return tags;
-    }
-
-    public void setTags(TagsBean tags) {
-        this.tags = tags;
     }
 
     public AppBean getApp() {
@@ -211,6 +203,14 @@ public class OnDemandPageVideo implements Serializable{
 
     public MetadataBean getMetadata() {
         return metadata;
+    }
+
+    public void setTags(List<TagsBean> tags) {
+        this.tags = tags;
+    }
+
+    public List<TagsBean> getTags() {
+        return tags;
     }
 
 
@@ -968,54 +968,6 @@ public class OnDemandPageVideo implements Serializable{
         }
     }
 
-    public static class TagsBean {
-
-        private String uri;
-        private String name;
-        private String tag;
-        private String canonical;
-        private String resource_key;
-
-        public void setUri(String uri) {
-            this.uri = uri;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public void setTag(String tag) {
-            this.tag = tag;
-        }
-
-        public void setCanonical(String canonical) {
-            this.canonical = canonical;
-        }
-
-        public void setResource_key(String resource_key) {
-            this.resource_key = resource_key;
-        }
-
-        public String getUri() {
-            return uri;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public String getTag() {
-            return tag;
-        }
-
-        public String getCanonical() {
-            return canonical;
-        }
-
-        public String getResource_key() {
-            return resource_key;
-        }
-    }
 
     public static class SubcategoriesBean {
 
@@ -1124,4 +1076,108 @@ public class OnDemandPageVideo implements Serializable{
         }
     }
 
+    public static class TagsBean {
+        private String canonical;
+        private MetadataBean metadata;
+        private String name;
+        private String resource_key;
+        private String uri;
+
+        public void setCanonical(String canonical) {
+            this.canonical = canonical;
+        }
+
+        public void setMetadata(MetadataBean metadata) {
+            this.metadata = metadata;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public void setResource_key(String resource_key) {
+            this.resource_key = resource_key;
+        }
+
+        public void setUri(String uri) {
+            this.uri = uri;
+        }
+
+        public String getCanonical() {
+            return canonical;
+        }
+
+        public MetadataBean getMetadata() {
+            return metadata;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getResource_key() {
+            return resource_key;
+        }
+
+        public String getUri() {
+            return uri;
+        }
+
+        public static class MetadataBean {
+
+            private ConnectionsBean connections;
+
+            public void setConnections(ConnectionsBean connections) {
+                this.connections = connections;
+            }
+
+            public ConnectionsBean getConnections() {
+                return connections;
+            }
+
+            public static class ConnectionsBean {
+
+                private VideosBean videos;
+
+                public void setVideos(VideosBean videos) {
+                    this.videos = videos;
+                }
+
+                public VideosBean getVideos() {
+                    return videos;
+                }
+
+                public static class VideosBean {
+
+                    private int total;
+                    private String uri;
+                    private List<String> options;
+
+                    public void setTotal(int total) {
+                        this.total = total;
+                    }
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public void setOptions(List<String> options) {
+                        this.options = options;
+                    }
+
+                    public int getTotal() {
+                        return total;
+                    }
+
+                    public String getUri() {
+                        return uri;
+                    }
+
+                    public List<String> getOptions() {
+                        return options;
+                    }
+                }
+            }
+        }
+    }
 }

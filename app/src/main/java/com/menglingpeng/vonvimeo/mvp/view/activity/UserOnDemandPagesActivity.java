@@ -506,6 +506,25 @@ public class UserOnDemandPagesActivity extends BaseActivity implements RecyclerV
         dialog.show();
     }
 
+    private void showCreateBackgroundDialog(){
+        createPosterDialog = new Dialog(this, R.style.Theme_Light_Dialog);
+        View dialogView = LayoutInflater.from(context).inflate(R.layout.dialog_create_a_background, null);
+        Window window = createPosterDialog.getWindow();
+        window.setGravity(Gravity.BOTTOM);
+        window.setWindowAnimations(R.style.createPosterDialogStyle);
+        window.getDecorView().setPadding(0, 0 , 0, 0);
+        WindowManager.LayoutParams lp = window.getAttributes();
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        window.setAttributes(lp);
+        createPosterDialog.setContentView(dialogView);
+        Button bt_gallery = (Button)dialogView.findViewById(R.id.button_gallery) ;
+        Button bt_camera = (Button)dialogView.findViewById(R.id.button_camera) ;
+        createPosterDialog.show();
+        bt_camera.setOnClickListener(new UploadChooseListener());
+        bt_gallery.setOnClickListener(new UploadChooseListener());
+    }
+
     private void showEditBackgroundDialog() {
         final RadioGroup radioGroup;
         final RadioButton trueRb;

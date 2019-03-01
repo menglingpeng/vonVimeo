@@ -169,6 +169,8 @@
 
     <string name="dialog_create_a_poster_title">Create a Poster</string>
 
+    <string name="dialog_create_a_background_title">Create a Poster</string>
+
 
 
     <string name="name">名称</string>

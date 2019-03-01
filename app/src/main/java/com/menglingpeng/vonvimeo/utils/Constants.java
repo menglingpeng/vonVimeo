@@ -616,6 +616,8 @@ public class Constants {
 
     public static final String REQUEST_EDIT_A_BACKGROUND_OF_AN_ON_DEMAND_PAGE =
             "request_edit_a_background_of_an_on_demand_page";
+    public static final String REQUEST_CREATE_A_BACKGROUND_OF_AN_ON_DEMAND_PAGE =
+            "request_create_a_background_of_an_on_demand_page";
 
     //默认值1
     public static final int PAGE_VALUE = 1;

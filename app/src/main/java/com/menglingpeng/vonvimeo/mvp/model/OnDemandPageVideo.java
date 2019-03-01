@@ -794,6 +794,8 @@ public class OnDemandPageVideo implements Serializable{
             private WatchlaterBean watchlater;
             private LikeBean like;
             private ReportBean report;
+            private BuyBean buy;
+            private RentBean rent;
 
             public LikeBean getLike() {
                 return like;
@@ -817,6 +819,22 @@ public class OnDemandPageVideo implements Serializable{
 
             public void setReport(ReportBean report) {
                 this.report = report;
+            }
+
+            public BuyBean getBuy() {
+                return buy;
+            }
+
+            public void setBuy(BuyBean buy) {
+                this.buy = buy;
+            }
+
+            public RentBean getRent() {
+                return rent;
+            }
+
+            public void setRent(RentBean rent) {
+                this.rent = rent;
             }
 
             public static class WatchlaterBean {
@@ -927,6 +945,176 @@ public class OnDemandPageVideo implements Serializable{
 
                 public List<String> getReason() {
                     return reason;
+                }
+            }
+
+            public static class BuyBean {
+
+                private String currency;
+                private String display_price;
+                private String download;
+                private String drm;
+                private String link;
+                private double price;
+                private String purchase_time;
+                private String stream;
+                private String uri;
+
+                public void setCurrency(String currency) {
+                    this.currency = currency;
+                }
+
+                public void setDisplay_price(String display_price) {
+                    this.display_price = display_price;
+                }
+
+                public void setDownload(String download) {
+                    this.download = download;
+                }
+
+                public void setDrm(String drm) {
+                    this.drm = drm;
+                }
+
+                public void setLink(String link) {
+                    this.link = link;
+                }
+
+                public void setPrice(double price) {
+                    this.price = price;
+                }
+
+                public void setPurchase_time(String purchase_time) {
+                    this.purchase_time = purchase_time;
+                }
+
+                public void setStream(String stream) {
+                    this.stream = stream;
+                }
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public String getCurrency() {
+                    return currency;
+                }
+
+                public String getDisplay_price() {
+                    return display_price;
+                }
+
+                public String getDownload() {
+                    return download;
+                }
+
+                public String getDrm() {
+                    return drm;
+                }
+
+                public String getLink() {
+                    return link;
+                }
+
+                public double getPrice() {
+                    return price;
+                }
+
+                public String getPurchase_time() {
+                    return purchase_time;
+                }
+
+                public String getStream() {
+                    return stream;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+            }
+
+            public static class RentBean {
+
+                private String currency;
+                private String display_price;
+                private String drm;
+                private String expires_time;
+                private String link;
+                private double price;
+                private String purchase_time;
+                private String stream;
+                private String uri;
+
+                public void setCurrency(String currency) {
+                    this.currency = currency;
+                }
+
+                public void setDisplay_price(String display_price) {
+                    this.display_price = display_price;
+                }
+
+                public void setDrm(String drm) {
+                    this.drm = drm;
+                }
+
+                public void setExpires_time(String expires_time) {
+                    this.expires_time = expires_time;
+                }
+
+                public void setLink(String link) {
+                    this.link = link;
+                }
+
+                public void setPrice(double price) {
+                    this.price = price;
+                }
+
+                public void setPurchase_time(String purchase_time) {
+                    this.purchase_time = purchase_time;
+                }
+
+                public void setStream(String stream) {
+                    this.stream = stream;
+                }
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public String getCurrency() {
+                    return currency;
+                }
+
+                public String getDisplay_price() {
+                    return display_price;
+                }
+
+                public String getDrm() {
+                    return drm;
+                }
+
+                public String getExpires_time() {
+                    return expires_time;
+                }
+
+                public String getLink() {
+                    return link;
+                }
+
+                public double getPrice() {
+                    return price;
+                }
+
+                public String getPurchase_time() {
+                    return purchase_time;
+                }
+
+                public String getStream() {
+                    return stream;
+                }
+
+                public String getUri() {
+                    return uri;
                 }
             }
         }

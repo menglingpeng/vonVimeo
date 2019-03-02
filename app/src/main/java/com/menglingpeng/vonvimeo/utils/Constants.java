@@ -9,6 +9,8 @@ public class Constants {
     public static final String REQUEST_PUT_MEIHOD = "put";
     public static final String REQUEST_DELETE_MEIHOD = "delete";
     public static final String CODE_200_OK = "200";
+    public static final String CODE_201_CREATED = "201";
+    public static final String CODE_400_BAD_REQUEST = "400";
     public static final String CODE_404_NOT_FOUND = "404";
     public static final String CODE_204_NO_CONTENT = "204";
     public static final String CODE_403_FORBIDDEN = "403";
@@ -618,6 +620,9 @@ public class Constants {
             "request_edit_a_background_of_an_on_demand_page";
     public static final String REQUEST_CREATE_A_BACKGROUND_OF_AN_ON_DEMAND_PAGE =
             "request_create_a_background_of_an_on_demand_page";
+
+    public static final String REQUEST_ADD_A_GENRE_TO_AN_ON_DEMAND_PAGE =
+            "request_add_a_genre_to_an_on_demand_page";
 
     //默认值1
     public static final int PAGE_VALUE = 1;

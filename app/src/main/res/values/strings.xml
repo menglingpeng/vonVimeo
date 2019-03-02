@@ -335,8 +335,21 @@
     <string name="remove_a_draft_of_an_on_demand_pape_http_status_code_404">选择的Page不存在</string>
 
     <string name="edit_an_on_demand_pape_http_status_code_200">选择的Page已经成功编辑！</string>
-    <string name="edit_of_an_on_demand_pape_http_status_code_403">用户没有权限执行此操作</string>
+    <string name="edit_an_on_demand_pape_http_status_code_403">用户没有权限执行此操作</string>
     <string name="edit_an_on_demand_pape_http_status_code_404">选择的Page不存在</string>
+
+    <string name="create_a_background_of_on_demand_pape_http_status_code_200">The background was created.</string>
+    <string name="create_a_background_of_on_demand_pape_http_status_code_403">You can not modify an On Demand page that you do not own.</string>
+    <string name="create_a_background_of_on_demand_pape_http_status_code_404">No such On Demand page exists.</string>
+
+    <string name="edit_a_background_of_on_demand_pape_http_status_code_200">The background was edited.</string>
+    <string name="edit_a_background_of_on_demand_pape_http_status_code_403">You can not modify an On Demand page that you do not own.</string>
+    <string name="edit_a_background_of_on_demand_pape_http_status_code_404">No such On Demand page or background image exists.</string>
+
+    <string name="add_a_genre_to_an_on_demand_page_http_status_code_201">The genre was added.</string>
+    <string name="add_a_genre_to_an_on_demand_page_http_status_code_403">You can not modify an On Demand page that you do not own.</string>
+    <string name="add_a_genre_to_an_on_demand_page_http_status_code_400">You can not add more than two genres to an On Demand page</string>
+    <string name="add_a_genre_to_an_on_demand_page_http_status_code_404">No such On Demand page or genre exists.</string>
 
 
 

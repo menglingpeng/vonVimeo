@@ -506,6 +506,27 @@ public class UserOnDemandPagesActivity extends BaseActivity implements RecyclerV
         dialog.show();
     }
 
+    private void showAddGenreDialog(String title, String type){
+        AlertDialog dialog;
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(title);
+        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.setPositiveButton(R.sting.ok, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+
+        dialog = builder.create();
+        dialog.show();
+    }
+
     private void showCreateBackgroundDialog(){
         createPosterDialog = new Dialog(this, R.style.Theme_Light_Dialog);
         View dialogView = LayoutInflater.from(context).inflate(R.layout.dialog_create_a_background, null);
@@ -746,6 +767,48 @@ public class UserOnDemandPagesActivity extends BaseActivity implements RecyclerV
                             remove_a_draft_of_an_on_demand_pape_http_status_code_404));
                 }
                 break;
+            case Constants.REQUEST_CREATE_A_BACKGROUND_OF_AN_ON_DEMAND_PAGE:
+                if(requestType.equals(Constants.CODE_200_OK)){
+                    SnackbarUtils.showSnackShort(context, coordinatorLayout, getString(R.string.
+                            create_a_background_of_an_on_demand_pape_http_status_code_200));
+                }else if(requestType.equals(Constants.CODE_403_FORBIDDEN)){
+                    SnackbarUtils.showErrorSnackShort(context, coordinatorLayout, getString(R.id.
+                            create_a_background_of_an_on_demand_pape_http_status_code_403));
+                }else if(requestType.equals(Constants.CODE_404_NOT_FOUND)){
+                    SnackbarUtils.showErrorSnackShort(context, coordinatorLayout, getString(R.id.
+                            create_a_background_of_an_on_demand_pape_http_status_code_404));
+                }
+                break;
+            case Constants.REQUEST_EDIT_A_BACKGROUND_OF_AN_ON_DEMAND_PAGE:
+                if(requestType.equals(Constants.CODE_200_OK)){
+                    SnackbarUtils.showSnackShort(context, coordinatorLayout, getString(R.string.
+                            edit_a_background_of_on_demand_pape_http_status_code_200));
+                }else if(requestType.equals(Constants.CODE_403_FORBIDDEN)){
+                    SnackbarUtils.showErrorSnackShort(context, coordinatorLayout, getString(R.id.
+                            edit_a_background_of_on_demand_pape_http_status_code_403));
+                }else if(requestType.equals(Constants.CODE_404_NOT_FOUND)){
+                    SnackbarUtils.showErrorSnackShort(context, coordinatorLayout, getString(R.id.
+                            edit_a_background_of_on_demand_pape_http_status_code_404));
+                }
+                break;
+            case Constants.REQUEST_ADD_A_GENRE_TO_AN_ON_DEMAND_PAGE:
+                if(requestType.equals(Constants.CODE_201_CREATED)){
+                    SnackbarUtils.showSnackShort(context, coordinatorLayout, getString(R.string.
+                            add_a_genre_to_an_on_demand_page_http_status_code_201));
+                }else if(requestType.equals(Constants.CODE_403_FORBIDDEN)){
+                    SnackbarUtils.showErrorSnackShort(context, coordinatorLayout, getString(R.id.
+                            add_a_genre_to_an_on_demand_page_http_status_code_403));
+
+                }else if(requestType.equals(Constants.CODE_404_NOT_FOUND)){
+                    SnackbarUtils.showErrorSnackShort(context, coordinatorLayout, getString(R.id.
+                            add_a_genre_to_an_on_demand_page_http_status_code_404));
+                }else if(requestType.equals(Constants.CODE_400_BAD_REQUEST)) {
+                    SnackbarUtils.showErrorSnackShort(context, coordinatorLayout, getString(R.id.
+                            add_a_genre_to_an_on_demand_page_http_status_code_400));
+                }
+
+                    break;
+
             default:
                 break;
         }

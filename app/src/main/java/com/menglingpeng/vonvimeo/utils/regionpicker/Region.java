@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-public class Region implements PinYinEntiy{
+public class Region implements PinYinEntity {
 
     private static final String TAG = Region.class.getSimpleName();
     public int code;

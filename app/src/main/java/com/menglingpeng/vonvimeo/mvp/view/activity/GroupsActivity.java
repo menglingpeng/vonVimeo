@@ -141,7 +141,7 @@ public class GroupsActivity extends BaseActivity implements RecyclerView{
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.grops_toolbar_overflow_menu, menu);
+        getMenuInflater().inflate(R.groups_toolbar_overflow_menu, menu);
         MenuItem searchItem = menu.findItem(R.id.groups_search);
         searchView= (SearchView) MenuItemCompat.getActionView(searchItem);
         searchAutoComplete = (SearchView.SearchAutoComplete)searchView.findViewById(R.id.search_src_text);

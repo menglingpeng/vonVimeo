@@ -173,7 +173,6 @@
     <string name="dialog_create_a_background_title">Create a Poster</string>
 
 
-
     <string name="name">名称</string>
     <string name="title">Title</string>
     <string name="description">说明</string>
@@ -351,8 +350,6 @@
     <string name="add_a_genre_to_an_on_demand_page_http_status_code_403">You can not modify an On Demand page that you do not own.</string>
     <string name="add_a_genre_to_an_on_demand_page_http_status_code_400">You can not add more than two genres to an On Demand page</string>
     <string name="add_a_genre_to_an_on_demand_page_http_status_code_404">No such On Demand page or genre exists.</string>
-
-
 
 
     <string name="following">Following</string>

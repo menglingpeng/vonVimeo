@@ -1,6 +1,6 @@
 package com.menglingpeng.vonvimeo.utils.regionpicker;
 
-public interface PinYinEntiy {
+public interface PinYinEntity {
 
     String getPinyin();
 }

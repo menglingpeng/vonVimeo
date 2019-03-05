@@ -2,7 +2,7 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/regions_cdl"
+    android:id="@+id/regions_picker_cdl"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -12,7 +12,7 @@
         tools:context="com.menglingpeng.designersshow.mvp.view.RegionsActivity">
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/regions_tb"
+            android:id="@+id/regions_picker_tb"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary"
@@ -21,7 +21,7 @@
     </android.support.design.widget.AppBarLayout>
 
     <ProgressBar
-        android:id="@+id/regions_pb"
+        android:id="@+id/regions_picker_pb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"/>

@@ -144,7 +144,9 @@
         <activity android:name=".mvp.view.activity.VimeoOnDemandPageBackgroudDetailActivity" />
         <activity android:name=".mvp.view.activity.PromotionDetailActivity" />
         <activity android:name=".mvp.view.activity.RegionsActivity" />
-        <activity android:name=".mvp.view.activity.RegionsPickerActivity"></activity>
+        <activity android:name=".mvp.view.activity.RegionsPickerActivity" />
+        <activity android:name=".mvp.view.activity.OnDemandPageGenresActivity" />
+        <activity android:name=".mvp.view.activity.GenresPickerActivity"></activity>
     </application>
 
 </manifest>

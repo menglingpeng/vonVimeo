@@ -14,6 +14,9 @@ import android.view.View;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
 public class GenresPickerActivity extends BaseActivity {
 
     private Toolbar toolbar;
@@ -44,7 +47,22 @@ public class GenresPickerActivity extends BaseActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                if (searchAutoComplete.isShown()) {
+                    searchAutoComplete.setText("");
+                    try {
+                        Method method = searchView.getClass().getDeclaredMethod("onClosedClicked");
+                        method.setAccessible(true);
+                        method.invoke(searchView)
+                    } catch (NoSuchMethodException e) {
+                        e.printStackTrace();
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace();
+                    } catch (InvocationTargetException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    finish();
+                }
             }
         });
     }
@@ -57,7 +75,11 @@ public class GenresPickerActivity extends BaseActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId() = R.id.genres_picker_search) {
+
+        }
+
         return super.onOptionsItemSelected(item);
     }
-}
+
 }

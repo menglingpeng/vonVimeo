@@ -531,6 +531,9 @@ public class OnDemandPageVideo implements Serializable{
             private TexttracksBean texttracks;
             private RelatedBean related;
             private RecommendationsBean recommendations;
+            private PlaybackBean playback;
+            private SeasonBean season;
+            private UsersWithAccessBean users_with_access;
 
             public void setComments(CommentsBean comments) {
                 this.comments = comments;
@@ -586,6 +589,30 @@ public class OnDemandPageVideo implements Serializable{
 
             public RecommendationsBean getRecommendations() {
                 return recommendations;
+            }
+
+            public PlaybackBean getPlayback() {
+                return playback;
+            }
+
+            public void setPlayback(PlaybackBean playback) {
+                this.playback = playback;
+            }
+
+            public SeasonBean getSeason() {
+                return season;
+            }
+
+            public void setSeason(SeasonBean season) {
+                this.season = season;
+            }
+
+            public UsersWithAccessBean getUsers_with_access() {
+                return users_with_access;
+            }
+
+            public void setUsers_with_access(UsersWithAccessBean users_with_access) {
+                this.users_with_access = users_with_access;
             }
 
             public static class CommentsBean {
@@ -777,6 +804,90 @@ public class OnDemandPageVideo implements Serializable{
 
                 public void setOptions(List<String> options) {
                     this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class PlaybackBean {
+
+                private String uri;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class SeasonBean {
+
+                private String name;
+                private String uri;
+                private List<String> options;
+
+                public void setName(String name) {
+                    this.name = name;
+                }
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getName() {
+                    return name;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class UsersWithAccessBean {
+
+                private int total;
+                private String uri;
+                private List<String> options;
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public int getTotal() {
+                    return total;
                 }
 
                 public String getUri() {

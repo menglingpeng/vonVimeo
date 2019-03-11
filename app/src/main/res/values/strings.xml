@@ -839,4 +839,7 @@
     <string name="remove_a_video_from_a_season_http_status_code_403">用户没有权限执行此操作</string>
     <string name="remove_a_video_from_a_season_http_status_code_404">Season不存在</string>
 
+    <string name="check_weather_an_on_demand_page_belongs_a_genre_http_status_code_200">视频已经成功移出Season</string>
+    <string name="check_weather_an_on_demand_page_belongs_a_genre_http_status_code_404">OnDemandPage或者Genre不存在</string>
+
 </resources>

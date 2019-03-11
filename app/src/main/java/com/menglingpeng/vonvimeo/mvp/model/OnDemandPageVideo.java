@@ -534,6 +534,8 @@ public class OnDemandPageVideo implements Serializable{
             private PlaybackBean playback;
             private SeasonBean season;
             private UsersWithAccessBean users_with_access;
+            private TrailerBean trailer;
+            private VersionsBean versions;
 
             public void setComments(CommentsBean comments) {
                 this.comments = comments;
@@ -613,6 +615,22 @@ public class OnDemandPageVideo implements Serializable{
 
             public void setUsers_with_access(UsersWithAccessBean users_with_access) {
                 this.users_with_access = users_with_access;
+            }
+
+            public TrailerBean getTrailer() {
+                return trailer;
+            }
+
+            public void setTrailer(TrailerBean trailer) {
+                this.trailer = trailer;
+            }
+
+            public VersionsBean getVersions() {
+                return versions;
+            }
+
+            public void setVersions(VersionsBean versions) {
+                this.versions = versions;
             }
 
             public static class CommentsBean {
@@ -884,6 +902,77 @@ public class OnDemandPageVideo implements Serializable{
 
                 public void setOptions(List<String> options) {
                     this.options = options;
+                }
+
+                public int getTotal() {
+                    return total;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class TrailerBean {
+
+                private String resource_key;
+                private String uri;
+                private List<String> options;
+
+                public void setResource_key(String resource_key) {
+                    this.resource_key = resource_key;
+                }
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getResource_key() {
+                    return resource_key;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class VersionsBean {
+
+                private String current_uri;
+                private int total;
+                private String uri;
+                private List<String> options;
+
+                public void setCurrent_uri(String current_uri) {
+                    this.current_uri = current_uri;
+                }
+
+                public void setTotal(int total) {
+                    this.total = total;
+                }
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getCurrent_uri() {
+                    return current_uri;
                 }
 
                 public int getTotal() {

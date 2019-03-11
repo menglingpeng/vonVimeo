@@ -17,7 +17,7 @@ import com.menglingpeng.vonvimeo.base.BaseActivity;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-public class GenresPickerActivity extends BaseActivity {
+public class GenresPickerActivity extends BaseActivity implements com.menglingpeng.vonvimeo.mvp.interf.RecyclerView {
 
     private Toolbar toolbar;
     private CoordinatorLayout coordinatorLayout;
@@ -25,6 +25,9 @@ public class GenresPickerActivity extends BaseActivity {
     private SearchView searchView;
     private RecyclerView searchRv;
     private SearchView.SearchAutoComplete searchAutoComplete;
+    private Boolean isBelongs;
+    private String ondemandId;
+    private String genreId;
 
     @Override
     protected void initLayoutId() {
@@ -82,4 +85,23 @@ public class GenresPickerActivity extends BaseActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    private boolean checkBelongsToGenre(String genreId){
+
+        return isBelongs;
+    }
+
+    @Override
+    public void hideProgress() {
+
+    }
+
+    @Override
+    public void loadFailed(String msg) {
+
+    }
+
+    @Override
+    public void loadSuccess(String json, String requestType) {
+
+    }
 }

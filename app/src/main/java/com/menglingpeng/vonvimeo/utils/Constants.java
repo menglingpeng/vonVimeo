@@ -633,6 +633,9 @@ public class Constants {
     public static final String REQUEST_ADD_A_LIST_OF_REGIONS_TO_AN_ON_DEMAND_PAGE =
             "request_add_a_list_of_region_to_an_on_demand_page";
 
+    public static final String REQUEST_CHECK_WEATHER_AN_ON_DEMAND_PAGE_BELONGS_A_GENRE =
+            "request_check_weather_an_on_demand_page_belongs_a_genre";
+
     //默认值1
     public static final int PAGE_VALUE = 1;
     //默认值10，最高到100

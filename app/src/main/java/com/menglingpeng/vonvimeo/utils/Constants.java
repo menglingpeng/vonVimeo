@@ -636,6 +636,9 @@ public class Constants {
     public static final String REQUEST_CHECK_WEATHER_AN_ON_DEMAND_PAGE_BELONGS_A_GENRE =
             "request_check_weather_an_on_demand_page_belongs_a_genre";
 
+    public static final String REQUEST_GET_ALL_THE_ON_DEMAND_PAGES_IN_A_GENRE =
+            "request_get_all_on_demand_genres";
+
     //默认值1
     public static final int PAGE_VALUE = 1;
     //默认值10，最高到100

@@ -25,9 +25,11 @@ public class OnDemandPageVideo implements Serializable{
     private PicturesBean pictures;
     private StatsBean stats;
     private MetadataBean metadata;
+    private List<ParentProjectBean> parent_project;
     private SubcategoriesBean subcategories;
     private UploadBean upload;
     private List<TagsBean> tags;
+    private List<ParentFolderBean> parent_folder;
 
     public UploadBean getUpload() {
         return upload;
@@ -213,6 +215,21 @@ public class OnDemandPageVideo implements Serializable{
         return tags;
     }
 
+    public List<ParentProjectBean> getParent_project() {
+        return parent_project;
+    }
+
+    public void setParent_project(List<ParentProjectBean> parent_project) {
+        this.parent_project = parent_project;
+    }
+
+    public List<ParentFolderBean> getParent_folder() {
+        return parent_folder;
+    }
+
+    public void setParent_folder(List<ParentFolderBean> parent_folder) {
+        this.parent_folder = parent_folder;
+    }
 
     public static class EmbedBean {
 
@@ -1454,6 +1471,132 @@ public class OnDemandPageVideo implements Serializable{
         }
     }
 
+    public static class ParentProjectBean {
+
+        private String created_time;
+        private MetadataBean metadata;
+        private String modified_time;
+        private String name;
+        private String resource_key;
+        private String uri;
+        private User user;
+
+
+        public void setCreated_time(String created_time) {
+            this.created_time = created_time;
+        }
+
+        public void setMetadata(MetadataBean metadata) {
+            this.metadata = metadata;
+        }
+
+        public String getCreated_time() {
+            return created_time;
+        }
+
+        public MetadataBean getMetadata() {
+            return metadata;
+        }
+
+        public void setModified_time(String modified_time) {
+            this.modified_time = modified_time;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public void setResource_key(String resource_key) {
+            this.resource_key = resource_key;
+        }
+
+        public void setUri(String uri) {
+            this.uri = uri;
+        }
+
+        public String getModified_time() {
+            return modified_time;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getResource_key() {
+            return resource_key;
+        }
+
+        public String getUri() {
+            return uri;
+        }
+
+        public User getUser() {
+            return user;
+        }
+
+        public void setUser(User user) {
+            this.user = user;
+        }
+
+        public static class MetadataBean {
+
+            private ConnectionsBean connections;
+
+            public void setConnections(ConnectionsBean connections) {
+                this.connections = connections;
+            }
+
+            public ConnectionsBean getConnections() {
+                return connections;
+            }
+
+            public static class ConnectionsBean {
+
+
+                private VideosBean videos;
+
+                public void setVideos(VideosBean videos) {
+                    this.videos = videos;
+                }
+
+                public VideosBean getVideos() {
+                    return videos;
+                }
+
+                public static class VideosBean {
+
+                    private int total;
+                    private String uri;
+                    private List<String> options;
+
+                    public void setTotal(int total) {
+                        this.total = total;
+                    }
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public void setOptions(List<String> options) {
+                        this.options = options;
+                    }
+
+                    public int getTotal() {
+                        return total;
+                    }
+
+                    public String getUri() {
+                        return uri;
+                    }
+
+                    public List<String> getOptions() {
+                        return options;
+                    }
+                }
+            }
+        }
+    }
+
 
     public static class SubcategoriesBean {
 
@@ -1607,6 +1750,130 @@ public class OnDemandPageVideo implements Serializable{
 
         public String getUri() {
             return uri;
+        }
+
+        public static class MetadataBean {
+
+            private ConnectionsBean connections;
+
+            public void setConnections(ConnectionsBean connections) {
+                this.connections = connections;
+            }
+
+            public ConnectionsBean getConnections() {
+                return connections;
+            }
+
+            public static class ConnectionsBean {
+
+                private VideosBean videos;
+
+                public void setVideos(VideosBean videos) {
+                    this.videos = videos;
+                }
+
+                public VideosBean getVideos() {
+                    return videos;
+                }
+
+                public static class VideosBean {
+
+                    private int total;
+                    private String uri;
+                    private List<String> options;
+
+                    public void setTotal(int total) {
+                        this.total = total;
+                    }
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public void setOptions(List<String> options) {
+                        this.options = options;
+                    }
+
+                    public int getTotal() {
+                        return total;
+                    }
+
+                    public String getUri() {
+                        return uri;
+                    }
+
+                    public List<String> getOptions() {
+                        return options;
+                    }
+                }
+            }
+        }
+    }
+
+    public static class ParentFolderBean {
+
+        private String created_time;
+        private MetadataBean metadata;
+        private String modified_time;
+        private String name;
+        private String resource_key;
+        private String uri;
+        private User user;
+
+        public void setCreated_time(String created_time) {
+            this.created_time = created_time;
+        }
+
+        public void setMetadata(MetadataBean metadata) {
+            this.metadata = metadata;
+        }
+
+        public String getCreated_time() {
+            return created_time;
+        }
+
+        public MetadataBean getMetadata() {
+            return metadata;
+        }
+
+        public void setModified_time(String modified_time) {
+            this.modified_time = modified_time;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public void setResource_key(String resource_key) {
+            this.resource_key = resource_key;
+        }
+
+        public void setUri(String uri) {
+            this.uri = uri;
+        }
+
+        public String getModified_time() {
+            return modified_time;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getResource_key() {
+            return resource_key;
+        }
+
+        public String getUri() {
+            return uri;
+        }
+
+        public User getUser() {
+            return user;
+        }
+
+        public void setUser(User user) {
+            this.user = user;
         }
 
         public static class MetadataBean {

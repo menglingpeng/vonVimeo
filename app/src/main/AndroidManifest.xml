@@ -146,7 +146,8 @@
         <activity android:name=".mvp.view.activity.RegionsActivity" />
         <activity android:name=".mvp.view.activity.RegionsPickerActivity" />
         <activity android:name=".mvp.view.activity.OnDemandPageGenresActivity" />
-        <activity android:name=".mvp.view.activity.GenresPickerActivity"></activity>
+        <activity android:name=".mvp.view.activity.GenresPickerActivity" />
+        <activity android:name=".mvp.view.activity.GenreOnDemandPagesActivity"></activity>
     </application>
 
 </manifest>

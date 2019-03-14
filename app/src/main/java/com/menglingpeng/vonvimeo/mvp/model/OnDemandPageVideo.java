@@ -30,6 +30,7 @@ public class OnDemandPageVideo implements Serializable{
     private UploadBean upload;
     private List<TagsBean> tags;
     private List<ParentFolderBean> parent_folder;
+    private SpatialBean spatial;
 
     public UploadBean getUpload() {
         return upload;
@@ -229,6 +230,14 @@ public class OnDemandPageVideo implements Serializable{
 
     public void setParent_folder(List<ParentFolderBean> parent_folder) {
         this.parent_folder = parent_folder;
+    }
+
+    public SpatialBean getSpatial() {
+        return spatial;
+    }
+
+    public void setSpatial(SpatialBean spatial) {
+        this.spatial = spatial;
     }
 
     public static class EmbedBean {
@@ -1933,4 +1942,85 @@ public class OnDemandPageVideo implements Serializable{
             }
         }
     }
+
+    public static class SpatialBean {
+
+        private int field_of_view;
+        private String projection;
+        private String stereo_format;
+        private List<DirectorTimelineBean> director_timeline;
+
+        public void setField_of_view(int field_of_view) {
+            this.field_of_view = field_of_view;
+        }
+
+        public void setProjection(String projection) {
+            this.projection = projection;
+        }
+
+        public void setStereo_format(String stereo_format) {
+            this.stereo_format = stereo_format;
+        }
+
+        public void setDirector_timeline(List<DirectorTimelineBean> director_timeline) {
+            this.director_timeline = director_timeline;
+        }
+
+        public int getField_of_view() {
+            return field_of_view;
+        }
+
+        public String getProjection() {
+            return projection;
+        }
+
+        public String getStereo_format() {
+            return stereo_format;
+        }
+
+        public List<DirectorTimelineBean> getDirector_timeline() {
+            return director_timeline;
+        }
+
+        public static class DirectorTimelineBean {
+
+            private int pitch;
+            private int roll;
+            private int time_code;
+            private int yaw;
+
+            public void setPitch(int pitch) {
+                this.pitch = pitch;
+            }
+
+            public void setRoll(int roll) {
+                this.roll = roll;
+            }
+
+            public void setTime_code(int time_code) {
+                this.time_code = time_code;
+            }
+
+            public void setYaw(int yaw) {
+                this.yaw = yaw;
+            }
+
+            public int getPitch() {
+                return pitch;
+            }
+
+            public int getRoll() {
+                return roll;
+            }
+
+            public int getTime_code() {
+                return time_code;
+            }
+
+            public int getYaw() {
+                return yaw;
+            }
+        }
+    }
+
 }

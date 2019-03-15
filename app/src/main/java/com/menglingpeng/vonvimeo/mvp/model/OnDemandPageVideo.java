@@ -1024,6 +1024,7 @@ public class OnDemandPageVideo implements Serializable{
             private RentBean rent;
             private SubscribeBean subscribe;
             private WatchedBean watched;
+            private ChannelBean channel;
 
             public LikeBean getLike() {
                 return like;
@@ -1079,6 +1080,14 @@ public class OnDemandPageVideo implements Serializable{
 
             public void setWatched(WatchedBean watched) {
                 this.watched = watched;
+            }
+
+            public ChannelBean getChannel() {
+                return channel;
+            }
+
+            public void setChannel(ChannelBean channel) {
+                this.channel = channel;
             }
 
             public static class WatchlaterBean {
@@ -1431,6 +1440,28 @@ public class OnDemandPageVideo implements Serializable{
 
                 public String getAdded_time() {
                     return added_time;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class ChannelBean {
+
+                private String uri;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
                 }
 
                 public String getUri() {

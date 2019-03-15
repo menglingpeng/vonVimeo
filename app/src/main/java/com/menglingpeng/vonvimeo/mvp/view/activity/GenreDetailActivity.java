@@ -58,7 +58,7 @@ public class GenreDetailActivity extends BaseActivity implements RecyclerView, V
                 finish();
             }
         });
-        replaceFragment(RecyclerFragment.newInstance(Constants.LIST_ALL_ONDEMAND_PAGES_OF_GENRE));
+        replaceFragment(RecyclerFragment.newInstance(Constants.REQUEST_GET_ALL_THE_ON_DEMAND_PAGES_IN_A_GENRE));
 
     }
 

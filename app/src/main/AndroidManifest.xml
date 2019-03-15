@@ -148,7 +148,8 @@
         <activity android:name=".mvp.view.activity.OnDemandPageGenresActivity" />
         <activity android:name=".mvp.view.activity.GenresPickerActivity" />
         <activity android:name=".mvp.view.activity.GenreOnDemandPagesActivity" />
-        <activity android:name=".mvp.view.activity.GenresActivity"></activity>
+        <activity android:name=".mvp.view.activity.GenresActivity" />
+        <activity android:name=".mvp.view.activity.OnDemandGenreDetailActivity"></activity>
     </application>
 
 </manifest>

@@ -13,7 +13,6 @@ public class OnDemandPageVideo implements Serializable{
     private int width;
     private String language;
     private int height;
-    private EmbedBean embed;
     private String created_time;
     private String modified_time;
     private String release_time;
@@ -31,6 +30,7 @@ public class OnDemandPageVideo implements Serializable{
     private List<TagsBean> tags;
     private List<ParentFolderBean> parent_folder;
     private SpatialBean spatial;
+    private List<EmbedBean> embed;
 
     public UploadBean getUpload() {
         return upload;
@@ -128,12 +128,12 @@ public class OnDemandPageVideo implements Serializable{
         return height;
     }
 
-    public void setEmbed(EmbedBean embed) {
-        this.embed = embed;
+    public List<EmbedBean> getEmbed() {
+        return embed;
     }
 
-    public EmbedBean getEmbed() {
-        return embed;
+    public void setEmbed(List<EmbedBean> embed) {
+        this.embed = embed;
     }
 
     public void setCreated_time(String created_time) {
@@ -240,138 +240,6 @@ public class OnDemandPageVideo implements Serializable{
         this.spatial = spatial;
     }
 
-    public static class EmbedBean {
-
-        private String html;
-        private BadgesBean badges;
-
-        public void setHtml(String html) {
-            this.html = html;
-        }
-
-        public void setBadges(BadgesBean badges) {
-            this.badges = badges;
-        }
-
-        public String getHtml() {
-            return html;
-        }
-
-        public BadgesBean getBadges() {
-            return badges;
-        }
-
-        public static class BadgesBean {
-
-            private boolean hdr;
-            private LiveBean live;
-            private StaffPickBean staff_pick;
-            private boolean vod;
-            private boolean weekend_challenge;
-
-            public void setHdr(boolean hdr) {
-                this.hdr = hdr;
-            }
-
-            public void setLive(LiveBean live) {
-                this.live = live;
-            }
-
-            public void setStaff_pick(StaffPickBean staff_pick) {
-                this.staff_pick = staff_pick;
-            }
-
-            public void setVod(boolean vod) {
-                this.vod = vod;
-            }
-
-            public void setWeekend_challenge(boolean weekend_challenge) {
-                this.weekend_challenge = weekend_challenge;
-            }
-
-            public boolean getHdr() {
-                return hdr;
-            }
-
-            public LiveBean getLive() {
-                return live;
-            }
-
-            public StaffPickBean getStaff_pick() {
-                return staff_pick;
-            }
-
-            public boolean getVod() {
-                return vod;
-            }
-
-            public boolean getWeekend_challenge() {
-                return weekend_challenge;
-            }
-
-            public static class LiveBean {
-
-                private boolean streaming;
-                private boolean archived;
-
-                public void setStreaming(boolean streaming) {
-                    this.streaming = streaming;
-                }
-
-                public void setArchived(boolean archived) {
-                    this.archived = archived;
-                }
-
-                public boolean getStreaming() {
-                    return streaming;
-                }
-
-                public boolean getArchived() {
-                    return archived;
-                }
-            }
-
-            public static class StaffPickBean {
-
-                private boolean normal;
-                private boolean best_of_the_month;
-                private boolean best_of_the_year;
-                private boolean premiere;
-
-                public void setNormal(boolean normal) {
-                    this.normal = normal;
-                }
-
-                public void setBest_of_the_month(boolean best_of_the_month) {
-                    this.best_of_the_month = best_of_the_month;
-                }
-
-                public void setBest_of_the_year(boolean best_of_the_year) {
-                    this.best_of_the_year = best_of_the_year;
-                }
-
-                public void setPremiere(boolean premiere) {
-                    this.premiere = premiere;
-                }
-
-                public boolean getNormal() {
-                    return normal;
-                }
-
-                public boolean getBest_of_the_month() {
-                    return best_of_the_month;
-                }
-
-                public boolean getBest_of_the_year() {
-                    return best_of_the_year;
-                }
-
-                public boolean getPremiere() {
-                    return premiere;
-                }
-            }
-        }
-    }
 
     public static class PrivacyBean {
 
@@ -2050,6 +1918,234 @@ public class OnDemandPageVideo implements Serializable{
 
             public int getYaw() {
                 return yaw;
+            }
+        }
+    }
+
+    public static class EmbedBean {
+
+        private ButtonsBean buttons;
+        private String color;
+        private LogosBean logos;
+        private String playbar;
+        private String speed;
+        private TitleBean title;
+        private String uri;
+        private String volume;
+
+
+        public void setButtons(ButtonsBean buttons) {
+            this.buttons = buttons;
+        }
+
+        public void setColor(String color) {
+            this.color = color;
+        }
+
+        public ButtonsBean getButtons() {
+            return buttons;
+        }
+
+        public String getColor() {
+            return color;
+        }
+
+        public void setLogos(LogosBean logos) {
+            this.logos = logos;
+        }
+
+        public LogosBean getLogos() {
+            return logos;
+        }
+
+        public void setPlaybar(String playbar) {
+            this.playbar = playbar;
+        }
+
+        public void setSpeed(String speed) {
+            this.speed = speed;
+        }
+
+        public void setTitle(TitleBean title) {
+            this.title = title;
+        }
+
+        public String getPlaybar() {
+            return playbar;
+        }
+
+        public String getSpeed() {
+            return speed;
+        }
+
+        public TitleBean getTitle() {
+            return title;
+        }
+
+        public void setUri(String uri) {
+            this.uri = uri;
+        }
+
+        public void setVolume(String volume) {
+            this.volume = volume;
+        }
+
+        public String getUri() {
+            return uri;
+        }
+
+        public String getVolume() {
+            return volume;
+        }
+
+        public static class ButtonsBean {
+
+            private String embed;
+            private String fullscreen;
+            private String hd;
+            private String like;
+            private String scaling;
+            private String share;
+            private String watchlater;
+
+            public void setEmbed(String embed) {
+                this.embed = embed;
+            }
+
+            public void setFullscreen(String fullscreen) {
+                this.fullscreen = fullscreen;
+            }
+
+            public void setHd(String hd) {
+                this.hd = hd;
+            }
+
+            public void setLike(String like) {
+                this.like = like;
+            }
+
+            public void setScaling(String scaling) {
+                this.scaling = scaling;
+            }
+
+            public void setShare(String share) {
+                this.share = share;
+            }
+
+            public void setWatchlater(String watchlater) {
+                this.watchlater = watchlater;
+            }
+
+            public String getEmbed() {
+                return embed;
+            }
+
+            public String getFullscreen() {
+                return fullscreen;
+            }
+
+            public String getHd() {
+                return hd;
+            }
+
+            public String getLike() {
+                return like;
+            }
+
+            public String getScaling() {
+                return scaling;
+            }
+
+            public String getShare() {
+                return share;
+            }
+
+            public String getWatchlater() {
+                return watchlater;
+            }
+        }
+
+        public static class LogosBean {
+
+            private CustomBean custom;
+            private String vimeo;
+
+            public void setCustom(CustomBean custom) {
+                this.custom = custom;
+            }
+
+            public void setVimeo(String vimeo) {
+                this.vimeo = vimeo;
+            }
+
+            public CustomBean getCustom() {
+                return custom;
+            }
+
+            public String getVimeo() {
+                return vimeo;
+            }
+
+            public static class CustomBean {
+
+                private String active;
+                private String link;
+                private String sticky;
+
+                public void setActive(String active) {
+                    this.active = active;
+                }
+
+                public void setLink(String link) {
+                    this.link = link;
+                }
+
+                public void setSticky(String sticky) {
+                    this.sticky = sticky;
+                }
+
+                public String getActive() {
+                    return active;
+                }
+
+                public String getLink() {
+                    return link;
+                }
+
+                public String getSticky() {
+                    return sticky;
+                }
+            }
+        }
+
+        public static class TitleBean {
+
+            private String name;
+            private String owner;
+            private String portrait;
+
+            public void setName(String name) {
+                this.name = name;
+            }
+
+            public void setOwner(String owner) {
+                this.owner = owner;
+            }
+
+            public void setPortrait(String portrait) {
+                this.portrait = portrait;
+            }
+
+            public String getName() {
+                return name;
+            }
+
+            public String getOwner() {
+                return owner;
+            }
+
+            public String getPortrait() {
+                return portrait;
             }
         }
     }

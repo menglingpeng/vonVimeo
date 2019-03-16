@@ -56,21 +56,21 @@ public class GenreOnDemandPagesActivity extends BaseActivity implements Recycler
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
-            case R.id.vimeo_on_demand_pages_sort_date:
+            case R.id.on_demand_genre_detail_sort_date:
                 sortType = Constants.TYPE_DATE;
                 break;
-            case R.id.vimeo_on_demand_pages_sort_alphabetical:
+            case R.id.on_demand_genre_detail_sort_alphabetical:
                 sortType = Constants.TYPE_ALPHABETICAL;
                 break;
-            case R.id.vimeo_on_demand_pages_sort_videos:
+            case R.id.on_demand_genre_detail_sort_videos:
                 sortType = Constants.TYPE_VIDEOS;
                 break;
-            case R.id.vimeo_on_demand_pages_sort_comments:
+            case R.id.von_demand_genre_detail_sort_comments:
                 sortType = Constants.TYPE_COMMENTS;
                 break;
-            case R.id.vimeo_on_demand_pages_thumb:
+            case R.id.on_demand_genre_detail_thumb:
                 break;
-            case R.id.vimeo_on_demand_pages_detail:
+            case R.id.on_demand_genre_detail_detail:
                 break;
             default:
                 break;

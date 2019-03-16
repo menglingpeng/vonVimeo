@@ -19,7 +19,7 @@ public class VimeoOnDemandPage implements Serializable {
     private List<String> content_rating;
     private List<GenresBean> genres;
     private List<MetadataBean> metadatas;
-    private FilmBean film;
+    private GenresBean.FilmBean film;
     private TrailerBean trailer;
 
     public String getUri() {

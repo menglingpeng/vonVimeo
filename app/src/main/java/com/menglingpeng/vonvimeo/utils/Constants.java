@@ -123,6 +123,11 @@ public class Constants {
     public static final String WATCHED = "watched";
     public static final String FEED = "feed";
 
+    public static final String ON_DEMAND_ID = "on_demand_id";
+    public static final String GENRE_ID = "genre_id";
+    public static final String REGION_ID = "region_id";
+    public static final String POSTER_ID = "poster_id";
+
     public static final String PRIVACY = "privacy";
     public static final String PRIVACY_ANYONE = "anyone";
     public static final String PRIVACY_ONLY_I = "nobody";

@@ -425,6 +425,7 @@ public class OnDemandPageVideo implements Serializable{
             private TexttracksBean texttracks;
             private RelatedBean related;
             private RecommendationsBean recommendations;
+            private OndemandBean ondemand;
             private PlaybackBean playback;
             private SeasonBean season;
             private UsersWithAccessBean users_with_access;
@@ -473,6 +474,14 @@ public class OnDemandPageVideo implements Serializable{
 
             public void setRecommendations(RecommendationsBean recommendations) {
                 this.recommendations = recommendations;
+            }
+
+            public OndemandBean getOndemand() {
+                return ondemand;
+            }
+
+            public void setOndemand(OndemandBean ondemand) {
+                this.ondemand = ondemand;
             }
 
             public TexttracksBean getTexttracks() {
@@ -716,6 +725,37 @@ public class OnDemandPageVideo implements Serializable{
 
                 public void setOptions(List<String> options) {
                     this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
+
+            public static class OndemandBean {
+
+                private String resource_key;
+                private String uri;
+                private List<String> options;
+
+                public void setResource_key(String resource_key) {
+                    this.resource_key = resource_key;
+                }
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getResource_key() {
+                    return resource_key;
                 }
 
                 public String getUri() {

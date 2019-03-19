@@ -1561,6 +1561,17 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     }
                 }
             });
+        }else if(holder instanceof OndemandPageOfPageGenreViewHolder){
+            final OndemandPageOfPageGenreViewHolder viewHolder = (OndemandPageOfPageGenreViewHolder) holder;
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (mListener != null) {
+                        mListener.onRecyclerFragmentListListener(viewHolder, position);
+                    }
+                }
+            });
+
         }
         else if (holder instanceof EmptyViewHolder) {
             int ivId = 0;
@@ -3157,6 +3168,20 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             videoThumbIv = (ImageView)view.findViewById(R.id.thumb_view_video_of_on_demand_pages_in_a_genre_thumb_iv);
             videoNameTv = (TextView)view.findViewById(R.id.thumb_view_video_of_on_demand_pages_in_a_genre_name_tv);
             videoAddedTimeTv = (TextView)view.findViewById(R.id.thumb_view_video_of_on_demand_pages_in_a_genre_added_time);
+        }
+    }
+
+    public class  OndemandPageOfPageGenreViewHolder extends RecyclerView.ViewHolder{
+
+        public final ImageView onDemandPageThumbIv;
+        public final TextView onDemandPageNameTv;
+        public final TextView onDemandPageVideosCountsTv;
+        public OndemandPageOfPageGenreViewHolder(View view) {
+            super(view);
+
+            onDemandPageThumbIv = (ImageView)view.findViewById(R.id.genre_thumb_iv);
+            onDemandPageNameTv = (TextView)view.findViewById(R.id.genre_name_tv);
+            onDemandPageVideosCountsTv = (TextView)view.findViewById(R.id.genre_connections_count_tv);
         }
     }
 

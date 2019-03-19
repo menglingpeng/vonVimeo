@@ -28,6 +28,7 @@ public class OnDemandGenreDetailActivity extends BaseActivity implements Recycle
     private String sortType;
     private Genre genre;
 
+
     @Override
     protected void initLayoutId() {
         layoutId = R.layout.activity_on_demand_genre_detail;

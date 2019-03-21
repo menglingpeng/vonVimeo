@@ -117,6 +117,38 @@ public class OnDemandGenre implements Serializable {
 
         public static class ConnectionsBean {
 
+
+            private PagesBean pages;
+
+            public void setPages(PagesBean pages) {
+                this.pages = pages;
+            }
+
+            public PagesBean getPages() {
+                return pages;
+            }
+
+            public static class PagesBean {
+
+                private String uri;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
+            }
         }
     }
 }

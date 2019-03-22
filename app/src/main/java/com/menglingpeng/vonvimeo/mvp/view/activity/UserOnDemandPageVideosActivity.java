@@ -6,6 +6,8 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 
@@ -24,6 +26,7 @@ public class UserOnDemandPageVideosActivity extends BaseActivity {
     private FloatingActionButton ftBt;
     private Context context;
     private String onDemandId;
+    private String sortType;
 
     @Override
     protected void initLayoutId() {
@@ -55,5 +58,34 @@ public class UserOnDemandPageVideosActivity extends BaseActivity {
             }
         });
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.user_on_demand_page_videos_toolbar_overflow_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.user_on_demand_page_videos_sort_date:
+                sortType = Constants.TYPE_DATE;
+                break;
+            case R.id.user_on_demand_page_videos_sort_alphabetical:
+                sortType = Constants.TYPE_ALPHABETICAL;
+                break;
+            case R.id.user_on_demand_page_videos_sort_videos:
+                sortType = Constants.TYPE_VIDEOS;
+                break;
+            case R.id.user_on_demand_page_videos_sort_comments:
+                sortType = Constants.TYPE_COMMENTS;
+                break;
+            default:
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

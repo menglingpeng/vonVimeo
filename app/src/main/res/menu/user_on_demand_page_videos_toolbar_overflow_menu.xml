@@ -2,6 +2,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <item
+        android:id="@+id/user_on_demand_page_videos_thumb"
+        android:title=""
+        android:icon="@drawable/ic_view_thumb_blue_600_24dp"
+        app:showAsAction="always">
+
+        <menu>
+
+            <item
+                android:id="@+id/user_on_demand_page_videos_detail"
+                android:title=""
+                android:icon="@drawable/ic_view_detail_black_24dp"
+                app:showAsAction="never"></item>
+        </menu>
+
+    </item>
 
     <item
         android:id="@+id/user_on_demand_page_videos_sort"

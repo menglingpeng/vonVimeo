@@ -70,6 +70,10 @@ public class UserOnDemandPageVideosActivity extends BaseActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
+            case R.id.user_on_demand_pages_thumb:
+                break;
+            case R.id.user_on_demand_pages_detail:
+                break;
             case R.id.user_on_demand_page_videos_sort_date:
                 sortType = Constants.TYPE_DATE;
                 break;

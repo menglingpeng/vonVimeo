@@ -1709,7 +1709,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
-    private class VideoOfOnDemandPagesTypeDetailViewHolder extends RecyclerView.ViewHolder {
+    private class VideoOfOnDemandPageTypeDetailViewHolder extends RecyclerView.ViewHolder {
 
         public final ImageView VideoThumbIv;
         public final TextView VideoNameTv;
@@ -1722,18 +1722,33 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         public final TextView videoDurationTv;
 
 
-        public VideoOfOnDemandPagesTypeDetailViewHolder(View view) {
+        public VideoOfOnDemandPageTypeDetailViewHolder(View view) {
             super(view);
 
-            VideoThumbIv = (ImageView)view.findViewById(R.id.detail_view_on_demand_pages_video_thumb_iv);
-            VideoNameTv = (TextView)view.findViewById(R.id.detail_view_on_demand_pages_video_name_tv);
-            userNameTv = (TextView)view.findViewById(R.id.detail_view_on_demand_pages_video_user_name_tv);
-            addedTimeTv = (TextView)view.findViewById(R.detail_view_on_demand_pages_video_added_time_tv);
-            videoDescTv = (TextView)view.findViewById(R.id.detail_view_on_demand_pages_video_desc_tv);
-            playsCountTv = (TextView)view.findViewById(R.id.detail_view_on_demand_pages_video_plays_count_i);
-            likesCountTv = (TextView)view.findViewById(R.id.detail_view_on_demand_pages_video_likes_count_i);
-            commentsCountTv = (TextView)view.findViewById(R.id.detail_view_on_demand_pages_video_comments_count_i);
-            videoDurationTv = (TextView)view.findViewById(R.id.detail_view_on_demand_pages_duration_tv);
+            VideoThumbIv = (ImageView)view.findViewById(R.id.detail_view_on_demand_page_video_thumb_iv);
+            VideoNameTv = (TextView)view.findViewById(R.id.detail_view_on_demand_page_video_name_tv);
+            userNameTv = (TextView)view.findViewById(R.id.detail_view_on_demand_page_video_user_name_tv);
+            addedTimeTv = (TextView)view.findViewById(R.detail_view_on_demand_page_video_added_time_tv);
+            videoDescTv = (TextView)view.findViewById(R.id.detail_view_on_demand_page_video_desc_tv);
+            playsCountTv = (TextView)view.findViewById(R.id.detail_view_on_demand_page_video_plays_count_i);
+            likesCountTv = (TextView)view.findViewById(R.id.detail_view_on_demand_page_video_likes_count_i);
+            commentsCountTv = (TextView)view.findViewById(R.id.detail_view_on_demand_page_video_comments_count_i);
+            videoDurationTv = (TextView)view.findViewById(R.id.detail_view_on_demand_page_duration_tv);
+        }
+    }
+
+    public class VideoOfOnDemandPageTypeThumbViewHolder extends RecyclerView.ViewHolder{
+
+        public final ImageView videoThumbIv;
+        public final TextView videoNameTv;
+        public final TextView videoAddedTimeTv;
+
+        public  VideoOfOnDemandPageTypeThumbViewHolder(View view) {
+            super(view);
+
+            videoThumbIv = (ImageView)view.findViewById(R.id.thumb_view_on_demand_page_video_thumb_iv);
+            videoNameTv = (TextView)view.findViewById(R.id.thumb_view_on_demand_page_video_name_tv);
+            videoAddedTimeTv = (TextView)view.findViewById(R.id.thumb_view_on_demand_page_video_added_time);
         }
     }
 

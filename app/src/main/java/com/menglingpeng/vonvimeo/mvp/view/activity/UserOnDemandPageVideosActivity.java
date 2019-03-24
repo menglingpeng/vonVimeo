@@ -1,6 +1,7 @@
 package com.menglingpeng.vonvimeo.mvp.view.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import android.widget.ProgressBar;
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.model.OnDemandPage;
 import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
+import com.menglingpeng.vonvimeo.mvp.view.SearchActivity;
 import com.menglingpeng.vonvimeo.utils.Constants;
 
 public class UserOnDemandPageVideosActivity extends BaseActivity {
@@ -70,6 +72,11 @@ public class UserOnDemandPageVideosActivity extends BaseActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
+            case R.id.user_on_demand_page_videos_search:
+                Intent intent = new Intent(this, SearchActivity.class);
+                intent.putExtra(Constants.ACTIVITY, Constants.ACTIVITY_VIMEO_ONDEMAND_PAGES);
+                startActivity(intent);
+                break;
             case R.id.user_on_demand_pages_thumb:
                 break;
             case R.id.user_on_demand_pages_detail:

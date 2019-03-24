@@ -2,7 +2,7 @@ package com.menglingpeng.vonvimeo.mvp.model;
 
 import java.util.List;
 
-public class GenreOnDemanpages {
+public class OnDemandPageGenres {
 
     private int total;
     private int page;

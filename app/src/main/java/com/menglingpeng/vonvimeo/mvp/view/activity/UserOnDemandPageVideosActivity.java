@@ -1,9 +1,11 @@
 package com.menglingpeng.vonvimeo.mvp.view.activity;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -11,14 +13,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.Switch;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
+import com.menglingpeng.vonvimeo.mvp.interf.RecyclerView;
 import com.menglingpeng.vonvimeo.mvp.model.OnDemandPage;
 import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
 import com.menglingpeng.vonvimeo.mvp.view.SearchActivity;
 import com.menglingpeng.vonvimeo.utils.Constants;
 
-public class UserOnDemandPageVideosActivity extends BaseActivity {
+public class UserOnDemandPageVideosActivity extends BaseActivity implements RecyclerView{
 
     private Toolbar toolbar;
     private CoordinatorLayout coordinatorLayout;
@@ -93,10 +97,60 @@ public class UserOnDemandPageVideosActivity extends BaseActivity {
             case R.id.user_on_demand_page_videos_sort_comments:
                 sortType = Constants.TYPE_COMMENTS;
                 break;
+            case R.id.user_on_demand_pages_all_checked:
+
+                break;
+            case R.id.user_on_demand_pages_no_checked:
+                break;
+            case R.id.user_on_demand_pages_delete_checked:
+                remove(type);
+                break;
             default:
                 break;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void showRemoveDialog(String title, String type){
+        AlertDialog dialog;
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(title);
+        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.setPositiveButton(R.sting.ok, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+
+        dialog = builder.create();
+        dialog.show();
+    }
+
+    @Override
+    public void hideProgress() {
+        progressBar.setVisibility(ProgressBar.GONE);
+    }
+
+    @Override
+    public void loadFailed(String msg) {
+
+    }
+
+    @Override
+    public void loadSuccess(String json, String requestType) {
+
+        switch (requestType){
+            case Constants.REQUEST_REMOVE_A_VIDEO_FROM_AN_ON_DEMAND_PAGE:
+                break;
+            default:
+                break;
+        }
     }
 }

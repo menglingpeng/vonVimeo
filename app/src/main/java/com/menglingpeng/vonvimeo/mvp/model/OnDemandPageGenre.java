@@ -9,6 +9,7 @@ public class OnDemandPageGenre implements Serializable {
     private String link;
     private String name;
     private String uri;
+    private InteractionsBean interactions;
 
     public void setCanonical(String canonical) {
         this.canonical = canonical;
@@ -29,7 +30,7 @@ public class OnDemandPageGenre implements Serializable {
     public String getCanonical() {
         return canonical;
     }
-    
+
     public String getLink() {
         return link;
     }
@@ -42,5 +43,55 @@ public class OnDemandPageGenre implements Serializable {
         return uri;
     }
 
+    public InteractionsBean getInteractions() {
+        return interactions;
+    }
 
+    public void setInteractions(InteractionsBean interactions) {
+        this.interactions = interactions;
+    }
+
+    public static class InteractionsBean {
+
+        private PageBean page;
+
+        public void setPage(PageBean page) {
+            this.page = page;
+        }
+
+        public PageBean getPage() {
+            return page;
+        }
+
+        public static class PageBean {
+
+            private String added;
+            private String uri;
+            private List<String> options;
+
+            public void setAdded(String added) {
+                this.added = added;
+            }
+
+            public void setUri(String uri) {
+                this.uri = uri;
+            }
+
+            public void setOptions(List<String> options) {
+                this.options = options;
+            }
+
+            public String getAdded() {
+                return added;
+            }
+
+            public String getUri() {
+                return uri;
+            }
+
+            public List<String> getOptions() {
+                return options;
+            }
+        }
+    }
 }

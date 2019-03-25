@@ -8,7 +8,7 @@ public class OnDemandPageGenres {
     private int page;
     private int per_page;
     private PagingBean paging;
-    private List<Genre> genres;
+    private List<OnDemandPageGenre> genres;
 
     public int getTotal() {
         return total;
@@ -42,11 +42,11 @@ public class OnDemandPageGenres {
         this.paging = paging;
     }
 
-    public List<Genre> getGenres() {
+    public List<OnDemandPageGenre> getGenres() {
         return genres;
     }
 
-    public void setGenres(List<Genre> genres) {
+    public void setGenres(List<OnDemandPageGenre> genres) {
         this.genres = genres;
     }
 

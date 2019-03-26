@@ -28,11 +28,13 @@ public class UserOnDemandPageVideosActivity extends BaseActivity implements Recy
     private CoordinatorLayout coordinatorLayout;
     private String title;
     private ProgressBar progressBar;
+    private FloatingActionButton floatingActionButton;
     private OnDemandPage onDemandPage;
-    private FloatingActionButton ftBt;
     private Context context;
     private String onDemandId;
     private String sortType;
+    private int checkedCounts;
+    private String type;
 
     @Override
     protected void initLayoutId() {
@@ -46,7 +48,7 @@ public class UserOnDemandPageVideosActivity extends BaseActivity implements Recy
         coordinatorLayout = (CoordinatorLayout) findViewById(R.id.on_demand_page_videos_cdl);
         toolbar = (Toolbar) findViewById(R.id.on_demand_page_videos_tb);
         progressBar = (ProgressBar)findViewById(R.id.on_demand_page_videos_pb);
-        ftBt = (FloatingActionButton) findViewById(R.id.on_demand_page_videos_ftb);
+        floatingActionButton = (FloatingActionButton) findViewById(R.id.on_demand_page_videos_fab);
         toolbar.setTitle(title);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_back);
@@ -57,7 +59,7 @@ public class UserOnDemandPageVideosActivity extends BaseActivity implements Recy
             }
         });
         replaceFragment(RecyclerFragment.newInstance(Constants.ON_DEMAND_ID, onDemandId));
-        ftBt.setOnClickListener(new View.OnClickListener() {
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -112,6 +114,19 @@ public class UserOnDemandPageVideosActivity extends BaseActivity implements Recy
         return super.onOptionsItemSelected(item);
     }
 
+    private void remove(String type){
+        String title = null;
+        if(checkedCounts == 1) {
+            title = getString(R.string.dilog_remove_a_video_title);
+            type = Constants.REQUEST_REMOVE_A_VIDEO_FROM_AN_ON_DEMAND_PAGE;
+
+        }else if(checkedCounts > 1){
+            title = getString(R.string.dilog_remove_a_list_of_videos_title);
+            type = Constants.REQUEST_REMOVE_A_LIST_OF_VIDEOS_FROM_AN_ON_DEMAND_PAGE;
+        }
+        showRemoveDialog(title, type);
+    }
+
     private void showRemoveDialog(String title, String type){
         AlertDialog dialog;
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -148,6 +163,8 @@ public class UserOnDemandPageVideosActivity extends BaseActivity implements Recy
 
         switch (requestType){
             case Constants.REQUEST_REMOVE_A_VIDEO_FROM_AN_ON_DEMAND_PAGE:
+                break;
+            case Constants.REQUEST_REMOVE_A_LIST_OF_VIDEOS_FROM_AN_ON_DEMAND_PAGE:
                 break;
             default:
                 break;

@@ -74,7 +74,7 @@ public class UserOnDemandPagesActivity extends BaseActivity implements RecyclerV
     private String genreId;
     private String backgroundId;
     private OnDemandPage onDemandPage;
-    private FloatingActionButton ftBt;
+    private FloatingActionButton floatingActionButton;
     private Dialog createPosterDialog;
     private String currentPhotoPath;
     private String uploadFilePath;
@@ -100,7 +100,7 @@ public class UserOnDemandPagesActivity extends BaseActivity implements RecyclerV
         userNameTv = (TextView)findViewById(R.id.demand_user_name_tv);
         demandDescTv = (TextView)findViewById(R.id.demand_desc_tv);
         progressBar = (ProgressBar)findViewById(R.id.demand_pb);
-        ftBt = (FloatingActionButton) findViewById(R.id.demand_ftb);
+        floatingActionButton = (FloatingActionButton) findViewById(R.id.demand_ftb);
         title = user.getName();
         toolbar.setTitle(title);
         setSupportActionBar(toolbar);
@@ -115,7 +115,7 @@ public class UserOnDemandPagesActivity extends BaseActivity implements RecyclerV
         userNameTv.setText(user.getName());
         type = Constants.REQUEST_GET_ALL_VIDEOS_OF_A_USER_ON_DEMAND_PAGES;
         replaceFragment(RecyclerFragment.newInstance(Constants.USER_ID, userId));
-        ftBt.setOnClickListener(new View.OnClickListener() {
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 switch (type){

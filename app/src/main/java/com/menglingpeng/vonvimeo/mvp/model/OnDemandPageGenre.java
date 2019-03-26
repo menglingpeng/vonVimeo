@@ -10,6 +10,7 @@ public class OnDemandPageGenre implements Serializable {
     private String name;
     private String uri;
     private InteractionsBean interactions;
+    private MetadataBean metadata;
 
     public void setCanonical(String canonical) {
         this.canonical = canonical;
@@ -41,6 +42,14 @@ public class OnDemandPageGenre implements Serializable {
 
     public String getUri() {
         return uri;
+    }
+
+    public MetadataBean getMetadata() {
+        return metadata;
+    }
+
+    public void setMetadata(MetadataBean metadata) {
+        this.metadata = metadata;
     }
 
     public InteractionsBean getInteractions() {
@@ -91,6 +100,54 @@ public class OnDemandPageGenre implements Serializable {
 
             public List<String> getOptions() {
                 return options;
+            }
+        }
+    }
+
+    public static class MetadataBean {
+        private ConnectionsBean connections;
+
+        public void setConnections(ConnectionsBean connections) {
+            this.connections = connections;
+        }
+
+        public ConnectionsBean getConnections() {
+            return connections;
+        }
+
+        public static class ConnectionsBean {
+
+
+            private PagesBean pages;
+
+            public void setPages(PagesBean pages) {
+                this.pages = pages;
+            }
+
+            public PagesBean getPages() {
+                return pages;
+            }
+
+            public static class PagesBean {
+
+                private String uri;
+                private List<String> options;
+
+                public void setUri(String uri) {
+                    this.uri = uri;
+                }
+
+                public void setOptions(List<String> options) {
+                    this.options = options;
+                }
+
+                public String getUri() {
+                    return uri;
+                }
+
+                public List<String> getOptions() {
+                    return options;
+                }
             }
         }
     }

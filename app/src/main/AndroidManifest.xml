@@ -150,7 +150,8 @@
         <activity android:name=".mvp.view.activity.GenreOnDemandPagesActivity" />
         <activity android:name=".mvp.view.activity.GenresActivity" />
         <activity android:name=".mvp.view.activity.OnDemandGenreDetailActivity" />
-        <activity android:name=".mvp.view.activity.UserOnDemandPageVideosActivity"></activity>
+        <activity android:name=".mvp.view.activity.UserOnDemandPageVideosActivity" />
+        <activity android:name=".mvp.view.activity.StartSellingActivity"></activity>
     </application>
 
 </manifest>

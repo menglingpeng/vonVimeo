@@ -65,7 +65,7 @@
                     android:textColorLink="@color/channel_name"/>
                 
                 <Button
-                    android:id="@+id/channel_detail_start_bt"
+                    android:id="@+id/channel_detail_watch_video_bt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/channel_detail_desc_tv"

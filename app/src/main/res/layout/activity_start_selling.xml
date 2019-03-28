@@ -46,6 +46,14 @@
                     android:textColor="@color/user_profile_desc_tv"
                     android:textColorLink="@color/video_username" />
 
+                <Button
+                    android:id="@+id/start_selling_start_bt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/start_selling_desc_tv"
+                    android:layout_marginTop="@dimen/channel_detail_start_bt_layout_marginTop"
+                    android:text="@string/channel_detail_start_bt_text"/>
+
 
             </RelativeLayout>
 
@@ -59,5 +67,55 @@
         </android.support.design.widget.CollapsingToolbarLayout>
 
     </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/start_selling_detail_desc_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/start_selling_join_pro_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/holo_blue_light"
+                android:text="start_selling_join_pro_tv_text"
+                android:clickable="true"/>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/start_selling_join_pro_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/upgrade_settings_plus_rl_layout_marginBottom"
+            android:layout_below="@+id/start_selling_detail_desc_rl"
+            android:layout_alignLeft="@+id/start_selling_detail_desc_rl"
+            android:layout_centerInParent="true">
+
+            <Button
+                android:id="@+id/start_selling_join_pro_bt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/upgrade_settings_plus_upgrade_bt_layout_marginBottom"
+                android:background="@android:color/holo_blue_light"
+                android:gravity="center"
+                android:textColor="@android:color/white"/>
+
+            <TextView
+                android:id="@+id/start_selling_join_pro_bt_desc_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/start_selling_join_pro_bt"
+                />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
 
 </android.support.design.widget.CoordinatorLayout>

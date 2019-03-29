@@ -85,6 +85,38 @@
                 android:text="start_selling_join_pro_tv_text"
                 android:clickable="true"/>
 
+            <TextView
+                android:id="@+id/start_selling_join_pro_price_desc_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/start_selling_join_pro_tv"
+                android:layout_alignTop="@+id/start_selling_join_pro_tv"
+                android:text=""/>
+
+            <TextView
+                android:id="@+id/start_selling_join_pro_desc_one_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/start_selling_join_pro_tv"
+                android:layout_alignLeft="@+id/start_selling_join_pro_tv"
+                android:text=""/>
+
+            <TextView
+                android:id="@+id/start_selling_join_pro_desc_two_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/start_selling_join_pro_desc_one_tv"
+                android:layout_alignLeft="@+id/start_selling_join_pro_desc_one_tv"
+                android:text=""/>
+
+            <TextView
+                android:id="@+id/start_selling_join_pro_desc_three_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/start_selling_join_pro_desc_two_tv"
+                android:layout_alignLeft="@+id/start_selling_join_pro_desc_two_tv"
+                android:text=""/>
+
 
         </RelativeLayout>
 
@@ -116,6 +148,21 @@
         </RelativeLayout>
 
     </RelativeLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/start_selling_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/floating_action_button_layout_margin"
+        android:src="@drawable/ic_add_white_24dp"
+        android:visibility="gone"
+        app:backgroundTint="@color/colorPrimary"
+        app:borderWidth="@dimen/floating_action_button_borderWidth"
+        app:elevation="@dimen/floating_action_button_elevation"
+        app:fabSize="normal"
+        app:pressedTranslationZ="@dimen/floating_action_button_pressedTranslationZ"
+        app:rippleColor="@color/colorPrimaryDark" />
 
 
 </android.support.design.widget.CoordinatorLayout>

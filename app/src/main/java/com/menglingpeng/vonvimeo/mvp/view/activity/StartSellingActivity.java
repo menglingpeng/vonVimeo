@@ -27,6 +27,7 @@ public class StartSellingActivity extends BaseActivity implements View.OnClickLi
     private ImageView backgroundIv;
     private Button watchBt;
     private TextView joinPROTv;
+    private Button joinPROBt;
     private User user;
     private Context context;
 
@@ -46,6 +47,7 @@ public class StartSellingActivity extends BaseActivity implements View.OnClickLi
         backgroundIv = (ImageView) findViewById(R.id.start_selling_iv);
         watchBt = (Button) findViewById(R.id.start_selling_watch_video_bt);
         joinPROTv = (TextView) findViewById(R.id.start_selling_join_pro_tv);
+        joinPROBt = (Button) findViewById(R.id.start_selling_join_pro_bt);
         toolbar.setTitle(title);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_back);
@@ -65,6 +67,10 @@ public class StartSellingActivity extends BaseActivity implements View.OnClickLi
             case R.id.start_selling_watch_video_bt:
                 break;
             case R.id.start_selling_join_pro_tv:
+                joinVimeoPro();
+                break;
+            case R.id.start_selling_join_pro_bt:
+                joinVimeoPro();
                 break;
             default:
                 break;

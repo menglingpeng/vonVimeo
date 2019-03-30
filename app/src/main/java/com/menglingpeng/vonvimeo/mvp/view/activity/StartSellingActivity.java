@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.ConditionVariable;
 import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -28,6 +29,7 @@ public class StartSellingActivity extends BaseActivity implements View.OnClickLi
     private Button watchBt;
     private TextView joinPROTv;
     private Button joinPROBt;
+    private FloatingActionButton uploadFab;
     private User user;
     private Context context;
 
@@ -48,6 +50,7 @@ public class StartSellingActivity extends BaseActivity implements View.OnClickLi
         watchBt = (Button) findViewById(R.id.start_selling_watch_video_bt);
         joinPROTv = (TextView) findViewById(R.id.start_selling_join_pro_tv);
         joinPROBt = (Button) findViewById(R.id.start_selling_join_pro_bt);
+        uploadFab = (FloatingActionButton) findViewById(R.id.start_selling_upload_fab);
         toolbar.setTitle(title);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_back);
@@ -55,6 +58,12 @@ public class StartSellingActivity extends BaseActivity implements View.OnClickLi
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+        uploadFab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                upload();
             }
         });
     }
@@ -79,6 +88,12 @@ public class StartSellingActivity extends BaseActivity implements View.OnClickLi
 
     private void joinVimeoPro(){
         Intent intent = new Intent(this, UpgradeActivity.class);
+        intent.putExtra(Constants.USER , user);
+        startActivity(intent);
+    }
+
+    private void upload(){
+        Intent intent = new Intent(this, UploadActivity.class);
         intent.putExtra(Constants.USER , user);
         startActivity(intent);
     }

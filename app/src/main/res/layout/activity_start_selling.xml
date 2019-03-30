@@ -121,6 +121,54 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/start_selling_detail_membership_first_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/start_selling_detail_desc_rl"
+            android:layout_alignLeft="@+id/start_selling_detail_desc_rl"
+            android:layout_marginBottom="@dimen/dialog_upgrade_order_detail_membership_first_rl_layout_marginBottom">
+
+            <ImageView
+                android:id="@+id/start_selling_detail_membership_first_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_check_blue_600_18dp"/>
+
+            <TextView
+                android:id="@+id/start_selling_detail_membership_first_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/start_selling_detail_membership_first_iv"
+                android:layout_alignTop="@+id/start_selling_detail_membership_first_iv"
+                android:layout_marginLeft="@dimen/dialog_upgrade_order_detail_membership_title_layout_marginBottom"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/start_selling_detail_membership_second_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/start_selling_detail_membership_first_rl"
+            android:layout_alignLeft="@+id/start_selling_detail_membership_first_rl"
+            android:layout_marginBottom="@dimen/dialog_upgrade_order_detail_membership_first_rl_layout_marginBottom">
+
+            <ImageView
+                android:id="@+id/start_selling_detail_membership_second_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_check_blue_600_18dp"/>
+
+            <TextView
+                android:id="@+id/start_selling_detail_membership_second_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/start_selling_detail_membership_second_iv"
+                android:layout_alignTop="@+id/start_selling_detail_membership_second_iv"
+                android:layout_marginLeft="@dimen/dialog_upgrade_order_detail_membership_title_layout_marginBottom"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
             android:id="@+id/start_selling_join_pro_rl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -150,7 +198,7 @@
     </RelativeLayout>
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/start_selling_fab"
+        android:id="@+id/start_selling_upload_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"

@@ -195,6 +195,62 @@
 
         </RelativeLayout>
 
+        <RelativeLayout
+            android:id="@+id/start_selling_detail_membership_third_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/start_selling_detail_membership_second_rl"
+            android:layout_alignLeft="@+id/start_selling_detail_membership_second_rl"
+            android:layout_marginBottom="@dimen/dialog_upgrade_order_detail_membership_first_rl_layout_marginBottom">
+
+            <ImageView
+                android:id="@+id/start_selling_detail_membership_third_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_check_blue_600_18dp"/>
+
+            <TextView
+                android:id="@+id/start_selling_detail_membership_third_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/start_selling_detail_membership_third_iv"
+                android:layout_alignTop="@+id/start_selling_detail_membership_third_iv"
+                android:layout_marginLeft="@dimen/dialog_upgrade_order_detail_membership_title_layout_marginBottom"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/start_selling_detail_membership_fourth_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/start_selling_detail_membership_third_rl"
+            android:layout_alignLeft="@+id/start_selling_detail_membership_third_rl"
+            android:layout_marginBottom="@dimen/dialog_upgrade_order_detail_membership_fourth_rl_layout_marginBottom">
+
+            <ImageView
+                android:id="@+id/start_selling_detail_membership_fourth_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_check_blue_600_18dp"/>
+
+            <TextView
+                android:id="@+id/start_selling_detail_membership_fourth_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/start_selling_detail_membership_fourth_iv"
+                android:layout_alignTop="@+id/start_selling_detail_membership_fourth_iv"
+                android:layout_marginLeft="@dimen/dialog_upgrade_order_detail_membership_title_layout_marginBottom"/>
+
+        </RelativeLayout>
+
+        <view
+            android:id="@+id/start_selling_detail_membership_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/start_selling_detail_membership_fourth_rl"
+            android:layout_alignLeft="@+id/start_selling_detail_membership_fourth_rl"
+            android:background="@color/recycler_item_view_background"/>
+
     </RelativeLayout>
 
     <android.support.design.widget.FloatingActionButton

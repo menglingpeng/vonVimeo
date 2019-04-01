@@ -10,6 +10,8 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -17,6 +19,7 @@ import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.model.User;
+import com.menglingpeng.vonvimeo.mvp.view.SearchActivity;
 import com.menglingpeng.vonvimeo.utils.Constants;
 
 public class StartSellingActivity extends BaseActivity implements View.OnClickListener{
@@ -66,6 +69,24 @@ public class StartSellingActivity extends BaseActivity implements View.OnClickLi
                 upload();
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.start_selling_toolbar_overflow_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.user_on_demand_page_videos_search:
+                Intent intent = new Intent(this, SearchActivity.class);
+                intent.putExtra(Constants.ACTIVITY, Constants.ACTIVITY_VIMEO_ONDEMAND_PAGES);
+                startActivity(intent);
+                break;
+        }
     }
 
     @Override

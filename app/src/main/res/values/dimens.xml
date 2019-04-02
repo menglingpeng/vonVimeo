@@ -339,6 +339,10 @@
 
     <dimen name="content_rating_spinner_layout_marginTop">20dp</dimen>
 
+    <dimen name="start_selling_tools_and_support_tv_layout_marginBottom">20dp</dimen>
+    <dimen name="start_selling_tools_and_support_tv_textSize">20dp</dimen>
+    <dimen name="start_selling_tools_and_support_1_tv_layout_marginBottom">5dp</dimen>
+
 
 
 

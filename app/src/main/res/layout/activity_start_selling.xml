@@ -251,6 +251,103 @@
             android:layout_alignLeft="@+id/start_selling_detail_membership_fourth_rl"
             android:background="@color/recycler_item_view_background"/>
 
+        <RelativeLayout
+            android:id="@+id/start_selling_tools_and_support_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/start_selling_tools_and_support_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/start_selling_tools_and_support_tv_layout_marginBottom"
+                android:text=""
+                android:textSize="@dimen/start_selling_tools_and_support_tv_textSize"
+                android:textColor="@android:color/white"/>
+
+            <TextView
+                android:id="@+id/start_selling_tools_and_support_1_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/start_selling_tools_and_support_1_tv_layout_marginBottom"
+                android:text=""
+                android:textColor="@color/start_selling_tools_and_support_1_tv_text_color"/>
+
+            <TextView
+                android:id="@+id/start_selling_tools_and_support_2_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/start_selling_tools_and_support_1_tv"
+                android:layout_alignLeft="@+id/start_selling_tools_and_support_1_tv"
+                android:layout_marginBottom="@dimen/start_selling_tools_and_support_1_tv_layout_marginBottom"
+                android:text=""
+                android:textColor="@color/start_selling_tools_and_support_1_tv_text_color"/>
+
+            <TextView
+                android:id="@+id/start_selling_tools_and_support_3_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/start_selling_tools_and_support_2_tv"
+                android:layout_alignLeft="@+id/start_selling_tools_and_support_2_tv"
+                android:layout_marginBottom="@dimen/start_selling_tools_and_support_1_tv_layout_marginBottom"
+                android:text=""
+                android:textColor="@color/start_selling_tools_and_support_1_tv_text_color"/>
+
+            <TextView
+                android:id="@+id/start_selling_tools_and_support_4_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/start_selling_tools_and_support_3_tv"
+                android:layout_alignLeft="@+id/start_selling_tools_and_support_3_tv"
+                android:layout_marginBottom="@dimen/start_selling_tools_and_support_1_tv_layout_marginBottom"
+                android:text=""
+                android:textColor="@color/start_selling_tools_and_support_1_tv_text_color"/>
+
+            <TextView
+                android:id="@+id/start_selling_tools_and_support_5_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/start_selling_tools_and_support_4_tv"
+                android:layout_alignLeft="@+id/start_selling_tools_and_support_4_tv"
+                android:layout_marginBottom="@dimen/start_selling_tools_and_support_1_tv_layout_marginBottom"
+                android:text=""
+                android:textColor="@color/start_selling_tools_and_support_1_tv_text_color"/>
+
+            <TextView
+                android:id="@+id/start_selling_tools_and_support_6_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/start_selling_tools_and_support_5_tv"
+                android:layout_alignLeft="@+id/start_selling_tools_and_support_5_tv"
+                android:layout_marginBottom="@dimen/start_selling_tools_and_support_1_tv_layout_marginBottom"
+                android:text=""
+                android:textColor="@color/start_selling_tools_and_support_1_tv_text_color"/>
+
+            <TextView
+                android:id="@+id/start_selling_tools_and_support_7_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/start_selling_tools_and_support_6_tv"
+                android:layout_alignLeft="@+id/start_selling_tools_and_support_6_tv"
+                android:layout_marginBottom="@dimen/start_selling_tools_and_support_1_tv_layout_marginBottom"
+                android:text=""
+                android:textColor="@color/start_selling_tools_and_support_1_tv_text_color"/>
+
+            <TextView
+                android:id="@+id/start_selling_tools_and_support_8_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/start_selling_tools_and_support_7_tv"
+                android:layout_alignLeft="@+id/start_selling_tools_and_support_7_tv"
+                android:layout_marginBottom="@dimen/start_selling_tools_and_support_1_tv_layout_marginBottom"
+                android:text=""
+                android:textColor="@color/start_selling_tools_and_support_1_tv_text_color"/>
+
+
+        </RelativeLayout>
+
     </RelativeLayout>
 
     <android.support.design.widget.FloatingActionButton

@@ -844,4 +844,18 @@
 
     <string name="start_selling_join_pro_tv_text">Join Vimeo PRO</string>
 
+    <string name="vimeo_pro_account_title_tv_text">A Vimeo PRO account</string>
+    <string name="vimeo_pro_account_desc_tv_text">Vimeo On Demand is exclusively for Vimeo PRO members. Learn more about Vimeo PRO.</string>
+    <string name="verified_paypal_account_title_tv_text">A verified PayPal account</string>
+    <string name="verified_paypal_account_desc_tv_text">Hook up your existing account or get a new one so you can get paid in the shade.</string>
+    <string name="proud_work_title_tv_text">A work that you’re proud of and want to sell</string>
+    <string name="proud_work_desc_tv_text">Not just any old video is right for Vimeo On Demand. It should be special!</string>
+    <string name="poster_title_tv_text">A poster to represent your work</string>
+    <string name="poster_desc_tv_text">Make it pretty — it’ll show up in the Vimeo On Demand directory.</string>
+    <string name="trailer_title_tv_text">A trailer for your work</string>
+    <string name="trailer_desc_tv_text">This is the best way to show people what your work is about.</string>
+    <string name="entrepreneurial_spirit_title_tv_text"> Entrepreneurial spirit</string>
+    <string name="entrepreneurial_spirit_desc_tv_text">You’ve got to want it! Are you ready to put your work out into
+        the world and do what it takes to get people to watch it?</string>
+
 </resources>

@@ -87,6 +87,7 @@ public class StartSellingActivity extends BaseActivity implements View.OnClickLi
                 startActivity(intent);
                 break;
         }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

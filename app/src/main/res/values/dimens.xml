@@ -343,6 +343,13 @@
     <dimen name="start_selling_tools_and_support_tv_textSize">20dp</dimen>
     <dimen name="start_selling_tools_and_support_1_tv_layout_marginBottom">5dp</dimen>
 
+    <dimen name="vimeo_pro_account_title_tv_layout_marginBottom">15dp</dimen>
+    <dimen name="vimeo_pro_account_title_tv_layout_marginTop">15dp</dimen>
+    <dimen name="vimeo_pro_account_title_tv_layout_marginleft">15dp</dimen>
+    <dimen name="vimeo_pro_account_title_tv_textSize">22dp</dimen>
+    <dimen name="vimeo_pro_account_desc_tv_layout_marginBottom">10dp</dimen>
+    <dimen name="vimeo_pro_account_desc_tv_layout_marginTop">10dp</dimen>
+
 
 
 

@@ -858,4 +858,23 @@
     <string name="entrepreneurial_spirit_desc_tv_text">You’ve got to want it! Are you ready to put your work out into
         the world and do what it takes to get people to watch it?</string>
 
+    <string name="should_know_1_title_tv_text">Make sure you have all the rights</string>
+    <string name="should_know_1_desc_tv_text">As with all videos on Vimeo, make sure you have the rights to the music
+        in your work. Also, since you’re selling your work, you need to get personnel releases signed for anyone
+        who appears in your work.</string>
+    <string name="should_know_2_title_tv_text">Choose a compelling thumbnail</string>
+    <string name="should_know_2_desc_tv_text">Along with your poster and trailer, your thumbnail is an important
+        representation of your work. You can pick any frame from your work, or upload a custom thumbnail.
+        Learn more about thumbnails.</string>
+    <string name="should_know_3_title_tv_text">Upload a powerful poster</string>
+    <string name="should_know_3_desc_tv_text">Use simple colors and images that represent your work and draw the eye.
+        Please note that the aspect ratio should be 27 x 40 px (width by height) and the largest size
+        we use on Vimeo On Demand is 275 x 407 px.</string>
+    <string name="should_know_4_title_tv_text">Add bonus features</string>
+    <string name="should_know_4_desc_tv_text">Bonus features give people more incentive to buy your work,
+        and make perfect promotional materials.</string>
+    <string name="should_know_5_title_tv_text">Keep it affordable</string>
+    <string name="should_know_5_desc_tv_text">It’s super important to give your work a price that you are willing to pay.
+        The lower your price, the more people will be willing to buy it.</string>
+
 </resources>

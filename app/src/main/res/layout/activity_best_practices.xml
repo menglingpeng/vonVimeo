@@ -151,6 +151,101 @@
             android:layout_marginBottom="@dimen/vimeo_pro_account_desc_tv_layout_marginBottom"
             android:text="@string/poster_desc_tv_text"/>
 
+        <TextView
+            android:id="@+id/trailer_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/vimeo_pro_account_title_tv_layout_marginTop"
+            android:layout_marginBottom="@dimen/vimeo_pro_account_title_tv_layout_marginBottom"
+            android:layout_below="@+id/poster_desc_tv"
+            android:layout_alignLeft="@+id/poster_desc_tv"
+            android:text="@string/trailer_title_tv_text"
+            android:textStyle="bold"
+            android:textSize="@dimen/vimeo_pro_account_title_tv_textSize"/>
+
+        <TextView
+            android:id="@+id/trailer_desc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/trailer_title_tv"
+            android:layout_alignLeft="@+id/trailer_title_tv"
+            android:layout_marginTop="@dimen/vimeo_pro_account_desc_tv_layout_marginTop"
+            android:layout_marginBottom="@dimen/vimeo_pro_account_desc_tv_layout_marginBottom"
+            android:text="@string/trailer_desc_tv_text"/>
+
+        <TextView
+            android:id="@+id/entrepreneurial_spirit_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/vimeo_pro_account_title_tv_layout_marginTop"
+            android:layout_marginBottom="@dimen/vimeo_pro_account_title_tv_layout_marginBottom"
+            android:layout_below="@+id/trailer_desc_tv"
+            android:layout_alignLeft="@+id/trailer_desc_tv"
+            android:text="@string/entrepreneurial_spirit_title_tv_text"
+            android:textStyle="bold"
+            android:textSize="@dimen/vimeo_pro_account_title_tv_textSize"/>
+
+        <TextView
+            android:id="@+id/entrepreneurial_spirit_desc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/trailer_title_tv"
+            android:layout_alignLeft="@+id/trailer_title_tv"
+            android:layout_marginTop="@dimen/vimeo_pro_account_desc_tv_layout_marginTop"
+            android:layout_marginBottom="@dimen/vimeo_pro_account_desc_tv_layout_marginBottom"
+            android:text="@string/entrepreneurial_spirit_desc_tv_text"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/best_practices_should_know_rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/should_know_1_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/vimeo_pro_account_title_tv_layout_marginTop"
+            android:layout_marginBottom="@dimen/vimeo_pro_account_title_tv_layout_marginBottom"
+            android:layout_marginLeft="@dimen/vimeo_pro_account_title_tv_layout_marginleft"
+            android:text="@string/should_know_1_title_tv_text"
+            android:textStyle="bold"
+            android:textSize="@dimen/vimeo_pro_account_title_tv_textSize"/>
+
+        <TextView
+            android:id="@+id/should_know_1_desc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/should_know_1_title_tv"
+            android:layout_alignLeft="@+id/should_know_1_title_tv"
+            android:layout_marginTop="@dimen/vimeo_pro_account_desc_tv_layout_marginTop"
+            android:layout_marginBottom="@dimen/vimeo_pro_account_desc_tv_layout_marginBottom"
+            android:text="@string/should_know_1_desc_tv_text"/>
+
+        <TextView
+            android:id="@+id/should_know_2_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/vimeo_pro_account_title_tv_layout_marginTop"
+            android:layout_marginBottom="@dimen/vimeo_pro_account_title_tv_layout_marginBottom"
+            android:layout_below="@+id/should_know_1_desc_tv"
+            android:layout_alignLeft="@+id/should_know_1_desc_tv"
+            android:text="@string/should_know_2_title_tv_text"
+            android:textStyle="bold"
+            android:textSize="@dimen/vimeo_pro_account_title_tv_textSize"/>
+
+        <TextView
+            android:id="@+id/should_know_2_desc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/should_know_2_title_tv"
+            android:layout_alignLeft="@+id/should_know_2_title_tv"
+            android:layout_marginTop="@dimen/vimeo_pro_account_desc_tv_layout_marginTop"
+            android:layout_marginBottom="@dimen/vimeo_pro_account_desc_tv_layout_marginBottom"
+            android:text="@string/vimeo_pro_account_desc_tv_text"/>
+
+
     </RelativeLayout>
 
     <android.support.design.widget.FloatingActionButton

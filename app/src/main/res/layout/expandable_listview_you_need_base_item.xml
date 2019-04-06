@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/you_need_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/vimeo_pro_account_title_tv_layout_marginTop"
+        android:layout_marginBottom="@dimen/vimeo_pro_account_title_tv_layout_marginBottom"
+        android:layout_marginLeft="@dimen/vimeo_pro_account_title_tv_layout_marginleft"
+        android:textStyle="bold"
+        android:textSize="@dimen/vimeo_pro_account_title_tv_textSize"/>
+
+    <ImageView
+        android:id="@+id/you_need_add_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/you_need_title_tv"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/ic_add_grey_600_18dp"/>
+
+</RelativeLayout>

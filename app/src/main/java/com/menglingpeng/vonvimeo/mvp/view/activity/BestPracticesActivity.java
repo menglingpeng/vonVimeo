@@ -7,12 +7,17 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
+import com.menglingpeng.vonvimeo.mvp.adapter.ExpandableListAdapter;
 import com.menglingpeng.vonvimeo.mvp.model.User;
 import com.menglingpeng.vonvimeo.utils.Constants;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class BestPracticesActivity extends BaseActivity {
 
@@ -23,6 +28,10 @@ public class BestPracticesActivity extends BaseActivity {
     private ImageView backgroundIv;
     private Context context;
     private User user;
+    private ExpandableListView expandableListView;
+    private ExpandableListAdapter adapter;
+    private List<String> lists;
+    private List<List<String>> childLists;
 
     @Override
     protected void initLayoutId() {
@@ -45,6 +54,27 @@ public class BestPracticesActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+
+        expandableListView = (ExpandableListView)findViewById(R.id.you_need_elv);
+        lists = new ArrayList<>();
+        childLists = new ArrayList<>();
+        adapter = new ExpandableListAdapter(context, lists, childLists);
+        expandableListView.setAdapter(adapter);
+        if(adapter != null) {
+            expandableListView.expandGroup(0);
+        }
+        expandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
+            @Override
+            public void onGroupExpand(int i) {
+
+            }
+        });
+        expandableListView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
+            @Override
+            public boolean onGroupClick(ExpandableListView expandableListView, View view, int i, long l) {
+                return true;
             }
         });
     }

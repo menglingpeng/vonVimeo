@@ -1,7 +1,6 @@
 package com.menglingpeng.vonvimeo.mvp.adapter;
 
 import android.content.Context;
-import android.provider.ContactsContract;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;

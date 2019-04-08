@@ -876,5 +876,11 @@
     <string name="should_know_5_title_tv_text">Keep it affordable</string>
     <string name="should_know_5_desc_tv_text">It’s super important to give your work a price that you are willing to pay.
         The lower your price, the more people will be willing to buy it.</string>
+    <string name="should_know_6_title_tv_text">Start early</string>
+    <string name="should_know_6_desc_tv_text">Create your Vimeo On Demand page well before any release dates.
+        Don’t create the page the same day of a release so you have time to tweak the appearance and settings to your liking.</string>
+    <string name="should_know_7_title_tv_text">Customize your page</string>
+    <string name="should_know_7_desc_tv_text">We give you all the tools to help you personalize your page:
+        You can change the theme, colors, and add modules to create the best experience for viewers.</string>
 
 </resources>

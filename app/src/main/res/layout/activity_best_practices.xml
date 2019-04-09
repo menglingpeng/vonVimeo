@@ -217,7 +217,7 @@
             android:layout_marginBottom="@dimen/vimeo_pro_account_title_tv_layout_marginBottom"
             android:layout_below="@+id/should_know_6_desc_tv"
             android:layout_alignLeft="@+id/should_know_6_desc_tv"
-            android:text="@string/should_know_6_title_tv_text"
+            android:text="@string/should_know_7_title_tv_text"
             android:textStyle="bold"
             android:textSize="@dimen/vimeo_pro_account_title_tv_textSize"/>
 
@@ -230,6 +230,28 @@
             android:layout_marginTop="@dimen/vimeo_pro_account_desc_tv_layout_marginTop"
             android:layout_marginBottom="@dimen/vimeo_pro_account_desc_tv_layout_marginBottom"
             android:text="@string/should_know_7_desc_tv_text"/>
+
+        <TextView
+            android:id="@+id/should_know_8_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/vimeo_pro_account_title_tv_layout_marginTop"
+            android:layout_marginBottom="@dimen/vimeo_pro_account_title_tv_layout_marginBottom"
+            android:layout_below="@+id/should_know_7_desc_tv"
+            android:layout_alignLeft="@+id/should_know_7_desc_tv"
+            android:text="@string/should_know_8_title_tv_text"
+            android:textStyle="bold"
+            android:textSize="@dimen/vimeo_pro_account_title_tv_textSize"/>
+
+        <TextView
+            android:id="@+id/should_know_8_desc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/should_know_8_title_tv"
+            android:layout_alignLeft="@+id/should_know_8_title_tv"
+            android:layout_marginTop="@dimen/vimeo_pro_account_desc_tv_layout_marginTop"
+            android:layout_marginBottom="@dimen/vimeo_pro_account_desc_tv_layout_marginBottom"
+            android:text="@string/should_know_8_desc_tv_text"/>
 
 
     </RelativeLayout>

@@ -882,5 +882,8 @@
     <string name="should_know_7_title_tv_text">Customize your page</string>
     <string name="should_know_7_desc_tv_text">We give you all the tools to help you personalize your page:
         You can change the theme, colors, and add modules to create the best experience for viewers.</string>
+    <string name="should_know_8_title_tv_text">Create a great, informative trailer</string>
+    <string name="should_know_8_desc_tv_text">Your trailer can be a full scene from your work, or a montage you edit together.
+        Pro tip: Trailers should never be longer than two minutes, so keep it snappy! Get trailer tips.</string>
 
 </resources>

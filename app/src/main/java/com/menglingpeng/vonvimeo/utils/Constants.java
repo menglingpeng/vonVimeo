@@ -555,6 +555,7 @@ public class Constants {
     public static final String ACTIVITY_SEASON_DETAIL = "activity_season_detail";
     public static final String ACTIVITY_GENRE_DETAIL = "activity_genre_detail";
     public static final String ACTIVITY_START_SELLING = "activity_start_selling";
+    public static final String ACTIVITY_BEST_PRACTICES = "activity_best_practices";
 
     public static final String TAB_VIMEO_ONDEMAND_PAGES_VIDEOS = "tab_vimeo_ondemand_pages_videos";
     public static final String TAB_VIMEO_ONDEMAND_PAGES_FOLLOW_VIDEOS = "tab_vimeo_ondemand_pages_follow_videos";

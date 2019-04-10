@@ -886,4 +886,11 @@
     <string name="should_know_8_desc_tv_text">Your trailer can be a full scene from your work, or a montage you edit together.
         Pro tip: Trailers should never be longer than two minutes, so keep it snappy! Get trailer tips.</string>
 
+    <string name="should_know_9_title_tv_text">Tag your film</string>
+    <string name="should_know_9_desc_tv_text">To ensure that your work appears in our search results, tag it! For example,
+        if your work is “The Undead Upset the Daytona 500,” you’ll probably want tags such as “zombies,” “racecars,” “Florida,” etc.</string>
+    <string name="should_know_10_title_tv_text">Prepare your video file properly</string>
+    <string name="should_know_10_desc_tv_text">Before you upload your work, make sure you’ve got the video file ready.
+Learn how in our Compression Guidelines for standard and 360 video.</string>
+
 </resources>

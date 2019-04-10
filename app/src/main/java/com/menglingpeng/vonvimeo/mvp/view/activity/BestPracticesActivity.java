@@ -3,6 +3,7 @@ package com.menglingpeng.vonvimeo.mvp.view.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -17,6 +18,7 @@ import android.widget.TextView;
 import com.menglingpeng.vonvimeo.base.BaseActivity;
 import com.menglingpeng.vonvimeo.mvp.adapter.ExpandableListAdapter;
 import com.menglingpeng.vonvimeo.mvp.model.User;
+import com.menglingpeng.vonvimeo.mvp.view.SearchActivity;
 import com.menglingpeng.vonvimeo.utils.Constants;
 
 import java.util.ArrayList;
@@ -35,6 +37,7 @@ public class BestPracticesActivity extends BaseActivity {
     private ExpandableListAdapter adapter;
     private List<String> lists;
     private List<List<String>> childLists;
+    private FloatingActionButton uploadFab;
 
     @Override
     protected void initLayoutId() {
@@ -50,6 +53,7 @@ public class BestPracticesActivity extends BaseActivity {
         toolbar = (Toolbar) findViewById(R.id.best_practices_tb);
         demandDescTv = (TextView)findViewById(R.id.best_practices_desc_tv);
         backgroundIv = (ImageView) findViewById(R.id.best_practices_iv);
+        uploadFab = (FloatingActionButton) findViewById(R.id.best_practices_upload_fab);
         toolbar.setTitle(title);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_back);
@@ -80,6 +84,12 @@ public class BestPracticesActivity extends BaseActivity {
                 return true;
             }
         });
+        uploadFab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                upload();
+            }
+        });
     }
 
     @Override
@@ -91,7 +101,19 @@ public class BestPracticesActivity extends BaseActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
+        switch (item.getItemId()) {
+            case R.id.best_practices_search:
+                Intent intent = new Intent(this, SearchActivity.class);
+                intent.putExtra(Constants.ACTIVITY, Constants.ACTIVITY_BEST_PRACTICES);
+                startActivity(intent);
+                break;
+        }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void upload(){
+        Intent intent = new Intent(this, UploadActivity.class);
+        intent.putExtra(Constants.USER , user);
+        startActivity(intent);
     }
 }

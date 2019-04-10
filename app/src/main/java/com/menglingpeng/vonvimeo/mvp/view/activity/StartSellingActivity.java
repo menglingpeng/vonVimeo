@@ -81,9 +81,9 @@ public class StartSellingActivity extends BaseActivity implements View.OnClickLi
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.user_on_demand_page_videos_search:
+            case R.id.start_selling_search:
                 Intent intent = new Intent(this, SearchActivity.class);
-                intent.putExtra(Constants.ACTIVITY, Constants.ACTIVITY_VIMEO_ONDEMAND_PAGES);
+                intent.putExtra(Constants.ACTIVITY, Constants.ACTIVITY_START_SELLING);
                 startActivity(intent);
                 break;
         }

@@ -49,7 +49,7 @@ public class StartSellingActivity extends BaseActivity implements View.OnClickLi
         coordinatorLayout = (CoordinatorLayout) findViewById(R.id.start_selling_cdl);
         toolbar = (Toolbar) findViewById(R.id.start_selling_tb);
         demandDescTv = (TextView)findViewById(R.id.start_selling_desc_tv);
-        backgroundIv = (ImageView) findViewById(R.id.start_selling_iv);
+        backgroundIv = (ImageView) findViewById(R.id.start_selling_backgroud_iv);
         watchBt = (Button) findViewById(R.id.start_selling_watch_video_bt);
         joinPROTv = (TextView) findViewById(R.id.start_selling_join_pro_tv);
         joinPROBt = (Button) findViewById(R.id.start_selling_join_pro_bt);

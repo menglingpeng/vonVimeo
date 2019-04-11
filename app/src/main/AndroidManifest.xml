@@ -152,7 +152,8 @@
         <activity android:name=".mvp.view.activity.OnDemandGenreDetailActivity" />
         <activity android:name=".mvp.view.activity.UserOnDemandPageVideosActivity" />
         <activity android:name=".mvp.view.activity.StartSellingActivity" />
-        <activity android:name=".mvp.view.activity.BestPracticesActivity"></activity>
+        <activity android:name=".mvp.view.activity.BestPracticesActivity" />
+        <activity android:name=".mvp.view.activity.ProfessionalsActivity"></activity>
     </application>
 
 </manifest>

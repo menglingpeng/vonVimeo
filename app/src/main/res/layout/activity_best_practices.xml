@@ -37,7 +37,6 @@
                     android:id="@+id/best_practices_desc_tv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/demand_user_name_tv"
                     android:layout_marginLeft="@dimen/profile_desc_tv_layout_marginLeft"
                     android:layout_marginRight="@dimen/profile_desc_tv_layout_marginRight"
                     android:layout_marginTop="@dimen/profile_desc_tv_layout_marginTop"

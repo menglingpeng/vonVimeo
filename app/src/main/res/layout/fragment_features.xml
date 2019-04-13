@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/features_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/features_title_tv_layout_marginTop"
+        android:layout_marginLeft="@dimen/features_title_tv_layout_marginLeft"
+        android:layout_marginBottom="@dimen/features_title_tv_layout_marginBottom"
+        android:textSize="@dimen/features_title_tv_textSize"
+        android:textStyle="bold"
+        android:text="@string/features_title_tv_text"/>
+
+    <RelativeLayout
+        android:id="@+id/features_stunning_player_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/features_title_tv"
+        android:layout_alignLeft="@+id/features_title_tv"
+        android:layout_marginBottom="@dimen/features_stunning_player_rl_layout_marginBottom">
+
+        <ImageView
+            android:id="@+id/features_stunning_player_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/features_stunning_player_iv_layout_marginTop"
+            android:layout_marginBottom="@dimen/features_stunning_player_iv_layout_marginBottom"
+            android:src=""/>
+
+        <TextView
+            android:id="@+id/features_stunning_player_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/features_stunning_player_title_tv_layout_marginBottom"
+            android:layout_toRightOf="@+id/features_stunning_player_iv"
+            android:textStyle="bold"
+            android:text="@string/features_stunning_player_title_tv_text"/>
+
+        <TextView
+            android:id="@+id/features_stunning_player_desc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/features_stunning_player_title_tv"
+            android:layout_alignLeft="@+id/features_stunning_player_title_tv"
+            android:text="@string/features_stunning_player_desc_tv_text"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/features_advanced_stats_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/features_stunning_player_rl"
+        android:layout_alignLeft="@+id/features_stunning_player_rl"
+        android:layout_marginBottom="@dimen/features_stunning_player_rl_layout_marginBottom">
+
+        <ImageView
+            android:id="@+id/features_advanced_stats_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/features_stunning_player_iv_layout_marginTop"
+            android:layout_marginBottom="@dimen/features_stunning_player_iv_layout_marginBottom"
+            android:src=""/>
+
+        <TextView
+            android:id="@+id/features_advanced_stats_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/features_stunning_player_title_tv_layout_marginBottom"
+            android:layout_toRightOf="@+id/features_advanced_stats_iv"
+            android:textStyle="bold"
+            android:text="@string/features_advanced_stats_title_tv_text"/>
+
+        <TextView
+            android:id="@+id/features_advanced_stats_desc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/features_advanced_stats_title_tv"
+            android:layout_alignLeft="@+id/features_advanced_stats_title_tv"
+            android:text="@string/features_advanced_stats_desc_tv_text"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/features_powerful_integrations_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/features_advanced_stats_rl"
+        android:layout_alignLeft="@+id/features_advanced_stats_rl"
+        android:layout_marginBottom="@dimen/features_stunning_player_rl_layout_marginBottom">
+
+        <ImageView
+            android:id="@+id/features_powerful_integrations_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/features_stunning_player_iv_layout_marginTop"
+            android:layout_marginBottom="@dimen/features_stunning_player_iv_layout_marginBottom"
+            android:src=""/>
+
+        <TextView
+            android:id="@+id/features_powerful_integrations_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/features_stunning_player_title_tv_layout_marginBottom"
+            android:layout_toRightOf="@+id/features_powerful_integrations_iv"
+            android:textStyle="bold"
+            android:text="@string/features_powerful_integrations_title_tv_text"/>
+
+        <TextView
+            android:id="@+id/features_powerful_integrations_desc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/features_powerful_integrations_title_tv"
+            android:layout_alignLeft="@+id/features_powerful_integrations_title_tv"
+            android:text="@string/features_advanced_stats_desc_tv_text"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

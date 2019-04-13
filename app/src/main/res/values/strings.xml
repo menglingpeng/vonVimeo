@@ -895,4 +895,16 @@ Learn how in our Compression Guidelines for standard and 360 video.</string>
 
     <string name="professionals_get_pro_bt_text">Get Vimeo PRO</string>
 
+    <string name="features">Features</string>
+    <string name="pricing">Pricing</string>
+    <string name="features_title_tv_text">The highest quality video host on the planet</string>
+    <string name="features_stunning_player_title_tv_text">Stunning player, no hidden fees</string>
+    <string name="features_stunning_player_desc_tv_text">Gorgeous, high-quality video sharing on desktop, mobile, tablet, and TV.</string>
+    <string name="features_advanced_stats_title_tv_text">Advanced stats</string>
+    <string name="features_advanced_stats_desc_tv_text">Track who’s watching your videos, and dig in to see
+        where engagement and watch times drop off.</string>
+    <string name="features_powerful_integrations_title_tv_text">Powerful integrations</string>
+    <string name="features_powerful_integrations_desc_tv_text">Simplify your process with direct uploads and editing
+        from Adobe Premiere Pro, Final Cut Pro, and Dropbox.</string>
+
 </resources>

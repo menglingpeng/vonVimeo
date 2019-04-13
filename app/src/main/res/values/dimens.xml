@@ -350,6 +350,15 @@
     <dimen name="vimeo_pro_account_desc_tv_layout_marginBottom">10dp</dimen>
     <dimen name="vimeo_pro_account_desc_tv_layout_marginTop">10dp</dimen>
 
+    <dimen name="features_title_tv_layout_marginTop">20dp</dimen>
+    <dimen name="features_title_tv_layout_marginBottom">20dp</dimen>
+    <dimen name="features_title_tv_layout_marginLeft">15dp</dimen>
+    <dimen name="features_title_tv_textSize">20dp</dimen>
+    <dimen name="features_stunning_player_rl_layout_marginBottom">40dp</dimen>
+    <dimen name="features_stunning_player_iv_layout_marginTop">15dp</dimen>
+    <dimen name="features_stunning_player_iv_layout_marginBottom">15dp</dimen>
+    <dimen name="features_stunning_player_title_tv_layout_marginBottom">10dp</dimen>
+
 
 
 

@@ -646,6 +646,9 @@ public class Constants {
     public static final String REQUEST_GET_ALL_THE_ON_DEMAND_PAGES_IN_A_GENRE =
             "request_get_all_on_demand_genres";
 
+    public static final String COMMON_FRAGMENT_FEATURES= "common_fragment_features";
+    public static final String COMMON_FRAGMENT_PRICING= "common_fragment_pricing";
+
     //默认值1
     public static final int PAGE_VALUE = 1;
     //默认值10，最高到100

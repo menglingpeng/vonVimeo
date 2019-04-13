@@ -14,9 +14,11 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.menglingpeng.vonvimeo.base.BaseActivity;
+import com.menglingpeng.vonvimeo.mvp.adapter.TabPagerCommonFragmentAdapter;
 import com.menglingpeng.vonvimeo.mvp.adapter.TabPagerFragmentAdapter;
 import com.menglingpeng.vonvimeo.mvp.model.User;
 import com.menglingpeng.vonvimeo.mvp.view.RecyclerFragment;
+import com.menglingpeng.vonvimeo.mvp.view.fragment.CommonFragment;
 import com.menglingpeng.vonvimeo.utils.Constants;
 
 import java.util.ArrayList;
@@ -35,8 +37,9 @@ public class ProfessionalsActivity extends BaseActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private ProgressBar progressBar;
-    private TabPagerFragmentAdapter adapter;
+    private TabPagerCommonFragmentAdapter adapter;
     private HashMap<String, String> map;
+    private ArrayList<CommonFragment> fragmentsList;
     private static final int SMOOTHSCROLL_TOP_POSITION = 50;
 
 
@@ -62,10 +65,10 @@ public class ProfessionalsActivity extends BaseActivity {
 
 
     private void initTabPager() {
-        tabLayout = (TabLayout)findViewById(R.id.channel_detail_tl);
-        viewPager = (ViewPager)findViewById(R.id.channel_detail_vp);
-        adapter = new TabPagerFragmentAdapter(getSupportFragmentManager());
-
+        tabLayout = (TabLayout)findViewById(R.id.professionals_tl);
+        viewPager = (ViewPager)findViewById(R.id.professionals_vp);
+        adapter = new TabPagerCommonFragmentAdapter(getSupportFragmentManager());
+        initTabFragments();
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
 
@@ -82,22 +85,20 @@ public class ProfessionalsActivity extends BaseActivity {
 
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
-                scrollToTop(fragmentsList.get(tab.getPosition()).getRecyclerView());
             }
         });
-
     }
 
-    private void scrollToTop(android.support.v7.widget.RecyclerView list) {
-        int lastPosition;
-        if (null != list) {
-            LinearLayoutManager manager = (LinearLayoutManager) list.getLayoutManager();
-            lastPosition = manager.findLastVisibleItemPosition();
-            if (lastPosition < SMOOTHSCROLL_TOP_POSITION) {
-                list.smoothScrollToPosition(0);
-            } else {
-                list.scrollToPosition(0);
-            }
-        }
+    private void initTabFragments() {
+
+        ArrayList<String> titlesList = new ArrayList<>();
+        titlesList.add(getText(R.string.features.toString());
+        titlesList.add(getText(R.string.pricing).toString());
+
+        fragmentsList.add(CommonFragment.newInstance(
+                Constants.COMMON_FRAGMENT_FEATURES));
+        fragmentsList.add(CommonFragment.newInstance(
+                Constants.COMMON_FRAGMENT_PRICING));
+        adapter.setFragments(fragmentsList, titlesList);
     }
 }

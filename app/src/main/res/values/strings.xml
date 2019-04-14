@@ -906,5 +906,36 @@ Learn how in our Compression Guidelines for standard and 360 video.</string>
     <string name="features_powerful_integrations_title_tv_text">Powerful integrations</string>
     <string name="features_powerful_integrations_desc_tv_text">Simplify your process with direct uploads and editing
         from Adobe Premiere Pro, Final Cut Pro, and Dropbox.</string>
+    <string name="features_publish_natively_to_social_title_tv_text">Publish natively to social</string>
+    <string name="features_publish_natively_to_social_desc_tv_text">Publish videos as native posts on Facebook, Twitter,
+        and YouTube, and track stats right from Vimeo.</string>
+
+    <string name="pricing_title_tv_text">Find the right Vimeo plan for you</string>
+    <string name="pricing_storage_title_text">Storage</string>
+
+    <string name="pricing_privacy_and_security_title_text">Privacy and security</string>
+
+    <string name="pricing_advanced_embed_potions_title_text">Advanced embed options</string>
+
+    <string name="pricing_add_team_members_title_text">Add team members</string>
+
+    <string name="pricing_video_engagement_graphs_title_text">Video engagement graphs</string>
+
+    <string name="pricing_custom_player_action_title_text">Custom calls to action in the player</string>
+
+    <string name="pricing_showcase_title_text">Showcase your work</string>
+
+    <string name="pricing_publish_to_social_title_text">Publish natively to social</string>
+
+    <string name="pricing_capture_emails_to_leads_title_text">Capture emails to generate leadsre</string>
+
+    <string name="pricing_sync_with_email_marketing_software_title_text">Sync with email marketing software</string>
+
+    <string name="pricing_google_analytics_integrations_title_text">Google Analytics integrations
+</string>
+
+    <string name="pricing_vip_support_title_text">VIP support</string>
+
+    <string name="pricing_unlimited_livestreaming_title_text">Unlimited livestreaming</string>
 
 </resources>

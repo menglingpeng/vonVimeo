@@ -114,7 +114,42 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/features_powerful_integrations_title_tv"
             android:layout_alignLeft="@+id/features_powerful_integrations_title_tv"
-            android:text="@string/features_advanced_stats_desc_tv_text"/>
+            android:text="@string/features_powerful_integrations_desc_tv_text"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/features_publish_natively_to_social_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/features_powerful_integrations_rl"
+        android:layout_alignLeft="@+id/features_powerful_integrations_rl"
+        android:layout_marginBottom="@dimen/features_stunning_player_rl_layout_marginBottom">
+
+        <ImageView
+            android:id="@+id/features_publish_natively_to_social_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/features_stunning_player_iv_layout_marginTop"
+            android:layout_marginBottom="@dimen/features_stunning_player_iv_layout_marginBottom"
+            android:src=""/>
+
+        <TextView
+            android:id="@+id/features_publish_natively_to_social_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/features_stunning_player_title_tv_layout_marginBottom"
+            android:layout_toRightOf="@+id/features_publish_natively_to_social_iv"
+            android:textStyle="bold"
+            android:text="@string/features_publish_natively_to_social_title_tv_text"/>
+
+        <TextView
+            android:id="@+id/features_publish_natively_to_social_desc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/features_publish_natively_to_social_title_tv"
+            android:layout_alignLeft="@+id/features_publish_natively_to_social_title_tv"
+            android:text="@string/features_publish_natively_to_social_desc_tv_text"/>
 
     </RelativeLayout>
 

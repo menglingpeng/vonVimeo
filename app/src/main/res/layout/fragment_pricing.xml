@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/pricing_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/features_title_tv_layout_marginTop"
+        android:layout_marginLeft="@dimen/features_title_tv_layout_marginLeft"
+        android:layout_marginBottom="@dimen/features_title_tv_layout_marginBottom"
+        android:textSize="@dimen/features_title_tv_textSize"
+        android:textStyle="bold"
+        android:text="@string/pricing_title_tv_text"/>
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

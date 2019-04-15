@@ -909,6 +909,12 @@ Learn how in our Compression Guidelines for standard and 360 video.</string>
     <string name="features_publish_natively_to_social_title_tv_text">Publish natively to social</string>
     <string name="features_publish_natively_to_social_desc_tv_text">Publish videos as native posts on Facebook, Twitter,
         and YouTube, and track stats right from Vimeo.</string>
+    <string name="features_secure_sharing_title_tv_text">Secure sharing</string>
+    <string name="features_secure_sharing_desc_tv_text">Safely send and receive videos
+        of all sizes, and enjoy password protection and domain-level privacy.</string>
+    <string name="features_customizable_player_title_tv_text">Customizable player</string>
+    <string name="features_customizable_player_desc_tv_text">Add your logo, change the size and color, take out
+        the playbar, decide what videos play next, and more.</string>
 
     <string name="pricing_title_tv_text">Find the right Vimeo plan for you</string>
     <string name="pricing_storage_title_text">Storage</string>

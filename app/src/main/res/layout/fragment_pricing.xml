@@ -2,6 +2,33 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
+    <RelativeLayout
+        android:id="@+id/pricing_join_community_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/pricing_join_community_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pricing_join_community_title_tv_layout_marginTop"
+            android:layout_marginBottom="@dimen/pricing_join_community_title_tv_layout_marginBottom"
+            android:textSize="@dimen/features_title_tv_textSize"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            android:text="@string/pricing_join_community_title_tv_text"/>
+
+        <TextView
+            android:id="@+id/pricing_join_community_desc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pricing_join_community_title_tv"
+            android:layout_marginBottom="@dimen/pricing_join_community_desc_tv_layout_marginBottom"
+            android:layout_centerHorizontal="true"
+            android:text="@string/pricing_join_community_desc_tv_text"/>
+
+    </RelativeLayout>
+
     <TextView
         android:id="@+id/pricing_title_tv"
         android:layout_width="wrap_content"
@@ -9,6 +36,7 @@
         android:layout_marginTop="@dimen/features_title_tv_layout_marginTop"
         android:layout_marginLeft="@dimen/features_title_tv_layout_marginLeft"
         android:layout_marginBottom="@dimen/features_title_tv_layout_marginBottom"
+        android:layout_below="@+id/pricing_join_community_rl"
         android:textSize="@dimen/features_title_tv_textSize"
         android:textStyle="bold"
         android:text="@string/pricing_title_tv_text"/>

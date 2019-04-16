@@ -915,6 +915,15 @@ Learn how in our Compression Guidelines for standard and 360 video.</string>
     <string name="features_customizable_player_title_tv_text">Customizable player</string>
     <string name="features_customizable_player_desc_tv_text">Add your logo, change the size and color, take out
         the playbar, decide what videos play next, and more.</string>
+    <string name="features_360_video_support_title_tv_text">360 video support</string>
+    <string name="features_360_video_support_desc_tv_text">Upload, embed, and even sell your 360 videos,
+        and use custom controls to orient viewers.</string>
+    <string name="features_showcase_and_embed_title_tv_text">Showcase and embed, beautifully</string>
+    <string name="features_showcase_and_embed_desc_tv_text">Customize a collection of your videos to share publicly or
+        privately, and embed playlists on your site.</string>
+
+    <string name="pricing_join_community_title_tv_text">Join the world’s best community</string>
+    <string name="pricing_join_community_desc_tv_text">Get inspired, master new skills, and sell your videos worldwide.</string>
 
     <string name="pricing_title_tv_text">Find the right Vimeo plan for you</string>
     <string name="pricing_storage_title_text">Storage</string>

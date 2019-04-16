@@ -359,6 +359,10 @@
     <dimen name="features_stunning_player_iv_layout_marginBottom">15dp</dimen>
     <dimen name="features_stunning_player_title_tv_layout_marginBottom">10dp</dimen>
 
+    <dimen name="pricing_join_community_title_tv_layout_marginTop">30dp</dimen>
+    <dimen name="pricing_join_community_title_tv_layout_marginBottom">15dp</dimen>
+    <dimen name="pricing_join_community_desc_tv_layout_marginBottom">20dp</dimen>
+
 
 
 

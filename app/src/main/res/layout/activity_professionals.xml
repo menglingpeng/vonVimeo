@@ -77,19 +77,69 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <ProgressBar
-        android:id="@+id/professionals_pb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"/>
 
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/professionals__vp"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        android:layout_height="match_parent">
 
-    </android.support.v4.view.ViewPager>
+        <ProgressBar
+            android:id="@+id/professionals_pb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"/>
+
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/professionals__vp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        </android.support.v4.view.ViewPager>
+
+        <include layout="@layout/container"></include>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+
+            <TextView
+                android:id="@+id/professionals_bottom_get_vimeo_pro_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/professionals_bottom_get_vimeo_pro_title_tv_layout_marginTop"
+                android:layout_marginBottom="@dimen/professionals_bottom_get_vimeo_pro_title_tv_layout_marginBottom"
+                android:layout_centerHorizontal="true"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/professionals_bottom_get_vimeo_pro_title_tv_textSize"
+                android:text="@string/professionals_bottom_get_vimeo_pro_title_tv_text"/>
+
+            <Button
+                android:id="@+id/professionals_bottom_get_vimeo_pro_bt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/professionals_bottom_get_vimeo_pro_title_tv"
+                android:layout_marginBottom="@dimen/professionals_bottom_get_vimeo_pro_bt_layout_marginBottom"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="@string/professionals_get_pro_bt_text"/>
+
+            <TextView
+                android:id="@+id/professionals_bottom_get_vimeo_pro_desc_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/professionals_bottom_get_vimeo_pro_bt"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/professionals_bottom_get_vimeo_pro_desc_tv_layout_marginBottom"
+                android:text="@string/profile_settings_bio_desc_tv_text"
+                android:textColor="@android:color/white"
+                />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

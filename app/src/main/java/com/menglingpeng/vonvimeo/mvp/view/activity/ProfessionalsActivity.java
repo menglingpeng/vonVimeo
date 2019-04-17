@@ -1,6 +1,7 @@
 package com.menglingpeng.vonvimeo.mvp.view.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -8,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -24,7 +26,7 @@ import com.menglingpeng.vonvimeo.utils.Constants;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class ProfessionalsActivity extends BaseActivity {
+public class ProfessionalsActivity extends BaseActivity implements View.OnClickListener {
 
     private Toolbar toolbar;
     private CoordinatorLayout coordinatorLayout;
@@ -37,6 +39,7 @@ public class ProfessionalsActivity extends BaseActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private ProgressBar progressBar;
+    private Button bottomGetProBt;
     private TabPagerCommonFragmentAdapter adapter;
     private HashMap<String, String> map;
     private ArrayList<CommonFragment> fragmentsList;
@@ -59,6 +62,7 @@ public class ProfessionalsActivity extends BaseActivity {
         descTv = (TextView)findViewById(R.id.professionals_desc_tv);
         backgroundIv = (ImageView) findViewById(R.id.professionals_backgroud_iv);
         getPROBt = (Button) findViewById(R.id.professionals_get_pro_bt);
+        bottomGetProBt = (Button) findViewById(R.id.professionals_bottom_get_vimeo_pro_bt);
         progressBar = (ProgressBar)findViewById(R.id.professionals_pb);
         initTabPager();
     }
@@ -100,5 +104,25 @@ public class ProfessionalsActivity extends BaseActivity {
         fragmentsList.add(CommonFragment.newInstance(
                 Constants.COMMON_FRAGMENT_PRICING));
         adapter.setFragments(fragmentsList, titlesList);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.professionals_get_pro_bt:
+                getVimeoPro();
+                break;
+            case R.id.professionals_bottom_get_vimeo_pro_bt:
+                getVimeoPro();
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void getVimeoPro(){
+        Intent intent = new Intent(this, UpgradeActivity.class);
+        intent.putExtra(Constants.USER , user);
+        startActivity(intent);
     }
 }

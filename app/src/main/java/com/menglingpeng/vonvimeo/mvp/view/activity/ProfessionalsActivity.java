@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -25,6 +26,7 @@ import com.menglingpeng.vonvimeo.utils.Constants;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class ProfessionalsActivity extends BaseActivity implements View.OnClickListener {
 
@@ -44,6 +46,7 @@ public class ProfessionalsActivity extends BaseActivity implements View.OnClickL
     private HashMap<String, String> map;
     private ArrayList<CommonFragment> fragmentsList;
     private static final int SMOOTHSCROLL_TOP_POSITION = 50;
+    private ListView listView;
 
 
 
@@ -64,6 +67,7 @@ public class ProfessionalsActivity extends BaseActivity implements View.OnClickL
         getPROBt = (Button) findViewById(R.id.professionals_get_pro_bt);
         bottomGetProBt = (Button) findViewById(R.id.professionals_bottom_get_vimeo_pro_bt);
         progressBar = (ProgressBar)findViewById(R.id.professionals_pb);
+        listView = (ListView) findViewById(R.id.professionals_creative_tools_lv);
         initTabPager();
     }
 

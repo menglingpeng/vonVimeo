@@ -893,6 +893,8 @@
     <string name="should_know_10_desc_tv_text">Before you upload your work, make sure you’ve got the video file ready.
 Learn how in our Compression Guidelines for standard and 360 video.</string>
 
+    <string name="professionals_title_tv_text">The industry standard for video</string>
+    <string name="professionals_desc_tv_text">Where amazing videos, works in progress, and everything in between come to be their best.</string>
     <string name="professionals_get_pro_bt_text">Get Vimeo PRO</string>
     <string name="professionals_bottom_get_vimeo_pro_title_tv_text">Over 90M+ creators love our community.Come on in.</string>
     <string name="professionals_bottom_get_vimeo_pro_desc_tv_text">Join now for US$20/month billed annually and try it risk-free for 30 days.</string>
@@ -954,5 +956,7 @@ Learn how in our Compression Guidelines for standard and 360 video.</string>
     <string name="pricing_vip_support_title_text">VIP support</string>
 
     <string name="pricing_unlimited_livestreaming_title_text">Unlimited livestreaming</string>
+
+    <string name="professionals_creative_tools_title_tv_text">Vimeo works with your favorite creative tools</string>
 
 </resources>

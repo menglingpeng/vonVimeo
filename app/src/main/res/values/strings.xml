@@ -959,4 +959,11 @@ Learn how in our Compression Guidelines for standard and 360 video.</string>
 
     <string name="professionals_creative_tools_title_tv_text">Vimeo works with your favorite creative tools</string>
 
+    <string name="professionals_compare_plans">Compare plans</string>
+    <string name="professionals_vimeo_pro">Vimeo PRO</string>
+    <string name="professionals_vimeo_bussiness">Vimeo Bussiness</string>
+    <string name="professionals_vimeo_live">Compare live</string>
+    <string name="professionals_vimeo_plus">Vimeo Plus</string>
+    <string name="professionals_vimeo_ott">Vimeo OTT</string>
+
 </resources>

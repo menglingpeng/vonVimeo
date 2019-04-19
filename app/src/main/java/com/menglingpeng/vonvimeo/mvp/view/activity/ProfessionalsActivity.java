@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -71,6 +73,40 @@ public class ProfessionalsActivity extends BaseActivity implements View.OnClickL
         initTabPager();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.professionals_toolbar_overflow_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent = null;
+        switch (item.getItemId()) {
+            case R.id.professionals_compare_plans:
+                intent = new Intent(this, UpgradeActivity.class);
+                break;
+            case R.id.professionals_vimeo_pro:
+                intent = new Intent(this, UpgradeOrderActivity.class);
+                intent.putExtra(Constants.UPGRADE_TYPE, Constants.UPGRADE_TYPE_PRO);
+                break;
+            case R.id.professionals_vimeo_plus:
+                intent = new Intent(this, UpgradeOrderActivity.class);
+                intent.putExtra(Constants.UPGRADE_TYPE, Constants.UPGRADE_TYPE_PLUS);
+                break;
+            case R.id.professionals_vimeo_business:
+                intent = new Intent(this, UpgradeOrderActivity.class);
+                intent.putExtra(Constants.UPGRADE_TYPE, Constants.UPGRADE_TYPE_BUSSINESS);
+                break;
+            case R.id.professionals_vimeo_live:
+                break;
+            case R.id.professionals_vimeo_ott:
+                break;
+        }
+        startActivity(intent);
+        return super.onOptionsItemSelected(item);
+    }
 
     private void initTabPager() {
         tabLayout = (TabLayout)findViewById(R.id.professionals_tl);

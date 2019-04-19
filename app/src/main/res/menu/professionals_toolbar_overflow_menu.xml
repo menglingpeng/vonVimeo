@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/professionals_more"
+        android:icon="@drawable/ic_more"
+        android:title=""
+        app:showAsAction="always">
+        <menu>
+
+            <item
+                android:id="@+id/professionals_compare_plans"
+                android:title="@string/professionals_compare_plans"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/professionals_vimeo_pro"
+                android:title="@string/professionals_vimeo_pro"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/professionals_vimeo_plus"
+                android:title="@string/professionals_vimeo_plus"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/professionals_vimeo_bussiness"
+                android:title="@string/professionals_vimeo_bussiness"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/professionals_vimeo_live"
+                android:title="@string/professionals_vimeo_live"
+                app:showAsAction="never"></item>
+
+            <item
+                android:id="@+id/professionals_vimeo_ott"
+                android:title="@string/professionals_vimeo_ott"
+                app:showAsAction="never"></item>
+
+
+        </menu>
+    </item>
+
+
+</menu>

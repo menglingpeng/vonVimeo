@@ -59,18 +59,26 @@
     </android.support.design.widget.AppBarLayout>
 
     <RelativeLayout
-        android:id="@+id/best_practices_you_need_rl"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ExpandableListView
-            android:id="@+id/you_need_elv"
+        <RelativeLayout
+            android:id="@+id/best_practices_you_need_rl"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
-        </ExpandableListView>
+            <ExpandableListView
+                android:id="@+id/you_need_elv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </ExpandableListView>
+
+        </RelativeLayout>
+
 
     </RelativeLayout>
+
 
     <RelativeLayout
         android:id="@+id/best_practices_should_know_rl"
@@ -296,8 +304,61 @@
             android:layout_marginBottom="@dimen/vimeo_pro_account_desc_tv_layout_marginBottom"
             android:text="@string/should_know_10_desc_tv_text"/>
 
+        <RelativeLayout
+            android:id="@+id/best_practices_else_should_know_rl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/best_practices_should_know_rl"
+            android:layout_alignLeft="@+id/best_practices_should_know_rl">
+
+            <TextView
+                android:id="@+id/else_should_know_1_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/vimeo_pro_account_title_tv_layout_marginTop"
+                android:layout_marginBottom="@dimen/vimeo_pro_account_title_tv_layout_marginBottom"
+                android:layout_marginLeft="@dimen/vimeo_pro_account_title_tv_layout_marginleft"
+                android:text="@string/else_should_know_1_title_tv_text"
+                android:textStyle="bold"
+                android:textSize="@dimen/vimeo_pro_account_title_tv_textSize"/>
+
+            <TextView
+                android:id="@+id/else_should_know_1_desc_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/else_should_know_1_title_tv"
+                android:layout_alignLeft="@+id/else_should_know_1_title_tv"
+                android:layout_marginTop="@dimen/vimeo_pro_account_desc_tv_layout_marginTop"
+                android:layout_marginBottom="@dimen/vimeo_pro_account_desc_tv_layout_marginBottom"
+                android:text="@string/else_should_know_1_desc_tv_text"/>
+
+            <TextView
+                android:id="@+id/else_should_know_2_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/vimeo_pro_account_title_tv_layout_marginTop"
+                android:layout_marginBottom="@dimen/vimeo_pro_account_title_tv_layout_marginBottom"
+                android:layout_below="@+id/else_should_know_1_desc_tv"
+                android:layout_alignLeft="@+id/else_should_know_1_desc_tv"
+                android:text="@string/else_should_know_2_title_tv_text"
+                android:textStyle="bold"
+                android:textSize="@dimen/vimeo_pro_account_title_tv_textSize"/>
+
+            <TextView
+                android:id="@+id/else_should_know_2_desc_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/else_should_know_2_title_tv"
+                android:layout_alignLeft="@+id/else_should_know_2_title_tv"
+                android:layout_marginTop="@dimen/vimeo_pro_account_desc_tv_layout_marginTop"
+                android:layout_marginBottom="@dimen/vimeo_pro_account_desc_tv_layout_marginBottom"
+                android:text="@string/else_should_know_2_desc_tv_text"/>
+
+        </RelativeLayout>
 
     </RelativeLayout>
+
+
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/best_practices_upload_fab"

@@ -44,6 +44,14 @@
                     android:text=""
                     android:textColor="@color/user_profile_desc_tv" />
 
+                <Button
+                    android:id="@+id/vimeo_partners_become_a_partner_bt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/vimeo_partners_desc_tv"
+                    android:layout_marginTop="@dimen/professionals_start_bt_layout_marginTop"
+                    android:text="@string/vimeo_partners_become_a_partner_bt_text"/>
+
 
             </RelativeLayout>
 

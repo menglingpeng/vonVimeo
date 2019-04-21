@@ -893,6 +893,14 @@
     <string name="should_know_10_desc_tv_text">Before you upload your work, make sure you’ve got the video file ready.
 Learn how in our Compression Guidelines for standard and 360 video.</string>
 
+    <string name="else_should_know_1_title_tv_text">How much should I charge for my work?</string>
+    <string name="else_should_know_1_desc_tv_text">We encourage you to keep your pricing as affordable as possible.
+        If you’re selling your work through other services, sell it for the same price or less. You might also
+        consider a special price exclusive to Vimeo On Demand.</string>
+    <string name="else_should_know_2_title_tv_text">Which viewing options should I select?</string>
+    <string name="else_should_know_2_desc_tv_text">For viewing options, you decide what viewing period makes sense for
+        your work. However, we strongly suggest making your work available worldwide, so you’ll have the largest potential audience.</string>
+
     <string name="professionals_title_tv_text">The industry standard for video</string>
     <string name="professionals_desc_tv_text">Where amazing videos, works in progress, and everything in between come to be their best.</string>
     <string name="professionals_get_pro_bt_text">Get Vimeo PRO</string>
@@ -965,5 +973,7 @@ Learn how in our Compression Guidelines for standard and 360 video.</string>
     <string name="professionals_vimeo_live">Compare live</string>
     <string name="professionals_vimeo_plus">Vimeo Plus</string>
     <string name="professionals_vimeo_ott">Vimeo OTT</string>
+
+    <string name="vimeo_partners_become_a_partner_bt_text">Become a partner</string>
 
 </resources>

@@ -76,10 +76,6 @@
 
         </RelativeLayout>
 
-
-    </RelativeLayout>
-
-
     <RelativeLayout
         android:id="@+id/best_practices_should_know_rl"
         android:layout_width="match_parent"
@@ -304,6 +300,14 @@
             android:layout_marginBottom="@dimen/vimeo_pro_account_desc_tv_layout_marginBottom"
             android:text="@string/should_know_10_desc_tv_text"/>
 
+    </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+
+
         <RelativeLayout
             android:id="@+id/best_practices_else_should_know_rl"
             android:layout_width="match_parent"
@@ -356,7 +360,6 @@
 
         </RelativeLayout>
 
-    </RelativeLayout>
 
 
 

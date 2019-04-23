@@ -901,6 +901,12 @@ Learn how in our Compression Guidelines for standard and 360 video.</string>
     <string name="else_should_know_2_desc_tv_text">For viewing options, you decide what viewing period makes sense for
         your work. However, we strongly suggest making your work available worldwide, so you’ll have the largest potential audience.</string>
 
+    <string name="else_should_know_3_title_tv_text">Should I allow people to rent or buy my work? Or both?</string>
+    <string name="else_should_know_3_desc_tv_text">That’s up to you. When someone buys your work, they can watch it
+        whenever they want, either as a DRM-free download that plays on any device, or on Vimeo. When they rent your work,
+        they have a limited time in which to view it. Because viewers have different preferences, we suggest giving them
+        as many purchasing options as possible.</string>
+
     <string name="professionals_title_tv_text">The industry standard for video</string>
     <string name="professionals_desc_tv_text">Where amazing videos, works in progress, and everything in between come to be their best.</string>
     <string name="professionals_get_pro_bt_text">Get Vimeo PRO</string>
